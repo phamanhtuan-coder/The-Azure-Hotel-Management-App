@@ -1,5 +1,4 @@
-﻿using System.Drawing;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace GUI
 {
@@ -31,9 +30,11 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.btnClose = new Syncfusion.WinForms.Controls.SfButton();
             this.picLoginBG = new System.Windows.Forms.PictureBox();
+            this.tmrTransistion = new System.Windows.Forms.Timer(this.components);
             this.panLogin = new GUI.SemiTransparentPanel();
             this.chkRemember = new System.Windows.Forms.CheckBox();
             this.linkForget = new System.Windows.Forms.LinkLabel();
@@ -91,6 +92,11 @@ namespace GUI
             this.picLoginBG.TabIndex = 5;
             this.picLoginBG.TabStop = false;
             // 
+            // tmrTransistion
+            // 
+            this.tmrTransistion.Interval = 25;
+            this.tmrTransistion.Tick += new System.EventHandler(this.tmrTransistion_Tick);
+            // 
             // panLogin
             // 
             this.panLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -137,6 +143,8 @@ namespace GUI
             this.linkForget.TabIndex = 6;
             this.linkForget.TabStop = true;
             this.linkForget.Text = "Quên mật khẩu";
+            this.linkForget.VisitedLinkColor = System.Drawing.Color.Purple;
+            this.linkForget.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkForget_LinkClicked);
             // 
             // lblLOGO
             // 
@@ -297,8 +305,7 @@ namespace GUI
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(960, 540);
             this.Controls.Add(this.btnClose);
@@ -308,7 +315,6 @@ namespace GUI
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogin_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.picLoginBG)).EndInit();
             this.panLogin.ResumeLayout(false);
             this.panLogin.PerformLayout();
@@ -341,6 +347,7 @@ namespace GUI
         private CheckBox chkRemember;
         private LinkLabel linkForget;
         private Syncfusion.WinForms.Controls.SfButton btnShowHidePassword;
+        private Timer tmrTransistion;
     }
 }
 

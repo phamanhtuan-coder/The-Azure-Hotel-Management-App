@@ -1,4 +1,5 @@
-﻿using GUI.UserControls;
+﻿using GUI.customForm;
+using GUI.UserControls;
 using Syncfusion.WinForms.Controls;
 using System;
 using System.Collections.Generic;
@@ -140,32 +141,44 @@ namespace GUI
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            using (customMessageBox messageBox = new customMessageBox("Bạn có muốn thoát chương trình không?"))
+            {
+                DialogResult dr = messageBox.ShowDialog();
+                if (dr == DialogResult.Cancel)
+                {
+                    messageBox.Close();
+                    return;
+                }
+                else if (dr == DialogResult.OK)
+                {
+                    this.Close();
+                    messageBox.Close();
+                }
+            }
             Application.Exit();
         }
 
-        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("Bạn có muốn thoát chương trình không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
-
-        }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            DialogResult dr= MessageBox.Show("Bạn có muốn đăng xuất không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
+            using (customMessageBox messageBox = new customMessageBox("Bạn có muốn đăng xuất tài khoản không?"))
             {
-                frmLogin login = new frmLogin();
-                login.Show();
-                this.Hide();
-                this.FormClosing-= frmMain_FormClosing;
-                this.Close();
-                this.FormClosing += frmMain_FormClosing;
+                DialogResult dr = messageBox.ShowDialog();
+                if ( dr == DialogResult.OK)
+                {
+                    frmLogin login = new frmLogin();
+                    this.Hide();
+                    login.Show();
+                    this.Close();
 
+                }
+                else
+                {
+                    messageBox.Close();
+                    return;
+                }
             }
+               
             
         }
 

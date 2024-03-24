@@ -10,35 +10,41 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
+using GUI.customForm;
 
 namespace GUI
 {
    
+
     public partial class frmLogin : Form
     {
-        private Timer timer;
+        private Timer timerLoop;
         private int gifDuration = 18000;
         private int elapsed = 0;
 
+        private userBLL userBLL;
 
         public frmLogin()
         {
             InitializeComponent();
             InitializeTimer();
             this.DoubleBuffered = true;
+
+            userBLL = new userBLL();
         }
 
         private void InitializeTimer()
         {
-            timer = new Timer();
-            timer.Interval = 50;
-            timer.Tick += Timer_Tick;
-            timer.Start();
+            timerLoop = new Timer();
+            timerLoop.Interval = 50;
+            timerLoop.Tick += Timer_Tick;
+            timerLoop.Start();
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            elapsed += timer.Interval;
+            elapsed += timerLoop.Interval;
 
             if (elapsed >= gifDuration)
             {
@@ -49,35 +55,91 @@ namespace GUI
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-
+            using (customMessageBox messageBox = new customMessageBox("Bạn có muốn thoát chương trình không?"))
+            {
+                DialogResult dr = messageBox.ShowDialog();
+                if (dr == DialogResult.Cancel)
+                {
+                    messageBox.Close();
+                    return;
+                }
+                else if (dr == DialogResult.OK)
+                {
+                    this.Close();
+                    messageBox.Close();
+                }
+            }
             Application.Exit();
         }
 
-        public void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("Bạn có muốn thoát chương trình không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.No)
-            {
-                e.Cancel = true;
-               
-            }
-        }
+  
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            
             frmMain mainForm = new frmMain();
-            mainForm.Show();
             this.Hide();
-            this.FormClosing -= frmLogin_FormClosing;
+            mainForm.Show();
             this.Close();
-            this.FormClosing += frmLogin_FormClosing;   
+
+
+            //string username = txtUsername.Text.Trim();
+            //string password = txtPassword.Text.Trim();
+
+            //bool isValidLogin = userBLL.KiemTraDangNhap(username, password);
+
+            //if (isValidLogin)
+            //{
+            //    //MessageBox.Show("Đăng nhập thành công!");
+            //    // Thực hiện các hành động sau khi đăng nhập thành công
+            //    frmMain mainForm = new frmMain();
+            //    mainForm.Show();
+            //    this.Hide();
+            //    this.FormClosing -= frmLogin_FormClosing;
+            //    this.Close();
+            //    this.FormClosing += frmLogin_FormClosing;
+            //}
+            //else
+            //{
+            //    // Đăng nhập thất bại
+            //    //MessageBox.Show("Tên người dùng hoặc mật khẩu không đúng!");
+            //}
+
         }
 
         private void btnShowHidePassword_Click(object sender, EventArgs e)
         {
            
             
+        }
+
+        private void linkForget_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (panLogin.Location.X == 60)
+            {
+                tmrTransistion.Start();
+            }
+            
+        }
+
+        private void tmrTransistion_Tick(object sender, EventArgs e)
+        {
+            int targetX = 520; 
+            int speed = 40; 
+
+            if (panLogin.Location.X < targetX)
+            {
+                int newX = panLogin.Location.X + speed;
+                if (newX > targetX)
+                    newX = targetX;
+
+                panLogin.Location = new Point(newX, panLogin.Location.Y);
+            }
+            else
+            {
+                
+                tmrTransistion.Stop();
+            }
+
         }
     }
 
