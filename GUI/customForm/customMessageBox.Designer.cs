@@ -51,7 +51,12 @@
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(134, 40);
             this.btnOK.Style.BackColor = System.Drawing.Color.Green;
+            this.btnOK.Style.FocusedBackColor = System.Drawing.Color.Green;
+            this.btnOK.Style.FocusedForeColor = System.Drawing.Color.White;
             this.btnOK.Style.ForeColor = System.Drawing.Color.White;
+            this.btnOK.Style.HoverForeColor = System.Drawing.Color.Green;
+            this.btnOK.Style.PressedBackColor = System.Drawing.Color.DarkGreen;
+            this.btnOK.Style.PressedForeColor = System.Drawing.Color.White;
             this.btnOK.TabIndex = 1;
             this.btnOK.Text = "Đồng ý";
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -64,7 +69,13 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(134, 40);
             this.btnCancel.Style.BackColor = System.Drawing.Color.Goldenrod;
+            this.btnCancel.Style.FocusedBackColor = System.Drawing.Color.Goldenrod;
+            this.btnCancel.Style.FocusedForeColor = System.Drawing.Color.White;
             this.btnCancel.Style.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnCancel.Style.HoverForeColor = System.Drawing.Color.Goldenrod;
+            this.btnCancel.Style.PressedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnCancel.Style.PressedForeColor = System.Drawing.Color.White;
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);

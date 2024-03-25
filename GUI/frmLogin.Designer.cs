@@ -36,6 +36,7 @@ namespace GUI
             this.picLoginBG = new System.Windows.Forms.PictureBox();
             this.tmrTransistion = new System.Windows.Forms.Timer(this.components);
             this.panLogin = new GUI.SemiTransparentPanel();
+            this.btnAdmin = new Syncfusion.WinForms.Controls.SfButton();
             this.chkRemember = new System.Windows.Forms.CheckBox();
             this.linkForget = new System.Windows.Forms.LinkLabel();
             this.lblLOGO = new System.Windows.Forms.Label();
@@ -104,6 +105,7 @@ namespace GUI
             this.panLogin.BackColor = System.Drawing.Color.Transparent;
             this.panLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panLogin.BackgroundImage")));
             this.panLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panLogin.Controls.Add(this.btnAdmin);
             this.panLogin.Controls.Add(this.chkRemember);
             this.panLogin.Controls.Add(this.linkForget);
             this.panLogin.Controls.Add(this.lblLOGO);
@@ -119,6 +121,24 @@ namespace GUI
             this.panLogin.Name = "panLogin";
             this.panLogin.Size = new System.Drawing.Size(360, 440);
             this.panLogin.TabIndex = 0;
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmin.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmin.Location = new System.Drawing.Point(146, 317);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(170, 28);
+            this.btnAdmin.Style.HoverBackColor = System.Drawing.Color.Teal;
+            this.btnAdmin.Style.HoverForeColor = System.Drawing.Color.White;
+            this.btnAdmin.Style.HoverImageForeColor = System.Drawing.Color.White;
+            this.btnAdmin.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnAdmin.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnAdmin.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnAdmin.Style.PressedImageForeColor = System.Drawing.Color.White;
+            this.btnAdmin.TabIndex = 9;
+            this.btnAdmin.Text = "Liên hệ Admin";
+            this.btnAdmin.Visible = false;
             // 
             // chkRemember
             // 
@@ -148,13 +168,12 @@ namespace GUI
             // 
             // lblLOGO
             // 
-            this.lblLOGO.AutoSize = true;
             this.lblLOGO.BackColor = System.Drawing.Color.Transparent;
             this.lblLOGO.Font = new System.Drawing.Font("Montserrat ExtraBold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblLOGO.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblLOGO.Location = new System.Drawing.Point(32, 30);
+            this.lblLOGO.Location = new System.Drawing.Point(32, 20);
             this.lblLOGO.Name = "lblLOGO";
-            this.lblLOGO.Size = new System.Drawing.Size(298, 74);
+            this.lblLOGO.Size = new System.Drawing.Size(298, 97);
             this.lblLOGO.TabIndex = 1;
             this.lblLOGO.Text = "THE AZURE HOTEL\r\nMANAGEMENT APP";
             this.lblLOGO.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -223,7 +242,7 @@ namespace GUI
             this.btnShowHidePassword.Location = new System.Drawing.Point(217, -1);
             this.btnShowHidePassword.Name = "btnShowHidePassword";
             this.btnShowHidePassword.Size = new System.Drawing.Size(32, 32);
-            this.btnShowHidePassword.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnShowHidePassword.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnShowHidePassword.TabIndex = 9;
             this.btnShowHidePassword.TextMargin = new System.Windows.Forms.Padding(0);
             this.btnShowHidePassword.Click += new System.EventHandler(this.btnShowHidePassword_Click);
@@ -270,7 +289,7 @@ namespace GUI
             // lblPassword
             // 
             this.lblPassword.BackgroundColor = new Syncfusion.Drawing.BrushInfo(System.Drawing.Color.Transparent);
-            this.lblPassword.BeforeTouchSize = new System.Drawing.Size(115, 33);
+            this.lblPassword.BeforeTouchSize = new System.Drawing.Size(252, 33);
             this.lblPassword.BorderAppearance = System.Windows.Forms.BorderStyle.None;
             this.lblPassword.BorderSides = ((System.Windows.Forms.Border3DSide)((((System.Windows.Forms.Border3DSide.Left | System.Windows.Forms.Border3DSide.Top) 
             | System.Windows.Forms.Border3DSide.Right) 
@@ -280,15 +299,15 @@ namespace GUI
             this.lblPassword.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblPassword.Location = new System.Drawing.Point(64, 198);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(115, 33);
+            this.lblPassword.Size = new System.Drawing.Size(252, 33);
             this.lblPassword.TabIndex = 4;
             this.lblPassword.Text = "Password";
-            this.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblUsername
             // 
             this.lblUsername.BackgroundColor = new Syncfusion.Drawing.BrushInfo(System.Drawing.Color.Transparent);
-            this.lblUsername.BeforeTouchSize = new System.Drawing.Size(115, 33);
+            this.lblUsername.BeforeTouchSize = new System.Drawing.Size(252, 33);
             this.lblUsername.BorderAppearance = System.Windows.Forms.BorderStyle.None;
             this.lblUsername.BorderSides = ((System.Windows.Forms.Border3DSide)((((System.Windows.Forms.Border3DSide.Left | System.Windows.Forms.Border3DSide.Top) 
             | System.Windows.Forms.Border3DSide.Right) 
@@ -298,10 +317,10 @@ namespace GUI
             this.lblUsername.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblUsername.Location = new System.Drawing.Point(64, 117);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(115, 33);
+            this.lblUsername.Size = new System.Drawing.Size(252, 33);
             this.lblUsername.TabIndex = 2;
             this.lblUsername.Text = "Username";
-            this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frmLogin
             // 
@@ -348,6 +367,7 @@ namespace GUI
         private LinkLabel linkForget;
         private Syncfusion.WinForms.Controls.SfButton btnShowHidePassword;
         private Timer tmrTransistion;
+        private Syncfusion.WinForms.Controls.SfButton btnAdmin;
     }
 }
 

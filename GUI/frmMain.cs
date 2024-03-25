@@ -19,13 +19,14 @@ namespace GUI
     public partial class frmMain : Form
     {
 
+        //Các biến cho Snap Form
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HT_CAPTION = 0x2;
         private const int WM_SYSCOMMAND = 0x0112;
         private const int SC_MOVE = 0xF010;
 
 
-        //Doc va nhan du lieu tu chuot va form
+        //Đọc và nhận dữ liệu chuột tương tác với form để di chuyển form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
@@ -33,18 +34,24 @@ namespace GUI
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
 
-        //Bien xac dinh menu dang mo
+        //Biến xác định menu đang mở
         private SfButton currentButton;
 
 
-        //Bien cho animation sideBar va panMenu
+        //Biến cho animation thu/ phóng thanh sideBar
         private bool sideBarExpand=true;
         private int maxSideBarWidth = 220;
         private int minSideBarWidth = 45;
         private const int animationStep = 10; 
         private int initialSideBarWidth; 
-        private int initialMenuWidth; 
+        private int initialMenuWidth;
 
+        //Biến Kích thược mặc định của FormMain
+        private Size kichThuocMacDinh = new Size(1600, 900);
+
+        /// <summary>
+        /// Hàm main của form
+        /// </summary>
         public frmMain()
         {
             InitializeComponent();
@@ -53,12 +60,16 @@ namespace GUI
             this.FormBorderStyle = FormBorderStyle.Sizable;
         }
 
+
         private void frmDemo_Load(object sender, EventArgs e)
         {
             
         }
 
-
+        /// <summary>
+        /// Hàm để mở form con
+        /// </summary>
+        /// <param name="frm">Form con muốn mở (UserControl)</param>
         private void openForm(UserControl frm)
         {
             panDesktop.Controls.Clear();
@@ -69,6 +80,10 @@ namespace GUI
             frm.Show();
         }
 
+        /// <summary>
+        /// Hàm xử lý sự kiện khi menu được chọn
+        /// </summary>
+        /// <param name="sender">Nút đang chọn</param>
         private void menuActivated(object sender)
         {
             if (sideBarExpand)
@@ -88,6 +103,10 @@ namespace GUI
             }
         }
 
+        /// <summary>
+        /// Hàm xử lý sự kiện khi menu thay đổi chọn
+        /// </summary>
+        /// <param name="sender">Nút đang chọn</param>
         private void menuDeActivated(object sender)
         {
             SfButton currentMenu = (SfButton)sender;
@@ -98,6 +117,12 @@ namespace GUI
             currentButton = null;
         }
 
+
+        /// <summary>
+        /// Hàm xử lý animation cho SideBar thu nhỏ/ mở rộng
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tmrSideBar_Tick(object sender, EventArgs e)
         {
             if (sideBarExpand)
@@ -131,6 +156,11 @@ namespace GUI
         
         }
 
+        /// <summary>
+        /// Hàm xử lý sự kiện khi nút Menu được bấm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnMenu_Activate(object sender, EventArgs e)
         {
             initialSideBarWidth = flpanSideBar.Width;
@@ -139,6 +169,13 @@ namespace GUI
                 tmrSideBar.Start();
         }
 
+
+
+        /// <summary>
+        /// Hàm xử lý sự kiện khi nút Close được bấm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnClose_Click(object sender, EventArgs e)
         {
             using (customMessageBox messageBox = new customMessageBox("Bạn có muốn thoát chương trình không?"))
@@ -158,7 +195,11 @@ namespace GUI
             Application.Exit();
         }
 
-
+        /// <summary>
+        /// Hàm xử lý sự kiện khi nút LogOut được bấm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             using (customMessageBox messageBox = new customMessageBox("Bạn có muốn đăng xuất tài khoản không?"))
@@ -182,6 +223,11 @@ namespace GUI
             
         }
 
+        /// <summary>
+        /// Hàm xử lý sự kiện khi nút Setup được bấm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSetup_Click(object sender, EventArgs e)
         {
             menuActivated(sender);
@@ -189,6 +235,11 @@ namespace GUI
             openForm(frm);
         }
 
+        /// <summary>
+        /// Hàm xử lý sự kiện khi nút DashBoard được bấm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDashBoard_Click(object sender, EventArgs e)
         {
             menuActivated(sender);
@@ -196,6 +247,12 @@ namespace GUI
             openForm(frm);
         }
 
+
+        /// <summary>
+        /// Hàm xử lý sự kiện khi nút Booking được bấm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBooking_Click(object sender, EventArgs e)
         {
             menuActivated(sender);
@@ -203,6 +260,12 @@ namespace GUI
             openForm(frm);
         }
 
+
+        /// <summary>
+        /// Hàm xử lý sự kiện khi nút Room được bấm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRoom_Click(object sender, EventArgs e)
         {
             menuActivated(sender);
@@ -210,6 +273,11 @@ namespace GUI
             openForm(frm);
         }
 
+        /// <summary>
+        /// Hàm xử lý sự kiện khi nút FrontDesk được bấm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnFrontDesk_Click(object sender, EventArgs e)
         {
             menuActivated(sender);
@@ -217,6 +285,12 @@ namespace GUI
             openForm(frm);
         }
 
+
+        /// <summary>
+        /// Hàm xử lý sự kiện khi nút Customer được bấm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCustomer_Click(object sender, EventArgs e)
         {
             menuActivated(sender);
@@ -224,6 +298,12 @@ namespace GUI
             openForm(frm);
         }
 
+
+        /// <summary>
+        /// Hàm xử lý sự kiện khi nút Service được bấm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnService_Click(object sender, EventArgs e)
         {
             menuActivated(sender);
@@ -231,6 +311,12 @@ namespace GUI
             openForm(frm);
         }
 
+
+        /// <summary>
+        /// Hàm xử lý sự kiện khi nút HoaDon được bấm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
             menuActivated(sender);
@@ -238,6 +324,12 @@ namespace GUI
             openForm(frm);
         }
 
+
+        /// <summary>
+        /// Hàm xử lý sự kiện khi nút Accounting được bấm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAccounting_Click(object sender, EventArgs e)
         {
             menuActivated(sender);
@@ -245,6 +337,12 @@ namespace GUI
             openForm(frm);
         }
 
+
+        /// <summary>
+        /// Hàm xử lý sự kiện khi nút Staff được bấm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnStaff_Click(object sender, EventArgs e)
         {
             menuActivated(sender);
@@ -253,7 +351,11 @@ namespace GUI
         }
 
 
-        //Di chuyen form
+        /// <summary>
+        /// Di chuyển form tự do nếu bấm giữ chuột trái vào header panel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void panHeader_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -264,7 +366,10 @@ namespace GUI
         }
 
 
-        //Aero snap
+        /// <summary>
+        /// Hàm xử lý tính năng Aero Snap của form
+        /// </summary>
+        /// <param name="m"></param>
         protected override void WndProc(ref Message m)
         {
             const int WM_NCCALCSIZE = 0x0083;
@@ -276,26 +381,25 @@ namespace GUI
 
         }
 
-        //Thay doi kich thuoc form main
+        /// <summary>
+        /// Thay đổi kích thước form Main
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmMain_Resize(object sender, EventArgs e)
         {
-            thayDoiKichThuoc();
-        }
+            const int paddingMaximized = 10;
+            const int paddingNormal = 2;
 
-        private void thayDoiKichThuoc()
-        {
             switch (this.WindowState)
             {
                 case FormWindowState.Maximized:
-                    {
-                        this.Padding = new Padding(2, 8, 8, 2);
-                    }
+                    this.Padding = new Padding(paddingMaximized);
                     break;
-                  
                 case FormWindowState.Normal:
-                    if (this.Padding.Top!=2)
+                    if (this.Padding.Top != paddingNormal)
                     {
-                        this.Padding = new Padding(2);
+                        this.Padding = new Padding(paddingNormal);
                     }
                     break;
                 default:
@@ -303,20 +407,33 @@ namespace GUI
             }
         }
 
-        //Nut control form
-        //Nut Fullscreen
+     
+
+        /// <summary>
+        /// Hàm xử lý sự kiện khi bấm nút FullScreen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnFullScreen_Click(object sender, EventArgs e)
         {
-            if (this.WindowState==FormWindowState.Normal)
+            if (this.WindowState == FormWindowState.Maximized || this.Size != kichThuocMacDinh)
             {
-                this.WindowState = FormWindowState.Maximized;
+                this.Size = kichThuocMacDinh;
+                this.WindowState = FormWindowState.Normal;
+
             }
             else
             {
-                this.WindowState = FormWindowState.Normal;
+
+                this.WindowState = FormWindowState.Maximized;
             }
         }
-        //Nut Minimize
+
+
+        /// <summary>
+        /// Hàm xử lý sự kiện khi bấm nút Minimize
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Normal)
@@ -332,7 +449,9 @@ namespace GUI
        
     }
 
-    //Custom round button
+    /// <summary>
+    /// Custom button để làm nút tròn
+    /// </summary>
     public class RoundButton : Button
     {
         protected override void OnPaint(PaintEventArgs e)
@@ -344,7 +463,10 @@ namespace GUI
             base.OnPaint(e);
         }
     }
-    //Custom round picture box
+    
+    /// <summary>
+    /// Custom Picture box khung tròn
+    /// </summary>
     public class CircularPictureBox : PictureBox
     {
         protected override void OnPaint(PaintEventArgs pe)

@@ -114,33 +114,71 @@ namespace GUI
 
         private void linkForget_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (panLogin.Location.X == 60)
+            int viTriX = (panLogin.Location.X == 520) ? 60 : 520;
+            tmrTransistion.Tag = viTriX;
+            tmrTransistion.Start();
+
+            if (viTriX == 520)
             {
-                tmrTransistion.Start();
+                lblLOGO.Text = "XÁC THỰC \r\nTÀI KHOẢN";
+                Icon icon1 = new Icon(Resources.Email, 48, 48);
+                Bitmap bitmap1 = icon1.ToBitmap();
+                picUsername.Image = bitmap1;
+                lblUsername.Text = "Email";
+                txtUsername.Clear();
+                Icon icon2 = new Icon(Resources.Passport, 48, 48);
+                Bitmap bitmap2 = icon2.ToBitmap();
+                picPassword.Image = bitmap2;
+                lblPassword.Text = "ID/Passport";
+                txtPassword.Clear();
+                txtPassword.PasswordChar = '\0';
+                btnShowHidePassword.Hide();
+                chkRemember.Hide();
+                btnAdmin.Show();
+                linkForget.Text = "Quay lại đăng nhập";
+                btnSubmit.Text = "Xác thực";
             }
-            
+            else if (viTriX == 60)
+            {
+                lblLOGO.Text = "THE AZURE HOTEL\r\nMANAGEMENT APP";
+                Icon icon1 = new Icon(Resources.UserName, 48, 48);
+                Bitmap bitmap1 = icon1.ToBitmap();
+                picUsername.Image = bitmap1;
+                lblUsername.Text = "Tên người dùng";
+                txtUsername.Clear();
+                Icon icon2 = new Icon(Resources.Password, 48, 48);
+                Bitmap bitmap2 = icon2.ToBitmap();
+                picPassword.Image = bitmap2;
+                lblPassword.Text = "Mật khẩu";
+                txtPassword.Clear();
+                txtPassword.PasswordChar = '•';
+                btnShowHidePassword.Show();
+                chkRemember.Show();
+                btnAdmin.Hide();
+                linkForget.Text = "Quên mật khẩu?";
+                btnSubmit.Text = "Đăng nhập";
+            }
         }
 
         private void tmrTransistion_Tick(object sender, EventArgs e)
         {
-            int targetX = 520; 
-            int speed = 40; 
+            int viTriX = (int)tmrTransistion.Tag;
+            int speed = 40;
 
-            if (panLogin.Location.X < targetX)
+            if (panLogin.Location.X != viTriX)
             {
-                int newX = panLogin.Location.X + speed;
-                if (newX > targetX)
-                    newX = targetX;
+                int viTriDich = panLogin.Location.X + (panLogin.Location.X < viTriX ? speed : -speed);
+                if ((panLogin.Location.X < viTriX && viTriDich > viTriX) || (panLogin.Location.X > viTriX && viTriDich < viTriX))
+                    viTriDich = viTriX;
 
-                panLogin.Location = new Point(newX, panLogin.Location.Y);
+                panLogin.Location = new Point(viTriDich, panLogin.Location.Y);
             }
             else
             {
-                
                 tmrTransistion.Stop();
             }
-
         }
+
     }
 
 

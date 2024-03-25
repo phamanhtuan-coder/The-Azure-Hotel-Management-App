@@ -126,6 +126,12 @@
     <Compile Include="customForm\customMessageBox.Designer.cs">
       <DependentUpon>customMessageBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="customForm\frmBookingController.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customForm\frmBookingController.Designer.cs">
+      <DependentUpon>frmBookingController.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     <EmbeddedResource Include="customForm\customMessageBox.resx">
       <DependentUpon>customMessageBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="customForm\frmBookingController.resx">
+      <DependentUpon>frmBookingController.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,9 +282,6 @@
       <Project>{f8b92fe4-79a8-420e-81e1-a00a890f144a}</Project>
       <Name>DTO</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\backgroundLogin.gif" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Bell.ico" />
@@ -384,6 +390,30 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Email.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Passport.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Password.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserName.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Recovery.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Syncfusion.PdfToImageConverter.WinForms.25.1.35\build\net462\Syncfusion.PdfToImageConverter.WinForms.targets" Condition="Exists('..\packages\Syncfusion.PdfToImageConverter.WinForms.25.1.35\build\net462\Syncfusion.PdfToImageConverter.WinForms.targets')" />

@@ -16,5 +16,12 @@ namespace GUI.UserControls
         {
             InitializeComponent();
         }
+
+        private void ucBooking_Load(object sender, EventArgs e)
+        {
+            lvwBooking.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+        }
+
+
     }
 }

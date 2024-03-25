@@ -8,19 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI.UserControls
+namespace GUI.customForm
 {
-    public partial class ucDashboard : UserControl
+    public partial class frmBookingController : Form
     {
-        public ucDashboard()
+        public frmBookingController()
         {
             InitializeComponent();
-            this.DoubleBuffered = true;
-        }
-
-        private void ucDashboard_Load(object sender, EventArgs e)
-        {
-           
         }
     }
 }
