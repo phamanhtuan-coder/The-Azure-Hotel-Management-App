@@ -163,6 +163,12 @@
     <Compile Include="UserControls\ucBill.Designer.cs">
       <DependentUpon>ucBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ucRoom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucRoom.Designer.cs">
+      <DependentUpon>ucRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ucBooking.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -186,12 +192,6 @@
     </Compile>
     <Compile Include="UserControls\ucFrontDesk.Designer.cs">
       <DependentUpon>ucFrontDesk.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\ucRoom.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\ucRoom.Designer.cs">
-      <DependentUpon>ucRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ucService.cs">
       <SubType>UserControl</SubType>
@@ -235,6 +235,9 @@
     <EmbeddedResource Include="UserControls\ucBill.resx">
       <DependentUpon>ucBill.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucRoom.resx">
+      <DependentUpon>ucRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucBooking.resx">
       <DependentUpon>ucBooking.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,9 +249,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucFrontDesk.resx">
       <DependentUpon>ucFrontDesk.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ucRoom.resx">
-      <DependentUpon>ucRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucService.resx">
       <DependentUpon>ucService.cs</DependentUpon>
