@@ -31,10 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucRoom));
             this.lblRoom = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAddRoom = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnEditRoom = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnDeleteRoom = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnRecoverRoom = new Syncfusion.WinForms.Controls.SfButton();
             this.txtSearchRoom = new System.Windows.Forms.TextBox();
             this.btnTraCuuRoom = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateRoom = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -58,15 +54,19 @@
             this.cboSortRoomType = new Syncfusion.WinForms.ListView.SfComboBox();
             this.cboSortRoomID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblQuickControl = new System.Windows.Forms.Label();
-            this.btnCheckIn = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnCheckOut = new Syncfusion.WinForms.Controls.SfButton();
             this.lblSortSucChua = new System.Windows.Forms.Label();
             this.lblSortMaPHG = new System.Windows.Forms.Label();
-            this.lblStateBooking = new System.Windows.Forms.Label();
+            this.lblStateRoom = new System.Windows.Forms.Label();
             this.lblStatusRoom = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.btnCheckIn = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnCheckOut = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnAddRoom = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnEditRoom = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnDeleteRoom = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnRecoverRoom = new Syncfusion.WinForms.Controls.SfButton();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -117,86 +117,6 @@
             this.tlpController.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpController.Size = new System.Drawing.Size(394, 94);
             this.tlpController.TabIndex = 6;
-            // 
-            // btnAddRoom
-            // 
-            this.btnAddRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddRoom.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddRoom.ForeColor = System.Drawing.Color.White;
-            this.btnAddRoom.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnAddRoom.Location = new System.Drawing.Point(3, 3);
-            this.btnAddRoom.Name = "btnAddRoom";
-            this.btnAddRoom.Size = new System.Drawing.Size(191, 41);
-            this.btnAddRoom.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddRoom.Style.ForeColor = System.Drawing.Color.White;
-            this.btnAddRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnAddRoom.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddRoom.TabIndex = 1;
-            this.btnAddRoom.Text = "Thêm";
-            this.btnAddRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddRoom.UseVisualStyleBackColor = false;
-            // 
-            // btnEditRoom
-            // 
-            this.btnEditRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEditRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditRoom.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditRoom.ForeColor = System.Drawing.Color.White;
-            this.btnEditRoom.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnEditRoom.Location = new System.Drawing.Point(3, 50);
-            this.btnEditRoom.Name = "btnEditRoom";
-            this.btnEditRoom.Size = new System.Drawing.Size(191, 41);
-            this.btnEditRoom.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditRoom.Style.ForeColor = System.Drawing.Color.White;
-            this.btnEditRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnEditRoom.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditRoom.TabIndex = 3;
-            this.btnEditRoom.Text = "Sửa";
-            this.btnEditRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditRoom.UseVisualStyleBackColor = false;
-            // 
-            // btnDeleteRoom
-            // 
-            this.btnDeleteRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleteRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteRoom.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteRoom.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteRoom.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnDeleteRoom.Location = new System.Drawing.Point(200, 3);
-            this.btnDeleteRoom.Name = "btnDeleteRoom";
-            this.btnDeleteRoom.Size = new System.Drawing.Size(191, 41);
-            this.btnDeleteRoom.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteRoom.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.btnDeleteRoom.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteRoom.TabIndex = 4;
-            this.btnDeleteRoom.Text = "Xóa";
-            this.btnDeleteRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDeleteRoom.UseVisualStyleBackColor = false;
-            // 
-            // btnRecoverRoom
-            // 
-            this.btnRecoverRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRecoverRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecoverRoom.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecoverRoom.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverRoom.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnRecoverRoom.Location = new System.Drawing.Point(200, 50);
-            this.btnRecoverRoom.Name = "btnRecoverRoom";
-            this.btnRecoverRoom.Size = new System.Drawing.Size(191, 41);
-            this.btnRecoverRoom.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverRoom.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            this.btnRecoverRoom.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRecoverRoom.TabIndex = 5;
-            this.btnRecoverRoom.Text = "Khôi phục";
-            this.btnRecoverRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRecoverRoom.UseVisualStyleBackColor = false;
             // 
             // txtSearchRoom
             // 
@@ -270,7 +190,7 @@
             this.spcQuery.Panel2.Controls.Add(this.btnCheckOut);
             this.spcQuery.Panel2.Controls.Add(this.lblSortSucChua);
             this.spcQuery.Panel2.Controls.Add(this.lblSortMaPHG);
-            this.spcQuery.Panel2.Controls.Add(this.lblStateBooking);
+            this.spcQuery.Panel2.Controls.Add(this.lblStateRoom);
             this.spcQuery.Panel2.Controls.Add(this.lblStatusRoom);
             this.spcQuery.Panel2.Controls.Add(this.txtSearchRoom);
             this.spcQuery.Panel2.Controls.Add(this.btnTraCuuRoom);
@@ -523,6 +443,79 @@
             this.lblQuickControl.Text = "Cập nhật trạng thái nhanh";
             this.lblQuickControl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // lblSortSucChua
+            // 
+            this.lblSortSucChua.AutoSize = true;
+            this.lblSortSucChua.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortSucChua.Location = new System.Drawing.Point(4, 188);
+            this.lblSortSucChua.Name = "lblSortSucChua";
+            this.lblSortSucChua.Size = new System.Drawing.Size(163, 26);
+            this.lblSortSucChua.TabIndex = 16;
+            this.lblSortSucChua.Text = "Sức chứa tối đa";
+            this.lblSortSucChua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblSortMaPHG
+            // 
+            this.lblSortMaPHG.AutoSize = true;
+            this.lblSortMaPHG.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortMaPHG.Location = new System.Drawing.Point(4, 355);
+            this.lblSortMaPHG.Name = "lblSortMaPHG";
+            this.lblSortMaPHG.Size = new System.Drawing.Size(192, 26);
+            this.lblSortMaPHG.TabIndex = 14;
+            this.lblSortMaPHG.Text = "Sort theo Room ID";
+            this.lblSortMaPHG.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblStateRoom
+            // 
+            this.lblStateRoom.AutoSize = true;
+            this.lblStateRoom.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStateRoom.Location = new System.Drawing.Point(4, 412);
+            this.lblStateRoom.Name = "lblStateRoom";
+            this.lblStateRoom.Size = new System.Drawing.Size(186, 26);
+            this.lblStateRoom.TabIndex = 9;
+            this.lblStateRoom.Text = "Trạng thái dữ liệu";
+            this.lblStateRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblStatusRoom
+            // 
+            this.lblStatusRoom.AutoSize = true;
+            this.lblStatusRoom.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatusRoom.Location = new System.Drawing.Point(4, 82);
+            this.lblStatusRoom.Name = "lblStatusRoom";
+            this.lblStatusRoom.Size = new System.Drawing.Size(183, 26);
+            this.lblStatusRoom.TabIndex = 8;
+            this.lblStatusRoom.Text = "Tình trạng phòng";
+            this.lblStatusRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panUcHeader
+            // 
+            this.panUcHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(224)))), ((int)(((byte)(155)))));
+            this.panUcHeader.Controls.Add(this.spcHeader);
+            this.panUcHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panUcHeader.Location = new System.Drawing.Point(0, 0);
+            this.panUcHeader.Name = "panUcHeader";
+            this.panUcHeader.Size = new System.Drawing.Size(1370, 94);
+            this.panUcHeader.TabIndex = 37;
+            // 
+            // spcHeader
+            // 
+            this.spcHeader.BackColor = System.Drawing.Color.Lavender;
+            this.spcHeader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.spcHeader.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.spcHeader.Location = new System.Drawing.Point(0, 0);
+            this.spcHeader.Name = "spcHeader";
+            // 
+            // spcHeader.Panel1
+            // 
+            this.spcHeader.Panel1.Controls.Add(this.lblRoom);
+            // 
+            // spcHeader.Panel2
+            // 
+            this.spcHeader.Panel2.Controls.Add(this.tlpController);
+            this.spcHeader.Size = new System.Drawing.Size(1370, 94);
+            this.spcHeader.SplitterDistance = 972;
+            this.spcHeader.TabIndex = 0;
+            // 
             // btnCheckIn
             // 
             this.btnCheckIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
@@ -583,78 +576,85 @@
             this.btnCheckOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCheckOut.UseVisualStyleBackColor = false;
             // 
-            // lblSortSucChua
+            // btnAddRoom
             // 
-            this.lblSortSucChua.AutoSize = true;
-            this.lblSortSucChua.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortSucChua.Location = new System.Drawing.Point(4, 188);
-            this.lblSortSucChua.Name = "lblSortSucChua";
-            this.lblSortSucChua.Size = new System.Drawing.Size(163, 26);
-            this.lblSortSucChua.TabIndex = 16;
-            this.lblSortSucChua.Text = "Sức chứa tối đa";
-            this.lblSortSucChua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddRoom.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddRoom.ForeColor = System.Drawing.Color.White;
+            this.btnAddRoom.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnAddRoom.Location = new System.Drawing.Point(3, 3);
+            this.btnAddRoom.Name = "btnAddRoom";
+            this.btnAddRoom.Size = new System.Drawing.Size(191, 41);
+            this.btnAddRoom.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddRoom.Style.ForeColor = System.Drawing.Color.White;
+            this.btnAddRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnAddRoom.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnAddRoom.TabIndex = 1;
+            this.btnAddRoom.Text = "Thêm";
+            this.btnAddRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddRoom.UseVisualStyleBackColor = false;
             // 
-            // lblSortMaPHG
+            // btnEditRoom
             // 
-            this.lblSortMaPHG.AutoSize = true;
-            this.lblSortMaPHG.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortMaPHG.Location = new System.Drawing.Point(4, 355);
-            this.lblSortMaPHG.Name = "lblSortMaPHG";
-            this.lblSortMaPHG.Size = new System.Drawing.Size(192, 26);
-            this.lblSortMaPHG.TabIndex = 14;
-            this.lblSortMaPHG.Text = "Sort theo Room ID";
-            this.lblSortMaPHG.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEditRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditRoom.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditRoom.ForeColor = System.Drawing.Color.White;
+            this.btnEditRoom.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnEditRoom.Location = new System.Drawing.Point(3, 50);
+            this.btnEditRoom.Name = "btnEditRoom";
+            this.btnEditRoom.Size = new System.Drawing.Size(191, 41);
+            this.btnEditRoom.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditRoom.Style.ForeColor = System.Drawing.Color.White;
+            this.btnEditRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnEditRoom.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnEditRoom.TabIndex = 3;
+            this.btnEditRoom.Text = "Sửa";
+            this.btnEditRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditRoom.UseVisualStyleBackColor = false;
             // 
-            // lblStateBooking
+            // btnDeleteRoom
             // 
-            this.lblStateBooking.AutoSize = true;
-            this.lblStateBooking.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStateBooking.Location = new System.Drawing.Point(4, 412);
-            this.lblStateBooking.Name = "lblStateBooking";
-            this.lblStateBooking.Size = new System.Drawing.Size(186, 26);
-            this.lblStateBooking.TabIndex = 9;
-            this.lblStateBooking.Text = "Trạng thái dữ liệu";
-            this.lblStateBooking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeleteRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDeleteRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteRoom.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteRoom.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteRoom.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnDeleteRoom.Location = new System.Drawing.Point(200, 3);
+            this.btnDeleteRoom.Name = "btnDeleteRoom";
+            this.btnDeleteRoom.Size = new System.Drawing.Size(191, 41);
+            this.btnDeleteRoom.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteRoom.Style.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnDeleteRoom.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnDeleteRoom.TabIndex = 4;
+            this.btnDeleteRoom.Text = "Xóa";
+            this.btnDeleteRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeleteRoom.UseVisualStyleBackColor = false;
             // 
-            // lblStatusRoom
+            // btnRecoverRoom
             // 
-            this.lblStatusRoom.AutoSize = true;
-            this.lblStatusRoom.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatusRoom.Location = new System.Drawing.Point(4, 82);
-            this.lblStatusRoom.Name = "lblStatusRoom";
-            this.lblStatusRoom.Size = new System.Drawing.Size(183, 26);
-            this.lblStatusRoom.TabIndex = 8;
-            this.lblStatusRoom.Text = "Tình trạng phòng";
-            this.lblStatusRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panUcHeader
-            // 
-            this.panUcHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(224)))), ((int)(((byte)(155)))));
-            this.panUcHeader.Controls.Add(this.spcHeader);
-            this.panUcHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panUcHeader.Location = new System.Drawing.Point(0, 0);
-            this.panUcHeader.Name = "panUcHeader";
-            this.panUcHeader.Size = new System.Drawing.Size(1370, 94);
-            this.panUcHeader.TabIndex = 37;
-            // 
-            // spcHeader
-            // 
-            this.spcHeader.BackColor = System.Drawing.Color.Lavender;
-            this.spcHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.spcHeader.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.spcHeader.Location = new System.Drawing.Point(0, 0);
-            this.spcHeader.Name = "spcHeader";
-            // 
-            // spcHeader.Panel1
-            // 
-            this.spcHeader.Panel1.Controls.Add(this.lblRoom);
-            // 
-            // spcHeader.Panel2
-            // 
-            this.spcHeader.Panel2.Controls.Add(this.tlpController);
-            this.spcHeader.Size = new System.Drawing.Size(1370, 94);
-            this.spcHeader.SplitterDistance = 972;
-            this.spcHeader.TabIndex = 0;
+            this.btnRecoverRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRecoverRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecoverRoom.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecoverRoom.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverRoom.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnRecoverRoom.Location = new System.Drawing.Point(200, 50);
+            this.btnRecoverRoom.Name = "btnRecoverRoom";
+            this.btnRecoverRoom.Size = new System.Drawing.Size(191, 41);
+            this.btnRecoverRoom.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverRoom.Style.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnRecoverRoom.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnRecoverRoom.TabIndex = 5;
+            this.btnRecoverRoom.Text = "Khôi phục";
+            this.btnRecoverRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRecoverRoom.UseVisualStyleBackColor = false;
             // 
             // ucRoom
             // 
@@ -702,7 +702,7 @@
         private System.Windows.Forms.SplitContainer spcQuery;
         private System.Windows.Forms.TableLayoutPanel tlpController;
         private System.Windows.Forms.Label lblStatusRoom;
-        private System.Windows.Forms.Label lblStateBooking;
+        private System.Windows.Forms.Label lblStateRoom;
         private System.Windows.Forms.ListView lvwRoom;
         private System.Windows.Forms.ColumnHeader colMaPhong;
         private System.Windows.Forms.ColumnHeader colLoaiPhong;

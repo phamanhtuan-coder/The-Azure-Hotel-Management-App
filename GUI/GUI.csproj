@@ -163,6 +163,30 @@
     <Compile Include="UserControls\ucBill.Designer.cs">
       <DependentUpon>ucBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ucAccountType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucAccountType.Designer.cs">
+      <DependentUpon>ucAccountType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucService.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucService.Designer.cs">
+      <DependentUpon>ucService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucServiceType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucServiceType.Designer.cs">
+      <DependentUpon>ucServiceType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucRoomType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucRoomType.Designer.cs">
+      <DependentUpon>ucRoomType.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ucRoom.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -186,24 +210,6 @@
     </Compile>
     <Compile Include="UserControls\ucDashboard.Designer.cs">
       <DependentUpon>ucDashboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\ucFrontDesk.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\ucFrontDesk.Designer.cs">
-      <DependentUpon>ucFrontDesk.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\ucService.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\ucService.Designer.cs">
-      <DependentUpon>ucService.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\ucSetup.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\ucSetup.Designer.cs">
-      <DependentUpon>ucSetup.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ucStaff.cs">
       <SubType>UserControl</SubType>
@@ -235,6 +241,18 @@
     <EmbeddedResource Include="UserControls\ucBill.resx">
       <DependentUpon>ucBill.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucAccountType.resx">
+      <DependentUpon>ucAccountType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucService.resx">
+      <DependentUpon>ucService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucServiceType.resx">
+      <DependentUpon>ucServiceType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucRoomType.resx">
+      <DependentUpon>ucRoomType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucRoom.resx">
       <DependentUpon>ucRoom.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,15 +264,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucDashboard.resx">
       <DependentUpon>ucDashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ucFrontDesk.resx">
-      <DependentUpon>ucFrontDesk.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ucService.resx">
-      <DependentUpon>ucService.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ucSetup.resx">
-      <DependentUpon>ucSetup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucStaff.resx">
       <DependentUpon>ucStaff.cs</DependentUpon>

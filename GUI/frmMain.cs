@@ -99,7 +99,7 @@ namespace GUI
                 currentButton.TextImageRelation = TextImageRelation.TextBeforeImage;
                 currentButton.ImageAlign = ContentAlignment.MiddleRight;
                 currentButton.ImageMargin = new Padding(3, 3, 15, 3);
-                currentButton.TextAlign = ContentAlignment.BottomRight;
+                currentButton.TextAlign = ContentAlignment.BottomLeft;
             }
         }
 
@@ -228,10 +228,10 @@ namespace GUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnSetup_Click(object sender, EventArgs e)
+        private void btnAccountType_Click(object sender, EventArgs e)
         {
             menuActivated(sender);
-            ucSetup frm = new ucSetup();
+            ucAccountType frm = new ucAccountType();
             openForm(frm);
         }
 
@@ -278,13 +278,13 @@ namespace GUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnFrontDesk_Click(object sender, EventArgs e)
+    
+        private void btnRoomType_Click(object sender, EventArgs e)
         {
             menuActivated(sender);
-            ucFrontDesk frm = new ucFrontDesk();
+            ucRoomType frm = new ucRoomType();
             openForm(frm);
         }
-
 
         /// <summary>
         /// Hàm xử lý sự kiện khi nút Customer được bấm
@@ -446,7 +446,7 @@ namespace GUI
             }
         }
 
-       
+        
     }
 
     /// <summary>
