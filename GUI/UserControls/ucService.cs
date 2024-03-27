@@ -91,18 +91,28 @@ namespace GUI.UserControls
             }
 
 
-
-
-            if (lvwService != null && lvwService.Columns.Count > 6) // Ensure there are enough columns
+            if (lvwService != null)
             {
-                // Resize columns based on column content
-                lvwService.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+                // Resize columns based on column header or content
+                for (int i = 0; i < lvwService.Columns.Count; i++)
+                {
+                    int headerWidth = TextRenderer.MeasureText(lvwService.Columns[i].Text, lvwService.Font).Width;
+                    int contentWidth = 0;
 
-                // Set a minimum width for the column at index 6 ("SoLuongKH")
-                int minWidth = TextRenderer.MeasureText(lvwService.Columns[6].Text, lvwService.Font).Width;
-                lvwService.Columns[6].Width = Math.Max(minWidth, lvwService.Columns[6].Width);
+                    // Calculate the maximum width of content in the column
+                    foreach (ListViewItem item in lvwService.Items)
+                    {
+                        int itemWidth = TextRenderer.MeasureText(item.SubItems[i].Text, lvwService.Font).Width;
+                        contentWidth = Math.Max(contentWidth, itemWidth);
+                    }
+
+                    // Determine the width needed for the column
+                    int columnWidth = Math.Max(headerWidth, contentWidth);
+
+                    // Set the width of the column
+                    lvwService.Columns[i].Width = columnWidth;
+                }
             }
-
 
 
         }
