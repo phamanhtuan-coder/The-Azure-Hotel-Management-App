@@ -24,8 +24,8 @@ namespace GUI.UserControls
 
         private void ucFrontDesk_Load(object sender, EventArgs e)
         {
-            
 
+        
 
         }
     }
