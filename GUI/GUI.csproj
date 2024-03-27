@@ -169,6 +169,18 @@
     <Compile Include="UserControls\ucAccountType.Designer.cs">
       <DependentUpon>ucAccountType.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ucRoomStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucRoomStatus.Designer.cs">
+      <DependentUpon>ucRoomStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucTax.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucTax.Designer.cs">
+      <DependentUpon>ucTax.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ucService.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -243,6 +255,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucAccountType.resx">
       <DependentUpon>ucAccountType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucRoomStatus.resx">
+      <DependentUpon>ucRoomStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucTax.resx">
+      <DependentUpon>ucTax.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucService.resx">
       <DependentUpon>ucService.cs</DependentUpon>
