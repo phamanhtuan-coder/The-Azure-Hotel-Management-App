@@ -440,10 +440,29 @@ namespace GUI
             openForm(frm);
         }
 
+        /// <summary>
+        /// Hàm xử lý sự kiện khi nút khuyen mai  được bấm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDiscount_Click(object sender, EventArgs e)
+        {
+            menuActivated(sender);
+            ucDiscount frm = new ucDiscount();
+            openForm(frm);
+        }
 
-
-
-
+        /// <summary>
+        /// Hàm xử lý sự kiện khi nút chi tiet hoa don được bấm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnBillDetails_Click(object sender, EventArgs e)
+        {
+            menuActivated(sender);
+           ucBillDetails frm = new ucBillDetails();
+            openForm(frm);
+        }
         /// <summary>
         /// Di chuyển form tự do nếu bấm giữ chuột trái vào header panel
         /// </summary>
