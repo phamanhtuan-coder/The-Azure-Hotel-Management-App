@@ -43,11 +43,14 @@
             this.lvwService = new System.Windows.Forms.ListView();
             this.colMaDichVu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colMaDatPhong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colTenDichVu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colMaPHG = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colNgayDat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colSoLuong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colDonGia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colThanhTien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cboSortThanhTien = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.lblSortThanhTien = new System.Windows.Forms.Label();
             this.cboSortServiceType = new Syncfusion.WinForms.ListView.SfComboBox();
             this.cboSortServiceD = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortlServiceType = new System.Windows.Forms.Label();
@@ -58,15 +61,13 @@
             this.cboSortBookingID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.lblSortThanhTien = new System.Windows.Forms.Label();
-            this.cboSortThanhTien = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.colTenDichVu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateService)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
             this.spcQuery.Panel1.SuspendLayout();
             this.spcQuery.Panel2.SuspendLayout();
             this.spcQuery.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboSortThanhTien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortServiceType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortServiceD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortBookingID)).BeginInit();
@@ -75,7 +76,6 @@
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cboSortThanhTien)).BeginInit();
             this.SuspendLayout();
             // 
             // lblService
@@ -310,6 +310,10 @@
             this.colMaDatPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.colMaDatPhong.Width = 86;
             // 
+            // colTenDichVu
+            // 
+            this.colTenDichVu.Text = "Tên dịch vụ";
+            // 
             // colMaPHG
             // 
             this.colMaPHG.Text = "PHG";
@@ -339,6 +343,34 @@
             this.colThanhTien.Text = "Thành Tiền";
             this.colThanhTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.colThanhTien.Width = 138;
+            // 
+            // cboSortThanhTien
+            // 
+            this.cboSortThanhTien.DelimiterChar = "";
+            this.cboSortThanhTien.DisplayMember = "";
+            this.cboSortThanhTien.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboSortThanhTien.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+            this.cboSortThanhTien.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortThanhTien.Location = new System.Drawing.Point(225, 299);
+            this.cboSortThanhTien.Name = "cboSortThanhTien";
+            this.cboSortThanhTien.Size = new System.Drawing.Size(156, 33);
+            this.cboSortThanhTien.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.cboSortThanhTien.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortThanhTien.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortThanhTien.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboSortThanhTien.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortThanhTien.TabIndex = 26;
+            // 
+            // lblSortThanhTien
+            // 
+            this.lblSortThanhTien.AutoSize = true;
+            this.lblSortThanhTien.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortThanhTien.Location = new System.Drawing.Point(4, 306);
+            this.lblSortThanhTien.Name = "lblSortThanhTien";
+            this.lblSortThanhTien.Size = new System.Drawing.Size(210, 26);
+            this.lblSortThanhTien.TabIndex = 25;
+            this.lblSortThanhTien.Text = "Sort theo thành tiền";
+            this.lblSortThanhTien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cboSortServiceType
             // 
@@ -380,9 +412,9 @@
             this.lblSortlServiceType.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortlServiceType.Location = new System.Drawing.Point(4, 195);
             this.lblSortlServiceType.Name = "lblSortlServiceType";
-            this.lblSortlServiceType.Size = new System.Drawing.Size(220, 26);
+            this.lblSortlServiceType.Size = new System.Drawing.Size(214, 26);
             this.lblSortlServiceType.TabIndex = 16;
-            this.lblSortlServiceType.Text = "Sort theo loại dịch vụ";
+            this.lblSortlServiceType.Text = "Lọc theo loại dịch vụ";
             this.lblSortlServiceType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblSortServiceID
@@ -475,38 +507,6 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // lblSortThanhTien
-            // 
-            this.lblSortThanhTien.AutoSize = true;
-            this.lblSortThanhTien.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortThanhTien.Location = new System.Drawing.Point(4, 306);
-            this.lblSortThanhTien.Name = "lblSortThanhTien";
-            this.lblSortThanhTien.Size = new System.Drawing.Size(210, 26);
-            this.lblSortThanhTien.TabIndex = 25;
-            this.lblSortThanhTien.Text = "Sort theo thành tiền";
-            this.lblSortThanhTien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cboSortThanhTien
-            // 
-            this.cboSortThanhTien.DelimiterChar = "";
-            this.cboSortThanhTien.DisplayMember = "";
-            this.cboSortThanhTien.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboSortThanhTien.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortThanhTien.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortThanhTien.Location = new System.Drawing.Point(225, 299);
-            this.cboSortThanhTien.Name = "cboSortThanhTien";
-            this.cboSortThanhTien.Size = new System.Drawing.Size(156, 33);
-            this.cboSortThanhTien.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortThanhTien.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortThanhTien.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortThanhTien.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortThanhTien.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortThanhTien.TabIndex = 26;
-            // 
-            // colTenDichVu
-            // 
-            this.colTenDichVu.Text = "Tên dịch vụ";
-            // 
             // ucService
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -524,6 +524,7 @@
             this.spcQuery.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).EndInit();
             this.spcQuery.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cboSortThanhTien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortServiceType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortServiceD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortBookingID)).EndInit();
@@ -532,7 +533,6 @@
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cboSortThanhTien)).EndInit();
             this.ResumeLayout(false);
 
         }

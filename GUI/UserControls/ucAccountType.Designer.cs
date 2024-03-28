@@ -322,9 +322,9 @@
             this.lblSortTheoChucVu.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortTheoChucVu.Location = new System.Drawing.Point(3, 140);
             this.lblSortTheoChucVu.Name = "lblSortTheoChucVu";
-            this.lblSortTheoChucVu.Size = new System.Drawing.Size(184, 26);
+            this.lblSortTheoChucVu.Size = new System.Drawing.Size(178, 26);
             this.lblSortTheoChucVu.TabIndex = 30;
-            this.lblSortTheoChucVu.Text = "Sort theo chức vụ";
+            this.lblSortTheoChucVu.Text = "Lọc theo chức vụ";
             this.lblSortTheoChucVu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cboSortAccountTypeID
@@ -378,9 +378,9 @@
             this.lblSortSoLuongAccount.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortSoLuongAccount.Location = new System.Drawing.Point(3, 195);
             this.lblSortSoLuongAccount.Name = "lblSortSoLuongAccount";
-            this.lblSortSoLuongAccount.Size = new System.Drawing.Size(191, 26);
+            this.lblSortSoLuongAccount.Size = new System.Drawing.Size(185, 26);
             this.lblSortSoLuongAccount.TabIndex = 14;
-            this.lblSortSoLuongAccount.Text = "Sort theo số lượng";
+            this.lblSortSoLuongAccount.Text = "Lọc theo số lượng";
             this.lblSortSoLuongAccount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblStateAccountType

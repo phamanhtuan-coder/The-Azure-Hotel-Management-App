@@ -163,6 +163,18 @@
     <Compile Include="UserControls\ucAccounting.Designer.cs">
       <DependentUpon>ucAccounting.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ucCustomerRanking.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucCustomerRanking.Designer.cs">
+      <DependentUpon>ucCustomerRanking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucCustomer.Designer.cs">
+      <DependentUpon>ucCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ucStaff.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -241,12 +253,6 @@
     <Compile Include="UserControls\ucBooking.Designer.cs">
       <DependentUpon>ucBooking.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\ucCustomer.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\ucCustomer.Designer.cs">
-      <DependentUpon>ucCustomer.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\ucDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -276,6 +282,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucAccounting.resx">
       <DependentUpon>ucAccounting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucCustomerRanking.resx">
+      <DependentUpon>ucCustomerRanking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucCustomer.resx">
+      <DependentUpon>ucCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucStaff.resx">
       <DependentUpon>ucStaff.cs</DependentUpon>
@@ -315,9 +327,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucBooking.resx">
       <DependentUpon>ucBooking.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ucCustomer.resx">
-      <DependentUpon>ucCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucDashboard.resx">
       <DependentUpon>ucDashboard.cs</DependentUpon>

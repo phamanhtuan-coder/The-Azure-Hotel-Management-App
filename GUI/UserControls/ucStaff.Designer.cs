@@ -39,9 +39,18 @@
             this.btnTraCuuStaff = new Syncfusion.WinForms.Controls.SfButton();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.lvwStaff = new System.Windows.Forms.ListView();
+            this.colMaNhanVien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colMaAccount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colHoTen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colGioiTinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colNgSinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colCCCD = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colDiaChi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colSDT = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colMaNQL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cboNguoiQuanLy = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.lblSortNQL = new System.Windows.Forms.Label();
             this.cboGioiTinh = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortGioiTinh = new System.Windows.Forms.Label();
             this.cboPhongBan = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -56,20 +65,12 @@
             this.lblStateAccounts = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.colMaNhanVien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colNgSinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colCCCD = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colDiaChi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colSDT = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMaNQL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cboNguoiQuanLy = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.lblSortNQL = new System.Windows.Forms.Label();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
             this.spcQuery.Panel1.SuspendLayout();
             this.spcQuery.Panel2.SuspendLayout();
             this.spcQuery.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboNguoiQuanLy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboGioiTinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPhongBan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPhanQuyen)).BeginInit();
@@ -80,7 +81,6 @@
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cboNguoiQuanLy)).BeginInit();
             this.SuspendLayout();
             // 
             // lblStaff
@@ -279,6 +279,10 @@
             this.lvwStaff.UseCompatibleStateImageBehavior = false;
             this.lvwStaff.View = System.Windows.Forms.View.Details;
             // 
+            // colMaNhanVien
+            // 
+            this.colMaNhanVien.Text = "Mã Nhân Viên";
+            // 
             // colMaAccount
             // 
             this.colMaAccount.Text = "Mã tài khoản";
@@ -295,6 +299,58 @@
             this.colGioiTinh.Text = "Giới Tính";
             this.colGioiTinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.colGioiTinh.Width = 179;
+            // 
+            // colNgSinh
+            // 
+            this.colNgSinh.Text = "Ngày sinh";
+            // 
+            // colCCCD
+            // 
+            this.colCCCD.Text = "CCCD";
+            // 
+            // colDiaChi
+            // 
+            this.colDiaChi.Text = "Địa chỉ";
+            // 
+            // colEmail
+            // 
+            this.colEmail.Text = "Email";
+            // 
+            // colSDT
+            // 
+            this.colSDT.Text = "SDT";
+            // 
+            // colMaNQL
+            // 
+            this.colMaNQL.Text = "Quản lý";
+            // 
+            // cboNguoiQuanLy
+            // 
+            this.cboNguoiQuanLy.DelimiterChar = "";
+            this.cboNguoiQuanLy.DisplayMember = "";
+            this.cboNguoiQuanLy.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboNguoiQuanLy.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+            this.cboNguoiQuanLy.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboNguoiQuanLy.Location = new System.Drawing.Point(226, 365);
+            this.cboNguoiQuanLy.Name = "cboNguoiQuanLy";
+            this.cboNguoiQuanLy.Size = new System.Drawing.Size(156, 33);
+            this.cboNguoiQuanLy.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.cboNguoiQuanLy.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboNguoiQuanLy.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboNguoiQuanLy.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboNguoiQuanLy.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboNguoiQuanLy.TabIndex = 38;
+            // 
+            // lblSortNQL
+            // 
+            this.lblSortNQL.AutoSize = true;
+            this.lblSortNQL.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortNQL.Location = new System.Drawing.Point(3, 372);
+            this.lblSortNQL.Name = "lblSortNQL";
+            this.lblSortNQL.Size = new System.Drawing.Size(149, 26);
+            this.lblSortNQL.TabIndex = 37;
+            this.lblSortNQL.Text = "Người quản lý";
+            this.lblSortNQL.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cboGioiTinh
             // 
@@ -319,9 +375,9 @@
             this.lblSortGioiTinh.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortGioiTinh.Location = new System.Drawing.Point(3, 262);
             this.lblSortGioiTinh.Name = "lblSortGioiTinh";
-            this.lblSortGioiTinh.Size = new System.Drawing.Size(172, 26);
+            this.lblSortGioiTinh.Size = new System.Drawing.Size(183, 26);
             this.lblSortGioiTinh.TabIndex = 35;
-            this.lblSortGioiTinh.Text = "Sort theo Phòng";
+            this.lblSortGioiTinh.Text = "Lọc theo giới tính";
             this.lblSortGioiTinh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cboPhongBan
@@ -347,9 +403,9 @@
             this.lblSorttheoPhong.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSorttheoPhong.Location = new System.Drawing.Point(3, 204);
             this.lblSorttheoPhong.Name = "lblSorttheoPhong";
-            this.lblSorttheoPhong.Size = new System.Drawing.Size(172, 26);
+            this.lblSorttheoPhong.Size = new System.Drawing.Size(166, 26);
             this.lblSorttheoPhong.TabIndex = 33;
-            this.lblSorttheoPhong.Text = "Sort theo Phòng";
+            this.lblSorttheoPhong.Text = "Lọc theo Phòng";
             this.lblSorttheoPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // dtpNgaySinh
@@ -384,9 +440,9 @@
             this.lblSortMaPQ.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortMaPQ.Location = new System.Drawing.Point(3, 146);
             this.lblSortMaPQ.Name = "lblSortMaPQ";
-            this.lblSortMaPQ.Size = new System.Drawing.Size(225, 26);
+            this.lblSortMaPQ.Size = new System.Drawing.Size(163, 26);
             this.lblSortMaPQ.TabIndex = 30;
-            this.lblSortMaPQ.Text = "Sort theo phân quyền";
+            this.lblSortMaPQ.Text = "Lọc theo vai trò";
             this.lblSortMaPQ.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cboSortStaffID
@@ -485,62 +541,6 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // colMaNhanVien
-            // 
-            this.colMaNhanVien.Text = "Mã Nhân Viên";
-            // 
-            // colNgSinh
-            // 
-            this.colNgSinh.Text = "Ngày sinh";
-            // 
-            // colCCCD
-            // 
-            this.colCCCD.Text = "CCCD";
-            // 
-            // colDiaChi
-            // 
-            this.colDiaChi.Text = "Địa chỉ";
-            // 
-            // colEmail
-            // 
-            this.colEmail.Text = "Email";
-            // 
-            // colSDT
-            // 
-            this.colSDT.Text = "SDT";
-            // 
-            // colMaNQL
-            // 
-            this.colMaNQL.Text = "Quản lý";
-            // 
-            // cboNguoiQuanLy
-            // 
-            this.cboNguoiQuanLy.DelimiterChar = "";
-            this.cboNguoiQuanLy.DisplayMember = "";
-            this.cboNguoiQuanLy.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboNguoiQuanLy.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboNguoiQuanLy.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboNguoiQuanLy.Location = new System.Drawing.Point(226, 365);
-            this.cboNguoiQuanLy.Name = "cboNguoiQuanLy";
-            this.cboNguoiQuanLy.Size = new System.Drawing.Size(156, 33);
-            this.cboNguoiQuanLy.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboNguoiQuanLy.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboNguoiQuanLy.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboNguoiQuanLy.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboNguoiQuanLy.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboNguoiQuanLy.TabIndex = 38;
-            // 
-            // lblSortNQL
-            // 
-            this.lblSortNQL.AutoSize = true;
-            this.lblSortNQL.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortNQL.Location = new System.Drawing.Point(3, 372);
-            this.lblSortNQL.Name = "lblSortNQL";
-            this.lblSortNQL.Size = new System.Drawing.Size(149, 26);
-            this.lblSortNQL.TabIndex = 37;
-            this.lblSortNQL.Text = "Người quản lý";
-            this.lblSortNQL.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // ucStaff
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -557,6 +557,7 @@
             this.spcQuery.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).EndInit();
             this.spcQuery.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cboNguoiQuanLy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboGioiTinh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPhongBan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPhanQuyen)).EndInit();
@@ -567,7 +568,6 @@
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cboNguoiQuanLy)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -428,6 +428,20 @@ namespace GUI
             openForm(frm);
         }
 
+        /// <summary>
+        /// Hàm xử lý sự kiện khi nút hang Thanh vien được bấm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCustomerRanking_Click(object sender, EventArgs e)
+        {
+            menuActivated(sender);
+            ucCustomerRanking frm = new ucCustomerRanking();
+            openForm(frm);
+        }
+
+
+
 
 
         /// <summary>
@@ -604,7 +618,7 @@ namespace GUI
             collapseTimer.Start();
         }
 
-       
+      
     }
 
     /// <summary>

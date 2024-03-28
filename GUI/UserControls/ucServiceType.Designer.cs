@@ -371,7 +371,7 @@
             // 
             this.lblSortServiceTypeID.AutoSize = true;
             this.lblSortServiceTypeID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortServiceTypeID.Location = new System.Drawing.Point(1, 85);
+            this.lblSortServiceTypeID.Location = new System.Drawing.Point(3, 85);
             this.lblSortServiceTypeID.Name = "lblSortServiceTypeID";
             this.lblSortServiceTypeID.Size = new System.Drawing.Size(208, 26);
             this.lblSortServiceTypeID.TabIndex = 28;

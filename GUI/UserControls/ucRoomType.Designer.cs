@@ -339,9 +339,9 @@
             this.lblSortSoLuongRoom.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortSoLuongRoom.Location = new System.Drawing.Point(2, 143);
             this.lblSortSoLuongRoom.Name = "lblSortSoLuongRoom";
-            this.lblSortSoLuongRoom.Size = new System.Drawing.Size(191, 26);
+            this.lblSortSoLuongRoom.Size = new System.Drawing.Size(185, 26);
             this.lblSortSoLuongRoom.TabIndex = 14;
-            this.lblSortSoLuongRoom.Text = "Sort theo số lượng";
+            this.lblSortSoLuongRoom.Text = "Lọc theo số lượng";
             this.lblSortSoLuongRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblStateRoomType

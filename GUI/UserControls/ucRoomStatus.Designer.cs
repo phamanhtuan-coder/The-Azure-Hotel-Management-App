@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucRoomStatus));
             this.lblRoomStatus = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAddRoomStatus = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnEditRoomStatus = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnDeleteRoomStatus = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnRecoverRoomStatus = new Syncfusion.WinForms.Controls.SfButton();
             this.txtSearchRoomStatus = new System.Windows.Forms.TextBox();
             this.btnTraCuuRoomStatus = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateRoomStatus = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -47,10 +51,6 @@
             this.lblStateRoomStatus = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.btnAddRoomStatus = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnEditRoomStatus = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnDeleteRoomStatus = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnRecoverRoomStatus = new Syncfusion.WinForms.Controls.SfButton();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRoomStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -96,6 +96,86 @@
             this.tlpController.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpController.Size = new System.Drawing.Size(394, 94);
             this.tlpController.TabIndex = 6;
+            // 
+            // btnAddRoomStatus
+            // 
+            this.btnAddRoomStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddRoomStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddRoomStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddRoomStatus.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddRoomStatus.ForeColor = System.Drawing.Color.White;
+            this.btnAddRoomStatus.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnAddRoomStatus.Location = new System.Drawing.Point(3, 3);
+            this.btnAddRoomStatus.Name = "btnAddRoomStatus";
+            this.btnAddRoomStatus.Size = new System.Drawing.Size(191, 41);
+            this.btnAddRoomStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddRoomStatus.Style.ForeColor = System.Drawing.Color.White;
+            this.btnAddRoomStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnAddRoomStatus.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnAddRoomStatus.TabIndex = 1;
+            this.btnAddRoomStatus.Text = "Thêm";
+            this.btnAddRoomStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddRoomStatus.UseVisualStyleBackColor = false;
+            // 
+            // btnEditRoomStatus
+            // 
+            this.btnEditRoomStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditRoomStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEditRoomStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditRoomStatus.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditRoomStatus.ForeColor = System.Drawing.Color.White;
+            this.btnEditRoomStatus.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnEditRoomStatus.Location = new System.Drawing.Point(3, 50);
+            this.btnEditRoomStatus.Name = "btnEditRoomStatus";
+            this.btnEditRoomStatus.Size = new System.Drawing.Size(191, 41);
+            this.btnEditRoomStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditRoomStatus.Style.ForeColor = System.Drawing.Color.White;
+            this.btnEditRoomStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnEditRoomStatus.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnEditRoomStatus.TabIndex = 3;
+            this.btnEditRoomStatus.Text = "Sửa";
+            this.btnEditRoomStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditRoomStatus.UseVisualStyleBackColor = false;
+            // 
+            // btnDeleteRoomStatus
+            // 
+            this.btnDeleteRoomStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteRoomStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDeleteRoomStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteRoomStatus.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteRoomStatus.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteRoomStatus.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnDeleteRoomStatus.Location = new System.Drawing.Point(200, 3);
+            this.btnDeleteRoomStatus.Name = "btnDeleteRoomStatus";
+            this.btnDeleteRoomStatus.Size = new System.Drawing.Size(191, 41);
+            this.btnDeleteRoomStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteRoomStatus.Style.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteRoomStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnDeleteRoomStatus.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnDeleteRoomStatus.TabIndex = 4;
+            this.btnDeleteRoomStatus.Text = "Xóa";
+            this.btnDeleteRoomStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeleteRoomStatus.UseVisualStyleBackColor = false;
+            // 
+            // btnRecoverRoomStatus
+            // 
+            this.btnRecoverRoomStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverRoomStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRecoverRoomStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecoverRoomStatus.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecoverRoomStatus.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverRoomStatus.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnRecoverRoomStatus.Location = new System.Drawing.Point(200, 50);
+            this.btnRecoverRoomStatus.Name = "btnRecoverRoomStatus";
+            this.btnRecoverRoomStatus.Size = new System.Drawing.Size(191, 41);
+            this.btnRecoverRoomStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverRoomStatus.Style.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverRoomStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnRecoverRoomStatus.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnRecoverRoomStatus.TabIndex = 5;
+            this.btnRecoverRoomStatus.Text = "Khôi phục";
+            this.btnRecoverRoomStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRecoverRoomStatus.UseVisualStyleBackColor = false;
             // 
             // txtSearchRoomStatus
             // 
@@ -259,9 +339,9 @@
             this.lblSortSoLuongRoom.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortSoLuongRoom.Location = new System.Drawing.Point(2, 143);
             this.lblSortSoLuongRoom.Name = "lblSortSoLuongRoom";
-            this.lblSortSoLuongRoom.Size = new System.Drawing.Size(191, 26);
+            this.lblSortSoLuongRoom.Size = new System.Drawing.Size(185, 26);
             this.lblSortSoLuongRoom.TabIndex = 14;
-            this.lblSortSoLuongRoom.Text = "Sort theo số lượng";
+            this.lblSortSoLuongRoom.Text = "Lọc theo số lượng";
             this.lblSortSoLuongRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblStateRoomStatus
@@ -303,86 +383,6 @@
             this.spcHeader.Size = new System.Drawing.Size(1370, 94);
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
-            // 
-            // btnAddRoomStatus
-            // 
-            this.btnAddRoomStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddRoomStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddRoomStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddRoomStatus.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddRoomStatus.ForeColor = System.Drawing.Color.White;
-            this.btnAddRoomStatus.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnAddRoomStatus.Location = new System.Drawing.Point(3, 3);
-            this.btnAddRoomStatus.Name = "btnAddRoomStatus";
-            this.btnAddRoomStatus.Size = new System.Drawing.Size(191, 41);
-            this.btnAddRoomStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddRoomStatus.Style.ForeColor = System.Drawing.Color.White;
-            this.btnAddRoomStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnAddRoomStatus.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddRoomStatus.TabIndex = 1;
-            this.btnAddRoomStatus.Text = "Thêm";
-            this.btnAddRoomStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddRoomStatus.UseVisualStyleBackColor = false;
-            // 
-            // btnEditRoomStatus
-            // 
-            this.btnEditRoomStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditRoomStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEditRoomStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditRoomStatus.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditRoomStatus.ForeColor = System.Drawing.Color.White;
-            this.btnEditRoomStatus.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnEditRoomStatus.Location = new System.Drawing.Point(3, 50);
-            this.btnEditRoomStatus.Name = "btnEditRoomStatus";
-            this.btnEditRoomStatus.Size = new System.Drawing.Size(191, 41);
-            this.btnEditRoomStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditRoomStatus.Style.ForeColor = System.Drawing.Color.White;
-            this.btnEditRoomStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnEditRoomStatus.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditRoomStatus.TabIndex = 3;
-            this.btnEditRoomStatus.Text = "Sửa";
-            this.btnEditRoomStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditRoomStatus.UseVisualStyleBackColor = false;
-            // 
-            // btnDeleteRoomStatus
-            // 
-            this.btnDeleteRoomStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteRoomStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleteRoomStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteRoomStatus.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteRoomStatus.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteRoomStatus.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnDeleteRoomStatus.Location = new System.Drawing.Point(200, 3);
-            this.btnDeleteRoomStatus.Name = "btnDeleteRoomStatus";
-            this.btnDeleteRoomStatus.Size = new System.Drawing.Size(191, 41);
-            this.btnDeleteRoomStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteRoomStatus.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteRoomStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.btnDeleteRoomStatus.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteRoomStatus.TabIndex = 4;
-            this.btnDeleteRoomStatus.Text = "Xóa";
-            this.btnDeleteRoomStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDeleteRoomStatus.UseVisualStyleBackColor = false;
-            // 
-            // btnRecoverRoomStatus
-            // 
-            this.btnRecoverRoomStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverRoomStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRecoverRoomStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecoverRoomStatus.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecoverRoomStatus.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverRoomStatus.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnRecoverRoomStatus.Location = new System.Drawing.Point(200, 50);
-            this.btnRecoverRoomStatus.Name = "btnRecoverRoomStatus";
-            this.btnRecoverRoomStatus.Size = new System.Drawing.Size(191, 41);
-            this.btnRecoverRoomStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverRoomStatus.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverRoomStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            this.btnRecoverRoomStatus.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRecoverRoomStatus.TabIndex = 5;
-            this.btnRecoverRoomStatus.Text = "Khôi phục";
-            this.btnRecoverRoomStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRecoverRoomStatus.UseVisualStyleBackColor = false;
             // 
             // ucRoomStatus
             // 

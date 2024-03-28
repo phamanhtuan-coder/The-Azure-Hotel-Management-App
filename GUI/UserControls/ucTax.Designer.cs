@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucTax));
             this.lblTax = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAddTax = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnEditTax = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnDeleteTax = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnRecoverTax = new Syncfusion.WinForms.Controls.SfButton();
             this.txtSearchTax = new System.Windows.Forms.TextBox();
             this.btnTraCuuTax = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateTax = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -47,10 +51,6 @@
             this.lblStateTax = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.btnAddTax = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnEditTax = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnDeleteTax = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnRecoverTax = new Syncfusion.WinForms.Controls.SfButton();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateTax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -96,6 +96,86 @@
             this.tlpController.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpController.Size = new System.Drawing.Size(394, 94);
             this.tlpController.TabIndex = 6;
+            // 
+            // btnAddTax
+            // 
+            this.btnAddTax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddTax.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddTax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddTax.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddTax.ForeColor = System.Drawing.Color.White;
+            this.btnAddTax.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnAddTax.Location = new System.Drawing.Point(3, 3);
+            this.btnAddTax.Name = "btnAddTax";
+            this.btnAddTax.Size = new System.Drawing.Size(191, 41);
+            this.btnAddTax.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddTax.Style.ForeColor = System.Drawing.Color.White;
+            this.btnAddTax.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnAddTax.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnAddTax.TabIndex = 1;
+            this.btnAddTax.Text = "Thêm";
+            this.btnAddTax.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddTax.UseVisualStyleBackColor = false;
+            // 
+            // btnEditTax
+            // 
+            this.btnEditTax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditTax.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEditTax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditTax.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditTax.ForeColor = System.Drawing.Color.White;
+            this.btnEditTax.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnEditTax.Location = new System.Drawing.Point(3, 50);
+            this.btnEditTax.Name = "btnEditTax";
+            this.btnEditTax.Size = new System.Drawing.Size(191, 41);
+            this.btnEditTax.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditTax.Style.ForeColor = System.Drawing.Color.White;
+            this.btnEditTax.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnEditTax.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnEditTax.TabIndex = 3;
+            this.btnEditTax.Text = "Sửa";
+            this.btnEditTax.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditTax.UseVisualStyleBackColor = false;
+            // 
+            // btnDeleteTax
+            // 
+            this.btnDeleteTax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteTax.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDeleteTax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteTax.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteTax.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteTax.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnDeleteTax.Location = new System.Drawing.Point(200, 3);
+            this.btnDeleteTax.Name = "btnDeleteTax";
+            this.btnDeleteTax.Size = new System.Drawing.Size(191, 41);
+            this.btnDeleteTax.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteTax.Style.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteTax.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnDeleteTax.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnDeleteTax.TabIndex = 4;
+            this.btnDeleteTax.Text = "Xóa";
+            this.btnDeleteTax.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeleteTax.UseVisualStyleBackColor = false;
+            // 
+            // btnRecoverTax
+            // 
+            this.btnRecoverTax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverTax.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRecoverTax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecoverTax.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecoverTax.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverTax.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnRecoverTax.Location = new System.Drawing.Point(200, 50);
+            this.btnRecoverTax.Name = "btnRecoverTax";
+            this.btnRecoverTax.Size = new System.Drawing.Size(191, 41);
+            this.btnRecoverTax.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverTax.Style.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverTax.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnRecoverTax.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnRecoverTax.TabIndex = 5;
+            this.btnRecoverTax.Text = "Khôi phục";
+            this.btnRecoverTax.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRecoverTax.UseVisualStyleBackColor = false;
             // 
             // txtSearchTax
             // 
@@ -259,9 +339,9 @@
             this.lblSortTaxValue.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortTaxValue.Location = new System.Drawing.Point(2, 143);
             this.lblSortTaxValue.Name = "lblSortTaxValue";
-            this.lblSortTaxValue.Size = new System.Drawing.Size(191, 26);
+            this.lblSortTaxValue.Size = new System.Drawing.Size(185, 26);
             this.lblSortTaxValue.TabIndex = 14;
-            this.lblSortTaxValue.Text = "Sort theo số lượng";
+            this.lblSortTaxValue.Text = "Lọc theo số lượng";
             this.lblSortTaxValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblStateTax
@@ -303,86 +383,6 @@
             this.spcHeader.Size = new System.Drawing.Size(1370, 94);
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
-            // 
-            // btnAddTax
-            // 
-            this.btnAddTax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddTax.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddTax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddTax.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddTax.ForeColor = System.Drawing.Color.White;
-            this.btnAddTax.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnAddTax.Location = new System.Drawing.Point(3, 3);
-            this.btnAddTax.Name = "btnAddTax";
-            this.btnAddTax.Size = new System.Drawing.Size(191, 41);
-            this.btnAddTax.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddTax.Style.ForeColor = System.Drawing.Color.White;
-            this.btnAddTax.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnAddTax.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddTax.TabIndex = 1;
-            this.btnAddTax.Text = "Thêm";
-            this.btnAddTax.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddTax.UseVisualStyleBackColor = false;
-            // 
-            // btnEditTax
-            // 
-            this.btnEditTax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditTax.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEditTax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditTax.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditTax.ForeColor = System.Drawing.Color.White;
-            this.btnEditTax.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnEditTax.Location = new System.Drawing.Point(3, 50);
-            this.btnEditTax.Name = "btnEditTax";
-            this.btnEditTax.Size = new System.Drawing.Size(191, 41);
-            this.btnEditTax.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditTax.Style.ForeColor = System.Drawing.Color.White;
-            this.btnEditTax.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnEditTax.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditTax.TabIndex = 3;
-            this.btnEditTax.Text = "Sửa";
-            this.btnEditTax.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditTax.UseVisualStyleBackColor = false;
-            // 
-            // btnDeleteTax
-            // 
-            this.btnDeleteTax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteTax.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleteTax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteTax.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteTax.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteTax.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnDeleteTax.Location = new System.Drawing.Point(200, 3);
-            this.btnDeleteTax.Name = "btnDeleteTax";
-            this.btnDeleteTax.Size = new System.Drawing.Size(191, 41);
-            this.btnDeleteTax.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteTax.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteTax.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.btnDeleteTax.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteTax.TabIndex = 4;
-            this.btnDeleteTax.Text = "Xóa";
-            this.btnDeleteTax.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDeleteTax.UseVisualStyleBackColor = false;
-            // 
-            // btnRecoverTax
-            // 
-            this.btnRecoverTax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverTax.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRecoverTax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecoverTax.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecoverTax.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverTax.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnRecoverTax.Location = new System.Drawing.Point(200, 50);
-            this.btnRecoverTax.Name = "btnRecoverTax";
-            this.btnRecoverTax.Size = new System.Drawing.Size(191, 41);
-            this.btnRecoverTax.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverTax.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverTax.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            this.btnRecoverTax.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRecoverTax.TabIndex = 5;
-            this.btnRecoverTax.Text = "Khôi phục";
-            this.btnRecoverTax.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRecoverTax.UseVisualStyleBackColor = false;
             // 
             // ucTax
             // 
