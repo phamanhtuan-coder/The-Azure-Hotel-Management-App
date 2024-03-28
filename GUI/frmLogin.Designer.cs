@@ -32,12 +32,16 @@ namespace GUI
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
+            Syncfusion.Windows.Forms.Tools.ActiveStateCollection activeStateCollection1 = new Syncfusion.Windows.Forms.Tools.ActiveStateCollection();
+            Syncfusion.Windows.Forms.Tools.InactiveStateCollection inactiveStateCollection1 = new Syncfusion.Windows.Forms.Tools.InactiveStateCollection();
+            Syncfusion.Windows.Forms.Tools.SliderCollection sliderCollection1 = new Syncfusion.Windows.Forms.Tools.SliderCollection();
             this.btnClose = new Syncfusion.WinForms.Controls.SfButton();
             this.picLoginBG = new System.Windows.Forms.PictureBox();
             this.tmrTransistion = new System.Windows.Forms.Timer(this.components);
             this.panLogin = new GUI.SemiTransparentPanel();
+            this.btnSignUp = new Syncfusion.WinForms.Controls.SfButton();
+            this.tbtnRemember = new Syncfusion.Windows.Forms.Tools.ToggleButton();
             this.btnAdmin = new Syncfusion.WinForms.Controls.SfButton();
-            this.chkRemember = new System.Windows.Forms.CheckBox();
             this.linkForget = new System.Windows.Forms.LinkLabel();
             this.lblLOGO = new System.Windows.Forms.Label();
             this.btnSubmit = new Syncfusion.WinForms.Controls.SfButton();
@@ -52,6 +56,7 @@ namespace GUI
             this.lblUsername = new Syncfusion.Windows.Forms.Tools.GradientLabel();
             ((System.ComponentModel.ISupportInitialize)(this.picLoginBG)).BeginInit();
             this.panLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbtnRemember)).BeginInit();
             this.panUsername.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsername)).BeginInit();
             this.panPassword.SuspendLayout();
@@ -105,8 +110,9 @@ namespace GUI
             this.panLogin.BackColor = System.Drawing.Color.Transparent;
             this.panLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panLogin.BackgroundImage")));
             this.panLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panLogin.Controls.Add(this.btnSignUp);
+            this.panLogin.Controls.Add(this.tbtnRemember);
             this.panLogin.Controls.Add(this.btnAdmin);
-            this.panLogin.Controls.Add(this.chkRemember);
             this.panLogin.Controls.Add(this.linkForget);
             this.panLogin.Controls.Add(this.lblLOGO);
             this.panLogin.Controls.Add(this.btnSubmit);
@@ -122,13 +128,46 @@ namespace GUI
             this.panLogin.Size = new System.Drawing.Size(360, 440);
             this.panLogin.TabIndex = 0;
             // 
+            // btnSignUp
+            // 
+            this.btnSignUp.AccessibleName = "Button";
+            this.btnSignUp.BackColor = System.Drawing.Color.Teal;
+            this.btnSignUp.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignUp.ForeColor = System.Drawing.Color.White;
+            this.btnSignUp.Location = new System.Drawing.Point(8, 362);
+            this.btnSignUp.Name = "btnSignUp";
+            this.btnSignUp.Size = new System.Drawing.Size(170, 47);
+            this.btnSignUp.Style.BackColor = System.Drawing.Color.Teal;
+            this.btnSignUp.Style.ForeColor = System.Drawing.Color.White;
+            this.btnSignUp.TabIndex = 11;
+            this.btnSignUp.Text = "SIGN UP";
+            this.btnSignUp.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.btnSignUp.UseVisualStyleBackColor = false;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
+            // 
+            // tbtnRemember
+            // 
+            activeStateCollection1.Text = "Không ghi nhớ";
+            this.tbtnRemember.ActiveState = activeStateCollection1;
+            this.tbtnRemember.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbtnRemember.ForeColor = System.Drawing.Color.Black;
+            inactiveStateCollection1.Text = "Ghi nhớ mật khẩu";
+            this.tbtnRemember.InactiveState = inactiveStateCollection1;
+            this.tbtnRemember.Location = new System.Drawing.Point(160, 309);
+            this.tbtnRemember.MinimumSize = new System.Drawing.Size(52, 20);
+            this.tbtnRemember.Name = "tbtnRemember";
+            this.tbtnRemember.Size = new System.Drawing.Size(170, 40);
+            this.tbtnRemember.Slider = sliderCollection1;
+            this.tbtnRemember.TabIndex = 9;
+            this.tbtnRemember.ThemeStyle.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
             // btnAdmin
             // 
             this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdmin.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdmin.Location = new System.Drawing.Point(146, 317);
+            this.btnAdmin.Location = new System.Drawing.Point(160, 312);
             this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(170, 28);
+            this.btnAdmin.Size = new System.Drawing.Size(170, 37);
             this.btnAdmin.Style.HoverBackColor = System.Drawing.Color.Teal;
             this.btnAdmin.Style.HoverForeColor = System.Drawing.Color.White;
             this.btnAdmin.Style.HoverImageForeColor = System.Drawing.Color.White;
@@ -139,17 +178,6 @@ namespace GUI
             this.btnAdmin.TabIndex = 9;
             this.btnAdmin.Text = "Liên hệ Admin";
             this.btnAdmin.Visible = false;
-            // 
-            // chkRemember
-            // 
-            this.chkRemember.AutoSize = true;
-            this.chkRemember.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkRemember.Location = new System.Drawing.Point(146, 319);
-            this.chkRemember.Name = "chkRemember";
-            this.chkRemember.Size = new System.Drawing.Size(173, 26);
-            this.chkRemember.TabIndex = 7;
-            this.chkRemember.Text = "Ghi nhớ mật khẩu";
-            this.chkRemember.UseVisualStyleBackColor = true;
             // 
             // linkForget
             // 
@@ -184,12 +212,12 @@ namespace GUI
             this.btnSubmit.BackColor = System.Drawing.Color.Teal;
             this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(24, 362);
+            this.btnSubmit.Location = new System.Drawing.Point(184, 362);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(306, 47);
+            this.btnSubmit.Size = new System.Drawing.Size(170, 47);
             this.btnSubmit.Style.BackColor = System.Drawing.Color.Teal;
             this.btnSubmit.Style.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.TabIndex = 8;
+            this.btnSubmit.TabIndex = 10;
             this.btnSubmit.Text = "LOGIN";
             this.btnSubmit.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.btnSubmit.UseVisualStyleBackColor = false;
@@ -337,6 +365,7 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.picLoginBG)).EndInit();
             this.panLogin.ResumeLayout(false);
             this.panLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbtnRemember)).EndInit();
             this.panUsername.ResumeLayout(false);
             this.panUsername.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsername)).EndInit();
@@ -363,11 +392,12 @@ namespace GUI
         private Panel panUsername;
         private Syncfusion.WinForms.Controls.SfButton btnSubmit;
         private Label lblLOGO;
-        private CheckBox chkRemember;
         private LinkLabel linkForget;
         private Syncfusion.WinForms.Controls.SfButton btnShowHidePassword;
         private Timer tmrTransistion;
         private Syncfusion.WinForms.Controls.SfButton btnAdmin;
+        private Syncfusion.Windows.Forms.Tools.ToggleButton tbtnRemember;
+        private Syncfusion.WinForms.Controls.SfButton btnSignUp;
     }
 }
 

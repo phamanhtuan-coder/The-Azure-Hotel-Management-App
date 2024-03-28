@@ -94,7 +94,7 @@ namespace GUI.UserControls
             if (lvwService != null)
             {
                 // Resize columns based on column header or content
-                for (int i = 0; i < lvwService.Columns.Count; i++)
+                for (int i = 0; i < lvwService.Columns.Count-1; i++)
                 {
                     int headerWidth = TextRenderer.MeasureText(lvwService.Columns[i].Text, lvwService.Font).Width;
                     int contentWidth = 0;

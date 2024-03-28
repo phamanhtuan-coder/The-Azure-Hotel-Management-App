@@ -133,7 +133,7 @@ namespace GUI
                 txtPassword.Clear();
                 txtPassword.PasswordChar = '\0';
                 btnShowHidePassword.Hide();
-                chkRemember.Hide();
+                tbtnRemember.Hide();
                 btnAdmin.Show();
                 linkForget.Text = "Quay lại đăng nhập";
                 btnSubmit.Text = "Xác thực";
@@ -153,7 +153,7 @@ namespace GUI
                 txtPassword.Clear();
                 txtPassword.PasswordChar = '•';
                 btnShowHidePassword.Show();
-                chkRemember.Show();
+                tbtnRemember.Show();
                 btnAdmin.Hide();
                 linkForget.Text = "Quên mật khẩu?";
                 btnSubmit.Text = "Đăng nhập";
@@ -179,6 +179,11 @@ namespace GUI
             }
         }
 
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            frmDangKy frm = new frmDangKy();
+            frm.ShowDialog();
+        }
     }
 
 

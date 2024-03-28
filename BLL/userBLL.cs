@@ -16,10 +16,10 @@ namespace BLL
             userDAL = new userDAL();
         }
 
-        public bool KiemTraDangNhap(string username, string password)
-        {
+        //public bool KiemTraDangNhap(string username, string password)
+        //{
             
-            return userDAL.XacThucDangNhap(username, password);
-        }
+        //    return userDAL.XacThucDangNhap(username, password);
+        //}
     }
 }

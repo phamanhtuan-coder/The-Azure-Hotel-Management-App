@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+
 
 namespace DAL
 {
-    public class MySQLConnectionManager
+    public class SQLConnectionManager
     {
         private string server;
         private string database;
@@ -15,7 +15,7 @@ namespace DAL
         private string password;
         private string connectionString;
 
-        public MySQLConnectionManager()
+        public SQLConnectionManager()
         {
             Initialize();
         }

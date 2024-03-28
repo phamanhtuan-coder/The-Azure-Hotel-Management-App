@@ -132,6 +132,12 @@
     <Compile Include="customForm\frmBookingController.Designer.cs">
       <DependentUpon>frmBookingController.cs</DependentUpon>
     </Compile>
+    <Compile Include="customForm\frmDangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customForm\frmDangKy.Designer.cs">
+      <DependentUpon>frmDangKy.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,12 @@
     <Compile Include="UserControls\ucAccounting.Designer.cs">
       <DependentUpon>ucAccounting.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ucAccounts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucAccounts.Designer.cs">
+      <DependentUpon>ucAccounts.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ucBill.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -169,11 +181,23 @@
     <Compile Include="UserControls\ucAccountType.Designer.cs">
       <DependentUpon>ucAccountType.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ucDepartment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucDepartment.Designer.cs">
+      <DependentUpon>ucDepartment.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ucRoomStatus.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\ucRoomStatus.Designer.cs">
       <DependentUpon>ucRoomStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucRole.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucRole.Designer.cs">
+      <DependentUpon>ucRole.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ucTax.cs">
       <SubType>UserControl</SubType>
@@ -235,6 +259,9 @@
     <EmbeddedResource Include="customForm\frmBookingController.resx">
       <DependentUpon>frmBookingController.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="customForm\frmDangKy.resx">
+      <DependentUpon>frmDangKy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,14 +277,23 @@
     <EmbeddedResource Include="UserControls\ucAccounting.resx">
       <DependentUpon>ucAccounting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucAccounts.resx">
+      <DependentUpon>ucAccounts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucBill.resx">
       <DependentUpon>ucBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucAccountType.resx">
       <DependentUpon>ucAccountType.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucDepartment.resx">
+      <DependentUpon>ucDepartment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucRoomStatus.resx">
       <DependentUpon>ucRoomStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucRole.resx">
+      <DependentUpon>ucRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucTax.resx">
       <DependentUpon>ucTax.cs</DependentUpon>
