@@ -46,6 +46,11 @@ namespace GUI
         private int initialSideBarWidth; 
         private int initialMenuWidth;
 
+
+        //bien de luu sub menu dang mo
+        private Panel currentSubmenu = null;
+
+
         //Biến Kích thược mặc định của FormMain
         private Size kichThuocMacDinh = new Size(1600, 900);
 
@@ -98,8 +103,8 @@ namespace GUI
                 currentButton = (SfButton)sender;
                 currentButton.TextImageRelation = TextImageRelation.TextBeforeImage;
                 currentButton.ImageAlign = ContentAlignment.MiddleRight;
-                currentButton.ImageMargin = new Padding(3, 3, 15, 3);
-                currentButton.TextAlign = ContentAlignment.BottomLeft;
+                currentButton.ImageMargin = new Padding(3);
+                currentButton.TextAlign = ContentAlignment.BottomRight;
             }
         }
 
@@ -113,7 +118,7 @@ namespace GUI
             currentMenu.TextImageRelation = TextImageRelation.ImageBeforeText;
             currentButton.ImageAlign = ContentAlignment.MiddleLeft;
             currentButton.ImageMargin = new Padding(3);
-            currentButton.TextAlign = ContentAlignment.BottomCenter;
+            currentButton.TextAlign = ContentAlignment.BottomLeft;
             currentButton = null;
         }
 
@@ -224,7 +229,7 @@ namespace GUI
         }
 
         /// <summary>
-        /// Hàm xử lý sự kiện khi nút Setup được bấm
+        /// Hàm xử lý sự kiện khi nút Loai TK được bấm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -274,7 +279,7 @@ namespace GUI
         }
 
         /// <summary>
-        /// Hàm xử lý sự kiện khi nút FrontDesk được bấm
+        /// Hàm xử lý sự kiện khi nút Loai Phong được bấm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -285,6 +290,19 @@ namespace GUI
             ucRoomType frm = new ucRoomType();
             openForm(frm);
         }
+
+        /// <summary>
+        /// Hàm xử lý sự kiện khi nút Trang thai phong được bấm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRoomStatus_Click(object sender, EventArgs e)
+        {
+            menuActivated(sender);
+            ucRoomStatus frm = new ucRoomStatus();
+            openForm(frm);
+        }
+
 
         /// <summary>
         /// Hàm xử lý sự kiện khi nút Customer được bấm
@@ -349,6 +367,67 @@ namespace GUI
             ucStaff frm = new ucStaff();
             openForm(frm);
         }
+
+        /// <summary>
+        /// Hàm xử lý sự kiện khi nút Loai DV được bấm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnServiceType_Click(object sender, EventArgs e)
+        {
+            menuActivated(sender);
+            ucServiceType frm = new ucServiceType();
+            openForm(frm);
+        }
+
+        /// <summary>
+        /// Hàm xử lý sự kiện khi nút Thue được bấm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnTax_Click(object sender, EventArgs e)
+        {
+            menuActivated(sender);
+            ucTax frm = new ucTax();
+            openForm(frm);
+        }
+
+        /// <summary>
+        /// Hàm xử lý sự kiện khi nút Tai Khoan được bấm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            menuActivated(sender);
+            ucAccounts frm = new ucAccounts();
+            openForm(frm);
+        }
+
+        /// <summary>
+        /// Hàm xử lý sự kiện khi Phong Ban được bấm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDepartment_Click(object sender, EventArgs e)
+        {
+            menuActivated(sender);
+            ucDepartment frm = new ucDepartment();
+            openForm(frm);
+        }
+
+        /// <summary>
+        /// Hàm xử lý sự kiện khi nút Vai Tro được bấm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRole_Click(object sender, EventArgs e)
+        {
+            menuActivated(sender);
+            ucRole frm = new ucRole();
+            openForm(frm);
+        }
+
 
 
         /// <summary>
@@ -445,8 +524,87 @@ namespace GUI
                 this.WindowState = FormWindowState.Normal;
             }
         }
+        private void Menu_Click(object sender, EventArgs e)
+        {
+            Button menuHolderButton = sender as Button;
+            if (menuHolderButton != null)
+            {
+                // Lấy panel chứa submenu
+                Panel submenuContainerPanel = menuHolderButton.Parent.Parent as Panel;
+                if (submenuContainerPanel != null)
+                {
+                    // Kiểm tra xem submenu khác có đang mở không, nếu có thì đóng lại
+                    foreach (Control control in submenuContainerPanel.Controls)
+                    {
+                        if (control is Panel subPanel && subPanel != sender)
+                        {
+                            CollapseSubmenu(subPanel);
+                        }
+                    }
 
-        
+                    // Lấy panel submenu
+                    Panel clickedSubmenuPanel = menuHolderButton.Parent.Parent as Panel;
+                    if (clickedSubmenuPanel != null)
+                    {
+                        // Mở hoặc thu nhỏ submenu
+                        if (clickedSubmenuPanel.Height < clickedSubmenuPanel.MaximumSize.Height)
+                        {
+                            ExpandSubmenu(clickedSubmenuPanel);
+                        }
+                        else
+                        {
+                            CollapseSubmenu(clickedSubmenuPanel);
+                        }
+                        currentSubmenu = clickedSubmenuPanel;
+                    }
+                }
+            }
+        }
+
+
+        private void ExpandSubmenu(Panel submenuPanel)
+        {
+            Timer expandTimer = new Timer();
+            expandTimer.Interval = 20; // Thời gian cho mỗi bước animation
+            expandTimer.Tick += (sender, e) =>
+            {
+                if (submenuPanel.Height < submenuPanel.MaximumSize.Height)
+                {
+                    submenuPanel.Height += 25; // Điều chỉnh khoảng cách mỗi bước animation
+                }
+                else
+                {
+                    expandTimer.Stop();
+                }
+            };
+            expandTimer.Start();
+        }
+
+        private const int MinSubMenuWidth = 220;
+        private const int MinSubMenuHeight = 50;
+
+        private void CollapseSubmenu(Panel submenuPanel)
+        {
+            Timer collapseTimer = new Timer();
+            collapseTimer.Interval = 20; // Thời gian cho mỗi bước animation
+            collapseTimer.Tick += (sender, e) =>
+            {
+                int newHeight = Math.Max(submenuPanel.Height - 25, MinSubMenuHeight);
+                int newWidth = Math.Max(submenuPanel.Width - 25, MinSubMenuWidth);
+
+                if (submenuPanel.Height > newHeight || submenuPanel.Width > newWidth)
+                {
+                    submenuPanel.Size = new Size(newWidth, newHeight);
+                }
+                else
+                {
+                    collapseTimer.Stop();
+                }
+            };
+            collapseTimer.Start();
+        }
+
+       
     }
 
     /// <summary>

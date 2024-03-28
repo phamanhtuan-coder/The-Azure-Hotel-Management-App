@@ -107,7 +107,7 @@ namespace GUI.UserControls
         private void ucDepartment_Load(object sender, EventArgs e)
         {
 
-
+            khoiTaoGiaTrichoForm();
         }
     }
 }

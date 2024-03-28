@@ -163,6 +163,12 @@
     <Compile Include="UserControls\ucAccounting.Designer.cs">
       <DependentUpon>ucAccounting.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ucStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucStaff.Designer.cs">
+      <DependentUpon>ucStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ucAccounts.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -247,12 +253,6 @@
     <Compile Include="UserControls\ucDashboard.Designer.cs">
       <DependentUpon>ucDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\ucStaff.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\ucStaff.Designer.cs">
-      <DependentUpon>ucStaff.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="customForm\customMessageBox.resx">
       <DependentUpon>customMessageBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucAccounting.resx">
       <DependentUpon>ucAccounting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucStaff.resx">
+      <DependentUpon>ucStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucAccounts.resx">
       <DependentUpon>ucAccounts.cs</DependentUpon>
@@ -318,9 +321,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucDashboard.resx">
       <DependentUpon>ucDashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ucStaff.resx">
-      <DependentUpon>ucStaff.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -477,6 +477,66 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Recovery.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RoomKey.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tag.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vacuum-cleaner.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accountant.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cleaning-cart.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dnd.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\feedback.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hierarchical-structure.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maintainance.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ranking.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rating.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repairing-service.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tax.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accounting_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lifeline.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Devices.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account-accepted.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\staffList.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Syncfusion.PdfToImageConverter.WinForms.25.1.35\build\net462\Syncfusion.PdfToImageConverter.WinForms.targets" Condition="Exists('..\packages\Syncfusion.PdfToImageConverter.WinForms.25.1.35\build\net462\Syncfusion.PdfToImageConverter.WinForms.targets')" />
