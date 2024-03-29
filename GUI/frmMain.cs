@@ -18,24 +18,16 @@ namespace GUI
 {
     public partial class frmMain : Form
     {
-
-        //Các biến cho Snap Form
-        private const int WM_NCLBUTTONDOWN = 0xA1;
-        private const int HT_CAPTION = 0x2;
-        private const int WM_SYSCOMMAND = 0x0112;
-        private const int SC_MOVE = 0xF010;
-
-
-        //Đọc và nhận dữ liệu chuột tương tác với form để di chuyển form
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+        /*-------------------------------------------------------------------------------------------------------------------
+                                         BẮT ĐẦU KHAI BÁO CÁC BIẾN TOÀN CỤC
+       --------------------------------------------------------------------------------------------------------------------*/
 
 
         //Biến xác định menu đang mở
         private SfButton currentButton;
+
+        //bien de luu sub menu dang mo
+        private SfButton currentMenu;
 
 
         //Biến cho animation thu/ phóng thanh sideBar
@@ -47,134 +39,38 @@ namespace GUI
         private int initialMenuWidth;
 
 
-        //bien de luu sub menu dang mo
-        private Panel currentSubmenu = null;
+        //Biến cho animation thu nhỏ subMenu
+        private const int MinSubMenuWidth = 220;
+        private const int MinSubMenuHeight = 50;
 
 
         //Biến Kích thược mặc định của FormMain
         private Size kichThuocMacDinh = new Size(1600, 900);
 
-        /// <summary>
-        /// Hàm main của form
-        /// </summary>
-        public frmMain()
-        {
-            InitializeComponent();
-            this.DoubleBuffered = true;
-            this.MaximizedBounds= Screen.FromHandle(this.Handle).WorkingArea;
-            this.FormBorderStyle = FormBorderStyle.Sizable;
-        }
 
+        //Các biến cho Snap Form
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HT_CAPTION = 0x2;
+        private const int WM_SYSCOMMAND = 0x0112;
+        private const int SC_MOVE = 0xF010;
 
-        private void frmDemo_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        /// <summary>
-        /// Hàm để mở form con
-        /// </summary>
-        /// <param name="frm">Form con muốn mở (UserControl)</param>
-        private void openForm(UserControl frm)
-        {
-            panDesktop.Controls.Clear();
-            frm.Dock = DockStyle.Fill;
-            panDesktop.Controls.Add(frm);
-            panDesktop.Tag = frm;
-            frm.BringToFront();
-            frm.Show();
-        }
-
-        /// <summary>
-        /// Hàm xử lý sự kiện khi menu được chọn
-        /// </summary>
-        /// <param name="sender">Nút đang chọn</param>
-        private void menuActivated(object sender)
-        {
-            if (sideBarExpand)
-            {
-
-
-                if (currentButton != null && currentButton != sender)
-                {
-                    menuDeActivated(currentButton);
-                }
-
-                currentButton = (SfButton)sender;
-                currentButton.TextImageRelation = TextImageRelation.TextBeforeImage;
-                currentButton.ImageAlign = ContentAlignment.MiddleRight;
-                currentButton.ImageMargin = new Padding(3);
-                currentButton.TextAlign = ContentAlignment.BottomRight;
-            }
-        }
-
-        /// <summary>
-        /// Hàm xử lý sự kiện khi menu thay đổi chọn
-        /// </summary>
-        /// <param name="sender">Nút đang chọn</param>
-        private void menuDeActivated(object sender)
-        {
-            SfButton currentMenu = (SfButton)sender;
-            currentMenu.TextImageRelation = TextImageRelation.ImageBeforeText;
-            currentButton.ImageAlign = ContentAlignment.MiddleLeft;
-            currentButton.ImageMargin = new Padding(3);
-            currentButton.TextAlign = ContentAlignment.BottomLeft;
-            currentButton = null;
-        }
-
-
-        /// <summary>
-        /// Hàm xử lý animation cho SideBar thu nhỏ/ mở rộng
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void tmrSideBar_Tick(object sender, EventArgs e)
-        {
-            if (sideBarExpand)
-            {
-                if (currentButton != null)
-                {
-                    menuDeActivated(currentButton);
-                }
-                int newWidth = Math.Max(flpanSideBar.Width - animationStep, minSideBarWidth);
-                flpanSideBar.Width = newWidth;
-                panMenu.Width = newWidth;
-
-                if (flpanSideBar.Width <= minSideBarWidth)
-                {
-                    sideBarExpand = false;
-                    tmrSideBar.Stop();
-                }
-            }
-            else
-            {
-                int newWidth = Math.Min(flpanSideBar.Width + animationStep, maxSideBarWidth);
-                flpanSideBar.Width = newWidth;
-                panMenu.Width = newWidth;
-
-                if (flpanSideBar.Width >= maxSideBarWidth)
-                {
-                    sideBarExpand = true;
-                    tmrSideBar.Stop();
-                }
-            }
         
-        }
+        //Đọc và nhận dữ liệu chuột tương tác với form để di chuyển form
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
 
-        /// <summary>
-        /// Hàm xử lý sự kiện khi nút Menu được bấm
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnMenu_Activate(object sender, EventArgs e)
-        {
-            initialSideBarWidth = flpanSideBar.Width;
-            initialMenuWidth = panMenu.Width;
-            if (!tmrSideBar.Enabled)
-                tmrSideBar.Start();
-        }
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
 
+        /*-------------------------------------------------------------------------------------------------------------------
+                                         KẾT THÚC KHAI BÁO CÁC BIẾN TOÀN CỤC
+       --------------------------------------------------------------------------------------------------------------------*/
+ 
+
+        /*-------------------------------------------------------------------------------------------------------------------
+                                          BẮT ĐẦU ĐOẠN XỬ LÝ CÁC NÚT CONTROL CHÍNH
+        --------------------------------------------------------------------------------------------------------------------*/
 
         /// <summary>
         /// Hàm xử lý sự kiện khi nút Close được bấm
@@ -199,6 +95,45 @@ namespace GUI
             }
             Application.Exit();
         }
+
+        /// <summary>
+        /// Hàm xử lý sự kiện khi bấm nút FullScreen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnFullScreen_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized || this.Size != kichThuocMacDinh)
+            {
+                this.Size = kichThuocMacDinh;
+                this.WindowState = FormWindowState.Normal;
+
+            }
+            else
+            {
+
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+
+        /// <summary>
+        /// Hàm xử lý sự kiện khi bấm nút Minimize
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Minimized;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+
 
         /// <summary>
         /// Hàm xử lý sự kiện khi nút LogOut được bấm
@@ -227,6 +162,96 @@ namespace GUI
                
             
         }
+
+        /*-------------------------------------------------------------------------------------------------------------------
+                                        KẾT THÚC ĐOẠN XỬ LÝ CÁC NÚT CONTROL CHÍNH
+       --------------------------------------------------------------------------------------------------------------------*/
+
+
+        /*-------------------------------------------------------------------------------------------------------------------
+                                         BẮT ĐẦU ĐOẠN XỬ LÝ AERO SNAP VÀ CONTROL NÂNG CAO
+       --------------------------------------------------------------------------------------------------------------------*/
+
+        /// <summary>
+        /// Di chuyển form tự do nếu bấm giữ chuột trái vào header panel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void panHeader_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+
+        /// <summary>
+        /// Hàm xử lý tính năng Aero Snap của form
+        /// </summary>
+        /// <param name="m"></param>
+        protected override void WndProc(ref Message m)
+        {
+            const int WM_NCCALCSIZE = 0x0083;
+            if (m.Msg == WM_NCCALCSIZE && m.WParam.ToInt32() == 1)
+            {
+                return;
+            }
+            base.WndProc(ref m);
+
+        }
+
+        /// <summary>
+        /// Thay đổi kích thước form Main
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void frmMain_Resize(object sender, EventArgs e)
+        {
+            const int paddingMaximized = 10;
+            const int paddingNormal = 2;
+
+            switch (this.WindowState)
+            {
+                case FormWindowState.Maximized:
+                    this.Padding = new Padding(paddingMaximized);
+                    break;
+                case FormWindowState.Normal:
+                    if (this.Padding.Top != paddingNormal)
+                    {
+                        this.Padding = new Padding(paddingNormal);
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        /*-------------------------------------------------------------------------------------------------------------------
+                                     KẾT THÚC ĐOẠN XỬ LÝ AERO SNAP VÀ CONTROL NÂNG CAO
+        --------------------------------------------------------------------------------------------------------------------*/
+
+        /*-------------------------------------------------------------------------------------------------------------------
+                                         BẮT ĐẦU ĐOẠN XỬ LÝ MỞ MENU
+        --------------------------------------------------------------------------------------------------------------------*/
+
+        /// <summary>
+        /// Hàm để mở form con
+        /// </summary>
+        /// <param name="frm">Form con muốn mở (UserControl)</param>
+        /// 
+        private void openForm(UserControl frm)
+        {
+            panDesktop.Controls.Clear();
+            frm.Dock = DockStyle.Fill;
+            panDesktop.Controls.Add(frm);
+            panDesktop.Tag = frm;
+            frm.BringToFront();
+            frm.Show();
+        }
+
+
 
         /// <summary>
         /// Hàm xử lý sự kiện khi nút Loai TK được bấm
@@ -463,103 +488,171 @@ namespace GUI
            ucBillDetails frm = new ucBillDetails();
             openForm(frm);
         }
+
         /// <summary>
-        /// Di chuyển form tự do nếu bấm giữ chuột trái vào header panel
+        /// Hàm xử lý sự kiện khi nút tinh trang thiet bi được bấm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void panHeader_MouseDown(object sender, MouseEventArgs e)
+        private void btnDeviceStatus_Click(object sender, EventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            menuActivated(sender);
+            ucDeviceStatus frm = new ucDeviceStatus();
+            openForm(frm);
+        }
+
+        /// <summary>
+        /// Hàm xử lý sự kiện khi nút thiet bi được bấm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnThietBi_Click(object sender, EventArgs e)
+        {
+            menuActivated(sender);
+            ucDevice frm = new ucDevice();
+            openForm(frm);
+        }
+
+        /// <summary>
+        /// Hàm xử lý sự kiện khi nút don phong được bấm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnHousekeeping_Click(object sender, EventArgs e)
+        {
+            menuActivated(sender);
+           ucHousekeeping frm = new ucHousekeeping();
+            openForm(frm);
+        }
+
+        /// <summary>
+        /// Hàm xử lý sự kiện khi nút bao tri được bấm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnMaintance_Click(object sender, EventArgs e)
+        {
+            menuActivated(sender);
+            ucMaintance frm = new ucMaintance();
+            openForm(frm);
+        }
+
+
+        /*-------------------------------------------------------------------------------------------------------------------
+                                                  KẾT THÚC ĐOẠN XỬ LÝ MỞ MENU
+        --------------------------------------------------------------------------------------------------------------------*/
+
+        /*-------------------------------------------------------------------------------------------------------------------
+                                   BẮT ĐẦU ĐOẠN XỬ LÝ ANIMATION CHO SIDEBAR
+       --------------------------------------------------------------------------------------------------------------------*/
+
+        /// <summary>
+        /// Khi bấm vào nút Menu thì kiểm tra trạng thái sidebar, sau đó tiến hành mở rộng hoặc thu nhỏ sidebar,
+        /// nếu có menu đang được mở thì đổi trạng thái để đưa icon về bên trái button trước khi thu nhỏ
+        /// </summary>
+        /// <param name="sender">Nút đang chọn</param>
+        private void menuActivated(object sender)
+        {
+            if (sideBarExpand)
             {
-                ReleaseCapture();
-                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+
+
+                if (currentButton != null && currentButton != sender)
+                {
+                    menuDeActivated(currentButton);
+                }
+
+                currentButton = (SfButton)sender;
+                currentButton.TextImageRelation = TextImageRelation.TextBeforeImage;
+                currentButton.ImageAlign = ContentAlignment.MiddleRight;
+                currentButton.ImageMargin = new Padding(3);
+                currentButton.TextAlign = ContentAlignment.BottomRight;
             }
+        }
+
+        /// <summary>
+        /// Hàm xử lý sự kiện khi người dùng chọn Menu khác thì sẽ hủy kích hoạt menu đang chọn
+        /// </summary>
+        /// <param name="sender">Nút đang chọn</param>
+        private void menuDeActivated(object sender)
+        {
+            SfButton currentMenu = (SfButton)sender;
+            currentMenu.TextImageRelation = TextImageRelation.ImageBeforeText;
+            currentButton.ImageAlign = ContentAlignment.MiddleLeft;
+            currentButton.ImageMargin = new Padding(3);
+            currentButton.TextAlign = ContentAlignment.BottomLeft;
+            currentButton = null;
         }
 
 
         /// <summary>
-        /// Hàm xử lý tính năng Aero Snap của form
-        /// </summary>
-        /// <param name="m"></param>
-        protected override void WndProc(ref Message m)
-        {
-            const int WM_NCCALCSIZE = 0x0083;
-            if (m.Msg==WM_NCCALCSIZE && m.WParam.ToInt32()==1)
-            {
-                return;
-            }
-            base.WndProc(ref m);
-
-        }
-
-        /// <summary>
-        /// Thay đổi kích thước form Main
+        /// Hàm xử lý animation cho SideBar thu nhỏ/ mở rộng
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void frmMain_Resize(object sender, EventArgs e)
+        private void tmrSideBar_Tick(object sender, EventArgs e)
         {
-            const int paddingMaximized = 10;
-            const int paddingNormal = 2;
-
-            switch (this.WindowState)
+            if (sideBarExpand)
             {
-                case FormWindowState.Maximized:
-                    this.Padding = new Padding(paddingMaximized);
-                    break;
-                case FormWindowState.Normal:
-                    if (this.Padding.Top != paddingNormal)
-                    {
-                        this.Padding = new Padding(paddingNormal);
-                    }
-                    break;
-                default:
-                    break;
-            }
-        }
+                if (currentButton != null)
+                {
+                    menuDeActivated(currentButton);
+                }
+                int newWidth = Math.Max(flpanSideBar.Width - animationStep, minSideBarWidth);
+                flpanSideBar.Width = newWidth;
+                panMenu.Width = newWidth;
 
-     
-
-        /// <summary>
-        /// Hàm xử lý sự kiện khi bấm nút FullScreen
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnFullScreen_Click(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Maximized || this.Size != kichThuocMacDinh)
-            {
-                this.Size = kichThuocMacDinh;
-                this.WindowState = FormWindowState.Normal;
-
+                if (flpanSideBar.Width <= minSideBarWidth)
+                {
+                    sideBarExpand = false;
+                    tmrSideBar.Stop();
+                }
             }
             else
             {
+                int newWidth = Math.Min(flpanSideBar.Width + animationStep, maxSideBarWidth);
+                flpanSideBar.Width = newWidth;
+                panMenu.Width = newWidth;
 
-                this.WindowState = FormWindowState.Maximized;
+                if (flpanSideBar.Width >= maxSideBarWidth)
+                {
+                    sideBarExpand = true;
+                    tmrSideBar.Stop();
+                }
             }
-        }
 
+        }
 
         /// <summary>
-        /// Hàm xử lý sự kiện khi bấm nút Minimize
+        /// Khi menu được chọn thì tiến hành chạy hiệu ứng mở rộng/ thu nhỏ sidebar
+        /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnMinimize_Click(object sender, EventArgs e)
+        ///
+        private void btnMenu_Activate(object sender, EventArgs e)
         {
-            if (this.WindowState == FormWindowState.Normal)
-            {
-                this.WindowState = FormWindowState.Minimized;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Normal;
-            }
+            initialSideBarWidth = flpanSideBar.Width;
+            initialMenuWidth = panMenu.Width;
+            if (!tmrSideBar.Enabled)
+                tmrSideBar.Start();
         }
+
+        /*-------------------------------------------------------------------------------------------------------------------
+                           KẾT THÚC ĐOẠN XỬ LÝ ANIMATION CHO SIDEBAR
+          --------------------------------------------------------------------------------------------------------------------*/
+
+        /*-------------------------------------------------------------------------------------------------------------------
+                                     BẮT ĐẦU ĐOẠN XỬ LÝ ANIMATION CHO SUB-MENU
+         --------------------------------------------------------------------------------------------------------------------*/
+
+        /// <summary>
+        /// Khi bấm vào các nút Menu mẹ có chứa sub menu thì sẽ kiểm tra trạng thía hiện tại của nó đóng hay mở, sau đó tiến hành mở hoặc đóng submenu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Menu_Click(object sender, EventArgs e)
         {
-            Button menuHolderButton = sender as Button;
+            SfButton menuHolderButton = sender as SfButton;
             if (menuHolderButton != null)
             {
                 // Lấy panel chứa submenu
@@ -588,13 +681,16 @@ namespace GUI
                         {
                             CollapseSubmenu(clickedSubmenuPanel);
                         }
-                        currentSubmenu = clickedSubmenuPanel;
+                        currentMenu = menuHolderButton;
                     }
                 }
             }
         }
 
-
+        /// <summary>
+        /// Hàm xử lý sự kiện mở rộng sub menu
+        /// </summary>
+        /// <param name="submenuPanel"></param>
         private void ExpandSubmenu(Panel submenuPanel)
         {
             Timer expandTimer = new Timer();
@@ -613,9 +709,11 @@ namespace GUI
             expandTimer.Start();
         }
 
-        private const int MinSubMenuWidth = 220;
-        private const int MinSubMenuHeight = 50;
 
+        /// <summary>
+        /// Hàm xử lý sự kiện cho việc đóng submenu
+        /// </summary>
+        /// <param name="submenuPanel"></param>
         private void CollapseSubmenu(Panel submenuPanel)
         {
             Timer collapseTimer = new Timer();
@@ -637,8 +735,51 @@ namespace GUI
             collapseTimer.Start();
         }
 
-      
+        /*-------------------------------------------------------------------------------------------------------------------
+                                   KẾT THÚC ĐOẠN XỬ LÝ ANIMATION CHO SUB-MENU
+       --------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+        /*-------------------------------------------------------------------------------------------------------------------
+                                                HÀM MAIN VÀ HÀM KHỞI TẠO
+        --------------------------------------------------------------------------------------------------------------------*/
+
+        /// <summary>
+        /// Hàm main của form
+        /// </summary>
+        public frmMain()
+        {
+            InitializeComponent();
+            this.DoubleBuffered = true;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            this.FormBorderStyle = FormBorderStyle.Sizable;
+        }
+
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
+        }
+        /*-------------------------------------------------------------------------------------------------------------------
+                                             KẾT THÚC  HÀM MAIN VÀ HÀM KHỞI TẠO
+       --------------------------------------------------------------------------------------------------------------------*/
+
+
+
     }
+
+
+
 
     /// <summary>
     /// Custom button để làm nút tròn

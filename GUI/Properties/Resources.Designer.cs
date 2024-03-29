@@ -123,6 +123,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
+        public static System.Drawing.Icon building {
+            get {
+                object obj = ResourceManager.GetObject("building", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
         public static System.Drawing.Icon CheckIn {
             get {
                 object obj = ResourceManager.GetObject("CheckIn", resourceCulture);
@@ -546,6 +556,16 @@ namespace GUI.Properties {
         public static System.Drawing.Icon staffList {
             get {
                 object obj = ResourceManager.GetObject("staffList", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        public static System.Drawing.Icon staffList1 {
+            get {
+                object obj = ResourceManager.GetObject("staffList1", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
