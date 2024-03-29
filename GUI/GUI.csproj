@@ -253,6 +253,12 @@
     <Compile Include="UserControls\ucDiscount.Designer.cs">
       <DependentUpon>ucDiscount.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ucRating.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucRating.Designer.cs">
+      <DependentUpon>ucRating.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ucTax.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -363,6 +369,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucDiscount.resx">
       <DependentUpon>ucDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucRating.resx">
+      <DependentUpon>ucRating.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucTax.resx">
       <DependentUpon>ucTax.cs</DependentUpon>

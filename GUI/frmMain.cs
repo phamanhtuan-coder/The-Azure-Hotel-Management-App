@@ -535,8 +535,20 @@ namespace GUI
             menuActivated(sender);
             ucMaintance frm = new ucMaintance();
             openForm(frm);
+        } 
+        
+        
+        /// <summary>
+          /// Hàm xử lý sự kiện khi nút đánh giá được bấm
+          /// </summary>
+          /// <param name="sender"></param>
+          /// <param name="e"></param>
+        private void btnRating_Click(object sender, EventArgs e)
+        {
+            menuActivated(sender);
+            ucRating frm = new ucRating();
+            openForm(frm);
         }
-
 
         /*-------------------------------------------------------------------------------------------------------------------
                                                   KẾT THÚC ĐOẠN XỬ LÝ MỞ MENU
@@ -768,11 +780,15 @@ namespace GUI
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            menuActivated(btnBooking);
+            ucBooking Home = new ucBooking();
+            openForm(Home);
         }
+
+
         /*-------------------------------------------------------------------------------------------------------------------
-                                             KẾT THÚC  HÀM MAIN VÀ HÀM KHỞI TẠO
-       --------------------------------------------------------------------------------------------------------------------*/
+                                    KẾT THÚC  HÀM MAIN VÀ HÀM KHỞI TẠO
+        --------------------------------------------------------------------------------------------------------------------*/
 
 
 
