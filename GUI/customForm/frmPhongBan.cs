@@ -65,7 +65,7 @@ namespace GUI.customForm
             {
                 // Nếu đúng là form Thêm thì chạy lệnh insert
 
-                thongBao = new customMessageBox("Đã Thêm thành công dữ liệu phòng ban mới!");
+                thongBao = new customMessageBox("Đã thêm thành công dữ liệu phòng ban mới!");
                 thongBao.ShowDialog();
 
             }

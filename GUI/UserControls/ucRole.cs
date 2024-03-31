@@ -1,4 +1,5 @@
-﻿using Syncfusion.WinForms.ListView;
+﻿using GUI.customForm;
+using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -101,6 +102,39 @@ namespace GUI.UserControls
         private void ucRole_Load(object sender, EventArgs e)
         {
             khoiTaoGiaTrichoForm();
+        }
+
+        private void btnAddRole_Click(object sender, EventArgs e)
+        {
+            frmVaiTro frm = new frmVaiTro();
+            frm.isAdd = true;
+            frm.ShowDialog();
+        }
+
+        private void btnEditRole_Click(object sender, EventArgs e)
+        {
+            
+
+            if (lvwRole.SelectedItems.Count > 0)
+            {
+                frmVaiTro frm = new frmVaiTro();
+                frm.isAdd = false;
+                // Bắt đầu phần có thể chỉnh sửa
+                frm.maVaiTro= lvwRole.SelectedItems[0].SubItems[0].Text;
+                frm.tenVaiTro = lvwRole.SelectedItems[0].SubItems[1].Text;
+                frm.moTa = lvwRole.SelectedItems[0].SubItems[3].Text;
+
+
+
+                // kết thúc phần có thể chỉnh sửa
+                frm.ShowDialog();
+            }
+            else
+            {
+                customMessageBox thongBao = new customMessageBox("Hãy chọn dòng thông tin muốn chỉnh sửa");
+                thongBao.ShowDialog();
+
+            }
         }
     }
 }

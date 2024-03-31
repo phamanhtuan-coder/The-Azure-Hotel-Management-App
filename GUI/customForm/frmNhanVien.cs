@@ -38,7 +38,7 @@ namespace GUI.customForm
             txtMaTaiKhoan.Text = maTaikhoan;
             txtHoTenNV.Text = hoTen;
             txtCCCD.Text = CCCD;
-            dtpNgaySinh.Value = DateTime.Parse(ngaySinh);
+            dtpNgaySinh.Value = DateTime.ParseExact(ngaySinh, "dd/MM/yyyy", null);
 
             if( gioiTinh == "Nam") {
                 radNam.Checked = true; 
@@ -66,7 +66,7 @@ namespace GUI.customForm
             {
                 // Nếu đúng là form Thêm thì chạy lệnh insert
 
-                thongBao = new customMessageBox("Đã Thêm thành công dữ liệu nhân viên mới!");
+                thongBao = new customMessageBox("Đã thêm thành công dữ liệu nhân viên mới!");
                 thongBao.ShowDialog();
 
             }

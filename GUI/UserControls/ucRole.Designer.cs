@@ -116,6 +116,7 @@
             this.btnAddRole.Text = "Thêm";
             this.btnAddRole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddRole.UseVisualStyleBackColor = false;
+            this.btnAddRole.Click += new System.EventHandler(this.btnAddRole_Click);
             // 
             // btnEditRole
             // 
@@ -136,6 +137,7 @@
             this.btnEditRole.Text = "Sửa";
             this.btnEditRole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditRole.UseVisualStyleBackColor = false;
+            this.btnEditRole.Click += new System.EventHandler(this.btnEditRole_Click);
             // 
             // btnDeleteRole
             // 

@@ -71,6 +71,7 @@ namespace GUI.UserControls
                 // Create ListViewItem
                 ListViewItem item = new ListViewItem(maTaiKhoan);
                 item.SubItems.Add(username);
+                item.SubItems.Add("password");
                 item.SubItems.Add(maPhanQuyen);
 
                 // Add item to ListView
