@@ -115,11 +115,14 @@ namespace GUI.UserControls
         {
             
 
-            if (lvwRole.SelectedItems.Count > 0)
+            if (lvwRole.SelectedItems.Count > 0) // sửa dkien
             {
                 frmVaiTro frm = new frmVaiTro();
                 frm.isAdd = false;
                 // Bắt đầu phần có thể chỉnh sửa
+
+
+
                 frm.maVaiTro= lvwRole.SelectedItems[0].SubItems[0].Text;
                 frm.tenVaiTro = lvwRole.SelectedItems[0].SubItems[1].Text;
                 frm.moTa = lvwRole.SelectedItems[0].SubItems[3].Text;

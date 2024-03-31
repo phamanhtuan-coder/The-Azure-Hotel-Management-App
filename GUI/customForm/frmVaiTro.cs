@@ -40,7 +40,7 @@ namespace GUI.customForm
             if (isAdd)
             {
                 // Nếu đúng là form Thêm thì chạy lệnh insert
-
+                
                 thongBao = new customMessageBox("Đã thêm thành công dữ liệu vai trò mới!");
                 thongBao.ShowDialog();
 
