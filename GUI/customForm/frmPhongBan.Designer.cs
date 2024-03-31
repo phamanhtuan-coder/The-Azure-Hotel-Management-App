@@ -98,9 +98,9 @@
             this.lblTruongPhong.AutoSize = true;
             this.lblTruongPhong.Location = new System.Drawing.Point(8, 46);
             this.lblTruongPhong.Name = "lblTruongPhong";
-            this.lblTruongPhong.Size = new System.Drawing.Size(136, 22);
+            this.lblTruongPhong.Size = new System.Drawing.Size(161, 22);
             this.lblTruongPhong.TabIndex = 7;
-            this.lblTruongPhong.Text = "Tên phòng ban";
+            this.lblTruongPhong.Text = "Tên trưởng phòng";
             // 
             // lblNgayNhanChuc
             // 

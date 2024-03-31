@@ -1,4 +1,5 @@
-﻿using Syncfusion.WinForms.ListView;
+﻿using GUI.customForm;
+using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -123,6 +124,41 @@ namespace GUI.UserControls
         private void ucStaff_Load(object sender, EventArgs e)
         {
             khoiTaoGiaTrichoForm();
+        }
+
+        private void btnAddStaff_Click(object sender, EventArgs e)
+        {
+            frmNhanVien frm = new frmNhanVien();
+            frm.isAdd = true;
+            frm.ShowDialog();
+        }
+
+        private void btnEditStaff_Click(object sender, EventArgs e)
+        {
+            if (lvwStaff.SelectedItems.Count > 0) //  Sửa điều kiện đoạn này
+            {
+                frmNhanVien frm = new frmNhanVien();
+                frm.isAdd = false;
+                //Bắt đầu sửa từ đoạn này
+                frm.maNhanVien = lvwStaff.SelectedItems[0].Text;
+                frm.maTaikhoan = lvwStaff.SelectedItems[0].SubItems[1].Text;
+                frm.hoTen = lvwStaff.SelectedItems[0].SubItems[2].Text;
+                frm.gioiTinh= lvwStaff.SelectedItems[0].SubItems[3].Text;
+                frm.ngaySinh = lvwStaff.SelectedItems[0].SubItems[4].Text;
+                frm.CCCD = lvwStaff.SelectedItems[0].SubItems[5].Text;
+                frm.diaChi = lvwStaff.SelectedItems[0].SubItems[6].Text;
+                frm.email = lvwStaff.SelectedItems[0].SubItems[7].Text;
+                frm.soDienThoai = lvwStaff.SelectedItems[0].SubItems[8].Text;
+                frm.anhDaiDien = null;
+
+                //Kết thúc đoạn được sửa
+                frm.ShowDialog();
+            }
+            else
+            {
+                customMessageBox thongBao = new customMessageBox("Vui lòng chọn nhân viên cần sửa!");
+                thongBao.ShowDialog();
+            }
         }
     }
 }

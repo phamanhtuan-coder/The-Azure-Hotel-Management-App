@@ -120,6 +120,8 @@ namespace GUI.UserControls
             {
                 frmPhongBan frm = new frmPhongBan();
                 frm.isAdd = false;
+                //Bắt đầu sửa từ đoạn này
+
                 frm.maPhongBan = lvwDepartment.SelectedItems[0].Text;
                 frm.tenPhongBan = lvwDepartment.SelectedItems[0].SubItems[1].Text;
                 if (lvwDepartment.SelectedItems[0].SubItems[4].Text != string.Empty)
@@ -128,6 +130,9 @@ namespace GUI.UserControls
                     frm.truongPhong = lvwDepartment.SelectedItems[0].SubItems[4].Text;
                     frm.ngayNhanChuc = DateTime.Parse(lvwDepartment.SelectedItems[0].SubItems[5].Text);
                 }
+
+
+                //Kết thúc sửa từ đoạn này
                 frm.ShowDialog();
             }
             else

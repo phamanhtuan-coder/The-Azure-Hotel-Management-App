@@ -120,6 +120,7 @@
             this.btnAddAccountType.Text = "Thêm";
             this.btnAddAccountType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddAccountType.UseVisualStyleBackColor = false;
+            this.btnAddAccountType.Click += new System.EventHandler(this.btnAddAccountType_Click);
             // 
             // btnEditAccountType
             // 
@@ -140,6 +141,7 @@
             this.btnEditAccountType.Text = "Sửa";
             this.btnEditAccountType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditAccountType.UseVisualStyleBackColor = false;
+            this.btnEditAccountType.Click += new System.EventHandler(this.btnEditAccountType_Click);
             // 
             // btnDeleteAccountType
             // 

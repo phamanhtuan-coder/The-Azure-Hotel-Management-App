@@ -12,6 +12,7 @@ namespace GUI.customForm
 {
     public partial class frmPhanQuyen : Form
     {
+        public string maPhanQuyen { get; set; }
         public string tenVaiTro { get; set; }
         public string tenPhongBan { get; set; }
 

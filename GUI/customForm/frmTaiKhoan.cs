@@ -12,9 +12,62 @@ namespace GUI.customForm
 {
     public partial class frmTaiKhoan : Form
     {
+        public string maTaikhoan { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
+
+        public string phanQuyen { get; set; }
+
+        public bool isAdd { get; set; }
+
         public frmTaiKhoan()
         {
             InitializeComponent();
+        }
+
+        private void frmTaiKhoan_Load(object sender, EventArgs e)
+        {
+            // gán giá trị mặc định bằng các biến trên, néu là edit có giá trị truyền vào thì kiểm tra và chọn giá trị
+            txtUsername.Text = username;
+            txtPassword.Text = password;
+            txtRePw.Text = password;
+            cboPhanQuyen.Text = phanQuyen;
+
+           
+
+
+            
+            
+
+        }
+
+        
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            customMessageBox thongBao;
+            // Kiểm tra if tiến hành xử lý sự kiện thêm/sửa phòng ban
+            if (isAdd)
+            {
+                // Nếu đúng là form Thêm thì chạy lệnh insert
+
+                thongBao = new customMessageBox("Đã Thêm thành công dữ liệu tài khoản mới!");
+                thongBao.ShowDialog();
+
+            }
+            else
+            {
+                // nếu không thì chạy lệnh update
+                thongBao = new customMessageBox("Sửa thành công thông tin tài khoản đã chọn!");
+                thongBao.ShowDialog();
+            }
+            this.Close();
+            
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

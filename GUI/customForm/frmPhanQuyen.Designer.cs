@@ -99,9 +99,9 @@
             this.lblMoTa.AutoSize = true;
             this.lblMoTa.Location = new System.Drawing.Point(58, 143);
             this.lblMoTa.Name = "lblMoTa";
-            this.lblMoTa.Size = new System.Drawing.Size(136, 22);
+            this.lblMoTa.Size = new System.Drawing.Size(57, 22);
             this.lblMoTa.TabIndex = 10;
-            this.lblMoTa.Text = "Tên phòng ban";
+            this.lblMoTa.Text = "Mô tả";
             // 
             // rtxtMoTa
             // 

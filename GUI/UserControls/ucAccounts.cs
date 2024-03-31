@@ -1,4 +1,5 @@
-﻿using Syncfusion.WinForms.ListView;
+﻿using GUI.customForm;
+using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -115,6 +116,38 @@ namespace GUI.UserControls
         private void ucAccounts_Load(object sender, EventArgs e)
         {
             khoiTaoGiaTrichoForm();
+        }
+
+        private void btnAddAccounts_Click(object sender, EventArgs e)
+        {
+            frmTaiKhoan frm = new frmTaiKhoan();
+            frm.isAdd = true;
+            frm.ShowDialog();
+        }
+
+        private void btnEditAccounts_Click(object sender, EventArgs e)
+        {
+            if (lvwAccounts.SelectedItems.Count > 0 )
+            {
+                frmTaiKhoan frm = new frmTaiKhoan();
+                frm.isAdd = false;
+
+                //Bắt đầu sửa từ đoạn này
+                frm.maTaikhoan = lvwAccounts.SelectedItems[0].Text;
+                frm.username = lvwAccounts.SelectedItems[0].SubItems[1].Text;
+                frm.password = lvwAccounts.SelectedItems[0].SubItems[2].Text;
+                frm.phanQuyen = lvwAccounts.SelectedItems[0].SubItems[3].Text;
+
+
+                //Kết thúc sửa từ đoạn này
+                frm.ShowDialog();
+            }
+            else
+            {
+                customMessageBox thongBao = new customMessageBox("Vui lòng chọn một tài khoản để sửa!");
+                thongBao.ShowDialog();
+            }
+          
         }
     }
 }

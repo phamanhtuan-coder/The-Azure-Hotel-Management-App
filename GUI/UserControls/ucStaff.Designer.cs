@@ -31,10 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucStaff));
             this.lblStaff = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAddStaff = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnEditStaff = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnDeleteStaff = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnRecoverStaff = new Syncfusion.WinForms.Controls.SfButton();
             this.txtSearchStaff = new System.Windows.Forms.TextBox();
             this.btnTraCuuStaff = new Syncfusion.WinForms.Controls.SfButton();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
@@ -65,6 +61,10 @@
             this.lblStateAccounts = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.btnAddStaff = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnEditStaff = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnDeleteStaff = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnRecoverStaff = new Syncfusion.WinForms.Controls.SfButton();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
             this.spcQuery.Panel1.SuspendLayout();
@@ -113,86 +113,6 @@
             this.tlpController.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpController.Size = new System.Drawing.Size(394, 94);
             this.tlpController.TabIndex = 6;
-            // 
-            // btnAddStaff
-            // 
-            this.btnAddStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddStaff.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddStaff.ForeColor = System.Drawing.Color.White;
-            this.btnAddStaff.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnAddStaff.Location = new System.Drawing.Point(3, 3);
-            this.btnAddStaff.Name = "btnAddStaff";
-            this.btnAddStaff.Size = new System.Drawing.Size(191, 41);
-            this.btnAddStaff.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddStaff.Style.ForeColor = System.Drawing.Color.White;
-            this.btnAddStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnAddStaff.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddStaff.TabIndex = 1;
-            this.btnAddStaff.Text = "Thêm";
-            this.btnAddStaff.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddStaff.UseVisualStyleBackColor = false;
-            // 
-            // btnEditStaff
-            // 
-            this.btnEditStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEditStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditStaff.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditStaff.ForeColor = System.Drawing.Color.White;
-            this.btnEditStaff.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnEditStaff.Location = new System.Drawing.Point(3, 50);
-            this.btnEditStaff.Name = "btnEditStaff";
-            this.btnEditStaff.Size = new System.Drawing.Size(191, 41);
-            this.btnEditStaff.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditStaff.Style.ForeColor = System.Drawing.Color.White;
-            this.btnEditStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnEditStaff.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditStaff.TabIndex = 3;
-            this.btnEditStaff.Text = "Sửa";
-            this.btnEditStaff.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditStaff.UseVisualStyleBackColor = false;
-            // 
-            // btnDeleteStaff
-            // 
-            this.btnDeleteStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleteStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteStaff.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteStaff.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteStaff.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnDeleteStaff.Location = new System.Drawing.Point(200, 3);
-            this.btnDeleteStaff.Name = "btnDeleteStaff";
-            this.btnDeleteStaff.Size = new System.Drawing.Size(191, 41);
-            this.btnDeleteStaff.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteStaff.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.btnDeleteStaff.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteStaff.TabIndex = 4;
-            this.btnDeleteStaff.Text = "Xóa";
-            this.btnDeleteStaff.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDeleteStaff.UseVisualStyleBackColor = false;
-            // 
-            // btnRecoverStaff
-            // 
-            this.btnRecoverStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRecoverStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecoverStaff.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecoverStaff.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverStaff.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnRecoverStaff.Location = new System.Drawing.Point(200, 50);
-            this.btnRecoverStaff.Name = "btnRecoverStaff";
-            this.btnRecoverStaff.Size = new System.Drawing.Size(191, 41);
-            this.btnRecoverStaff.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverStaff.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            this.btnRecoverStaff.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRecoverStaff.TabIndex = 5;
-            this.btnRecoverStaff.Text = "Khôi phục";
-            this.btnRecoverStaff.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRecoverStaff.UseVisualStyleBackColor = false;
             // 
             // txtSearchStaff
             // 
@@ -282,11 +202,12 @@
             // colMaNhanVien
             // 
             this.colMaNhanVien.Text = "Mã Nhân Viên";
+            this.colMaNhanVien.Width = 136;
             // 
             // colMaAccount
             // 
             this.colMaAccount.Text = "Mã tài khoản";
-            this.colMaAccount.Width = 81;
+            this.colMaAccount.Width = 179;
             // 
             // colHoTen
             // 
@@ -540,6 +461,88 @@
             this.spcHeader.Size = new System.Drawing.Size(1370, 94);
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
+            // 
+            // btnAddStaff
+            // 
+            this.btnAddStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddStaff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddStaff.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddStaff.ForeColor = System.Drawing.Color.White;
+            this.btnAddStaff.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnAddStaff.Location = new System.Drawing.Point(3, 3);
+            this.btnAddStaff.Name = "btnAddStaff";
+            this.btnAddStaff.Size = new System.Drawing.Size(191, 41);
+            this.btnAddStaff.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddStaff.Style.ForeColor = System.Drawing.Color.White;
+            this.btnAddStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnAddStaff.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnAddStaff.TabIndex = 1;
+            this.btnAddStaff.Text = "Thêm";
+            this.btnAddStaff.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddStaff.UseVisualStyleBackColor = false;
+            this.btnAddStaff.Click += new System.EventHandler(this.btnAddStaff_Click);
+            // 
+            // btnEditStaff
+            // 
+            this.btnEditStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditStaff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEditStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditStaff.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditStaff.ForeColor = System.Drawing.Color.White;
+            this.btnEditStaff.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnEditStaff.Location = new System.Drawing.Point(3, 50);
+            this.btnEditStaff.Name = "btnEditStaff";
+            this.btnEditStaff.Size = new System.Drawing.Size(191, 41);
+            this.btnEditStaff.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditStaff.Style.ForeColor = System.Drawing.Color.White;
+            this.btnEditStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnEditStaff.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnEditStaff.TabIndex = 3;
+            this.btnEditStaff.Text = "Sửa";
+            this.btnEditStaff.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditStaff.UseVisualStyleBackColor = false;
+            this.btnEditStaff.Click += new System.EventHandler(this.btnEditStaff_Click);
+            // 
+            // btnDeleteStaff
+            // 
+            this.btnDeleteStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteStaff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDeleteStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteStaff.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteStaff.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteStaff.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnDeleteStaff.Location = new System.Drawing.Point(200, 3);
+            this.btnDeleteStaff.Name = "btnDeleteStaff";
+            this.btnDeleteStaff.Size = new System.Drawing.Size(191, 41);
+            this.btnDeleteStaff.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteStaff.Style.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnDeleteStaff.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnDeleteStaff.TabIndex = 4;
+            this.btnDeleteStaff.Text = "Xóa";
+            this.btnDeleteStaff.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeleteStaff.UseVisualStyleBackColor = false;
+            // 
+            // btnRecoverStaff
+            // 
+            this.btnRecoverStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverStaff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRecoverStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecoverStaff.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecoverStaff.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverStaff.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnRecoverStaff.Location = new System.Drawing.Point(200, 50);
+            this.btnRecoverStaff.Name = "btnRecoverStaff";
+            this.btnRecoverStaff.Size = new System.Drawing.Size(191, 41);
+            this.btnRecoverStaff.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverStaff.Style.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnRecoverStaff.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnRecoverStaff.TabIndex = 5;
+            this.btnRecoverStaff.Text = "Khôi phục";
+            this.btnRecoverStaff.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRecoverStaff.UseVisualStyleBackColor = false;
             // 
             // ucStaff
             // 
