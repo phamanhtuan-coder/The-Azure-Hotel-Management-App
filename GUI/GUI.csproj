@@ -138,6 +138,24 @@
     <Compile Include="customForm\frmDangKy.Designer.cs">
       <DependentUpon>frmDangKy.cs</DependentUpon>
     </Compile>
+    <Compile Include="customForm\frmPhanQuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customForm\frmPhanQuyen.Designer.cs">
+      <DependentUpon>frmPhanQuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customForm\frmPhongBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customForm\frmPhongBan.Designer.cs">
+      <DependentUpon>frmPhongBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customForm\frmTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customForm\frmTaiKhoan.Designer.cs">
+      <DependentUpon>frmTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,12 +174,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\ucAccounting.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\ucAccounting.Designer.cs">
-      <DependentUpon>ucAccounting.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ucBillDetails.cs">
       <SubType>UserControl</SubType>
@@ -199,11 +211,11 @@
     <Compile Include="UserControls\ucDeviceStatus.Designer.cs">
       <DependentUpon>ucDeviceStatus.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\ucMaintance.cs">
+    <Compile Include="UserControls\ucMaintentance.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\ucMaintance.Designer.cs">
-      <DependentUpon>ucMaintance.cs</DependentUpon>
+    <Compile Include="UserControls\ucMaintentance.Designer.cs">
+      <DependentUpon>ucMaintentance.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ucHousekeeping.cs">
       <SubType>UserControl</SubType>
@@ -310,6 +322,15 @@
     <EmbeddedResource Include="customForm\frmDangKy.resx">
       <DependentUpon>frmDangKy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="customForm\frmPhanQuyen.resx">
+      <DependentUpon>frmPhanQuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customForm\frmPhongBan.resx">
+      <DependentUpon>frmPhongBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customForm\frmTaiKhoan.resx">
+      <DependentUpon>frmTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -321,9 +342,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ucAccounting.resx">
-      <DependentUpon>ucAccounting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucBillDetails.resx">
       <DependentUpon>ucBillDetails.cs</DependentUpon>
@@ -343,8 +361,8 @@
     <EmbeddedResource Include="UserControls\ucDeviceStatus.resx">
       <DependentUpon>ucDeviceStatus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ucMaintance.resx">
-      <DependentUpon>ucMaintance.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\ucMaintentance.resx">
+      <DependentUpon>ucMaintentance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucHousekeeping.resx">
       <DependentUpon>ucHousekeeping.cs</DependentUpon>

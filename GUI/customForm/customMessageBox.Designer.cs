@@ -37,19 +37,20 @@
             // 
             this.lblThongBao.AutoSize = true;
             this.lblThongBao.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblThongBao.Location = new System.Drawing.Point(65, 34);
+            this.lblThongBao.Location = new System.Drawing.Point(123, 31);
             this.lblThongBao.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblThongBao.Name = "lblThongBao";
-            this.lblThongBao.Size = new System.Drawing.Size(0, 33);
+            this.lblThongBao.Size = new System.Drawing.Size(556, 33);
             this.lblThongBao.TabIndex = 0;
+            this.lblThongBao.Text = "Bạn có muốn thoát chương trình này không?";
             // 
             // btnOK
             // 
             this.btnOK.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOK.ForeColor = System.Drawing.Color.White;
-            this.btnOK.Location = new System.Drawing.Point(136, 98);
+            this.btnOK.Location = new System.Drawing.Point(448, 87);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(134, 40);
+            this.btnOK.Size = new System.Drawing.Size(200, 40);
             this.btnOK.Style.BackColor = System.Drawing.Color.Green;
             this.btnOK.Style.FocusedBackColor = System.Drawing.Color.Green;
             this.btnOK.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -65,9 +66,9 @@
             // 
             this.btnCancel.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(305, 98);
+            this.btnCancel.Location = new System.Drawing.Point(129, 87);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(134, 40);
+            this.btnCancel.Size = new System.Drawing.Size(200, 40);
             this.btnCancel.Style.BackColor = System.Drawing.Color.Goldenrod;
             this.btnCancel.Style.FocusedBackColor = System.Drawing.Color.Goldenrod;
             this.btnCancel.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -83,7 +84,7 @@
             // customMessageBox
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(600, 150);
+            this.ClientSize = new System.Drawing.Size(800, 150);
             this.ControlBox = false;
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
@@ -94,6 +95,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "customMessageBox";
             this.Text = "customMessageBox";
+            this.Load += new System.EventHandler(this.customMessageBox_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

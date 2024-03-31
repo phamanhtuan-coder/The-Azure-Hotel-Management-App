@@ -18,9 +18,7 @@ namespace GUI.UserControls
             this.DoubleBuffered = true;
         }
 
-        private void ucDashboard_Load(object sender, EventArgs e)
-        {
-           
-        }
+
+
     }
 }

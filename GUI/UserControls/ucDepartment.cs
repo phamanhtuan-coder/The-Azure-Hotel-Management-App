@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GUI.customForm;
 
 namespace GUI.UserControls
 {
@@ -95,19 +96,46 @@ namespace GUI.UserControls
                 }
             }
 
-
-
-
-
         }
 
-        
-
+     
 
         private void ucDepartment_Load(object sender, EventArgs e)
         {
 
             khoiTaoGiaTrichoForm();
+        }
+
+        private void btnAddDepartment_Click(object sender, EventArgs e)
+        {
+            frmPhongBan frm = new frmPhongBan();
+            frm.isAdd = true;
+            frm.ShowDialog();
+        }
+
+        private void btnEditDepartment_Click(object sender, EventArgs e)
+        {
+            // bổ sung kiểm tra dòng có đang được chọn chưa, nếu có dòng được chọn thì tiến hành xử lý, nếu không thì thông báo lỗi
+            if (lvwDepartment.SelectedItems.Count > 0) 
+            {
+                frmPhongBan frm = new frmPhongBan();
+                frm.isAdd = false;
+                frm.maPhongBan = lvwDepartment.SelectedItems[0].Text;
+                frm.tenPhongBan = lvwDepartment.SelectedItems[0].SubItems[1].Text;
+                if (lvwDepartment.SelectedItems[0].SubItems[4].Text != string.Empty)
+                {
+                    frm.isTruongPhong = true;
+                    frm.truongPhong = lvwDepartment.SelectedItems[0].SubItems[4].Text;
+                    frm.ngayNhanChuc = DateTime.Parse(lvwDepartment.SelectedItems[0].SubItems[5].Text);
+                }
+                frm.ShowDialog();
+            }
+            else
+            {
+                customMessageBox thongBao = new customMessageBox("Hãy chọn 1 dòng dữ liệu bạn muốn thay đổi!");
+                thongBao.ShowDialog();
+            }
+           
         }
     }
 }

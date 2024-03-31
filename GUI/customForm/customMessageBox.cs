@@ -16,7 +16,7 @@ namespace GUI.customForm
         {
             InitializeComponent();
           
-            this.BackColor = Color.Teal; 
+            this.BackColor = Color.DarkCyan; 
             this.FormBorderStyle = FormBorderStyle.None;
             this.StartPosition = FormStartPosition.CenterParent; 
             this.ForeColor = Color.White;
@@ -36,6 +36,11 @@ namespace GUI.customForm
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void customMessageBox_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

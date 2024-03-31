@@ -786,7 +786,7 @@
             this.btnReportings.TabIndex = 9;
             this.btnReportings.Text = "Báo cáo";
             this.btnReportings.UseVisualStyleBackColor = false;
-            this.btnReportings.Click += new System.EventHandler(this.btnAccounting_Click);
+
             // 
             // flpStaffManagement
             // 

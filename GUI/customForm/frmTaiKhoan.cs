@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI.UserControls
+namespace GUI.customForm
 {
-    public partial class ucAccounting : UserControl
+    public partial class frmTaiKhoan : Form
     {
-        public ucAccounting()
+        public frmTaiKhoan()
         {
             InitializeComponent();
         }

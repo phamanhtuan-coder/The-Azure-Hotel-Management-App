@@ -31,10 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucDepartment));
             this.lblDepartment = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAddDepartment = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnEditDepartment = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnDeleteDepartment = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnRecoverDepartment = new Syncfusion.WinForms.Controls.SfButton();
             this.txtSearchDepartment = new System.Windows.Forms.TextBox();
             this.btnTraCuuDepartment = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateDepartment = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -53,6 +49,10 @@
             this.lblStateDepartment = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.btnAddDepartment = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnEditDepartment = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnDeleteDepartment = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnRecoverDepartment = new Syncfusion.WinForms.Controls.SfButton();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateDepartment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -98,86 +98,6 @@
             this.tlpController.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpController.Size = new System.Drawing.Size(394, 94);
             this.tlpController.TabIndex = 6;
-            // 
-            // btnAddDepartment
-            // 
-            this.btnAddDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddDepartment.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddDepartment.ForeColor = System.Drawing.Color.White;
-            this.btnAddDepartment.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnAddDepartment.Location = new System.Drawing.Point(3, 3);
-            this.btnAddDepartment.Name = "btnAddDepartment";
-            this.btnAddDepartment.Size = new System.Drawing.Size(191, 41);
-            this.btnAddDepartment.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddDepartment.Style.ForeColor = System.Drawing.Color.White;
-            this.btnAddDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnAddDepartment.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddDepartment.TabIndex = 1;
-            this.btnAddDepartment.Text = "Thêm";
-            this.btnAddDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddDepartment.UseVisualStyleBackColor = false;
-            // 
-            // btnEditDepartment
-            // 
-            this.btnEditDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEditDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditDepartment.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditDepartment.ForeColor = System.Drawing.Color.White;
-            this.btnEditDepartment.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnEditDepartment.Location = new System.Drawing.Point(3, 50);
-            this.btnEditDepartment.Name = "btnEditDepartment";
-            this.btnEditDepartment.Size = new System.Drawing.Size(191, 41);
-            this.btnEditDepartment.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditDepartment.Style.ForeColor = System.Drawing.Color.White;
-            this.btnEditDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnEditDepartment.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditDepartment.TabIndex = 3;
-            this.btnEditDepartment.Text = "Sửa";
-            this.btnEditDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditDepartment.UseVisualStyleBackColor = false;
-            // 
-            // btnDeleteDepartment
-            // 
-            this.btnDeleteDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleteDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteDepartment.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteDepartment.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteDepartment.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnDeleteDepartment.Location = new System.Drawing.Point(200, 3);
-            this.btnDeleteDepartment.Name = "btnDeleteDepartment";
-            this.btnDeleteDepartment.Size = new System.Drawing.Size(191, 41);
-            this.btnDeleteDepartment.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteDepartment.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.btnDeleteDepartment.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteDepartment.TabIndex = 4;
-            this.btnDeleteDepartment.Text = "Xóa";
-            this.btnDeleteDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDeleteDepartment.UseVisualStyleBackColor = false;
-            // 
-            // btnRecoverDepartment
-            // 
-            this.btnRecoverDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRecoverDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecoverDepartment.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecoverDepartment.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverDepartment.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnRecoverDepartment.Location = new System.Drawing.Point(200, 50);
-            this.btnRecoverDepartment.Name = "btnRecoverDepartment";
-            this.btnRecoverDepartment.Size = new System.Drawing.Size(191, 41);
-            this.btnRecoverDepartment.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverDepartment.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            this.btnRecoverDepartment.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRecoverDepartment.TabIndex = 5;
-            this.btnRecoverDepartment.Text = "Khôi phục";
-            this.btnRecoverDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRecoverDepartment.UseVisualStyleBackColor = false;
             // 
             // txtSearchDepartment
             // 
@@ -272,7 +192,7 @@
             // colMaDepartment
             // 
             this.colMaDepartment.Text = "Mã phòng ban";
-            this.colMaDepartment.Width = 81;
+            this.colMaDepartment.Width = 129;
             // 
             // colTenPhong
             // 
@@ -284,7 +204,7 @@
             // 
             this.colSoLuongNV.Text = "Số lượng nhân viên";
             this.colSoLuongNV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colSoLuongNV.Width = 179;
+            this.colSoLuongNV.Width = 227;
             // 
             // colMoTa
             // 
@@ -295,10 +215,12 @@
             // colTruongPhong
             // 
             this.colTruongPhong.Text = "Trưởng phòng";
+            this.colTruongPhong.Width = 168;
             // 
             // colNgayNhanChuc
             // 
             this.colNgayNhanChuc.Text = "Ngày nhận chức";
+            this.colNgayNhanChuc.Width = 166;
             // 
             // cboSortDepartment
             // 
@@ -395,6 +317,88 @@
             this.spcHeader.Size = new System.Drawing.Size(1370, 94);
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
+            // 
+            // btnAddDepartment
+            // 
+            this.btnAddDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddDepartment.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddDepartment.ForeColor = System.Drawing.Color.White;
+            this.btnAddDepartment.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnAddDepartment.Location = new System.Drawing.Point(3, 3);
+            this.btnAddDepartment.Name = "btnAddDepartment";
+            this.btnAddDepartment.Size = new System.Drawing.Size(191, 41);
+            this.btnAddDepartment.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddDepartment.Style.ForeColor = System.Drawing.Color.White;
+            this.btnAddDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnAddDepartment.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnAddDepartment.TabIndex = 1;
+            this.btnAddDepartment.Text = "Thêm";
+            this.btnAddDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddDepartment.UseVisualStyleBackColor = false;
+            this.btnAddDepartment.Click += new System.EventHandler(this.btnAddDepartment_Click);
+            // 
+            // btnEditDepartment
+            // 
+            this.btnEditDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEditDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditDepartment.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditDepartment.ForeColor = System.Drawing.Color.White;
+            this.btnEditDepartment.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnEditDepartment.Location = new System.Drawing.Point(3, 50);
+            this.btnEditDepartment.Name = "btnEditDepartment";
+            this.btnEditDepartment.Size = new System.Drawing.Size(191, 41);
+            this.btnEditDepartment.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditDepartment.Style.ForeColor = System.Drawing.Color.White;
+            this.btnEditDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnEditDepartment.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnEditDepartment.TabIndex = 3;
+            this.btnEditDepartment.Text = "Sửa";
+            this.btnEditDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditDepartment.UseVisualStyleBackColor = false;
+            this.btnEditDepartment.Click += new System.EventHandler(this.btnEditDepartment_Click);
+            // 
+            // btnDeleteDepartment
+            // 
+            this.btnDeleteDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDeleteDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteDepartment.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteDepartment.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteDepartment.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnDeleteDepartment.Location = new System.Drawing.Point(200, 3);
+            this.btnDeleteDepartment.Name = "btnDeleteDepartment";
+            this.btnDeleteDepartment.Size = new System.Drawing.Size(191, 41);
+            this.btnDeleteDepartment.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteDepartment.Style.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnDeleteDepartment.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnDeleteDepartment.TabIndex = 4;
+            this.btnDeleteDepartment.Text = "Xóa";
+            this.btnDeleteDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeleteDepartment.UseVisualStyleBackColor = false;
+            // 
+            // btnRecoverDepartment
+            // 
+            this.btnRecoverDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRecoverDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecoverDepartment.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecoverDepartment.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverDepartment.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnRecoverDepartment.Location = new System.Drawing.Point(200, 50);
+            this.btnRecoverDepartment.Name = "btnRecoverDepartment";
+            this.btnRecoverDepartment.Size = new System.Drawing.Size(191, 41);
+            this.btnRecoverDepartment.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverDepartment.Style.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnRecoverDepartment.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnRecoverDepartment.TabIndex = 5;
+            this.btnRecoverDepartment.Text = "Khôi phục";
+            this.btnRecoverDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRecoverDepartment.UseVisualStyleBackColor = false;
             // 
             // ucDepartment
             // 

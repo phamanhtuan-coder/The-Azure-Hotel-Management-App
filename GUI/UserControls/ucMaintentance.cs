@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace GUI.UserControls
 {
-    public partial class ucMaintance : UserControl
+    public partial class ucMaintentance : UserControl
     {
 
-        public ucMaintance()
+        public ucMaintentance()
         {
             InitializeComponent();
         }
@@ -32,15 +32,15 @@ namespace GUI.UserControls
             trangThaiSort.Add("Giảm dần");
             trangThaiSort.Add("Không sắp xếp");
  
-            cboSortMaintanceID.DataSource = trangThaiSort;
-            cboSortMaintanceID.AllowDropDownResize = false;
+            cboSortMaintentanceD.DataSource = trangThaiSort;
+            cboSortMaintentanceD.AllowDropDownResize = false;
 
             trangThaiXoa.Add("Đã bị xóa");
             trangThaiXoa.Add("Chưa bị xóa");
             trangThaiXoa.Add("Tất cả");
-            cboStateMaintance.DataSource = trangThaiXoa;
+            cboStateMaintentance.DataSource = trangThaiXoa;
 
-            cboStateMaintance.AllowDropDownResize = false;
+            cboStateMaintentance.AllowDropDownResize = false;
 
 
             // Tạo dữ liệu giả mạo cho ListView
@@ -59,25 +59,25 @@ namespace GUI.UserControls
                 item.SubItems.Add(ngayNhan.ToString("dd/MM/yyyy"));
                 item.SubItems.Add(ngayHoanThanh.ToString("dd/MM/yyyy"));
 
-                lvwMaintance.Items.Add(item);
+                lvwMaintentance.Items.Add(item);
             }
 
 
 
 
 
-            if (lvwMaintance != null)
+            if (lvwMaintentance != null)
             {
                 // Resize columns based on column header or content
-                for (int i = 0; i < lvwMaintance.Columns.Count; i++)
+                for (int i = 0; i < lvwMaintentance.Columns.Count; i++)
                 {
-                    int headerWidth = TextRenderer.MeasureText(lvwMaintance.Columns[i].Text, lvwMaintance.Font).Width;
+                    int headerWidth = TextRenderer.MeasureText(lvwMaintentance.Columns[i].Text, lvwMaintentance.Font).Width;
                     int contentWidth = 0;
 
                     // Calculate the maximum width of content in the column
-                    foreach (ListViewItem item in lvwMaintance.Items)
+                    foreach (ListViewItem item in lvwMaintentance.Items)
                     {
-                        int itemWidth = TextRenderer.MeasureText(item.SubItems[i].Text, lvwMaintance.Font).Width;
+                        int itemWidth = TextRenderer.MeasureText(item.SubItems[i].Text, lvwMaintentance.Font).Width;
                         contentWidth = Math.Max(contentWidth, itemWidth);
                     }
 
@@ -85,7 +85,7 @@ namespace GUI.UserControls
                     int columnWidth = Math.Max(headerWidth, contentWidth);
 
                     // Set the width of the column
-                    lvwMaintance.Columns[i].Width = columnWidth;
+                    lvwMaintentance.Columns[i].Width = columnWidth;
                 }
             }
 

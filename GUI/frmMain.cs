@@ -369,19 +369,6 @@ namespace GUI
 
 
         /// <summary>
-        /// Hàm xử lý sự kiện khi nút Accounting được bấm
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnAccounting_Click(object sender, EventArgs e)
-        {
-            menuActivated(sender);
-            ucAccounting frm = new ucAccounting();
-            openForm(frm);
-        }
-
-
-        /// <summary>
         /// Hàm xử lý sự kiện khi nút Staff được bấm
         /// </summary>
         /// <param name="sender"></param>
@@ -533,7 +520,7 @@ namespace GUI
         private void btnMaintance_Click(object sender, EventArgs e)
         {
             menuActivated(sender);
-            ucMaintance frm = new ucMaintance();
+            ucMaintentance frm = new ucMaintentance();
             openForm(frm);
         } 
         
