@@ -1,4 +1,5 @@
-﻿using Syncfusion.WinForms.ListView;
+﻿using GUI.customForm;
+using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -102,6 +103,35 @@ namespace GUI.UserControls
         private void ucCustomerRanking_Load(object sender, EventArgs e)
         {
             khoiTaoGiaTrichoForm();
+        }
+
+        private void btnAddCustomerRanking_Click(object sender, EventArgs e)
+        {
+            frmHangThanhVien frm = new frmHangThanhVien();
+            frm.isAdd = true;
+            frm.ShowDialog();
+        }
+
+        private void btnEditCustomerRanking_Click(object sender, EventArgs e)
+        {
+            if (lvwCustomerRanking.SelectedItems.Count >0)
+            {
+                frmHangThanhVien frm = new frmHangThanhVien();
+                frm.isAdd = false;
+                //Batdau doan co the chinh sua
+                frm.maHang= lvwCustomerRanking.SelectedItems[0].Text;
+                frm.tenhang = lvwCustomerRanking.SelectedItems[0].SubItems[1].Text;
+                frm.mucChietKhau = double.Parse(lvwCustomerRanking.SelectedItems[0].SubItems[3].Text.Replace("%", ""));
+
+                //ket thuc doan co the chinh sua
+                frm.ShowDialog();
+            }
+            else
+            {
+                customMessageBox thongBao = new customMessageBox("Vui lòng chọn một hạng thành viên để sửa!");
+                thongBao.ShowDialog();
+            }
+           
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Syncfusion.WinForms.ListView;
+﻿using GUI.customForm;
+using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -112,6 +113,32 @@ namespace GUI.UserControls
         private void ucCustomer_Load(object sender, EventArgs e)
         {
             khoiTaoGiaTrichoForm();
+        }
+
+        private void btnAddCustomer_Click(object sender, EventArgs e)
+        {
+            frmKhachHang frm = new frmKhachHang();
+            frm.isAdd = true;
+            frm.ShowDialog();
+        }
+
+        private void btnEditCustomer_Click(object sender, EventArgs e)
+        {
+            if (lvwCustomer.SelectedItems.Count > 0)
+            {
+                frmKhachHang frm = new frmKhachHang();
+                frm.isAdd = false;
+                //Bắt đầu đoạn có thể chỉnh sửa
+
+
+                //Kết thúc đoạn có thể chỉnh sửa
+                frm.ShowDialog();
+            }
+            else
+            {
+                customMessageBox thongBao = new customMessageBox("Vui lòng chọn một dòng dữ liệu để chỉnh sửa!");
+                thongBao.ShowDialog();
+            }
         }
     }
 }

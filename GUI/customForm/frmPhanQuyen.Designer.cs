@@ -129,7 +129,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPhanQuyen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.frmTaiKhoan_Load);
+            this.Load += new System.EventHandler(this.frmPhanQuyen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

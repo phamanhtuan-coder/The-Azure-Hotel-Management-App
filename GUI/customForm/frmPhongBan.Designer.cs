@@ -151,7 +151,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPhongBan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.frmTaiKhoan_Load);
+            this.Load += new System.EventHandler(this.frmPhongBan_Load);
             this.grpThongTinTruongPhong.ResumeLayout(false);
             this.grpThongTinTruongPhong.PerformLayout();
             this.ResumeLayout(false);

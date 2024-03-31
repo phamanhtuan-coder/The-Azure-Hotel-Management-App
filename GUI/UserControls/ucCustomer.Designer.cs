@@ -408,6 +408,7 @@
             this.btnAddCustomer.Text = "Thêm";
             this.btnAddCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddCustomer.UseVisualStyleBackColor = false;
+            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
             // 
             // btnEditCustomer
             // 
@@ -428,6 +429,7 @@
             this.btnEditCustomer.Text = "Sửa";
             this.btnEditCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditCustomer.UseVisualStyleBackColor = false;
+            this.btnEditCustomer.Click += new System.EventHandler(this.btnEditCustomer_Click);
             // 
             // btnDeleteCustomer
             // 

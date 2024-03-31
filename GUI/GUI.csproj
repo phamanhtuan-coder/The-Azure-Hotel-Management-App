@@ -120,6 +120,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Custom control\CircularPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Custom control\RoundButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="customForm\customMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,11 +144,23 @@
     <Compile Include="customForm\frmDangKy.Designer.cs">
       <DependentUpon>frmDangKy.cs</DependentUpon>
     </Compile>
+    <Compile Include="customForm\frmKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customForm\frmKhachHang.Designer.cs">
+      <DependentUpon>frmKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="customForm\frmNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="customForm\frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customForm\frmHangThanhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customForm\frmHangThanhVien.Designer.cs">
+      <DependentUpon>frmHangThanhVien.cs</DependentUpon>
     </Compile>
     <Compile Include="customForm\frmVaiTro.cs">
       <SubType>Form</SubType>
@@ -334,8 +352,14 @@
     <EmbeddedResource Include="customForm\frmDangKy.resx">
       <DependentUpon>frmDangKy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="customForm\frmKhachHang.resx">
+      <DependentUpon>frmKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="customForm\frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customForm\frmHangThanhVien.resx">
+      <DependentUpon>frmHangThanhVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="customForm\frmVaiTro.resx">
       <DependentUpon>frmVaiTro.cs</DependentUpon>

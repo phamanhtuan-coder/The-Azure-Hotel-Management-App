@@ -1,7 +1,4 @@
-﻿using GUI.customForm;
-using GUI.UserControls;
-using Syncfusion.WinForms.Controls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +10,9 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GUI.customForm;
+using GUI.UserControls;
+using Syncfusion.WinForms.Controls;
 
 namespace GUI
 {
@@ -27,26 +27,22 @@ namespace GUI
         private SfButton currentButton;
 
         //bien de luu sub menu dang mo
-        private SfButton currentMenu;
-
+        private Panel currentOpenSubmenu = null;
 
         //Biến cho animation thu/ phóng thanh sideBar
-        private bool sideBarExpand=true;
+        private bool sideBarExpand = true;
         private int maxSideBarWidth = 220;
         private int minSideBarWidth = 45;
-        private const int animationStep = 10; 
-        private int initialSideBarWidth; 
+        private const int animationStep = 10;
+        private int initialSideBarWidth;
         private int initialMenuWidth;
-
 
         //Biến cho animation thu nhỏ subMenu
         private const int MinSubMenuWidth = 220;
         private const int MinSubMenuHeight = 50;
 
-
         //Biến Kích thược mặc định của FormMain
         private Size kichThuocMacDinh = new Size(1600, 900);
-
 
         //Các biến cho Snap Form
         private const int WM_NCLBUTTONDOWN = 0xA1;
@@ -54,19 +50,22 @@ namespace GUI
         private const int WM_SYSCOMMAND = 0x0112;
         private const int SC_MOVE = 0xF010;
 
-        
         //Đọc và nhận dữ liệu chuột tương tác với form để di chuyển form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
+        private static extern void ReleaseCapture();
 
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-
+        private static extern void SendMessage(
+            System.IntPtr hwnd,
+            int wmsg,
+            int wparam,
+            int lparam
+        );
 
         /*-------------------------------------------------------------------------------------------------------------------
                                          KẾT THÚC KHAI BÁO CÁC BIẾN TOÀN CỤC
        --------------------------------------------------------------------------------------------------------------------*/
- 
+
 
         /*-------------------------------------------------------------------------------------------------------------------
                                           BẮT ĐẦU ĐOẠN XỬ LÝ CÁC NÚT CONTROL CHÍNH
@@ -79,7 +78,11 @@ namespace GUI
         /// <param name="e"></param>
         private void btnClose_Click(object sender, EventArgs e)
         {
-            using (customMessageBox messageBox = new customMessageBox("Bạn có muốn thoát chương trình không?"))
+            using (
+                customMessageBox messageBox = new customMessageBox(
+                    "Bạn có muốn thoát chương trình không?"
+                )
+            )
             {
                 DialogResult dr = messageBox.ShowDialog();
                 if (dr == DialogResult.Cancel)
@@ -107,15 +110,12 @@ namespace GUI
             {
                 this.Size = kichThuocMacDinh;
                 this.WindowState = FormWindowState.Normal;
-
             }
             else
             {
-
                 this.WindowState = FormWindowState.Maximized;
             }
         }
-
 
         /// <summary>
         /// Hàm xử lý sự kiện khi bấm nút Minimize
@@ -133,8 +133,6 @@ namespace GUI
             }
         }
 
-
-
         /// <summary>
         /// Hàm xử lý sự kiện khi nút LogOut được bấm
         /// </summary>
@@ -142,16 +140,19 @@ namespace GUI
         /// <param name="e"></param>
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            using (customMessageBox messageBox = new customMessageBox("Bạn có muốn đăng xuất tài khoản không?"))
+            using (
+                customMessageBox messageBox = new customMessageBox(
+                    "Bạn có muốn đăng xuất tài khoản không?"
+                )
+            )
             {
                 DialogResult dr = messageBox.ShowDialog();
-                if ( dr == DialogResult.OK)
+                if (dr == DialogResult.OK)
                 {
                     frmLogin login = new frmLogin();
                     this.Hide();
                     login.Show();
                     this.Close();
-
                 }
                 else
                 {
@@ -159,8 +160,6 @@ namespace GUI
                     return;
                 }
             }
-               
-            
         }
 
         /*-------------------------------------------------------------------------------------------------------------------
@@ -186,7 +185,6 @@ namespace GUI
             }
         }
 
-
         /// <summary>
         /// Hàm xử lý tính năng Aero Snap của form
         /// </summary>
@@ -199,7 +197,6 @@ namespace GUI
                 return;
             }
             base.WndProc(ref m);
-
         }
 
         /// <summary>
@@ -240,7 +237,7 @@ namespace GUI
         /// Hàm để mở form con
         /// </summary>
         /// <param name="frm">Form con muốn mở (UserControl)</param>
-        /// 
+        ///
         private void openForm(UserControl frm)
         {
             panDesktop.Controls.Clear();
@@ -250,8 +247,6 @@ namespace GUI
             frm.BringToFront();
             frm.Show();
         }
-
-
 
         /// <summary>
         /// Hàm xử lý sự kiện khi nút Loai TK được bấm
@@ -277,7 +272,6 @@ namespace GUI
             openForm(frm);
         }
 
-
         /// <summary>
         /// Hàm xử lý sự kiện khi nút Booking được bấm
         /// </summary>
@@ -289,7 +283,6 @@ namespace GUI
             ucBooking frm = new ucBooking();
             openForm(frm);
         }
-
 
         /// <summary>
         /// Hàm xử lý sự kiện khi nút Room được bấm
@@ -308,7 +301,7 @@ namespace GUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-    
+
         private void btnRoomType_Click(object sender, EventArgs e)
         {
             menuActivated(sender);
@@ -328,7 +321,6 @@ namespace GUI
             openForm(frm);
         }
 
-
         /// <summary>
         /// Hàm xử lý sự kiện khi nút Customer được bấm
         /// </summary>
@@ -340,7 +332,6 @@ namespace GUI
             ucCustomer frm = new ucCustomer();
             openForm(frm);
         }
-
 
         /// <summary>
         /// Hàm xử lý sự kiện khi nút Service được bấm
@@ -354,7 +345,6 @@ namespace GUI
             openForm(frm);
         }
 
-
         /// <summary>
         /// Hàm xử lý sự kiện khi nút HoaDon được bấm
         /// </summary>
@@ -366,7 +356,6 @@ namespace GUI
             ucBill frm = new ucBill();
             openForm(frm);
         }
-
 
         /// <summary>
         /// Hàm xử lý sự kiện khi nút Staff được bấm
@@ -472,7 +461,7 @@ namespace GUI
         private void btnBillDetails_Click(object sender, EventArgs e)
         {
             menuActivated(sender);
-           ucBillDetails frm = new ucBillDetails();
+            ucBillDetails frm = new ucBillDetails();
             openForm(frm);
         }
 
@@ -508,7 +497,7 @@ namespace GUI
         private void btnHousekeeping_Click(object sender, EventArgs e)
         {
             menuActivated(sender);
-           ucHousekeeping frm = new ucHousekeeping();
+            ucHousekeeping frm = new ucHousekeeping();
             openForm(frm);
         }
 
@@ -522,14 +511,13 @@ namespace GUI
             menuActivated(sender);
             ucMaintentance frm = new ucMaintentance();
             openForm(frm);
-        } 
-        
-        
+        }
+
         /// <summary>
-          /// Hàm xử lý sự kiện khi nút đánh giá được bấm
-          /// </summary>
-          /// <param name="sender"></param>
-          /// <param name="e"></param>
+        /// Hàm xử lý sự kiện khi nút đánh giá được bấm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRating_Click(object sender, EventArgs e)
         {
             menuActivated(sender);
@@ -554,8 +542,6 @@ namespace GUI
         {
             if (sideBarExpand)
             {
-
-
                 if (currentButton != null && currentButton != sender)
                 {
                     menuDeActivated(currentButton);
@@ -566,6 +552,9 @@ namespace GUI
                 currentButton.ImageAlign = ContentAlignment.MiddleRight;
                 currentButton.ImageMargin = new Padding(3);
                 currentButton.TextAlign = ContentAlignment.BottomRight;
+                currentButton.Style.ForeColor = Color.Black;
+                currentButton.Style.PressedForeColor = Color.Black;
+                currentButton.Style.ImageForeColor = Color.Black;
             }
         }
 
@@ -580,9 +569,12 @@ namespace GUI
             currentButton.ImageAlign = ContentAlignment.MiddleLeft;
             currentButton.ImageMargin = new Padding(3);
             currentButton.TextAlign = ContentAlignment.BottomLeft;
+            currentButton.ForeColor = Color.White;
+            currentButton.Style.ImageForeColor = Color.White;
+            currentButton.Style.PressedForeColor = Color.White;
             currentButton = null;
+           
         }
-
 
         /// <summary>
         /// Hàm xử lý animation cho SideBar thu nhỏ/ mở rộng
@@ -619,7 +611,6 @@ namespace GUI
                     tmrSideBar.Stop();
                 }
             }
-
         }
 
         /// <summary>
@@ -649,6 +640,11 @@ namespace GUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        /// <summary>
+        /// Khi bấm vào các nút Menu mẹ có chứa sub menu thì sẽ kiểm tra trạng thía hiện tại của nó đóng hay mở, sau đó tiến hành mở hoặc đóng submenu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Menu_Click(object sender, EventArgs e)
         {
             SfButton menuHolderButton = sender as SfButton;
@@ -659,12 +655,9 @@ namespace GUI
                 if (submenuContainerPanel != null)
                 {
                     // Kiểm tra xem submenu khác có đang mở không, nếu có thì đóng lại
-                    foreach (Control control in submenuContainerPanel.Controls)
+                    if (currentOpenSubmenu != null && currentOpenSubmenu != submenuContainerPanel)
                     {
-                        if (control is Panel subPanel && subPanel != sender)
-                        {
-                            CollapseSubmenu(subPanel);
-                        }
+                        CollapseSubmenu(currentOpenSubmenu);
                     }
 
                     // Lấy panel submenu
@@ -675,12 +668,15 @@ namespace GUI
                         if (clickedSubmenuPanel.Height < clickedSubmenuPanel.MaximumSize.Height)
                         {
                             ExpandSubmenu(clickedSubmenuPanel);
+                            currentOpenSubmenu = submenuContainerPanel;
                         }
                         else
                         {
                             CollapseSubmenu(clickedSubmenuPanel);
+                            currentOpenSubmenu = null;
+
                         }
-                        currentMenu = menuHolderButton;
+                       
                     }
                 }
             }
@@ -693,7 +689,7 @@ namespace GUI
         private void ExpandSubmenu(Panel submenuPanel)
         {
             Timer expandTimer = new Timer();
-            expandTimer.Interval = 20; // Thời gian cho mỗi bước animation
+            expandTimer.Interval = 25; // Thời gian cho mỗi bước animation
             expandTimer.Tick += (sender, e) =>
             {
                 if (submenuPanel.Height < submenuPanel.MaximumSize.Height)
@@ -708,7 +704,6 @@ namespace GUI
             expandTimer.Start();
         }
 
-
         /// <summary>
         /// Hàm xử lý sự kiện cho việc đóng submenu
         /// </summary>
@@ -716,7 +711,7 @@ namespace GUI
         private void CollapseSubmenu(Panel submenuPanel)
         {
             Timer collapseTimer = new Timer();
-            collapseTimer.Interval = 20; // Thời gian cho mỗi bước animation
+            collapseTimer.Interval = 25; // Thời gian cho mỗi bước animation
             collapseTimer.Tick += (sender, e) =>
             {
                 int newHeight = Math.Max(submenuPanel.Height - 25, MinSubMenuHeight);
@@ -764,7 +759,6 @@ namespace GUI
             this.FormBorderStyle = FormBorderStyle.Sizable;
         }
 
-
         private void frmMain_Load(object sender, EventArgs e)
         {
             menuActivated(btnBooking);
@@ -772,51 +766,12 @@ namespace GUI
             openForm(Home);
         }
 
-
         /*-------------------------------------------------------------------------------------------------------------------
                                     KẾT THÚC  HÀM MAIN VÀ HÀM KHỞI TẠO
         --------------------------------------------------------------------------------------------------------------------*/
 
-
-
-    }
-
-
-
-
-    /// <summary>
-    /// Custom button để làm nút tròn
-    /// </summary>
-    public class RoundButton : Button
-    {
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            GraphicsPath gp = new GraphicsPath();
-            gp.AddEllipse(0, 0, this.Width, this.Height);
-            this.Region = new Region(gp);
-
-            base.OnPaint(e);
-        }
-    }
-    
-    /// <summary>
-    /// Custom Picture box khung tròn
-    /// </summary>
-    public class CircularPictureBox : PictureBox
-    {
-        protected override void OnPaint(PaintEventArgs pe)
-        {
-            base.OnPaint(pe);
-
-            using (var path = new GraphicsPath())
-            {
-                path.AddEllipse(0, 0, ClientSize.Width - 1, ClientSize.Height - 1);
-                Region = new Region(path);
-                pe.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                pe.Graphics.DrawEllipse(new Pen(Color.Black, 1), 0, 0, ClientSize.Width - 1, ClientSize.Height - 1);
-            }
-        }
-
-
+        /*-------------------------------------------------------------------------------------------------------------------
+                                                CÓ THỂ THÊM CÁC HÀM XỬ LÝ KHÁC Ở ĐÂY
+         --------------------------------------------------------------------------------------------------------------------*/
     }
 }

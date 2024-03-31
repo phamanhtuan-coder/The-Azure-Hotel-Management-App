@@ -24,7 +24,7 @@ namespace GUI.customForm
             InitializeComponent();
         }
 
-        private void frmTaiKhoan_Load(object sender, EventArgs e)
+        private void frmPhongBan_Load(object sender, EventArgs e)
         {
             grpThongTinTruongPhong.ForeColor = Color.White;
             grpThongTinTruongPhong.Enabled = false;

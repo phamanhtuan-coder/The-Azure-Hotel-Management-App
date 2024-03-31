@@ -10,23 +10,23 @@ using System.Windows.Forms;
 
 namespace GUI.customForm
 {
-    public partial class frmVaiTro : Form
+    public partial class frmHangThanhVien : Form
     {
-       public string maVaiTro { get; set; }
-       public string tenVaiTro { get; set; }
+       public string maHang { get; set; }
+        public string tenhang { get; set; }
+        public double mucChietKhau { get; set; }
 
-        public string moTa { get; set; }
         public bool isAdd { get; set; }
 
-        public frmVaiTro()
+        public frmHangThanhVien()
         {
             InitializeComponent();
         }
 
-        private void frmVaiTro_Load(object sender, EventArgs e)
+        private void frmTaiKhoan_Load(object sender, EventArgs e)
         {
-            txtTenVT.Text = tenVaiTro;
-            rtxtMoTa.Text = moTa;
+            txtTenHang.Text = tenhang;
+            nudChietKhau.Value = (Decimal)mucChietKhau;
             
 
         }
@@ -41,14 +41,14 @@ namespace GUI.customForm
             {
                 // Nếu đúng là form Thêm thì chạy lệnh insert
 
-                thongBao = new customMessageBox("Đã thêm thành công dữ liệu vai trò mới!");
+                thongBao = new customMessageBox("Đã thêm thành công dữ liệu hạng thành viên mới!");
                 thongBao.ShowDialog();
 
             }
             else
             {
                 // nếu không thì chạy lệnh update
-                thongBao = new customMessageBox("Sửa thành công thông tin vai trò đã chọn!");
+                thongBao = new customMessageBox("Sửa thành công thông tin hạng thành viên đã chọn!");
                 thongBao.ShowDialog();
             }
             this.Close();

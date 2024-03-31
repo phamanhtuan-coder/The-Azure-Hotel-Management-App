@@ -25,7 +25,7 @@ namespace GUI.customForm
             InitializeComponent();
         }
 
-        private void frmTaiKhoan_Load(object sender, EventArgs e)
+        private void frmPhanQuyen_Load(object sender, EventArgs e)
         {
           // gán giá trị mặc định bằng các biến trên, néu là edit có giá trị truyền vào thì kiểm tra và chọn giá trị
            cboVaiTro.Text = tenVaiTro;

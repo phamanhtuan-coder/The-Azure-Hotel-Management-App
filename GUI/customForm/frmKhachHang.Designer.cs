@@ -1,6 +1,6 @@
 ﻿namespace GUI.customForm
 {
-    partial class frmNhanVien
+    partial class frmKhachHang
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.btnSubmit = new Syncfusion.WinForms.Controls.SfButton();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
-            this.txtHoTenNV = new System.Windows.Forms.TextBox();
+            this.txtHoTen = new System.Windows.Forms.TextBox();
             this.txtMaTaiKhoan = new System.Windows.Forms.TextBox();
             this.txtCCCD = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -50,13 +50,15 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblSDT = new System.Windows.Forms.Label();
             this.lblDiaChi = new System.Windows.Forms.Label();
+            this.lblHangTV = new System.Windows.Forms.Label();
+            this.cboHangTV = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(568, 379);
+            this.btnSubmit.Location = new System.Drawing.Point(568, 374);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
             this.btnSubmit.TabIndex = 3;
@@ -66,19 +68,19 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(395, 379);
+            this.btnCancel.Location = new System.Drawing.Point(395, 374);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Quay lại";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // txtHoTenNV
+            // txtHoTen
             // 
-            this.txtHoTenNV.Location = new System.Drawing.Point(538, 12);
-            this.txtHoTenNV.Name = "txtHoTenNV";
-            this.txtHoTenNV.Size = new System.Drawing.Size(194, 27);
-            this.txtHoTenNV.TabIndex = 6;
+            this.txtHoTen.Location = new System.Drawing.Point(538, 12);
+            this.txtHoTen.Name = "txtHoTen";
+            this.txtHoTen.Size = new System.Drawing.Size(194, 27);
+            this.txtHoTen.TabIndex = 6;
             // 
             // txtMaTaiKhoan
             // 
@@ -89,28 +91,28 @@
             // 
             // txtCCCD
             // 
-            this.txtCCCD.Location = new System.Drawing.Point(538, 64);
+            this.txtCCCD.Location = new System.Drawing.Point(538, 57);
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.Size = new System.Drawing.Size(194, 27);
             this.txtCCCD.TabIndex = 8;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(538, 219);
+            this.txtEmail.Location = new System.Drawing.Point(538, 191);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(194, 27);
             this.txtEmail.TabIndex = 9;
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(538, 271);
+            this.txtSDT.Location = new System.Drawing.Point(538, 236);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(194, 27);
             this.txtSDT.TabIndex = 10;
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(538, 323);
+            this.txtDiaChi.Location = new System.Drawing.Point(538, 281);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(194, 27);
             this.txtDiaChi.TabIndex = 11;
@@ -119,7 +121,7 @@
             // 
             this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(538, 167);
+            this.dtpNgaySinh.Location = new System.Drawing.Point(538, 146);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(194, 27);
             this.dtpNgaySinh.TabIndex = 12;
@@ -127,7 +129,7 @@
             // radNam
             // 
             this.radNam.AutoSize = true;
-            this.radNam.Location = new System.Drawing.Point(538, 117);
+            this.radNam.Location = new System.Drawing.Point(538, 102);
             this.radNam.Name = "radNam";
             this.radNam.Size = new System.Drawing.Size(68, 26);
             this.radNam.TabIndex = 13;
@@ -138,7 +140,7 @@
             // radNu
             // 
             this.radNu.AutoSize = true;
-            this.radNu.Location = new System.Drawing.Point(648, 117);
+            this.radNu.Location = new System.Drawing.Point(646, 102);
             this.radNu.Name = "radNu";
             this.radNu.Size = new System.Drawing.Size(52, 26);
             this.radNu.TabIndex = 14;
@@ -185,7 +187,7 @@
             // lblHoTen
             // 
             this.lblHoTen.AutoSize = true;
-            this.lblHoTen.Location = new System.Drawing.Point(381, 17);
+            this.lblHoTen.Location = new System.Drawing.Point(355, 15);
             this.lblHoTen.Name = "lblHoTen";
             this.lblHoTen.Size = new System.Drawing.Size(91, 22);
             this.lblHoTen.TabIndex = 19;
@@ -194,7 +196,7 @@
             // lblCCCD
             // 
             this.lblCCCD.AutoSize = true;
-            this.lblCCCD.Location = new System.Drawing.Point(381, 69);
+            this.lblCCCD.Location = new System.Drawing.Point(355, 60);
             this.lblCCCD.Name = "lblCCCD";
             this.lblCCCD.Size = new System.Drawing.Size(59, 22);
             this.lblCCCD.TabIndex = 20;
@@ -203,7 +205,7 @@
             // lblGioiTinh
             // 
             this.lblGioiTinh.AutoSize = true;
-            this.lblGioiTinh.Location = new System.Drawing.Point(381, 117);
+            this.lblGioiTinh.Location = new System.Drawing.Point(355, 104);
             this.lblGioiTinh.Name = "lblGioiTinh";
             this.lblGioiTinh.Size = new System.Drawing.Size(81, 22);
             this.lblGioiTinh.TabIndex = 21;
@@ -212,7 +214,7 @@
             // lblNgaySinh
             // 
             this.lblNgaySinh.AutoSize = true;
-            this.lblNgaySinh.Location = new System.Drawing.Point(381, 172);
+            this.lblNgaySinh.Location = new System.Drawing.Point(355, 150);
             this.lblNgaySinh.Name = "lblNgaySinh";
             this.lblNgaySinh.Size = new System.Drawing.Size(94, 22);
             this.lblNgaySinh.TabIndex = 22;
@@ -221,7 +223,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(381, 222);
+            this.lblEmail.Location = new System.Drawing.Point(355, 194);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(58, 22);
             this.lblEmail.TabIndex = 23;
@@ -230,7 +232,7 @@
             // lblSDT
             // 
             this.lblSDT.AutoSize = true;
-            this.lblSDT.Location = new System.Drawing.Point(381, 274);
+            this.lblSDT.Location = new System.Drawing.Point(355, 239);
             this.lblSDT.Name = "lblSDT";
             this.lblSDT.Size = new System.Drawing.Size(43, 22);
             this.lblSDT.TabIndex = 24;
@@ -239,17 +241,36 @@
             // lblDiaChi
             // 
             this.lblDiaChi.AutoSize = true;
-            this.lblDiaChi.Location = new System.Drawing.Point(383, 328);
+            this.lblDiaChi.Location = new System.Drawing.Point(355, 284);
             this.lblDiaChi.Name = "lblDiaChi";
             this.lblDiaChi.Size = new System.Drawing.Size(68, 22);
             this.lblDiaChi.TabIndex = 25;
             this.lblDiaChi.Text = "Địa chỉ";
             // 
-            // frmNhanVien
+            // lblHangTV
+            // 
+            this.lblHangTV.AutoSize = true;
+            this.lblHangTV.Location = new System.Drawing.Point(355, 329);
+            this.lblHangTV.Name = "lblHangTV";
+            this.lblHangTV.Size = new System.Drawing.Size(151, 22);
+            this.lblHangTV.TabIndex = 26;
+            this.lblHangTV.Text = "Hạng thành viên";
+            // 
+            // cboHangTV
+            // 
+            this.cboHangTV.FormattingEnabled = true;
+            this.cboHangTV.Location = new System.Drawing.Point(538, 326);
+            this.cboHangTV.Name = "cboHangTV";
+            this.cboHangTV.Size = new System.Drawing.Size(194, 30);
+            this.cboHangTV.TabIndex = 27;
+            // 
+            // frmKhachHang
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cboHangTV);
+            this.Controls.Add(this.lblHangTV);
             this.Controls.Add(this.lblDiaChi);
             this.Controls.Add(this.lblSDT);
             this.Controls.Add(this.lblEmail);
@@ -269,15 +290,15 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtCCCD);
             this.Controls.Add(this.txtMaTaiKhoan);
-            this.Controls.Add(this.txtHoTenNV);
+            this.Controls.Add(this.txtHoTen);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSubmit);
             this.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmNhanVien";
+            this.Name = "frmKhachHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.frmNhanVien_Load);
+            this.Load += new System.EventHandler(this.frmKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -287,7 +308,7 @@
         #endregion
         private Syncfusion.WinForms.Controls.SfButton btnSubmit;
         private Syncfusion.WinForms.Controls.SfButton btnCancel;
-        private System.Windows.Forms.TextBox txtHoTenNV;
+        private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.TextBox txtMaTaiKhoan;
         private System.Windows.Forms.TextBox txtCCCD;
         private System.Windows.Forms.TextBox txtEmail;
@@ -307,5 +328,7 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblSDT;
         private System.Windows.Forms.Label lblDiaChi;
+        private System.Windows.Forms.Label lblHangTV;
+        private System.Windows.Forms.ComboBox cboHangTV;
     }
 }

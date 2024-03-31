@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI.customForm
 {
-    public partial class frmNhanVien : Form
+    public partial class frmKhachHang : Form
     {
-        public string maNhanVien { get; set; }
+        public string maKhachHang { get; set; }
         public string maTaikhoan { get; set; }
         public string hoTen { get; set; }
         public string CCCD { get; set; }
@@ -23,20 +23,21 @@ namespace GUI.customForm
         public string email { get; set; }
         public Image anhDaiDien { get; set; }
 
+        public string hangThanhVien { get; set; }
 
         public bool isAdd { get; set; }
 
-        public frmNhanVien()
+        public frmKhachHang()
         {
             InitializeComponent();
         }
 
-        private void frmNhanVien_Load(object sender, EventArgs e)
+        private void frmKhachHang_Load(object sender, EventArgs e)
         {
             // gán giá trị mặc định bằng các biến trên
             picAvatar.Image = anhDaiDien;
             txtMaTaiKhoan.Text = maTaikhoan;
-            txtHoTenNV.Text = hoTen;
+            txtHoTen.Text = hoTen;
             txtCCCD.Text = CCCD;
             if (!string.IsNullOrEmpty(ngaySinh))
             {
@@ -44,10 +45,11 @@ namespace GUI.customForm
             }
             else
             {
-              
+                
             }
 
-            if ( gioiTinh == "Nam") {
+            cboHangTV.Text = hangThanhVien;
+            if( gioiTinh == "Nam") {
                 radNam.Checked = true; 
             } else
             {
@@ -68,19 +70,19 @@ namespace GUI.customForm
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             customMessageBox thongBao;
-            // Kiểm tra if tiến hành xử lý sự kiện thêm/sửa phòng ban
+            // Kiểm tra if tiến hành xử lý sự kiện thêm/sửa 
             if (isAdd)
             {
                 // Nếu đúng là form Thêm thì chạy lệnh insert
 
-                thongBao = new customMessageBox("Đã thêm thành công dữ liệu nhân viên mới!");
+                thongBao = new customMessageBox("Đã thêm thành công dữ liệu khách hàng mới!");
                 thongBao.ShowDialog();
 
             }
             else
             {
                 // nếu không thì chạy lệnh update
-                thongBao = new customMessageBox("Sửa thành công thông tin nhân viên đã chọn!");
+                thongBao = new customMessageBox("Sửa thành công thông tin khách hàng đã chọn!");
                 thongBao.ShowDialog();
             }
             this.Close();
