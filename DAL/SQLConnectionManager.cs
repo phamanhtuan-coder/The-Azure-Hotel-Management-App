@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 
 namespace DAL
 {
@@ -19,16 +19,16 @@ namespace DAL
         {
             Initialize();
         }
-        
+
         private void Initialize()
         {
-            server = "visualstudiopro.ddns.net";
-            database = "demo";
+            server = ".";
+            database = "UngDungQuanLyKhachSan";
             uid = "visualstudiopro";
             password = "laptrinhwindows";
-            
 
-            connectionString = $"Server={server};Port=3306; Database={database};Uid={uid};Pwd={password};";
+            connectionString =
+                $"Data Source={server};Initial Catalog={database};Integrated Security=true;";
         }
 
         public string GetConnectionString()
@@ -36,6 +36,17 @@ namespace DAL
             return connectionString;
         }
 
+        public SqlConnection openConnection()
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            return connection;
+        }
+
+        public void closeConnection(SqlConnection connection)
+        {
+            connection.Close();
+        }
 
     }
 }
