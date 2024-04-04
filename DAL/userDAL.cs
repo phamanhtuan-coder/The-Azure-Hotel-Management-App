@@ -17,7 +17,8 @@ namespace DAL
             SQLConnectionManager connectionManager= new SQLConnectionManager();
             this.connectionString = connectionManager.GetConnectionString();
         }
-
+        
+        
         //public bool XacThucDangNhap(string username, string password)
         //{
 
