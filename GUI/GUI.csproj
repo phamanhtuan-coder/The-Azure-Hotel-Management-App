@@ -168,6 +168,12 @@
     <Compile Include="CustomForms\frmHangThanhVien.Designer.cs">
       <DependentUpon>frmHangThanhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomForms\frmTinhTrangTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\frmTinhTrangTB.Designer.cs">
+      <DependentUpon>frmTinhTrangTB.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomForms\frmVaiTro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -366,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmHangThanhVien.resx">
       <DependentUpon>frmHangThanhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\frmTinhTrangTB.resx">
+      <DependentUpon>frmTinhTrangTB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmVaiTro.resx">
       <DependentUpon>frmVaiTro.cs</DependentUpon>

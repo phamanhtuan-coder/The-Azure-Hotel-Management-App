@@ -29,5 +29,12 @@ namespace Utilities
             string hashedInput = HashPassword(password);
             return hashedInput.Equals(hashedPassword);
         }
+
+
+
+
+
+
+
     }
 }

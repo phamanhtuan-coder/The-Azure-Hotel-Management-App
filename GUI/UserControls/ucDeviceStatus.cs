@@ -1,4 +1,5 @@
-﻿using Syncfusion.WinForms.ListView;
+﻿using GUI.customForm;
+using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -97,6 +98,35 @@ namespace GUI.UserControls
         private void ucDeviceStatus_Load(object sender, EventArgs e)
         {
             khoiTaoGiaTrichoForm();
+        }
+
+        private void btnAddDeviceStatus_Click(object sender, EventArgs e)
+        {
+            frmTinhTrangTB frm = new frmTinhTrangTB();
+            frm.isAdd = true;
+            frm.ShowDialog();
+        }
+
+        private void btnEditDeviceStatus_Click(object sender, EventArgs e)
+        {
+            // bổ sung kiểm tra dòng có đang được chọn chưa, nếu có dòng được chọn thì tiến hành xử lý, nếu không thì thông báo lỗi
+            if (lvwDeviceStatus.SelectedItems.Count > 0)
+            {
+                frmTinhTrangTB frm = new frmTinhTrangTB();
+                frm.isAdd = false;
+                //Bắt đầu sửa từ đoạn này
+
+               
+
+
+                //Kết thúc sửa từ đoạn này
+                frm.ShowDialog();
+            }
+            else
+            {
+                customMessageBox thongBao = new customMessageBox("Hãy chọn 1 dòng dữ liệu bạn muốn thay đổi!");
+                thongBao.ShowDialog();
+            }
         }
     }
 }

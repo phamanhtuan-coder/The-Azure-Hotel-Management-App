@@ -39,11 +39,6 @@
             this.btnTraCuuRole = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateRole = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
-            this.lvwRole = new System.Windows.Forms.ListView();
-            this.colMaRole = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colTenRole = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colSoLuong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMoTa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cboSortRole = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortServiceTypeID = new System.Windows.Forms.Label();
             this.cboSortSoLuong = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -51,6 +46,12 @@
             this.lblStateRole = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.dgvRole = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenPhanQuyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaPhongBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRole)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -64,6 +65,7 @@
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRole)).BeginInit();
             this.SuspendLayout();
             // 
             // lblRole
@@ -152,12 +154,13 @@
             this.btnDeleteRole.Size = new System.Drawing.Size(191, 41);
             this.btnDeleteRole.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnDeleteRole.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteRole.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnDeleteRole.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnDeleteRole.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnDeleteRole.TabIndex = 4;
             this.btnDeleteRole.Text = "Xóa";
             this.btnDeleteRole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeleteRole.UseVisualStyleBackColor = false;
+            this.btnDeleteRole.Click += new System.EventHandler(this.btnDeleteRole_Click);
             // 
             // btnRecoverRole
             // 
@@ -172,12 +175,13 @@
             this.btnRecoverRole.Size = new System.Drawing.Size(191, 41);
             this.btnRecoverRole.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverRole.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverRole.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnRecoverRole.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnRecoverRole.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRecoverRole.TabIndex = 5;
             this.btnRecoverRole.Text = "Khôi phục";
             this.btnRecoverRole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRecoverRole.UseVisualStyleBackColor = false;
+            this.btnRecoverRole.Click += new System.EventHandler(this.btnRecoverRole_Click);
             // 
             // txtSearchRole
             // 
@@ -230,7 +234,7 @@
             // 
             // spcQuery.Panel1
             // 
-            this.spcQuery.Panel1.Controls.Add(this.lvwRole);
+            this.spcQuery.Panel1.Controls.Add(this.dgvRole);
             // 
             // spcQuery.Panel2
             // 
@@ -246,49 +250,6 @@
             this.spcQuery.Size = new System.Drawing.Size(1370, 746);
             this.spcQuery.SplitterDistance = 973;
             this.spcQuery.TabIndex = 38;
-            // 
-            // lvwRole
-            // 
-            this.lvwRole.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colMaRole,
-            this.colTenRole,
-            this.colSoLuong,
-            this.colMoTa});
-            this.lvwRole.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvwRole.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvwRole.FullRowSelect = true;
-            this.lvwRole.GridLines = true;
-            this.lvwRole.HideSelection = false;
-            this.lvwRole.Location = new System.Drawing.Point(0, 0);
-            this.lvwRole.MultiSelect = false;
-            this.lvwRole.Name = "lvwRole";
-            this.lvwRole.Size = new System.Drawing.Size(973, 746);
-            this.lvwRole.TabIndex = 0;
-            this.lvwRole.UseCompatibleStateImageBehavior = false;
-            this.lvwRole.View = System.Windows.Forms.View.Details;
-            // 
-            // colMaRole
-            // 
-            this.colMaRole.Text = "Mã vai trò";
-            this.colMaRole.Width = 81;
-            // 
-            // colTenRole
-            // 
-            this.colTenRole.Text = "Tên vai trò";
-            this.colTenRole.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colTenRole.Width = 207;
-            // 
-            // colSoLuong
-            // 
-            this.colSoLuong.Text = "Số lượng tài khoản theo role";
-            this.colSoLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colSoLuong.Width = 179;
-            // 
-            // colMoTa
-            // 
-            this.colMoTa.Text = "Mô tả";
-            this.colMoTa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colMoTa.Width = 146;
             // 
             // cboSortRole
             // 
@@ -386,6 +347,60 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
+            // dgvRole
+            // 
+            this.dgvRole.AllowUserToAddRows = false;
+            this.dgvRole.AllowUserToDeleteRows = false;
+            this.dgvRole.AllowUserToResizeColumns = false;
+            this.dgvRole.AllowUserToResizeRows = false;
+            this.dgvRole.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRole.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRole.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.TenPhanQuyen,
+            this.MaPhongBan,
+            this.SoLuongTaiKhoan,
+            this.TrangThai});
+            this.dgvRole.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvRole.Location = new System.Drawing.Point(0, 0);
+            this.dgvRole.MultiSelect = false;
+            this.dgvRole.Name = "dgvRole";
+            this.dgvRole.ReadOnly = true;
+            this.dgvRole.RowHeadersVisible = false;
+            this.dgvRole.Size = new System.Drawing.Size(973, 746);
+            this.dgvRole.TabIndex = 0;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // TenPhanQuyen
+            // 
+            this.TenPhanQuyen.HeaderText = "Tên phân quyền";
+            this.TenPhanQuyen.Name = "TenPhanQuyen";
+            this.TenPhanQuyen.ReadOnly = true;
+            // 
+            // MaPhongBan
+            // 
+            this.MaPhongBan.HeaderText = "Mã phòng ban";
+            this.MaPhongBan.Name = "MaPhongBan";
+            this.MaPhongBan.ReadOnly = true;
+            // 
+            // SoLuongTaiKhoan
+            // 
+            this.SoLuongTaiKhoan.HeaderText = "Số lượng tài khoản";
+            this.SoLuongTaiKhoan.Name = "SoLuongTaiKhoan";
+            this.SoLuongTaiKhoan.ReadOnly = true;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.HeaderText = "Trạng thái";
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.ReadOnly = true;
+            this.TrangThai.Visible = false;
+            // 
             // ucRole
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -410,6 +425,7 @@
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRole)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -427,16 +443,17 @@
         private System.Windows.Forms.SplitContainer spcQuery;
         private System.Windows.Forms.TableLayoutPanel tlpController;
         private System.Windows.Forms.Label lblStateRole;
-        private System.Windows.Forms.ListView lvwRole;
-        private System.Windows.Forms.ColumnHeader colMaRole;
-        private System.Windows.Forms.ColumnHeader colTenRole;
-        private System.Windows.Forms.ColumnHeader colSoLuong;
-        private System.Windows.Forms.ColumnHeader colMoTa;
         private System.Windows.Forms.Label lblSortSoLuongRole;
         private System.Windows.Forms.Panel panUcHeader;
         private System.Windows.Forms.SplitContainer spcHeader;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortSoLuong;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortRole;
         private System.Windows.Forms.Label lblSortServiceTypeID;
+        private System.Windows.Forms.DataGridView dgvRole;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenPhanQuyen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhongBan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongTaiKhoan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
     }
 }

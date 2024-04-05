@@ -323,6 +323,7 @@
             this.btnAddDeviceStatus.Text = "Thêm";
             this.btnAddDeviceStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddDeviceStatus.UseVisualStyleBackColor = false;
+            this.btnAddDeviceStatus.Click += new System.EventHandler(this.btnAddDeviceStatus_Click);
             // 
             // btnEditDeviceStatus
             // 
@@ -343,6 +344,7 @@
             this.btnEditDeviceStatus.Text = "Sửa";
             this.btnEditDeviceStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditDeviceStatus.UseVisualStyleBackColor = false;
+            this.btnEditDeviceStatus.Click += new System.EventHandler(this.btnEditDeviceStatus_Click);
             // 
             // btnDeleteDeviceStatus
             // 
