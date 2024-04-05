@@ -31,15 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucCustomerRanking));
             this.lblCustomerRanking = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAddCustomerRanking = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnEditCustomerRanking = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnDeleteCustomerRanking = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnRecoverCustomerRanking = new Syncfusion.WinForms.Controls.SfButton();
             this.txtSearchCustomerRanking = new System.Windows.Forms.TextBox();
             this.btnTraCuuCustomerRanking = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateCustomerRanking = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
-            this.lvwCustomerRanking = new System.Windows.Forms.ListView();
-            this.colMaCustomerRank = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colRankName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colSoLuongTv = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMucGiam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cboSortCustomerRankingID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortCustomerRankingID = new System.Windows.Forms.Label();
             this.cboSortSoLuongKH = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -47,10 +46,11 @@
             this.lblStateCustomerRanking = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.btnAddCustomerRanking = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnEditCustomerRanking = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnDeleteCustomerRanking = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnRecoverCustomerRanking = new Syncfusion.WinForms.Controls.SfButton();
+            this.dgvCustomerRank = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MucGiamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateCustomerRanking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -64,6 +64,7 @@
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerRank)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCustomerRanking
@@ -96,6 +97,90 @@
             this.tlpController.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpController.Size = new System.Drawing.Size(394, 94);
             this.tlpController.TabIndex = 6;
+            // 
+            // btnAddCustomerRanking
+            // 
+            this.btnAddCustomerRanking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddCustomerRanking.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddCustomerRanking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCustomerRanking.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCustomerRanking.ForeColor = System.Drawing.Color.White;
+            this.btnAddCustomerRanking.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnAddCustomerRanking.Location = new System.Drawing.Point(3, 3);
+            this.btnAddCustomerRanking.Name = "btnAddCustomerRanking";
+            this.btnAddCustomerRanking.Size = new System.Drawing.Size(191, 41);
+            this.btnAddCustomerRanking.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddCustomerRanking.Style.ForeColor = System.Drawing.Color.White;
+            this.btnAddCustomerRanking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnAddCustomerRanking.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnAddCustomerRanking.TabIndex = 1;
+            this.btnAddCustomerRanking.Text = "Thêm";
+            this.btnAddCustomerRanking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddCustomerRanking.UseVisualStyleBackColor = false;
+            this.btnAddCustomerRanking.Click += new System.EventHandler(this.btnAddCustomerRanking_Click);
+            // 
+            // btnEditCustomerRanking
+            // 
+            this.btnEditCustomerRanking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditCustomerRanking.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEditCustomerRanking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditCustomerRanking.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditCustomerRanking.ForeColor = System.Drawing.Color.White;
+            this.btnEditCustomerRanking.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnEditCustomerRanking.Location = new System.Drawing.Point(3, 50);
+            this.btnEditCustomerRanking.Name = "btnEditCustomerRanking";
+            this.btnEditCustomerRanking.Size = new System.Drawing.Size(191, 41);
+            this.btnEditCustomerRanking.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditCustomerRanking.Style.ForeColor = System.Drawing.Color.White;
+            this.btnEditCustomerRanking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnEditCustomerRanking.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnEditCustomerRanking.TabIndex = 3;
+            this.btnEditCustomerRanking.Text = "Sửa";
+            this.btnEditCustomerRanking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditCustomerRanking.UseVisualStyleBackColor = false;
+            this.btnEditCustomerRanking.Click += new System.EventHandler(this.btnEditCustomerRanking_Click);
+            // 
+            // btnDeleteCustomerRanking
+            // 
+            this.btnDeleteCustomerRanking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteCustomerRanking.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDeleteCustomerRanking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteCustomerRanking.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteCustomerRanking.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteCustomerRanking.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnDeleteCustomerRanking.Location = new System.Drawing.Point(200, 3);
+            this.btnDeleteCustomerRanking.Name = "btnDeleteCustomerRanking";
+            this.btnDeleteCustomerRanking.Size = new System.Drawing.Size(191, 41);
+            this.btnDeleteCustomerRanking.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteCustomerRanking.Style.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteCustomerRanking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnDeleteCustomerRanking.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnDeleteCustomerRanking.TabIndex = 4;
+            this.btnDeleteCustomerRanking.Text = "Xóa";
+            this.btnDeleteCustomerRanking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeleteCustomerRanking.UseVisualStyleBackColor = false;
+            this.btnDeleteCustomerRanking.Click += new System.EventHandler(this.btnDeleteCustomerRanking_Click);
+            // 
+            // btnRecoverCustomerRanking
+            // 
+            this.btnRecoverCustomerRanking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverCustomerRanking.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRecoverCustomerRanking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecoverCustomerRanking.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecoverCustomerRanking.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverCustomerRanking.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnRecoverCustomerRanking.Location = new System.Drawing.Point(200, 50);
+            this.btnRecoverCustomerRanking.Name = "btnRecoverCustomerRanking";
+            this.btnRecoverCustomerRanking.Size = new System.Drawing.Size(191, 41);
+            this.btnRecoverCustomerRanking.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverCustomerRanking.Style.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverCustomerRanking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnRecoverCustomerRanking.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnRecoverCustomerRanking.TabIndex = 5;
+            this.btnRecoverCustomerRanking.Text = "Khôi phục";
+            this.btnRecoverCustomerRanking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRecoverCustomerRanking.UseVisualStyleBackColor = false;
+            this.btnRecoverCustomerRanking.Click += new System.EventHandler(this.btnRecoverCustomerRanking_Click);
             // 
             // txtSearchCustomerRanking
             // 
@@ -148,7 +233,7 @@
             // 
             // spcQuery.Panel1
             // 
-            this.spcQuery.Panel1.Controls.Add(this.lvwCustomerRanking);
+            this.spcQuery.Panel1.Controls.Add(this.dgvCustomerRank);
             // 
             // spcQuery.Panel2
             // 
@@ -164,49 +249,6 @@
             this.spcQuery.Size = new System.Drawing.Size(1370, 746);
             this.spcQuery.SplitterDistance = 973;
             this.spcQuery.TabIndex = 38;
-            // 
-            // lvwCustomerRanking
-            // 
-            this.lvwCustomerRanking.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colMaCustomerRank,
-            this.colRankName,
-            this.colSoLuongTv,
-            this.colMucGiam});
-            this.lvwCustomerRanking.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvwCustomerRanking.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvwCustomerRanking.FullRowSelect = true;
-            this.lvwCustomerRanking.GridLines = true;
-            this.lvwCustomerRanking.HideSelection = false;
-            this.lvwCustomerRanking.Location = new System.Drawing.Point(0, 0);
-            this.lvwCustomerRanking.MultiSelect = false;
-            this.lvwCustomerRanking.Name = "lvwCustomerRanking";
-            this.lvwCustomerRanking.Size = new System.Drawing.Size(973, 746);
-            this.lvwCustomerRanking.TabIndex = 0;
-            this.lvwCustomerRanking.UseCompatibleStateImageBehavior = false;
-            this.lvwCustomerRanking.View = System.Windows.Forms.View.Details;
-            // 
-            // colMaCustomerRank
-            // 
-            this.colMaCustomerRank.Text = "Mã hạng thành viên";
-            this.colMaCustomerRank.Width = 100;
-            // 
-            // colRankName
-            // 
-            this.colRankName.Text = "Tên hạng thành viên";
-            this.colRankName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colRankName.Width = 207;
-            // 
-            // colSoLuongTv
-            // 
-            this.colSoLuongTv.Text = "Số lượng thành viên";
-            this.colSoLuongTv.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colSoLuongTv.Width = 179;
-            // 
-            // colMucGiam
-            // 
-            this.colMucGiam.Text = "Mức chiết khấu";
-            this.colMucGiam.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colMucGiam.Width = 223;
             // 
             // cboSortCustomerRankingID
             // 
@@ -304,87 +346,52 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // btnAddCustomerRanking
+            // dgvCustomerRank
             // 
-            this.btnAddCustomerRanking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddCustomerRanking.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddCustomerRanking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddCustomerRanking.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddCustomerRanking.ForeColor = System.Drawing.Color.White;
-            this.btnAddCustomerRanking.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnAddCustomerRanking.Location = new System.Drawing.Point(3, 3);
-            this.btnAddCustomerRanking.Name = "btnAddCustomerRanking";
-            this.btnAddCustomerRanking.Size = new System.Drawing.Size(191, 41);
-            this.btnAddCustomerRanking.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddCustomerRanking.Style.ForeColor = System.Drawing.Color.White;
-            this.btnAddCustomerRanking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnAddCustomerRanking.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddCustomerRanking.TabIndex = 1;
-            this.btnAddCustomerRanking.Text = "Thêm";
-            this.btnAddCustomerRanking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddCustomerRanking.UseVisualStyleBackColor = false;
-            this.btnAddCustomerRanking.Click += new System.EventHandler(this.btnAddCustomerRanking_Click);
+            this.dgvCustomerRank.AllowUserToAddRows = false;
+            this.dgvCustomerRank.AllowUserToDeleteRows = false;
+            this.dgvCustomerRank.AllowUserToResizeColumns = false;
+            this.dgvCustomerRank.AllowUserToResizeRows = false;
+            this.dgvCustomerRank.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCustomerRank.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustomerRank.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.TenHang,
+            this.MucGiamGia,
+            this.TrangThai});
+            this.dgvCustomerRank.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCustomerRank.Location = new System.Drawing.Point(0, 0);
+            this.dgvCustomerRank.MultiSelect = false;
+            this.dgvCustomerRank.Name = "dgvCustomerRank";
+            this.dgvCustomerRank.ReadOnly = true;
+            this.dgvCustomerRank.RowHeadersVisible = false;
+            this.dgvCustomerRank.Size = new System.Drawing.Size(973, 746);
+            this.dgvCustomerRank.TabIndex = 0;
             // 
-            // btnEditCustomerRanking
+            // ID
             // 
-            this.btnEditCustomerRanking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditCustomerRanking.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEditCustomerRanking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditCustomerRanking.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditCustomerRanking.ForeColor = System.Drawing.Color.White;
-            this.btnEditCustomerRanking.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnEditCustomerRanking.Location = new System.Drawing.Point(3, 50);
-            this.btnEditCustomerRanking.Name = "btnEditCustomerRanking";
-            this.btnEditCustomerRanking.Size = new System.Drawing.Size(191, 41);
-            this.btnEditCustomerRanking.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditCustomerRanking.Style.ForeColor = System.Drawing.Color.White;
-            this.btnEditCustomerRanking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnEditCustomerRanking.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditCustomerRanking.TabIndex = 3;
-            this.btnEditCustomerRanking.Text = "Sửa";
-            this.btnEditCustomerRanking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditCustomerRanking.UseVisualStyleBackColor = false;
-            this.btnEditCustomerRanking.Click += new System.EventHandler(this.btnEditCustomerRanking_Click);
+            this.ID.HeaderText = "Mã hạng thành viện";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
-            // btnDeleteCustomerRanking
+            // TenHang
             // 
-            this.btnDeleteCustomerRanking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteCustomerRanking.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleteCustomerRanking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteCustomerRanking.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteCustomerRanking.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteCustomerRanking.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnDeleteCustomerRanking.Location = new System.Drawing.Point(200, 3);
-            this.btnDeleteCustomerRanking.Name = "btnDeleteCustomerRanking";
-            this.btnDeleteCustomerRanking.Size = new System.Drawing.Size(191, 41);
-            this.btnDeleteCustomerRanking.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteCustomerRanking.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteCustomerRanking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.btnDeleteCustomerRanking.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteCustomerRanking.TabIndex = 4;
-            this.btnDeleteCustomerRanking.Text = "Xóa";
-            this.btnDeleteCustomerRanking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDeleteCustomerRanking.UseVisualStyleBackColor = false;
+            this.TenHang.HeaderText = "Tên hạng";
+            this.TenHang.Name = "TenHang";
+            this.TenHang.ReadOnly = true;
             // 
-            // btnRecoverCustomerRanking
+            // MucGiamGia
             // 
-            this.btnRecoverCustomerRanking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverCustomerRanking.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRecoverCustomerRanking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecoverCustomerRanking.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecoverCustomerRanking.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverCustomerRanking.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnRecoverCustomerRanking.Location = new System.Drawing.Point(200, 50);
-            this.btnRecoverCustomerRanking.Name = "btnRecoverCustomerRanking";
-            this.btnRecoverCustomerRanking.Size = new System.Drawing.Size(191, 41);
-            this.btnRecoverCustomerRanking.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverCustomerRanking.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverCustomerRanking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            this.btnRecoverCustomerRanking.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRecoverCustomerRanking.TabIndex = 5;
-            this.btnRecoverCustomerRanking.Text = "Khôi phục";
-            this.btnRecoverCustomerRanking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRecoverCustomerRanking.UseVisualStyleBackColor = false;
+            this.MucGiamGia.HeaderText = "Mức giảm giá";
+            this.MucGiamGia.Name = "MucGiamGia";
+            this.MucGiamGia.ReadOnly = true;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.HeaderText = "Trạng thái";
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.ReadOnly = true;
+            this.TrangThai.Visible = false;
             // 
             // ucCustomerRanking
             // 
@@ -410,6 +417,7 @@
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerRank)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -427,16 +435,16 @@
         private System.Windows.Forms.SplitContainer spcQuery;
         private System.Windows.Forms.TableLayoutPanel tlpController;
         private System.Windows.Forms.Label lblStateCustomerRanking;
-        private System.Windows.Forms.ListView lvwCustomerRanking;
-        private System.Windows.Forms.ColumnHeader colMaCustomerRank;
-        private System.Windows.Forms.ColumnHeader colRankName;
-        private System.Windows.Forms.ColumnHeader colSoLuongTv;
-        private System.Windows.Forms.ColumnHeader colMucGiam;
         private System.Windows.Forms.Label lblSortSoLuongKH;
         private System.Windows.Forms.Panel panUcHeader;
         private System.Windows.Forms.SplitContainer spcHeader;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortSoLuongKH;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortCustomerRankingID;
         private System.Windows.Forms.Label lblSortCustomerRankingID;
+        private System.Windows.Forms.DataGridView dgvCustomerRank;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MucGiamGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
     }
 }
