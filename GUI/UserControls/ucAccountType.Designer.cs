@@ -39,12 +39,11 @@
             this.btnTraCuuAccountType = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateAccountType = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
-            this.lvwAccountType = new System.Windows.Forms.ListView();
-            this.colMaPhanQuyen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colVaiTro = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colPhongBan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMoTa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colSoLuongTaiKhoan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dgvAccountType = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenVaiTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboChucVu = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortTheoChucVu = new System.Windows.Forms.Label();
             this.cboSortAccountTypeID = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -60,6 +59,7 @@
             this.spcQuery.Panel1.SuspendLayout();
             this.spcQuery.Panel2.SuspendLayout();
             this.spcQuery.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAccountType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboChucVu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortAccountTypeID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortSoLuongAccount)).BeginInit();
@@ -162,6 +162,7 @@
             this.btnDeleteAccountType.Text = "Xóa";
             this.btnDeleteAccountType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeleteAccountType.UseVisualStyleBackColor = false;
+            this.btnDeleteAccountType.Click += new System.EventHandler(this.btnDeleteAccountType_Click);
             // 
             // btnRecoverAccountType
             // 
@@ -182,6 +183,7 @@
             this.btnRecoverAccountType.Text = "Khôi phục";
             this.btnRecoverAccountType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRecoverAccountType.UseVisualStyleBackColor = false;
+            this.btnRecoverAccountType.Click += new System.EventHandler(this.btnRecoverAccountType_Click);
             // 
             // txtSearchAccountType
             // 
@@ -234,7 +236,7 @@
             // 
             // spcQuery.Panel1
             // 
-            this.spcQuery.Panel1.Controls.Add(this.lvwAccountType);
+            this.spcQuery.Panel1.Controls.Add(this.dgvAccountType);
             // 
             // spcQuery.Panel2
             // 
@@ -253,53 +255,53 @@
             this.spcQuery.SplitterDistance = 973;
             this.spcQuery.TabIndex = 38;
             // 
-            // lvwAccountType
+            // dgvAccountType
             // 
-            this.lvwAccountType.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colMaPhanQuyen,
-            this.colVaiTro,
-            this.colPhongBan,
-            this.colMoTa,
-            this.colSoLuongTaiKhoan});
-            this.lvwAccountType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvwAccountType.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvwAccountType.FullRowSelect = true;
-            this.lvwAccountType.GridLines = true;
-            this.lvwAccountType.HideSelection = false;
-            this.lvwAccountType.Location = new System.Drawing.Point(0, 0);
-            this.lvwAccountType.MultiSelect = false;
-            this.lvwAccountType.Name = "lvwAccountType";
-            this.lvwAccountType.Size = new System.Drawing.Size(973, 746);
-            this.lvwAccountType.TabIndex = 0;
-            this.lvwAccountType.UseCompatibleStateImageBehavior = false;
-            this.lvwAccountType.View = System.Windows.Forms.View.Details;
+            this.dgvAccountType.AllowUserToAddRows = false;
+            this.dgvAccountType.AllowUserToDeleteRows = false;
+            this.dgvAccountType.AllowUserToResizeColumns = false;
+            this.dgvAccountType.AllowUserToResizeRows = false;
+            this.dgvAccountType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAccountType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAccountType.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.TenVaiTro,
+            this.MoTa,
+            this.TrangThai});
+            this.dgvAccountType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAccountType.Location = new System.Drawing.Point(0, 0);
+            this.dgvAccountType.MultiSelect = false;
+            this.dgvAccountType.Name = "dgvAccountType";
+            this.dgvAccountType.ReadOnly = true;
+            this.dgvAccountType.RowHeadersVisible = false;
+            this.dgvAccountType.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvAccountType.Size = new System.Drawing.Size(973, 746);
+            this.dgvAccountType.TabIndex = 0;
             // 
-            // colMaPhanQuyen
+            // ID
             // 
-            this.colMaPhanQuyen.Text = "Mã phân quyền";
-            this.colMaPhanQuyen.Width = 81;
+            this.ID.HeaderText = "Mã vai trò";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
-            // colVaiTro
+            // TenVaiTro
             // 
-            this.colVaiTro.Text = "Vai trò";
-            this.colVaiTro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colVaiTro.Width = 207;
+            this.TenVaiTro.HeaderText = "Tên vai trò";
+            this.TenVaiTro.Name = "TenVaiTro";
+            this.TenVaiTro.ReadOnly = true;
             // 
-            // colPhongBan
+            // MoTa
             // 
-            this.colPhongBan.Text = "Phòng ban";
-            this.colPhongBan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colPhongBan.Width = 179;
+            this.MoTa.HeaderText = "Mô tả";
+            this.MoTa.Name = "MoTa";
+            this.MoTa.ReadOnly = true;
             // 
-            // colMoTa
+            // TrangThai
             // 
-            this.colMoTa.Text = "Mô tả";
-            this.colMoTa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colMoTa.Width = 146;
-            // 
-            // colSoLuongTaiKhoan
-            // 
-            this.colSoLuongTaiKhoan.Text = "Số lượng tài khoản";
+            this.TrangThai.HeaderText = "Trạng thái";
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.ReadOnly = true;
+            this.TrangThai.Visible = false;
             // 
             // cboChucVu
             // 
@@ -442,6 +444,7 @@
             this.spcQuery.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).EndInit();
             this.spcQuery.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAccountType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboChucVu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortAccountTypeID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortSoLuongAccount)).EndInit();
@@ -467,19 +470,18 @@
         private System.Windows.Forms.SplitContainer spcQuery;
         private System.Windows.Forms.TableLayoutPanel tlpController;
         private System.Windows.Forms.Label lblStateAccountType;
-        private System.Windows.Forms.ListView lvwAccountType;
-        private System.Windows.Forms.ColumnHeader colMaPhanQuyen;
-        private System.Windows.Forms.ColumnHeader colVaiTro;
-        private System.Windows.Forms.ColumnHeader colPhongBan;
-        private System.Windows.Forms.ColumnHeader colMoTa;
         private System.Windows.Forms.Label lblSortSoLuongAccount;
         private System.Windows.Forms.Panel panUcHeader;
         private System.Windows.Forms.SplitContainer spcHeader;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortSoLuongAccount;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortAccountTypeID;
         private System.Windows.Forms.Label lblSortAccountTypeID;
-        private System.Windows.Forms.ColumnHeader colSoLuongTaiKhoan;
         private Syncfusion.WinForms.ListView.SfComboBox cboChucVu;
         private System.Windows.Forms.Label lblSortTheoChucVu;
+        private System.Windows.Forms.DataGridView dgvAccountType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenVaiTro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MoTa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
     }
 }

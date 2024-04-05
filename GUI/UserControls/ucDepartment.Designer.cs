@@ -31,17 +31,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucDepartment));
             this.lblDepartment = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAddDepartment = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnEditDepartment = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnDeleteDepartment = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnRecoverDepartment = new Syncfusion.WinForms.Controls.SfButton();
             this.txtSearchDepartment = new System.Windows.Forms.TextBox();
             this.btnTraCuuDepartment = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateDepartment = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
-            this.lvwDepartment = new System.Windows.Forms.ListView();
-            this.colMaDepartment = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colTenPhong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colSoLuongNV = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMoTa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colTruongPhong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colNgayNhanChuc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dgvDepartment = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenPhongBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TruongPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayNhanChuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboSortDepartment = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortDepartmentID = new System.Windows.Forms.Label();
             this.cboSortSoLuongNV = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -49,16 +52,13 @@
             this.lblStateDepartment = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.btnAddDepartment = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnEditDepartment = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnDeleteDepartment = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnRecoverDepartment = new Syncfusion.WinForms.Controls.SfButton();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateDepartment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
             this.spcQuery.Panel1.SuspendLayout();
             this.spcQuery.Panel2.SuspendLayout();
             this.spcQuery.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDepartment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortDepartment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortSoLuongNV)).BeginInit();
             this.panUcHeader.SuspendLayout();
@@ -98,6 +98,90 @@
             this.tlpController.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpController.Size = new System.Drawing.Size(394, 94);
             this.tlpController.TabIndex = 6;
+            // 
+            // btnAddDepartment
+            // 
+            this.btnAddDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddDepartment.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddDepartment.ForeColor = System.Drawing.Color.White;
+            this.btnAddDepartment.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnAddDepartment.Location = new System.Drawing.Point(3, 3);
+            this.btnAddDepartment.Name = "btnAddDepartment";
+            this.btnAddDepartment.Size = new System.Drawing.Size(191, 41);
+            this.btnAddDepartment.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddDepartment.Style.ForeColor = System.Drawing.Color.White;
+            this.btnAddDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnAddDepartment.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnAddDepartment.TabIndex = 1;
+            this.btnAddDepartment.Text = "Thêm";
+            this.btnAddDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddDepartment.UseVisualStyleBackColor = false;
+            this.btnAddDepartment.Click += new System.EventHandler(this.btnAddDepartment_Click);
+            // 
+            // btnEditDepartment
+            // 
+            this.btnEditDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEditDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditDepartment.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditDepartment.ForeColor = System.Drawing.Color.White;
+            this.btnEditDepartment.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnEditDepartment.Location = new System.Drawing.Point(3, 50);
+            this.btnEditDepartment.Name = "btnEditDepartment";
+            this.btnEditDepartment.Size = new System.Drawing.Size(191, 41);
+            this.btnEditDepartment.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditDepartment.Style.ForeColor = System.Drawing.Color.White;
+            this.btnEditDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnEditDepartment.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnEditDepartment.TabIndex = 3;
+            this.btnEditDepartment.Text = "Sửa";
+            this.btnEditDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditDepartment.UseVisualStyleBackColor = false;
+            this.btnEditDepartment.Click += new System.EventHandler(this.btnEditDepartment_Click);
+            // 
+            // btnDeleteDepartment
+            // 
+            this.btnDeleteDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDeleteDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteDepartment.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteDepartment.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteDepartment.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnDeleteDepartment.Location = new System.Drawing.Point(200, 3);
+            this.btnDeleteDepartment.Name = "btnDeleteDepartment";
+            this.btnDeleteDepartment.Size = new System.Drawing.Size(191, 41);
+            this.btnDeleteDepartment.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteDepartment.Style.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnDeleteDepartment.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnDeleteDepartment.TabIndex = 4;
+            this.btnDeleteDepartment.Text = "Xóa";
+            this.btnDeleteDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeleteDepartment.UseVisualStyleBackColor = false;
+            this.btnDeleteDepartment.Click += new System.EventHandler(this.btnDeleteDepartment_Click);
+            // 
+            // btnRecoverDepartment
+            // 
+            this.btnRecoverDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRecoverDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecoverDepartment.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecoverDepartment.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverDepartment.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnRecoverDepartment.Location = new System.Drawing.Point(200, 50);
+            this.btnRecoverDepartment.Name = "btnRecoverDepartment";
+            this.btnRecoverDepartment.Size = new System.Drawing.Size(191, 41);
+            this.btnRecoverDepartment.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverDepartment.Style.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnRecoverDepartment.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnRecoverDepartment.TabIndex = 5;
+            this.btnRecoverDepartment.Text = "Khôi phục";
+            this.btnRecoverDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRecoverDepartment.UseVisualStyleBackColor = false;
+            this.btnRecoverDepartment.Click += new System.EventHandler(this.btnRecoverDepartment_Click);
             // 
             // txtSearchDepartment
             // 
@@ -150,7 +234,7 @@
             // 
             // spcQuery.Panel1
             // 
-            this.spcQuery.Panel1.Controls.Add(this.lvwDepartment);
+            this.spcQuery.Panel1.Controls.Add(this.dgvDepartment);
             // 
             // spcQuery.Panel2
             // 
@@ -167,60 +251,59 @@
             this.spcQuery.SplitterDistance = 973;
             this.spcQuery.TabIndex = 38;
             // 
-            // lvwDepartment
+            // dgvDepartment
             // 
-            this.lvwDepartment.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colMaDepartment,
-            this.colTenPhong,
-            this.colSoLuongNV,
-            this.colMoTa,
-            this.colTruongPhong,
-            this.colNgayNhanChuc});
-            this.lvwDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvwDepartment.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvwDepartment.FullRowSelect = true;
-            this.lvwDepartment.GridLines = true;
-            this.lvwDepartment.HideSelection = false;
-            this.lvwDepartment.Location = new System.Drawing.Point(0, 0);
-            this.lvwDepartment.MultiSelect = false;
-            this.lvwDepartment.Name = "lvwDepartment";
-            this.lvwDepartment.Size = new System.Drawing.Size(973, 746);
-            this.lvwDepartment.TabIndex = 0;
-            this.lvwDepartment.UseCompatibleStateImageBehavior = false;
-            this.lvwDepartment.View = System.Windows.Forms.View.Details;
+            this.dgvDepartment.AllowUserToAddRows = false;
+            this.dgvDepartment.AllowUserToDeleteRows = false;
+            this.dgvDepartment.AllowUserToResizeColumns = false;
+            this.dgvDepartment.AllowUserToResizeRows = false;
+            this.dgvDepartment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDepartment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.TenPhongBan,
+            this.TruongPhong,
+            this.NgayNhanChuc,
+            this.TrangThai});
+            this.dgvDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDepartment.Location = new System.Drawing.Point(0, 0);
+            this.dgvDepartment.MultiSelect = false;
+            this.dgvDepartment.Name = "dgvDepartment";
+            this.dgvDepartment.ReadOnly = true;
+            this.dgvDepartment.RowHeadersVisible = false;
+            this.dgvDepartment.Size = new System.Drawing.Size(973, 746);
+            this.dgvDepartment.TabIndex = 0;
             // 
-            // colMaDepartment
+            // ID
             // 
-            this.colMaDepartment.Text = "Mã phòng ban";
-            this.colMaDepartment.Width = 129;
+            this.ID.HeaderText = "Mã phòng ban";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
-            // colTenPhong
+            // TenPhongBan
             // 
-            this.colTenPhong.Text = "Tên Phòng ban";
-            this.colTenPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colTenPhong.Width = 207;
+            this.TenPhongBan.HeaderText = "Tên phòng ban";
+            this.TenPhongBan.Name = "TenPhongBan";
+            this.TenPhongBan.ReadOnly = true;
             // 
-            // colSoLuongNV
+            // TruongPhong
             // 
-            this.colSoLuongNV.Text = "Số lượng nhân viên";
-            this.colSoLuongNV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colSoLuongNV.Width = 227;
+            this.TruongPhong.HeaderText = "Trưởng phòng";
+            this.TruongPhong.Name = "TruongPhong";
+            this.TruongPhong.ReadOnly = true;
             // 
-            // colMoTa
+            // NgayNhanChuc
             // 
-            this.colMoTa.Text = "Mô tả";
-            this.colMoTa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colMoTa.Width = 146;
+            this.NgayNhanChuc.HeaderText = "Ngày nhận chức";
+            this.NgayNhanChuc.Name = "NgayNhanChuc";
+            this.NgayNhanChuc.ReadOnly = true;
             // 
-            // colTruongPhong
+            // TrangThai
             // 
-            this.colTruongPhong.Text = "Trưởng phòng";
-            this.colTruongPhong.Width = 168;
-            // 
-            // colNgayNhanChuc
-            // 
-            this.colNgayNhanChuc.Text = "Ngày nhận chức";
-            this.colNgayNhanChuc.Width = 166;
+            this.TrangThai.HeaderText = "Trạng thái";
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.ReadOnly = true;
+            this.TrangThai.Visible = false;
             // 
             // cboSortDepartment
             // 
@@ -318,88 +401,6 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // btnAddDepartment
-            // 
-            this.btnAddDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddDepartment.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddDepartment.ForeColor = System.Drawing.Color.White;
-            this.btnAddDepartment.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnAddDepartment.Location = new System.Drawing.Point(3, 3);
-            this.btnAddDepartment.Name = "btnAddDepartment";
-            this.btnAddDepartment.Size = new System.Drawing.Size(191, 41);
-            this.btnAddDepartment.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddDepartment.Style.ForeColor = System.Drawing.Color.White;
-            this.btnAddDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnAddDepartment.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddDepartment.TabIndex = 1;
-            this.btnAddDepartment.Text = "Thêm";
-            this.btnAddDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddDepartment.UseVisualStyleBackColor = false;
-            this.btnAddDepartment.Click += new System.EventHandler(this.btnAddDepartment_Click);
-            // 
-            // btnEditDepartment
-            // 
-            this.btnEditDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEditDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditDepartment.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditDepartment.ForeColor = System.Drawing.Color.White;
-            this.btnEditDepartment.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnEditDepartment.Location = new System.Drawing.Point(3, 50);
-            this.btnEditDepartment.Name = "btnEditDepartment";
-            this.btnEditDepartment.Size = new System.Drawing.Size(191, 41);
-            this.btnEditDepartment.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditDepartment.Style.ForeColor = System.Drawing.Color.White;
-            this.btnEditDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnEditDepartment.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditDepartment.TabIndex = 3;
-            this.btnEditDepartment.Text = "Sửa";
-            this.btnEditDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditDepartment.UseVisualStyleBackColor = false;
-            this.btnEditDepartment.Click += new System.EventHandler(this.btnEditDepartment_Click);
-            // 
-            // btnDeleteDepartment
-            // 
-            this.btnDeleteDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleteDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteDepartment.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteDepartment.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteDepartment.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnDeleteDepartment.Location = new System.Drawing.Point(200, 3);
-            this.btnDeleteDepartment.Name = "btnDeleteDepartment";
-            this.btnDeleteDepartment.Size = new System.Drawing.Size(191, 41);
-            this.btnDeleteDepartment.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteDepartment.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.btnDeleteDepartment.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteDepartment.TabIndex = 4;
-            this.btnDeleteDepartment.Text = "Xóa";
-            this.btnDeleteDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDeleteDepartment.UseVisualStyleBackColor = false;
-            // 
-            // btnRecoverDepartment
-            // 
-            this.btnRecoverDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRecoverDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecoverDepartment.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecoverDepartment.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverDepartment.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnRecoverDepartment.Location = new System.Drawing.Point(200, 50);
-            this.btnRecoverDepartment.Name = "btnRecoverDepartment";
-            this.btnRecoverDepartment.Size = new System.Drawing.Size(191, 41);
-            this.btnRecoverDepartment.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverDepartment.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            this.btnRecoverDepartment.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRecoverDepartment.TabIndex = 5;
-            this.btnRecoverDepartment.Text = "Khôi phục";
-            this.btnRecoverDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRecoverDepartment.UseVisualStyleBackColor = false;
-            // 
             // ucDepartment
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -417,6 +418,7 @@
             this.spcQuery.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).EndInit();
             this.spcQuery.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDepartment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortDepartment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortSoLuongNV)).EndInit();
             this.panUcHeader.ResumeLayout(false);
@@ -441,18 +443,17 @@
         private System.Windows.Forms.SplitContainer spcQuery;
         private System.Windows.Forms.TableLayoutPanel tlpController;
         private System.Windows.Forms.Label lblStateDepartment;
-        private System.Windows.Forms.ListView lvwDepartment;
-        private System.Windows.Forms.ColumnHeader colMaDepartment;
-        private System.Windows.Forms.ColumnHeader colTenPhong;
-        private System.Windows.Forms.ColumnHeader colSoLuongNV;
-        private System.Windows.Forms.ColumnHeader colMoTa;
         private System.Windows.Forms.Label lblSortSoLuongNV;
         private System.Windows.Forms.Panel panUcHeader;
         private System.Windows.Forms.SplitContainer spcHeader;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortSoLuongNV;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortDepartment;
         private System.Windows.Forms.Label lblSortDepartmentID;
-        private System.Windows.Forms.ColumnHeader colTruongPhong;
-        private System.Windows.Forms.ColumnHeader colNgayNhanChuc;
+        private System.Windows.Forms.DataGridView dgvDepartment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenPhongBan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TruongPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayNhanChuc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
     }
 }

@@ -119,70 +119,82 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Custom control\CircularPictureBox.cs">
+    <Compile Include="CustomControls\CircularPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Custom control\RoundButton.cs">
+    <Compile Include="CustomControls\RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="customForm\customMessageBox.cs">
+    <Compile Include="CustomControls\SemiTransparentButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\SemiTransparentPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomForms\customMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="customForm\customMessageBox.Designer.cs">
+    <Compile Include="CustomForms\customMessageBox.Designer.cs">
       <DependentUpon>customMessageBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="customForm\frmBookingController.cs">
+    <Compile Include="CustomForms\frmBookingController.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="customForm\frmBookingController.Designer.cs">
+    <Compile Include="CustomForms\frmBookingController.Designer.cs">
       <DependentUpon>frmBookingController.cs</DependentUpon>
     </Compile>
-    <Compile Include="customForm\frmDangKy.cs">
+    <Compile Include="CustomForms\frmDangKy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="customForm\frmDangKy.Designer.cs">
+    <Compile Include="CustomForms\frmDangKy.Designer.cs">
       <DependentUpon>frmDangKy.cs</DependentUpon>
     </Compile>
-    <Compile Include="customForm\frmKhachHang.cs">
+    <Compile Include="CustomForms\frmKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="customForm\frmKhachHang.Designer.cs">
+    <Compile Include="CustomForms\frmKhachHang.Designer.cs">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="customForm\frmNhanVien.cs">
+    <Compile Include="CustomForms\frmNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="customForm\frmNhanVien.Designer.cs">
+    <Compile Include="CustomForms\frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="customForm\frmHangThanhVien.cs">
+    <Compile Include="CustomForms\frmHangThanhVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="customForm\frmHangThanhVien.Designer.cs">
+    <Compile Include="CustomForms\frmHangThanhVien.Designer.cs">
       <DependentUpon>frmHangThanhVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="customForm\frmVaiTro.cs">
+    <Compile Include="CustomForms\frmTinhTrangTB.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="customForm\frmVaiTro.Designer.cs">
+    <Compile Include="CustomForms\frmTinhTrangTB.Designer.cs">
+      <DependentUpon>frmTinhTrangTB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomForms\frmVaiTro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\frmVaiTro.Designer.cs">
       <DependentUpon>frmVaiTro.cs</DependentUpon>
     </Compile>
-    <Compile Include="customForm\frmTaiKhoan.cs">
+    <Compile Include="CustomForms\frmTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="customForm\frmTaiKhoan.Designer.cs">
+    <Compile Include="CustomForms\frmTaiKhoan.Designer.cs">
       <DependentUpon>frmTaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="customForm\frmPhanQuyen.cs">
+    <Compile Include="CustomForms\frmPhanQuyen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="customForm\frmPhanQuyen.Designer.cs">
+    <Compile Include="CustomForms\frmPhanQuyen.Designer.cs">
       <DependentUpon>frmPhanQuyen.cs</DependentUpon>
     </Compile>
-    <Compile Include="customForm\frmPhongBan.cs">
+    <Compile Include="CustomForms\frmPhongBan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="customForm\frmPhongBan.Designer.cs">
+    <Compile Include="CustomForms\frmPhongBan.Designer.cs">
       <DependentUpon>frmPhongBan.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
@@ -342,34 +354,37 @@
     <Compile Include="UserControls\ucDashboard.Designer.cs">
       <DependentUpon>ucDashboard.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="customForm\customMessageBox.resx">
+    <EmbeddedResource Include="CustomForms\customMessageBox.resx">
       <DependentUpon>customMessageBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="customForm\frmBookingController.resx">
+    <EmbeddedResource Include="CustomForms\frmBookingController.resx">
       <DependentUpon>frmBookingController.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="customForm\frmDangKy.resx">
+    <EmbeddedResource Include="CustomForms\frmDangKy.resx">
       <DependentUpon>frmDangKy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="customForm\frmKhachHang.resx">
+    <EmbeddedResource Include="CustomForms\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="customForm\frmNhanVien.resx">
+    <EmbeddedResource Include="CustomForms\frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="customForm\frmHangThanhVien.resx">
+    <EmbeddedResource Include="CustomForms\frmHangThanhVien.resx">
       <DependentUpon>frmHangThanhVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="customForm\frmVaiTro.resx">
+    <EmbeddedResource Include="CustomForms\frmTinhTrangTB.resx">
+      <DependentUpon>frmTinhTrangTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\frmVaiTro.resx">
       <DependentUpon>frmVaiTro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="customForm\frmTaiKhoan.resx">
+    <EmbeddedResource Include="CustomForms\frmTaiKhoan.resx">
       <DependentUpon>frmTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="customForm\frmPhanQuyen.resx">
+    <EmbeddedResource Include="CustomForms\frmPhanQuyen.resx">
       <DependentUpon>frmPhanQuyen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="customForm\frmPhongBan.resx">
+    <EmbeddedResource Include="CustomForms\frmPhongBan.resx">
       <DependentUpon>frmPhongBan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">

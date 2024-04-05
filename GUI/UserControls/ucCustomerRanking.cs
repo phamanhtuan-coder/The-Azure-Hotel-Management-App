@@ -20,89 +20,9 @@ namespace GUI.UserControls
             InitializeComponent();
         }
 
-
-        private void khoiTaoGiaTrichoForm()
-        {
-       
-            List<string> trangThaiSort = new List<String>();
-            List<string> trangThaiXoa = new List<string>();
-          
-
-
-           
-
-            trangThaiSort.Add("Tăng dần");
-            trangThaiSort.Add("Giảm dần");
-            trangThaiSort.Add("Không sắp xếp");
-            cboSortCustomerRankingID.DataSource = trangThaiSort;
-            cboSortCustomerRankingID.AllowDropDownResize = false;
-            cboSortSoLuongKH.DataSource = trangThaiSort;
-            cboSortSoLuongKH.AllowDropDownResize = false;
-
-            trangThaiXoa.Add("Đã bị xóa");
-            trangThaiXoa.Add("Chưa bị xóa");
-            trangThaiXoa.Add("Tất cả");
-            cboStateCustomerRanking.DataSource = trangThaiXoa;
-
-            cboStateCustomerRanking.AllowDropDownResize = false;
-
-
-            // Clear existing items
-            lvwCustomerRanking.Items.Clear();
-
-            // Add dummy data rows
-            for (int i = 0; i < 10; i++)
-            {
-                // Generate random data
-                string maRank = "HR" + (i + 1).ToString("D3");
-                string tenRank = "Rank " + (i + 1).ToString();
-                int soLuongTV = (i + 1) * 10; // Số lượng thành viên tăng dần từ 10 đến 50
-                double mucGiam = (i + 1) * 0.5; // Mức giảm tăng dần từ 0.5 đến 2.5
-
-                // Create ListViewItem
-                ListViewItem item = new ListViewItem(maRank);
-                item.SubItems.Add(tenRank);
-                item.SubItems.Add(soLuongTV.ToString());
-                item.SubItems.Add(mucGiam.ToString("0.00") + "%");
-
-                // Add item to ListView
-                lvwCustomerRanking.Items.Add(item);
-            }
-
-
-
-            if (lvwCustomerRanking != null)
-            {
-                // Resize columns based on column header or content
-                for (int i = 0; i < lvwCustomerRanking.Columns.Count; i++)
-                {
-                    int headerWidth = TextRenderer.MeasureText(lvwCustomerRanking.Columns[i].Text, lvwCustomerRanking.Font).Width;
-                    int contentWidth = 0;
-
-                    // Calculate the maximum width of content in the column
-                    foreach (ListViewItem item in lvwCustomerRanking.Items)
-                    {
-                        int itemWidth = TextRenderer.MeasureText(item.SubItems[i].Text, lvwCustomerRanking.Font).Width;
-                        contentWidth = Math.Max(contentWidth, itemWidth);
-                    }
-
-                    // Determine the width needed for the column
-                    int columnWidth = Math.Max(headerWidth, contentWidth);
-
-                    // Set the width of the column
-                    lvwCustomerRanking.Columns[i].Width = columnWidth;
-                }
-            }
-
-
-
-
-
-        }
-
         private void ucCustomerRanking_Load(object sender, EventArgs e)
         {
-            khoiTaoGiaTrichoForm();
+            
         }
 
         private void btnAddCustomerRanking_Click(object sender, EventArgs e)
@@ -114,24 +34,59 @@ namespace GUI.UserControls
 
         private void btnEditCustomerRanking_Click(object sender, EventArgs e)
         {
-            if (lvwCustomerRanking.SelectedItems.Count >0)
+            if (dgvCustomerRank.SelectedRows.Count > 0)
             {
                 frmHangThanhVien frm = new frmHangThanhVien();
                 frm.isAdd = false;
                 //Batdau doan co the chinh sua
-                frm.maHang= lvwCustomerRanking.SelectedItems[0].Text;
-                frm.tenhang = lvwCustomerRanking.SelectedItems[0].SubItems[1].Text;
-                frm.mucChietKhau = double.Parse(lvwCustomerRanking.SelectedItems[0].SubItems[3].Text.Replace("%", ""));
+               
 
                 //ket thuc doan co the chinh sua
                 frm.ShowDialog();
             }
             else
             {
-                customMessageBox thongBao = new customMessageBox("Vui lòng chọn một hạng thành viên để sửa!");
+                customMessageBox thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn chỉnh sửa!");
                 thongBao.ShowDialog();
             }
            
+        }
+
+        private void btnDeleteCustomerRanking_Click(object sender, EventArgs e)
+        {
+            if (dgvCustomerRank.SelectedRows.Count > 0)
+            {
+                customMessageBox thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
+                DialogResult dr = thongBao.ShowDialog();
+                if (dr != DialogResult.Cancel)
+                {
+                    // Xóa 
+                }
+            }
+            else
+            {
+                customMessageBox thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn xóa!");
+                thongBao.ShowDialog();
+            }
+        }
+
+        private void btnRecoverCustomerRanking_Click(object sender, EventArgs e)
+        {
+
+            if (dgvCustomerRank.SelectedRows.Count > 0)
+            {
+                customMessageBox thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
+                DialogResult dr = thongBao.ShowDialog();
+                if (dr != DialogResult.Cancel)
+                {
+                    // Khôi phục
+                }
+            }
+            else
+            {
+                customMessageBox thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phúc!");
+                thongBao.ShowDialog();
+            }
         }
     }
 }

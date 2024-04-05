@@ -31,19 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucCustomer));
             this.lblCustomer = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAddCustomer = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnEditCustomer = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnDeleteCustomer = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnRecoverCustomer = new Syncfusion.WinForms.Controls.SfButton();
             this.txtSearchCustomer = new System.Windows.Forms.TextBox();
             this.btnTraCuuCustomer = new Syncfusion.WinForms.Controls.SfButton();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
-            this.lvwCustomer = new System.Windows.Forms.ListView();
-            this.colMaCustomer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMaAccount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colHoTen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colGioiTinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colNgSinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colCCCD = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colDiaChi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colSDT = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cboGioiTinh = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortGioiTinh = new System.Windows.Forms.Label();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
@@ -56,10 +50,18 @@
             this.lblStateAccounts = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.btnAddCustomer = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnEditCustomer = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnDeleteCustomer = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnRecoverCustomer = new Syncfusion.WinForms.Controls.SfButton();
+            this.dgvCustomer = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLoaiHangTV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
             this.spcQuery.Panel1.SuspendLayout();
@@ -74,6 +76,7 @@
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCustomer
@@ -106,6 +109,90 @@
             this.tlpController.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpController.Size = new System.Drawing.Size(394, 94);
             this.tlpController.TabIndex = 6;
+            // 
+            // btnAddCustomer
+            // 
+            this.btnAddCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCustomer.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCustomer.ForeColor = System.Drawing.Color.White;
+            this.btnAddCustomer.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnAddCustomer.Location = new System.Drawing.Point(3, 3);
+            this.btnAddCustomer.Name = "btnAddCustomer";
+            this.btnAddCustomer.Size = new System.Drawing.Size(191, 41);
+            this.btnAddCustomer.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddCustomer.Style.ForeColor = System.Drawing.Color.White;
+            this.btnAddCustomer.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnAddCustomer.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnAddCustomer.TabIndex = 1;
+            this.btnAddCustomer.Text = "Thêm";
+            this.btnAddCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddCustomer.UseVisualStyleBackColor = false;
+            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
+            // 
+            // btnEditCustomer
+            // 
+            this.btnEditCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEditCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditCustomer.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditCustomer.ForeColor = System.Drawing.Color.White;
+            this.btnEditCustomer.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnEditCustomer.Location = new System.Drawing.Point(3, 50);
+            this.btnEditCustomer.Name = "btnEditCustomer";
+            this.btnEditCustomer.Size = new System.Drawing.Size(191, 41);
+            this.btnEditCustomer.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditCustomer.Style.ForeColor = System.Drawing.Color.White;
+            this.btnEditCustomer.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnEditCustomer.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnEditCustomer.TabIndex = 3;
+            this.btnEditCustomer.Text = "Sửa";
+            this.btnEditCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditCustomer.UseVisualStyleBackColor = false;
+            this.btnEditCustomer.Click += new System.EventHandler(this.btnEditCustomer_Click);
+            // 
+            // btnDeleteCustomer
+            // 
+            this.btnDeleteCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDeleteCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteCustomer.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteCustomer.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteCustomer.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnDeleteCustomer.Location = new System.Drawing.Point(200, 3);
+            this.btnDeleteCustomer.Name = "btnDeleteCustomer";
+            this.btnDeleteCustomer.Size = new System.Drawing.Size(191, 41);
+            this.btnDeleteCustomer.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteCustomer.Style.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteCustomer.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnDeleteCustomer.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnDeleteCustomer.TabIndex = 4;
+            this.btnDeleteCustomer.Text = "Xóa";
+            this.btnDeleteCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeleteCustomer.UseVisualStyleBackColor = false;
+            this.btnDeleteCustomer.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
+            // 
+            // btnRecoverCustomer
+            // 
+            this.btnRecoverCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRecoverCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecoverCustomer.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecoverCustomer.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverCustomer.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnRecoverCustomer.Location = new System.Drawing.Point(200, 50);
+            this.btnRecoverCustomer.Name = "btnRecoverCustomer";
+            this.btnRecoverCustomer.Size = new System.Drawing.Size(191, 41);
+            this.btnRecoverCustomer.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverCustomer.Style.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverCustomer.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnRecoverCustomer.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnRecoverCustomer.TabIndex = 5;
+            this.btnRecoverCustomer.Text = "Khôi phục";
+            this.btnRecoverCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRecoverCustomer.UseVisualStyleBackColor = false;
+            this.btnRecoverCustomer.Click += new System.EventHandler(this.btnRecoverCustomer_Click);
             // 
             // txtSearchCustomer
             // 
@@ -141,7 +228,7 @@
             // 
             // spcQuery.Panel1
             // 
-            this.spcQuery.Panel1.Controls.Add(this.lvwCustomer);
+            this.spcQuery.Panel1.Controls.Add(this.dgvCustomer);
             // 
             // spcQuery.Panel2
             // 
@@ -161,72 +248,6 @@
             this.spcQuery.Size = new System.Drawing.Size(1370, 746);
             this.spcQuery.SplitterDistance = 973;
             this.spcQuery.TabIndex = 38;
-            // 
-            // lvwCustomer
-            // 
-            this.lvwCustomer.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colMaCustomer,
-            this.colMaAccount,
-            this.colHoTen,
-            this.colGioiTinh,
-            this.colNgSinh,
-            this.colCCCD,
-            this.colDiaChi,
-            this.colEmail,
-            this.colSDT});
-            this.lvwCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvwCustomer.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvwCustomer.FullRowSelect = true;
-            this.lvwCustomer.GridLines = true;
-            this.lvwCustomer.HideSelection = false;
-            this.lvwCustomer.Location = new System.Drawing.Point(0, 0);
-            this.lvwCustomer.MultiSelect = false;
-            this.lvwCustomer.Name = "lvwCustomer";
-            this.lvwCustomer.Size = new System.Drawing.Size(973, 746);
-            this.lvwCustomer.TabIndex = 0;
-            this.lvwCustomer.UseCompatibleStateImageBehavior = false;
-            this.lvwCustomer.View = System.Windows.Forms.View.Details;
-            // 
-            // colMaCustomer
-            // 
-            this.colMaCustomer.Text = "Mã Nhân Viên";
-            // 
-            // colMaAccount
-            // 
-            this.colMaAccount.Text = "Mã tài khoản";
-            this.colMaAccount.Width = 81;
-            // 
-            // colHoTen
-            // 
-            this.colHoTen.Text = "Họ và Tên";
-            this.colHoTen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colHoTen.Width = 207;
-            // 
-            // colGioiTinh
-            // 
-            this.colGioiTinh.Text = "Giới Tính";
-            this.colGioiTinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colGioiTinh.Width = 179;
-            // 
-            // colNgSinh
-            // 
-            this.colNgSinh.Text = "Ngày sinh";
-            // 
-            // colCCCD
-            // 
-            this.colCCCD.Text = "CCCD";
-            // 
-            // colDiaChi
-            // 
-            this.colDiaChi.Text = "Địa chỉ";
-            // 
-            // colEmail
-            // 
-            this.colEmail.Text = "Email";
-            // 
-            // colSDT
-            // 
-            this.colSDT.Text = "SDT";
             // 
             // cboGioiTinh
             // 
@@ -389,87 +410,100 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // btnAddCustomer
+            // dgvCustomer
             // 
-            this.btnAddCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddCustomer.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnAddCustomer.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnAddCustomer.Location = new System.Drawing.Point(3, 3);
-            this.btnAddCustomer.Name = "btnAddCustomer";
-            this.btnAddCustomer.Size = new System.Drawing.Size(191, 41);
-            this.btnAddCustomer.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddCustomer.Style.ForeColor = System.Drawing.Color.White;
-            this.btnAddCustomer.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnAddCustomer.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddCustomer.TabIndex = 1;
-            this.btnAddCustomer.Text = "Thêm";
-            this.btnAddCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddCustomer.UseVisualStyleBackColor = false;
-            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
+            this.dgvCustomer.AllowUserToAddRows = false;
+            this.dgvCustomer.AllowUserToDeleteRows = false;
+            this.dgvCustomer.AllowUserToResizeColumns = false;
+            this.dgvCustomer.AllowUserToResizeRows = false;
+            this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.MaTaiKhoan,
+            this.MaLoaiHangTV,
+            this.HinhAnh,
+            this.HoTen,
+            this.CCCD,
+            this.NgaySinh,
+            this.SDT,
+            this.Email,
+            this.DiaChi,
+            this.TrangThai});
+            this.dgvCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCustomer.Location = new System.Drawing.Point(0, 0);
+            this.dgvCustomer.MultiSelect = false;
+            this.dgvCustomer.Name = "dgvCustomer";
+            this.dgvCustomer.ReadOnly = true;
+            this.dgvCustomer.RowHeadersVisible = false;
+            this.dgvCustomer.Size = new System.Drawing.Size(973, 746);
+            this.dgvCustomer.TabIndex = 0;
             // 
-            // btnEditCustomer
+            // ID
             // 
-            this.btnEditCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEditCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditCustomer.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnEditCustomer.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnEditCustomer.Location = new System.Drawing.Point(3, 50);
-            this.btnEditCustomer.Name = "btnEditCustomer";
-            this.btnEditCustomer.Size = new System.Drawing.Size(191, 41);
-            this.btnEditCustomer.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditCustomer.Style.ForeColor = System.Drawing.Color.White;
-            this.btnEditCustomer.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnEditCustomer.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditCustomer.TabIndex = 3;
-            this.btnEditCustomer.Text = "Sửa";
-            this.btnEditCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditCustomer.UseVisualStyleBackColor = false;
-            this.btnEditCustomer.Click += new System.EventHandler(this.btnEditCustomer_Click);
+            this.ID.HeaderText = "Mã khách hàng";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
-            // btnDeleteCustomer
+            // MaTaiKhoan
             // 
-            this.btnDeleteCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleteCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteCustomer.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteCustomer.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnDeleteCustomer.Location = new System.Drawing.Point(200, 3);
-            this.btnDeleteCustomer.Name = "btnDeleteCustomer";
-            this.btnDeleteCustomer.Size = new System.Drawing.Size(191, 41);
-            this.btnDeleteCustomer.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteCustomer.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteCustomer.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.btnDeleteCustomer.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteCustomer.TabIndex = 4;
-            this.btnDeleteCustomer.Text = "Xóa";
-            this.btnDeleteCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDeleteCustomer.UseVisualStyleBackColor = false;
+            this.MaTaiKhoan.HeaderText = "Mã tài khoản";
+            this.MaTaiKhoan.Name = "MaTaiKhoan";
+            this.MaTaiKhoan.ReadOnly = true;
             // 
-            // btnRecoverCustomer
+            // MaLoaiHangTV
             // 
-            this.btnRecoverCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRecoverCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecoverCustomer.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecoverCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverCustomer.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnRecoverCustomer.Location = new System.Drawing.Point(200, 50);
-            this.btnRecoverCustomer.Name = "btnRecoverCustomer";
-            this.btnRecoverCustomer.Size = new System.Drawing.Size(191, 41);
-            this.btnRecoverCustomer.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverCustomer.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverCustomer.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            this.btnRecoverCustomer.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRecoverCustomer.TabIndex = 5;
-            this.btnRecoverCustomer.Text = "Khôi phục";
-            this.btnRecoverCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRecoverCustomer.UseVisualStyleBackColor = false;
+            this.MaLoaiHangTV.HeaderText = "Hạng thành viên";
+            this.MaLoaiHangTV.Name = "MaLoaiHangTV";
+            this.MaLoaiHangTV.ReadOnly = true;
+            // 
+            // HinhAnh
+            // 
+            this.HinhAnh.HeaderText = "Hình ảnh";
+            this.HinhAnh.Name = "HinhAnh";
+            this.HinhAnh.ReadOnly = true;
+            // 
+            // HoTen
+            // 
+            this.HoTen.HeaderText = "Họ và tên";
+            this.HoTen.Name = "HoTen";
+            this.HoTen.ReadOnly = true;
+            // 
+            // CCCD
+            // 
+            this.CCCD.HeaderText = "CCCD";
+            this.CCCD.Name = "CCCD";
+            this.CCCD.ReadOnly = true;
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.HeaderText = "Ngày sinh";
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.ReadOnly = true;
+            // 
+            // SDT
+            // 
+            this.SDT.HeaderText = "SĐT";
+            this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.ReadOnly = true;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.HeaderText = "Trạng thái";
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.ReadOnly = true;
+            this.TrangThai.Visible = false;
             // 
             // ucCustomer
             // 
@@ -496,6 +530,7 @@
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -512,10 +547,6 @@
         private System.Windows.Forms.SplitContainer spcQuery;
         private System.Windows.Forms.TableLayoutPanel tlpController;
         private System.Windows.Forms.Label lblStateAccounts;
-        private System.Windows.Forms.ListView lvwCustomer;
-        private System.Windows.Forms.ColumnHeader colMaAccount;
-        private System.Windows.Forms.ColumnHeader colHoTen;
-        private System.Windows.Forms.ColumnHeader colGioiTinh;
         private System.Windows.Forms.Panel panUcHeader;
         private System.Windows.Forms.SplitContainer spcHeader;
         private Syncfusion.WinForms.ListView.SfComboBox cboStateAccounts;
@@ -527,11 +558,17 @@
         private System.Windows.Forms.Label lblNgaySinh;
         private Syncfusion.WinForms.ListView.SfComboBox cboGioiTinh;
         private System.Windows.Forms.Label lblSortGioiTinh;
-        private System.Windows.Forms.ColumnHeader colMaCustomer;
-        private System.Windows.Forms.ColumnHeader colNgSinh;
-        private System.Windows.Forms.ColumnHeader colCCCD;
-        private System.Windows.Forms.ColumnHeader colDiaChi;
-        private System.Windows.Forms.ColumnHeader colEmail;
-        private System.Windows.Forms.ColumnHeader colSDT;
+        private System.Windows.Forms.DataGridView dgvCustomer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaTaiKhoan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaLoaiHangTV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HinhAnh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CCCD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
     }
 }

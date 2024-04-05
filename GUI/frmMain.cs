@@ -552,9 +552,7 @@ namespace GUI
                 currentButton.ImageAlign = ContentAlignment.MiddleRight;
                 currentButton.ImageMargin = new Padding(3);
                 currentButton.TextAlign = ContentAlignment.BottomRight;
-                currentButton.Style.ForeColor = Color.Black;
-                currentButton.Style.PressedForeColor = Color.Black;
-                currentButton.Style.ImageForeColor = Color.Black;
+               
             }
         }
 
@@ -569,9 +567,6 @@ namespace GUI
             currentButton.ImageAlign = ContentAlignment.MiddleLeft;
             currentButton.ImageMargin = new Padding(3);
             currentButton.TextAlign = ContentAlignment.BottomLeft;
-            currentButton.ForeColor = Color.White;
-            currentButton.Style.ImageForeColor = Color.White;
-            currentButton.Style.PressedForeColor = Color.White;
             currentButton = null;
            
         }
