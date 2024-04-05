@@ -31,20 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucStaff));
             this.lblStaff = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAddStaff = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnEditStaff = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnDeleteStaff = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnRecoverStaff = new Syncfusion.WinForms.Controls.SfButton();
             this.txtSearchStaff = new System.Windows.Forms.TextBox();
             this.btnTraCuuStaff = new Syncfusion.WinForms.Controls.SfButton();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
-            this.lvwStaff = new System.Windows.Forms.ListView();
-            this.colMaNhanVien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMaAccount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colHoTen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colGioiTinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colNgSinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colCCCD = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colDiaChi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colSDT = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMaNQL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cboNguoiQuanLy = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortNQL = new System.Windows.Forms.Label();
             this.cboGioiTinh = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -61,10 +54,19 @@
             this.lblStateAccounts = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.btnAddStaff = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnEditStaff = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnDeleteStaff = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnRecoverStaff = new Syncfusion.WinForms.Controls.SfButton();
+            this.dgvStaff = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNQL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
             this.spcQuery.Panel1.SuspendLayout();
@@ -81,6 +83,7 @@
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             this.SuspendLayout();
             // 
             // lblStaff
@@ -113,6 +116,90 @@
             this.tlpController.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpController.Size = new System.Drawing.Size(394, 94);
             this.tlpController.TabIndex = 6;
+            // 
+            // btnAddStaff
+            // 
+            this.btnAddStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddStaff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddStaff.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddStaff.ForeColor = System.Drawing.Color.White;
+            this.btnAddStaff.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnAddStaff.Location = new System.Drawing.Point(3, 3);
+            this.btnAddStaff.Name = "btnAddStaff";
+            this.btnAddStaff.Size = new System.Drawing.Size(191, 41);
+            this.btnAddStaff.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddStaff.Style.ForeColor = System.Drawing.Color.White;
+            this.btnAddStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnAddStaff.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnAddStaff.TabIndex = 1;
+            this.btnAddStaff.Text = "Thêm";
+            this.btnAddStaff.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddStaff.UseVisualStyleBackColor = false;
+            this.btnAddStaff.Click += new System.EventHandler(this.btnAddStaff_Click);
+            // 
+            // btnEditStaff
+            // 
+            this.btnEditStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditStaff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEditStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditStaff.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditStaff.ForeColor = System.Drawing.Color.White;
+            this.btnEditStaff.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnEditStaff.Location = new System.Drawing.Point(3, 50);
+            this.btnEditStaff.Name = "btnEditStaff";
+            this.btnEditStaff.Size = new System.Drawing.Size(191, 41);
+            this.btnEditStaff.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditStaff.Style.ForeColor = System.Drawing.Color.White;
+            this.btnEditStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnEditStaff.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnEditStaff.TabIndex = 3;
+            this.btnEditStaff.Text = "Sửa";
+            this.btnEditStaff.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditStaff.UseVisualStyleBackColor = false;
+            this.btnEditStaff.Click += new System.EventHandler(this.btnEditStaff_Click);
+            // 
+            // btnDeleteStaff
+            // 
+            this.btnDeleteStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteStaff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDeleteStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteStaff.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteStaff.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteStaff.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnDeleteStaff.Location = new System.Drawing.Point(200, 3);
+            this.btnDeleteStaff.Name = "btnDeleteStaff";
+            this.btnDeleteStaff.Size = new System.Drawing.Size(191, 41);
+            this.btnDeleteStaff.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteStaff.Style.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnDeleteStaff.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnDeleteStaff.TabIndex = 4;
+            this.btnDeleteStaff.Text = "Xóa";
+            this.btnDeleteStaff.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeleteStaff.UseVisualStyleBackColor = false;
+            this.btnDeleteStaff.Click += new System.EventHandler(this.btnDeleteStaff_Click);
+            // 
+            // btnRecoverStaff
+            // 
+            this.btnRecoverStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverStaff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRecoverStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecoverStaff.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecoverStaff.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverStaff.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnRecoverStaff.Location = new System.Drawing.Point(200, 50);
+            this.btnRecoverStaff.Name = "btnRecoverStaff";
+            this.btnRecoverStaff.Size = new System.Drawing.Size(191, 41);
+            this.btnRecoverStaff.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverStaff.Style.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnRecoverStaff.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnRecoverStaff.TabIndex = 5;
+            this.btnRecoverStaff.Text = "Khôi phục";
+            this.btnRecoverStaff.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRecoverStaff.UseVisualStyleBackColor = false;
+            this.btnRecoverStaff.Click += new System.EventHandler(this.btnRecoverStaff_Click);
             // 
             // txtSearchStaff
             // 
@@ -148,7 +235,7 @@
             // 
             // spcQuery.Panel1
             // 
-            this.spcQuery.Panel1.Controls.Add(this.lvwStaff);
+            this.spcQuery.Panel1.Controls.Add(this.dgvStaff);
             // 
             // spcQuery.Panel2
             // 
@@ -172,78 +259,6 @@
             this.spcQuery.Size = new System.Drawing.Size(1370, 746);
             this.spcQuery.SplitterDistance = 973;
             this.spcQuery.TabIndex = 38;
-            // 
-            // lvwStaff
-            // 
-            this.lvwStaff.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colMaNhanVien,
-            this.colMaAccount,
-            this.colHoTen,
-            this.colGioiTinh,
-            this.colNgSinh,
-            this.colCCCD,
-            this.colDiaChi,
-            this.colEmail,
-            this.colSDT,
-            this.colMaNQL});
-            this.lvwStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvwStaff.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvwStaff.FullRowSelect = true;
-            this.lvwStaff.GridLines = true;
-            this.lvwStaff.HideSelection = false;
-            this.lvwStaff.Location = new System.Drawing.Point(0, 0);
-            this.lvwStaff.MultiSelect = false;
-            this.lvwStaff.Name = "lvwStaff";
-            this.lvwStaff.Size = new System.Drawing.Size(973, 746);
-            this.lvwStaff.TabIndex = 0;
-            this.lvwStaff.UseCompatibleStateImageBehavior = false;
-            this.lvwStaff.View = System.Windows.Forms.View.Details;
-            // 
-            // colMaNhanVien
-            // 
-            this.colMaNhanVien.Text = "Mã Nhân Viên";
-            this.colMaNhanVien.Width = 136;
-            // 
-            // colMaAccount
-            // 
-            this.colMaAccount.Text = "Mã tài khoản";
-            this.colMaAccount.Width = 179;
-            // 
-            // colHoTen
-            // 
-            this.colHoTen.Text = "Họ và Tên";
-            this.colHoTen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colHoTen.Width = 207;
-            // 
-            // colGioiTinh
-            // 
-            this.colGioiTinh.Text = "Giới Tính";
-            this.colGioiTinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colGioiTinh.Width = 179;
-            // 
-            // colNgSinh
-            // 
-            this.colNgSinh.Text = "Ngày sinh";
-            // 
-            // colCCCD
-            // 
-            this.colCCCD.Text = "CCCD";
-            // 
-            // colDiaChi
-            // 
-            this.colDiaChi.Text = "Địa chỉ";
-            // 
-            // colEmail
-            // 
-            this.colEmail.Text = "Email";
-            // 
-            // colSDT
-            // 
-            this.colSDT.Text = "SDT";
-            // 
-            // colMaNQL
-            // 
-            this.colMaNQL.Text = "Quản lý";
             // 
             // cboNguoiQuanLy
             // 
@@ -462,87 +477,118 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // btnAddStaff
+            // dgvStaff
             // 
-            this.btnAddStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddStaff.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddStaff.ForeColor = System.Drawing.Color.White;
-            this.btnAddStaff.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnAddStaff.Location = new System.Drawing.Point(3, 3);
-            this.btnAddStaff.Name = "btnAddStaff";
-            this.btnAddStaff.Size = new System.Drawing.Size(191, 41);
-            this.btnAddStaff.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddStaff.Style.ForeColor = System.Drawing.Color.White;
-            this.btnAddStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnAddStaff.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddStaff.TabIndex = 1;
-            this.btnAddStaff.Text = "Thêm";
-            this.btnAddStaff.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddStaff.UseVisualStyleBackColor = false;
-            this.btnAddStaff.Click += new System.EventHandler(this.btnAddStaff_Click);
+            this.dgvStaff.AllowUserToAddRows = false;
+            this.dgvStaff.AllowUserToDeleteRows = false;
+            this.dgvStaff.AllowUserToResizeColumns = false;
+            this.dgvStaff.AllowUserToResizeRows = false;
+            this.dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStaff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.MaNQL,
+            this.MaTaiKhoan,
+            this.HoTen,
+            this.HinhAnh,
+            this.SDT,
+            this.Email,
+            this.CCCD,
+            this.NgaySinh,
+            this.DiaChi,
+            this.Luong,
+            this.TrangThai});
+            this.dgvStaff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvStaff.Location = new System.Drawing.Point(0, 0);
+            this.dgvStaff.MultiSelect = false;
+            this.dgvStaff.Name = "dgvStaff";
+            this.dgvStaff.ReadOnly = true;
+            this.dgvStaff.RowHeadersVisible = false;
+            this.dgvStaff.Size = new System.Drawing.Size(973, 746);
+            this.dgvStaff.TabIndex = 0;
             // 
-            // btnEditStaff
+            // ID
             // 
-            this.btnEditStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEditStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditStaff.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditStaff.ForeColor = System.Drawing.Color.White;
-            this.btnEditStaff.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnEditStaff.Location = new System.Drawing.Point(3, 50);
-            this.btnEditStaff.Name = "btnEditStaff";
-            this.btnEditStaff.Size = new System.Drawing.Size(191, 41);
-            this.btnEditStaff.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditStaff.Style.ForeColor = System.Drawing.Color.White;
-            this.btnEditStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnEditStaff.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditStaff.TabIndex = 3;
-            this.btnEditStaff.Text = "Sửa";
-            this.btnEditStaff.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditStaff.UseVisualStyleBackColor = false;
-            this.btnEditStaff.Click += new System.EventHandler(this.btnEditStaff_Click);
+            this.ID.HeaderText = "Mã nhân viên";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 88;
             // 
-            // btnDeleteStaff
+            // MaNQL
             // 
-            this.btnDeleteStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleteStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteStaff.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteStaff.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteStaff.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnDeleteStaff.Location = new System.Drawing.Point(200, 3);
-            this.btnDeleteStaff.Name = "btnDeleteStaff";
-            this.btnDeleteStaff.Size = new System.Drawing.Size(191, 41);
-            this.btnDeleteStaff.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteStaff.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.btnDeleteStaff.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteStaff.TabIndex = 4;
-            this.btnDeleteStaff.Text = "Xóa";
-            this.btnDeleteStaff.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDeleteStaff.UseVisualStyleBackColor = false;
+            this.MaNQL.HeaderText = "Mã người quản lý";
+            this.MaNQL.Name = "MaNQL";
+            this.MaNQL.ReadOnly = true;
+            this.MaNQL.Width = 88;
             // 
-            // btnRecoverStaff
+            // MaTaiKhoan
             // 
-            this.btnRecoverStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRecoverStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecoverStaff.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecoverStaff.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverStaff.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnRecoverStaff.Location = new System.Drawing.Point(200, 50);
-            this.btnRecoverStaff.Name = "btnRecoverStaff";
-            this.btnRecoverStaff.Size = new System.Drawing.Size(191, 41);
-            this.btnRecoverStaff.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverStaff.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            this.btnRecoverStaff.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRecoverStaff.TabIndex = 5;
-            this.btnRecoverStaff.Text = "Khôi phục";
-            this.btnRecoverStaff.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRecoverStaff.UseVisualStyleBackColor = false;
+            this.MaTaiKhoan.HeaderText = "Mã tài khoản";
+            this.MaTaiKhoan.Name = "MaTaiKhoan";
+            this.MaTaiKhoan.ReadOnly = true;
+            this.MaTaiKhoan.Width = 89;
+            // 
+            // HoTen
+            // 
+            this.HoTen.HeaderText = "Họ và tên";
+            this.HoTen.Name = "HoTen";
+            this.HoTen.ReadOnly = true;
+            this.HoTen.Width = 88;
+            // 
+            // HinhAnh
+            // 
+            this.HinhAnh.HeaderText = "Hình ảnh";
+            this.HinhAnh.Name = "HinhAnh";
+            this.HinhAnh.ReadOnly = true;
+            this.HinhAnh.Width = 88;
+            // 
+            // SDT
+            // 
+            this.SDT.HeaderText = "SĐT";
+            this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
+            this.SDT.Width = 88;
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 88;
+            // 
+            // CCCD
+            // 
+            this.CCCD.HeaderText = "CCCD";
+            this.CCCD.Name = "CCCD";
+            this.CCCD.ReadOnly = true;
+            this.CCCD.Width = 88;
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.HeaderText = "Ngày sinh";
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.ReadOnly = true;
+            this.NgaySinh.Width = 89;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.ReadOnly = true;
+            this.DiaChi.Width = 88;
+            // 
+            // Luong
+            // 
+            this.Luong.HeaderText = "Lương";
+            this.Luong.Name = "Luong";
+            this.Luong.ReadOnly = true;
+            this.Luong.Width = 88;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.HeaderText = "Trạng thái";
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.ReadOnly = true;
+            this.TrangThai.Visible = false;
             // 
             // ucStaff
             // 
@@ -571,6 +617,7 @@
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -587,10 +634,6 @@
         private System.Windows.Forms.SplitContainer spcQuery;
         private System.Windows.Forms.TableLayoutPanel tlpController;
         private System.Windows.Forms.Label lblStateAccounts;
-        private System.Windows.Forms.ListView lvwStaff;
-        private System.Windows.Forms.ColumnHeader colMaAccount;
-        private System.Windows.Forms.ColumnHeader colHoTen;
-        private System.Windows.Forms.ColumnHeader colGioiTinh;
         private System.Windows.Forms.Panel panUcHeader;
         private System.Windows.Forms.SplitContainer spcHeader;
         private Syncfusion.WinForms.ListView.SfComboBox cboStateAccounts;
@@ -604,14 +647,20 @@
         private System.Windows.Forms.Label lblSorttheoPhong;
         private Syncfusion.WinForms.ListView.SfComboBox cboGioiTinh;
         private System.Windows.Forms.Label lblSortGioiTinh;
-        private System.Windows.Forms.ColumnHeader colMaNhanVien;
-        private System.Windows.Forms.ColumnHeader colNgSinh;
-        private System.Windows.Forms.ColumnHeader colCCCD;
-        private System.Windows.Forms.ColumnHeader colDiaChi;
-        private System.Windows.Forms.ColumnHeader colEmail;
-        private System.Windows.Forms.ColumnHeader colSDT;
-        private System.Windows.Forms.ColumnHeader colMaNQL;
         private Syncfusion.WinForms.ListView.SfComboBox cboNguoiQuanLy;
         private System.Windows.Forms.Label lblSortNQL;
+        private System.Windows.Forms.DataGridView dgvStaff;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNQL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaTaiKhoan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HinhAnh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CCCD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Luong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
     }
 }
