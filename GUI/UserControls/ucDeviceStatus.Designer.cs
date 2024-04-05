@@ -31,15 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucDeviceStatus));
             this.lblDeviceStatus = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAddDeviceStatus = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnEditDeviceStatus = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnDeleteDeviceStatus = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnRecoverDeviceStatus = new Syncfusion.WinForms.Controls.SfButton();
             this.txtSearchDeviceStatus = new System.Windows.Forms.TextBox();
             this.btnTraCuuDeviceStatus = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateDeviceStatus = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
-            this.lvwDeviceStatus = new System.Windows.Forms.ListView();
-            this.colMaDeviceStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colTenTinhTrang = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colSoLuongPhong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMoTa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cboSortDeviceStatusID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortDeviceStatusD = new System.Windows.Forms.Label();
             this.cboSortSoLuongTB = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -47,10 +46,11 @@
             this.lblStateDeviceStatus = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.btnAddDeviceStatus = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnEditDeviceStatus = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnDeleteDeviceStatus = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnRecoverDeviceStatus = new Syncfusion.WinForms.Controls.SfButton();
+            this.dgvDeviceStatus = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenTinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateDeviceStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -64,6 +64,7 @@
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDeviceStatus)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDeviceStatus
@@ -96,6 +97,90 @@
             this.tlpController.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpController.Size = new System.Drawing.Size(394, 94);
             this.tlpController.TabIndex = 6;
+            // 
+            // btnAddDeviceStatus
+            // 
+            this.btnAddDeviceStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddDeviceStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddDeviceStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddDeviceStatus.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddDeviceStatus.ForeColor = System.Drawing.Color.White;
+            this.btnAddDeviceStatus.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnAddDeviceStatus.Location = new System.Drawing.Point(3, 3);
+            this.btnAddDeviceStatus.Name = "btnAddDeviceStatus";
+            this.btnAddDeviceStatus.Size = new System.Drawing.Size(191, 41);
+            this.btnAddDeviceStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddDeviceStatus.Style.ForeColor = System.Drawing.Color.White;
+            this.btnAddDeviceStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnAddDeviceStatus.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnAddDeviceStatus.TabIndex = 1;
+            this.btnAddDeviceStatus.Text = "Thêm";
+            this.btnAddDeviceStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddDeviceStatus.UseVisualStyleBackColor = false;
+            this.btnAddDeviceStatus.Click += new System.EventHandler(this.btnAddDeviceStatus_Click);
+            // 
+            // btnEditDeviceStatus
+            // 
+            this.btnEditDeviceStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditDeviceStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEditDeviceStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditDeviceStatus.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditDeviceStatus.ForeColor = System.Drawing.Color.White;
+            this.btnEditDeviceStatus.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnEditDeviceStatus.Location = new System.Drawing.Point(3, 50);
+            this.btnEditDeviceStatus.Name = "btnEditDeviceStatus";
+            this.btnEditDeviceStatus.Size = new System.Drawing.Size(191, 41);
+            this.btnEditDeviceStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditDeviceStatus.Style.ForeColor = System.Drawing.Color.White;
+            this.btnEditDeviceStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnEditDeviceStatus.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnEditDeviceStatus.TabIndex = 3;
+            this.btnEditDeviceStatus.Text = "Sửa";
+            this.btnEditDeviceStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditDeviceStatus.UseVisualStyleBackColor = false;
+            this.btnEditDeviceStatus.Click += new System.EventHandler(this.btnEditDeviceStatus_Click);
+            // 
+            // btnDeleteDeviceStatus
+            // 
+            this.btnDeleteDeviceStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteDeviceStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDeleteDeviceStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteDeviceStatus.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteDeviceStatus.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteDeviceStatus.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnDeleteDeviceStatus.Location = new System.Drawing.Point(200, 3);
+            this.btnDeleteDeviceStatus.Name = "btnDeleteDeviceStatus";
+            this.btnDeleteDeviceStatus.Size = new System.Drawing.Size(191, 41);
+            this.btnDeleteDeviceStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteDeviceStatus.Style.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteDeviceStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnDeleteDeviceStatus.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnDeleteDeviceStatus.TabIndex = 4;
+            this.btnDeleteDeviceStatus.Text = "Xóa";
+            this.btnDeleteDeviceStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeleteDeviceStatus.UseVisualStyleBackColor = false;
+            this.btnDeleteDeviceStatus.Click += new System.EventHandler(this.btnDeleteDeviceStatus_Click);
+            // 
+            // btnRecoverDeviceStatus
+            // 
+            this.btnRecoverDeviceStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverDeviceStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRecoverDeviceStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecoverDeviceStatus.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecoverDeviceStatus.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverDeviceStatus.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnRecoverDeviceStatus.Location = new System.Drawing.Point(200, 50);
+            this.btnRecoverDeviceStatus.Name = "btnRecoverDeviceStatus";
+            this.btnRecoverDeviceStatus.Size = new System.Drawing.Size(191, 41);
+            this.btnRecoverDeviceStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverDeviceStatus.Style.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverDeviceStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnRecoverDeviceStatus.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnRecoverDeviceStatus.TabIndex = 5;
+            this.btnRecoverDeviceStatus.Text = "Khôi phục";
+            this.btnRecoverDeviceStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRecoverDeviceStatus.UseVisualStyleBackColor = false;
+            this.btnRecoverDeviceStatus.Click += new System.EventHandler(this.btnRecoverDeviceStatus_Click);
             // 
             // txtSearchDeviceStatus
             // 
@@ -148,7 +233,7 @@
             // 
             // spcQuery.Panel1
             // 
-            this.spcQuery.Panel1.Controls.Add(this.lvwDeviceStatus);
+            this.spcQuery.Panel1.Controls.Add(this.dgvDeviceStatus);
             // 
             // spcQuery.Panel2
             // 
@@ -164,49 +249,6 @@
             this.spcQuery.Size = new System.Drawing.Size(1370, 746);
             this.spcQuery.SplitterDistance = 973;
             this.spcQuery.TabIndex = 38;
-            // 
-            // lvwDeviceStatus
-            // 
-            this.lvwDeviceStatus.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colMaDeviceStatus,
-            this.colTenTinhTrang,
-            this.colSoLuongPhong,
-            this.colMoTa});
-            this.lvwDeviceStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvwDeviceStatus.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvwDeviceStatus.FullRowSelect = true;
-            this.lvwDeviceStatus.GridLines = true;
-            this.lvwDeviceStatus.HideSelection = false;
-            this.lvwDeviceStatus.Location = new System.Drawing.Point(0, 0);
-            this.lvwDeviceStatus.MultiSelect = false;
-            this.lvwDeviceStatus.Name = "lvwDeviceStatus";
-            this.lvwDeviceStatus.Size = new System.Drawing.Size(973, 746);
-            this.lvwDeviceStatus.TabIndex = 0;
-            this.lvwDeviceStatus.UseCompatibleStateImageBehavior = false;
-            this.lvwDeviceStatus.View = System.Windows.Forms.View.Details;
-            // 
-            // colMaDeviceStatus
-            // 
-            this.colMaDeviceStatus.Text = "Mã tình trạng thiết bị";
-            this.colMaDeviceStatus.Width = 81;
-            // 
-            // colTenTinhTrang
-            // 
-            this.colTenTinhTrang.Text = "Tên tình trạng";
-            this.colTenTinhTrang.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colTenTinhTrang.Width = 207;
-            // 
-            // colSoLuongPhong
-            // 
-            this.colSoLuongPhong.Text = "Số lượng thiết bĩ đang trong tình trạng";
-            this.colSoLuongPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colSoLuongPhong.Width = 179;
-            // 
-            // colMoTa
-            // 
-            this.colMoTa.Text = "Mô tả";
-            this.colMoTa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colMoTa.Width = 146;
             // 
             // cboSortDeviceStatusID
             // 
@@ -304,87 +346,52 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // btnAddDeviceStatus
+            // dgvDeviceStatus
             // 
-            this.btnAddDeviceStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddDeviceStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddDeviceStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddDeviceStatus.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddDeviceStatus.ForeColor = System.Drawing.Color.White;
-            this.btnAddDeviceStatus.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnAddDeviceStatus.Location = new System.Drawing.Point(3, 3);
-            this.btnAddDeviceStatus.Name = "btnAddDeviceStatus";
-            this.btnAddDeviceStatus.Size = new System.Drawing.Size(191, 41);
-            this.btnAddDeviceStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddDeviceStatus.Style.ForeColor = System.Drawing.Color.White;
-            this.btnAddDeviceStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnAddDeviceStatus.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddDeviceStatus.TabIndex = 1;
-            this.btnAddDeviceStatus.Text = "Thêm";
-            this.btnAddDeviceStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddDeviceStatus.UseVisualStyleBackColor = false;
-            this.btnAddDeviceStatus.Click += new System.EventHandler(this.btnAddDeviceStatus_Click);
+            this.dgvDeviceStatus.AllowUserToAddRows = false;
+            this.dgvDeviceStatus.AllowUserToDeleteRows = false;
+            this.dgvDeviceStatus.AllowUserToResizeColumns = false;
+            this.dgvDeviceStatus.AllowUserToResizeRows = false;
+            this.dgvDeviceStatus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDeviceStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDeviceStatus.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.TenTinhTrang,
+            this.MoTa,
+            this.TrangThai});
+            this.dgvDeviceStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDeviceStatus.Location = new System.Drawing.Point(0, 0);
+            this.dgvDeviceStatus.MultiSelect = false;
+            this.dgvDeviceStatus.Name = "dgvDeviceStatus";
+            this.dgvDeviceStatus.ReadOnly = true;
+            this.dgvDeviceStatus.RowHeadersVisible = false;
+            this.dgvDeviceStatus.Size = new System.Drawing.Size(973, 746);
+            this.dgvDeviceStatus.TabIndex = 0;
             // 
-            // btnEditDeviceStatus
+            // ID
             // 
-            this.btnEditDeviceStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditDeviceStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEditDeviceStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditDeviceStatus.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditDeviceStatus.ForeColor = System.Drawing.Color.White;
-            this.btnEditDeviceStatus.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnEditDeviceStatus.Location = new System.Drawing.Point(3, 50);
-            this.btnEditDeviceStatus.Name = "btnEditDeviceStatus";
-            this.btnEditDeviceStatus.Size = new System.Drawing.Size(191, 41);
-            this.btnEditDeviceStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditDeviceStatus.Style.ForeColor = System.Drawing.Color.White;
-            this.btnEditDeviceStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnEditDeviceStatus.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditDeviceStatus.TabIndex = 3;
-            this.btnEditDeviceStatus.Text = "Sửa";
-            this.btnEditDeviceStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditDeviceStatus.UseVisualStyleBackColor = false;
-            this.btnEditDeviceStatus.Click += new System.EventHandler(this.btnEditDeviceStatus_Click);
+            this.ID.HeaderText = "Mã tình trạng thiết bị";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
-            // btnDeleteDeviceStatus
+            // TenTinhTrang
             // 
-            this.btnDeleteDeviceStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteDeviceStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleteDeviceStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteDeviceStatus.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteDeviceStatus.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteDeviceStatus.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnDeleteDeviceStatus.Location = new System.Drawing.Point(200, 3);
-            this.btnDeleteDeviceStatus.Name = "btnDeleteDeviceStatus";
-            this.btnDeleteDeviceStatus.Size = new System.Drawing.Size(191, 41);
-            this.btnDeleteDeviceStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteDeviceStatus.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteDeviceStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.btnDeleteDeviceStatus.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteDeviceStatus.TabIndex = 4;
-            this.btnDeleteDeviceStatus.Text = "Xóa";
-            this.btnDeleteDeviceStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDeleteDeviceStatus.UseVisualStyleBackColor = false;
+            this.TenTinhTrang.HeaderText = "Tên tình trạng";
+            this.TenTinhTrang.Name = "TenTinhTrang";
+            this.TenTinhTrang.ReadOnly = true;
             // 
-            // btnRecoverDeviceStatus
+            // MoTa
             // 
-            this.btnRecoverDeviceStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverDeviceStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRecoverDeviceStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecoverDeviceStatus.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecoverDeviceStatus.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverDeviceStatus.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnRecoverDeviceStatus.Location = new System.Drawing.Point(200, 50);
-            this.btnRecoverDeviceStatus.Name = "btnRecoverDeviceStatus";
-            this.btnRecoverDeviceStatus.Size = new System.Drawing.Size(191, 41);
-            this.btnRecoverDeviceStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverDeviceStatus.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverDeviceStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            this.btnRecoverDeviceStatus.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRecoverDeviceStatus.TabIndex = 5;
-            this.btnRecoverDeviceStatus.Text = "Khôi phục";
-            this.btnRecoverDeviceStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRecoverDeviceStatus.UseVisualStyleBackColor = false;
+            this.MoTa.HeaderText = "Mô tả";
+            this.MoTa.Name = "MoTa";
+            this.MoTa.ReadOnly = true;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.HeaderText = "Trạng thái";
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.ReadOnly = true;
+            this.TrangThai.Visible = false;
             // 
             // ucDeviceStatus
             // 
@@ -410,6 +417,7 @@
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDeviceStatus)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -427,16 +435,16 @@
         private System.Windows.Forms.SplitContainer spcQuery;
         private System.Windows.Forms.TableLayoutPanel tlpController;
         private System.Windows.Forms.Label lblStateDeviceStatus;
-        private System.Windows.Forms.ListView lvwDeviceStatus;
-        private System.Windows.Forms.ColumnHeader colMaDeviceStatus;
-        private System.Windows.Forms.ColumnHeader colTenTinhTrang;
-        private System.Windows.Forms.ColumnHeader colSoLuongPhong;
-        private System.Windows.Forms.ColumnHeader colMoTa;
         private System.Windows.Forms.Label lblSortSoLuongTB;
         private System.Windows.Forms.Panel panUcHeader;
         private System.Windows.Forms.SplitContainer spcHeader;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortSoLuongTB;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortDeviceStatusID;
         private System.Windows.Forms.Label lblSortDeviceStatusD;
+        private System.Windows.Forms.DataGridView dgvDeviceStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenTinhTrang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MoTa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
     }
 }
