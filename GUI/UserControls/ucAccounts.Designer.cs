@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucAccounts));
             this.lblAccounts = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAddAccounts = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnEditAccounts = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnDeleteAccounts = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnRecoverAccounts = new Syncfusion.WinForms.Controls.SfButton();
             this.txtSearchAccounts = new System.Windows.Forms.TextBox();
             this.btnTraCuuAccounts = new Syncfusion.WinForms.Controls.SfButton();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
-            this.lvwAccounts = new System.Windows.Forms.ListView();
-            this.colMaAccount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colUsername = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMaPQ = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dtpNgayTao = new System.Windows.Forms.DateTimePicker();
             this.cboPhanQuyen = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortTheoPhanQuyen = new System.Windows.Forms.Label();
@@ -48,11 +48,13 @@
             this.lblStateAccounts = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.btnAddAccounts = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnEditAccounts = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnDeleteAccounts = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnRecoverAccounts = new Syncfusion.WinForms.Controls.SfButton();
-            this.colPassword = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dgvAccounts = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDangNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaPhanQuyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayTao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
             this.spcQuery.Panel1.SuspendLayout();
@@ -66,6 +68,7 @@
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAccounts
@@ -98,6 +101,90 @@
             this.tlpController.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpController.Size = new System.Drawing.Size(394, 94);
             this.tlpController.TabIndex = 6;
+            // 
+            // btnAddAccounts
+            // 
+            this.btnAddAccounts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddAccounts.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddAccounts.ForeColor = System.Drawing.Color.White;
+            this.btnAddAccounts.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnAddAccounts.Location = new System.Drawing.Point(3, 3);
+            this.btnAddAccounts.Name = "btnAddAccounts";
+            this.btnAddAccounts.Size = new System.Drawing.Size(191, 41);
+            this.btnAddAccounts.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddAccounts.Style.ForeColor = System.Drawing.Color.White;
+            this.btnAddAccounts.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnAddAccounts.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnAddAccounts.TabIndex = 1;
+            this.btnAddAccounts.Text = "Thêm";
+            this.btnAddAccounts.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddAccounts.UseVisualStyleBackColor = false;
+            this.btnAddAccounts.Click += new System.EventHandler(this.btnAddAccounts_Click);
+            // 
+            // btnEditAccounts
+            // 
+            this.btnEditAccounts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEditAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditAccounts.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditAccounts.ForeColor = System.Drawing.Color.White;
+            this.btnEditAccounts.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnEditAccounts.Location = new System.Drawing.Point(3, 50);
+            this.btnEditAccounts.Name = "btnEditAccounts";
+            this.btnEditAccounts.Size = new System.Drawing.Size(191, 41);
+            this.btnEditAccounts.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditAccounts.Style.ForeColor = System.Drawing.Color.White;
+            this.btnEditAccounts.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnEditAccounts.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnEditAccounts.TabIndex = 3;
+            this.btnEditAccounts.Text = "Sửa";
+            this.btnEditAccounts.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditAccounts.UseVisualStyleBackColor = false;
+            this.btnEditAccounts.Click += new System.EventHandler(this.btnEditAccounts_Click);
+            // 
+            // btnDeleteAccounts
+            // 
+            this.btnDeleteAccounts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDeleteAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteAccounts.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteAccounts.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteAccounts.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnDeleteAccounts.Location = new System.Drawing.Point(200, 3);
+            this.btnDeleteAccounts.Name = "btnDeleteAccounts";
+            this.btnDeleteAccounts.Size = new System.Drawing.Size(191, 41);
+            this.btnDeleteAccounts.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteAccounts.Style.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteAccounts.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnDeleteAccounts.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnDeleteAccounts.TabIndex = 4;
+            this.btnDeleteAccounts.Text = "Xóa";
+            this.btnDeleteAccounts.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeleteAccounts.UseVisualStyleBackColor = false;
+            this.btnDeleteAccounts.Click += new System.EventHandler(this.btnDeleteAccounts_Click);
+            // 
+            // btnRecoverAccounts
+            // 
+            this.btnRecoverAccounts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRecoverAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecoverAccounts.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecoverAccounts.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverAccounts.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnRecoverAccounts.Location = new System.Drawing.Point(200, 50);
+            this.btnRecoverAccounts.Name = "btnRecoverAccounts";
+            this.btnRecoverAccounts.Size = new System.Drawing.Size(191, 41);
+            this.btnRecoverAccounts.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverAccounts.Style.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverAccounts.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnRecoverAccounts.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnRecoverAccounts.TabIndex = 5;
+            this.btnRecoverAccounts.Text = "Khôi phục";
+            this.btnRecoverAccounts.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRecoverAccounts.UseVisualStyleBackColor = false;
+            this.btnRecoverAccounts.Click += new System.EventHandler(this.btnRecoverAccounts_Click);
             // 
             // txtSearchAccounts
             // 
@@ -133,7 +220,7 @@
             // 
             // spcQuery.Panel1
             // 
-            this.spcQuery.Panel1.Controls.Add(this.lvwAccounts);
+            this.spcQuery.Panel1.Controls.Add(this.dgvAccounts);
             // 
             // spcQuery.Panel2
             // 
@@ -151,43 +238,6 @@
             this.spcQuery.Size = new System.Drawing.Size(1370, 746);
             this.spcQuery.SplitterDistance = 973;
             this.spcQuery.TabIndex = 38;
-            // 
-            // lvwAccounts
-            // 
-            this.lvwAccounts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colMaAccount,
-            this.colUsername,
-            this.colPassword,
-            this.colMaPQ});
-            this.lvwAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvwAccounts.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvwAccounts.FullRowSelect = true;
-            this.lvwAccounts.GridLines = true;
-            this.lvwAccounts.HideSelection = false;
-            this.lvwAccounts.Location = new System.Drawing.Point(0, 0);
-            this.lvwAccounts.MultiSelect = false;
-            this.lvwAccounts.Name = "lvwAccounts";
-            this.lvwAccounts.Size = new System.Drawing.Size(973, 746);
-            this.lvwAccounts.TabIndex = 0;
-            this.lvwAccounts.UseCompatibleStateImageBehavior = false;
-            this.lvwAccounts.View = System.Windows.Forms.View.Details;
-            // 
-            // colMaAccount
-            // 
-            this.colMaAccount.Text = "Mã tài khoản";
-            this.colMaAccount.Width = 135;
-            // 
-            // colUsername
-            // 
-            this.colUsername.Text = "Username";
-            this.colUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colUsername.Width = 207;
-            // 
-            // colMaPQ
-            // 
-            this.colMaPQ.Text = "Mã Phân Quyền";
-            this.colMaPQ.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colMaPQ.Width = 179;
             // 
             // dtpNgayTao
             // 
@@ -322,92 +372,66 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // btnAddAccounts
+            // dgvAccounts
             // 
-            this.btnAddAccounts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddAccounts.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddAccounts.ForeColor = System.Drawing.Color.White;
-            this.btnAddAccounts.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnAddAccounts.Location = new System.Drawing.Point(3, 3);
-            this.btnAddAccounts.Name = "btnAddAccounts";
-            this.btnAddAccounts.Size = new System.Drawing.Size(191, 41);
-            this.btnAddAccounts.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddAccounts.Style.ForeColor = System.Drawing.Color.White;
-            this.btnAddAccounts.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnAddAccounts.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddAccounts.TabIndex = 1;
-            this.btnAddAccounts.Text = "Thêm";
-            this.btnAddAccounts.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddAccounts.UseVisualStyleBackColor = false;
-            this.btnAddAccounts.Click += new System.EventHandler(this.btnAddAccounts_Click);
+            this.dgvAccounts.AllowUserToAddRows = false;
+            this.dgvAccounts.AllowUserToDeleteRows = false;
+            this.dgvAccounts.AllowUserToResizeColumns = false;
+            this.dgvAccounts.AllowUserToResizeRows = false;
+            this.dgvAccounts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAccounts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.TenDangNhap,
+            this.MatKhau,
+            this.MaPhanQuyen,
+            this.NgayTao,
+            this.TrangThai});
+            this.dgvAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAccounts.Location = new System.Drawing.Point(0, 0);
+            this.dgvAccounts.MultiSelect = false;
+            this.dgvAccounts.Name = "dgvAccounts";
+            this.dgvAccounts.ReadOnly = true;
+            this.dgvAccounts.RowHeadersVisible = false;
+            this.dgvAccounts.Size = new System.Drawing.Size(973, 746);
+            this.dgvAccounts.TabIndex = 0;
             // 
-            // btnEditAccounts
+            // ID
             // 
-            this.btnEditAccounts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEditAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditAccounts.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditAccounts.ForeColor = System.Drawing.Color.White;
-            this.btnEditAccounts.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnEditAccounts.Location = new System.Drawing.Point(3, 50);
-            this.btnEditAccounts.Name = "btnEditAccounts";
-            this.btnEditAccounts.Size = new System.Drawing.Size(191, 41);
-            this.btnEditAccounts.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditAccounts.Style.ForeColor = System.Drawing.Color.White;
-            this.btnEditAccounts.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnEditAccounts.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditAccounts.TabIndex = 3;
-            this.btnEditAccounts.Text = "Sửa";
-            this.btnEditAccounts.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditAccounts.UseVisualStyleBackColor = false;
-            this.btnEditAccounts.Click += new System.EventHandler(this.btnEditAccounts_Click);
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
-            // btnDeleteAccounts
+            // TenDangNhap
             // 
-            this.btnDeleteAccounts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleteAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteAccounts.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteAccounts.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteAccounts.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnDeleteAccounts.Location = new System.Drawing.Point(200, 3);
-            this.btnDeleteAccounts.Name = "btnDeleteAccounts";
-            this.btnDeleteAccounts.Size = new System.Drawing.Size(191, 41);
-            this.btnDeleteAccounts.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteAccounts.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteAccounts.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.btnDeleteAccounts.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteAccounts.TabIndex = 4;
-            this.btnDeleteAccounts.Text = "Xóa";
-            this.btnDeleteAccounts.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDeleteAccounts.UseVisualStyleBackColor = false;
+            this.TenDangNhap.HeaderText = "Tên đăng nhập";
+            this.TenDangNhap.Name = "TenDangNhap";
+            this.TenDangNhap.ReadOnly = true;
             // 
-            // btnRecoverAccounts
+            // MatKhau
             // 
-            this.btnRecoverAccounts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRecoverAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecoverAccounts.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecoverAccounts.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverAccounts.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnRecoverAccounts.Location = new System.Drawing.Point(200, 50);
-            this.btnRecoverAccounts.Name = "btnRecoverAccounts";
-            this.btnRecoverAccounts.Size = new System.Drawing.Size(191, 41);
-            this.btnRecoverAccounts.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverAccounts.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverAccounts.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            this.btnRecoverAccounts.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRecoverAccounts.TabIndex = 5;
-            this.btnRecoverAccounts.Text = "Khôi phục";
-            this.btnRecoverAccounts.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRecoverAccounts.UseVisualStyleBackColor = false;
+            this.MatKhau.HeaderText = "Mật khẩu";
+            this.MatKhau.Name = "MatKhau";
+            this.MatKhau.ReadOnly = true;
             // 
-            // colPassword
+            // MaPhanQuyen
             // 
-            this.colPassword.Text = "Password";
-            this.colPassword.Width = 167;
+            this.MaPhanQuyen.HeaderText = "Phân quyền";
+            this.MaPhanQuyen.Name = "MaPhanQuyen";
+            this.MaPhanQuyen.ReadOnly = true;
+            // 
+            // NgayTao
+            // 
+            this.NgayTao.HeaderText = "Ngày tạo";
+            this.NgayTao.Name = "NgayTao";
+            this.NgayTao.ReadOnly = true;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.HeaderText = "Trạng thái";
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.ReadOnly = true;
+            this.TrangThai.Visible = false;
             // 
             // ucAccounts
             // 
@@ -433,6 +457,7 @@
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -449,10 +474,6 @@
         private System.Windows.Forms.SplitContainer spcQuery;
         private System.Windows.Forms.TableLayoutPanel tlpController;
         private System.Windows.Forms.Label lblStateAccounts;
-        private System.Windows.Forms.ListView lvwAccounts;
-        private System.Windows.Forms.ColumnHeader colMaAccount;
-        private System.Windows.Forms.ColumnHeader colUsername;
-        private System.Windows.Forms.ColumnHeader colMaPQ;
         private System.Windows.Forms.Panel panUcHeader;
         private System.Windows.Forms.SplitContainer spcHeader;
         private Syncfusion.WinForms.ListView.SfComboBox cboStateAccounts;
@@ -462,6 +483,12 @@
         private System.Windows.Forms.Label lblSortTheoPhanQuyen;
         private System.Windows.Forms.DateTimePicker dtpNgayTao;
         private System.Windows.Forms.Label lblNgayTao;
-        private System.Windows.Forms.ColumnHeader colPassword;
+        private System.Windows.Forms.DataGridView dgvAccounts;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenDangNhap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MatKhau;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhanQuyen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayTao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
     }
 }
