@@ -52,9 +52,6 @@ namespace DAL
             return cmd.ExecuteNonQuery();
         }
 
-        public static void test()
-        {
-
-        }
+        
     }
 }
