@@ -51,5 +51,10 @@ namespace DAL
             cmd.Parameters.AddRange(parameters);
             return cmd.ExecuteNonQuery();
         }
+
+        public static void test()
+        {
+
+        }
     }
 }
