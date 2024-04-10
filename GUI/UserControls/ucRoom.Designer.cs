@@ -31,10 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucRoom));
             this.lblRoom = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAddRoom = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnEditRoom = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnDeleteRoom = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnRecoverRoom = new Syncfusion.WinForms.Controls.SfButton();
             this.txtSearchRoom = new System.Windows.Forms.TextBox();
             this.btnTraCuuRoom = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateRoom = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
+            this.dgvRoom = new System.Windows.Forms.DataGridView();
             this.nudSucChua = new System.Windows.Forms.NumericUpDown();
             this.nudPriceMax = new System.Windows.Forms.NumericUpDown();
             this.nudPriceMin = new System.Windows.Forms.NumericUpDown();
@@ -46,34 +51,30 @@
             this.cboSortRoomType = new Syncfusion.WinForms.ListView.SfComboBox();
             this.cboSortRoomID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblQuickControl = new System.Windows.Forms.Label();
+            this.btnCheckIn = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnCheckOut = new Syncfusion.WinForms.Controls.SfButton();
             this.lblSortSucChua = new System.Windows.Forms.Label();
             this.lblSortMaPHG = new System.Windows.Forms.Label();
             this.lblStateRoom = new System.Windows.Forms.Label();
             this.lblStatusRoom = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.dgvRoom = new System.Windows.Forms.DataGridView();
             this.colMaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaTinhTrangPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaLoai = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colMaTinhTrangPhong = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.colHinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSucChua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCheckIn = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnCheckOut = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnAddRoom = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnEditRoom = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnDeleteRoom = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnRecoverRoom = new Syncfusion.WinForms.Controls.SfButton();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
             this.spcQuery.Panel1.SuspendLayout();
             this.spcQuery.Panel2.SuspendLayout();
             this.spcQuery.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSucChua)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPriceMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPriceMin)).BeginInit();
@@ -86,7 +87,6 @@
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).BeginInit();
             this.SuspendLayout();
             // 
             // lblRoom
@@ -119,6 +119,90 @@
             this.tlpController.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpController.Size = new System.Drawing.Size(394, 94);
             this.tlpController.TabIndex = 6;
+            // 
+            // btnAddRoom
+            // 
+            this.btnAddRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddRoom.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddRoom.ForeColor = System.Drawing.Color.White;
+            this.btnAddRoom.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnAddRoom.Location = new System.Drawing.Point(3, 3);
+            this.btnAddRoom.Name = "btnAddRoom";
+            this.btnAddRoom.Size = new System.Drawing.Size(191, 41);
+            this.btnAddRoom.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddRoom.Style.ForeColor = System.Drawing.Color.White;
+            this.btnAddRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnAddRoom.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnAddRoom.TabIndex = 1;
+            this.btnAddRoom.Text = "Thêm";
+            this.btnAddRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddRoom.UseVisualStyleBackColor = false;
+            this.btnAddRoom.Click += new System.EventHandler(this.btnAddRoom_Click);
+            // 
+            // btnEditRoom
+            // 
+            this.btnEditRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEditRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditRoom.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditRoom.ForeColor = System.Drawing.Color.White;
+            this.btnEditRoom.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnEditRoom.Location = new System.Drawing.Point(3, 50);
+            this.btnEditRoom.Name = "btnEditRoom";
+            this.btnEditRoom.Size = new System.Drawing.Size(191, 41);
+            this.btnEditRoom.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditRoom.Style.ForeColor = System.Drawing.Color.White;
+            this.btnEditRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnEditRoom.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnEditRoom.TabIndex = 3;
+            this.btnEditRoom.Text = "Sửa";
+            this.btnEditRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditRoom.UseVisualStyleBackColor = false;
+            this.btnEditRoom.Click += new System.EventHandler(this.btnEditRoom_Click);
+            // 
+            // btnDeleteRoom
+            // 
+            this.btnDeleteRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDeleteRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteRoom.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteRoom.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteRoom.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnDeleteRoom.Location = new System.Drawing.Point(200, 3);
+            this.btnDeleteRoom.Name = "btnDeleteRoom";
+            this.btnDeleteRoom.Size = new System.Drawing.Size(191, 41);
+            this.btnDeleteRoom.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteRoom.Style.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnDeleteRoom.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnDeleteRoom.TabIndex = 4;
+            this.btnDeleteRoom.Text = "Xóa";
+            this.btnDeleteRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeleteRoom.UseVisualStyleBackColor = false;
+            this.btnDeleteRoom.Click += new System.EventHandler(this.btnDeleteRoom_Click);
+            // 
+            // btnRecoverRoom
+            // 
+            this.btnRecoverRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRecoverRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecoverRoom.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecoverRoom.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverRoom.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnRecoverRoom.Location = new System.Drawing.Point(200, 50);
+            this.btnRecoverRoom.Name = "btnRecoverRoom";
+            this.btnRecoverRoom.Size = new System.Drawing.Size(191, 41);
+            this.btnRecoverRoom.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverRoom.Style.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnRecoverRoom.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnRecoverRoom.TabIndex = 5;
+            this.btnRecoverRoom.Text = "Khôi phục";
+            this.btnRecoverRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRecoverRoom.UseVisualStyleBackColor = false;
+            this.btnRecoverRoom.Click += new System.EventHandler(this.btnRecoverRoom_Click);
             // 
             // txtSearchRoom
             // 
@@ -200,6 +284,33 @@
             this.spcQuery.Size = new System.Drawing.Size(1370, 746);
             this.spcQuery.SplitterDistance = 973;
             this.spcQuery.TabIndex = 38;
+            // 
+            // dgvRoom
+            // 
+            this.dgvRoom.AllowUserToAddRows = false;
+            this.dgvRoom.AllowUserToDeleteRows = false;
+            this.dgvRoom.AllowUserToResizeColumns = false;
+            this.dgvRoom.AllowUserToResizeRows = false;
+            this.dgvRoom.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRoom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colMaPhong,
+            this.colMaLoai,
+            this.colMaTinhTrangPhong,
+            this.colHinhAnh,
+            this.colMoTa,
+            this.colGia,
+            this.colSucChua,
+            this.colTrangThai});
+            this.dgvRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvRoom.Location = new System.Drawing.Point(0, 0);
+            this.dgvRoom.MultiSelect = false;
+            this.dgvRoom.Name = "dgvRoom";
+            this.dgvRoom.ReadOnly = true;
+            this.dgvRoom.RowHeadersVisible = false;
+            this.dgvRoom.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRoom.Size = new System.Drawing.Size(973, 746);
+            this.dgvRoom.TabIndex = 0;
             // 
             // nudSucChua
             // 
@@ -381,6 +492,66 @@
             this.lblQuickControl.Text = "Cập nhật trạng thái nhanh";
             this.lblQuickControl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // btnCheckIn
+            // 
+            this.btnCheckIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckIn.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckIn.ForeColor = System.Drawing.Color.White;
+            this.btnCheckIn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCheckIn.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnCheckIn.Location = new System.Drawing.Point(14, 522);
+            this.btnCheckIn.Name = "btnCheckIn";
+            this.btnCheckIn.Size = new System.Drawing.Size(108, 64);
+            this.btnCheckIn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnCheckIn.Style.ForeColor = System.Drawing.Color.White;
+            this.btnCheckIn.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.btnCheckIn.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnCheckIn.TabIndex = 13;
+            this.btnCheckIn.Text = "Check-In";
+            this.btnCheckIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCheckIn.UseVisualStyleBackColor = false;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCancel.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnCancel.Location = new System.Drawing.Point(276, 522);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(108, 64);
+            this.btnCancel.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnCancel.Style.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            this.btnCancel.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnCancel.TabIndex = 21;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            // 
+            // btnCheckOut
+            // 
+            this.btnCheckOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckOut.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckOut.ForeColor = System.Drawing.Color.White;
+            this.btnCheckOut.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCheckOut.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnCheckOut.Location = new System.Drawing.Point(145, 522);
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.Size = new System.Drawing.Size(108, 64);
+            this.btnCheckOut.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnCheckOut.Style.ForeColor = System.Drawing.Color.White;
+            this.btnCheckOut.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            this.btnCheckOut.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnCheckOut.TabIndex = 20;
+            this.btnCheckOut.Text = "Check-Out";
+            this.btnCheckOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCheckOut.UseVisualStyleBackColor = false;
+            // 
             // lblSortSucChua
             // 
             this.lblSortSucChua.AutoSize = true;
@@ -454,52 +625,31 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // dgvRoom
-            // 
-            this.dgvRoom.AllowUserToAddRows = false;
-            this.dgvRoom.AllowUserToDeleteRows = false;
-            this.dgvRoom.AllowUserToResizeColumns = false;
-            this.dgvRoom.AllowUserToResizeRows = false;
-            this.dgvRoom.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRoom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaPhong,
-            this.colMaLoai,
-            this.colMaTinhTrangPhong,
-            this.colHinhAnh,
-            this.colMoTa,
-            this.colGia,
-            this.colSucChua,
-            this.colTrangThai});
-            this.dgvRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvRoom.Location = new System.Drawing.Point(0, 0);
-            this.dgvRoom.MultiSelect = false;
-            this.dgvRoom.Name = "dgvRoom";
-            this.dgvRoom.ReadOnly = true;
-            this.dgvRoom.RowHeadersVisible = false;
-            this.dgvRoom.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRoom.Size = new System.Drawing.Size(973, 746);
-            this.dgvRoom.TabIndex = 0;
-            // 
             // colMaPhong
             // 
             this.colMaPhong.HeaderText = "Mã phòng";
             this.colMaPhong.Name = "colMaPhong";
             this.colMaPhong.ReadOnly = true;
-            this.colMaPhong.Width = 107;
+            this.colMaPhong.Width = 117;
             // 
             // colMaLoai
             // 
+            this.colMaLoai.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.colMaLoai.HeaderText = "Mã loại";
             this.colMaLoai.Name = "colMaLoai";
             this.colMaLoai.ReadOnly = true;
-            this.colMaLoai.Width = 83;
+            this.colMaLoai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMaLoai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colMaLoai.Width = 90;
             // 
             // colMaTinhTrangPhong
             // 
+            this.colMaTinhTrangPhong.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.colMaTinhTrangPhong.HeaderText = "Mã tình trạng phòng";
             this.colMaTinhTrangPhong.Name = "colMaTinhTrangPhong";
             this.colMaTinhTrangPhong.ReadOnly = true;
+            this.colMaTinhTrangPhong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMaTinhTrangPhong.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colMaTinhTrangPhong.Width = 181;
             // 
             // colHinhAnh
@@ -535,150 +685,6 @@
             this.colTrangThai.ReadOnly = true;
             this.colTrangThai.Width = 105;
             // 
-            // btnCheckIn
-            // 
-            this.btnCheckIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckIn.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckIn.ForeColor = System.Drawing.Color.White;
-            this.btnCheckIn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCheckIn.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnCheckIn.Location = new System.Drawing.Point(14, 522);
-            this.btnCheckIn.Name = "btnCheckIn";
-            this.btnCheckIn.Size = new System.Drawing.Size(108, 64);
-            this.btnCheckIn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnCheckIn.Style.ForeColor = System.Drawing.Color.White;
-            this.btnCheckIn.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
-            this.btnCheckIn.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnCheckIn.TabIndex = 13;
-            this.btnCheckIn.Text = "Check-In";
-            this.btnCheckIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCheckIn.UseVisualStyleBackColor = false;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancel.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnCancel.Location = new System.Drawing.Point(276, 522);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(108, 64);
-            this.btnCancel.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnCancel.Style.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
-            this.btnCancel.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnCancel.TabIndex = 21;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCancel.UseVisualStyleBackColor = false;
-            // 
-            // btnCheckOut
-            // 
-            this.btnCheckOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckOut.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckOut.ForeColor = System.Drawing.Color.White;
-            this.btnCheckOut.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCheckOut.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnCheckOut.Location = new System.Drawing.Point(145, 522);
-            this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(108, 64);
-            this.btnCheckOut.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnCheckOut.Style.ForeColor = System.Drawing.Color.White;
-            this.btnCheckOut.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
-            this.btnCheckOut.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnCheckOut.TabIndex = 20;
-            this.btnCheckOut.Text = "Check-Out";
-            this.btnCheckOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCheckOut.UseVisualStyleBackColor = false;
-            // 
-            // btnAddRoom
-            // 
-            this.btnAddRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddRoom.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddRoom.ForeColor = System.Drawing.Color.White;
-            this.btnAddRoom.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnAddRoom.Location = new System.Drawing.Point(3, 3);
-            this.btnAddRoom.Name = "btnAddRoom";
-            this.btnAddRoom.Size = new System.Drawing.Size(191, 41);
-            this.btnAddRoom.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddRoom.Style.ForeColor = System.Drawing.Color.White;
-            this.btnAddRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnAddRoom.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddRoom.TabIndex = 1;
-            this.btnAddRoom.Text = "Thêm";
-            this.btnAddRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddRoom.UseVisualStyleBackColor = false;
-            this.btnAddRoom.Click += new System.EventHandler(this.btnAddRoom_Click);
-            // 
-            // btnEditRoom
-            // 
-            this.btnEditRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEditRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditRoom.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditRoom.ForeColor = System.Drawing.Color.White;
-            this.btnEditRoom.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnEditRoom.Location = new System.Drawing.Point(3, 50);
-            this.btnEditRoom.Name = "btnEditRoom";
-            this.btnEditRoom.Size = new System.Drawing.Size(191, 41);
-            this.btnEditRoom.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditRoom.Style.ForeColor = System.Drawing.Color.White;
-            this.btnEditRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnEditRoom.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditRoom.TabIndex = 3;
-            this.btnEditRoom.Text = "Sửa";
-            this.btnEditRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditRoom.UseVisualStyleBackColor = false;
-            this.btnEditRoom.Click += new System.EventHandler(this.btnEditRoom_Click);
-            // 
-            // btnDeleteRoom
-            // 
-            this.btnDeleteRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleteRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteRoom.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteRoom.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteRoom.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnDeleteRoom.Location = new System.Drawing.Point(200, 3);
-            this.btnDeleteRoom.Name = "btnDeleteRoom";
-            this.btnDeleteRoom.Size = new System.Drawing.Size(191, 41);
-            this.btnDeleteRoom.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteRoom.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnDeleteRoom.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteRoom.TabIndex = 4;
-            this.btnDeleteRoom.Text = "Xóa";
-            this.btnDeleteRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDeleteRoom.UseVisualStyleBackColor = false;
-            this.btnDeleteRoom.Click += new System.EventHandler(this.btnDeleteRoom_Click);
-            // 
-            // btnRecoverRoom
-            // 
-            this.btnRecoverRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRecoverRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecoverRoom.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecoverRoom.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverRoom.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnRecoverRoom.Location = new System.Drawing.Point(200, 50);
-            this.btnRecoverRoom.Name = "btnRecoverRoom";
-            this.btnRecoverRoom.Size = new System.Drawing.Size(191, 41);
-            this.btnRecoverRoom.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverRoom.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnRecoverRoom.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRecoverRoom.TabIndex = 5;
-            this.btnRecoverRoom.Text = "Khôi phục";
-            this.btnRecoverRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRecoverRoom.UseVisualStyleBackColor = false;
-            this.btnRecoverRoom.Click += new System.EventHandler(this.btnRecoverRoom_Click);
-            // 
             // ucRoom
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -696,6 +702,7 @@
             this.spcQuery.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).EndInit();
             this.spcQuery.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSucChua)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPriceMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPriceMin)).EndInit();
@@ -708,7 +715,6 @@
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -747,8 +753,8 @@
         private System.Windows.Forms.NumericUpDown nudSucChua;
         private System.Windows.Forms.DataGridView dgvRoom;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaPhong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaLoai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaTinhTrangPhong;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colMaLoai;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colMaTinhTrangPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn colHinhAnh;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMoTa;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGia;
