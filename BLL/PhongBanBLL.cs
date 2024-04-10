@@ -23,6 +23,7 @@ namespace BLL
             return PhongBanDAL.XoaPhongBan(maPhongBan);
         }
 
+        //Hàm dùng để lọc
         public List<PhongBanDTO> FilterTrangThai(string trangThai)
         {
             if (trangThai =="Đang hoạt động")
@@ -53,7 +54,7 @@ namespace BLL
         {
             return phongBanDaL.ThemPhongBanMoi(phongBanDTO);
         }
-
+        //Hàm dùng để search
         public List<PhongBanDTO> TraCuuPhongBan(List<PhongBanDTO> dsach ,string searchKeyword)
         {
             List<PhongBanDTO> searchResults = dsach.Where(item =>

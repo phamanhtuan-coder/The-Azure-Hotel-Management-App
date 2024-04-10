@@ -14,6 +14,7 @@ namespace GUI.customForm
 {
     public partial class frmPhongBan : Form
     {
+        //Khai báo biến cho form phòng ban
         public PhongBanDTO phongBanDTO = new PhongBanDTO();
         PhongBanBLL phongBanBLL = new PhongBanBLL();
         public bool isAdd { get; set; }
@@ -25,6 +26,7 @@ namespace GUI.customForm
 
         private void frmPhongBan_Load(object sender, EventArgs e)
         {
+            //Kiểm tra xem form đang được dùng cho mục đích gì? Nếu là thêm thì các trường dữ liệu phải trống
             if (isAdd)
             {
                 txtMaPhongBan.Clear();
@@ -36,9 +38,11 @@ namespace GUI.customForm
             }
             else
             {
+                //Nếu là form Edit thì sẽ lấy dữ liệu từ DTO và hiển thị lên form
                 txtMaPhongBan.Text = phongBanDTO.MaPhongBan;
                 txtMaPhongBan.Enabled = false;
                 txtTenPB.Text = phongBanDTO.TenPhong;
+                //Kiểm tra xem có trưởng phòng không để tránh lỗi Null
                 if (phongBanDTO.TruongPhong != 0 )
                 {
                     chkTruongPhong.Checked = true;
@@ -54,7 +58,7 @@ namespace GUI.customForm
 
 
         }
-
+        //Nếu người dùng tạo phòng ban không có trưởng phòng thì sẽ không cho nhập thông tin trưởng phòng
         private void chkTruongPhong_CheckedChanged(object sender, EventArgs e)
         {
             if (chkTruongPhong.Checked == true)
@@ -68,17 +72,20 @@ namespace GUI.customForm
             }
         }
 
+        //Sự kiện diễn ra khi bấm nút submit
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             customMessageBox thongBao;
 
             // Kiểm tra if tiến hành xử lý sự kiện thêm/sửa phòng ban
-
+            //Lấy dữ liệu sau khi người dùng đã nhập (dùng chung)
             LayDuLieuTuForm(phongBanDTO);
             bool check;
             if (isAdd)
             {
+                //Nếu là form thêm thì gọi hàm thêm
                 check = phongBanBLL.ThemPhongBanMoi(phongBanDTO);
+                //Báo kết quả xử lý
                 if (check)
                 {
                     thongBao = new customMessageBox("Đã thêm thành công phòng ban mới!");
@@ -94,8 +101,9 @@ namespace GUI.customForm
             }
             else
             {
-                
+                //Nếu là form edit thì gọi hàm edit
                 check = phongBanBLL.SuaPhongBan(phongBanDTO);
+                //Báo kết quả xử lý
                 if (check)
                 {
                     thongBao = new customMessageBox("Đã sửa thành công phòng ban mới!");
@@ -106,12 +114,13 @@ namespace GUI.customForm
                 }
                
             }
-
+            //Hiển thị câu thông báo
             thongBao.ShowDialog();
             this.Close();
             
         }
 
+        //Gán dữ liệu từ các textbox v.v vào DTO để xử lý
         private void LayDuLieuTuForm(PhongBanDTO phongBanDTO)
         {
             string tenPhongBan = txtTenPB.Text,maPhongBan = txtMaPhongBan.Text; 
@@ -134,11 +143,13 @@ namespace GUI.customForm
             phongBanDTO.TrangThai = true;
         }
 
+        //Bấm Cancel thì đóng form
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        // Kiểm tra việc nhập mã phòng ban chỉ được phép có 2 ký tự và không được nhập số
         private void txtMaPhongBan_KeyPress(object sender, KeyPressEventArgs e)
         {
            
