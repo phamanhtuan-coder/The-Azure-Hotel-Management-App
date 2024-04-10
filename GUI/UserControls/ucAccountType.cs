@@ -14,7 +14,8 @@ namespace GUI.UserControls
 {
     public partial class ucAccountType : UserControl
     {
-
+        frmVaiTro frm = new frmVaiTro();
+        customMessageBox thongBao;
         public ucAccountType()
         {
             InitializeComponent();
@@ -27,7 +28,6 @@ namespace GUI.UserControls
 
         private void btnAddAccountType_Click(object sender, EventArgs e)
         {
-            frmPhanQuyen frm = new frmPhanQuyen();
             frm.isAdd = true;
             frm.ShowDialog();
         }
@@ -36,7 +36,7 @@ namespace GUI.UserControls
         {
             if (dgvAccountType.SelectedRows.Count > 0)
             {
-                frmPhanQuyen frm = new frmPhanQuyen();
+               
                 frm.isAdd = false;
 
                
@@ -46,7 +46,7 @@ namespace GUI.UserControls
             }
             else
             {
-                customMessageBox thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn chỉnh sửa!");
+                 thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn chỉnh sửa!");
                 thongBao.ShowDialog();
             }
 
@@ -57,7 +57,7 @@ namespace GUI.UserControls
         {
             if (dgvAccountType.SelectedRows.Count > 0)
             {
-                customMessageBox thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
+                thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
                 DialogResult dr = thongBao.ShowDialog();
                 if (dr != DialogResult.Cancel)
                 {
@@ -66,7 +66,7 @@ namespace GUI.UserControls
             }
             else
             {
-                customMessageBox thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn xóa!");
+                thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn xóa!");
                 thongBao.ShowDialog();
             }
 
@@ -77,7 +77,7 @@ namespace GUI.UserControls
         {
             if (dgvAccountType.SelectedRows.Count > 0)
             {
-                customMessageBox thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
+                thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
                 DialogResult dr = thongBao.ShowDialog();
                 if (dr != DialogResult.Cancel)
                 {
@@ -86,7 +86,7 @@ namespace GUI.UserControls
             }
             else
             {
-                customMessageBox thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
+                thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
                 thongBao.ShowDialog();
             }
         }

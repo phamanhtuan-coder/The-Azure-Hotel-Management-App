@@ -80,7 +80,7 @@ namespace GUI
         {
             using (
                 customMessageBox messageBox = new customMessageBox(
-                    "Bạn có muốn thoát chương trình không?"
+                    "Bạn có chắc chắn muốn thoát chương trình không?"
                 )
             )
             {
@@ -142,7 +142,7 @@ namespace GUI
         {
             using (
                 customMessageBox messageBox = new customMessageBox(
-                    "Bạn có muốn đăng xuất tài khoản không?"
+                    "Bạn có chắc chắn muốn đăng xuất tài khoản không?"
                 )
             )
             {

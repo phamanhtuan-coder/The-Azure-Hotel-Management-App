@@ -37,7 +37,7 @@
             // 
             this.lblThongBao.AutoSize = true;
             this.lblThongBao.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblThongBao.Location = new System.Drawing.Point(123, 31);
+            this.lblThongBao.Location = new System.Drawing.Point(63, 29);
             this.lblThongBao.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblThongBao.Name = "lblThongBao";
             this.lblThongBao.Size = new System.Drawing.Size(556, 33);
