@@ -14,7 +14,8 @@ namespace GUI.UserControls
 {
     public partial class ucRole : UserControl
     {
-
+        frmPhanQuyen frm = new frmPhanQuyen();
+        customMessageBox thongBao;
         public ucRole()
         {
             InitializeComponent();
@@ -28,7 +29,7 @@ namespace GUI.UserControls
 
         private void btnAddRole_Click(object sender, EventArgs e)
         {
-            frmVaiTro frm = new frmVaiTro();
+           
             frm.isAdd = true;
             frm.ShowDialog();
         }
@@ -39,7 +40,7 @@ namespace GUI.UserControls
 
             if (dgvRole.SelectedRows.Count > 0)
             {
-                frmVaiTro frm = new frmVaiTro();
+                
                 frm.isAdd = false;
                 // Bắt đầu phần có thể chỉnh sửa
 
@@ -51,7 +52,7 @@ namespace GUI.UserControls
             }
             else
             {
-                customMessageBox thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn chỉnh sửa!");
+                thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn chỉnh sửa!");
                 thongBao.ShowDialog();
 
             }
@@ -62,7 +63,7 @@ namespace GUI.UserControls
             if (dgvRole.SelectedRows.Count > 0)
             {
 
-                customMessageBox thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
+                thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
                 DialogResult dr = thongBao.ShowDialog();
                 if (dr != DialogResult.Cancel)
                 {
@@ -71,7 +72,7 @@ namespace GUI.UserControls
             }
             else
             {
-                customMessageBox thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn xóa!");
+                thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn xóa!");
                 thongBao.ShowDialog();
             }
         }
@@ -81,7 +82,7 @@ namespace GUI.UserControls
             if (dgvRole.SelectedRows.Count > 0)
             {
 
-                customMessageBox thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
+                thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
                 DialogResult dr = thongBao.ShowDialog();
                 if (dr != DialogResult.Cancel)
                 {
@@ -90,7 +91,7 @@ namespace GUI.UserControls
             }
             else
             {
-                customMessageBox thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phúc!");
+                thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phúc!");
                 thongBao.ShowDialog();
             }
         }
