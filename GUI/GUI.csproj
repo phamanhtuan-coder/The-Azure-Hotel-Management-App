@@ -153,6 +153,12 @@
     <Compile Include="CustomForms\frmKhachHang.Designer.cs">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomForms\frmDatPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\frmDatPhong.Designer.cs">
+      <DependentUpon>frmDatPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomForms\frmTinhTrangPhong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -388,6 +394,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\frmDatPhong.resx">
+      <DependentUpon>frmDatPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmTinhTrangPhong.resx">
       <DependentUpon>frmTinhTrangPhong.cs</DependentUpon>
