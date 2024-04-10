@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucDepartment));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblDepartment = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddDepartment = new Syncfusion.WinForms.Controls.SfButton();
@@ -40,11 +41,11 @@
             this.cboStateDepartment = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvDepartment = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenPhongBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TruongPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayNhanChuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaPhongBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTruongPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayNhanChuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboSortDepartment = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortDepartmentID = new System.Windows.Forms.Label();
             this.cboSortSoLuongNV = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -175,7 +176,7 @@
             this.btnRecoverDepartment.Size = new System.Drawing.Size(191, 41);
             this.btnRecoverDepartment.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverDepartment.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnRecoverDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnRecoverDepartment.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRecoverDepartment.TabIndex = 5;
             this.btnRecoverDepartment.Text = "Khôi phục";
@@ -207,11 +208,13 @@
             this.btnTraCuuDepartment.TabIndex = 0;
             this.btnTraCuuDepartment.Text = "Tra cứu";
             this.btnTraCuuDepartment.UseVisualStyleBackColor = false;
+            this.btnTraCuuDepartment.Click += new System.EventHandler(this.btnTraCuuDepartment_Click);
             // 
             // cboStateDepartment
             // 
             this.cboStateDepartment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboStateDepartment.BackColor = System.Drawing.Color.White;
             this.cboStateDepartment.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboStateDepartment.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboStateDepartment.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -219,11 +222,13 @@
             this.cboStateDepartment.Name = "cboStateDepartment";
             this.cboStateDepartment.Size = new System.Drawing.Size(156, 33);
             this.cboStateDepartment.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.cboStateDepartment.Style.EditorStyle.BackColor = System.Drawing.Color.White;
             this.cboStateDepartment.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateDepartment.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateDepartment.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateDepartment.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateDepartment.TabIndex = 3;
+            this.cboStateDepartment.SelectedIndexChanged += new System.EventHandler(this.cboStateDepartment_SelectedIndexChanged);
             // 
             // spcQuery
             // 
@@ -260,53 +265,61 @@
             this.dgvDepartment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDepartment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.TenPhongBan,
-            this.TruongPhong,
-            this.NgayNhanChuc,
-            this.TrangThai});
+            this.colMaPhongBan,
+            this.colTenPhong,
+            this.colTruongPhong,
+            this.colNgayNhanChuc,
+            this.colTrangThai});
             this.dgvDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDepartment.Location = new System.Drawing.Point(0, 0);
             this.dgvDepartment.MultiSelect = false;
             this.dgvDepartment.Name = "dgvDepartment";
             this.dgvDepartment.ReadOnly = true;
             this.dgvDepartment.RowHeadersVisible = false;
+            this.dgvDepartment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDepartment.Size = new System.Drawing.Size(973, 746);
             this.dgvDepartment.TabIndex = 0;
             // 
-            // ID
+            // colMaPhongBan
             // 
-            this.ID.HeaderText = "Mã phòng ban";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
+            this.colMaPhongBan.DataPropertyName = "MaPhongBan";
+            this.colMaPhongBan.HeaderText = "Mã phòng ban";
+            this.colMaPhongBan.Name = "colMaPhongBan";
+            this.colMaPhongBan.ReadOnly = true;
             // 
-            // TenPhongBan
+            // colTenPhong
             // 
-            this.TenPhongBan.HeaderText = "Tên phòng ban";
-            this.TenPhongBan.Name = "TenPhongBan";
-            this.TenPhongBan.ReadOnly = true;
+            this.colTenPhong.DataPropertyName = "TenPhong";
+            this.colTenPhong.HeaderText = "Tên phòng ban";
+            this.colTenPhong.Name = "colTenPhong";
+            this.colTenPhong.ReadOnly = true;
             // 
-            // TruongPhong
+            // colTruongPhong
             // 
-            this.TruongPhong.HeaderText = "Trưởng phòng";
-            this.TruongPhong.Name = "TruongPhong";
-            this.TruongPhong.ReadOnly = true;
+            this.colTruongPhong.DataPropertyName = "TruongPhong";
+            this.colTruongPhong.HeaderText = "Trưởng phòng";
+            this.colTruongPhong.Name = "colTruongPhong";
+            this.colTruongPhong.ReadOnly = true;
             // 
-            // NgayNhanChuc
+            // colNgayNhanChuc
             // 
-            this.NgayNhanChuc.HeaderText = "Ngày nhận chức";
-            this.NgayNhanChuc.Name = "NgayNhanChuc";
-            this.NgayNhanChuc.ReadOnly = true;
+            this.colNgayNhanChuc.DataPropertyName = "NgayNhanChuc";
+            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
+            this.colNgayNhanChuc.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colNgayNhanChuc.HeaderText = "Ngày nhận chức";
+            this.colNgayNhanChuc.Name = "colNgayNhanChuc";
+            this.colNgayNhanChuc.ReadOnly = true;
             // 
-            // TrangThai
+            // colTrangThai
             // 
-            this.TrangThai.HeaderText = "Trạng thái";
-            this.TrangThai.Name = "TrangThai";
-            this.TrangThai.ReadOnly = true;
-            this.TrangThai.Visible = false;
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
             // 
             // cboSortDepartment
             // 
+            this.cboSortDepartment.BackColor = System.Drawing.Color.White;
             this.cboSortDepartment.DelimiterChar = "";
             this.cboSortDepartment.DisplayMember = "";
             this.cboSortDepartment.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
@@ -316,11 +329,13 @@
             this.cboSortDepartment.Name = "cboSortDepartment";
             this.cboSortDepartment.Size = new System.Drawing.Size(156, 33);
             this.cboSortDepartment.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.cboSortDepartment.Style.EditorStyle.BackColor = System.Drawing.Color.White;
             this.cboSortDepartment.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortDepartment.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortDepartment.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortDepartment.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortDepartment.TabIndex = 29;
+            this.cboSortDepartment.SelectedIndexChanged += new System.EventHandler(this.cboSortDepartment_SelectedIndexChanged);
             // 
             // lblSortDepartmentID
             // 
@@ -335,6 +350,7 @@
             // 
             // cboSortSoLuongNV
             // 
+            this.cboSortSoLuongNV.BackColor = System.Drawing.Color.White;
             this.cboSortSoLuongNV.DelimiterChar = "";
             this.cboSortSoLuongNV.DisplayMember = "";
             this.cboSortSoLuongNV.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
@@ -344,6 +360,7 @@
             this.cboSortSoLuongNV.Name = "cboSortSoLuongNV";
             this.cboSortSoLuongNV.Size = new System.Drawing.Size(156, 33);
             this.cboSortSoLuongNV.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.cboSortSoLuongNV.Style.EditorStyle.BackColor = System.Drawing.Color.White;
             this.cboSortSoLuongNV.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortSoLuongNV.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortSoLuongNV.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -450,10 +467,10 @@
         private Syncfusion.WinForms.ListView.SfComboBox cboSortDepartment;
         private System.Windows.Forms.Label lblSortDepartmentID;
         private System.Windows.Forms.DataGridView dgvDepartment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenPhongBan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TruongPhong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayNhanChuc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaPhongBan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTenPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTruongPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNgayNhanChuc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
     }
 }
