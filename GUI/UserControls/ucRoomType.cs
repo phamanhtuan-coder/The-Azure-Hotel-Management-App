@@ -9,7 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using DTO;
+using BLL;
 namespace GUI.UserControls
 {
     public partial class ucRoomType : UserControl
@@ -17,6 +18,8 @@ namespace GUI.UserControls
         public frmLoaiPhong frm = new frmLoaiPhong();
         public customMessageBox thongBao;
 
+        List<loaiphongDTO> dslp = new List<loaiphongDTO>();
+        loaiphongBLL lpbll = new loaiphongBLL();
         public ucRoomType()
         {
             InitializeComponent();
@@ -25,68 +28,23 @@ namespace GUI.UserControls
 
         private void ucRoomType_Load(object sender, EventArgs e)
         {
-
+            dslp = lpbll.laydslphong();
+            dgvloaiphong.DataSource=dslp;
+          
         }
 
-        private void btnAddRoomType_Click(object sender, EventArgs e)
+        private void ucRoomType_Load(object sender, EventArgs e)
         {
-            frm.isAdd = true;
-            frm.ShowDialog();
+            dgvloaiphong.AutoGenerateColumns = false;
+            khoiTaoGiaTrichoForm();
+            laycombo();
         }
 
-        private void btnEditRoomType_Click(object sender, EventArgs e)
+        private void laycombo()
         {
-            if (dgvRoomType.SelectedRows.Count > 0)
-            {
-
-                frm.isAdd = false;
-
-
-
-                
-                frm.ShowDialog();
-            }
-            else
-            {
-                thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn chỉnh sửa!");
-                thongBao.ShowDialog();
-            }
-        }
-
-        private void btnDeleteRoomType_Click(object sender, EventArgs e)
-        {
-            if (dgvRoomType.SelectedRows.Count > 0)
-            {
-                thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
-                {
-                    // Xóa 
-                }
-            }
-            else
-            {
-                thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn xóa!");
-                thongBao.ShowDialog();
-            }
-        }
-
-        private void btnRecoverRoomType_Click(object sender, EventArgs e)
-        {
-            if (dgvRoomType.SelectedRows.Count > 0)
-            {
-                thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
-                {
-                    // Khôi phục
-                }
-            }
-            else
-            {
-                thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
-                thongBao.ShowDialog();
-            }
+            DuLieuChoComboBox.duLieuSort(cboSortRoomTypeID);
+            
+            DuLieuChoComboBox.duLieuFilter(cboStateRoomType);
         }
     }
 }

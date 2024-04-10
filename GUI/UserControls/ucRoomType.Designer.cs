@@ -39,6 +39,7 @@
             this.btnTraCuuRoomType = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateRoomType = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
+            this.dgvloaiphong = new System.Windows.Forms.DataGridView();
             this.cboSortRoomTypeID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortRoomTypeID = new System.Windows.Forms.Label();
             this.cboSortSoLuongRoom = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -46,17 +47,17 @@
             this.lblStateRoomType = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.dgvRoomType = new System.Windows.Forms.DataGridView();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenLoaiPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colmaloai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coltenloai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colmota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coltrangthai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRoomType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
             this.spcQuery.Panel1.SuspendLayout();
             this.spcQuery.Panel2.SuspendLayout();
             this.spcQuery.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvloaiphong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortRoomTypeID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortSoLuongRoom)).BeginInit();
             this.panUcHeader.SuspendLayout();
@@ -187,7 +188,7 @@
             this.txtSearchRoomType.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchRoomType.Location = new System.Drawing.Point(6, 16);
             this.txtSearchRoomType.Name = "txtSearchRoomType";
-            this.txtSearchRoomType.Size = new System.Drawing.Size(251, 40);
+            this.txtSearchRoomType.Size = new System.Drawing.Size(251, 49);
             this.txtSearchRoomType.TabIndex = 2;
             // 
             // btnTraCuuRoomType
@@ -233,7 +234,7 @@
             // 
             // spcQuery.Panel1
             // 
-            this.spcQuery.Panel1.Controls.Add(this.dgvRoomType);
+            this.spcQuery.Panel1.Controls.Add(this.dgvloaiphong);
             // 
             // spcQuery.Panel2
             // 
@@ -249,6 +250,25 @@
             this.spcQuery.Size = new System.Drawing.Size(1370, 746);
             this.spcQuery.SplitterDistance = 973;
             this.spcQuery.TabIndex = 38;
+            // 
+            // dgvloaiphong
+            // 
+            this.dgvloaiphong.AllowUserToAddRows = false;
+            this.dgvloaiphong.AllowUserToDeleteRows = false;
+            this.dgvloaiphong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvloaiphong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colmaloai,
+            this.coltenloai,
+            this.colmota,
+            this.coltrangthai});
+            this.dgvloaiphong.Location = new System.Drawing.Point(3, 0);
+            this.dgvloaiphong.Name = "dgvloaiphong";
+            this.dgvloaiphong.ReadOnly = true;
+            this.dgvloaiphong.RowHeadersVisible = false;
+            this.dgvloaiphong.RowHeadersWidth = 51;
+            this.dgvloaiphong.RowTemplate.Height = 24;
+            this.dgvloaiphong.Size = new System.Drawing.Size(970, 746);
+            this.dgvloaiphong.TabIndex = 0;
             // 
             // cboSortRoomTypeID
             // 
@@ -273,7 +293,7 @@
             this.lblSortRoomTypeID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortRoomTypeID.Location = new System.Drawing.Point(2, 86);
             this.lblSortRoomTypeID.Name = "lblSortRoomTypeID";
-            this.lblSortRoomTypeID.Size = new System.Drawing.Size(170, 26);
+            this.lblSortRoomTypeID.Size = new System.Drawing.Size(218, 33);
             this.lblSortRoomTypeID.TabIndex = 28;
             this.lblSortRoomTypeID.Text = "Sort theo ID loại";
             this.lblSortRoomTypeID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -301,7 +321,7 @@
             this.lblSortSoLuongRoom.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortSoLuongRoom.Location = new System.Drawing.Point(2, 143);
             this.lblSortSoLuongRoom.Name = "lblSortSoLuongRoom";
-            this.lblSortSoLuongRoom.Size = new System.Drawing.Size(185, 26);
+            this.lblSortSoLuongRoom.Size = new System.Drawing.Size(241, 33);
             this.lblSortSoLuongRoom.TabIndex = 14;
             this.lblSortSoLuongRoom.Text = "Lọc theo số lượng";
             this.lblSortSoLuongRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -312,7 +332,7 @@
             this.lblStateRoomType.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStateRoomType.Location = new System.Drawing.Point(2, 200);
             this.lblStateRoomType.Name = "lblStateRoomType";
-            this.lblStateRoomType.Size = new System.Drawing.Size(186, 26);
+            this.lblStateRoomType.Size = new System.Drawing.Size(237, 33);
             this.lblStateRoomType.TabIndex = 9;
             this.lblStateRoomType.Text = "Trạng thái dữ liệu";
             this.lblStateRoomType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -346,53 +366,41 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // dgvRoomType
+            // colmaloai
             // 
-            this.dgvRoomType.AllowUserToAddRows = false;
-            this.dgvRoomType.AllowUserToDeleteRows = false;
-            this.dgvRoomType.AllowUserToResizeColumns = false;
-            this.dgvRoomType.AllowUserToResizeRows = false;
-            this.dgvRoomType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvRoomType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRoomType.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colID,
-            this.colTenLoaiPhong,
-            this.colMoTa,
-            this.colTrangThai});
-            this.dgvRoomType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvRoomType.Location = new System.Drawing.Point(0, 0);
-            this.dgvRoomType.MultiSelect = false;
-            this.dgvRoomType.Name = "dgvRoomType";
-            this.dgvRoomType.ReadOnly = true;
-            this.dgvRoomType.RowHeadersVisible = false;
-            this.dgvRoomType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRoomType.Size = new System.Drawing.Size(973, 746);
-            this.dgvRoomType.TabIndex = 0;
+            this.colmaloai.DataPropertyName = "MaLoai";
+            this.colmaloai.HeaderText = "Mã Loại";
+            this.colmaloai.MinimumWidth = 6;
+            this.colmaloai.Name = "colmaloai";
+            this.colmaloai.ReadOnly = true;
+            this.colmaloai.Width = 125;
             // 
-            // colID
+            // coltenloai
             // 
-            this.colID.HeaderText = "Mã loại phòng";
-            this.colID.Name = "colID";
-            this.colID.ReadOnly = true;
+            this.coltenloai.DataPropertyName = "TenLoai";
+            this.coltenloai.HeaderText = "Tên Loại";
+            this.coltenloai.MinimumWidth = 6;
+            this.coltenloai.Name = "coltenloai";
+            this.coltenloai.ReadOnly = true;
+            this.coltenloai.Width = 125;
             // 
-            // colTenLoaiPhong
+            // colmota
             // 
-            this.colTenLoaiPhong.HeaderText = "Tên loại phòng";
-            this.colTenLoaiPhong.Name = "colTenLoaiPhong";
-            this.colTenLoaiPhong.ReadOnly = true;
+            this.colmota.DataPropertyName = "Mota";
+            this.colmota.HeaderText = "Mô Tả";
+            this.colmota.MinimumWidth = 6;
+            this.colmota.Name = "colmota";
+            this.colmota.ReadOnly = true;
+            this.colmota.Width = 125;
             // 
-            // colMoTa
+            // coltrangthai
             // 
-            this.colMoTa.HeaderText = "Mô tả";
-            this.colMoTa.Name = "colMoTa";
-            this.colMoTa.ReadOnly = true;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Visible = false;
+            this.coltrangthai.DataPropertyName = "TrangThai";
+            this.coltrangthai.HeaderText = "Trạng Thái";
+            this.coltrangthai.MinimumWidth = 6;
+            this.coltrangthai.Name = "coltrangthai";
+            this.coltrangthai.ReadOnly = true;
+            this.coltrangthai.Width = 125;
             // 
             // ucRoomType
             // 
@@ -411,6 +419,7 @@
             this.spcQuery.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).EndInit();
             this.spcQuery.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvloaiphong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortRoomTypeID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortSoLuongRoom)).EndInit();
             this.panUcHeader.ResumeLayout(false);
@@ -442,10 +451,10 @@
         private Syncfusion.WinForms.ListView.SfComboBox cboSortSoLuongRoom;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortRoomTypeID;
         private System.Windows.Forms.Label lblSortRoomTypeID;
-        private System.Windows.Forms.DataGridView dgvRoomType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTenLoaiPhong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMoTa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
+        private System.Windows.Forms.DataGridView dgvloaiphong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colmaloai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coltenloai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colmota;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coltrangthai;
     }
 }
