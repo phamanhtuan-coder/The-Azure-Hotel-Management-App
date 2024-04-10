@@ -35,14 +35,6 @@
             this.btnTraCuuRoom = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateRoom = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
-            this.lvwRoom = new System.Windows.Forms.ListView();
-            this.colMaPhong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colLoaiPhong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colSucChuaToiDa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colGia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMaDSTB = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMoTa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colTinhTrangPhong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.nudSucChua = new System.Windows.Forms.NumericUpDown();
             this.nudPriceMax = new System.Windows.Forms.NumericUpDown();
             this.nudPriceMin = new System.Windows.Forms.NumericUpDown();
@@ -60,6 +52,15 @@
             this.lblStatusRoom = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.dgvRoom = new System.Windows.Forms.DataGridView();
+            this.colMaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaTinhTrangPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSucChua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCheckIn = new Syncfusion.WinForms.Controls.SfButton();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.btnCheckOut = new Syncfusion.WinForms.Controls.SfButton();
@@ -85,6 +86,7 @@
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).BeginInit();
             this.SuspendLayout();
             // 
             // lblRoom
@@ -169,7 +171,7 @@
             // 
             // spcQuery.Panel1
             // 
-            this.spcQuery.Panel1.Controls.Add(this.lvwRoom);
+            this.spcQuery.Panel1.Controls.Add(this.dgvRoom);
             // 
             // spcQuery.Panel2
             // 
@@ -198,70 +200,6 @@
             this.spcQuery.Size = new System.Drawing.Size(1370, 746);
             this.spcQuery.SplitterDistance = 973;
             this.spcQuery.TabIndex = 38;
-            // 
-            // lvwRoom
-            // 
-            this.lvwRoom.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colMaPhong,
-            this.colLoaiPhong,
-            this.colSucChuaToiDa,
-            this.colGia,
-            this.colMaDSTB,
-            this.colMoTa,
-            this.colTinhTrangPhong});
-            this.lvwRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvwRoom.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvwRoom.FullRowSelect = true;
-            this.lvwRoom.GridLines = true;
-            this.lvwRoom.HideSelection = false;
-            this.lvwRoom.Location = new System.Drawing.Point(0, 0);
-            this.lvwRoom.MultiSelect = false;
-            this.lvwRoom.Name = "lvwRoom";
-            this.lvwRoom.Size = new System.Drawing.Size(973, 746);
-            this.lvwRoom.TabIndex = 0;
-            this.lvwRoom.UseCompatibleStateImageBehavior = false;
-            this.lvwRoom.View = System.Windows.Forms.View.Details;
-            // 
-            // colMaPhong
-            // 
-            this.colMaPhong.Text = "Mã PHG";
-            this.colMaPhong.Width = 81;
-            // 
-            // colLoaiPhong
-            // 
-            this.colLoaiPhong.Text = "Loại Phòng";
-            this.colLoaiPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colLoaiPhong.Width = 207;
-            // 
-            // colSucChuaToiDa
-            // 
-            this.colSucChuaToiDa.Text = "Sức chứa";
-            this.colSucChuaToiDa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colSucChuaToiDa.Width = 179;
-            // 
-            // colGia
-            // 
-            this.colGia.Text = "Giá";
-            this.colGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colGia.Width = 127;
-            // 
-            // colMaDSTB
-            // 
-            this.colMaDSTB.Text = "Mã DS Thiết Bị";
-            this.colMaDSTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colMaDSTB.Width = 186;
-            // 
-            // colMoTa
-            // 
-            this.colMoTa.Text = "Mô tả";
-            this.colMoTa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colMoTa.Width = 146;
-            // 
-            // colTinhTrangPhong
-            // 
-            this.colTinhTrangPhong.Text = "Tình trạng phòng";
-            this.colTinhTrangPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colTinhTrangPhong.Width = 138;
             // 
             // nudSucChua
             // 
@@ -516,6 +454,87 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
+            // dgvRoom
+            // 
+            this.dgvRoom.AllowUserToAddRows = false;
+            this.dgvRoom.AllowUserToDeleteRows = false;
+            this.dgvRoom.AllowUserToResizeColumns = false;
+            this.dgvRoom.AllowUserToResizeRows = false;
+            this.dgvRoom.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRoom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colMaPhong,
+            this.colMaLoai,
+            this.colMaTinhTrangPhong,
+            this.colHinhAnh,
+            this.colMoTa,
+            this.colGia,
+            this.colSucChua,
+            this.colTrangThai});
+            this.dgvRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvRoom.Location = new System.Drawing.Point(0, 0);
+            this.dgvRoom.MultiSelect = false;
+            this.dgvRoom.Name = "dgvRoom";
+            this.dgvRoom.ReadOnly = true;
+            this.dgvRoom.RowHeadersVisible = false;
+            this.dgvRoom.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRoom.Size = new System.Drawing.Size(973, 746);
+            this.dgvRoom.TabIndex = 0;
+            // 
+            // colMaPhong
+            // 
+            this.colMaPhong.HeaderText = "Mã phòng";
+            this.colMaPhong.Name = "colMaPhong";
+            this.colMaPhong.ReadOnly = true;
+            this.colMaPhong.Width = 107;
+            // 
+            // colMaLoai
+            // 
+            this.colMaLoai.HeaderText = "Mã loại";
+            this.colMaLoai.Name = "colMaLoai";
+            this.colMaLoai.ReadOnly = true;
+            this.colMaLoai.Width = 83;
+            // 
+            // colMaTinhTrangPhong
+            // 
+            this.colMaTinhTrangPhong.HeaderText = "Mã tình trạng phòng";
+            this.colMaTinhTrangPhong.Name = "colMaTinhTrangPhong";
+            this.colMaTinhTrangPhong.ReadOnly = true;
+            this.colMaTinhTrangPhong.Width = 181;
+            // 
+            // colHinhAnh
+            // 
+            this.colHinhAnh.HeaderText = "Hình ảnh";
+            this.colHinhAnh.Name = "colHinhAnh";
+            this.colHinhAnh.ReadOnly = true;
+            // 
+            // colMoTa
+            // 
+            this.colMoTa.HeaderText = "Mô tả";
+            this.colMoTa.Name = "colMoTa";
+            this.colMoTa.ReadOnly = true;
+            this.colMoTa.Width = 60;
+            // 
+            // colGia
+            // 
+            this.colGia.HeaderText = "Giá";
+            this.colGia.Name = "colGia";
+            this.colGia.ReadOnly = true;
+            this.colGia.Width = 60;
+            // 
+            // colSucChua
+            // 
+            this.colSucChua.HeaderText = "Sức chứa";
+            this.colSucChua.Name = "colSucChua";
+            this.colSucChua.ReadOnly = true;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Width = 105;
+            // 
             // btnCheckIn
             // 
             this.btnCheckIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
@@ -595,6 +614,7 @@
             this.btnAddRoom.Text = "Thêm";
             this.btnAddRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddRoom.UseVisualStyleBackColor = false;
+            this.btnAddRoom.Click += new System.EventHandler(this.btnAddRoom_Click);
             // 
             // btnEditRoom
             // 
@@ -615,6 +635,7 @@
             this.btnEditRoom.Text = "Sửa";
             this.btnEditRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditRoom.UseVisualStyleBackColor = false;
+            this.btnEditRoom.Click += new System.EventHandler(this.btnEditRoom_Click);
             // 
             // btnDeleteRoom
             // 
@@ -629,12 +650,13 @@
             this.btnDeleteRoom.Size = new System.Drawing.Size(191, 41);
             this.btnDeleteRoom.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnDeleteRoom.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnDeleteRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnDeleteRoom.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnDeleteRoom.TabIndex = 4;
             this.btnDeleteRoom.Text = "Xóa";
             this.btnDeleteRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeleteRoom.UseVisualStyleBackColor = false;
+            this.btnDeleteRoom.Click += new System.EventHandler(this.btnDeleteRoom_Click);
             // 
             // btnRecoverRoom
             // 
@@ -649,12 +671,13 @@
             this.btnRecoverRoom.Size = new System.Drawing.Size(191, 41);
             this.btnRecoverRoom.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverRoom.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnRecoverRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnRecoverRoom.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRecoverRoom.TabIndex = 5;
             this.btnRecoverRoom.Text = "Khôi phục";
             this.btnRecoverRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRecoverRoom.UseVisualStyleBackColor = false;
+            this.btnRecoverRoom.Click += new System.EventHandler(this.btnRecoverRoom_Click);
             // 
             // ucRoom
             // 
@@ -685,6 +708,7 @@
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -703,14 +727,6 @@
         private System.Windows.Forms.TableLayoutPanel tlpController;
         private System.Windows.Forms.Label lblStatusRoom;
         private System.Windows.Forms.Label lblStateRoom;
-        private System.Windows.Forms.ListView lvwRoom;
-        private System.Windows.Forms.ColumnHeader colMaPhong;
-        private System.Windows.Forms.ColumnHeader colLoaiPhong;
-        private System.Windows.Forms.ColumnHeader colSucChuaToiDa;
-        private System.Windows.Forms.ColumnHeader colGia;
-        private System.Windows.Forms.ColumnHeader colMaDSTB;
-        private System.Windows.Forms.ColumnHeader colMoTa;
-        private System.Windows.Forms.ColumnHeader colTinhTrangPhong;
         private System.Windows.Forms.Label lblSortSucChua;
         private System.Windows.Forms.Label lblSortMaPHG;
         private Syncfusion.WinForms.Controls.SfButton btnCheckIn;
@@ -729,5 +745,14 @@
         private System.Windows.Forms.NumericUpDown nudPriceMax;
         private System.Windows.Forms.NumericUpDown nudPriceMin;
         private System.Windows.Forms.NumericUpDown nudSucChua;
+        private System.Windows.Forms.DataGridView dgvRoom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaLoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaTinhTrangPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHinhAnh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMoTa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSucChua;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
     }
 }
