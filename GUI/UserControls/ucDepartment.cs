@@ -18,6 +18,7 @@ namespace GUI.UserControls
 {
     public partial class ucDepartment : UserControl
     {
+        //Khai báo biến
         PhongBanBLL phongBanBLL = new PhongBanBLL();
         PhongBanDTO phongBanDTO = new PhongBanDTO();
         List<PhongBanDTO> dsPhongBan = new List<PhongBanDTO>();
@@ -29,6 +30,7 @@ namespace GUI.UserControls
             InitializeComponent();
         }
 
+        //Khi load Uc lên thì hiển thị gì
         private void ucDepartment_Load(object sender, EventArgs e)
         {
             LayDanhSachPhongBan();
@@ -36,24 +38,31 @@ namespace GUI.UserControls
             CapDuLieuChoController();
         }
 
+        //Cáp dữ liệu cho các combo box
         private void CapDuLieuChoController()
         {
+            //Gọi tới hàm cấp dữ liệu chung vì dữ liệu đa số giống nhau
             DuLieuChoComboBox.duLieuSort(cboSortDepartment);
             DuLieuChoComboBox.duLieuSort(cboSortSoLuongNV);
             DuLieuChoComboBox.duLieuFilter(cboStateDepartment);
         }
 
+        //Lấy danh sách phòng ban và hiển thị lên DataGridView
         private void LayDanhSachPhongBan()
         {
             dsPhongBan = phongBanBLL.LayDanhSachPhongBan();
             dgvDepartment.DataSource = dsPhongBan;
         }
 
+        //Khi bấm nút thêm
         private void btnAddDepartment_Click(object sender, EventArgs e)
         {
             frmPhongBan frm = new frmPhongBan();
+            //Set cho biến isAdd thành true để form biết đây là form thêm
             frm.isAdd = true;
+            //Sau đó gọi form hiển thị lên để người dùng thay đổi thông tin
             frm.ShowDialog();
+            //Sau khi xử lý xong thì load lại danh sách, hiện tại danh sách load lại sẽ là toàn bộ dữ liệu (sẽ sửa lại sau)
             dgvDepartment.ClearSelection();
             LayDanhSachPhongBan();
         }
@@ -64,16 +73,20 @@ namespace GUI.UserControls
             if (dgvDepartment.SelectedRows.Count > 0)
             {
                 frmPhongBan frm = new frmPhongBan();
+                //Set cho biến isAdd thành false để form biết đây không phải form thêm
                 frm.isAdd = false;
-                //Bắt đầu sửa từ đoạn này
+                
+                //Vì không phải form thêm nên sẽ gọi tới hàm lấy dữ liệu từ dòng đang chọn truyền qua BUS xử lý
                 LayDuLieuTuForm(frm);
-                //Kết thúc sửa từ đoạn này
+                //Sau đó gọi form hiển thị lên để người dùng thay đổi thông tin
                 frm.ShowDialog();
+                //Sau khi xử lý xong thì load lại danh sách, hiện tại danh sách load lại sẽ là toàn bộ dữ liệu (sẽ sửa lại sau)
                 dgvDepartment.ClearSelection();
                 LayDanhSachPhongBan();
             }
             else
             {
+                //Thông báo nếu không có dòng được chọn
                 thongBao = new customMessageBox("Hãy chọn 1 dòng dữ liệu bạn muốn thay đổi!");
                 thongBao.ShowDialog();
             }
@@ -81,6 +94,7 @@ namespace GUI.UserControls
 
         private void LayDuLieuTuForm(frmPhongBan frm)
         {
+            //Gán giá trị như bình thường
             frm.phongBanDTO.MaPhongBan = dgvDepartment
                 .SelectedRows[0]
                 .Cells["colMaPhongBan"]
@@ -94,7 +108,8 @@ namespace GUI.UserControls
             frm.phongBanDTO.NgayNhanChuc = DateTime.Parse(
                 dgvDepartment.SelectedRows[0].Cells["colNgayNhanChuc"].Value.ToString()
             );
-            frm.phongBanDTO.TrangThai = true;
+            //Vì form sẽ hiển thị cả trạng thái hoạt động và xóa nên phải check xem dòng đang chọn trạng thái là gì
+            frm.phongBanDTO.TrangThai = Convert.ToBoolean(dgvDepartment.SelectedRows[0].Cells["colTrangThai"].Value) ;
         }
 
         private void btnDeleteDepartment_Click(object sender, EventArgs e)

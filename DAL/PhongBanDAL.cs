@@ -12,6 +12,7 @@ namespace DAL
 {
     public class PhongBanDAL
     {
+        //Hàm khôi phục 
         public static bool KhoiPhucPhongBan(string maPhongBan)
         {
             string lenhXoaPhongBan =
@@ -23,7 +24,7 @@ namespace DAL
             conn.Close();
             return kq > 0;
         }
-
+        //Hàm xóa
         public static bool XoaPhongBan(string maPhongBan)
         {
             string lenhXoaPhongBan =
@@ -35,7 +36,7 @@ namespace DAL
             conn.Close();
             return kq > 0;
         }
-
+        //Hàm lọc
         public List<PhongBanDTO> FilterTrangThai(bool trangThai)
         {
             List<PhongBanDTO> dsPhongBan = new List<PhongBanDTO>();
