@@ -39,11 +39,6 @@
             this.btnTraCuuRoomType = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateRoomType = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
-            this.lvwRoomType = new System.Windows.Forms.ListView();
-            this.colMaRoomType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colLoaiPhong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colSoLuongPhong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMoTa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cboSortRoomTypeID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortRoomTypeID = new System.Windows.Forms.Label();
             this.cboSortSoLuongRoom = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -51,6 +46,11 @@
             this.lblStateRoomType = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.dgvRoomType = new System.Windows.Forms.DataGridView();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenLoaiPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRoomType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -64,6 +64,7 @@
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRoomType)).BeginInit();
             this.SuspendLayout();
             // 
             // lblRoomType
@@ -116,6 +117,7 @@
             this.btnAddRoomType.Text = "Thêm";
             this.btnAddRoomType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddRoomType.UseVisualStyleBackColor = false;
+            this.btnAddRoomType.Click += new System.EventHandler(this.btnAddRoomType_Click);
             // 
             // btnEditRoomType
             // 
@@ -136,6 +138,7 @@
             this.btnEditRoomType.Text = "Sửa";
             this.btnEditRoomType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditRoomType.UseVisualStyleBackColor = false;
+            this.btnEditRoomType.Click += new System.EventHandler(this.btnEditRoomType_Click);
             // 
             // btnDeleteRoomType
             // 
@@ -150,12 +153,13 @@
             this.btnDeleteRoomType.Size = new System.Drawing.Size(191, 41);
             this.btnDeleteRoomType.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnDeleteRoomType.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteRoomType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnDeleteRoomType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnDeleteRoomType.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnDeleteRoomType.TabIndex = 4;
             this.btnDeleteRoomType.Text = "Xóa";
             this.btnDeleteRoomType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeleteRoomType.UseVisualStyleBackColor = false;
+            this.btnDeleteRoomType.Click += new System.EventHandler(this.btnDeleteRoomType_Click);
             // 
             // btnRecoverRoomType
             // 
@@ -170,12 +174,13 @@
             this.btnRecoverRoomType.Size = new System.Drawing.Size(191, 41);
             this.btnRecoverRoomType.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverRoomType.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverRoomType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnRecoverRoomType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnRecoverRoomType.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRecoverRoomType.TabIndex = 5;
             this.btnRecoverRoomType.Text = "Khôi phục";
             this.btnRecoverRoomType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRecoverRoomType.UseVisualStyleBackColor = false;
+            this.btnRecoverRoomType.Click += new System.EventHandler(this.btnRecoverRoomType_Click);
             // 
             // txtSearchRoomType
             // 
@@ -228,7 +233,7 @@
             // 
             // spcQuery.Panel1
             // 
-            this.spcQuery.Panel1.Controls.Add(this.lvwRoomType);
+            this.spcQuery.Panel1.Controls.Add(this.dgvRoomType);
             // 
             // spcQuery.Panel2
             // 
@@ -244,49 +249,6 @@
             this.spcQuery.Size = new System.Drawing.Size(1370, 746);
             this.spcQuery.SplitterDistance = 973;
             this.spcQuery.TabIndex = 38;
-            // 
-            // lvwRoomType
-            // 
-            this.lvwRoomType.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colMaRoomType,
-            this.colLoaiPhong,
-            this.colSoLuongPhong,
-            this.colMoTa});
-            this.lvwRoomType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvwRoomType.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvwRoomType.FullRowSelect = true;
-            this.lvwRoomType.GridLines = true;
-            this.lvwRoomType.HideSelection = false;
-            this.lvwRoomType.Location = new System.Drawing.Point(0, 0);
-            this.lvwRoomType.MultiSelect = false;
-            this.lvwRoomType.Name = "lvwRoomType";
-            this.lvwRoomType.Size = new System.Drawing.Size(973, 746);
-            this.lvwRoomType.TabIndex = 0;
-            this.lvwRoomType.UseCompatibleStateImageBehavior = false;
-            this.lvwRoomType.View = System.Windows.Forms.View.Details;
-            // 
-            // colMaRoomType
-            // 
-            this.colMaRoomType.Text = "Mã Loại Phòng";
-            this.colMaRoomType.Width = 81;
-            // 
-            // colLoaiPhong
-            // 
-            this.colLoaiPhong.Text = "Loại Phòng";
-            this.colLoaiPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colLoaiPhong.Width = 207;
-            // 
-            // colSoLuongPhong
-            // 
-            this.colSoLuongPhong.Text = "Số lượng phòng";
-            this.colSoLuongPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colSoLuongPhong.Width = 179;
-            // 
-            // colMoTa
-            // 
-            this.colMoTa.Text = "Mô tả";
-            this.colMoTa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colMoTa.Width = 146;
             // 
             // cboSortRoomTypeID
             // 
@@ -384,6 +346,54 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
+            // dgvRoomType
+            // 
+            this.dgvRoomType.AllowUserToAddRows = false;
+            this.dgvRoomType.AllowUserToDeleteRows = false;
+            this.dgvRoomType.AllowUserToResizeColumns = false;
+            this.dgvRoomType.AllowUserToResizeRows = false;
+            this.dgvRoomType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRoomType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRoomType.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colID,
+            this.colTenLoaiPhong,
+            this.colMoTa,
+            this.colTrangThai});
+            this.dgvRoomType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvRoomType.Location = new System.Drawing.Point(0, 0);
+            this.dgvRoomType.MultiSelect = false;
+            this.dgvRoomType.Name = "dgvRoomType";
+            this.dgvRoomType.ReadOnly = true;
+            this.dgvRoomType.RowHeadersVisible = false;
+            this.dgvRoomType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRoomType.Size = new System.Drawing.Size(973, 746);
+            this.dgvRoomType.TabIndex = 0;
+            // 
+            // colID
+            // 
+            this.colID.HeaderText = "Mã loại phòng";
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
+            // 
+            // colTenLoaiPhong
+            // 
+            this.colTenLoaiPhong.HeaderText = "Tên loại phòng";
+            this.colTenLoaiPhong.Name = "colTenLoaiPhong";
+            this.colTenLoaiPhong.ReadOnly = true;
+            // 
+            // colMoTa
+            // 
+            this.colMoTa.HeaderText = "Mô tả";
+            this.colMoTa.Name = "colMoTa";
+            this.colMoTa.ReadOnly = true;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Visible = false;
+            // 
             // ucRoomType
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -408,6 +418,7 @@
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRoomType)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -425,16 +436,16 @@
         private System.Windows.Forms.SplitContainer spcQuery;
         private System.Windows.Forms.TableLayoutPanel tlpController;
         private System.Windows.Forms.Label lblStateRoomType;
-        private System.Windows.Forms.ListView lvwRoomType;
-        private System.Windows.Forms.ColumnHeader colMaRoomType;
-        private System.Windows.Forms.ColumnHeader colLoaiPhong;
-        private System.Windows.Forms.ColumnHeader colSoLuongPhong;
-        private System.Windows.Forms.ColumnHeader colMoTa;
         private System.Windows.Forms.Label lblSortSoLuongRoom;
         private System.Windows.Forms.Panel panUcHeader;
         private System.Windows.Forms.SplitContainer spcHeader;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortSoLuongRoom;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortRoomTypeID;
         private System.Windows.Forms.Label lblSortRoomTypeID;
+        private System.Windows.Forms.DataGridView dgvRoomType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTenLoaiPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMoTa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
     }
 }
