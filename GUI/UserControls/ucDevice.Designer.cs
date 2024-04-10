@@ -35,11 +35,6 @@
             this.btnTraCuuDevice = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateDeviceStatus = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
-            this.lvwDevice = new System.Windows.Forms.ListView();
-            this.colMaDevice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colTen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colTrangThai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMoTa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cboSortDeviceID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortDeviceID = new System.Windows.Forms.Label();
             this.cboLocTheoTinhTrang = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -51,6 +46,11 @@
             this.btnEditDevice = new Syncfusion.WinForms.Controls.SfButton();
             this.btnDeleteDevice = new Syncfusion.WinForms.Controls.SfButton();
             this.btnRecoverDevice = new Syncfusion.WinForms.Controls.SfButton();
+            this.dgvDevice = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TinhTrangThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateDeviceStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -64,6 +64,7 @@
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDevice)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDevice
@@ -148,7 +149,7 @@
             // 
             // spcQuery.Panel1
             // 
-            this.spcQuery.Panel1.Controls.Add(this.lvwDevice);
+            this.spcQuery.Panel1.Controls.Add(this.dgvDevice);
             // 
             // spcQuery.Panel2
             // 
@@ -164,49 +165,6 @@
             this.spcQuery.Size = new System.Drawing.Size(1370, 746);
             this.spcQuery.SplitterDistance = 973;
             this.spcQuery.TabIndex = 38;
-            // 
-            // lvwDevice
-            // 
-            this.lvwDevice.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colMaDevice,
-            this.colTen,
-            this.colTrangThai,
-            this.colMoTa});
-            this.lvwDevice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvwDevice.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvwDevice.FullRowSelect = true;
-            this.lvwDevice.GridLines = true;
-            this.lvwDevice.HideSelection = false;
-            this.lvwDevice.Location = new System.Drawing.Point(0, 0);
-            this.lvwDevice.MultiSelect = false;
-            this.lvwDevice.Name = "lvwDevice";
-            this.lvwDevice.Size = new System.Drawing.Size(973, 746);
-            this.lvwDevice.TabIndex = 0;
-            this.lvwDevice.UseCompatibleStateImageBehavior = false;
-            this.lvwDevice.View = System.Windows.Forms.View.Details;
-            // 
-            // colMaDevice
-            // 
-            this.colMaDevice.Text = "Mã thiết bị";
-            this.colMaDevice.Width = 81;
-            // 
-            // colTen
-            // 
-            this.colTen.Text = "Tên thiết bị";
-            this.colTen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colTen.Width = 207;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.Text = "Trạng thái thiết bị";
-            this.colTrangThai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colTrangThai.Width = 179;
-            // 
-            // colMoTa
-            // 
-            this.colMoTa.Text = "Mô tả";
-            this.colMoTa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colMoTa.Width = 146;
             // 
             // cboSortDeviceID
             // 
@@ -323,6 +281,7 @@
             this.btnAddDevice.Text = "Thêm";
             this.btnAddDevice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddDevice.UseVisualStyleBackColor = false;
+            this.btnAddDevice.Click += new System.EventHandler(this.btnAddDevice_Click);
             // 
             // btnEditDevice
             // 
@@ -343,6 +302,7 @@
             this.btnEditDevice.Text = "Sửa";
             this.btnEditDevice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditDevice.UseVisualStyleBackColor = false;
+            this.btnEditDevice.Click += new System.EventHandler(this.btnEditDevice_Click);
             // 
             // btnDeleteDevice
             // 
@@ -357,12 +317,13 @@
             this.btnDeleteDevice.Size = new System.Drawing.Size(191, 41);
             this.btnDeleteDevice.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnDeleteDevice.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteDevice.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnDeleteDevice.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnDeleteDevice.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnDeleteDevice.TabIndex = 4;
             this.btnDeleteDevice.Text = "Xóa";
             this.btnDeleteDevice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeleteDevice.UseVisualStyleBackColor = false;
+            this.btnDeleteDevice.Click += new System.EventHandler(this.btnDeleteDevice_Click);
             // 
             // btnRecoverDevice
             // 
@@ -377,12 +338,60 @@
             this.btnRecoverDevice.Size = new System.Drawing.Size(191, 41);
             this.btnRecoverDevice.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverDevice.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverDevice.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnRecoverDevice.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnRecoverDevice.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRecoverDevice.TabIndex = 5;
             this.btnRecoverDevice.Text = "Khôi phục";
             this.btnRecoverDevice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRecoverDevice.UseVisualStyleBackColor = false;
+            this.btnRecoverDevice.Click += new System.EventHandler(this.btnRecoverDevice_Click);
+            // 
+            // dgvDevice
+            // 
+            this.dgvDevice.AllowUserToAddRows = false;
+            this.dgvDevice.AllowUserToDeleteRows = false;
+            this.dgvDevice.AllowUserToResizeColumns = false;
+            this.dgvDevice.AllowUserToResizeRows = false;
+            this.dgvDevice.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDevice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDevice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.TenThietBi,
+            this.TinhTrangThietBi,
+            this.TrangThai});
+            this.dgvDevice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDevice.Location = new System.Drawing.Point(0, 0);
+            this.dgvDevice.MultiSelect = false;
+            this.dgvDevice.Name = "dgvDevice";
+            this.dgvDevice.ReadOnly = true;
+            this.dgvDevice.RowHeadersVisible = false;
+            this.dgvDevice.Size = new System.Drawing.Size(973, 746);
+            this.dgvDevice.TabIndex = 0;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "Mã thiết bị";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // TenThietBi
+            // 
+            this.TenThietBi.HeaderText = "Tên thiết bị";
+            this.TenThietBi.Name = "TenThietBi";
+            this.TenThietBi.ReadOnly = true;
+            // 
+            // TinhTrangThietBi
+            // 
+            this.TinhTrangThietBi.HeaderText = "Tình trạng thiết bị";
+            this.TinhTrangThietBi.Name = "TinhTrangThietBi";
+            this.TinhTrangThietBi.ReadOnly = true;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.HeaderText = "Trạng thái";
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.ReadOnly = true;
+            this.TrangThai.Visible = false;
             // 
             // ucDevice
             // 
@@ -408,6 +417,7 @@
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDevice)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -425,16 +435,16 @@
         private System.Windows.Forms.SplitContainer spcQuery;
         private System.Windows.Forms.TableLayoutPanel tlpController;
         private System.Windows.Forms.Label lblStateDeviceStatus;
-        private System.Windows.Forms.ListView lvwDevice;
-        private System.Windows.Forms.ColumnHeader colMaDevice;
-        private System.Windows.Forms.ColumnHeader colTen;
-        private System.Windows.Forms.ColumnHeader colTrangThai;
-        private System.Windows.Forms.ColumnHeader colMoTa;
         private System.Windows.Forms.Label lblLocTheoTinhTrang;
         private System.Windows.Forms.Panel panUcHeader;
         private System.Windows.Forms.SplitContainer spcHeader;
         private Syncfusion.WinForms.ListView.SfComboBox cboLocTheoTinhTrang;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortDeviceID;
         private System.Windows.Forms.Label lblSortDeviceID;
+        private System.Windows.Forms.DataGridView dgvDevice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenThietBi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrangThietBi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
     }
 }

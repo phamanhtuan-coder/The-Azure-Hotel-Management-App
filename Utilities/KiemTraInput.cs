@@ -152,9 +152,10 @@ namespace Utilities
             return true;
         }
 
-
-
-
-
+        public static string ChuanHoaMaPhongBan(string maPhongBan)
+        {
+            maPhongBan = maPhongBan.ToUpper();
+            return maPhongBan;
+        }
     }
 }

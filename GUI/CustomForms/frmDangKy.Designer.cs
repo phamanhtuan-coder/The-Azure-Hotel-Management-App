@@ -1,4 +1,5 @@
-﻿namespace GUI.customForm
+﻿
+namespace GUI.customForm
 {
     partial class frmDangKy
     {

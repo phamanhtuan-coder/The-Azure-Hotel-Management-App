@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PhongBanBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -51,6 +52,10 @@
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{f8b92fe4-79a8-420e-81e1-a00a890f144a}</Project>
       <Name>DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{416e29a8-d183-49d3-a0e3-6e31f39ba0bd}</Project>
+      <Name>Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

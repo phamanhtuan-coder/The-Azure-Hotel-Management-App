@@ -18,7 +18,7 @@ namespace GUI.customForm
           
             this.BackColor = Color.DarkCyan; 
             this.FormBorderStyle = FormBorderStyle.None;
-            this.StartPosition = FormStartPosition.CenterParent; 
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.ForeColor = Color.White;
             lblThongBao.Text = message;
 
