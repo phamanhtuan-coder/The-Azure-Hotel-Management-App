@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI.Custom_control
+namespace GUI
 {
     /// <summary>
     /// Custom button để làm nút tròn

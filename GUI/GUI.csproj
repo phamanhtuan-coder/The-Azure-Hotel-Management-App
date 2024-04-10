@@ -167,6 +167,12 @@
     <Compile Include="CustomForms\frmHangThanhVien.Designer.cs">
       <DependentUpon>frmHangThanhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomForms\frmThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\frmThietBi.Designer.cs">
+      <DependentUpon>frmThietBi.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomForms\frmTinhTrangTB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,7 @@
     <Compile Include="CustomForms\frmPhongBan.Designer.cs">
       <DependentUpon>frmPhongBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="DuLieuChoComboBox.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -372,6 +379,9 @@
     <EmbeddedResource Include="CustomForms\frmHangThanhVien.resx">
       <DependentUpon>frmHangThanhVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\frmThietBi.resx">
+      <DependentUpon>frmThietBi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmTinhTrangTB.resx">
       <DependentUpon>frmTinhTrangTB.cs</DependentUpon>
     </EmbeddedResource>
@@ -489,6 +499,10 @@
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{f8b92fe4-79a8-420e-81e1-a00a890f144a}</Project>
       <Name>DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{416e29a8-d183-49d3-a0e3-6e31f39ba0bd}</Project>
+      <Name>Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

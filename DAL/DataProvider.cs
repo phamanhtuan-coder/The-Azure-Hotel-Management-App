@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -28,28 +29,58 @@ namespace DAL
             return cmd.ExecuteReader();
         }
 
-        public static SqlDataReader ThucHienTruyVan(
-            string query,
-            SqlConnection conn,
-            SqlParameter[] parameters
-        )
+        public static SqlDataReader ThucHienTruyVan(string query,SqlConnection conn, SqlParameter[] parameters)
         {
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.Parameters.AddRange(parameters);
             return cmd.ExecuteReader();
         }
 
-        public static int ThucHienCapNhat(string query, SqlConnection conn)
+        public static SqlDataReader ThucHienTruyVan(string query, SqlConnection conn, string paramName, SqlDbType paramType, object paramValue)
+        {
+            SqlCommand cmd = new SqlCommand(query, conn);
+
+            if (paramType == SqlDbType.Binary)
+            {
+                byte[] byteArrayValue;
+                if (paramValue is int intValue)
+                {
+                    byteArrayValue = BitConverter.GetBytes(intValue);
+                }
+                else
+                {
+                    throw new ArgumentException("Invalid parameter value type for SqlDbType.Binary.");
+                }
+
+                cmd.Parameters.Add(paramName, paramType).Value = byteArrayValue;
+            }
+            else
+            {
+                cmd.Parameters.Add(paramName, paramType).Value = paramValue;
+            }
+
+            return cmd.ExecuteReader();
+        }
+
+
+        public static int ThucHienCauLenh(string query, SqlConnection conn)
         {
             SqlCommand cmd = new SqlCommand(query, conn);
             return cmd.ExecuteNonQuery();
         }
-
-        public static int ThucHienCapNhat(string query, SqlConnection conn, SqlParameter[] parameters)
+        public static int ThucHienCauLenh(string query, SqlConnection conn, SqlParameter parameter)
+        {
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.Add(parameter);
+            return cmd.ExecuteNonQuery();
+        }
+        public static int ThucHienCauLenh(string query, SqlConnection conn, SqlParameter[] parameters)
         {
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.Parameters.AddRange(parameters);
             return cmd.ExecuteNonQuery();
         }
+
+
     }
 }

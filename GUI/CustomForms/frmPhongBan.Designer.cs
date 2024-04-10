@@ -38,12 +38,14 @@
             this.lblNgayNhanChuc = new System.Windows.Forms.Label();
             this.chkTruongPhong = new System.Windows.Forms.CheckBox();
             this.grpThongTinTruongPhong = new System.Windows.Forms.GroupBox();
+            this.lblMaPhongBan = new System.Windows.Forms.Label();
+            this.txtMaPhongBan = new System.Windows.Forms.TextBox();
             this.grpThongTinTruongPhong.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtTenPB
             // 
-            this.txtTenPB.Location = new System.Drawing.Point(272, 19);
+            this.txtTenPB.Location = new System.Drawing.Point(272, 55);
             this.txtTenPB.Name = "txtTenPB";
             this.txtTenPB.Size = new System.Drawing.Size(306, 27);
             this.txtTenPB.TabIndex = 0;
@@ -71,6 +73,7 @@
             this.dtpNgayNhanChuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayNhanChuc.Location = new System.Drawing.Point(210, 91);
             this.dtpNgayNhanChuc.Name = "dtpNgayNhanChuc";
+            this.dtpNgayNhanChuc.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtpNgayNhanChuc.Size = new System.Drawing.Size(318, 27);
             this.dtpNgayNhanChuc.TabIndex = 4;
             // 
@@ -87,7 +90,7 @@
             // lblTenPB
             // 
             this.lblTenPB.AutoSize = true;
-            this.lblTenPB.Location = new System.Drawing.Point(58, 24);
+            this.lblTenPB.Location = new System.Drawing.Point(58, 55);
             this.lblTenPB.Name = "lblTenPB";
             this.lblTenPB.Size = new System.Drawing.Size(136, 22);
             this.lblTenPB.TabIndex = 6;
@@ -98,9 +101,9 @@
             this.lblTruongPhong.AutoSize = true;
             this.lblTruongPhong.Location = new System.Drawing.Point(8, 46);
             this.lblTruongPhong.Name = "lblTruongPhong";
-            this.lblTruongPhong.Size = new System.Drawing.Size(161, 22);
+            this.lblTruongPhong.Size = new System.Drawing.Size(179, 22);
             this.lblTruongPhong.TabIndex = 7;
-            this.lblTruongPhong.Text = "Tên trưởng phòng";
+            this.lblTruongPhong.Text = "Mã số trưởng phòng";
             // 
             // lblNgayNhanChuc
             // 
@@ -114,7 +117,7 @@
             // chkTruongPhong
             // 
             this.chkTruongPhong.AutoSize = true;
-            this.chkTruongPhong.Location = new System.Drawing.Point(272, 59);
+            this.chkTruongPhong.Location = new System.Drawing.Point(272, 88);
             this.chkTruongPhong.Name = "chkTruongPhong";
             this.chkTruongPhong.Size = new System.Drawing.Size(186, 26);
             this.chkTruongPhong.TabIndex = 9;
@@ -128,18 +131,37 @@
             this.grpThongTinTruongPhong.Controls.Add(this.txtTruongPhong);
             this.grpThongTinTruongPhong.Controls.Add(this.lblNgayNhanChuc);
             this.grpThongTinTruongPhong.Controls.Add(this.dtpNgayNhanChuc);
-            this.grpThongTinTruongPhong.Location = new System.Drawing.Point(50, 98);
+            this.grpThongTinTruongPhong.Location = new System.Drawing.Point(50, 120);
             this.grpThongTinTruongPhong.Name = "grpThongTinTruongPhong";
             this.grpThongTinTruongPhong.Size = new System.Drawing.Size(538, 145);
             this.grpThongTinTruongPhong.TabIndex = 10;
             this.grpThongTinTruongPhong.TabStop = false;
             this.grpThongTinTruongPhong.Text = "Thông tin trưởng phòng";
             // 
+            // lblMaPhongBan
+            // 
+            this.lblMaPhongBan.AutoSize = true;
+            this.lblMaPhongBan.Location = new System.Drawing.Point(58, 18);
+            this.lblMaPhongBan.Name = "lblMaPhongBan";
+            this.lblMaPhongBan.Size = new System.Drawing.Size(131, 22);
+            this.lblMaPhongBan.TabIndex = 11;
+            this.lblMaPhongBan.Text = "Mã phòng ban";
+            // 
+            // txtMaPhongBan
+            // 
+            this.txtMaPhongBan.Location = new System.Drawing.Point(272, 18);
+            this.txtMaPhongBan.Name = "txtMaPhongBan";
+            this.txtMaPhongBan.Size = new System.Drawing.Size(306, 27);
+            this.txtMaPhongBan.TabIndex = 12;
+            this.txtMaPhongBan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaPhongBan_KeyPress);
+            // 
             // frmPhongBan
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(600, 350);
+            this.Controls.Add(this.txtMaPhongBan);
+            this.Controls.Add(this.lblMaPhongBan);
             this.Controls.Add(this.grpThongTinTruongPhong);
             this.Controls.Add(this.chkTruongPhong);
             this.Controls.Add(this.lblTenPB);
@@ -171,5 +193,7 @@
         private System.Windows.Forms.Label lblNgayNhanChuc;
         private System.Windows.Forms.CheckBox chkTruongPhong;
         private System.Windows.Forms.GroupBox grpThongTinTruongPhong;
+        private System.Windows.Forms.Label lblMaPhongBan;
+        private System.Windows.Forms.TextBox txtMaPhongBan;
     }
 }

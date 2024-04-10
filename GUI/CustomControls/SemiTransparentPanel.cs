@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI.CustomControls
+namespace GUI
 {
     public class SemiTransparentPanel : Panel
     {
