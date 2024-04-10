@@ -117,6 +117,7 @@
             this.btnAddRoomType.Text = "Thêm";
             this.btnAddRoomType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddRoomType.UseVisualStyleBackColor = false;
+            this.btnAddRoomType.Click += new System.EventHandler(this.btnAddRoomType_Click);
             // 
             // btnEditRoomType
             // 
