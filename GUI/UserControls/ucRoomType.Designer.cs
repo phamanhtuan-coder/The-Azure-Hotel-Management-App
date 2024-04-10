@@ -152,7 +152,7 @@
             this.btnDeleteRoomType.Size = new System.Drawing.Size(191, 41);
             this.btnDeleteRoomType.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnDeleteRoomType.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteRoomType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnDeleteRoomType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnDeleteRoomType.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnDeleteRoomType.TabIndex = 4;
             this.btnDeleteRoomType.Text = "Xóa";
@@ -172,7 +172,7 @@
             this.btnRecoverRoomType.Size = new System.Drawing.Size(191, 41);
             this.btnRecoverRoomType.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverRoomType.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverRoomType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnRecoverRoomType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnRecoverRoomType.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRecoverRoomType.TabIndex = 5;
             this.btnRecoverRoomType.Text = "Khôi phục";

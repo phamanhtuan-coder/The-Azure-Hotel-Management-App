@@ -1,4 +1,5 @@
-﻿using Syncfusion.WinForms.ListView;
+﻿using GUI.customForm;
+using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,8 @@ namespace GUI.UserControls
 {
     public partial class ucRoomType : UserControl
     {
+        public frmLoaiPhong frm = new frmLoaiPhong();
+        public customMessageBox thongBao;
 
         List<loaiphongDTO> dslp = new List<loaiphongDTO>();
         loaiphongBLL lpbll = new loaiphongBLL();
@@ -21,19 +24,13 @@ namespace GUI.UserControls
         {
             InitializeComponent();
         }
-
-
-        private void khoiTaoGiaTrichoForm()
-        {
-            dslp = lpbll.laydslphong();
-            dgvloaiphong.DataSource=dslp;
-          
-        }
+        
 
         private void ucRoomType_Load(object sender, EventArgs e)
         {
+            dslp = lpbll.laydslphong();
+            dgvloaiphong.DataSource=dslp;
             dgvloaiphong.AutoGenerateColumns = false;
-            khoiTaoGiaTrichoForm();
             laycombo();
         }
 
