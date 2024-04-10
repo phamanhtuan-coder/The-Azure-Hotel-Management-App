@@ -65,7 +65,6 @@
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRoomType)).BeginInit();
             this.SuspendLayout();
             // 
             // lblRoomType
@@ -118,7 +117,6 @@
             this.btnAddRoomType.Text = "Thêm";
             this.btnAddRoomType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddRoomType.UseVisualStyleBackColor = false;
-            this.btnAddRoomType.Click += new System.EventHandler(this.btnAddRoomType_Click);
             // 
             // btnEditRoomType
             // 
@@ -139,7 +137,6 @@
             this.btnEditRoomType.Text = "Sửa";
             this.btnEditRoomType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditRoomType.UseVisualStyleBackColor = false;
-            this.btnEditRoomType.Click += new System.EventHandler(this.btnEditRoomType_Click);
             // 
             // btnDeleteRoomType
             // 
@@ -160,7 +157,6 @@
             this.btnDeleteRoomType.Text = "Xóa";
             this.btnDeleteRoomType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeleteRoomType.UseVisualStyleBackColor = false;
-            this.btnDeleteRoomType.Click += new System.EventHandler(this.btnDeleteRoomType_Click);
             // 
             // btnRecoverRoomType
             // 
@@ -181,7 +177,6 @@
             this.btnRecoverRoomType.Text = "Khôi phục";
             this.btnRecoverRoomType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRecoverRoomType.UseVisualStyleBackColor = false;
-            this.btnRecoverRoomType.Click += new System.EventHandler(this.btnRecoverRoomType_Click);
             // 
             // txtSearchRoomType
             // 
@@ -427,7 +422,6 @@
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRoomType)).EndInit();
             this.ResumeLayout(false);
 
         }

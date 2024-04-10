@@ -30,13 +30,7 @@ namespace GUI.UserControls
         {
             dslp = lpbll.laydslphong();
             dgvloaiphong.DataSource=dslp;
-          
-        }
-
-        private void ucRoomType_Load(object sender, EventArgs e)
-        {
             dgvloaiphong.AutoGenerateColumns = false;
-            khoiTaoGiaTrichoForm();
             laycombo();
         }
 
