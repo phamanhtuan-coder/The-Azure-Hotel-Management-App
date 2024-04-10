@@ -12,5 +12,6 @@ namespace DTO
         public string TenLoai { get; set; }
         public string Mota { get; set; }
         public bool TrangThai { get; set; }
+
     }
 }
