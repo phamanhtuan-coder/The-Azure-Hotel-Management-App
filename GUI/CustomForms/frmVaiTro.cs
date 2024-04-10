@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BLL;
+using DTO;
+using GUI.UserControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +15,9 @@ namespace GUI.customForm
 {
     public partial class frmVaiTro : Form
     {
-       public string maVaiTro { get; set; }
-       public string tenVaiTro { get; set; }
-
-        public string moTa { get; set; }
+        public RoleDTO roleDTO = new RoleDTO();
         public bool isAdd { get; set; }
+        public int MaVaiTroID { get; set; }
 
         public frmVaiTro()
         {
@@ -25,10 +26,6 @@ namespace GUI.customForm
 
         private void frmVaiTro_Load(object sender, EventArgs e)
         {
-            txtTenVT.Text = tenVaiTro;
-            rtxtMoTa.Text = moTa;
-            
-
         }
 
       
@@ -36,14 +33,11 @@ namespace GUI.customForm
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             customMessageBox thongBao;
-            // Kiểm tra if tiến hành xử lý sự kiện thêm/sửa 
+            // Kiểm tra if tiến hành xử lý sự kiện thêm/sửa
             if (isAdd)
             {
-                // Nếu đúng là form Thêm thì chạy lệnh insert
-                
                 thongBao = new customMessageBox("Đã thêm thành công dữ liệu vai trò mới!");
                 thongBao.ShowDialog();
-
             }
             else
             {
@@ -53,6 +47,12 @@ namespace GUI.customForm
             }
             this.Close();
             
+        }
+
+        private bool AddRoleGUI(RoleDTO role)
+        {
+            RoleBLL roleBLL = new RoleBLL();
+            return roleBLL.AddRoleBLL(role);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

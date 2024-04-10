@@ -1,4 +1,6 @@
-﻿using GUI.customForm;
+﻿using BLL;
+using DTO;
+using GUI.customForm;
 using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
@@ -23,12 +25,19 @@ namespace GUI.UserControls
 
         private void ucRole_Load(object sender, EventArgs e)
         {
-           
+            
+            loadRole();
+        }
+
+        private void loadRole()
+        {
+            RoleBLL roleBLL = new RoleBLL();
+            dgvRole.DataSource = roleBLL.LoadRoleBLL();
         }
 
         private void btnAddRole_Click(object sender, EventArgs e)
         {
-            frmVaiTro frm = new frmVaiTro();
+            frmPhanQuyen frm = new frmPhanQuyen();
             frm.isAdd = true;
             frm.ShowDialog();
         }
@@ -39,7 +48,7 @@ namespace GUI.UserControls
 
             if (dgvRole.SelectedRows.Count > 0)
             {
-                frmVaiTro frm = new frmVaiTro();
+                frmPhanQuyen frm = new frmPhanQuyen();
                 frm.isAdd = false;
                 // Bắt đầu phần có thể chỉnh sửa
 
@@ -92,6 +101,14 @@ namespace GUI.UserControls
             {
                 customMessageBox thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phúc!");
                 thongBao.ShowDialog();
+            }
+        }
+
+        private void dgvRole_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvRole.SelectedRows.Count > 0)
+            {
+                frmPhanQuyen frm = new frmPhanQuyen();
             }
         }
     }
