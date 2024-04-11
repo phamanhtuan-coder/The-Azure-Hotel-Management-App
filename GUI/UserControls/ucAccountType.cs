@@ -33,8 +33,6 @@ namespace GUI.UserControls
         private void LoadCBBVaiTro()
         {
             DuLieuChoComboBox.duLieuSort(cboSortAccountTypeID);
-            DuLieuChoComboBox.duLieuSort(cboChucVu);
-            DuLieuChoComboBox.duLieuSort(cboSortSoLuongAccount);
             DuLieuChoComboBox.duLieuFilter(cboStateAccountType);
         }
 
@@ -119,17 +117,18 @@ namespace GUI.UserControls
 
         private void cboSortAccountTypeID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-        }
+            string sortOption = cboSortAccountTypeID.SelectedItem.ToString();
+            switch (sortOption)
+            {
+                case "Giảm dần":
+                    vaiTroDTOs = vaiTroDTOs.OrderByDescending(item => item.MaVaiTro).ToList();
+                    break;
+                default:
+                    vaiTroDTOs = vaiTroDTOs.OrderBy(item => item.MaVaiTro).ToList();
+                    break;
+            }
 
-        private void cboChucVu_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cboSortSoLuongAccount_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            dgvAccountType.DataSource = vaiTroDTOs;
         }
 
         private void cboStateAccountType_SelectedIndexChanged(object sender, EventArgs e)
@@ -138,5 +137,6 @@ namespace GUI.UserControls
             dgvAccountType.ClearSelection();
             dgvAccountType.DataSource= vaiTroDTOs;
         }
+
     }
 }
