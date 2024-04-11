@@ -37,5 +37,13 @@ namespace BLL
         {
             return vaiTroDAL.LoadDSRoleTTDAL(i);
         }
+
+        public List<VaiTroDTO> TraCuuVaiTro(List<VaiTroDTO> vaiTroDTOs, string searchKeyword)
+        {
+            List<VaiTroDTO> searchResults = vaiTroDTOs.Where(item =>
+             item.TenVaiTro.ToLower().Contains(searchKeyword)
+         ).ToList();
+            return searchResults;
+        }
     }
 }

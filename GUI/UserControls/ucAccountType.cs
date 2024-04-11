@@ -18,6 +18,7 @@ namespace GUI.UserControls
     {
         VaiTroBLL vaiTroBLL= new VaiTroBLL();
         List<VaiTroDTO> vaiTroDTOs = new List<VaiTroDTO>();
+        List<VaiTroDTO> dsSearch = new List<VaiTroDTO>();
         frmVaiTro frm = new frmVaiTro();
         customMessageBox thongBao;
         public ucAccountType()
@@ -138,5 +139,21 @@ namespace GUI.UserControls
             dgvAccountType.DataSource= vaiTroDTOs;
         }
 
+        private void btnTraCuuAccountType_Click(object sender, EventArgs e)
+        {
+            dgvAccountType.DataSource = vaiTroDTOs;
+            string searchKeyword = txtSearchAccountType.Text.Trim().ToLower();
+            if (searchKeyword.Count() > 0)
+            {
+                dsSearch = vaiTroBLL.TraCuuVaiTro(vaiTroDTOs, searchKeyword);
+
+                dgvAccountType.DataSource = dsSearch;
+
+            }
+            else
+            {
+                loadDSRole();
+            }
+        }
     }
 }

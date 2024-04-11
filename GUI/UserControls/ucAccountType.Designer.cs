@@ -203,6 +203,7 @@
             this.btnTraCuuAccountType.TabIndex = 0;
             this.btnTraCuuAccountType.Text = "Tra cứu";
             this.btnTraCuuAccountType.UseVisualStyleBackColor = false;
+            this.btnTraCuuAccountType.Click += new System.EventHandler(this.btnTraCuuAccountType_Click);
             // 
             // cboStateAccountType
             // 
