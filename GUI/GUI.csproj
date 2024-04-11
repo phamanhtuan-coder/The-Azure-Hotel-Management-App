@@ -147,6 +147,12 @@
     <Compile Include="CustomForms\frmDangKy.Designer.cs">
       <DependentUpon>frmDangKy.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomForms\frmDatDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\frmDatDichVu.Designer.cs">
+      <DependentUpon>frmDatDichVu.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomForms\frmKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,12 @@
     </Compile>
     <Compile Include="CustomForms\frmDatPhong.Designer.cs">
       <DependentUpon>frmDatPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomForms\frmDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\frmDichVu.Designer.cs">
+      <DependentUpon>frmDichVu.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomForms\frmTinhTrangPhong.cs">
       <SubType>Form</SubType>
@@ -392,11 +404,17 @@
     <EmbeddedResource Include="CustomForms\frmDangKy.resx">
       <DependentUpon>frmDangKy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\frmDatDichVu.resx">
+      <DependentUpon>frmDatDichVu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmDatPhong.resx">
       <DependentUpon>frmDatPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\frmDichVu.resx">
+      <DependentUpon>frmDichVu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmTinhTrangPhong.resx">
       <DependentUpon>frmTinhTrangPhong.cs</DependentUpon>

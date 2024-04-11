@@ -87,6 +87,6 @@ namespace GUI.UserControls
                 thongBao.ShowDialog();
             }
         
-            }
+        }
     }
 }
