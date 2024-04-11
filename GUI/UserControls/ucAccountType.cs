@@ -64,13 +64,15 @@ namespace GUI.UserControls
             {
                 frm.isAdd = false;
                 frm.MaVaiTroID = (int)dgvAccountType.SelectedCells[0].Value;
+                frm.TenVaiTro= (string)dgvAccountType.SelectedCells[1].Value;
+                frm.MoTa= (string)dgvAccountType.SelectedCells[2].Value;
                 //kết thúc sửa 
                 frm.ShowDialog();
                 loadDSRole();
             }
             else
             {
-                 thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn chỉnh sửa!");
+                thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn chỉnh sửa!");
                 thongBao.ShowDialog();
             }
 

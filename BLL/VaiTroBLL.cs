@@ -21,6 +21,15 @@ namespace BLL
             return false;
         }
 
+        public bool EditVaiTroBLL(VaiTroDTO vaiTroDTO)
+        {
+            if (vaiTroDTO.MaVaiTro>0 && vaiTroDTO.TenVaiTro.Length>0)
+            {
+                return vaiTroDAL.EditVaiTroDAL(vaiTroDTO);
+            }
+            return false;
+        }
+
         public List<VaiTroDTO> FilterTrangThai(string text)
         {
             if (text == "Đang hoạt động")

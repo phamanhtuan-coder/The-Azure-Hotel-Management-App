@@ -267,6 +267,7 @@
             this.dgvAccountType.ReadOnly = true;
             this.dgvAccountType.RowHeadersVisible = false;
             this.dgvAccountType.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvAccountType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAccountType.Size = new System.Drawing.Size(973, 746);
             this.dgvAccountType.TabIndex = 0;
             // 

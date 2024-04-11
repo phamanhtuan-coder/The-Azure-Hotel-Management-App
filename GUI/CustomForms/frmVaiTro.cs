@@ -20,7 +20,8 @@ namespace GUI.customForm
         VaiTroDTO vaiTroDTO = new VaiTroDTO();
         public bool isAdd { get; set; }
         public int MaVaiTroID { get; set; }
-
+        public string TenVaiTro { get; set; }
+        public string MoTa { get; set; }
         public frmVaiTro()
         {
             InitializeComponent();
@@ -28,6 +29,16 @@ namespace GUI.customForm
 
         private void frmVaiTro_Load(object sender, EventArgs e)
         {
+            if (!isAdd)
+            {
+                txtTenVT.Text = TenVaiTro;
+                rtxtMoTa.Text = MoTa;
+            }
+            else
+            {
+                txtTenVT.Text = "";
+                rtxtMoTa.Text = "";
+            }
         }
 
         private void EpDuLieu()
@@ -56,9 +67,19 @@ namespace GUI.customForm
             }
             else
             {
-                // nếu không thì chạy lệnh update
-                thongBao = new customMessageBox("Sửa thành công thông tin vai trò đã chọn!");
-                thongBao.ShowDialog();
+                vaiTroDTO.MaVaiTro = MaVaiTroID;
+                EpDuLieu();
+                if (vaiTroBLL.EditVaiTroBLL(vaiTroDTO))
+                {
+                    thongBao = new customMessageBox("Sửa thành công thông tin vai trò đã chọn!");
+                    thongBao.ShowDialog();
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Sửa thành công thông tin vai trò đã chọn!");
+                    thongBao.ShowDialog();
+                }
+                
             }
             this.Close();
             

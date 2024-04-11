@@ -36,6 +36,30 @@ namespace DAL
             }
         }
 
+        public bool EditVaiTroDAL(VaiTroDTO vaiTroDTO)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spCapNhatVaiTro", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaVaiTro", vaiTroDTO.MaVaiTro);
+                com.Parameters.AddWithValue("@TenVaiTro", vaiTroDTO.TenVaiTro);
+                com.Parameters.AddWithValue("@MoTa", vaiTroDTO.MoTa);
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+
+                if (count > 0) return true;
+                else return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public List<VaiTroDTO> LoadDSRoleDAL()
         {
             try
