@@ -83,11 +83,32 @@ namespace GUI.UserControls
         {
             if (dgvAccountType.SelectedRows.Count > 0)
             {
-                thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
+                bool result = (bool)dgvAccountType.SelectedCells[3].Value;
+                if (result)
                 {
-                    // Xóa 
+                    thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
+                    DialogResult dr = thongBao.ShowDialog();
+                    if (dr != DialogResult.Cancel)
+                    {
+                        int ID = frm.MaVaiTroID = (int)dgvAccountType.SelectedCells[0].Value;
+                        // Xóa
+                        if (DelVaiTro(ID))
+                        {
+                            thongBao = new customMessageBox("Xóa thành công!");
+                            thongBao.ShowDialog();
+                            loadDSRole();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox("Xóa thất bại!");
+                            thongBao.ShowDialog();
+                        }
+                    }
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Các giá trị bạn chọn đã xóa, nên không thể xóa!");
+                    thongBao.ShowDialog();
                 }
             }
             else
@@ -99,15 +120,41 @@ namespace GUI.UserControls
             
         }
 
+        private bool DelVaiTro(int iD)
+        {
+            return vaiTroBLL.DelVaiTroBLL(iD);
+        }
+
         private void btnRecoverAccountType_Click(object sender, EventArgs e)
         {
             if (dgvAccountType.SelectedRows.Count > 0)
             {
-                thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
+                bool result = (bool) dgvAccountType.SelectedCells[3].Value;
+                if (!result) {
+                    thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
+                    DialogResult dr = thongBao.ShowDialog();
+                    if (dr != DialogResult.Cancel)
+                    {
+                        // Khôi phục
+                        int ID = frm.MaVaiTroID = (int)dgvAccountType.SelectedCells[0].Value;
+                        // Xóa
+                        if (RestoreVaiTro(ID))
+                        {
+                            thongBao = new customMessageBox("Khôi phục thành công!");
+                            thongBao.ShowDialog();
+                            loadDSRole();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox("Khôi phục thất bại!");
+                            thongBao.ShowDialog();
+                        }
+                    } 
+                }
+                else
                 {
-                    // Khôi phục
+                    thongBao = new customMessageBox("Các giá trị bạn chọn chưa xóa, nên không thể khôi phục!");
+                    thongBao.ShowDialog();
                 }
             }
             else
@@ -115,6 +162,11 @@ namespace GUI.UserControls
                 thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
                 thongBao.ShowDialog();
             }
+        }
+
+        private bool RestoreVaiTro(int iD)
+        {
+            return vaiTroBLL.RestoreVaiTroBLL(iD);
         }
 
         private void cboSortAccountTypeID_SelectedIndexChanged(object sender, EventArgs e)
@@ -149,7 +201,6 @@ namespace GUI.UserControls
                 dsSearch = vaiTroBLL.TraCuuVaiTro(vaiTroDTOs, searchKeyword);
 
                 dgvAccountType.DataSource = dsSearch;
-
             }
             else
             {

@@ -21,6 +21,24 @@ namespace BLL
             return false;
         }
 
+        public bool DelVaiTroBLL(int iD)
+        {
+            if (iD > 0)
+            {
+                return vaiTroDAL.DelVaiTroDAL(iD);
+            }
+            return false;
+        }
+
+        public bool RestoreVaiTroBLL(int iD)
+        {
+            if (iD > 0)
+            {
+                return vaiTroDAL.RestoreVaiTroDAL(iD);
+            }
+            return false;
+        }
+
         public bool EditVaiTroBLL(VaiTroDTO vaiTroDTO)
         {
             if (vaiTroDTO.MaVaiTro>0 && vaiTroDTO.TenVaiTro.Length>0)

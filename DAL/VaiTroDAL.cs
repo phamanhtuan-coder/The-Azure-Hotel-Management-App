@@ -36,6 +36,52 @@ namespace DAL
             }
         }
 
+        public bool DelVaiTroDAL(int iD)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spCapNhatTrangThaiVaiTro", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaVaiTro", iD);
+                com.Parameters.AddWithValue("@TrangThai", 0);
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+
+                if (count > 0) return true;
+                else return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool RestoreVaiTroDAL(int iD)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spCapNhatTrangThaiVaiTro", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaVaiTro", iD);
+                com.Parameters.AddWithValue("@TrangThai", 1);
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+
+                if (count > 0) return true;
+                else return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public bool EditVaiTroDAL(VaiTroDTO vaiTroDTO)
         {
             try
