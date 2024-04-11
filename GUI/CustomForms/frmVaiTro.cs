@@ -15,7 +15,6 @@ namespace GUI.customForm
 {
     public partial class frmVaiTro : Form
     {
-        public RoleDTO roleDTO = new RoleDTO();
         public bool isAdd { get; set; }
         public int MaVaiTroID { get; set; }
 
@@ -27,8 +26,6 @@ namespace GUI.customForm
         private void frmVaiTro_Load(object sender, EventArgs e)
         {
         }
-
-      
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -47,12 +44,6 @@ namespace GUI.customForm
             }
             this.Close();
             
-        }
-
-        private bool AddRoleGUI(RoleDTO role)
-        {
-            RoleBLL roleBLL = new RoleBLL();
-            return roleBLL.AddRoleBLL(role);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

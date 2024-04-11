@@ -39,6 +39,7 @@
             this.btnTraCuuRole = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateRole = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
+            this.ucDashboard1 = new GUI.UserControls.ucDashboard();
             this.dgvRole = new System.Windows.Forms.DataGridView();
             this.cboSortRole = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortServiceTypeID = new System.Windows.Forms.Label();
@@ -47,13 +48,13 @@
             this.lblStateRole = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.ucDashboard1 = new GUI.UserControls.ucDashboard();
             this.colPQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTPQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMPB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSLTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRole)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -209,6 +210,7 @@
             this.btnTraCuuRole.TabIndex = 0;
             this.btnTraCuuRole.Text = "Tra cứu";
             this.btnTraCuuRole.UseVisualStyleBackColor = false;
+            this.btnTraCuuRole.Click += new System.EventHandler(this.btnTraCuuRole_Click);
             // 
             // cboStateRole
             // 
@@ -226,6 +228,7 @@
             this.cboStateRole.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateRole.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateRole.TabIndex = 3;
+            this.cboStateRole.SelectedIndexChanged += new System.EventHandler(this.cboStateRole_SelectedIndexChanged);
             // 
             // spcQuery
             // 
@@ -254,6 +257,16 @@
             this.spcQuery.SplitterDistance = 973;
             this.spcQuery.TabIndex = 38;
             // 
+            // ucDashboard1
+            // 
+            this.ucDashboard1.BackColor = System.Drawing.Color.White;
+            this.ucDashboard1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ucDashboard1.Location = new System.Drawing.Point(976, 2);
+            this.ucDashboard1.Margin = new System.Windows.Forms.Padding(0);
+            this.ucDashboard1.Name = "ucDashboard1";
+            this.ucDashboard1.Size = new System.Drawing.Size(1353, 840);
+            this.ucDashboard1.TabIndex = 1;
+            // 
             // dgvRole
             // 
             this.dgvRole.AllowUserToAddRows = false;
@@ -264,11 +277,12 @@
             this.dgvRole.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRole.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colPQ,
-            this.Column1,
             this.colTPQ,
             this.colMPB,
             this.colSLTK,
-            this.colTrangThai});
+            this.colTrangThai,
+            this.Column1,
+            this.col1});
             this.dgvRole.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRole.Location = new System.Drawing.Point(0, 0);
             this.dgvRole.MultiSelect = false;
@@ -296,6 +310,7 @@
             this.cboSortRole.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortRole.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortRole.TabIndex = 29;
+            this.cboSortRole.SelectedIndexChanged += new System.EventHandler(this.cboSortRole_SelectedIndexChanged);
             // 
             // lblSortServiceTypeID
             // 
@@ -324,6 +339,7 @@
             this.cboSortSoLuong.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortSoLuong.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortSoLuong.TabIndex = 23;
+            this.cboSortSoLuong.SelectedIndexChanged += new System.EventHandler(this.cboSortSoLuong_SelectedIndexChanged);
             // 
             // lblSortSoLuongRole
             // 
@@ -376,30 +392,12 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // ucDashboard1
-            // 
-            this.ucDashboard1.BackColor = System.Drawing.Color.White;
-            this.ucDashboard1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ucDashboard1.Location = new System.Drawing.Point(976, 2);
-            this.ucDashboard1.Margin = new System.Windows.Forms.Padding(0);
-            this.ucDashboard1.Name = "ucDashboard1";
-            this.ucDashboard1.Size = new System.Drawing.Size(1353, 840);
-            this.ucDashboard1.TabIndex = 1;
-            // 
             // colPQ
             // 
             this.colPQ.DataPropertyName = "MaPhanQuyen";
             this.colPQ.HeaderText = "Mã phân quyền";
             this.colPQ.Name = "colPQ";
             this.colPQ.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MoTa";
-            this.Column1.HeaderText = "mota";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
             // 
             // colTPQ
             // 
@@ -429,6 +427,22 @@
             this.colTrangThai.Name = "colTrangThai";
             this.colTrangThai.ReadOnly = true;
             this.colTrangThai.Visible = false;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MoTa";
+            this.Column1.HeaderText = "mota";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // col1
+            // 
+            this.col1.DataPropertyName = "MaVaiTro";
+            this.col1.HeaderText = "mavt";
+            this.col1.Name = "col1";
+            this.col1.ReadOnly = true;
+            this.col1.Visible = false;
             // 
             // ucRole
             // 
@@ -481,10 +495,11 @@
         private System.Windows.Forms.DataGridView dgvRole;
         private ucDashboard ucDashboard1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPQ;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTPQ;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMPB;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSLTK;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col1;
     }
 }
