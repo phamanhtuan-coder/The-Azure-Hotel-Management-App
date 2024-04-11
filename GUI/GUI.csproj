@@ -183,6 +183,12 @@
     <Compile Include="CustomForms\frmDichVu.Designer.cs">
       <DependentUpon>frmDichVu.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomForms\frmKhuyenMai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\frmKhuyenMai.Designer.cs">
+      <DependentUpon>frmKhuyenMai.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomForms\frmThue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -445,6 +451,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmDichVu.resx">
       <DependentUpon>frmDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\frmKhuyenMai.resx">
+      <DependentUpon>frmKhuyenMai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmThue.resx">
       <DependentUpon>frmThue.cs</DependentUpon>
