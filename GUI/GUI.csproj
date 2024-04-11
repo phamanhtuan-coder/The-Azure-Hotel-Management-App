@@ -135,6 +135,12 @@
     <Compile Include="CustomForms\customMessageBox.Designer.cs">
       <DependentUpon>customMessageBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomForms\frmCTHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\frmCTHD.Designer.cs">
+      <DependentUpon>frmCTHD.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomForms\frmHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -433,6 +439,9 @@
     </Compile>
     <EmbeddedResource Include="CustomForms\customMessageBox.resx">
       <DependentUpon>customMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\frmCTHD.resx">
+      <DependentUpon>frmCTHD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmHoaDon.resx">
       <DependentUpon>frmHoaDon.cs</DependentUpon>
