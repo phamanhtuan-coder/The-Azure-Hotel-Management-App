@@ -40,25 +40,24 @@
             this.cboStateBooking = new Syncfusion.WinForms.ListView.SfComboBox();
             this.dtpBillDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
-            this.lvwBill = new System.Windows.Forms.ListView();
-            this.colMaHD = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMaKhach = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMaNV = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMaThue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colNgayLapHD = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colSum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colTienNhan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colTienThoi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cboSortSumBill = new Syncfusion.WinForms.ListView.SfComboBox();
             this.cboSortBillID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortSumBill = new System.Windows.Forms.Label();
             this.lblSortBillID = new System.Windows.Forms.Label();
             this.lblBillDate = new System.Windows.Forms.Label();
             this.lblStateBooking = new System.Windows.Forms.Label();
-            this.lblStatusBill = new System.Windows.Forms.Label();
-            this.cboStatusBill = new Syncfusion.WinForms.ListView.SfComboBox();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.dgvBill = new System.Windows.Forms.DataGridView();
+            this.colMaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaThue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayLapHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTongHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTienNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTienThoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateBooking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -67,12 +66,12 @@
             this.spcQuery.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortSumBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortBillID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboStatusBill)).BeginInit();
             this.panUcHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).BeginInit();
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBill
@@ -125,6 +124,7 @@
             this.btnAddBill.Text = "Thêm";
             this.btnAddBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddBill.UseVisualStyleBackColor = false;
+            this.btnAddBill.Click += new System.EventHandler(this.btnAddBill_Click);
             // 
             // btnEditBill
             // 
@@ -145,6 +145,7 @@
             this.btnEditBill.Text = "Sửa";
             this.btnEditBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditBill.UseVisualStyleBackColor = false;
+            this.btnEditBill.Click += new System.EventHandler(this.btnEditBill_Click);
             // 
             // btnDeleteBill
             // 
@@ -159,12 +160,13 @@
             this.btnDeleteBill.Size = new System.Drawing.Size(191, 41);
             this.btnDeleteBill.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnDeleteBill.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteBill.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnDeleteBill.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnDeleteBill.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnDeleteBill.TabIndex = 4;
             this.btnDeleteBill.Text = "Xóa";
             this.btnDeleteBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeleteBill.UseVisualStyleBackColor = false;
+            this.btnDeleteBill.Click += new System.EventHandler(this.btnDeleteBill_Click);
             // 
             // btnRecoverBill
             // 
@@ -179,12 +181,13 @@
             this.btnRecoverBill.Size = new System.Drawing.Size(191, 41);
             this.btnRecoverBill.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverBill.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverBill.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnRecoverBill.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnRecoverBill.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRecoverBill.TabIndex = 5;
             this.btnRecoverBill.Text = "Khôi phục";
             this.btnRecoverBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRecoverBill.UseVisualStyleBackColor = false;
+            this.btnRecoverBill.Click += new System.EventHandler(this.btnRecoverBill_Click);
             // 
             // txtSearchBill
             // 
@@ -218,7 +221,7 @@
             this.cboStateBooking.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboStateBooking.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboStateBooking.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateBooking.Location = new System.Drawing.Point(228, 296);
+            this.cboStateBooking.Location = new System.Drawing.Point(228, 233);
             this.cboStateBooking.Name = "cboStateBooking";
             this.cboStateBooking.Size = new System.Drawing.Size(156, 33);
             this.cboStateBooking.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -234,7 +237,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpBillDate.DateTimePattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
             this.dtpBillDate.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBillDate.Location = new System.Drawing.Point(225, 240);
+            this.dtpBillDate.Location = new System.Drawing.Point(225, 177);
             this.dtpBillDate.Name = "dtpBillDate";
             this.dtpBillDate.Size = new System.Drawing.Size(156, 34);
             this.dtpBillDate.TabIndex = 6;
@@ -249,7 +252,7 @@
             // 
             // spcQuery.Panel1
             // 
-            this.spcQuery.Panel1.Controls.Add(this.lvwBill);
+            this.spcQuery.Panel1.Controls.Add(this.dgvBill);
             // 
             // spcQuery.Panel2
             // 
@@ -260,8 +263,6 @@
             this.spcQuery.Panel2.Controls.Add(this.lblSortBillID);
             this.spcQuery.Panel2.Controls.Add(this.lblBillDate);
             this.spcQuery.Panel2.Controls.Add(this.lblStateBooking);
-            this.spcQuery.Panel2.Controls.Add(this.lblStatusBill);
-            this.spcQuery.Panel2.Controls.Add(this.cboStatusBill);
             this.spcQuery.Panel2.Controls.Add(this.dtpBillDate);
             this.spcQuery.Panel2.Controls.Add(this.txtSearchBill);
             this.spcQuery.Panel2.Controls.Add(this.btnTraCuuBill);
@@ -270,63 +271,6 @@
             this.spcQuery.SplitterDistance = 973;
             this.spcQuery.TabIndex = 38;
             // 
-            // lvwBill
-            // 
-            this.lvwBill.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colMaHD,
-            this.colMaKhach,
-            this.colMaNV,
-            this.colMaThue,
-            this.colNgayLapHD,
-            this.colSum,
-            this.colTienNhan,
-            this.colTienThoi});
-            this.lvwBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvwBill.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvwBill.FullRowSelect = true;
-            this.lvwBill.GridLines = true;
-            this.lvwBill.HideSelection = false;
-            this.lvwBill.Location = new System.Drawing.Point(0, 0);
-            this.lvwBill.MultiSelect = false;
-            this.lvwBill.Name = "lvwBill";
-            this.lvwBill.Size = new System.Drawing.Size(973, 746);
-            this.lvwBill.TabIndex = 0;
-            this.lvwBill.UseCompatibleStateImageBehavior = false;
-            this.lvwBill.View = System.Windows.Forms.View.Details;
-            // 
-            // colMaHD
-            // 
-            this.colMaHD.Text = "Mã hóa đơn";
-            this.colMaHD.Width = 81;
-            // 
-            // colMaKhach
-            // 
-            this.colMaKhach.Text = "Mã khách hàng";
-            // 
-            // colMaNV
-            // 
-            this.colMaNV.Text = "Mã nhân viên";
-            // 
-            // colMaThue
-            // 
-            this.colMaThue.Text = "Mã thuế";
-            // 
-            // colNgayLapHD
-            // 
-            this.colNgayLapHD.Text = "Ngày lập hóa đơn";
-            // 
-            // colSum
-            // 
-            this.colSum.Text = "Tổng hóa đơn";
-            // 
-            // colTienNhan
-            // 
-            this.colTienNhan.Text = "Tiền nhận";
-            // 
-            // colTienThoi
-            // 
-            this.colTienThoi.Text = "Tiền thối";
-            // 
             // cboSortSumBill
             // 
             this.cboSortSumBill.DelimiterChar = "";
@@ -334,7 +278,7 @@
             this.cboSortSumBill.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboSortSumBill.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboSortSumBill.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSumBill.Location = new System.Drawing.Point(225, 184);
+            this.cboSortSumBill.Location = new System.Drawing.Point(225, 121);
             this.cboSortSumBill.Name = "cboSortSumBill";
             this.cboSortSumBill.Size = new System.Drawing.Size(156, 33);
             this.cboSortSumBill.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -351,7 +295,7 @@
             this.cboSortBillID.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboSortBillID.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboSortBillID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortBillID.Location = new System.Drawing.Point(225, 135);
+            this.cboSortBillID.Location = new System.Drawing.Point(225, 72);
             this.cboSortBillID.Name = "cboSortBillID";
             this.cboSortBillID.Size = new System.Drawing.Size(156, 33);
             this.cboSortBillID.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -365,7 +309,7 @@
             // 
             this.lblSortSumBill.AutoSize = true;
             this.lblSortSumBill.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortSumBill.Location = new System.Drawing.Point(4, 191);
+            this.lblSortSumBill.Location = new System.Drawing.Point(4, 128);
             this.lblSortSumBill.Name = "lblSortSumBill";
             this.lblSortSumBill.Size = new System.Drawing.Size(197, 26);
             this.lblSortSumBill.TabIndex = 16;
@@ -376,7 +320,7 @@
             // 
             this.lblSortBillID.AutoSize = true;
             this.lblSortBillID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortBillID.Location = new System.Drawing.Point(4, 135);
+            this.lblSortBillID.Location = new System.Drawing.Point(4, 72);
             this.lblSortBillID.Name = "lblSortBillID";
             this.lblSortBillID.Size = new System.Drawing.Size(167, 26);
             this.lblSortBillID.TabIndex = 14;
@@ -387,7 +331,7 @@
             // 
             this.lblBillDate.AutoSize = true;
             this.lblBillDate.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBillDate.Location = new System.Drawing.Point(4, 248);
+            this.lblBillDate.Location = new System.Drawing.Point(4, 185);
             this.lblBillDate.Name = "lblBillDate";
             this.lblBillDate.Size = new System.Drawing.Size(184, 26);
             this.lblBillDate.TabIndex = 10;
@@ -398,40 +342,12 @@
             // 
             this.lblStateBooking.AutoSize = true;
             this.lblStateBooking.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStateBooking.Location = new System.Drawing.Point(7, 303);
+            this.lblStateBooking.Location = new System.Drawing.Point(7, 240);
             this.lblStateBooking.Name = "lblStateBooking";
             this.lblStateBooking.Size = new System.Drawing.Size(186, 26);
             this.lblStateBooking.TabIndex = 9;
             this.lblStateBooking.Text = "Trạng thái dữ liệu";
             this.lblStateBooking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblStatusBill
-            // 
-            this.lblStatusBill.AutoSize = true;
-            this.lblStatusBill.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatusBill.Location = new System.Drawing.Point(-3, 79);
-            this.lblStatusBill.Name = "lblStatusBill";
-            this.lblStatusBill.Size = new System.Drawing.Size(228, 26);
-            this.lblStatusBill.TabIndex = 8;
-            this.lblStatusBill.Text = "Tình trạng thanh toán";
-            this.lblStatusBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cboStatusBill
-            // 
-            this.cboStatusBill.DelimiterChar = "";
-            this.cboStatusBill.DisplayMember = "";
-            this.cboStatusBill.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboStatusBill.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboStatusBill.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStatusBill.Location = new System.Drawing.Point(225, 72);
-            this.cboStatusBill.Name = "cboStatusBill";
-            this.cboStatusBill.Size = new System.Drawing.Size(156, 33);
-            this.cboStatusBill.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboStatusBill.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStatusBill.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStatusBill.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboStatusBill.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStatusBill.TabIndex = 7;
             // 
             // panUcHeader
             // 
@@ -462,6 +378,97 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
+            // dgvBill
+            // 
+            this.dgvBill.AllowUserToAddRows = false;
+            this.dgvBill.AllowUserToDeleteRows = false;
+            this.dgvBill.AllowUserToResizeColumns = false;
+            this.dgvBill.AllowUserToResizeRows = false;
+            this.dgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colMaHD,
+            this.colMaKH,
+            this.colMaNV,
+            this.colMaThue,
+            this.colNgayLapHoaDon,
+            this.colTongHD,
+            this.colTienNhan,
+            this.colTienThoi,
+            this.colTrangThai});
+            this.dgvBill.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvBill.Location = new System.Drawing.Point(0, 0);
+            this.dgvBill.MultiSelect = false;
+            this.dgvBill.Name = "dgvBill";
+            this.dgvBill.ReadOnly = true;
+            this.dgvBill.RowHeadersVisible = false;
+            this.dgvBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBill.Size = new System.Drawing.Size(973, 746);
+            this.dgvBill.TabIndex = 0;
+            // 
+            // colMaHD
+            // 
+            this.colMaHD.HeaderText = "Mã hóa đơn";
+            this.colMaHD.Name = "colMaHD";
+            this.colMaHD.ReadOnly = true;
+            this.colMaHD.Width = 129;
+            // 
+            // colMaKH
+            // 
+            this.colMaKH.HeaderText = "Mã khách hàng";
+            this.colMaKH.Name = "colMaKH";
+            this.colMaKH.ReadOnly = true;
+            this.colMaKH.Width = 145;
+            // 
+            // colMaNV
+            // 
+            this.colMaNV.HeaderText = "Mã nhân viên";
+            this.colMaNV.Name = "colMaNV";
+            this.colMaNV.ReadOnly = true;
+            this.colMaNV.Width = 131;
+            // 
+            // colMaThue
+            // 
+            this.colMaThue.HeaderText = "Mã thuế";
+            this.colMaThue.Name = "colMaThue";
+            this.colMaThue.ReadOnly = true;
+            this.colMaThue.Width = 93;
+            // 
+            // colNgayLapHoaDon
+            // 
+            this.colNgayLapHoaDon.HeaderText = "Ngày lập hóa đơn";
+            this.colNgayLapHoaDon.Name = "colNgayLapHoaDon";
+            this.colNgayLapHoaDon.ReadOnly = true;
+            this.colNgayLapHoaDon.Width = 131;
+            // 
+            // colTongHD
+            // 
+            this.colTongHD.HeaderText = "Tổng hóa đơn";
+            this.colTongHD.Name = "colTongHD";
+            this.colTongHD.ReadOnly = true;
+            this.colTongHD.Width = 104;
+            // 
+            // colTienNhan
+            // 
+            this.colTienNhan.HeaderText = "Tiền nhận";
+            this.colTienNhan.Name = "colTienNhan";
+            this.colTienNhan.ReadOnly = true;
+            this.colTienNhan.Width = 106;
+            // 
+            // colTienThoi
+            // 
+            this.colTienThoi.HeaderText = "Tiền thối";
+            this.colTienThoi.Name = "colTienThoi";
+            this.colTienThoi.ReadOnly = true;
+            this.colTienThoi.Width = 96;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Width = 105;
+            // 
             // ucBill
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -481,12 +488,12 @@
             this.spcQuery.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cboSortSumBill)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortBillID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboStatusBill)).EndInit();
             this.panUcHeader.ResumeLayout(false);
             this.spcHeader.Panel1.ResumeLayout(false);
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -503,25 +510,24 @@
         private Syncfusion.WinForms.ListView.SfComboBox cboStateBooking;
         private Syncfusion.WinForms.Input.SfDateTimeEdit dtpBillDate;
         private System.Windows.Forms.SplitContainer spcQuery;
-        private Syncfusion.WinForms.ListView.SfComboBox cboStatusBill;
         private System.Windows.Forms.TableLayoutPanel tlpController;
-        private System.Windows.Forms.Label lblStatusBill;
         private System.Windows.Forms.Label lblStateBooking;
         private System.Windows.Forms.Label lblBillDate;
-        private System.Windows.Forms.ListView lvwBill;
-        private System.Windows.Forms.ColumnHeader colMaHD;
         private System.Windows.Forms.Label lblSortSumBill;
         private System.Windows.Forms.Label lblSortBillID;
         private System.Windows.Forms.Panel panUcHeader;
         private System.Windows.Forms.SplitContainer spcHeader;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortSumBill;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortBillID;
-        private System.Windows.Forms.ColumnHeader colMaKhach;
-        private System.Windows.Forms.ColumnHeader colMaNV;
-        private System.Windows.Forms.ColumnHeader colMaThue;
-        private System.Windows.Forms.ColumnHeader colNgayLapHD;
-        private System.Windows.Forms.ColumnHeader colSum;
-        private System.Windows.Forms.ColumnHeader colTienNhan;
-        private System.Windows.Forms.ColumnHeader colTienThoi;
+        private System.Windows.Forms.DataGridView dgvBill;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaHD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaThue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNgayLapHoaDon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTongHD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTienNhan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTienThoi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
     }
 }

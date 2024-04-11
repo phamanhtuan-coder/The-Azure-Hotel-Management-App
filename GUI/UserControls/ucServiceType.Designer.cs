@@ -39,11 +39,6 @@
             this.btnTraCuuServiceType = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateRoomType = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
-            this.lvwServiceType = new System.Windows.Forms.ListView();
-            this.colMaServiceType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colTenDichVu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colGiaDichVu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMoTa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.nudPriceMax = new System.Windows.Forms.NumericUpDown();
             this.nudPriceMin = new System.Windows.Forms.NumericUpDown();
             this.lblPriceRangeServiceType = new System.Windows.Forms.Label();
@@ -54,6 +49,12 @@
             this.lblStateRoomType = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.dgvServiceType = new System.Windows.Forms.DataGridView();
+            this.colMaDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRoomType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -69,6 +70,7 @@
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvServiceType)).BeginInit();
             this.SuspendLayout();
             // 
             // lblServiceType
@@ -121,6 +123,7 @@
             this.btnAddServiceType.Text = "Thêm";
             this.btnAddServiceType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddServiceType.UseVisualStyleBackColor = false;
+            this.btnAddServiceType.Click += new System.EventHandler(this.btnAddServiceType_Click);
             // 
             // btnEditServiceType
             // 
@@ -141,6 +144,7 @@
             this.btnEditServiceType.Text = "Sửa";
             this.btnEditServiceType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditServiceType.UseVisualStyleBackColor = false;
+            this.btnEditServiceType.Click += new System.EventHandler(this.btnEditServiceType_Click);
             // 
             // btnDeleteServiceType
             // 
@@ -155,12 +159,13 @@
             this.btnDeleteServiceType.Size = new System.Drawing.Size(191, 41);
             this.btnDeleteServiceType.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnDeleteServiceType.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteServiceType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnDeleteServiceType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnDeleteServiceType.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnDeleteServiceType.TabIndex = 4;
             this.btnDeleteServiceType.Text = "Xóa";
             this.btnDeleteServiceType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeleteServiceType.UseVisualStyleBackColor = false;
+            this.btnDeleteServiceType.Click += new System.EventHandler(this.btnDeleteServiceType_Click);
             // 
             // btnRecoverServiceType
             // 
@@ -175,12 +180,13 @@
             this.btnRecoverServiceType.Size = new System.Drawing.Size(191, 41);
             this.btnRecoverServiceType.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverServiceType.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverServiceType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnRecoverServiceType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnRecoverServiceType.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRecoverServiceType.TabIndex = 5;
             this.btnRecoverServiceType.Text = "Khôi phục";
             this.btnRecoverServiceType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRecoverServiceType.UseVisualStyleBackColor = false;
+            this.btnRecoverServiceType.Click += new System.EventHandler(this.btnRecoverServiceType_Click);
             // 
             // txtSearchServiceType
             // 
@@ -233,7 +239,7 @@
             // 
             // spcQuery.Panel1
             // 
-            this.spcQuery.Panel1.Controls.Add(this.lvwServiceType);
+            this.spcQuery.Panel1.Controls.Add(this.dgvServiceType);
             // 
             // spcQuery.Panel2
             // 
@@ -252,49 +258,6 @@
             this.spcQuery.Size = new System.Drawing.Size(1370, 746);
             this.spcQuery.SplitterDistance = 973;
             this.spcQuery.TabIndex = 38;
-            // 
-            // lvwServiceType
-            // 
-            this.lvwServiceType.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colMaServiceType,
-            this.colTenDichVu,
-            this.colGiaDichVu,
-            this.colMoTa});
-            this.lvwServiceType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvwServiceType.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvwServiceType.FullRowSelect = true;
-            this.lvwServiceType.GridLines = true;
-            this.lvwServiceType.HideSelection = false;
-            this.lvwServiceType.Location = new System.Drawing.Point(0, 0);
-            this.lvwServiceType.MultiSelect = false;
-            this.lvwServiceType.Name = "lvwServiceType";
-            this.lvwServiceType.Size = new System.Drawing.Size(973, 746);
-            this.lvwServiceType.TabIndex = 0;
-            this.lvwServiceType.UseCompatibleStateImageBehavior = false;
-            this.lvwServiceType.View = System.Windows.Forms.View.Details;
-            // 
-            // colMaServiceType
-            // 
-            this.colMaServiceType.Text = "Mã loại dịch vụ";
-            this.colMaServiceType.Width = 81;
-            // 
-            // colTenDichVu
-            // 
-            this.colTenDichVu.Text = "Tên dịch vụ";
-            this.colTenDichVu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colTenDichVu.Width = 207;
-            // 
-            // colGiaDichVu
-            // 
-            this.colGiaDichVu.Text = "Giá dịch vụ";
-            this.colGiaDichVu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colGiaDichVu.Width = 179;
-            // 
-            // colMoTa
-            // 
-            this.colMoTa.Text = "Mô tả";
-            this.colMoTa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colMoTa.Width = 146;
             // 
             // nudPriceMax
             // 
@@ -446,6 +409,61 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
+            // dgvServiceType
+            // 
+            this.dgvServiceType.AllowUserToAddRows = false;
+            this.dgvServiceType.AllowUserToDeleteRows = false;
+            this.dgvServiceType.AllowUserToResizeColumns = false;
+            this.dgvServiceType.AllowUserToResizeRows = false;
+            this.dgvServiceType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvServiceType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvServiceType.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colMaDichVu,
+            this.colTenDichVu,
+            this.colGia,
+            this.colHinhAnh,
+            this.colTrangThai});
+            this.dgvServiceType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvServiceType.Location = new System.Drawing.Point(0, 0);
+            this.dgvServiceType.MultiSelect = false;
+            this.dgvServiceType.Name = "dgvServiceType";
+            this.dgvServiceType.ReadOnly = true;
+            this.dgvServiceType.RowHeadersVisible = false;
+            this.dgvServiceType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvServiceType.Size = new System.Drawing.Size(973, 746);
+            this.dgvServiceType.TabIndex = 1;
+            // 
+            // colMaDichVu
+            // 
+            this.colMaDichVu.HeaderText = "Mã dịch vụ";
+            this.colMaDichVu.Name = "colMaDichVu";
+            this.colMaDichVu.ReadOnly = true;
+            // 
+            // colTenDichVu
+            // 
+            this.colTenDichVu.HeaderText = "Tên dịch vụ";
+            this.colTenDichVu.Name = "colTenDichVu";
+            this.colTenDichVu.ReadOnly = true;
+            // 
+            // colGia
+            // 
+            this.colGia.HeaderText = "Giá";
+            this.colGia.Name = "colGia";
+            this.colGia.ReadOnly = true;
+            // 
+            // colHinhAnh
+            // 
+            this.colHinhAnh.HeaderText = "Hình ảnh";
+            this.colHinhAnh.Name = "colHinhAnh";
+            this.colHinhAnh.ReadOnly = true;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Visible = false;
+            // 
             // ucServiceType
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -472,6 +490,7 @@
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvServiceType)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -489,11 +508,6 @@
         private System.Windows.Forms.SplitContainer spcQuery;
         private System.Windows.Forms.TableLayoutPanel tlpController;
         private System.Windows.Forms.Label lblStateRoomType;
-        private System.Windows.Forms.ListView lvwServiceType;
-        private System.Windows.Forms.ColumnHeader colMaServiceType;
-        private System.Windows.Forms.ColumnHeader colTenDichVu;
-        private System.Windows.Forms.ColumnHeader colGiaDichVu;
-        private System.Windows.Forms.ColumnHeader colMoTa;
         private System.Windows.Forms.Label lblSortGiaServiceTypeID;
         private System.Windows.Forms.Panel panUcHeader;
         private System.Windows.Forms.SplitContainer spcHeader;
@@ -503,5 +517,11 @@
         private System.Windows.Forms.NumericUpDown nudPriceMax;
         private System.Windows.Forms.NumericUpDown nudPriceMin;
         private System.Windows.Forms.Label lblPriceRangeServiceType;
+        private System.Windows.Forms.DataGridView dgvServiceType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaDichVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTenDichVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHinhAnh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
     }
 }

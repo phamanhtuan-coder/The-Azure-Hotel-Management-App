@@ -87,6 +87,14 @@ namespace GUI.UserControls
                 thongBao.ShowDialog();
             }
         
-            }
+        }
+        private void ucRoom_Load(object sender, EventArgs e)
+        {
+            khoiTaoGiaTrichoForm();
+        }
+        private void ucRoom_Load(object sender, EventArgs e)
+        {
+            khoiTaoGiaTrichoForm();
+        }
     }
 }
