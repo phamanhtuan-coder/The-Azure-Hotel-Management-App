@@ -1,4 +1,6 @@
-﻿using GUI.customForm;
+﻿using BLL;
+using DTO;
+using GUI.customForm;
 using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
@@ -14,6 +16,8 @@ namespace GUI.UserControls
 {
     public partial class ucAccountType : UserControl
     {
+        VaiTroBLL vaiTroBLL= new VaiTroBLL();
+        List<VaiTroDTO> vaiTroDTOs = new List<VaiTroDTO>();
         frmVaiTro frm = new frmVaiTro();
         customMessageBox thongBao;
         public ucAccountType()
@@ -23,7 +27,13 @@ namespace GUI.UserControls
 
         private void ucAccountType_Load(object sender, EventArgs e)
         {
-         
+            
+        }
+
+        private void loadDSRole()
+        {
+            vaiTroDTOs = vaiTroBLL.LoadDSRoleBLL();
+            dgvAccountType.DataSource=vaiTroDTOs;
         }
 
         private void btnAddAccountType_Click(object sender, EventArgs e)
