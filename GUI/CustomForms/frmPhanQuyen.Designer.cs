@@ -34,14 +34,12 @@
             this.cboVaiTro = new System.Windows.Forms.ComboBox();
             this.cboTenPhongBan = new System.Windows.Forms.ComboBox();
             this.lblTenPhongBan = new System.Windows.Forms.Label();
-            this.lblMoTa = new System.Windows.Forms.Label();
-            this.rtxtMoTa = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(378, 271);
+            this.btnSubmit.Location = new System.Drawing.Point(365, 157);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
             this.btnSubmit.TabIndex = 3;
@@ -51,7 +49,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(62, 271);
+            this.btnCancel.Location = new System.Drawing.Point(49, 157);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
             this.btnCancel.TabIndex = 5;
@@ -61,7 +59,7 @@
             // lblTenVaiTro
             // 
             this.lblTenVaiTro.AutoSize = true;
-            this.lblTenVaiTro.Location = new System.Drawing.Point(58, 29);
+            this.lblTenVaiTro.Location = new System.Drawing.Point(45, 36);
             this.lblTenVaiTro.Name = "lblTenVaiTro";
             this.lblTenVaiTro.Size = new System.Drawing.Size(93, 20);
             this.lblTenVaiTro.TabIndex = 6;
@@ -71,7 +69,7 @@
             // 
             this.cboVaiTro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboVaiTro.FormattingEnabled = true;
-            this.cboVaiTro.Location = new System.Drawing.Point(276, 21);
+            this.cboVaiTro.Location = new System.Drawing.Point(263, 28);
             this.cboVaiTro.Name = "cboVaiTro";
             this.cboVaiTro.Size = new System.Drawing.Size(252, 28);
             this.cboVaiTro.TabIndex = 7;
@@ -80,7 +78,7 @@
             // 
             this.cboTenPhongBan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTenPhongBan.FormattingEnabled = true;
-            this.cboTenPhongBan.Location = new System.Drawing.Point(276, 82);
+            this.cboTenPhongBan.Location = new System.Drawing.Point(263, 89);
             this.cboTenPhongBan.Name = "cboTenPhongBan";
             this.cboTenPhongBan.Size = new System.Drawing.Size(252, 28);
             this.cboTenPhongBan.TabIndex = 9;
@@ -88,36 +86,17 @@
             // lblTenPhongBan
             // 
             this.lblTenPhongBan.AutoSize = true;
-            this.lblTenPhongBan.Location = new System.Drawing.Point(58, 90);
+            this.lblTenPhongBan.Location = new System.Drawing.Point(45, 97);
             this.lblTenPhongBan.Name = "lblTenPhongBan";
             this.lblTenPhongBan.Size = new System.Drawing.Size(129, 20);
             this.lblTenPhongBan.TabIndex = 8;
             this.lblTenPhongBan.Text = "Tên phòng ban";
             // 
-            // lblMoTa
-            // 
-            this.lblMoTa.AutoSize = true;
-            this.lblMoTa.Location = new System.Drawing.Point(58, 143);
-            this.lblMoTa.Name = "lblMoTa";
-            this.lblMoTa.Size = new System.Drawing.Size(54, 20);
-            this.lblMoTa.TabIndex = 10;
-            this.lblMoTa.Text = "Mô tả";
-            // 
-            // rtxtMoTa
-            // 
-            this.rtxtMoTa.Location = new System.Drawing.Point(276, 143);
-            this.rtxtMoTa.Name = "rtxtMoTa";
-            this.rtxtMoTa.Size = new System.Drawing.Size(252, 96);
-            this.rtxtMoTa.TabIndex = 11;
-            this.rtxtMoTa.Text = "";
-            // 
             // frmPhanQuyen
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(600, 350);
-            this.Controls.Add(this.rtxtMoTa);
-            this.Controls.Add(this.lblMoTa);
+            this.ClientSize = new System.Drawing.Size(558, 237);
             this.Controls.Add(this.cboTenPhongBan);
             this.Controls.Add(this.lblTenPhongBan);
             this.Controls.Add(this.cboVaiTro);
@@ -142,7 +121,5 @@
         private System.Windows.Forms.ComboBox cboVaiTro;
         private System.Windows.Forms.ComboBox cboTenPhongBan;
         private System.Windows.Forms.Label lblTenPhongBan;
-        private System.Windows.Forms.Label lblMoTa;
-        private System.Windows.Forms.RichTextBox rtxtMoTa;
     }
 }

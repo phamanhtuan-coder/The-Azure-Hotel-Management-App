@@ -33,9 +33,9 @@ namespace GUI.customForm
 
         private void loadPB()
         {
-            List<TenPB> list = roleBLL.LoadPBBLL();
+            List<PhongBanDTO> list = roleBLL.LoadPBBLL();
             cboTenPhongBan.DataSource= list;
-            cboTenPhongBan.DisplayMember = "TenPhongBan";
+            cboTenPhongBan.DisplayMember = "TenPhong";
             cboTenPhongBan.ValueMember = "MaPhongBan";
         }
 

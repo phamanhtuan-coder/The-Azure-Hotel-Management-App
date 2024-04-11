@@ -47,7 +47,7 @@ namespace BLL
             return roleDAL.loadRoleDAL();
         }
 
-        public List<TenPB> LoadPBBLL()
+        public List<PhongBanDTO> LoadPBBLL()
         {
             return roleDAL.LoadPBDAL();
         }

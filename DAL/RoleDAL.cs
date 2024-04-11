@@ -78,10 +78,11 @@ namespace DAL
                     SqlConnection conn = DataProvider.KetNoiDuLieu();
                     conn.Open();
 
-                    string strTV = "Select MaPhanQuyen, TenVaiTro, MaPhongBan, COUNT(MaTaiKhoan) as SoLuongTK, PhanQuyen.TrangThai " +
+                    string strTV = "Select MaPhanQuyen, TenVaiTro, PhanQuyen.MaPhongBan, COUNT(MaTaiKhoan) as SoLuongTK, PhanQuyen.TrangThai, PhongBan.TenPhong " +
                                 "From PhanQuyen join VaiTro on PhanQuyen.MaVaiTro=VaiTro.MaVaiTro left join BangTaiKhoan on BangTaiKhoan.MaPQ=PhanQuyen.MaPhanQuyen " +
-                                "Where PhanQuyen.TrangThai=1 " +
-                                "Group by MaPhanQuyen, TenVaiTro, MaPhongBan, PhanQuyen.TrangThai";
+                                "join PhongBan on PhanQuyen.MaPhongBan=PhongBan.MaPhongBan " +
+                                "Where PhanQuyen.TrangThai = 1 " +
+                                "Group by MaPhanQuyen, TenVaiTro, PhanQuyen.MaPhongBan, PhanQuyen.TrangThai, PhongBan.TenPhong";
 
                     SqlDataReader reader = DataProvider.ThucHienTruyVan(strTV, conn);
                     while (reader.Read())
@@ -92,7 +93,8 @@ namespace DAL
                         roleDTO.TenVaiTro = reader["TenVaiTro"].ToString();
                         roleDTO.MaPhongBan = reader["MaPhongBan"].ToString();
                         roleDTO.SoLuongTK = (int)reader["SoLuongTK"];
-                        roleDTO.TrangThai = reader["TrangThai"].ToString();
+                        roleDTO.TrangThai = true;
+                        roleDTO.TenPhong = reader["TenPhong"].ToString();
 
                         ls.Add(roleDTO);
                     }
@@ -113,10 +115,11 @@ namespace DAL
                     SqlConnection conn = DataProvider.KetNoiDuLieu();
                     conn.Open();
 
-                    string strTV = "Select MaPhanQuyen, TenVaiTro, MaPhongBan, COUNT(MaTaiKhoan) as SoLuongTK, PhanQuyen.TrangThai " +
+                    string strTV = "Select MaPhanQuyen, TenVaiTro, PhanQuyen.MaPhongBan, COUNT(MaTaiKhoan) as SoLuongTK, PhanQuyen.TrangThai, PhongBan.TenPhong " +
                                 "From PhanQuyen join VaiTro on PhanQuyen.MaVaiTro=VaiTro.MaVaiTro left join BangTaiKhoan on BangTaiKhoan.MaPQ=PhanQuyen.MaPhanQuyen " +
-                                "Where PhanQuyen.TrangThai=0 " +
-                                "Group by MaPhanQuyen, TenVaiTro, MaPhongBan, PhanQuyen.TrangThai";
+                                "join PhongBan on PhanQuyen.MaPhongBan=PhongBan.MaPhongBan " +
+                                "Where PhanQuyen.TrangThai = 0 " +
+                                "Group by MaPhanQuyen, TenVaiTro, PhanQuyen.MaPhongBan, PhanQuyen.TrangThai, PhongBan.TenPhong";
 
                     SqlDataReader reader = DataProvider.ThucHienTruyVan(strTV, conn);
                     while (reader.Read())
@@ -127,7 +130,8 @@ namespace DAL
                         roleDTO.TenVaiTro = reader["TenVaiTro"].ToString();
                         roleDTO.MaPhongBan = reader["MaPhongBan"].ToString();
                         roleDTO.SoLuongTK = (int)reader["SoLuongTK"];
-                        roleDTO.TrangThai = reader["TrangThai"].ToString();
+                        roleDTO.TrangThai = false;
+                        roleDTO.TenPhong = reader["TenPhong"].ToString();
 
                         ls.Add(roleDTO);
                     }
@@ -150,9 +154,10 @@ namespace DAL
                 SqlConnection conn = DataProvider.KetNoiDuLieu();
                 conn.Open();
 
-                string strTV = "Select MaPhanQuyen, TenVaiTro, MaPhongBan, COUNT(MaTaiKhoan) as SoLuongTK, PhanQuyen.TrangThai " +
-                                "From PhanQuyen join VaiTro on PhanQuyen.MaVaiTro=VaiTro.MaVaiTro left join BangTaiKhoan on BangTaiKhoan.MaPQ=PhanQuyen.MaPhanQuyen " +
-                                "Group by MaPhanQuyen, TenVaiTro, MaPhongBan, PhanQuyen.TrangThai";
+                string strTV = "Select MaPhanQuyen, TenVaiTro, PhanQuyen.MaPhongBan, COUNT(MaTaiKhoan) as SoLuongTK, PhanQuyen.TrangThai, PhongBan.TenPhong " +
+                            "From PhanQuyen join VaiTro on PhanQuyen.MaVaiTro=VaiTro.MaVaiTro left join BangTaiKhoan on BangTaiKhoan.MaPQ=PhanQuyen.MaPhanQuyen " +
+                            "join PhongBan on PhanQuyen.MaPhongBan=PhongBan.MaPhongBan " +
+                            "Group by MaPhanQuyen, TenVaiTro, PhanQuyen.MaPhongBan, PhanQuyen.TrangThai, PhongBan.TenPhong";
 
                 SqlDataReader reader = DataProvider.ThucHienTruyVan(strTV, conn);
                 while (reader.Read())
@@ -162,8 +167,10 @@ namespace DAL
                     roleDTO.TenVaiTro = reader["TenVaiTro"].ToString();
                     roleDTO.MaPhongBan = reader["MaPhongBan"].ToString();
                     roleDTO.SoLuongTK = (int)reader["SoLuongTK"];
-                    roleDTO.TrangThai = reader["TrangThai"].ToString() ;
-
+                    byte[] trangThaiBytes = (byte[])reader["TrangThai"];
+                    roleDTO.TrangThai = BitConverter.ToBoolean(trangThaiBytes, 0);
+                    roleDTO.TenPhong= reader["TenPhong"].ToString() ;
+                    
                     ls.Add(roleDTO);
                 }
                 reader.Close();
@@ -174,9 +181,9 @@ namespace DAL
             }
         }
 
-        public List<TenPB> LoadPBDAL()
+        public List<PhongBanDTO> LoadPBDAL()
         {
-            List<TenPB> ls = new List<TenPB>();
+            List<PhongBanDTO> ls = new List<PhongBanDTO>();
             try
             {
                 SqlConnection conn = DataProvider.KetNoiDuLieu();
@@ -187,9 +194,9 @@ namespace DAL
 
                 while (reader.Read())
                 {
-                    TenPB tenPB = new TenPB();
+                    PhongBanDTO tenPB = new PhongBanDTO();
                     tenPB.MaPhongBan = reader["MaPhongBan"].ToString();
-                    tenPB.TenPhongBan = reader["TenPhong"].ToString();
+                    tenPB.TenPhong = reader["TenPhong"].ToString();
                     ls.Add(tenPB);
                 }
 

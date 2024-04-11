@@ -19,6 +19,7 @@ namespace GUI.UserControls
         List<RoleDTO> dsRole = new List<RoleDTO> ();
         List<RoleDTO> dsSearch = new List<RoleDTO>();
         RoleBLL roleBLL = new RoleBLL ();
+        customMessageBox thongBao;
         public ucRole()
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace GUI.UserControls
         private void ucRole_Load(object sender, EventArgs e)
         {
             CapDuLieuChoController();
+            loadRole();
         }
         
         private void CapDuLieuChoController()
@@ -73,11 +75,10 @@ namespace GUI.UserControls
         {
             if (dgvRole.SelectedRows.Count > 0)
             {
-                int a = 1;
-                //MessageBox.Show(dgvRole.SelectedCells[4].Value.ToString());
-                if (a==1)
+                bool result = (bool)dgvRole.SelectedCells[7].Value;
+                if (result)
                 {
-                    customMessageBox thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
+                    thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
                     DialogResult dr = thongBao.ShowDialog();
                     if (dr != DialogResult.Cancel)
                     {
@@ -95,11 +96,11 @@ namespace GUI.UserControls
                         }
                     }
                 }
-                //else
-                //{
-                //    customMessageBox thongBao = new customMessageBox("Các giá trị bạn chọn đã xóa!");
-                //    thongBao.ShowDialog();
-                //}
+                else
+                {
+                    thongBao = new customMessageBox("Các giá trị bạn chọn đã xóa!");
+                    thongBao.ShowDialog();
+                }
             }
             else
             {
@@ -116,8 +117,9 @@ namespace GUI.UserControls
         {
             if (dgvRole.SelectedRows.Count > 0)
             {
-                //if ((int)dgvRole.SelectedCells[6].Value == 0)
-                //{
+                bool result = (bool)dgvRole.SelectedCells[7].Value;
+                if (!result)
+                {
                     customMessageBox thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
                     DialogResult dr = thongBao.ShowDialog();
                     if (dr != DialogResult.Cancel)
@@ -135,12 +137,12 @@ namespace GUI.UserControls
                             thongBao.ShowDialog();
                         }
                     }
-                //}
-                //else
-                //{
-                //    customMessageBox thongBao = new customMessageBox("Giá trị bạn chọn chưa xóa!");
-                //    thongBao.ShowDialog();
-                //}
+                }
+                else
+                {
+                    customMessageBox thongBao = new customMessageBox("Giá trị bạn chọn chưa xóa!");
+                    thongBao.ShowDialog();
+                }
             }
             else
             {
