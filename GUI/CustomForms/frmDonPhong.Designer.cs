@@ -1,6 +1,6 @@
 ﻿namespace GUI.customForm
 {
-    partial class frmBaoTri
+    partial class frmDonPhong
     {
         /// <summary>
         /// Required designer variable.
@@ -156,7 +156,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBaoTri";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.frmBaoTri_Load);
+            this.Load += new System.EventHandler(this.frmDonPhong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cboNVBaoTri)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboThietBi)).EndInit();
             this.ResumeLayout(false);

@@ -135,6 +135,12 @@
     <Compile Include="CustomForms\customMessageBox.Designer.cs">
       <DependentUpon>customMessageBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomForms\frmDonPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\frmDonPhong.Designer.cs">
+      <DependentUpon>frmDonPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomForms\frmBookingController.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -403,6 +409,9 @@
     </Compile>
     <EmbeddedResource Include="CustomForms\customMessageBox.resx">
       <DependentUpon>customMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\frmDonPhong.resx">
+      <DependentUpon>frmDonPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmBookingController.resx">
       <DependentUpon>frmBookingController.cs</DependentUpon>

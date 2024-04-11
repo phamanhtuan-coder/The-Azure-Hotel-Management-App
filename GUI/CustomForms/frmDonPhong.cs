@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace GUI.customForm
 {
-    public partial class frmBaoTri : Form
+    public partial class frmDonPhong : Form
     {
 
         public bool isAdd { get; set; }
 
-        public frmBaoTri()
+        public frmDonPhong()
         {
             InitializeComponent();
         }
 
-        private void frmBaoTri_Load(object sender, EventArgs e)
+        private void frmDonPhong_Load(object sender, EventArgs e)
         {
           // gán giá trị mặc định bằng các biến trên, néu là edit có giá trị truyền vào thì kiểm tra và chọn giá trị
         
@@ -41,14 +41,14 @@ namespace GUI.customForm
             {
                 // Nếu đúng là form Thêm thì chạy lệnh insert
 
-                thongBao = new customMessageBox("Đã thêm thành công dữ liệu bảo trì");
+                thongBao = new customMessageBox("Đã thêm thành công dữ liệu dọn phòng!");
                 thongBao.ShowDialog();
 
             }
             else
             {
                 // nếu không thì chạy lệnh update
-                thongBao = new customMessageBox("Sửa thành công thông tin bảo trì!");
+                thongBao = new customMessageBox("Sửa thành công thông tin dọn phòng!");
                 thongBao.ShowDialog();
             }
             this.Close();
