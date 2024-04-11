@@ -12,6 +12,15 @@ namespace BLL
     {
         VaiTroDAL vaiTroDAL = new VaiTroDAL();
 
+        public bool AddVaiTroBLL(VaiTroDTO vaiTroDTO)
+        {
+            if (vaiTroDTO.TenVaiTro.Length > 0)
+            {
+                return vaiTroDAL.AddVaiTroDAL(vaiTroDTO);
+            }
+            return false;
+        }
+
         public List<VaiTroDTO> FilterTrangThai(string text)
         {
             if (text == "Đang hoạt động")

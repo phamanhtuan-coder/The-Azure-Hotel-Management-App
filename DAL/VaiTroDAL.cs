@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,6 +13,29 @@ namespace DAL
     public class VaiTroDAL
     {
         List<VaiTroDTO> list= new List<VaiTroDTO>();
+
+        public bool AddVaiTroDAL(VaiTroDTO vaiTroDTO)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spThemVaiTro", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@TenVaiTro", vaiTroDTO.TenVaiTro);
+                com.Parameters.AddWithValue("@MoTa", vaiTroDTO.MoTa);
+                int count= com.ExecuteNonQuery();
+                conn.Close();
+
+                if (count > 0) return true;
+                else return false;
+            } catch (Exception) 
+            {
+                return false;
+            }
+        }
+
         public List<VaiTroDTO> LoadDSRoleDAL()
         {
             try

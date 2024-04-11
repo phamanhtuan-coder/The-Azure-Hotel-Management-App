@@ -55,19 +55,18 @@ namespace GUI.UserControls
         {
             frm.isAdd = true;
             frm.ShowDialog();
+            loadDSRole();
         }
 
         private void btnEditAccountType_Click(object sender, EventArgs e)
         {
             if (dgvAccountType.SelectedRows.Count > 0)
             {
-               
                 frm.isAdd = false;
-
-               
-
+                frm.MaVaiTroID = (int)dgvAccountType.SelectedCells[0].Value;
                 //kết thúc sửa 
                 frm.ShowDialog();
+                loadDSRole();
             }
             else
             {

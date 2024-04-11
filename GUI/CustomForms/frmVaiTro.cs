@@ -1,6 +1,7 @@
 ﻿using BLL;
 using DTO;
 using GUI.UserControls;
+using Syncfusion.GridHelperClasses;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,8 @@ namespace GUI.customForm
 {
     public partial class frmVaiTro : Form
     {
+        VaiTroBLL vaiTroBLL= new VaiTroBLL();
+        VaiTroDTO vaiTroDTO = new VaiTroDTO();
         public bool isAdd { get; set; }
         public int MaVaiTroID { get; set; }
 
@@ -27,14 +30,29 @@ namespace GUI.customForm
         {
         }
 
+        private void EpDuLieu()
+        {
+            vaiTroDTO.TenVaiTro= txtTenVT.Text;
+            vaiTroDTO.MoTa= rtxtMoTa.Text;
+        }
+
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             customMessageBox thongBao;
             // Kiểm tra if tiến hành xử lý sự kiện thêm/sửa
             if (isAdd)
             {
-                thongBao = new customMessageBox("Đã thêm thành công dữ liệu vai trò mới!");
-                thongBao.ShowDialog();
+                EpDuLieu();
+                if (vaiTroBLL.AddVaiTroBLL(vaiTroDTO))
+                {
+                    thongBao = new customMessageBox("Đã thêm thành công dữ liệu vai trò mới!");
+                    thongBao.ShowDialog();
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Đã thêm thất bại dữ liệu vai trò mới!");
+                    thongBao.ShowDialog();
+                }
             }
             else
             {
