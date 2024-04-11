@@ -225,6 +225,12 @@
     <Compile Include="CustomForms\frmLoaiPhong.Designer.cs">
       <DependentUpon>frmLoaiPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomForms\frmDanhGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\frmDanhGia.Designer.cs">
+      <DependentUpon>frmDanhGia.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomForms\frmVaiTro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -454,6 +460,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmLoaiPhong.resx">
       <DependentUpon>frmLoaiPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\frmDanhGia.resx">
+      <DependentUpon>frmDanhGia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmVaiTro.resx">
       <DependentUpon>frmVaiTro.cs</DependentUpon>
