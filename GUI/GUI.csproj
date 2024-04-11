@@ -153,6 +153,12 @@
     <Compile Include="CustomForms\frmDatDichVu.Designer.cs">
       <DependentUpon>frmDatDichVu.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomForms\frmBaoTri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\frmBaoTri.Designer.cs">
+      <DependentUpon>frmBaoTri.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomForms\frmKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -406,6 +412,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmDatDichVu.resx">
       <DependentUpon>frmDatDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\frmBaoTri.resx">
+      <DependentUpon>frmBaoTri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
