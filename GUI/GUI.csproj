@@ -299,6 +299,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ucPersonal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucPersonal.Designer.cs">
+      <DependentUpon>ucPersonal.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ucBillDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -522,6 +528,9 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucPersonal.resx">
+      <DependentUpon>ucPersonal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucBillDetails.resx">
       <DependentUpon>ucBillDetails.cs</DependentUpon>
