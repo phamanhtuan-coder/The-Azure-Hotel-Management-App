@@ -90,5 +90,10 @@ namespace GUI.UserControls
                 thongBao.ShowDialog();
             }
         }
+
+        private void lblAccountType_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
