@@ -129,16 +129,17 @@ namespace GUI.UserControls
                     bool check = PhongBanBLL.XoaPhongBan(maPhongBan);
                     if (check)
                     {
-                        thongBao = new customMessageBox(
-                            "Xóa thành công dữ liệu phòng ban có mã là: " + maPhongBan + "!"
-                        );
+                        
                         dgvDepartment.ClearSelection();
                         LayDanhSachPhongBan();
+                        thongBao = new customMessageBox(
+                            "Xóa thành công dữ liệu có mã là: " + maPhongBan + "!"
+                        );
                     }
                     else
                     {
                         thongBao = new customMessageBox(
-                            "Xóa thất bại dữ liệu phòng ban có mã là: " + maPhongBan + "!"
+                            "Xóa thất bại dữ liệu có mã là: " + maPhongBan + "!"
                         );
                     }
                 }
@@ -150,8 +151,9 @@ namespace GUI.UserControls
             else
             {
                 thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn xóa!");
-                thongBao.ShowDialog();
+               
             }
+            thongBao.ShowDialog();
         }
 
         private void btnRecoverDepartment_Click(object sender, EventArgs e)
@@ -171,16 +173,17 @@ namespace GUI.UserControls
                     bool check = PhongBanBLL.KhoiPhucPhongBan(maPhongBan);
                     if (check)
                     {
-                        thongBao = new customMessageBox(
-                            "Khôi phục thành công dữ liệu phòng ban có mã là: " + maPhongBan + "!"
-                        );
+                        
                         dgvDepartment.ClearSelection();
                         LayDanhSachPhongBan();
+                        thongBao = new customMessageBox(
+                            "Khôi phục thành công dữ liệu có mã là: " + maPhongBan + "!"
+                        );
                     }
                     else
                     {
                         thongBao = new customMessageBox(
-                            "Khôi phục thất bại dữ liệu phòng ban có mã là: " + maPhongBan + "!"
+                            "Khôi phục thất bại dữ liệu có mã là: " + maPhongBan + "!"
                         );
                     }
                 }
@@ -188,8 +191,9 @@ namespace GUI.UserControls
             else
             {
                 thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
-                thongBao.ShowDialog();
+               
             }
+            thongBao.ShowDialog();
         }
 
         private void cboStateDepartment_SelectedIndexChanged(object sender, EventArgs e)

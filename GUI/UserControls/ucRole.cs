@@ -64,7 +64,7 @@ namespace GUI.UserControls
             }
             else
             {
-                customMessageBox thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn chỉnh sửa!");
+                thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn chỉnh sửa!");
                 thongBao.ShowDialog();
             }
         }
@@ -103,7 +103,7 @@ namespace GUI.UserControls
             }
             else
             {
-                customMessageBox thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn xóa!");
+                thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn xóa!");
                 thongBao.ShowDialog();
             }
         }
@@ -144,7 +144,7 @@ namespace GUI.UserControls
             }
             else
             {
-                customMessageBox thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phúc!");
+                thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phúc!");
                 thongBao.ShowDialog();
             }
         }
