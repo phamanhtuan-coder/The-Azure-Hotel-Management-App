@@ -20,6 +20,7 @@ namespace DAL
                 conn.Open();
 
                 SqlCommand com = new SqlCommand("sp_DSAllVaiTro", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
                 SqlDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
@@ -38,6 +39,36 @@ namespace DAL
             catch (Exception)
             {
                 return new List<VaiTroDTO> ();
+            }
+        }
+
+        public List<VaiTroDTO> LoadDSRoleTTDAL(int i)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("sp_DSAllVaiTroTT", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@TrangThai", i);
+                SqlDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    VaiTroDTO vaiTroDTO = new VaiTroDTO();
+                    vaiTroDTO.MaVaiTro = (int)reader["MaVaiTro"];
+                    vaiTroDTO.TenVaiTro = reader["TenVaiTro"].ToString();
+                    vaiTroDTO.MoTa = reader["MoTa"].ToString();
+                    vaiTroDTO.TrangThai = i==1?true:false;
+                    list.Add(vaiTroDTO);
+                }
+
+                conn.Close();
+                return list;
+            }
+            catch (Exception)
+            {
+                return new List<VaiTroDTO>();
             }
         }
     }

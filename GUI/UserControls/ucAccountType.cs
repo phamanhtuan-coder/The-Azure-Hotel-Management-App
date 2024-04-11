@@ -27,13 +27,18 @@ namespace GUI.UserControls
 
         private void ucAccountType_Load(object sender, EventArgs e)
         {
-            
         }
 
         private void loadDSRole()
         {
             vaiTroDTOs = vaiTroBLL.LoadDSRoleBLL();
             dgvAccountType.DataSource=vaiTroDTOs;
+        }
+
+        private void loadDSRoleTT(int i)
+        {
+            vaiTroDTOs = vaiTroBLL.LoadDSRoleTTBLL(i);
+            dgvAccountType.DataSource = vaiTroDTOs;
         }
 
         private void btnAddAccountType_Click(object sender, EventArgs e)

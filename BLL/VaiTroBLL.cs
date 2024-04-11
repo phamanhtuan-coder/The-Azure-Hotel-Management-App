@@ -15,5 +15,10 @@ namespace BLL
         {
             return vaiTroDAL.LoadDSRoleDAL();
         }
+
+        public List<VaiTroDTO> LoadDSRoleTTBLL(int i)
+        {
+            return vaiTroDAL.LoadDSRoleTTDAL(i);
+        }
     }
 }
