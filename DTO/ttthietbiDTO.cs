@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class loaiphongDTO
+    public class ttthietbiDTO
     {
-        public int MaLoai { get; set; }
-        public string TenLoai { get; set; }
+        public int Mattthietbi { get; set; }
+        public string Tenttthietbi { get; set; }
         public string Mota { get; set; }
-        public bool TrangThai { get; set; }
-
+        public bool TrangThai { get; set;}
     }
 }

@@ -40,6 +40,10 @@
             this.cboStateRoomType = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvloaiphong = new System.Windows.Forms.DataGridView();
+            this.colmaloai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coltenloai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colmota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coltrangthai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboSortRoomTypeID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortRoomTypeID = new System.Windows.Forms.Label();
             this.cboSortSoLuongRoom = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -47,10 +51,6 @@
             this.lblStateRoomType = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.colmaloai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coltenloai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colmota = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coltrangthai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRoomType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -117,6 +117,7 @@
             this.btnAddRoomType.Text = "Thêm";
             this.btnAddRoomType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddRoomType.UseVisualStyleBackColor = false;
+            this.btnAddRoomType.Click += new System.EventHandler(this.btnAddRoomType_Click);
             // 
             // btnEditRoomType
             // 
@@ -137,6 +138,7 @@
             this.btnEditRoomType.Text = "Sửa";
             this.btnEditRoomType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditRoomType.UseVisualStyleBackColor = false;
+            this.btnEditRoomType.Click += new System.EventHandler(this.btnEditRoomType_Click);
             // 
             // btnDeleteRoomType
             // 
@@ -151,12 +153,13 @@
             this.btnDeleteRoomType.Size = new System.Drawing.Size(191, 41);
             this.btnDeleteRoomType.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnDeleteRoomType.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteRoomType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnDeleteRoomType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDeleteRoomType.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnDeleteRoomType.TabIndex = 4;
             this.btnDeleteRoomType.Text = "Xóa";
             this.btnDeleteRoomType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeleteRoomType.UseVisualStyleBackColor = false;
+            this.btnDeleteRoomType.Click += new System.EventHandler(this.btnDeleteRoomType_Click);
             // 
             // btnRecoverRoomType
             // 
@@ -177,6 +180,7 @@
             this.btnRecoverRoomType.Text = "Khôi phục";
             this.btnRecoverRoomType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRecoverRoomType.UseVisualStyleBackColor = false;
+            this.btnRecoverRoomType.Click += new System.EventHandler(this.btnRecoverRoomType_Click);
             // 
             // txtSearchRoomType
             // 
@@ -257,13 +261,51 @@
             this.colmota,
             this.coltrangthai});
             this.dgvloaiphong.Location = new System.Drawing.Point(3, 0);
+            this.dgvloaiphong.MultiSelect = false;
             this.dgvloaiphong.Name = "dgvloaiphong";
             this.dgvloaiphong.ReadOnly = true;
             this.dgvloaiphong.RowHeadersVisible = false;
             this.dgvloaiphong.RowHeadersWidth = 51;
             this.dgvloaiphong.RowTemplate.Height = 24;
+            this.dgvloaiphong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvloaiphong.Size = new System.Drawing.Size(970, 746);
             this.dgvloaiphong.TabIndex = 0;
+            // 
+            // colmaloai
+            // 
+            this.colmaloai.DataPropertyName = "MaLoai";
+            this.colmaloai.HeaderText = "Mã Loại";
+            this.colmaloai.MinimumWidth = 6;
+            this.colmaloai.Name = "colmaloai";
+            this.colmaloai.ReadOnly = true;
+            this.colmaloai.Width = 125;
+            // 
+            // coltenloai
+            // 
+            this.coltenloai.DataPropertyName = "TenLoai";
+            this.coltenloai.HeaderText = "Tên Loại";
+            this.coltenloai.MinimumWidth = 6;
+            this.coltenloai.Name = "coltenloai";
+            this.coltenloai.ReadOnly = true;
+            this.coltenloai.Width = 125;
+            // 
+            // colmota
+            // 
+            this.colmota.DataPropertyName = "Mota";
+            this.colmota.HeaderText = "Mô Tả";
+            this.colmota.MinimumWidth = 6;
+            this.colmota.Name = "colmota";
+            this.colmota.ReadOnly = true;
+            this.colmota.Width = 125;
+            // 
+            // coltrangthai
+            // 
+            this.coltrangthai.DataPropertyName = "TrangThai";
+            this.coltrangthai.HeaderText = "Trạng Thái";
+            this.coltrangthai.MinimumWidth = 6;
+            this.coltrangthai.Name = "coltrangthai";
+            this.coltrangthai.ReadOnly = true;
+            this.coltrangthai.Width = 125;
             // 
             // cboSortRoomTypeID
             // 
@@ -360,42 +402,6 @@
             this.spcHeader.Size = new System.Drawing.Size(1370, 94);
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
-            // 
-            // colmaloai
-            // 
-            this.colmaloai.DataPropertyName = "MaLoai";
-            this.colmaloai.HeaderText = "Mã Loại";
-            this.colmaloai.MinimumWidth = 6;
-            this.colmaloai.Name = "colmaloai";
-            this.colmaloai.ReadOnly = true;
-            this.colmaloai.Width = 125;
-            // 
-            // coltenloai
-            // 
-            this.coltenloai.DataPropertyName = "TenLoai";
-            this.coltenloai.HeaderText = "Tên Loại";
-            this.coltenloai.MinimumWidth = 6;
-            this.coltenloai.Name = "coltenloai";
-            this.coltenloai.ReadOnly = true;
-            this.coltenloai.Width = 125;
-            // 
-            // colmota
-            // 
-            this.colmota.DataPropertyName = "Mota";
-            this.colmota.HeaderText = "Mô Tả";
-            this.colmota.MinimumWidth = 6;
-            this.colmota.Name = "colmota";
-            this.colmota.ReadOnly = true;
-            this.colmota.Width = 125;
-            // 
-            // coltrangthai
-            // 
-            this.coltrangthai.DataPropertyName = "TrangThai";
-            this.coltrangthai.HeaderText = "Trạng Thái";
-            this.coltrangthai.MinimumWidth = 6;
-            this.coltrangthai.Name = "coltrangthai";
-            this.coltrangthai.ReadOnly = true;
-            this.coltrangthai.Width = 125;
             // 
             // ucRoomType
             // 

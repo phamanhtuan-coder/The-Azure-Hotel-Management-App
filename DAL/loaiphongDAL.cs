@@ -10,6 +10,29 @@ namespace DAL
 {
     public class loaiphongDAL
     {
+        public static bool khoiphucloaiphong(int maloai)
+        {
+            string lenhXoaloaiphong =
+                "UPDATE LoaiPhong SET TrangThai = 1 WHERE MaLoai = @MaLoai";
+            SqlParameter parMaPhongBan = new SqlParameter("@MaLoai", maloai);
+            SqlConnection conn = DataProvider.KetNoiDuLieu();
+            conn.Open();
+            int kq = DataProvider.ThucHienCauLenh(lenhXoaloaiphong, conn, parMaPhongBan);
+            conn.Close();
+            return kq > 0;
+        }
+        public static bool xoaloaiphong(int maloai)
+        {
+            string lenhXoaloaiphong =
+                "UPDATE LoaiPhong SET TrangThai = 0 WHERE MaLoai = @MaLoai";
+            SqlParameter parMaPhongBan = new SqlParameter("@MaLoai",maloai );
+            SqlConnection conn = DataProvider.KetNoiDuLieu();
+            conn.Open();
+            int kq = DataProvider.ThucHienCauLenh(lenhXoaloaiphong, conn, parMaPhongBan);
+            conn.Close();
+            return kq > 0;
+        }
+
         public List<loaiphongDTO> laydsloaiphong()
         {
             List<loaiphongDTO> dslp=new List<loaiphongDTO>();
@@ -31,6 +54,38 @@ namespace DAL
             reader.Close();
             conn.Close();
             return dslp;
+        }
+
+        public bool sualphong(loaiphongDTO loaiphongDTO)
+        {
+            string lenhCapNhatlphong =
+                "UPDATE LoaiPhong SET TenLoai = @TenLoai, Mota = @Mota WHERE MaLoai = @MaLoai";
+            SqlParameter[] pars = new SqlParameter[3];
+
+            pars[0] = new SqlParameter("TenLoai", loaiphongDTO.TenLoai);
+            pars[1] = new SqlParameter("Mota", loaiphongDTO.Mota);
+            pars[2] = new SqlParameter("MaLoai", loaiphongDTO.MaLoai);
+            SqlConnection conn = DataProvider.KetNoiDuLieu();
+            conn.Open();
+            int kq = DataProvider.ThucHienCauLenh(lenhCapNhatlphong, conn, pars);
+            conn.Close();
+            return kq > 0;
+        }
+
+        public bool themlphong(loaiphongDTO loaiphongDTO)
+        {
+            string lenhThemloaiphong =
+                "INSERT INTO LoaiPhong (TenLoai, Mota,TrangThai) VALUES (@TenLoai, @Mota, 1)";
+
+            SqlParameter[] pars = new SqlParameter[2];
+            pars[0] = new SqlParameter("TenLoai",loaiphongDTO.TenLoai );
+            pars[1] = new SqlParameter("Mota", loaiphongDTO.Mota);
+
+            SqlConnection conn = DataProvider.KetNoiDuLieu();
+            conn.Open();
+            int kq = DataProvider.ThucHienCauLenh(lenhThemloaiphong, conn, pars);
+            conn.Close();
+            return kq > 0;
         }
     }
 }

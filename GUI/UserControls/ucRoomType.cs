@@ -28,17 +28,139 @@ namespace GUI.UserControls
 
         private void ucRoomType_Load(object sender, EventArgs e)
         {
-            dslp = lpbll.laydslphong();
-            dgvloaiphong.DataSource=dslp;
+            layds();
             dgvloaiphong.AutoGenerateColumns = false;
             laycombo();
         }
 
+        private void layds()
+        {
+            dslp = lpbll.laydslphong();
+            dgvloaiphong.DataSource = dslp;
+        }
+
         private void laycombo()
         {
-            DuLieuChoComboBox.duLieuSort(cboSortRoomTypeID);
-            
+            DuLieuChoComboBox.duLieuSort(cboSortRoomTypeID);            
             DuLieuChoComboBox.duLieuFilter(cboStateRoomType);
         }
+
+        private void btnAddRoomType_Click(object sender, EventArgs e)
+        {
+            frmLoaiPhong frm=new frmLoaiPhong();
+            frm.isAdd=true;
+            frm.ShowDialog();
+            dgvloaiphong.ClearSelection();
+            layds();
+        }
+
+        private void btnEditRoomType_Click(object sender, EventArgs e)
+        {
+            if (dgvloaiphong.SelectedRows.Count > 0)
+            {
+                frmLoaiPhong frm = new frmLoaiPhong();
+                frm.isAdd = false;
+                LayDuLieuTuForm(frm);
+                frm.ShowDialog();
+                dgvloaiphong.ClearSelection();
+                layds();
+            }
+            else
+            {
+                //Thông báo nếu không có dòng được chọn
+                thongBao = new customMessageBox("Hãy chọn 1 dòng dữ liệu bạn muốn thay đổi!");
+                thongBao.ShowDialog();
+            }
+        }
+        private void LayDuLieuTuForm(frmLoaiPhong frm)
+        {
+            //Gán giá trị như bình thường
+            frm.loaiphong.MaLoai =(int) dgvloaiphong.SelectedRows[0].Cells["colmaloai"].Value;
+            frm.loaiphong.TenLoai = dgvloaiphong
+                .SelectedRows[0]
+                .Cells["coltenloai"]
+                .Value.ToString();
+            frm.loaiphong.Mota =dgvloaiphong.SelectedRows[0].Cells["colmota"].Value.ToString();
+            frm.loaiphong.TrangThai = Convert.ToBoolean(dgvloaiphong.SelectedRows[0].Cells["coltrangthai"].Value);
+        }
+
+        private void btnDeleteRoomType_Click(object sender, EventArgs e)
+        {
+            if (dgvloaiphong.SelectedRows.Count > 0)
+            {
+                thongBao = new customMessageBox(
+                    "Bạn có chắc chắn muốn xóa dòng dữ liệu này không?"
+                );
+                DialogResult dr = thongBao.ShowDialog();
+                if (dr == DialogResult.OK)
+                {
+                    int maloaiphong = (int)dgvloaiphong.SelectedRows[0].Cells["colmaloai"].Value;
+                    bool check = loaiphongBLL.Xoaloaip(maloaiphong);
+                    if (check)
+                    {
+
+                        dgvloaiphong.ClearSelection();
+                        layds();
+                        thongBao = new customMessageBox(
+                            "Xóa thành công dữ liệu có mã là: " + maloaiphong + "!"
+                        );
+                    }
+                    else
+                    {
+                        thongBao = new customMessageBox(
+                            "Xóa thất bại dữ liệu có mã là: " + maloaiphong + "!"
+                        );
+                    }
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Hủy xóa!");
+                }
+            }
+            else
+            {
+                thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn xóa!");
+
+            }
+            thongBao.ShowDialog();
+        }
+
+        private void btnRecoverRoomType_Click(object sender, EventArgs e)
+        {
+            if (dgvloaiphong.SelectedRows.Count > 0)
+            {
+                thongBao = new customMessageBox(
+                    "Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?"
+                );
+                DialogResult dr = thongBao.ShowDialog();
+                if (dr == DialogResult.OK)
+                {
+                    int maloaiphong = (int)dgvloaiphong.SelectedRows[0].Cells["colmaloai"].Value;
+                    bool check = loaiphongBLL.KhoiPhucloaip(maloaiphong);
+                    if (check)
+                    {
+
+                        dgvloaiphong.ClearSelection();
+                        layds();
+                        thongBao = new customMessageBox(
+                            "Khôi phục thành công dữ liệu có mã là: " + maloaiphong + "!"
+                        );
+                    }
+                    else
+                    {
+                        thongBao = new customMessageBox(
+                            "Khôi phục thất bại dữ liệu có mã là: " + maloaiphong + "!"
+                        );
+                    }
+                }
+            }
+            else
+            {
+                thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
+
+            }
+            thongBao.ShowDialog();
+        }
+    
     }
 }
