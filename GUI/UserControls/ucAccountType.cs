@@ -27,19 +27,30 @@ namespace GUI.UserControls
 
         private void ucAccountType_Load(object sender, EventArgs e)
         {
+            LoadCBBVaiTro();
+        }
+
+        private void LoadCBBVaiTro()
+        {
+            DuLieuChoComboBox.duLieuSort(cboSortAccountTypeID);
+            DuLieuChoComboBox.duLieuSort(cboChucVu);
+            DuLieuChoComboBox.duLieuSort(cboSortSoLuongAccount);
+            DuLieuChoComboBox.duLieuFilter(cboStateAccountType);
         }
 
         private void loadDSRole()
         {
-            vaiTroDTOs = vaiTroBLL.LoadDSRoleBLL();
-            dgvAccountType.DataSource=vaiTroDTOs;
-        }
-
-        private void loadDSRoleTT(int i)
-        {
-            vaiTroDTOs = vaiTroBLL.LoadDSRoleTTBLL(i);
+            vaiTroDTOs = vaiTroBLL.FilterTrangThai(cboStateAccountType.Text);
+            dgvAccountType.ClearSelection();
             dgvAccountType.DataSource = vaiTroDTOs;
         }
+
+        //private void loadDSRoleTT(int i)
+        //{
+        //    vaiTroDTOs = vaiTroBLL.LoadDSRoleTTBLL(i);
+        //    dgvAccountType.ClearSelection();
+        //    dgvAccountType.DataSource = vaiTroDTOs;
+        //}
 
         private void btnAddAccountType_Click(object sender, EventArgs e)
         {
@@ -106,9 +117,26 @@ namespace GUI.UserControls
             }
         }
 
-        private void lblAccountType_Click(object sender, EventArgs e)
+        private void cboSortAccountTypeID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cboChucVu_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cboSortSoLuongAccount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboStateAccountType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            vaiTroDTOs = vaiTroBLL.FilterTrangThai(cboStateAccountType.Text);
+            dgvAccountType.ClearSelection();
+            dgvAccountType.DataSource= vaiTroDTOs;
         }
     }
 }

@@ -82,7 +82,6 @@
             this.lblAccountType.TabIndex = 35;
             this.lblAccountType.Text = "ROLE";
             this.lblAccountType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblAccountType.Click += new System.EventHandler(this.lblAccountType_Click);
             // 
             // tlpController
             // 
@@ -227,6 +226,7 @@
             this.cboStateAccountType.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateAccountType.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateAccountType.TabIndex = 3;
+            this.cboStateAccountType.SelectedIndexChanged += new System.EventHandler(this.cboStateAccountType_SelectedIndexChanged);
             // 
             // spcQuery
             // 
@@ -295,6 +295,7 @@
             this.cboChucVu.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboChucVu.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboChucVu.TabIndex = 31;
+            this.cboChucVu.SelectedIndexChanged += new System.EventHandler(this.cboChucVu_SelectedIndexChanged);
             // 
             // lblSortTheoChucVu
             // 
@@ -323,6 +324,7 @@
             this.cboSortAccountTypeID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortAccountTypeID.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortAccountTypeID.TabIndex = 29;
+            this.cboSortAccountTypeID.SelectedIndexChanged += new System.EventHandler(this.cboSortAccountTypeID_SelectedIndexChanged);
             // 
             // lblSortAccountTypeID
             // 
@@ -351,6 +353,7 @@
             this.cboSortSoLuongAccount.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortSoLuongAccount.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortSoLuongAccount.TabIndex = 23;
+            this.cboSortSoLuongAccount.SelectedIndexChanged += new System.EventHandler(this.cboSortSoLuongAccount_SelectedIndexChanged);
             // 
             // lblSortSoLuongAccount
             // 
