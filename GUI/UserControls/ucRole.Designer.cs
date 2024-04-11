@@ -82,7 +82,7 @@
             this.lblRole.Name = "lblRole";
             this.lblRole.Size = new System.Drawing.Size(972, 94);
             this.lblRole.TabIndex = 35;
-            this.lblRole.Text = "PERMISSION ALLCCATION";
+            this.lblRole.Text = "PERMISSION";
             this.lblRole.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tlpController
