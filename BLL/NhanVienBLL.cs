@@ -14,58 +14,9 @@ namespace BLL
     {
         NhanVienDAL nhanVienDAL = new NhanVienDAL();
 
-        public List<NhanVienDTO> FilterGioiTinh(string tt, string text)
+        public List<NhanVienDTO> Filer(int PhanQuyen, string PhongBan, string GioiTinh, int NguoiQuanLy, string TrangThai)
         {
-            if (tt == "Đang hoạt động")
-            {
-                if (text == "Nam" || text=="Nữ")
-                {
-                    return nhanVienDAL.LoadDSNhanVienGTTTDAL(text, 1);
-                }
-                else
-                {
-                    return nhanVienDAL.LoadDSNhanVienTTDAL(1);
-                }
-                
-            }
-            else if (tt == "Đã xóa")
-            {
-                if (text == "Nam" || text == "Nữ")
-                {
-                    return nhanVienDAL.LoadDSNhanVienGTTTDAL(text, 0);
-                }
-                else
-                {
-                    return nhanVienDAL.LoadDSNhanVienTTDAL(0);
-                }
-            }
-            else
-            {
-                if (text == "Nam" || text == "Nữ")
-                {
-                    return nhanVienDAL.LoadDSNhanVienGTDAL(text);
-                }
-                else
-                {
-                    return nhanVienDAL.LoadDSNhanVienDAL();
-                }
-            }
-        }
-
-        public List<NhanVienDTO> FilterTrangThai(string text)
-        {
-            if (text == "Đang hoạt động")
-            {
-                return nhanVienDAL.LoadDSNhanVienTTDAL(1);
-            }
-            else if (text == "Đã xóa")
-            {
-                return nhanVienDAL.LoadDSNhanVienTTDAL(0);
-            }
-            else
-            {
-                return nhanVienDAL.LoadDSNhanVienDAL();
-            }
+            return nhanVienDAL.Filter(PhanQuyen, PhongBan, GioiTinh, NguoiQuanLy, TrangThai);
         }
 
         public List<NhanVienDTO> LoadIDAndNameBLL()

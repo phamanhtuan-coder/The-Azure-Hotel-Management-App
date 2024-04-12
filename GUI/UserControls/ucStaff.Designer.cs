@@ -58,13 +58,11 @@
             this.lblSortGioiTinh = new System.Windows.Forms.Label();
             this.cboPhongBan = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSorttheoPhong = new System.Windows.Forms.Label();
-            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.cboPhanQuyen = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortMaPQ = new System.Windows.Forms.Label();
             this.cboSortStaffID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortStaffID = new System.Windows.Forms.Label();
             this.cboStateAccounts = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.lblNgaySinh = new System.Windows.Forms.Label();
             this.lblStateAccounts = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
@@ -247,13 +245,11 @@
             this.spcQuery.Panel2.Controls.Add(this.lblSortGioiTinh);
             this.spcQuery.Panel2.Controls.Add(this.cboPhongBan);
             this.spcQuery.Panel2.Controls.Add(this.lblSorttheoPhong);
-            this.spcQuery.Panel2.Controls.Add(this.dtpNgaySinh);
             this.spcQuery.Panel2.Controls.Add(this.cboPhanQuyen);
             this.spcQuery.Panel2.Controls.Add(this.lblSortMaPQ);
             this.spcQuery.Panel2.Controls.Add(this.cboSortStaffID);
             this.spcQuery.Panel2.Controls.Add(this.lblSortStaffID);
             this.spcQuery.Panel2.Controls.Add(this.cboStateAccounts);
-            this.spcQuery.Panel2.Controls.Add(this.lblNgaySinh);
             this.spcQuery.Panel2.Controls.Add(this.lblStateAccounts);
             this.spcQuery.Panel2.Controls.Add(this.txtSearchStaff);
             this.spcQuery.Panel2.Controls.Add(this.btnTraCuuStaff);
@@ -404,7 +400,7 @@
             this.cboNguoiQuanLy.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboNguoiQuanLy.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboNguoiQuanLy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboNguoiQuanLy.Location = new System.Drawing.Point(226, 365);
+            this.cboNguoiQuanLy.Location = new System.Drawing.Point(226, 309);
             this.cboNguoiQuanLy.Name = "cboNguoiQuanLy";
             this.cboNguoiQuanLy.Size = new System.Drawing.Size(156, 33);
             this.cboNguoiQuanLy.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -419,7 +415,7 @@
             // 
             this.lblSortNQL.AutoSize = true;
             this.lblSortNQL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortNQL.Location = new System.Drawing.Point(3, 372);
+            this.lblSortNQL.Location = new System.Drawing.Point(3, 316);
             this.lblSortNQL.Name = "lblSortNQL";
             this.lblSortNQL.Size = new System.Drawing.Size(140, 24);
             this.lblSortNQL.TabIndex = 37;
@@ -471,6 +467,7 @@
             this.cboPhongBan.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboPhongBan.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPhongBan.TabIndex = 34;
+            this.cboPhongBan.SelectedIndexChanged += new System.EventHandler(this.cboPhongBan_SelectedIndexChanged);
             // 
             // lblSorttheoPhong
             // 
@@ -482,15 +479,6 @@
             this.lblSorttheoPhong.TabIndex = 33;
             this.lblSorttheoPhong.Text = "Lọc theo Phòng";
             this.lblSorttheoPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // dtpNgaySinh
-            // 
-            this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(226, 313);
-            this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(156, 26);
-            this.dtpNgaySinh.TabIndex = 32;
             // 
             // cboPhanQuyen
             // 
@@ -508,6 +496,7 @@
             this.cboPhanQuyen.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboPhanQuyen.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPhanQuyen.TabIndex = 31;
+            this.cboPhanQuyen.SelectedIndexChanged += new System.EventHandler(this.cboPhanQuyen_SelectedIndexChanged);
             // 
             // lblSortMaPQ
             // 
@@ -555,7 +544,7 @@
             this.cboStateAccounts.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboStateAccounts.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboStateAccounts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateAccounts.Location = new System.Drawing.Point(226, 423);
+            this.cboStateAccounts.Location = new System.Drawing.Point(226, 367);
             this.cboStateAccounts.Name = "cboStateAccounts";
             this.cboStateAccounts.Size = new System.Drawing.Size(156, 33);
             this.cboStateAccounts.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -566,22 +555,11 @@
             this.cboStateAccounts.TabIndex = 23;
             this.cboStateAccounts.SelectedIndexChanged += new System.EventHandler(this.cboStateAccounts_SelectedIndexChanged);
             // 
-            // lblNgaySinh
-            // 
-            this.lblNgaySinh.AutoSize = true;
-            this.lblNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgaySinh.Location = new System.Drawing.Point(3, 314);
-            this.lblNgaySinh.Name = "lblNgaySinh";
-            this.lblNgaySinh.Size = new System.Drawing.Size(103, 24);
-            this.lblNgaySinh.TabIndex = 14;
-            this.lblNgaySinh.Text = "Ngày sinh";
-            this.lblNgaySinh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // lblStateAccounts
             // 
             this.lblStateAccounts.AutoSize = true;
             this.lblStateAccounts.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStateAccounts.Location = new System.Drawing.Point(3, 430);
+            this.lblStateAccounts.Location = new System.Drawing.Point(3, 374);
             this.lblStateAccounts.Name = "lblStateAccounts";
             this.lblStateAccounts.Size = new System.Drawing.Size(174, 24);
             this.lblStateAccounts.TabIndex = 9;
@@ -668,8 +646,6 @@
         private System.Windows.Forms.Label lblSortStaffID;
         private Syncfusion.WinForms.ListView.SfComboBox cboPhanQuyen;
         private System.Windows.Forms.Label lblSortMaPQ;
-        private System.Windows.Forms.DateTimePicker dtpNgaySinh;
-        private System.Windows.Forms.Label lblNgaySinh;
         private Syncfusion.WinForms.ListView.SfComboBox cboPhongBan;
         private System.Windows.Forms.Label lblSorttheoPhong;
         private Syncfusion.WinForms.ListView.SfComboBox cboGioiTinh;
