@@ -153,9 +153,17 @@ namespace GUI.UserControls
 
         private void cboGioiTinh_SelectedIndexChanged(object sender, EventArgs e)
         {
-            nhanVienDTOs = nhanVienBLL.FilterGioiTinh(cboGioiTinh.Text);
+            nhanVienDTOs = nhanVienBLL.FilterGioiTinh(cboStateAccounts.Text,cboGioiTinh.Text);
             dgvStaff.ClearSelection();
             dgvStaff.DataSource = nhanVienDTOs;
+        }
+
+        private void cboNguoiQuanLy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //int MaNQL = (int)cboNguoiQuanLy.SelectedValue;
+            //nhanVienDTOs = nhanVienBLL.FilterNQL(MaNQL);
+            //dgvStaff.ClearSelection();
+            //dgvStaff.DataSource = nhanVienDTOs;
         }
     }
 }

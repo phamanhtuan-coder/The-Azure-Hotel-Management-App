@@ -14,19 +14,41 @@ namespace BLL
     {
         NhanVienDAL nhanVienDAL = new NhanVienDAL();
 
-        public List<NhanVienDTO> FilterGioiTinh(string text)
+        public List<NhanVienDTO> FilterGioiTinh(string tt, string text)
         {
-            if (text == "Nam")
+            if (tt == "Đang hoạt động")
             {
-                return nhanVienDAL.LoadDSNhanVienGTDAL(text);
+                if (text == "Nam" || text=="Nữ")
+                {
+                    return nhanVienDAL.LoadDSNhanVienGTTTDAL(text, 1);
+                }
+                else
+                {
+                    return nhanVienDAL.LoadDSNhanVienTTDAL(1);
+                }
+                
             }
-            else if (text == "Nữ")
+            else if (tt == "Đã xóa")
             {
-                return nhanVienDAL.LoadDSNhanVienGTDAL(text);
+                if (text == "Nam" || text == "Nữ")
+                {
+                    return nhanVienDAL.LoadDSNhanVienGTTTDAL(text, 0);
+                }
+                else
+                {
+                    return nhanVienDAL.LoadDSNhanVienTTDAL(0);
+                }
             }
             else
             {
-                return nhanVienDAL.LoadDSNhanVienDAL();
+                if (text == "Nam" || text == "Nữ")
+                {
+                    return nhanVienDAL.LoadDSNhanVienGTDAL(text);
+                }
+                else
+                {
+                    return nhanVienDAL.LoadDSNhanVienDAL();
+                }
             }
         }
 
