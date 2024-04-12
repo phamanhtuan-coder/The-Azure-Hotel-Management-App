@@ -13,12 +13,12 @@ namespace DAL
     {
         public static bool khoiphucloaiphong(int maloai)
         {
-            string lenhXoaloaiphong =
+            string lenhkploaiphong =
                 "UPDATE LoaiPhong SET TrangThai = 1 WHERE MaLoai = @MaLoai";
-            SqlParameter parMaPhongBan = new SqlParameter("@MaLoai", maloai);
+            SqlParameter par = new SqlParameter("@MaLoai", maloai);
             SqlConnection conn = DataProvider.KetNoiDuLieu();
             conn.Open();
-            int kq = DataProvider.ThucHienCauLenh(lenhXoaloaiphong, conn, parMaPhongBan);
+            int kq = DataProvider.ThucHienCauLenh(lenhkploaiphong, conn, par);
             conn.Close();
             return kq > 0;
         }
@@ -26,10 +26,10 @@ namespace DAL
         {
             string lenhXoaloaiphong =
                 "UPDATE LoaiPhong SET TrangThai = 0 WHERE MaLoai = @MaLoai";
-            SqlParameter parMaPhongBan = new SqlParameter("@MaLoai",maloai );
+            SqlParameter par = new SqlParameter("@MaLoai",maloai );
             SqlConnection conn = DataProvider.KetNoiDuLieu();
             conn.Open();
-            int kq = DataProvider.ThucHienCauLenh(lenhXoaloaiphong, conn, parMaPhongBan);
+            int kq = DataProvider.ThucHienCauLenh(lenhXoaloaiphong, conn, par);
             conn.Close();
             return kq > 0;
         }

@@ -49,12 +49,10 @@ namespace GUI.customForm
         private void btnSubmit_Click(object sender, EventArgs e)
         {
 
-            // Kiểm tra if tiến hành xử lý sự kiện thêm/sửa 
             laydltuform(loaiphong);
             bool check;
             if (isAdd)
             {
-                // Nếu đúng là form Thêm thì chạy lệnh insert
 
                 check = loaiphongBLL.themloaiphong(loaiphong);
                 if (check)
@@ -66,7 +64,6 @@ namespace GUI.customForm
             }
             else
             {
-                // nếu không thì chạy lệnh update
                 check = loaiphongBLL.sualoaiphong(loaiphong);
                 if (check)
                 {

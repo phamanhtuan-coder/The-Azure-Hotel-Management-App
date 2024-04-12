@@ -39,6 +39,7 @@
             this.btnTraCuuDeviceStatus = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateDeviceStatus = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
+            this.dgvDeviceStatus = new System.Windows.Forms.DataGridView();
             this.cboSortDeviceStatusID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortDeviceStatusD = new System.Windows.Forms.Label();
             this.cboSortSoLuongTB = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -46,17 +47,17 @@
             this.lblStateDeviceStatus = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.dgvDeviceStatus = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenTinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaTinhTrangThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenTinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateDeviceStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
             this.spcQuery.Panel1.SuspendLayout();
             this.spcQuery.Panel2.SuspendLayout();
             this.spcQuery.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDeviceStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortDeviceStatusID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortSoLuongTB)).BeginInit();
             this.panUcHeader.SuspendLayout();
@@ -64,7 +65,6 @@
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDeviceStatus)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDeviceStatus
@@ -187,7 +187,7 @@
             this.txtSearchDeviceStatus.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchDeviceStatus.Location = new System.Drawing.Point(6, 16);
             this.txtSearchDeviceStatus.Name = "txtSearchDeviceStatus";
-            this.txtSearchDeviceStatus.Size = new System.Drawing.Size(251, 40);
+            this.txtSearchDeviceStatus.Size = new System.Drawing.Size(251, 49);
             this.txtSearchDeviceStatus.TabIndex = 2;
             // 
             // btnTraCuuDeviceStatus
@@ -250,6 +250,27 @@
             this.spcQuery.SplitterDistance = 973;
             this.spcQuery.TabIndex = 38;
             // 
+            // dgvDeviceStatus
+            // 
+            this.dgvDeviceStatus.AllowUserToAddRows = false;
+            this.dgvDeviceStatus.AllowUserToDeleteRows = false;
+            this.dgvDeviceStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDeviceStatus.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colMaTinhTrangThietBi,
+            this.colTenTinhTrang,
+            this.colMoTa,
+            this.colTrangThai});
+            this.dgvDeviceStatus.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dgvDeviceStatus.Location = new System.Drawing.Point(0, 0);
+            this.dgvDeviceStatus.MultiSelect = false;
+            this.dgvDeviceStatus.Name = "dgvDeviceStatus";
+            this.dgvDeviceStatus.ReadOnly = true;
+            this.dgvDeviceStatus.RowHeadersVisible = false;
+            this.dgvDeviceStatus.RowHeadersWidth = 51;
+            this.dgvDeviceStatus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDeviceStatus.Size = new System.Drawing.Size(973, 746);
+            this.dgvDeviceStatus.TabIndex = 0;
+            // 
             // cboSortDeviceStatusID
             // 
             this.cboSortDeviceStatusID.DelimiterChar = "";
@@ -273,7 +294,7 @@
             this.lblSortDeviceStatusD.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortDeviceStatusD.Location = new System.Drawing.Point(2, 86);
             this.lblSortDeviceStatusD.Name = "lblSortDeviceStatusD";
-            this.lblSortDeviceStatusD.Size = new System.Drawing.Size(170, 26);
+            this.lblSortDeviceStatusD.Size = new System.Drawing.Size(218, 33);
             this.lblSortDeviceStatusD.TabIndex = 28;
             this.lblSortDeviceStatusD.Text = "Sort theo ID loại";
             this.lblSortDeviceStatusD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -301,7 +322,7 @@
             this.lblSortSoLuongTB.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortSoLuongTB.Location = new System.Drawing.Point(2, 143);
             this.lblSortSoLuongTB.Name = "lblSortSoLuongTB";
-            this.lblSortSoLuongTB.Size = new System.Drawing.Size(185, 26);
+            this.lblSortSoLuongTB.Size = new System.Drawing.Size(241, 33);
             this.lblSortSoLuongTB.TabIndex = 14;
             this.lblSortSoLuongTB.Text = "Lọc theo số lượng";
             this.lblSortSoLuongTB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -312,7 +333,7 @@
             this.lblStateDeviceStatus.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStateDeviceStatus.Location = new System.Drawing.Point(2, 200);
             this.lblStateDeviceStatus.Name = "lblStateDeviceStatus";
-            this.lblStateDeviceStatus.Size = new System.Drawing.Size(186, 26);
+            this.lblStateDeviceStatus.Size = new System.Drawing.Size(237, 33);
             this.lblStateDeviceStatus.TabIndex = 9;
             this.lblStateDeviceStatus.Text = "Trạng thái dữ liệu";
             this.lblStateDeviceStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -346,52 +367,52 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // dgvDeviceStatus
+            // colMaTinhTrangThietBi
             // 
-            this.dgvDeviceStatus.AllowUserToAddRows = false;
-            this.dgvDeviceStatus.AllowUserToDeleteRows = false;
-            this.dgvDeviceStatus.AllowUserToResizeColumns = false;
-            this.dgvDeviceStatus.AllowUserToResizeRows = false;
-            this.dgvDeviceStatus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDeviceStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDeviceStatus.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.TenTinhTrang,
-            this.MoTa,
-            this.TrangThai});
-            this.dgvDeviceStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDeviceStatus.Location = new System.Drawing.Point(0, 0);
-            this.dgvDeviceStatus.MultiSelect = false;
-            this.dgvDeviceStatus.Name = "dgvDeviceStatus";
-            this.dgvDeviceStatus.ReadOnly = true;
-            this.dgvDeviceStatus.RowHeadersVisible = false;
-            this.dgvDeviceStatus.Size = new System.Drawing.Size(973, 746);
-            this.dgvDeviceStatus.TabIndex = 0;
+            this.colMaTinhTrangThietBi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colMaTinhTrangThietBi.DataPropertyName = "MaTinhTrangThietBi";
+            this.colMaTinhTrangThietBi.FillWeight = 9.625669F;
+            this.colMaTinhTrangThietBi.HeaderText = "Mã tình trạng thiết bị";
+            this.colMaTinhTrangThietBi.MinimumWidth = 6;
+            this.colMaTinhTrangThietBi.Name = "colMaTinhTrangThietBi";
+            this.colMaTinhTrangThietBi.ReadOnly = true;
+            this.colMaTinhTrangThietBi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colMaTinhTrangThietBi.Width = 209;
             // 
-            // ID
+            // colTenTinhTrang
             // 
-            this.ID.HeaderText = "Mã tình trạng thiết bị";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
+            this.colTenTinhTrang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colTenTinhTrang.DataPropertyName = "TenTinhTrang";
+            this.colTenTinhTrang.FillWeight = 197.8592F;
+            this.colTenTinhTrang.HeaderText = "Tên tình trạng";
+            this.colTenTinhTrang.MinimumWidth = 6;
+            this.colTenTinhTrang.Name = "colTenTinhTrang";
+            this.colTenTinhTrang.ReadOnly = true;
+            this.colTenTinhTrang.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colTenTinhTrang.Width = 167;
             // 
-            // TenTinhTrang
+            // colMoTa
             // 
-            this.TenTinhTrang.HeaderText = "Tên tình trạng";
-            this.TenTinhTrang.Name = "TenTinhTrang";
-            this.TenTinhTrang.ReadOnly = true;
+            this.colMoTa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colMoTa.DataPropertyName = "MoTa";
+            this.colMoTa.FillWeight = 92.51511F;
+            this.colMoTa.HeaderText = "Mô tả";
+            this.colMoTa.MinimumWidth = 6;
+            this.colMoTa.Name = "colMoTa";
+            this.colMoTa.ReadOnly = true;
+            this.colMoTa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colMoTa.Width = 73;
             // 
-            // MoTa
+            // colTrangThai
             // 
-            this.MoTa.HeaderText = "Mô tả";
-            this.MoTa.Name = "MoTa";
-            this.MoTa.ReadOnly = true;
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.HeaderText = "Trạng thái";
-            this.TrangThai.Name = "TrangThai";
-            this.TrangThai.ReadOnly = true;
-            this.TrangThai.Visible = false;
+            this.colTrangThai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.MinimumWidth = 6;
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colTrangThai.Width = 131;
             // 
             // ucDeviceStatus
             // 
@@ -410,6 +431,7 @@
             this.spcQuery.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).EndInit();
             this.spcQuery.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDeviceStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortDeviceStatusID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortSoLuongTB)).EndInit();
             this.panUcHeader.ResumeLayout(false);
@@ -417,7 +439,6 @@
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDeviceStatus)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -442,9 +463,9 @@
         private Syncfusion.WinForms.ListView.SfComboBox cboSortDeviceStatusID;
         private System.Windows.Forms.Label lblSortDeviceStatusD;
         private System.Windows.Forms.DataGridView dgvDeviceStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenTinhTrang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MoTa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaTinhTrangThietBi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTenTinhTrang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMoTa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
     }
 }
