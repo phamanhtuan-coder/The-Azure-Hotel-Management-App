@@ -37,5 +37,29 @@ namespace BLL
         {
             return loaiphong.themlphong(loaiphongDTO);
         }
+
+        public List<LoaiPhongDTO> TraCuuLoaiPhong(List<LoaiPhongDTO> dsloaip, string searchKeyword)
+        {
+            List<LoaiPhongDTO> searchResults = dsloaip.Where(item =>
+             item.TenLoai.Contains(searchKeyword)
+         ).ToList();
+            return searchResults;
+        }
+
+        public List<LoaiPhongDTO> FilterTrangThai(string trangthai)
+        {
+            if (trangthai == "Đang hoạt động")
+            {
+                return loaiphong.FilterTrangThai(true);
+            }
+            else if (trangthai == "Đã xóa")
+            {
+                return loaiphong.FilterTrangThai(false);
+            }
+            else
+            {
+                return loaiphong.laydsloaiphong();
+            }
+        }
     }
 }

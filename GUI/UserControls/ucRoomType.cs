@@ -19,6 +19,7 @@ namespace GUI.UserControls
         public customMessageBox thongBao;
 
         List<LoaiPhongDTO> dslp = new List<LoaiPhongDTO>();
+        List<LoaiPhongDTO> dslptk = new List<LoaiPhongDTO>();
         LoaiPhongBLL lpbll = new LoaiPhongBLL();
         public ucRoomType()
         {
@@ -162,6 +163,46 @@ namespace GUI.UserControls
             }
             thongBao.ShowDialog();
         }
-    
+
+        private void btnTraCuuRoomType_Click(object sender, EventArgs e)
+        {
+            dslp = lpbll.laydslphong();
+            dgvloaiphong.DataSource = dslp;
+            string searchKeyword = txtSearchRoomType.Text.Trim();
+            if (searchKeyword.Count() > 0)
+            {
+                dslptk = lpbll.TraCuuLoaiPhong(dslp, searchKeyword);
+
+                dgvloaiphong.DataSource = dslptk;
+
+            }
+            else
+            {
+                layds();
+            }
+        }
+
+        private void cboStateRoomType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dslp = lpbll.FilterTrangThai(cboStateRoomType.Text);
+            dgvloaiphong.ClearSelection();
+            dgvloaiphong.DataSource = dslp;
+        }
+
+        private void cboSortRoomTypeID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sortOption = cboSortRoomTypeID.SelectedItem.ToString();
+            switch (sortOption)
+            {
+                case "Giảm dần":
+                    dslp = dslp.OrderByDescending(item => item.MaLoai).ToList();
+                    break;
+                default:
+                    dslp = dslp.OrderBy(item => item.MaLoai).ToList();
+                    break;
+            }
+
+            dgvloaiphong.DataSource = dslp;
+        }
     }
 }

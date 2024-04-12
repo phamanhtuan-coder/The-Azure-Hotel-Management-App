@@ -221,6 +221,7 @@ namespace GUI.UserControls
 
         private void btnTraCuuDepartment_Click(object sender, EventArgs e)
         {
+            
             dgvDepartment.DataSource = dsPhongBan;
             string searchKeyword = txtSearchDepartment.Text.Trim().ToLower();
             if (searchKeyword.Count() > 0)

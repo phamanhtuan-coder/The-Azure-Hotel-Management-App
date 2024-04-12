@@ -174,7 +174,7 @@
             this.btnRecoverRoomType.Size = new System.Drawing.Size(191, 41);
             this.btnRecoverRoomType.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverRoomType.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverRoomType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnRecoverRoomType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnRecoverRoomType.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRecoverRoomType.TabIndex = 5;
             this.btnRecoverRoomType.Text = "Khôi phục";
@@ -206,6 +206,7 @@
             this.btnTraCuuRoomType.TabIndex = 0;
             this.btnTraCuuRoomType.Text = "Tra cứu";
             this.btnTraCuuRoomType.UseVisualStyleBackColor = false;
+            this.btnTraCuuRoomType.Click += new System.EventHandler(this.btnTraCuuRoomType_Click);
             // 
             // cboStateRoomType
             // 
@@ -223,6 +224,7 @@
             this.cboStateRoomType.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateRoomType.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateRoomType.TabIndex = 3;
+            this.cboStateRoomType.SelectedIndexChanged += new System.EventHandler(this.cboStateRoomType_SelectedIndexChanged);
             // 
             // spcQuery
             // 
@@ -323,6 +325,7 @@
             this.cboSortRoomTypeID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortRoomTypeID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortRoomTypeID.TabIndex = 29;
+            this.cboSortRoomTypeID.SelectedIndexChanged += new System.EventHandler(this.cboSortRoomTypeID_SelectedIndexChanged);
             // 
             // lblSortRoomTypeID
             // 

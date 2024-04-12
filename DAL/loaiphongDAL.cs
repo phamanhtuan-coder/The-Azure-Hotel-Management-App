@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,33 @@ namespace DAL
             int kq = DataProvider.ThucHienCauLenh(lenhXoaloaiphong, conn, parMaPhongBan);
             conn.Close();
             return kq > 0;
+        }
+
+        public List<LoaiPhongDTO> FilterTrangThai(bool v)
+        {
+            List<LoaiPhongDTO> dsLoaiPhong = new List<LoaiPhongDTO>();
+
+            // Create the SQL query with a parameterized filter
+            string lenhLayDanhSachLoaiPhong = "SELECT * FROM LoaiPhong WHERE TrangThai = @TrangThai";
+
+            // Establish connection
+            SqlConnection conn = DataProvider.KetNoiDuLieu();
+
+            conn.Open();
+
+            SqlDataReader reader = DataProvider.ThucHienTruyVan(lenhLayDanhSachLoaiPhong, conn, "@TrangThai", SqlDbType.Binary, v ? (object)1 : (object)0);
+            while (reader.Read())
+            {
+                LoaiPhongDTO LoaiPhongDTO = new LoaiPhongDTO();
+                LoaiPhongDTO.MaLoai =(int) reader[0];
+                LoaiPhongDTO.TenLoai = reader[1].ToString();
+                LoaiPhongDTO.Mota = reader[2].ToString();
+                LoaiPhongDTO.TrangThai = v;
+
+                dsLoaiPhong.Add(LoaiPhongDTO);
+            }
+
+            return dsLoaiPhong;
         }
 
         public List<LoaiPhongDTO> laydsloaiphong()
