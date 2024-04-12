@@ -168,5 +168,35 @@ namespace DAL
                 return new List<VaiTroDTO>();
             }
         }
+
+        public List<VaiTroDTO> LoadIDAndNameDAL()
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spIDandName", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                SqlDataReader reader = com.ExecuteReader();
+                list = new List<VaiTroDTO>();
+                while (reader.Read())
+                {
+                    VaiTroDTO vaiTro = new VaiTroDTO();
+
+                    vaiTro.MaVaiTro = (int) reader["MaVaiTro"];
+                    vaiTro.TenVaiTro = reader["TenVaiTro"].ToString();
+
+                    list.Add(vaiTro);
+                }
+
+                conn.Close();
+                return list;
+            }
+            catch (Exception)
+            {
+                return new List<VaiTroDTO>();
+            }
+        }
     }
 }

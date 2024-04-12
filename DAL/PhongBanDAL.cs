@@ -106,6 +106,36 @@ namespace DAL
             return dsPhongBan;
         }
 
+        public List<PhongBanDTO> LoadIDAndNameDAL()
+        {
+            List<PhongBanDTO> list = new List<PhongBanDTO>();
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spIDandNamePB", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                SqlDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    PhongBanDTO phongBan = new PhongBanDTO();
+
+                    phongBan.MaPhongBan = reader["MaPhongBan"].ToString();
+                    phongBan.TenPhong = reader["TenPhong"].ToString();
+
+                    list.Add(phongBan);
+                }
+
+                conn.Close();
+                return list;
+            }
+            catch (Exception)
+            {
+                return new List<PhongBanDTO>();
+            }
+        }
+
         public bool SuaPhongBan(PhongBanDTO phongBanDTO)
         {
             string lenhCapNhatPhongBan =

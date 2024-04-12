@@ -45,6 +45,11 @@ namespace BLL
             return phongBanDaL.LayDanhSachPhongBan();
         }
 
+        public List<PhongBanDTO> LoadIDAndNameBLL()
+        {
+            return phongBanDaL.LoadIDAndNameDAL();
+        }
+
         public bool SuaPhongBan(PhongBanDTO phongBanDTO)
         {
            return phongBanDaL.SuaPhongBan(phongBanDTO);

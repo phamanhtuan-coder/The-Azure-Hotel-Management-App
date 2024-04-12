@@ -1,4 +1,6 @@
-﻿using GUI.customForm;
+﻿using BLL;
+using DTO;
+using GUI.customForm;
 using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
@@ -9,12 +11,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GUI.UserControls
 {
     public partial class ucStaff : UserControl
     {
-
+        NhanVienBLL nhanVienBLL = new NhanVienBLL();
         public ucStaff()
         {
             InitializeComponent();
@@ -22,7 +25,51 @@ namespace GUI.UserControls
 
         private void ucStaff_Load(object sender, EventArgs e)
         {
-           
+            CapNhatCBBNhanVien();
+            LoadVaiTro();
+            LoadPhong();
+            loadNQL();
+        }
+
+        private void loadNQL()
+        {
+            List<NhanVienDTO> nhanVienDTOs = nhanVienBLL.LoadIDAndNameBLL();
+            cboNguoiQuanLy.DataSource = nhanVienDTOs;
+            cboNguoiQuanLy.DisplayMember = "HoTenNV";
+            cboNguoiQuanLy.ValueMember= "MaNV";
+        }
+
+        private void LoadPhong()
+        {
+            PhongBanBLL phongBanBLL = new PhongBanBLL();
+            List<PhongBanDTO> phongBanDTOs = phongBanBLL.LoadIDAndNameBLL();
+            cboPhongBan.DataSource = phongBanDTOs;
+            cboPhongBan.DisplayMember = "TenPhong";
+            cboPhongBan.ValueMember = "MaPhongBan";
+            cboPhongBan.SelectedIndex = 0;
+        }
+
+        private void LoadVaiTro()
+        {
+            VaiTroBLL vaiTroBLL = new VaiTroBLL();
+            List<VaiTroDTO> vaiTroDTOs = vaiTroBLL.LoadIDAndNameBLL();
+            cboPhanQuyen.DataSource = vaiTroDTOs;
+            cboPhanQuyen.DisplayMember= "TenVaiTro";
+            cboPhanQuyen.ValueMember= "MaVaiTro";
+            cboPhanQuyen.SelectedIndex = 0;
+        }
+
+        private void CapNhatCBBNhanVien()
+        {
+            DuLieuChoComboBox.duLieuSort(cboSortStaffID);
+            DuLieuChoComboBox.duLieuFilter(cboStateAccounts);
+            List<string> sortOptions = new List<string>
+            {
+                "Nam",
+                "Nữ"
+            };
+            cboGioiTinh.DataSource = sortOptions;
+            cboGioiTinh.SelectedIndex = 0;
         }
 
         private void btnAddStaff_Click(object sender, EventArgs e)

@@ -81,5 +81,10 @@ namespace BLL
          ).ToList();
             return searchResults;
         }
+
+        public List<VaiTroDTO> LoadIDAndNameBLL()
+        {
+            return vaiTroDAL.LoadIDAndNameDAL();
+        }
     }
 }
