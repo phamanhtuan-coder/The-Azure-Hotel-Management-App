@@ -13,6 +13,23 @@ namespace BLL
     public class NhanVienBLL
     {
         NhanVienDAL nhanVienDAL = new NhanVienDAL();
+
+        public List<NhanVienDTO> FilterTrangThai(string text)
+        {
+            if (text == "Đang hoạt động")
+            {
+                return nhanVienDAL.LoadDSNhanVienTTDAL(1);
+            }
+            else if (text == "Đã xóa")
+            {
+                return nhanVienDAL.LoadDSNhanVienTTDAL(0);
+            }
+            else
+            {
+                return nhanVienDAL.LoadDSNhanVienDAL();
+            }
+        }
+
         public List<NhanVienDTO> LoadIDAndNameBLL()
         {
             return nhanVienDAL.LoadIDAndNameDAL();

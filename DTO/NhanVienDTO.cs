@@ -9,7 +9,7 @@ namespace DTO
     public class NhanVienDTO
     {
         public int MaNV { get; set; }
-        public int MaNQL { get; set; }
+        public int? MaNQL { get; set; }
         public int MaTaiKhoan { get; set; }
         public byte[] HinhAnh { get; set; }
         public string HoTenNV { get; set; }

@@ -18,9 +18,11 @@ namespace GUI.UserControls
     public partial class ucStaff : UserControl
     {
         NhanVienBLL nhanVienBLL = new NhanVienBLL();
+        List<NhanVienDTO> nhanVienDTOs = new List<NhanVienDTO>();
         public ucStaff()
         {
             InitializeComponent();
+            LoadDSNhanVien();
         }
 
         private void ucStaff_Load(object sender, EventArgs e)
@@ -31,12 +33,20 @@ namespace GUI.UserControls
             loadNQL();
         }
 
+        private void LoadDSNhanVien()
+        {
+            nhanVienDTOs = nhanVienBLL.FilterTrangThai(cboStateAccounts.Text);
+            dgvStaff.ClearSelection();
+            dgvStaff.DataSource = nhanVienDTOs;
+        }
+
         private void loadNQL()
         {
-            List<NhanVienDTO> nhanVienDTOs = nhanVienBLL.LoadIDAndNameBLL();
+            nhanVienDTOs = nhanVienBLL.LoadIDAndNameBLL();
             cboNguoiQuanLy.DataSource = nhanVienDTOs;
             cboNguoiQuanLy.DisplayMember = "HoTenNV";
             cboNguoiQuanLy.ValueMember= "MaNV";
+            cboNguoiQuanLy.SelectedIndex = 0;
         }
 
         private void LoadPhong()
@@ -133,6 +143,13 @@ namespace GUI.UserControls
                 customMessageBox thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
                 thongBao.ShowDialog();
             }
+        }
+
+        private void cboStateAccounts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            nhanVienDTOs = nhanVienBLL.FilterTrangThai(cboStateAccounts.Text);
+            dgvStaff.ClearSelection();
+            dgvStaff.DataSource = nhanVienDTOs;
         }
     }
 }
