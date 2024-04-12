@@ -20,5 +20,6 @@ namespace DTO
         public string DiaChi { get; set; }
         public decimal Luong { get; set; }
         public bool TrangThai { get; set; }
+        public string GioiTinh { get; set; }
     }
 }

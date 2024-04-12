@@ -58,6 +58,7 @@
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNQL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -272,6 +273,7 @@
             this.ID,
             this.MaNQL,
             this.MaTaiKhoan,
+            this.colGioiTinh,
             this.HoTen,
             this.HinhAnh,
             this.SDT,
@@ -334,6 +336,7 @@
             this.cboGioiTinh.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboGioiTinh.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboGioiTinh.TabIndex = 36;
+            this.cboGioiTinh.SelectedIndexChanged += new System.EventHandler(this.cboGioiTinh_SelectedIndexChanged);
             // 
             // lblSortGioiTinh
             // 
@@ -514,7 +517,7 @@
             this.ID.HeaderText = "Mã nhân viên";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
-            this.ID.Width = 92;
+            this.ID.Width = 117;
             // 
             // MaNQL
             // 
@@ -522,7 +525,7 @@
             this.MaNQL.HeaderText = "Mã người quản lý";
             this.MaNQL.Name = "MaNQL";
             this.MaNQL.ReadOnly = true;
-            this.MaNQL.Width = 95;
+            this.MaNQL.Width = 127;
             // 
             // MaTaiKhoan
             // 
@@ -532,13 +535,21 @@
             this.MaTaiKhoan.ReadOnly = true;
             this.MaTaiKhoan.Width = 115;
             // 
+            // colGioiTinh
+            // 
+            this.colGioiTinh.DataPropertyName = "GioiTinh";
+            this.colGioiTinh.HeaderText = "Giới tính";
+            this.colGioiTinh.Name = "colGioiTinh";
+            this.colGioiTinh.ReadOnly = true;
+            this.colGioiTinh.Width = 85;
+            // 
             // HoTen
             // 
             this.HoTen.DataPropertyName = "HoTenNV";
             this.HoTen.HeaderText = "Họ và tên";
             this.HoTen.Name = "HoTen";
             this.HoTen.ReadOnly = true;
-            this.HoTen.Width = 73;
+            this.HoTen.Width = 94;
             // 
             // HinhAnh
             // 
@@ -603,6 +614,7 @@
             this.TrangThai.Name = "TrangThai";
             this.TrangThai.ReadOnly = true;
             this.TrangThai.Visible = false;
+            this.TrangThai.Width = 97;
             // 
             // ucStaff
             // 
@@ -667,6 +679,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNQL;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTaiKhoan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn HinhAnh;
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;

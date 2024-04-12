@@ -56,7 +56,6 @@ namespace GUI.UserControls
             cboPhongBan.DataSource = phongBanDTOs;
             cboPhongBan.DisplayMember = "TenPhong";
             cboPhongBan.ValueMember = "MaPhongBan";
-            cboPhongBan.SelectedIndex = 0;
         }
 
         private void LoadVaiTro()
@@ -66,7 +65,6 @@ namespace GUI.UserControls
             cboPhanQuyen.DataSource = vaiTroDTOs;
             cboPhanQuyen.DisplayMember= "TenVaiTro";
             cboPhanQuyen.ValueMember= "MaVaiTro";
-            cboPhanQuyen.SelectedIndex = 0;
         }
 
         private void CapNhatCBBNhanVien()
@@ -75,6 +73,7 @@ namespace GUI.UserControls
             DuLieuChoComboBox.duLieuFilter(cboStateAccounts);
             List<string> sortOptions = new List<string>
             {
+                "Tất cả",
                 "Nam",
                 "Nữ"
             };
@@ -148,6 +147,13 @@ namespace GUI.UserControls
         private void cboStateAccounts_SelectedIndexChanged(object sender, EventArgs e)
         {
             nhanVienDTOs = nhanVienBLL.FilterTrangThai(cboStateAccounts.Text);
+            dgvStaff.ClearSelection();
+            dgvStaff.DataSource = nhanVienDTOs;
+        }
+
+        private void cboGioiTinh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            nhanVienDTOs = nhanVienBLL.FilterGioiTinh(cboGioiTinh.Text);
             dgvStaff.ClearSelection();
             dgvStaff.DataSource = nhanVienDTOs;
         }

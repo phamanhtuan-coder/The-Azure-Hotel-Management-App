@@ -14,6 +14,22 @@ namespace BLL
     {
         NhanVienDAL nhanVienDAL = new NhanVienDAL();
 
+        public List<NhanVienDTO> FilterGioiTinh(string text)
+        {
+            if (text == "Nam")
+            {
+                return nhanVienDAL.LoadDSNhanVienGTDAL(text);
+            }
+            else if (text == "Nữ")
+            {
+                return nhanVienDAL.LoadDSNhanVienGTDAL(text);
+            }
+            else
+            {
+                return nhanVienDAL.LoadDSNhanVienDAL();
+            }
+        }
+
         public List<NhanVienDTO> FilterTrangThai(string text)
         {
             if (text == "Đang hoạt động")
