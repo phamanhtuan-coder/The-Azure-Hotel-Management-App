@@ -9,31 +9,31 @@ using DAL;
 namespace BLL
 {
     
-    public class loaiphongBLL
+    public class LoaiPhongBLL
     {
-        loaiphongDAL loaiphong = new loaiphongDAL();
+        LoaiPhongDAL loaiphong = new LoaiPhongDAL();
 
         public static bool Xoaloaip(int maloaiphong)
         {
-            return loaiphongDAL.xoaloaiphong(maloaiphong);
+            return LoaiPhongDAL.xoaloaiphong(maloaiphong);
         }
         public static bool KhoiPhucloaip(int maloaiphong)
         {
-            return loaiphongDAL.khoiphucloaiphong(maloaiphong);
+            return LoaiPhongDAL.khoiphucloaiphong(maloaiphong);
         }
 
 
-        public List<loaiphongDTO> laydslphong()
+        public List<LoaiPhongDTO> laydslphong()
         {
             return loaiphong.laydsloaiphong();
         }
 
-        public bool sualoaiphong(loaiphongDTO loaiphongDTO)
+        public bool sualoaiphong(LoaiPhongDTO loaiphongDTO)
         {
             return loaiphong.sualphong(loaiphongDTO);
         }
 
-        public bool themloaiphong(loaiphongDTO loaiphongDTO)
+        public bool themloaiphong(LoaiPhongDTO loaiphongDTO)
         {
             return loaiphong.themlphong(loaiphongDTO);
         }

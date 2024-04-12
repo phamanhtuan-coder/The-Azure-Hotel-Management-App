@@ -18,8 +18,8 @@ namespace GUI.UserControls
         public frmLoaiPhong frm = new frmLoaiPhong();
         public customMessageBox thongBao;
 
-        List<loaiphongDTO> dslp = new List<loaiphongDTO>();
-        loaiphongBLL lpbll = new loaiphongBLL();
+        List<LoaiPhongDTO> dslp = new List<LoaiPhongDTO>();
+        LoaiPhongBLL lpbll = new LoaiPhongBLL();
         public ucRoomType()
         {
             InitializeComponent();
@@ -41,7 +41,8 @@ namespace GUI.UserControls
 
         private void laycombo()
         {
-            DuLieuChoComboBox.duLieuSort(cboSortRoomTypeID);            
+            DuLieuChoComboBox.duLieuSort(cboSortRoomTypeID);
+            DuLieuChoComboBox.duLieuSort(cboSortSoLuongRoom);
             DuLieuChoComboBox.duLieuFilter(cboStateRoomType);
         }
 
@@ -95,7 +96,7 @@ namespace GUI.UserControls
                 if (dr == DialogResult.OK)
                 {
                     int maloaiphong = (int)dgvloaiphong.SelectedRows[0].Cells["colmaloai"].Value;
-                    bool check = loaiphongBLL.Xoaloaip(maloaiphong);
+                    bool check = LoaiPhongBLL.Xoaloaip(maloaiphong);
                     if (check)
                     {
 
@@ -136,7 +137,7 @@ namespace GUI.UserControls
                 if (dr == DialogResult.OK)
                 {
                     int maloaiphong = (int)dgvloaiphong.SelectedRows[0].Cells["colmaloai"].Value;
-                    bool check = loaiphongBLL.KhoiPhucloaip(maloaiphong);
+                    bool check = LoaiPhongBLL.KhoiPhucloaip(maloaiphong);
                     if (check)
                     {
 

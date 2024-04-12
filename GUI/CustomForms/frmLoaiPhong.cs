@@ -16,8 +16,8 @@ namespace GUI.customForm
     {
         public bool isAdd { get; set; }
         public customMessageBox thongBao;
-        public loaiphongDTO loaiphong=new loaiphongDTO();
-        loaiphongBLL loaiphongBLL = new loaiphongBLL();
+        public LoaiPhongDTO loaiphong=new LoaiPhongDTO();
+        LoaiPhongBLL loaiphongBLL = new LoaiPhongBLL();
 
         public frmLoaiPhong()
         {
@@ -38,7 +38,7 @@ namespace GUI.customForm
             }
 
         }
-        private void laydltuform(loaiphongDTO lp)
+        private void laydltuform(LoaiPhongDTO lp)
         {
             lp.TenLoai = txtTenLP.Text;
             lp.Mota=rtxtMoTa.Text;

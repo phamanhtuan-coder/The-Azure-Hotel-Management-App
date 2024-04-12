@@ -8,7 +8,7 @@ using DTO;
 
 namespace DAL
 {
-    public class loaiphongDAL
+    public class LoaiPhongDAL
     {
         public static bool khoiphucloaiphong(int maloai)
         {
@@ -33,16 +33,16 @@ namespace DAL
             return kq > 0;
         }
 
-        public List<loaiphongDTO> laydsloaiphong()
+        public List<LoaiPhongDTO> laydsloaiphong()
         {
-            List<loaiphongDTO> dslp=new List<loaiphongDTO>();
+            List<LoaiPhongDTO> dslp=new List<LoaiPhongDTO>();
             SqlConnection conn = DataProvider.KetNoiDuLieu();
             string strlaydanhsach = "select * from LoaiPhong";
             conn.Open();
             SqlDataReader reader = DataProvider.ThucHienTruyVan(strlaydanhsach, conn);
             while (reader.Read())
             {
-                loaiphongDTO lphong=new loaiphongDTO();
+                LoaiPhongDTO lphong=new LoaiPhongDTO();
                 lphong.MaLoai = (int)reader[0];
                 lphong.TenLoai = reader[1].ToString();
                 lphong.Mota = reader[2].ToString();
@@ -56,7 +56,7 @@ namespace DAL
             return dslp;
         }
 
-        public bool sualphong(loaiphongDTO loaiphongDTO)
+        public bool sualphong(LoaiPhongDTO loaiphongDTO)
         {
             string lenhCapNhatlphong =
                 "UPDATE LoaiPhong SET TenLoai = @TenLoai, Mota = @Mota WHERE MaLoai = @MaLoai";
@@ -72,7 +72,7 @@ namespace DAL
             return kq > 0;
         }
 
-        public bool themlphong(loaiphongDTO loaiphongDTO)
+        public bool themlphong(LoaiPhongDTO loaiphongDTO)
         {
             string lenhThemloaiphong =
                 "INSERT INTO LoaiPhong (TenLoai, Mota,TrangThai) VALUES (@TenLoai, @Mota, 1)";
