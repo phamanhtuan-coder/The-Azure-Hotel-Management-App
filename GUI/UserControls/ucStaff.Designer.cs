@@ -283,10 +283,11 @@
             this.dgvStaff.Location = new System.Drawing.Point(0, 0);
             this.dgvStaff.MultiSelect = false;
             this.dgvStaff.Name = "dgvStaff";
-            this.dgvStaff.ReadOnly = true;
             this.dgvStaff.RowHeadersVisible = false;
+            this.dgvStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStaff.Size = new System.Drawing.Size(973, 746);
             this.dgvStaff.TabIndex = 0;
+            this.dgvStaff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellClick);
             // 
             // ID
             // 
@@ -301,7 +302,6 @@
             this.MaNQL.DataPropertyName = "MaNQL";
             this.MaNQL.HeaderText = "Mã người quản lý";
             this.MaNQL.Name = "MaNQL";
-            this.MaNQL.ReadOnly = true;
             this.MaNQL.Width = 127;
             // 
             // MaTaiKhoan
@@ -309,7 +309,6 @@
             this.MaTaiKhoan.DataPropertyName = "MaTaiKhoan";
             this.MaTaiKhoan.HeaderText = "Mã tài khoản";
             this.MaTaiKhoan.Name = "MaTaiKhoan";
-            this.MaTaiKhoan.ReadOnly = true;
             this.MaTaiKhoan.Width = 115;
             // 
             // colGioiTinh
@@ -317,7 +316,6 @@
             this.colGioiTinh.DataPropertyName = "GioiTinh";
             this.colGioiTinh.HeaderText = "Giới tính";
             this.colGioiTinh.Name = "colGioiTinh";
-            this.colGioiTinh.ReadOnly = true;
             this.colGioiTinh.Width = 85;
             // 
             // HoTen
@@ -325,7 +323,6 @@
             this.HoTen.DataPropertyName = "HoTenNV";
             this.HoTen.HeaderText = "Họ và tên";
             this.HoTen.Name = "HoTen";
-            this.HoTen.ReadOnly = true;
             this.HoTen.Width = 94;
             // 
             // HinhAnh
@@ -333,7 +330,6 @@
             this.HinhAnh.DataPropertyName = "HinhAnh";
             this.HinhAnh.HeaderText = "Hình ảnh";
             this.HinhAnh.Name = "HinhAnh";
-            this.HinhAnh.ReadOnly = true;
             this.HinhAnh.Width = 90;
             // 
             // SDT
@@ -341,7 +337,6 @@
             this.SDT.DataPropertyName = "SDT";
             this.SDT.HeaderText = "SĐT";
             this.SDT.Name = "SDT";
-            this.SDT.ReadOnly = true;
             this.SDT.Width = 66;
             // 
             // Email
@@ -349,7 +344,6 @@
             this.Email.DataPropertyName = "Email";
             this.Email.HeaderText = "Email";
             this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
             this.Email.Width = 73;
             // 
             // CCCD
@@ -357,7 +351,6 @@
             this.CCCD.DataPropertyName = "CCCD";
             this.CCCD.HeaderText = "CCCD";
             this.CCCD.Name = "CCCD";
-            this.CCCD.ReadOnly = true;
             this.CCCD.Width = 79;
             // 
             // NgaySinh
@@ -365,7 +358,6 @@
             this.NgaySinh.DataPropertyName = "NgaySinh";
             this.NgaySinh.HeaderText = "Ngày sinh";
             this.NgaySinh.Name = "NgaySinh";
-            this.NgaySinh.ReadOnly = true;
             this.NgaySinh.Width = 95;
             // 
             // DiaChi
@@ -373,7 +365,6 @@
             this.DiaChi.DataPropertyName = "DiaChi";
             this.DiaChi.HeaderText = "Địa chỉ";
             this.DiaChi.Name = "DiaChi";
-            this.DiaChi.ReadOnly = true;
             this.DiaChi.Width = 58;
             // 
             // Luong
@@ -381,7 +372,6 @@
             this.Luong.DataPropertyName = "Luong";
             this.Luong.HeaderText = "Lương";
             this.Luong.Name = "Luong";
-            this.Luong.ReadOnly = true;
             this.Luong.Width = 79;
             // 
             // TrangThai
@@ -389,7 +379,6 @@
             this.TrangThai.DataPropertyName = "TrangThai";
             this.TrangThai.HeaderText = "Trạng thái";
             this.TrangThai.Name = "TrangThai";
-            this.TrangThai.ReadOnly = true;
             this.TrangThai.Visible = false;
             this.TrangThai.Width = 97;
             // 

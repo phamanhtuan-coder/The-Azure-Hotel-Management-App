@@ -57,6 +57,11 @@ namespace BLL
             return roleDAL.LoadVTDAL();
         }
 
+        public List<RoleDTO> LoadMaPhanQuyen()
+        {
+            return roleDAL.LoadMaPhanQuyen();
+        }
+
         public List<RoleDTO> TraCuuPhongBan(List<RoleDTO> dsRole, string searchKeyword)
         {
             List<RoleDTO> searchResults = dsRole.Where(item =>
@@ -82,6 +87,9 @@ namespace BLL
             }
             return false;
         }
+
+       
+
 
         //public string maPBBLL(string v)
         //{

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace GUI.customForm
 {
@@ -57,10 +58,6 @@ namespace GUI.customForm
             txtDiaChi.Text = diaChi;
             txtSDT.Text = soDienThoai;
             txtEmail.Text = email;
-
-           
-
-
         }
 
         
@@ -100,6 +97,24 @@ namespace GUI.customForm
             //Sau đó thực hiện lệnh query để lấy mã tài khoản vừa tạo và gán mã đó vào biến maTaiKhoan
             maTaikhoan = "mã vừa tạo";
             txtMaTaiKhoan.Text = maTaikhoan;
+        }
+
+        private void btnChonHinh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files|*.jpg;*.jpeg;*.png|All files (*.*)|*.*";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                picAvatar.Image= Image.FromFile(open.FileName);
+                this.Text = open.FileName;
+            }
+        }
+
+        private static byte[] ImageToByteArray(Image img)
+        {
+            MemoryStream m = new MemoryStream();
+            img.Save(m, System.Drawing.Imaging.ImageFormat.Png);
+            return m.ToArray();
         }
     }
 }

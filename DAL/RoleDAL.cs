@@ -282,30 +282,31 @@ namespace DAL
             }
         }
 
-        //public static string maPBDAL(string v)
-        //{
-        //    string kq = "";
-        //    try
-        //    {
-        //        SqlConnection conn = DataProvider.KetNoiDuLieu();
-        //        conn.Open();
+        public List<RoleDTO> LoadMaPhanQuyen()
+        {
+            List<RoleDTO> ls = new List<RoleDTO>();
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+                SqlCommand com = new SqlCommand("sp_MaPhanQuyen", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure ;
+                
+                SqlDataReader reader= com.ExecuteReader();
+                while (reader.Read())
+                {
+                    RoleDTO role = new RoleDTO();
+                    role.MaPhanQuyen= reader["MaPhanQuyen"].ToString();
+                    ls.Add(role);
+                }
+                reader.Close();
+                conn.Close() ;
+                return ls;
+            }catch (Exception)
+            {
+                return new List<RoleDTO>();
+            }
+        }
 
-        //        string sql = $"Select MaPhongBan From PhongBan where PhongBan.TenPhong like N'@MaPhongBan' And TrangThai=1";
-        //        SqlParameter parMaPhongBan = new SqlParameter("@MaPhongBan", v);
-
-        //        SqlDataReader com = DataProvider.ThucHienTruyVan(sql, conn);
-        //        while (com.Read())
-        //        {
-        //            kq= com["MaPhongBan"].ToString() ;
-        //        }
-        //        com.Close();
-        //        conn.Close();
-        //        return kq;
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return kq;
-        //    }
-        //}
     }
 }

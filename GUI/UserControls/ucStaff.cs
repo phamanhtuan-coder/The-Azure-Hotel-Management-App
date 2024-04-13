@@ -210,5 +210,10 @@ namespace GUI.UserControls
             PhongBan = cboPhongBan.SelectedValue.ToString();
             LoadDSNhanVien();
         }
+
+        private void dgvStaff_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
