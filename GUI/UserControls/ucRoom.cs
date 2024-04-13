@@ -88,13 +88,7 @@ namespace GUI.UserControls
             }
         
         }
-        private void ucRoom_Load(object sender, EventArgs e)
-        {
-            khoiTaoGiaTrichoForm();
-        }
-        private void ucRoom_Load(object sender, EventArgs e)
-        {
-            khoiTaoGiaTrichoForm();
-        }
+
+
     }
 }
