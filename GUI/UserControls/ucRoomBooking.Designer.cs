@@ -28,11 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.flpRoom = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
+            // 
+            // flpRoom
+            // 
+            this.flpRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpRoom.Location = new System.Drawing.Point(0, 0);
+            this.flpRoom.Name = "flpRoom";
+            this.flpRoom.Size = new System.Drawing.Size(1370, 840);
+            this.flpRoom.TabIndex = 0;
             // 
             // ucRoomBooking
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.flpRoom);
             this.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ucRoomBooking";
@@ -43,5 +53,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.FlowLayoutPanel flpRoom;
     }
 }

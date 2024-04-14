@@ -92,6 +92,7 @@
   <ItemGroup>
     <Compile Include="DataProvider.cs" />
     <Compile Include="PhongBanDAL.cs" />
+    <Compile Include="PhongDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
