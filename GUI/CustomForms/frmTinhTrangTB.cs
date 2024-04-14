@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,13 +14,11 @@ namespace GUI.customForm
 {
     public partial class frmTinhTrangTB : Form
     {
-        public string maTinhTrangTB { get; set; }
-        public string tenTinhTrangTB { get; set; }
-
-        public string moTa { get; set; }
 
         public bool isAdd { get; set; }
-
+        public customMessageBox thongBao;
+        public TTThietBiDTO tTThietBiDTO = new TTThietBiDTO();
+        TTThietBiBLL tThietBiBLL = new TTThietBiBLL();
         public frmTinhTrangTB()
         {
             InitializeComponent();
@@ -26,22 +26,33 @@ namespace GUI.customForm
 
         private void frmPhanQuyen_Load(object sender, EventArgs e)
         {
-          // gán giá trị mặc định bằng các biến trên, néu là edit có giá trị truyền vào thì kiểm tra và chọn giá trị
-          txtTenTrangThaiTB.Text = tenTinhTrangTB;
-          
-           rtxtMoTa.Text = moTa; 
+            if (isAdd)
+            {
+                txtTenTrangThaiTB.Clear();
+                rtxtMoTa.Clear();
+            }
+            else
+            {
+                txtTenTrangThaiTB.Text = tTThietBiDTO.TenTinhTrang;
+                rtxtMoTa.Text = tTThietBiDTO.MoTa;
+            }
 
         }
 
-        
+        private void laydltuform(TTThietBiDTO tb)
+        {
+            tb.TenTinhTrang = txtTenTrangThaiTB.Text;
+            tb.MoTa = rtxtMoTa.Text;
+        }
+
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            customMessageBox thongBao;
-            // Kiểm tra if tiến hành xử lý sự kiện thêm/sửa phòng ban
+            laydltuform(tTThietBiDTO);
+            bool check;
             if (isAdd)
             {
-                // Nếu đúng là form Thêm thì chạy lệnh insert
+                check = tThietBiBLL.themTTTBi(tTThietBiDTO);
 
                 thongBao = new customMessageBox("Đã thêm thành công dữ liệu phân quyền mới!");
                 thongBao.ShowDialog();
@@ -49,7 +60,7 @@ namespace GUI.customForm
             }
             else
             {
-                // nếu không thì chạy lệnh update
+                check = tThietBiBLL.suaTTTBi(tTThietBiDTO);
                 thongBao = new customMessageBox("Sửa thành công thông tin phân quyền đã chọn!");
                 thongBao.ShowDialog();
             }
