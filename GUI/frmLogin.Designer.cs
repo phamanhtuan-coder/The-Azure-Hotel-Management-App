@@ -32,9 +32,9 @@ namespace GUI
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            Syncfusion.Windows.Forms.Tools.ActiveStateCollection activeStateCollection1 = new Syncfusion.Windows.Forms.Tools.ActiveStateCollection();
-            Syncfusion.Windows.Forms.Tools.InactiveStateCollection inactiveStateCollection1 = new Syncfusion.Windows.Forms.Tools.InactiveStateCollection();
-            Syncfusion.Windows.Forms.Tools.SliderCollection sliderCollection1 = new Syncfusion.Windows.Forms.Tools.SliderCollection();
+            Syncfusion.Windows.Forms.Tools.ActiveStateCollection activeStateCollection2 = new Syncfusion.Windows.Forms.Tools.ActiveStateCollection();
+            Syncfusion.Windows.Forms.Tools.InactiveStateCollection inactiveStateCollection2 = new Syncfusion.Windows.Forms.Tools.InactiveStateCollection();
+            Syncfusion.Windows.Forms.Tools.SliderCollection sliderCollection2 = new Syncfusion.Windows.Forms.Tools.SliderCollection();
             this.btnClose = new Syncfusion.WinForms.Controls.SfButton();
             this.picLoginBG = new System.Windows.Forms.PictureBox();
             this.tmrTransistion = new System.Windows.Forms.Timer(this.components);
@@ -147,17 +147,17 @@ namespace GUI
             // 
             // tbtnRemember
             // 
-            activeStateCollection1.Text = "Không ghi nhớ";
-            this.tbtnRemember.ActiveState = activeStateCollection1;
+            activeStateCollection2.Text = "Không ghi nhớ";
+            this.tbtnRemember.ActiveState = activeStateCollection2;
             this.tbtnRemember.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbtnRemember.ForeColor = System.Drawing.Color.Black;
-            inactiveStateCollection1.Text = "Ghi nhớ mật khẩu";
-            this.tbtnRemember.InactiveState = inactiveStateCollection1;
+            inactiveStateCollection2.Text = "Ghi nhớ mật khẩu";
+            this.tbtnRemember.InactiveState = inactiveStateCollection2;
             this.tbtnRemember.Location = new System.Drawing.Point(160, 309);
             this.tbtnRemember.MinimumSize = new System.Drawing.Size(52, 20);
             this.tbtnRemember.Name = "tbtnRemember";
             this.tbtnRemember.Size = new System.Drawing.Size(170, 40);
-            this.tbtnRemember.Slider = sliderCollection1;
+            this.tbtnRemember.Slider = sliderCollection2;
             this.tbtnRemember.TabIndex = 9;
             this.tbtnRemember.ThemeStyle.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
@@ -184,7 +184,7 @@ namespace GUI
             this.linkForget.ActiveLinkColor = System.Drawing.Color.Teal;
             this.linkForget.AutoSize = true;
             this.linkForget.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkForget.LinkColor = System.Drawing.Color.RoyalBlue;
+            this.linkForget.LinkColor = System.Drawing.Color.DarkBlue;
             this.linkForget.Location = new System.Drawing.Point(62, 279);
             this.linkForget.Name = "linkForget";
             this.linkForget.Size = new System.Drawing.Size(152, 22);
@@ -323,7 +323,7 @@ namespace GUI
             | System.Windows.Forms.Border3DSide.Right) 
             | System.Windows.Forms.Border3DSide.Bottom)));
             this.lblPassword.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.ForeColor = System.Drawing.Color.Teal;
+            this.lblPassword.ForeColor = System.Drawing.Color.DarkCyan;
             this.lblPassword.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblPassword.Location = new System.Drawing.Point(64, 198);
             this.lblPassword.Name = "lblPassword";
@@ -341,7 +341,7 @@ namespace GUI
             | System.Windows.Forms.Border3DSide.Right) 
             | System.Windows.Forms.Border3DSide.Bottom)));
             this.lblUsername.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.ForeColor = System.Drawing.Color.Teal;
+            this.lblUsername.ForeColor = System.Drawing.Color.DarkCyan;
             this.lblUsername.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblUsername.Location = new System.Drawing.Point(64, 117);
             this.lblUsername.Name = "lblUsername";
