@@ -1,4 +1,8 @@
-﻿using System;
+﻿using BLL;
+using DTO;
+using GUI.UserControls;
+using Syncfusion.GridHelperClasses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +16,12 @@ namespace GUI.customForm
 {
     public partial class frmVaiTro : Form
     {
-       public string maVaiTro { get; set; }
-       public string tenVaiTro { get; set; }
-
-        public string moTa { get; set; }
+        VaiTroBLL vaiTroBLL= new VaiTroBLL();
+        VaiTroDTO vaiTroDTO = new VaiTroDTO();
         public bool isAdd { get; set; }
-
+        public int MaVaiTroID { get; set; }
+        public string TenVaiTro { get; set; }
+        public string MoTa { get; set; }
         public frmVaiTro()
         {
             InitializeComponent();
@@ -25,31 +29,57 @@ namespace GUI.customForm
 
         private void frmVaiTro_Load(object sender, EventArgs e)
         {
-            txtTenVT.Text = tenVaiTro;
-            rtxtMoTa.Text = moTa;
-            
-
+            if (!isAdd)
+            {
+                txtTenVT.Text = TenVaiTro;
+                rtxtMoTa.Text = MoTa;
+            }
+            else
+            {
+                txtTenVT.Text = "";
+                rtxtMoTa.Text = "";
+            }
         }
 
-      
+        private void EpDuLieu()
+        {
+            vaiTroDTO.TenVaiTro= txtTenVT.Text;
+            vaiTroDTO.MoTa= rtxtMoTa.Text;
+        }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             customMessageBox thongBao;
-            // Kiểm tra if tiến hành xử lý sự kiện thêm/sửa 
+            // Kiểm tra if tiến hành xử lý sự kiện thêm/sửa
             if (isAdd)
             {
-                // Nếu đúng là form Thêm thì chạy lệnh insert
-                
-                thongBao = new customMessageBox("Đã thêm thành công dữ liệu vai trò mới!");
-                thongBao.ShowDialog();
-
+                EpDuLieu();
+                if (vaiTroBLL.AddVaiTroBLL(vaiTroDTO))
+                {
+                    thongBao = new customMessageBox("Đã thêm thành công dữ liệu vai trò mới!");
+                    thongBao.ShowDialog();
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Đã thêm thất bại dữ liệu vai trò mới!");
+                    thongBao.ShowDialog();
+                }
             }
             else
             {
-                // nếu không thì chạy lệnh update
-                thongBao = new customMessageBox("Sửa thành công thông tin vai trò đã chọn!");
-                thongBao.ShowDialog();
+                vaiTroDTO.MaVaiTro = MaVaiTroID;
+                EpDuLieu();
+                if (vaiTroBLL.EditVaiTroBLL(vaiTroDTO))
+                {
+                    thongBao = new customMessageBox("Sửa thành công thông tin vai trò đã chọn!");
+                    thongBao.ShowDialog();
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Sửa thành công thông tin vai trò đã chọn!");
+                    thongBao.ShowDialog();
+                }
+                
             }
             this.Close();
             

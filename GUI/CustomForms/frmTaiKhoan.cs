@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +22,7 @@ namespace GUI.customForm
 
         public bool isAdd { get; set; }
 
+        RoleBLL  roleBLL = new RoleBLL();
         public frmTaiKhoan()
         {
             InitializeComponent();
@@ -33,7 +36,7 @@ namespace GUI.customForm
             txtRePw.Text = password;
             cboPhanQuyen.Text = phanQuyen;
 
-           
+            LoadcboMaPhanQuyen();
 
 
             
@@ -41,7 +44,12 @@ namespace GUI.customForm
 
         }
 
-        
+        private void LoadcboMaPhanQuyen()
+        {
+            List<RoleDTO> roles = roleBLL.LoadMaPhanQuyen();
+            cboPhanQuyen.DataSource = roles;
+            cboPhanQuyen.DisplayMember = "MaPhanQuyen";
+        }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {

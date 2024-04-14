@@ -1,4 +1,6 @@
-﻿using GUI.customForm;
+﻿using BLL;
+using DTO;
+using GUI.customForm;
 using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
@@ -14,6 +16,9 @@ namespace GUI.UserControls
 {
     public partial class ucAccountType : UserControl
     {
+        VaiTroBLL vaiTroBLL= new VaiTroBLL();
+        List<VaiTroDTO> vaiTroDTOs = new List<VaiTroDTO>();
+        List<VaiTroDTO> dsSearch = new List<VaiTroDTO>();
         frmVaiTro frm = new frmVaiTro();
         customMessageBox thongBao;
         public ucAccountType()
@@ -23,30 +28,51 @@ namespace GUI.UserControls
 
         private void ucAccountType_Load(object sender, EventArgs e)
         {
-         
+            LoadCBBVaiTro();
         }
+
+        private void LoadCBBVaiTro()
+        {
+            DuLieuChoComboBox.duLieuSort(cboSortAccountTypeID);
+            DuLieuChoComboBox.duLieuFilter(cboStateAccountType);
+        }
+
+        private void loadDSRole()
+        {
+            vaiTroDTOs = vaiTroBLL.FilterTrangThai(cboStateAccountType.Text);
+            dgvAccountType.ClearSelection();
+            dgvAccountType.DataSource = vaiTroDTOs;
+        }
+
+        //private void loadDSRoleTT(int i)
+        //{
+        //    vaiTroDTOs = vaiTroBLL.LoadDSRoleTTBLL(i);
+        //    dgvAccountType.ClearSelection();
+        //    dgvAccountType.DataSource = vaiTroDTOs;
+        //}
 
         private void btnAddAccountType_Click(object sender, EventArgs e)
         {
             frm.isAdd = true;
             frm.ShowDialog();
+            loadDSRole();
         }
 
         private void btnEditAccountType_Click(object sender, EventArgs e)
         {
             if (dgvAccountType.SelectedRows.Count > 0)
             {
-               
                 frm.isAdd = false;
-
-               
-
+                frm.MaVaiTroID = (int)dgvAccountType.SelectedCells[0].Value;
+                frm.TenVaiTro= (string)dgvAccountType.SelectedCells[1].Value;
+                frm.MoTa= (string)dgvAccountType.SelectedCells[2].Value;
                 //kết thúc sửa 
                 frm.ShowDialog();
+                loadDSRole();
             }
             else
             {
-                 thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn chỉnh sửa!");
+                thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn chỉnh sửa!");
                 thongBao.ShowDialog();
             }
 
@@ -57,11 +83,32 @@ namespace GUI.UserControls
         {
             if (dgvAccountType.SelectedRows.Count > 0)
             {
-                thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
+                bool result = (bool)dgvAccountType.SelectedCells[3].Value;
+                if (result)
                 {
-                    // Xóa 
+                    thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
+                    DialogResult dr = thongBao.ShowDialog();
+                    if (dr != DialogResult.Cancel)
+                    {
+                        int ID = frm.MaVaiTroID = (int)dgvAccountType.SelectedCells[0].Value;
+                        // Xóa
+                        if (DelVaiTro(ID))
+                        {
+                            thongBao = new customMessageBox("Xóa thành công!");
+                            thongBao.ShowDialog();
+                            loadDSRole();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox("Xóa thất bại!");
+                            thongBao.ShowDialog();
+                        }
+                    }
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Các giá trị bạn chọn đã xóa, nên không thể xóa!");
+                    thongBao.ShowDialog();
                 }
             }
             else
@@ -73,21 +120,91 @@ namespace GUI.UserControls
             
         }
 
+        private bool DelVaiTro(int iD)
+        {
+            return vaiTroBLL.DelVaiTroBLL(iD);
+        }
+
         private void btnRecoverAccountType_Click(object sender, EventArgs e)
         {
             if (dgvAccountType.SelectedRows.Count > 0)
             {
-                thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
+                bool result = (bool) dgvAccountType.SelectedCells[3].Value;
+                if (!result) {
+                    thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
+                    DialogResult dr = thongBao.ShowDialog();
+                    if (dr != DialogResult.Cancel)
+                    {
+                        // Khôi phục
+                        int ID = frm.MaVaiTroID = (int)dgvAccountType.SelectedCells[0].Value;
+                        // Xóa
+                        if (RestoreVaiTro(ID))
+                        {
+                            thongBao = new customMessageBox("Khôi phục thành công!");
+                            thongBao.ShowDialog();
+                            loadDSRole();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox("Khôi phục thất bại!");
+                            thongBao.ShowDialog();
+                        }
+                    } 
+                }
+                else
                 {
-                    // Khôi phục
+                    thongBao = new customMessageBox("Các giá trị bạn chọn chưa xóa, nên không thể khôi phục!");
+                    thongBao.ShowDialog();
                 }
             }
             else
             {
                 thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
                 thongBao.ShowDialog();
+            }
+        }
+
+        private bool RestoreVaiTro(int iD)
+        {
+            return vaiTroBLL.RestoreVaiTroBLL(iD);
+        }
+
+        private void cboSortAccountTypeID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sortOption = cboSortAccountTypeID.SelectedItem.ToString();
+            switch (sortOption)
+            {
+                case "Giảm dần":
+                    vaiTroDTOs = vaiTroDTOs.OrderByDescending(item => item.MaVaiTro).ToList();
+                    break;
+                default:
+                    vaiTroDTOs = vaiTroDTOs.OrderBy(item => item.MaVaiTro).ToList();
+                    break;
+            }
+
+            dgvAccountType.DataSource = vaiTroDTOs;
+        }
+
+        private void cboStateAccountType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            vaiTroDTOs = vaiTroBLL.FilterTrangThai(cboStateAccountType.Text);
+            dgvAccountType.ClearSelection();
+            dgvAccountType.DataSource= vaiTroDTOs;
+        }
+
+        private void btnTraCuuAccountType_Click(object sender, EventArgs e)
+        {
+            dgvAccountType.DataSource = vaiTroDTOs;
+            string searchKeyword = txtSearchAccountType.Text.Trim().ToLower();
+            if (searchKeyword.Count() > 0)
+            {
+                dsSearch = vaiTroBLL.TraCuuVaiTro(vaiTroDTOs, searchKeyword);
+
+                dgvAccountType.DataSource = dsSearch;
+            }
+            else
+            {
+                loadDSRole();
             }
         }
     }

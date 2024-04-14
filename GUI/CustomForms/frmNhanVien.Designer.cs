@@ -56,7 +56,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.Location = new System.Drawing.Point(568, 379);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
@@ -66,7 +66,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(395, 379);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
@@ -78,42 +78,43 @@
             // 
             this.txtHoTenNV.Location = new System.Drawing.Point(538, 12);
             this.txtHoTenNV.Name = "txtHoTenNV";
-            this.txtHoTenNV.Size = new System.Drawing.Size(194, 27);
+            this.txtHoTenNV.Size = new System.Drawing.Size(194, 26);
             this.txtHoTenNV.TabIndex = 6;
             // 
             // txtMaTaiKhoan
             // 
             this.txtMaTaiKhoan.Location = new System.Drawing.Point(12, 288);
             this.txtMaTaiKhoan.Name = "txtMaTaiKhoan";
-            this.txtMaTaiKhoan.Size = new System.Drawing.Size(301, 27);
+            this.txtMaTaiKhoan.ReadOnly = true;
+            this.txtMaTaiKhoan.Size = new System.Drawing.Size(175, 26);
             this.txtMaTaiKhoan.TabIndex = 7;
             // 
             // txtCCCD
             // 
             this.txtCCCD.Location = new System.Drawing.Point(538, 64);
             this.txtCCCD.Name = "txtCCCD";
-            this.txtCCCD.Size = new System.Drawing.Size(194, 27);
+            this.txtCCCD.Size = new System.Drawing.Size(194, 26);
             this.txtCCCD.TabIndex = 8;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(538, 219);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(194, 27);
+            this.txtEmail.Size = new System.Drawing.Size(194, 26);
             this.txtEmail.TabIndex = 9;
             // 
             // txtSDT
             // 
             this.txtSDT.Location = new System.Drawing.Point(538, 271);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(194, 27);
+            this.txtSDT.Size = new System.Drawing.Size(194, 26);
             this.txtSDT.TabIndex = 10;
             // 
             // txtDiaChi
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(538, 323);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(194, 27);
+            this.txtDiaChi.Size = new System.Drawing.Size(194, 26);
             this.txtDiaChi.TabIndex = 11;
             // 
             // dtpNgaySinh
@@ -122,7 +123,7 @@
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgaySinh.Location = new System.Drawing.Point(538, 167);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(194, 27);
+            this.dtpNgaySinh.Size = new System.Drawing.Size(194, 26);
             this.dtpNgaySinh.TabIndex = 12;
             // 
             // radNam
@@ -130,7 +131,7 @@
             this.radNam.AutoSize = true;
             this.radNam.Location = new System.Drawing.Point(538, 117);
             this.radNam.Name = "radNam";
-            this.radNam.Size = new System.Drawing.Size(68, 26);
+            this.radNam.Size = new System.Drawing.Size(63, 24);
             this.radNam.TabIndex = 13;
             this.radNam.TabStop = true;
             this.radNam.Text = "Nam";
@@ -141,7 +142,7 @@
             this.radNu.AutoSize = true;
             this.radNu.Location = new System.Drawing.Point(648, 117);
             this.radNu.Name = "radNu";
-            this.radNu.Size = new System.Drawing.Size(52, 26);
+            this.radNu.Size = new System.Drawing.Size(49, 24);
             this.radNu.TabIndex = 14;
             this.radNu.TabStop = true;
             this.radNu.Text = "Nữ";
@@ -149,8 +150,8 @@
             // 
             // btnTaoTK
             // 
-            this.btnTaoTK.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaoTK.Location = new System.Drawing.Point(163, 328);
+            this.btnTaoTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaoTK.Location = new System.Drawing.Point(193, 288);
             this.btnTaoTK.Name = "btnTaoTK";
             this.btnTaoTK.Size = new System.Drawing.Size(150, 27);
             this.btnTaoTK.TabIndex = 15;
@@ -159,12 +160,13 @@
             // 
             // btnChonHinh
             // 
-            this.btnChonHinh.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChonHinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChonHinh.Location = new System.Drawing.Point(90, 208);
             this.btnChonHinh.Name = "btnChonHinh";
             this.btnChonHinh.Size = new System.Drawing.Size(150, 38);
             this.btnChonHinh.TabIndex = 16;
             this.btnChonHinh.Text = "Submit";
+            this.btnChonHinh.Click += new System.EventHandler(this.btnChonHinh_Click);
             // 
             // picAvatar
             // 
@@ -181,16 +183,16 @@
             this.lblMaTaiKhoan.AutoSize = true;
             this.lblMaTaiKhoan.Location = new System.Drawing.Point(12, 263);
             this.lblMaTaiKhoan.Name = "lblMaTaiKhoan";
-            this.lblMaTaiKhoan.Size = new System.Drawing.Size(208, 22);
+            this.lblMaTaiKhoan.Size = new System.Drawing.Size(112, 20);
             this.lblMaTaiKhoan.TabIndex = 18;
-            this.lblMaTaiKhoan.Text = "Hãy nhập mã tài khoản";
+            this.lblMaTaiKhoan.Text = "Mã tài khoản";
             // 
             // lblHoTen
             // 
             this.lblHoTen.AutoSize = true;
             this.lblHoTen.Location = new System.Drawing.Point(381, 17);
             this.lblHoTen.Name = "lblHoTen";
-            this.lblHoTen.Size = new System.Drawing.Size(91, 22);
+            this.lblHoTen.Size = new System.Drawing.Size(86, 20);
             this.lblHoTen.TabIndex = 19;
             this.lblHoTen.Text = "Họ và tên";
             // 
@@ -199,7 +201,7 @@
             this.lblCCCD.AutoSize = true;
             this.lblCCCD.Location = new System.Drawing.Point(381, 69);
             this.lblCCCD.Name = "lblCCCD";
-            this.lblCCCD.Size = new System.Drawing.Size(59, 22);
+            this.lblCCCD.Size = new System.Drawing.Size(58, 20);
             this.lblCCCD.TabIndex = 20;
             this.lblCCCD.Text = "CCCD";
             // 
@@ -208,7 +210,7 @@
             this.lblGioiTinh.AutoSize = true;
             this.lblGioiTinh.Location = new System.Drawing.Point(381, 117);
             this.lblGioiTinh.Name = "lblGioiTinh";
-            this.lblGioiTinh.Size = new System.Drawing.Size(81, 22);
+            this.lblGioiTinh.Size = new System.Drawing.Size(76, 20);
             this.lblGioiTinh.TabIndex = 21;
             this.lblGioiTinh.Text = "Giới tính";
             // 
@@ -217,7 +219,7 @@
             this.lblNgaySinh.AutoSize = true;
             this.lblNgaySinh.Location = new System.Drawing.Point(381, 172);
             this.lblNgaySinh.Name = "lblNgaySinh";
-            this.lblNgaySinh.Size = new System.Drawing.Size(94, 22);
+            this.lblNgaySinh.Size = new System.Drawing.Size(87, 20);
             this.lblNgaySinh.TabIndex = 22;
             this.lblNgaySinh.Text = "Ngày sinh";
             // 
@@ -226,7 +228,7 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.Location = new System.Drawing.Point(381, 222);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(58, 22);
+            this.lblEmail.Size = new System.Drawing.Size(53, 20);
             this.lblEmail.TabIndex = 23;
             this.lblEmail.Text = "Email";
             // 
@@ -235,7 +237,7 @@
             this.lblSDT.AutoSize = true;
             this.lblSDT.Location = new System.Drawing.Point(381, 274);
             this.lblSDT.Name = "lblSDT";
-            this.lblSDT.Size = new System.Drawing.Size(43, 22);
+            this.lblSDT.Size = new System.Drawing.Size(44, 20);
             this.lblSDT.TabIndex = 24;
             this.lblSDT.Text = "SĐT";
             // 
@@ -244,7 +246,7 @@
             this.lblDiaChi.AutoSize = true;
             this.lblDiaChi.Location = new System.Drawing.Point(383, 328);
             this.lblDiaChi.Name = "lblDiaChi";
-            this.lblDiaChi.Size = new System.Drawing.Size(68, 22);
+            this.lblDiaChi.Size = new System.Drawing.Size(64, 20);
             this.lblDiaChi.TabIndex = 25;
             this.lblDiaChi.Text = "Địa chỉ";
             // 
@@ -275,7 +277,7 @@
             this.Controls.Add(this.txtHoTenNV);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSubmit);
-            this.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmNhanVien";
