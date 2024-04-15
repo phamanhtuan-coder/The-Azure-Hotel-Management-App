@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,31 @@ namespace DAL
             int kq = DataProvider.ThucHienCauLenh(lenhXoaTTTBi, conn, par);
             conn.Close();
             return kq > 0;
+        }
+
+        public List<TTThietBiDTO> FilterTrangThai(bool v)
+        {
+            List<TTThietBiDTO> dstttbi = new List<TTThietBiDTO>();
+
+            string lenhLayDanhSachtttbi = "SELECT * FROM TinhTrangThietBi WHERE TrangThai = @TrangThai";
+
+            SqlConnection conn = DataProvider.KetNoiDuLieu();
+
+            conn.Open();
+
+            SqlDataReader reader = DataProvider.ThucHienTruyVan(lenhLayDanhSachtttbi, conn, "@TrangThai", SqlDbType.Binary, v ? (object)1 : (object)0);
+            while (reader.Read())
+            {
+                TTThietBiDTO tTThietBi = new TTThietBiDTO();
+                tTThietBi.MaTinhTrangThietBi = (int)reader[0];
+                tTThietBi.TenTinhTrang = reader[1].ToString();
+                tTThietBi.MoTa = reader[2].ToString();
+                tTThietBi.TrangThai = v;
+
+                dstttbi.Add(tTThietBi);
+            }
+
+            return dstttbi;
         }
 
         public List<TTThietBiDTO> layDSTBi()

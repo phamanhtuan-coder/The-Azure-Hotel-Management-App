@@ -11,6 +11,22 @@ namespace BLL
     {
         TTThietBiDAL ThietBiDAL = new TTThietBiDAL();
 
+        public List<TTThietBiDTO> FilterTrangThai(string trangthai)
+        {
+            if (trangthai == "Đang hoạt động")
+            {
+                return ThietBiDAL.FilterTrangThai(true);
+            }
+            else if (trangthai == "Đã xóa")
+            {
+                return ThietBiDAL.FilterTrangThai(false);
+            }
+            else
+            {
+                return ThietBiDAL.layDSTBi();
+            }
+        }
+
         public bool KhoiPhucTTTBi(int maTTTBi)
         {
             return TTThietBiDAL.khoiphucTTTbi(maTTTBi);
@@ -30,6 +46,14 @@ namespace BLL
         public bool themTTTBi(TTThietBiDTO tTThietBiDTO)
         {
             return ThietBiDAL.themTTTbi(tTThietBiDTO);
+        }
+
+        public List<TTThietBiDTO> tracutttb(List<TTThietBiDTO> thietBiDTOs, string searchKeyword)
+        {
+            List<TTThietBiDTO> searchResults = thietBiDTOs.Where(item =>
+             item.TenTinhTrang.Contains(searchKeyword)
+         ).ToList();
+            return searchResults;
         }
 
         public bool XoaTTTBi(int maTTTBi)
