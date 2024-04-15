@@ -206,6 +206,7 @@
             this.btnTraCuuRoomStatus.TabIndex = 0;
             this.btnTraCuuRoomStatus.Text = "Tra cứu";
             this.btnTraCuuRoomStatus.UseVisualStyleBackColor = false;
+            this.btnTraCuuRoomStatus.Click += new System.EventHandler(this.btnTraCuuRoomStatus_Click);
             // 
             // cboStateRoomStatus
             // 
@@ -223,6 +224,7 @@
             this.cboStateRoomStatus.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateRoomStatus.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateRoomStatus.TabIndex = 3;
+            this.cboStateRoomStatus.SelectedIndexChanged += new System.EventHandler(this.cboStateRoomStatus_SelectedIndexChanged);
             // 
             // spcQuery
             // 
@@ -290,6 +292,7 @@
             this.cboSortRoomStatusID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortRoomStatusID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortRoomStatusID.TabIndex = 29;
+            this.cboSortRoomStatusID.SelectedIndexChanged += new System.EventHandler(this.cboSortRoomStatusID_SelectedIndexChanged);
             // 
             // lblSortRoomStatusID
             // 

@@ -18,7 +18,8 @@ namespace GUI.UserControls
         public frmTinhTrangPhong frm = new frmTinhTrangPhong();
         public customMessageBox thongBao;
         List<TinhTrangPhongDTO> tinhTrangPhongDTOs = new List<TinhTrangPhongDTO>();
-        TinhTrangPhongBLL TinhTrangPhongBLL=new TinhTrangPhongBLL();
+        List<TinhTrangPhongDTO> tinhTrangPhongDTOstk = new List<TinhTrangPhongDTO>();
+        TinhTrangPhongBLL TinhTrangPhongBLL =new TinhTrangPhongBLL();
         public ucRoomStatus()
         {
             InitializeComponent();
@@ -160,6 +161,47 @@ namespace GUI.UserControls
 
             }
             thongBao.ShowDialog();
+        }
+
+        private void btnTraCuuRoomStatus_Click(object sender, EventArgs e)
+        {
+            tinhTrangPhongDTOs = TinhTrangPhongBLL.laydsttphong();
+            dgvRoomStatus.DataSource = tinhTrangPhongDTOs;
+            string searchKeyword = txtSearchRoomStatus.Text.Trim();
+            if (searchKeyword.Count() > 0)
+            {
+                tinhTrangPhongDTOstk = TinhTrangPhongBLL.TraCuuttPhong(tinhTrangPhongDTOs, searchKeyword);
+
+                dgvRoomStatus.DataSource = tinhTrangPhongDTOstk;
+
+            }
+            else
+            {
+                laydsttphong();
+            }
+        }
+
+        private void cboStateRoomStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tinhTrangPhongDTOs = TinhTrangPhongBLL.FilterTrangThai(cboStateRoomStatus.Text);
+            dgvRoomStatus.ClearSelection();
+            dgvRoomStatus.DataSource = tinhTrangPhongDTOs;
+        }
+
+        private void cboSortRoomStatusID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sortOption = cboSortRoomStatusID.SelectedItem.ToString();
+            switch (sortOption)
+            {
+                case "Giảm dần":
+                    tinhTrangPhongDTOs = tinhTrangPhongDTOs.OrderByDescending(item => item.MaTinhTrangPhong).ToList();
+                    break;
+                default:
+                    tinhTrangPhongDTOs = tinhTrangPhongDTOs.OrderBy(item => item.MaTinhTrangPhong).ToList();
+                    break;
+            }
+
+            dgvRoomStatus.DataSource = tinhTrangPhongDTOs;
         }
     }
 }

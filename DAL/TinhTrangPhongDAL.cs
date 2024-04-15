@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,31 @@ namespace DAL
 {
     public class TinhTrangPhongDAL
     {
+        public List<TinhTrangPhongDTO> FilterTrangThai(bool v)
+        {
+            List<TinhTrangPhongDTO> dsttPhong = new List<TinhTrangPhongDTO>();
+
+            string lenhLayDanhSachttPhong = "SELECT * FROM TinhTrangPhong WHERE TrangThai = @TrangThai";
+
+            SqlConnection conn = DataProvider.KetNoiDuLieu();
+
+            conn.Open();
+
+            SqlDataReader reader = DataProvider.ThucHienTruyVan(lenhLayDanhSachttPhong, conn, "@TrangThai", SqlDbType.Binary, v ? (object)1 : (object)0);
+            while (reader.Read())
+            {
+                TinhTrangPhongDTO ttphong = new TinhTrangPhongDTO();
+                ttphong.MaTinhTrangPhong = (int)reader[0];
+                ttphong.TenTinhTrang = reader[1].ToString();
+                ttphong.MoTa = reader[2].ToString();
+                ttphong.TrangThai = v;
+
+                dsttPhong.Add(ttphong);
+            }
+
+            return dsttPhong;
+        }
+
         public bool khoiphucttphong(int mattphong)
         {
             string lenhkhoiphucttphong =
