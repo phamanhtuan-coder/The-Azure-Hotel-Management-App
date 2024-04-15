@@ -31,10 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucRoomStatus));
             this.lblRoomStatus = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAddRoomStatus = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnEditRoomStatus = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnDeleteRoomStatus = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnRecoverRoomStatus = new Syncfusion.WinForms.Controls.SfButton();
             this.txtSearchRoomStatus = new System.Windows.Forms.TextBox();
             this.btnTraCuuRoomStatus = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateRoomStatus = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
+            this.dgvRoomStatus = new System.Windows.Forms.DataGridView();
             this.cboSortRoomStatusID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortRoomStatusID = new System.Windows.Forms.Label();
             this.cboSortSoLuongRoom = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -42,21 +47,17 @@
             this.lblStateRoomStatus = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.dgvRoomStatus = new System.Windows.Forms.DataGridView();
             this.colMaTinhTrangPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenTinhTrangPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenTinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAddRoomStatus = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnEditRoomStatus = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnDeleteRoomStatus = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnRecoverRoomStatus = new Syncfusion.WinForms.Controls.SfButton();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRoomStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
             this.spcQuery.Panel1.SuspendLayout();
             this.spcQuery.Panel2.SuspendLayout();
             this.spcQuery.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRoomStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortRoomStatusID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortSoLuongRoom)).BeginInit();
             this.panUcHeader.SuspendLayout();
@@ -64,7 +65,6 @@
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRoomStatus)).BeginInit();
             this.SuspendLayout();
             // 
             // lblRoomStatus
@@ -98,12 +98,96 @@
             this.tlpController.Size = new System.Drawing.Size(394, 94);
             this.tlpController.TabIndex = 6;
             // 
+            // btnAddRoomStatus
+            // 
+            this.btnAddRoomStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddRoomStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddRoomStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddRoomStatus.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddRoomStatus.ForeColor = System.Drawing.Color.White;
+            this.btnAddRoomStatus.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnAddRoomStatus.Location = new System.Drawing.Point(3, 3);
+            this.btnAddRoomStatus.Name = "btnAddRoomStatus";
+            this.btnAddRoomStatus.Size = new System.Drawing.Size(191, 41);
+            this.btnAddRoomStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddRoomStatus.Style.ForeColor = System.Drawing.Color.White;
+            this.btnAddRoomStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnAddRoomStatus.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnAddRoomStatus.TabIndex = 1;
+            this.btnAddRoomStatus.Text = "Thêm";
+            this.btnAddRoomStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddRoomStatus.UseVisualStyleBackColor = false;
+            this.btnAddRoomStatus.Click += new System.EventHandler(this.btnAddRoomStatus_Click);
+            // 
+            // btnEditRoomStatus
+            // 
+            this.btnEditRoomStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditRoomStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEditRoomStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditRoomStatus.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditRoomStatus.ForeColor = System.Drawing.Color.White;
+            this.btnEditRoomStatus.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnEditRoomStatus.Location = new System.Drawing.Point(3, 50);
+            this.btnEditRoomStatus.Name = "btnEditRoomStatus";
+            this.btnEditRoomStatus.Size = new System.Drawing.Size(191, 41);
+            this.btnEditRoomStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditRoomStatus.Style.ForeColor = System.Drawing.Color.White;
+            this.btnEditRoomStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnEditRoomStatus.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnEditRoomStatus.TabIndex = 3;
+            this.btnEditRoomStatus.Text = "Sửa";
+            this.btnEditRoomStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditRoomStatus.UseVisualStyleBackColor = false;
+            this.btnEditRoomStatus.Click += new System.EventHandler(this.btnEditRoomStatus_Click);
+            // 
+            // btnDeleteRoomStatus
+            // 
+            this.btnDeleteRoomStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteRoomStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDeleteRoomStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteRoomStatus.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteRoomStatus.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteRoomStatus.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnDeleteRoomStatus.Location = new System.Drawing.Point(200, 3);
+            this.btnDeleteRoomStatus.Name = "btnDeleteRoomStatus";
+            this.btnDeleteRoomStatus.Size = new System.Drawing.Size(191, 41);
+            this.btnDeleteRoomStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteRoomStatus.Style.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteRoomStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnDeleteRoomStatus.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnDeleteRoomStatus.TabIndex = 4;
+            this.btnDeleteRoomStatus.Text = "Xóa";
+            this.btnDeleteRoomStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeleteRoomStatus.UseVisualStyleBackColor = false;
+            this.btnDeleteRoomStatus.Click += new System.EventHandler(this.btnDeleteRoomStatus_Click);
+            // 
+            // btnRecoverRoomStatus
+            // 
+            this.btnRecoverRoomStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverRoomStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRecoverRoomStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecoverRoomStatus.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecoverRoomStatus.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverRoomStatus.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnRecoverRoomStatus.Location = new System.Drawing.Point(200, 50);
+            this.btnRecoverRoomStatus.Name = "btnRecoverRoomStatus";
+            this.btnRecoverRoomStatus.Size = new System.Drawing.Size(191, 41);
+            this.btnRecoverRoomStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverRoomStatus.Style.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverRoomStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnRecoverRoomStatus.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnRecoverRoomStatus.TabIndex = 5;
+            this.btnRecoverRoomStatus.Text = "Khôi phục";
+            this.btnRecoverRoomStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRecoverRoomStatus.UseVisualStyleBackColor = false;
+            this.btnRecoverRoomStatus.Click += new System.EventHandler(this.btnRecoverRoomStatus_Click);
+            // 
             // txtSearchRoomStatus
             // 
             this.txtSearchRoomStatus.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchRoomStatus.Location = new System.Drawing.Point(6, 16);
             this.txtSearchRoomStatus.Name = "txtSearchRoomStatus";
-            this.txtSearchRoomStatus.Size = new System.Drawing.Size(251, 40);
+            this.txtSearchRoomStatus.Size = new System.Drawing.Size(251, 49);
             this.txtSearchRoomStatus.TabIndex = 2;
             // 
             // btnTraCuuRoomStatus
@@ -166,6 +250,30 @@
             this.spcQuery.SplitterDistance = 973;
             this.spcQuery.TabIndex = 38;
             // 
+            // dgvRoomStatus
+            // 
+            this.dgvRoomStatus.AllowUserToAddRows = false;
+            this.dgvRoomStatus.AllowUserToDeleteRows = false;
+            this.dgvRoomStatus.AllowUserToResizeColumns = false;
+            this.dgvRoomStatus.AllowUserToResizeRows = false;
+            this.dgvRoomStatus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRoomStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRoomStatus.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colMaTinhTrangPhong,
+            this.colTenTinhTrang,
+            this.colMoTa,
+            this.colTrangThai});
+            this.dgvRoomStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvRoomStatus.Location = new System.Drawing.Point(0, 0);
+            this.dgvRoomStatus.MultiSelect = false;
+            this.dgvRoomStatus.Name = "dgvRoomStatus";
+            this.dgvRoomStatus.ReadOnly = true;
+            this.dgvRoomStatus.RowHeadersVisible = false;
+            this.dgvRoomStatus.RowHeadersWidth = 51;
+            this.dgvRoomStatus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRoomStatus.Size = new System.Drawing.Size(973, 746);
+            this.dgvRoomStatus.TabIndex = 0;
+            // 
             // cboSortRoomStatusID
             // 
             this.cboSortRoomStatusID.DelimiterChar = "";
@@ -189,7 +297,7 @@
             this.lblSortRoomStatusID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortRoomStatusID.Location = new System.Drawing.Point(2, 86);
             this.lblSortRoomStatusID.Name = "lblSortRoomStatusID";
-            this.lblSortRoomStatusID.Size = new System.Drawing.Size(170, 26);
+            this.lblSortRoomStatusID.Size = new System.Drawing.Size(218, 33);
             this.lblSortRoomStatusID.TabIndex = 28;
             this.lblSortRoomStatusID.Text = "Sort theo ID loại";
             this.lblSortRoomStatusID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -217,7 +325,7 @@
             this.lblSortSoLuongRoom.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortSoLuongRoom.Location = new System.Drawing.Point(2, 143);
             this.lblSortSoLuongRoom.Name = "lblSortSoLuongRoom";
-            this.lblSortSoLuongRoom.Size = new System.Drawing.Size(185, 26);
+            this.lblSortSoLuongRoom.Size = new System.Drawing.Size(241, 33);
             this.lblSortSoLuongRoom.TabIndex = 14;
             this.lblSortSoLuongRoom.Text = "Lọc theo số lượng";
             this.lblSortSoLuongRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -228,7 +336,7 @@
             this.lblStateRoomStatus.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStateRoomStatus.Location = new System.Drawing.Point(2, 200);
             this.lblStateRoomStatus.Name = "lblStateRoomStatus";
-            this.lblStateRoomStatus.Size = new System.Drawing.Size(186, 26);
+            this.lblStateRoomStatus.Size = new System.Drawing.Size(237, 33);
             this.lblStateRoomStatus.TabIndex = 9;
             this.lblStateRoomStatus.Text = "Trạng thái dữ liệu";
             this.lblStateRoomStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -262,137 +370,45 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // dgvRoomStatus
-            // 
-            this.dgvRoomStatus.AllowUserToAddRows = false;
-            this.dgvRoomStatus.AllowUserToDeleteRows = false;
-            this.dgvRoomStatus.AllowUserToResizeColumns = false;
-            this.dgvRoomStatus.AllowUserToResizeRows = false;
-            this.dgvRoomStatus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvRoomStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRoomStatus.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaTinhTrangPhong,
-            this.colTenTinhTrangPhong,
-            this.colMoTa,
-            this.colTrangThai});
-            this.dgvRoomStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvRoomStatus.Location = new System.Drawing.Point(0, 0);
-            this.dgvRoomStatus.MultiSelect = false;
-            this.dgvRoomStatus.Name = "dgvRoomStatus";
-            this.dgvRoomStatus.ReadOnly = true;
-            this.dgvRoomStatus.RowHeadersVisible = false;
-            this.dgvRoomStatus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRoomStatus.Size = new System.Drawing.Size(973, 746);
-            this.dgvRoomStatus.TabIndex = 0;
-            // 
             // colMaTinhTrangPhong
             // 
+            this.colMaTinhTrangPhong.DataPropertyName = "MaTinhTrangPhong";
+            this.colMaTinhTrangPhong.FillWeight = 150F;
             this.colMaTinhTrangPhong.HeaderText = "Mã tình trạng phòng";
+            this.colMaTinhTrangPhong.MinimumWidth = 6;
             this.colMaTinhTrangPhong.Name = "colMaTinhTrangPhong";
             this.colMaTinhTrangPhong.ReadOnly = true;
+            this.colMaTinhTrangPhong.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // colTenTinhTrangPhong
+            // colTenTinhTrang
             // 
-            this.colTenTinhTrangPhong.HeaderText = "Tên tình trạng phòng";
-            this.colTenTinhTrangPhong.Name = "colTenTinhTrangPhong";
-            this.colTenTinhTrangPhong.ReadOnly = true;
+            this.colTenTinhTrang.DataPropertyName = "TenTinhTrang";
+            this.colTenTinhTrang.FillWeight = 150F;
+            this.colTenTinhTrang.HeaderText = "Tên tình trạng phòng";
+            this.colTenTinhTrang.MinimumWidth = 6;
+            this.colTenTinhTrang.Name = "colTenTinhTrang";
+            this.colTenTinhTrang.ReadOnly = true;
+            this.colTenTinhTrang.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // colMoTa
             // 
+            this.colMoTa.DataPropertyName = "MoTa";
+            this.colMoTa.FillWeight = 150F;
             this.colMoTa.HeaderText = "Mô tả";
+            this.colMoTa.MinimumWidth = 6;
             this.colMoTa.Name = "colMoTa";
             this.colMoTa.ReadOnly = true;
+            this.colMoTa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // colTrangThai
             // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.FillWeight = 150F;
             this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.MinimumWidth = 6;
             this.colTrangThai.Name = "colTrangThai";
             this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Visible = false;
-            // 
-            // btnAddRoomStatus
-            // 
-            this.btnAddRoomStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddRoomStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddRoomStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddRoomStatus.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddRoomStatus.ForeColor = System.Drawing.Color.White;
-            this.btnAddRoomStatus.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnAddRoomStatus.Location = new System.Drawing.Point(3, 3);
-            this.btnAddRoomStatus.Name = "btnAddRoomStatus";
-            this.btnAddRoomStatus.Size = new System.Drawing.Size(191, 41);
-            this.btnAddRoomStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddRoomStatus.Style.ForeColor = System.Drawing.Color.White;
-            this.btnAddRoomStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnAddRoomStatus.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddRoomStatus.TabIndex = 1;
-            this.btnAddRoomStatus.Text = "Thêm";
-            this.btnAddRoomStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddRoomStatus.UseVisualStyleBackColor = false;
-            this.btnAddRoomStatus.Click += new System.EventHandler(this.btnAddRoomStatus_Click);
-            // 
-            // btnEditRoomStatus
-            // 
-            this.btnEditRoomStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditRoomStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEditRoomStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditRoomStatus.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditRoomStatus.ForeColor = System.Drawing.Color.White;
-            this.btnEditRoomStatus.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnEditRoomStatus.Location = new System.Drawing.Point(3, 50);
-            this.btnEditRoomStatus.Name = "btnEditRoomStatus";
-            this.btnEditRoomStatus.Size = new System.Drawing.Size(191, 41);
-            this.btnEditRoomStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditRoomStatus.Style.ForeColor = System.Drawing.Color.White;
-            this.btnEditRoomStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnEditRoomStatus.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditRoomStatus.TabIndex = 3;
-            this.btnEditRoomStatus.Text = "Sửa";
-            this.btnEditRoomStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditRoomStatus.UseVisualStyleBackColor = false;
-            this.btnEditRoomStatus.Click += new System.EventHandler(this.btnEditRoomStatus_Click);
-            // 
-            // btnDeleteRoomStatus
-            // 
-            this.btnDeleteRoomStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteRoomStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleteRoomStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteRoomStatus.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteRoomStatus.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteRoomStatus.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnDeleteRoomStatus.Location = new System.Drawing.Point(200, 3);
-            this.btnDeleteRoomStatus.Name = "btnDeleteRoomStatus";
-            this.btnDeleteRoomStatus.Size = new System.Drawing.Size(191, 41);
-            this.btnDeleteRoomStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteRoomStatus.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteRoomStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnDeleteRoomStatus.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteRoomStatus.TabIndex = 4;
-            this.btnDeleteRoomStatus.Text = "Xóa";
-            this.btnDeleteRoomStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDeleteRoomStatus.UseVisualStyleBackColor = false;
-            this.btnDeleteRoomStatus.Click += new System.EventHandler(this.btnDeleteRoomStatus_Click);
-            // 
-            // btnRecoverRoomStatus
-            // 
-            this.btnRecoverRoomStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverRoomStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRecoverRoomStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecoverRoomStatus.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecoverRoomStatus.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverRoomStatus.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnRecoverRoomStatus.Location = new System.Drawing.Point(200, 50);
-            this.btnRecoverRoomStatus.Name = "btnRecoverRoomStatus";
-            this.btnRecoverRoomStatus.Size = new System.Drawing.Size(191, 41);
-            this.btnRecoverRoomStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverRoomStatus.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverRoomStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnRecoverRoomStatus.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRecoverRoomStatus.TabIndex = 5;
-            this.btnRecoverRoomStatus.Text = "Khôi phục";
-            this.btnRecoverRoomStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRecoverRoomStatus.UseVisualStyleBackColor = false;
-            this.btnRecoverRoomStatus.Click += new System.EventHandler(this.btnRecoverRoomStatus_Click);
+            this.colTrangThai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // ucRoomStatus
             // 
@@ -411,6 +427,7 @@
             this.spcQuery.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).EndInit();
             this.spcQuery.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRoomStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortRoomStatusID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortSoLuongRoom)).EndInit();
             this.panUcHeader.ResumeLayout(false);
@@ -418,7 +435,6 @@
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRoomStatus)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -444,7 +460,7 @@
         private System.Windows.Forms.Label lblSortRoomStatusID;
         private System.Windows.Forms.DataGridView dgvRoomStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaTinhTrangPhong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTenTinhTrangPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTenTinhTrang;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMoTa;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
     }
