@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Utilities;
 
 namespace GUI.customForm
 {
     public partial class frmNhanVien : Form
     {
+        public string username { get; set; }
         public string maNhanVien { get; set; }
         public string maTaikhoan { get; set; }
         public string hoTen { get; set; }
@@ -23,8 +25,6 @@ namespace GUI.customForm
         public string soDienThoai { get; set; }
         public string email { get; set; }
         public Image anhDaiDien { get; set; }
-
-
         public bool isAdd { get; set; }
 
         public frmNhanVien()
@@ -35,6 +35,7 @@ namespace GUI.customForm
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
             // gán giá trị mặc định bằng các biến trên
+            txtMaTaiKhoan.Text = username;
             picAvatar.Image = anhDaiDien;
             txtMaTaiKhoan.Text = maTaikhoan;
             txtHoTenNV.Text = hoTen;
@@ -68,10 +69,16 @@ namespace GUI.customForm
             // Kiểm tra if tiến hành xử lý sự kiện thêm/sửa phòng ban
             if (isAdd)
             {
-                // Nếu đúng là form Thêm thì chạy lệnh insert
-
-                thongBao = new customMessageBox("Đã thêm thành công dữ liệu nhân viên mới!");
-                thongBao.ShowDialog();
+                if (AddTaiKhoan())
+                {
+                    thongBao = new customMessageBox("Đã thêm thành công dữ liệu nhân viên mới!");
+                    thongBao.ShowDialog();
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Đã thêm thất bại dữ liệu nhân viên mới!");
+                    thongBao.ShowDialog();
+                }
 
             }
             else
@@ -82,6 +89,11 @@ namespace GUI.customForm
             }
             this.Close();
             
+        }
+
+        private bool AddTaiKhoan()
+        {
+            return false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -95,8 +107,7 @@ namespace GUI.customForm
             taoTaiKhoan.isAdd = true;
             taoTaiKhoan.ShowDialog();
             //Sau đó thực hiện lệnh query để lấy mã tài khoản vừa tạo và gán mã đó vào biến maTaiKhoan
-            maTaikhoan = "mã vừa tạo";
-            txtMaTaiKhoan.Text = maTaikhoan;
+            txtMaTaiKhoan.Text = Program.username;
         }
 
         private void btnChonHinh_Click(object sender, EventArgs e)

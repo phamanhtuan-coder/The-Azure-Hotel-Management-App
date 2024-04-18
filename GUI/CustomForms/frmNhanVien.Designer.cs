@@ -85,7 +85,6 @@
             // 
             this.txtMaTaiKhoan.Location = new System.Drawing.Point(12, 288);
             this.txtMaTaiKhoan.Name = "txtMaTaiKhoan";
-            this.txtMaTaiKhoan.ReadOnly = true;
             this.txtMaTaiKhoan.Size = new System.Drawing.Size(175, 26);
             this.txtMaTaiKhoan.TabIndex = 7;
             // 
@@ -183,9 +182,9 @@
             this.lblMaTaiKhoan.AutoSize = true;
             this.lblMaTaiKhoan.Location = new System.Drawing.Point(12, 263);
             this.lblMaTaiKhoan.Name = "lblMaTaiKhoan";
-            this.lblMaTaiKhoan.Size = new System.Drawing.Size(112, 20);
+            this.lblMaTaiKhoan.Size = new System.Drawing.Size(91, 20);
             this.lblMaTaiKhoan.TabIndex = 18;
-            this.lblMaTaiKhoan.Text = "Mã tài khoản";
+            this.lblMaTaiKhoan.Text = "Username";
             // 
             // lblHoTen
             // 
