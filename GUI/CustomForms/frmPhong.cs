@@ -96,6 +96,7 @@ namespace GUI.customForm
                 thongBao = new customMessageBox("Sửa thành công thông tin phòng đã chọn!");
                 thongBao.ShowDialog();
             }
+            
             this.Close();
             
         }

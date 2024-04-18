@@ -11,6 +11,12 @@ namespace BLL
     public class PhongBLL
     {
         PhongDAL PhongDAL=new PhongDAL();
+
+        public bool kpp(int maphong)
+        {
+            return PhongDAL.kqphong(maphong);
+        }
+
         public List<PhongDTO> laydsp()
         {
             return PhongDAL.laydsphong();
@@ -24,6 +30,11 @@ namespace BLL
         public bool themp(PhongDTO phongDTO)
         {
             return PhongDAL.themphong(phongDTO);
+        }
+
+        public bool Xoap(int maphong)
+        {
+            return PhongDAL.xoaphong(maphong);
         }
     }
 }

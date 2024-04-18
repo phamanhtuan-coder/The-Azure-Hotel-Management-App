@@ -107,38 +107,79 @@ namespace GUI.UserControls
         {
             if (dgvRoom.SelectedRows.Count > 0)
             {
-                thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
+                thongBao = new customMessageBox(
+                    "Bạn có chắc chắn muốn xóa dòng dữ liệu này không?"
+                );
                 DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
+                if (dr == DialogResult.OK)
                 {
-                    // Xóa 
+                    int maphong = (int)dgvRoom.SelectedRows[0].Cells["colMaPHG"].Value;
+                    bool check = PhongBLL.Xoap(maphong);
+                    if (check)
+                    {
+
+                        dgvRoom.ClearSelection();
+                        layds();
+                        thongBao = new customMessageBox(
+                            "Xóa thành công dữ liệu có mã là: " + maphong + "!"
+                        );
+                    }
+                    else
+                    {
+                        thongBao = new customMessageBox(
+                            "Xóa thất bại dữ liệu có mã là: " + maphong + "!"
+                        );
+                    }
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Hủy xóa!");
                 }
             }
             else
             {
                 thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn xóa!");
-                thongBao.ShowDialog();
+
             }
+            thongBao.ShowDialog();
         }
 
         private void btnRecoverRoom_Click(object sender, EventArgs e)
         {
             if (dgvRoom.SelectedRows.Count > 0)
             {
-                thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
+                thongBao = new customMessageBox(
+                    "Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?"
+                );
                 DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
+                if (dr == DialogResult.OK)
                 {
-                    // Khôi phục
+                    int maphong = (int)dgvRoom.SelectedRows[0].Cells["colMaPHG"].Value;
+                    bool check = PhongBLL.kpp(maphong);
+                    if (check)
+                    {
+
+                        dgvRoom.ClearSelection();
+                        layds();
+                        thongBao = new customMessageBox(
+                            "Khôi phục thành công dữ liệu có mã là: " + maphong + "!"
+                        );
+                    }
+                    else
+                    {
+                        thongBao = new customMessageBox(
+                            "Khôi phục thất bại dữ liệu có mã là: " + maphong + "!"
+                        );
+                    }
                 }
             }
             else
             {
                 thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
-                thongBao.ShowDialog();
+
             }
-        
-            }
+            thongBao.ShowDialog();
+        }
 
         
     }

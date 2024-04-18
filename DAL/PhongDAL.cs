@@ -10,6 +10,18 @@ namespace DAL
 {
     public class PhongDAL
     {
+        public bool kqphong(int maphong)
+        {
+            string lenhkpphong =
+                "UPDATE Phong SET TrangThai = 1 WHERE MaPHG = @MaPHG";
+            SqlParameter par = new SqlParameter("@MaPHG", maphong);
+            SqlConnection conn = DataProvider.KetNoiDuLieu();
+            conn.Open();
+            int kq = DataProvider.ThucHienCauLenh(lenhkpphong, conn, par);
+            conn.Close();
+            return kq > 0;
+        }
+
         public List<PhongDTO> laydsphong()
         {
             List<PhongDTO> dsp = new List<PhongDTO>();
@@ -72,6 +84,18 @@ namespace DAL
             SqlConnection conn = DataProvider.KetNoiDuLieu();
             conn.Open();
             int kq = DataProvider.ThucHienCauLenh(lenhThemphong, conn, pars);
+            conn.Close();
+            return kq > 0;
+        }
+
+        public bool xoaphong(int maphong)
+        {
+            string lenhXoaphong =
+                "UPDATE Phong SET TrangThai = 0 WHERE MaPHG = @MaPHG";
+            SqlParameter par = new SqlParameter("@MaPHG", maphong);
+            SqlConnection conn = DataProvider.KetNoiDuLieu();
+            conn.Open();
+            int kq = DataProvider.ThucHienCauLenh(lenhXoaphong, conn, par);
             conn.Close();
             return kq > 0;
         }
