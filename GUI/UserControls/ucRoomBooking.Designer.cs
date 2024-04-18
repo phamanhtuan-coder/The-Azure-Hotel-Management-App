@@ -33,6 +33,9 @@
             // 
             // flpRoom
             // 
+            this.flpRoom.AutoScroll = true;
+            this.flpRoom.AutoSize = true;
+            this.flpRoom.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flpRoom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpRoom.Location = new System.Drawing.Point(0, 0);
             this.flpRoom.Name = "flpRoom";
@@ -49,6 +52,7 @@
             this.Size = new System.Drawing.Size(1370, 840);
             this.Load += new System.EventHandler(this.ucRoomBooking_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

@@ -36,7 +36,8 @@ namespace GUI.UserControls
 
                 foreach (var room in availableRooms)
                 {
-                    Panel roomPanel = CreateRoomPanel(room);
+                    Panel roomPanel = TaoPanelPhong(room);
+                    roomPanel.Dock = DockStyle.Top; // Set the room panel to fill the remaining space
                     flpRoom.Controls.Add(roomPanel);
                 }
             }
@@ -46,53 +47,85 @@ namespace GUI.UserControls
             }
         }
 
-        private Panel CreateRoomPanel(PhongDTO room)
+        private Panel TaoPanelPhong(PhongDTO phong)
         {
-            Panel roomPanel = new Panel();
-            roomPanel.BorderStyle = BorderStyle.FixedSingle;
-            roomPanel.Size = new Size(200, 200);
-            roomPanel.Cursor = Cursors.Hand;
-            roomPanel.Click += (sender, e) =>
+            Panel panelPhong = new Panel();
+            panelPhong.BorderStyle = BorderStyle.FixedSingle;
+            panelPhong.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            int w = (flpRoom.Size.Width / 2) -10;
+            panelPhong.Size = new Size(w, 200);
+            panelPhong.Cursor = Cursors.Hand;
+            panelPhong.Click += (sender, e) =>
             {
-                MessageBox.Show($"Bạn đã đặt phòng: {room.MoTa}");
+                MessageBox.Show($"Bạn đã đặt phòng: {phong.MoTa}");
             };
 
-            PictureBox pictureBox = new PictureBox();
-            pictureBox.Image = ByteArrayToImage(room.HinhAnh); 
-            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox.Dock = DockStyle.Top;
-            pictureBox.Size = new Size(roomPanel.Width, 120); 
-            roomPanel.Controls.Add(pictureBox);
+            SplitContainer chiaPanel = new SplitContainer();
+            chiaPanel.Dock = DockStyle.Fill;
+            chiaPanel.BorderStyle = BorderStyle.None;
+            chiaPanel.SplitterWidth = 5;
+            chiaPanel.IsSplitterFixed = false;
+            chiaPanel.FixedPanel = FixedPanel.None;
 
-            Label nameLabel = new Label();
-            nameLabel.Text = room.MoTa; 
-            nameLabel.Dock = DockStyle.Top;
-            nameLabel.TextAlign = ContentAlignment.MiddleCenter;
-            roomPanel.Controls.Add(nameLabel);
+            PictureBox hinhAnhPictureBox = new PictureBox();
+            hinhAnhPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            hinhAnhPictureBox.Dock = DockStyle.Left;
+            hinhAnhPictureBox.Width = panelPhong.Width / 3; // Set the width to one-third of the panel width
+            hinhAnhPictureBox.Margin = new Padding(0);
+            chiaPanel.Panel1.Controls.Add(hinhAnhPictureBox);
 
-            Label priceLabel = new Label();
-            priceLabel.Text = $"Giá: {room.GiaPhong:C}"; 
-            priceLabel.Dock = DockStyle.Top;
-            priceLabel.TextAlign = ContentAlignment.MiddleCenter;
-            roomPanel.Controls.Add(priceLabel);
+            Label thongTinLabel = new Label();
+            thongTinLabel.Dock = DockStyle.Fill;
+            thongTinLabel.Padding = new Padding(10, 5, 10, 5);
+            thongTinLabel.Text = $"Phòng: {phong.MoTa}\nGiá: {phong.GiaPhong:C}\nMô tả: {phong.MoTa}";
+            chiaPanel.Panel2.Controls.Add(thongTinLabel);
 
-            Label descriptionLabel = new Label();
-            descriptionLabel.Text = room.MoTa; 
-            descriptionLabel.Dock = DockStyle.Top;
-            descriptionLabel.TextAlign = ContentAlignment.MiddleCenter;
-            roomPanel.Controls.Add(descriptionLabel);
+            if (phong.HinhAnh != null && phong.HinhAnh.Length > 0)
+            {
+                Image hinhAnh = ByteArrayToImage(phong.HinhAnh);
+                if (hinhAnh != null)
+                {
+                    hinhAnhPictureBox.Image = hinhAnh;
+                }
+                else
+                {
+                    // Handle case where the byte array cannot be converted to an image
+                    // Maybe display a placeholder image or show an error message
+                }
+            }
+            else
+            {
+                // Handle case where HinhAnh is null or empty
+                // Maybe display a placeholder image or show an error message
+            }
 
-            return roomPanel;
+            panelPhong.Controls.Add(chiaPanel);
+
+            return panelPhong;
         }
 
 
-        private Image ByteArrayToImage(byte[] byteArrayIn)
+
+
+
+
+
+        private Image ByteArrayToImage(byte[] byteArray)
         {
-            using (MemoryStream ms = new MemoryStream(byteArrayIn))
+            if (byteArray == null)
             {
-                return Image.FromStream(ms);
+                // Handle null byte array case, maybe return a default image or throw an exception
+                throw new ArgumentNullException(nameof(byteArray), "Byte array cannot be null.");
+            }
+            else
+            {
+                MemoryStream memoryStream = new MemoryStream(byteArray);
+                Image image = Image.FromStream(memoryStream);
+                return image;
             }
         }
+
+
     }
 }
 

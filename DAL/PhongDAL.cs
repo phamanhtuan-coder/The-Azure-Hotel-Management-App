@@ -29,7 +29,18 @@ namespace DAL
                     room.MoTa = reader["MoTa"].ToString();
                     room.GiaPhong = Convert.ToDecimal(reader["GiaPhong"]);
                     room.MoTa = reader["MoTa"].ToString();
-                    room.HinhAnh = (byte[])reader["HinhAnh"];
+
+                    // Check for DBNull before casting to byte[]
+                    if (reader["HinhAnh"] != DBNull.Value)
+                    {
+                        room.HinhAnh = (byte[])reader["HinhAnh"];
+                    }
+                    else
+                    {
+                        // Handle DBNull case, maybe assign a default image or null to the HinhAnh property
+                        room.HinhAnh = null; // or assign a default byte array
+                    }
+
                     rooms.Add(room);
                 }
 
@@ -43,5 +54,6 @@ namespace DAL
 
             return rooms;
         }
+
     }
 }

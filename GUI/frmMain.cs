@@ -531,6 +531,12 @@ namespace GUI
             openForm(personal);
         }
 
+        private void btnRoomBooking_Click(object sender, EventArgs e)
+        {
+            ucRoomBooking datPhong = new ucRoomBooking();
+            openForm(datPhong);
+        }
+
         /*-------------------------------------------------------------------------------------------------------------------
                                                   KẾT THÚC ĐOẠN XỬ LÝ MỞ MENU
         --------------------------------------------------------------------------------------------------------------------*/
@@ -767,7 +773,9 @@ namespace GUI
             openForm(Home);
         }
 
-        
+      
+
+
 
         /*-------------------------------------------------------------------------------------------------------------------
                                     KẾT THÚC  HÀM MAIN VÀ HÀM KHỞI TẠO
