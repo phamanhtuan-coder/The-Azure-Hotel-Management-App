@@ -43,6 +43,14 @@
             this.dtpBookingDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvBooking = new System.Windows.Forms.DataGridView();
+            this.colMaDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaPHG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayNhanPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayTraPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSoLuongKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboSortRoomID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.cboSortBookingID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortRoomId = new System.Windows.Forms.Label();
@@ -53,14 +61,6 @@
             this.lblStateBooking = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.colMaDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaPHG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayNhanPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayTraPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSoLuongKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateBooking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -216,6 +216,7 @@
             this.btnTraCuuBooking.TabIndex = 0;
             this.btnTraCuuBooking.Text = "Tra cứu";
             this.btnTraCuuBooking.UseVisualStyleBackColor = false;
+            this.btnTraCuuBooking.Click += new System.EventHandler(this.btnTraCuuBooking_Click);
             // 
             // cboStateBooking
             // 
@@ -233,6 +234,7 @@
             this.cboStateBooking.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateBooking.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateBooking.TabIndex = 3;
+            this.cboStateBooking.SelectedIndexChanged += new System.EventHandler(this.cboStateBooking_SelectedIndexChanged);
             // 
             // dtpCheckOutDate
             // 
@@ -330,6 +332,78 @@
             this.dgvBooking.Size = new System.Drawing.Size(973, 746);
             this.dgvBooking.TabIndex = 0;
             // 
+            // colMaDatPhong
+            // 
+            this.colMaDatPhong.DataPropertyName = "MaDatPhong";
+            this.colMaDatPhong.HeaderText = "Mã đặt phòng";
+            this.colMaDatPhong.MinimumWidth = 6;
+            this.colMaDatPhong.Name = "colMaDatPhong";
+            this.colMaDatPhong.ReadOnly = true;
+            this.colMaDatPhong.Width = 169;
+            // 
+            // colMaKH
+            // 
+            this.colMaKH.DataPropertyName = "MaKH";
+            this.colMaKH.HeaderText = "Mã KH";
+            this.colMaKH.MinimumWidth = 6;
+            this.colMaKH.Name = "colMaKH";
+            this.colMaKH.ReadOnly = true;
+            this.colMaKH.Width = 72;
+            // 
+            // colMaPHG
+            // 
+            this.colMaPHG.DataPropertyName = "MaPHG";
+            this.colMaPHG.HeaderText = "Mã PHG";
+            this.colMaPHG.MinimumWidth = 6;
+            this.colMaPHG.Name = "colMaPHG";
+            this.colMaPHG.ReadOnly = true;
+            this.colMaPHG.Width = 112;
+            // 
+            // colNgayDatPhong
+            // 
+            this.colNgayDatPhong.DataPropertyName = "NgayDatPhong";
+            this.colNgayDatPhong.HeaderText = "Ngày đặt";
+            this.colNgayDatPhong.MinimumWidth = 6;
+            this.colNgayDatPhong.Name = "colNgayDatPhong";
+            this.colNgayDatPhong.ReadOnly = true;
+            this.colNgayDatPhong.Width = 122;
+            // 
+            // colNgayNhanPhong
+            // 
+            this.colNgayNhanPhong.DataPropertyName = "NgayNhanPhong";
+            this.colNgayNhanPhong.HeaderText = "Ngày nhận phòng";
+            this.colNgayNhanPhong.MinimumWidth = 6;
+            this.colNgayNhanPhong.Name = "colNgayNhanPhong";
+            this.colNgayNhanPhong.ReadOnly = true;
+            this.colNgayNhanPhong.Width = 207;
+            // 
+            // colNgayTraPhong
+            // 
+            this.colNgayTraPhong.DataPropertyName = "NgayTraPhong";
+            this.colNgayTraPhong.HeaderText = "Ngày trả phòng";
+            this.colNgayTraPhong.MinimumWidth = 6;
+            this.colNgayTraPhong.Name = "colNgayTraPhong";
+            this.colNgayTraPhong.ReadOnly = true;
+            this.colNgayTraPhong.Width = 182;
+            // 
+            // colSoLuongKH
+            // 
+            this.colSoLuongKH.DataPropertyName = "SoLuongKH";
+            this.colSoLuongKH.HeaderText = "Số lượng KH";
+            this.colSoLuongKH.MinimumWidth = 6;
+            this.colSoLuongKH.Name = "colSoLuongKH";
+            this.colSoLuongKH.ReadOnly = true;
+            this.colSoLuongKH.Width = 152;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.MinimumWidth = 6;
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Width = 131;
+            // 
             // cboSortRoomID
             // 
             this.cboSortRoomID.DelimiterChar = "";
@@ -346,6 +420,7 @@
             this.cboSortRoomID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortRoomID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortRoomID.TabIndex = 24;
+            this.cboSortRoomID.SelectedIndexChanged += new System.EventHandler(this.cboSortRoomID_SelectedIndexChanged);
             // 
             // cboSortBookingID
             // 
@@ -363,6 +438,7 @@
             this.cboSortBookingID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortBookingID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortBookingID.TabIndex = 23;
+            this.cboSortBookingID.SelectedIndexChanged += new System.EventHandler(this.cboSortBookingID_SelectedIndexChanged);
             // 
             // lblSortRoomId
             // 
@@ -458,78 +534,6 @@
             this.spcHeader.Size = new System.Drawing.Size(1370, 94);
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
-            // 
-            // colMaDatPhong
-            // 
-            this.colMaDatPhong.DataPropertyName = "MaDatPhong";
-            this.colMaDatPhong.HeaderText = "Mã đặt phòng";
-            this.colMaDatPhong.MinimumWidth = 6;
-            this.colMaDatPhong.Name = "colMaDatPhong";
-            this.colMaDatPhong.ReadOnly = true;
-            this.colMaDatPhong.Width = 185;
-            // 
-            // colMaKH
-            // 
-            this.colMaKH.DataPropertyName = "MaKH";
-            this.colMaKH.HeaderText = "Mã KH";
-            this.colMaKH.MinimumWidth = 6;
-            this.colMaKH.Name = "colMaKH";
-            this.colMaKH.ReadOnly = true;
-            this.colMaKH.Width = 107;
-            // 
-            // colMaPHG
-            // 
-            this.colMaPHG.DataPropertyName = "MaPHG";
-            this.colMaPHG.HeaderText = "Mã PHG";
-            this.colMaPHG.MinimumWidth = 6;
-            this.colMaPHG.Name = "colMaPHG";
-            this.colMaPHG.ReadOnly = true;
-            this.colMaPHG.Width = 122;
-            // 
-            // colNgayDatPhong
-            // 
-            this.colNgayDatPhong.DataPropertyName = "NgayDatPhong";
-            this.colNgayDatPhong.HeaderText = "Ngày đặt";
-            this.colNgayDatPhong.MinimumWidth = 6;
-            this.colNgayDatPhong.Name = "colNgayDatPhong";
-            this.colNgayDatPhong.ReadOnly = true;
-            this.colNgayDatPhong.Width = 133;
-            // 
-            // colNgayNhanPhong
-            // 
-            this.colNgayNhanPhong.DataPropertyName = "NgayNhanPhong";
-            this.colNgayNhanPhong.HeaderText = "Ngày nhận phòng";
-            this.colNgayNhanPhong.MinimumWidth = 6;
-            this.colNgayNhanPhong.Name = "colNgayNhanPhong";
-            this.colNgayNhanPhong.ReadOnly = true;
-            this.colNgayNhanPhong.Width = 207;
-            // 
-            // colNgayTraPhong
-            // 
-            this.colNgayTraPhong.DataPropertyName = "NgayTraPhong";
-            this.colNgayTraPhong.HeaderText = "Ngày trả phòng";
-            this.colNgayTraPhong.MinimumWidth = 6;
-            this.colNgayTraPhong.Name = "colNgayTraPhong";
-            this.colNgayTraPhong.ReadOnly = true;
-            this.colNgayTraPhong.Width = 182;
-            // 
-            // colSoLuongKH
-            // 
-            this.colSoLuongKH.DataPropertyName = "SoLuongKH";
-            this.colSoLuongKH.HeaderText = "Số lượng KH";
-            this.colSoLuongKH.MinimumWidth = 6;
-            this.colSoLuongKH.Name = "colSoLuongKH";
-            this.colSoLuongKH.ReadOnly = true;
-            this.colSoLuongKH.Width = 152;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "TrangThai";
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.MinimumWidth = 6;
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Width = 131;
             // 
             // ucBooking
             // 

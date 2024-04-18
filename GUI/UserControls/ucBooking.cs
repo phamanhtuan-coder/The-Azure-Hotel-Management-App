@@ -19,6 +19,8 @@ namespace GUI.UserControls
         public frmDatPhong frm = new frmDatPhong();
         DatPhongBLL DatPhongBLL=new DatPhongBLL();
         List<DatPhongDTO> datPhongDTOs = new List<DatPhongDTO>();
+        List<DatPhongDTO> datPhongDTOstk = new List<DatPhongDTO>();
+
         public ucBooking()
         {
             InitializeComponent();
@@ -89,16 +91,37 @@ namespace GUI.UserControls
             {
                 thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
                 DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
+                if (dr == DialogResult.OK)
                 {
-                    // Xóa 
+                    int madatphong = (int)dgvBooking.SelectedRows[0].Cells["colMaDatPhong"].Value;
+                    bool check = DatPhongBLL.Xoad(madatphong);
+                    if (check)
+                    {
+
+                        dgvBooking.ClearSelection();
+                        layds();
+                        thongBao = new customMessageBox(
+                            "Xóa thành công dữ liệu có mã là: " + madatphong + "!"
+                        );
+                    }
+                    else
+                    {
+                        thongBao = new customMessageBox(
+                            "Xóa thất bại dữ liệu có mã là: " + madatphong + "!"
+                        );
+                    }
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Hủy xóa!");
                 }
             }
             else
             {
                 thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn xóa!");
-                thongBao.ShowDialog();
+
             }
+            thongBao.ShowDialog();
         }
 
         private void btnRecoverBooking_Click(object sender, EventArgs e)
@@ -109,13 +132,88 @@ namespace GUI.UserControls
                 DialogResult dr = thongBao.ShowDialog();
                 if (dr != DialogResult.Cancel)
                 {
-                    // Khôi phục
+                    int madatphong = (int)dgvBooking.SelectedRows[0].Cells["colMaDatPhong"].Value;
+                    bool check = DatPhongBLL.khoiphucd(madatphong);
+                    if (check)
+                    {
+
+                        dgvBooking.ClearSelection();
+                        layds();
+                        thongBao = new customMessageBox(
+                            "Khôi phục thành công dữ liệu có mã là: " + madatphong + "!"
+                        );
+                    }
+                    else
+                    {
+                        thongBao = new customMessageBox(
+                            "Khôi phục thất bại dữ liệu có mã là: " + madatphong + "!"
+                        );
+                    }
                 }
             }
             else
             {
                 thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
                 thongBao.ShowDialog();
+            }
+            thongBao.ShowDialog();
+
+        }
+
+        private void cboSortBookingID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sortOption = cboSortRoomID.SelectedItem.ToString();
+            switch (sortOption)
+            {
+                case "Giảm dần":
+                    datPhongDTOs = datPhongDTOs.OrderByDescending(item => item.MaDatPhong).ToList();
+                    break;
+                default:
+                    datPhongDTOs = datPhongDTOs.OrderBy(item => item.MaDatPhong).ToList();
+                    break;
+            }
+
+            dgvBooking.DataSource = datPhongDTOs;
+        }
+
+        private void cboSortRoomID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sortOption = cboSortRoomID.SelectedItem.ToString();
+            switch (sortOption)
+            {
+                case "Giảm dần":
+                    datPhongDTOs = datPhongDTOs.OrderByDescending(item => item.MaPHG).ToList();
+                    break;
+                default:
+                    datPhongDTOs = datPhongDTOs.OrderBy(item => item.MaPHG).ToList();
+                    break;
+            }
+
+            dgvBooking.DataSource = datPhongDTOs;
+        }
+
+        private void cboStateBooking_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            datPhongDTOs = DatPhongBLL.FilterTrangThai(cboStateBooking.Text);
+            dgvBooking.ClearSelection();
+            dgvBooking.DataSource = datPhongDTOs;
+        }
+
+        private void btnTraCuuBooking_Click(object sender, EventArgs e)
+        {
+            datPhongDTOs = DatPhongBLL.laydsp();
+            dgvBooking.DataSource = datPhongDTOs;
+            string searchKeyword = txtSearchBooking.Text.Trim();
+            if (searchKeyword.Count() > 0)
+            {
+                datPhongDTOstk = DatPhongBLL.TraCuuPhong(datPhongDTOs, searchKeyword);
+
+                dgvBooking.DataSource = datPhongDTOstk;
+
+            }
+            else
+            {
+                layds();
             }
         }
     }

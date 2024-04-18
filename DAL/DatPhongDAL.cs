@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,46 @@ namespace DAL
 {
     public class DatPhongDAL
     {
+        public List<DatPhongDTO> FilterTrangThai(bool v)
+        {
+            List<DatPhongDTO> ds = new List<DatPhongDTO>();
+
+            string lenhLayDanhSach = "SELECT * FROM DatPhong WHERE TrangThai = @TrangThai";
+
+            SqlConnection conn = DataProvider.KetNoiDuLieu();
+
+            conn.Open();
+
+            SqlDataReader reader = DataProvider.ThucHienTruyVan(lenhLayDanhSach, conn, "@TrangThai", SqlDbType.Binary, v ? (object)1 : (object)0);
+            while (reader.Read())
+            {
+                DatPhongDTO phong = new DatPhongDTO();
+                phong.MaDatPhong = (int)reader[0];
+                phong.MaKH = (int)reader[1];
+                phong.MaPHG = (int)reader[2];
+                phong.NgayDatPhong = DateTime.Parse(reader[3].ToString());
+                phong.NgayNhanPhong = DateTime.Parse(reader[4].ToString());
+                phong.NgayTraPhong = DateTime.Parse(reader[5].ToString());
+                phong.SoLuongKH = (int)reader[6];
+                phong.TrangThai = v;
+
+                ds.Add(phong);
+            }
+
+            return ds;
+        }
+        public bool kpd(int madatphong)
+        {
+            string lenhkp =
+                "UPDATE DatPhong SET TrangThai = 1 WHERE MaDatPhong = @MaDatPhong";
+            SqlParameter par = new SqlParameter("@MaDatPhong", madatphong);
+            SqlConnection conn = DataProvider.KetNoiDuLieu();
+            conn.Open();
+            int kq = DataProvider.ThucHienCauLenh(lenhkp, conn, par);
+            conn.Close();
+            return kq > 0;
+        }
+
         public List<DatPhongDTO> layds()
         {
             List<DatPhongDTO> ds = new List<DatPhongDTO>();
@@ -72,6 +113,18 @@ namespace DAL
             SqlConnection conn = DataProvider.KetNoiDuLieu();
             conn.Open();
             int kq = DataProvider.ThucHienCauLenh(lenhThem, conn, pars);
+            conn.Close();
+            return kq > 0;
+        }
+
+        public bool xoa(int madatphong)
+        {
+            string lenhXoa =
+                "UPDATE DatPhong SET TrangThai = 0 WHERE MaDatPhong = @MaDatPhong";
+            SqlParameter par = new SqlParameter("@MaDatPhong", madatphong);
+            SqlConnection conn = DataProvider.KetNoiDuLieu();
+            conn.Open();
+            int kq = DataProvider.ThucHienCauLenh(lenhXoa, conn, par);
             conn.Close();
             return kq > 0;
         }
