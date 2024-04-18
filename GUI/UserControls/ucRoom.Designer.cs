@@ -60,13 +60,13 @@
             this.lblStatusRoom = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.colMaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaLoai = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colMaTinhTrangPhong = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colMaPHG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaTinhTrangPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSucChua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGiaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSucChuaToiDa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRoom)).BeginInit();
@@ -209,7 +209,7 @@
             this.txtSearchRoom.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchRoom.Location = new System.Drawing.Point(6, 16);
             this.txtSearchRoom.Name = "txtSearchRoom";
-            this.txtSearchRoom.Size = new System.Drawing.Size(251, 40);
+            this.txtSearchRoom.Size = new System.Drawing.Size(251, 49);
             this.txtSearchRoom.TabIndex = 2;
             // 
             // btnTraCuuRoom
@@ -294,13 +294,13 @@
             this.dgvRoom.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRoom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaPhong,
+            this.colMaPHG,
             this.colMaLoai,
             this.colMaTinhTrangPhong,
             this.colHinhAnh,
             this.colMoTa,
-            this.colGia,
-            this.colSucChua,
+            this.colGiaPhong,
+            this.colSucChuaToiDa,
             this.colTrangThai});
             this.dgvRoom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRoom.Location = new System.Drawing.Point(0, 0);
@@ -308,6 +308,7 @@
             this.dgvRoom.Name = "dgvRoom";
             this.dgvRoom.ReadOnly = true;
             this.dgvRoom.RowHeadersVisible = false;
+            this.dgvRoom.RowHeadersWidth = 51;
             this.dgvRoom.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRoom.Size = new System.Drawing.Size(973, 746);
             this.dgvRoom.TabIndex = 0;
@@ -326,7 +327,7 @@
             0,
             0});
             this.nudSucChua.Name = "nudSucChua";
-            this.nudSucChua.Size = new System.Drawing.Size(155, 27);
+            this.nudSucChua.Size = new System.Drawing.Size(155, 32);
             this.nudSucChua.TabIndex = 32;
             this.nudSucChua.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudSucChua.Value = new decimal(new int[] {
@@ -349,7 +350,7 @@
             0,
             0});
             this.nudPriceMax.Name = "nudPriceMax";
-            this.nudPriceMax.Size = new System.Drawing.Size(120, 27);
+            this.nudPriceMax.Size = new System.Drawing.Size(120, 32);
             this.nudPriceMax.TabIndex = 31;
             this.nudPriceMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudPriceMax.ThousandsSeparator = true;
@@ -373,7 +374,7 @@
             0,
             0});
             this.nudPriceMin.Name = "nudPriceMin";
-            this.nudPriceMin.Size = new System.Drawing.Size(120, 27);
+            this.nudPriceMin.Size = new System.Drawing.Size(120, 32);
             this.nudPriceMin.TabIndex = 30;
             this.nudPriceMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudPriceMin.ThousandsSeparator = true;
@@ -401,7 +402,7 @@
             this.lblSortPrice.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortPrice.Location = new System.Drawing.Point(4, 298);
             this.lblSortPrice.Name = "lblSortPrice";
-            this.lblSortPrice.Size = new System.Drawing.Size(140, 26);
+            this.lblSortPrice.Size = new System.Drawing.Size(179, 33);
             this.lblSortPrice.TabIndex = 28;
             this.lblSortPrice.Text = "Sort theo Giá";
             this.lblSortPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -412,7 +413,7 @@
             this.lblPriceRange.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPriceRange.Location = new System.Drawing.Point(4, 241);
             this.lblPriceRange.Name = "lblPriceRange";
-            this.lblPriceRange.Size = new System.Drawing.Size(125, 26);
+            this.lblPriceRange.Size = new System.Drawing.Size(161, 33);
             this.lblPriceRange.TabIndex = 27;
             this.lblPriceRange.Text = "Khoảng giá";
             this.lblPriceRange.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -440,7 +441,7 @@
             this.lblSortTheoLoaiPhong.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortTheoLoaiPhong.Location = new System.Drawing.Point(4, 132);
             this.lblSortTheoLoaiPhong.Name = "lblSortTheoLoaiPhong";
-            this.lblSortTheoLoaiPhong.Size = new System.Drawing.Size(122, 26);
+            this.lblSortTheoLoaiPhong.Size = new System.Drawing.Size(158, 33);
             this.lblSortTheoLoaiPhong.TabIndex = 25;
             this.lblSortTheoLoaiPhong.Text = "Loại phòng";
             this.lblSortTheoLoaiPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -487,7 +488,7 @@
             this.lblQuickControl.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuickControl.Location = new System.Drawing.Point(69, 471);
             this.lblQuickControl.Name = "lblQuickControl";
-            this.lblQuickControl.Size = new System.Drawing.Size(273, 26);
+            this.lblQuickControl.Size = new System.Drawing.Size(352, 33);
             this.lblQuickControl.TabIndex = 22;
             this.lblQuickControl.Text = "Cập nhật trạng thái nhanh";
             this.lblQuickControl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -558,7 +559,7 @@
             this.lblSortSucChua.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortSucChua.Location = new System.Drawing.Point(4, 188);
             this.lblSortSucChua.Name = "lblSortSucChua";
-            this.lblSortSucChua.Size = new System.Drawing.Size(163, 26);
+            this.lblSortSucChua.Size = new System.Drawing.Size(210, 33);
             this.lblSortSucChua.TabIndex = 16;
             this.lblSortSucChua.Text = "Sức chứa tối đa";
             this.lblSortSucChua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -569,7 +570,7 @@
             this.lblSortMaPHG.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortMaPHG.Location = new System.Drawing.Point(4, 355);
             this.lblSortMaPHG.Name = "lblSortMaPHG";
-            this.lblSortMaPHG.Size = new System.Drawing.Size(192, 26);
+            this.lblSortMaPHG.Size = new System.Drawing.Size(248, 33);
             this.lblSortMaPHG.TabIndex = 14;
             this.lblSortMaPHG.Text = "Sort theo Room ID";
             this.lblSortMaPHG.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -580,7 +581,7 @@
             this.lblStateRoom.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStateRoom.Location = new System.Drawing.Point(4, 412);
             this.lblStateRoom.Name = "lblStateRoom";
-            this.lblStateRoom.Size = new System.Drawing.Size(186, 26);
+            this.lblStateRoom.Size = new System.Drawing.Size(237, 33);
             this.lblStateRoom.TabIndex = 9;
             this.lblStateRoom.Text = "Trạng thái dữ liệu";
             this.lblStateRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -591,7 +592,7 @@
             this.lblStatusRoom.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatusRoom.Location = new System.Drawing.Point(4, 82);
             this.lblStatusRoom.Name = "lblStatusRoom";
-            this.lblStatusRoom.Size = new System.Drawing.Size(183, 26);
+            this.lblStatusRoom.Size = new System.Drawing.Size(237, 33);
             this.lblStatusRoom.TabIndex = 8;
             this.lblStatusRoom.Text = "Tình trạng phòng";
             this.lblStatusRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -625,65 +626,79 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // colMaPhong
+            // colMaPHG
             // 
-            this.colMaPhong.HeaderText = "Mã phòng";
-            this.colMaPhong.Name = "colMaPhong";
-            this.colMaPhong.ReadOnly = true;
-            this.colMaPhong.Width = 117;
+            this.colMaPHG.DataPropertyName = "MaPHG";
+            this.colMaPHG.HeaderText = "Mã phòng";
+            this.colMaPHG.MinimumWidth = 6;
+            this.colMaPHG.Name = "colMaPHG";
+            this.colMaPHG.ReadOnly = true;
+            this.colMaPHG.Width = 146;
             // 
             // colMaLoai
             // 
-            this.colMaLoai.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colMaLoai.DataPropertyName = "MaLoai";
             this.colMaLoai.HeaderText = "Mã loại";
+            this.colMaLoai.MinimumWidth = 6;
             this.colMaLoai.Name = "colMaLoai";
             this.colMaLoai.ReadOnly = true;
             this.colMaLoai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaLoai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colMaLoai.Width = 90;
+            this.colMaLoai.Width = 112;
             // 
             // colMaTinhTrangPhong
             // 
-            this.colMaTinhTrangPhong.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colMaTinhTrangPhong.DataPropertyName = "MaTinhTrangPhong";
             this.colMaTinhTrangPhong.HeaderText = "Mã tình trạng phòng";
+            this.colMaTinhTrangPhong.MinimumWidth = 6;
             this.colMaTinhTrangPhong.Name = "colMaTinhTrangPhong";
             this.colMaTinhTrangPhong.ReadOnly = true;
             this.colMaTinhTrangPhong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaTinhTrangPhong.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colMaTinhTrangPhong.Width = 181;
+            this.colMaTinhTrangPhong.Width = 229;
             // 
             // colHinhAnh
             // 
+            this.colHinhAnh.DataPropertyName = "HinhAnh";
             this.colHinhAnh.HeaderText = "Hình ảnh";
+            this.colHinhAnh.MinimumWidth = 6;
             this.colHinhAnh.Name = "colHinhAnh";
             this.colHinhAnh.ReadOnly = true;
+            this.colHinhAnh.Width = 124;
             // 
             // colMoTa
             // 
+            this.colMoTa.DataPropertyName = "MoTa";
             this.colMoTa.HeaderText = "Mô tả";
+            this.colMoTa.MinimumWidth = 6;
             this.colMoTa.Name = "colMoTa";
             this.colMoTa.ReadOnly = true;
-            this.colMoTa.Width = 60;
+            this.colMoTa.Width = 73;
             // 
-            // colGia
+            // colGiaPhong
             // 
-            this.colGia.HeaderText = "Giá";
-            this.colGia.Name = "colGia";
-            this.colGia.ReadOnly = true;
-            this.colGia.Width = 60;
+            this.colGiaPhong.DataPropertyName = "GiaPhong";
+            this.colGiaPhong.HeaderText = "Giá";
+            this.colGiaPhong.MinimumWidth = 6;
+            this.colGiaPhong.Name = "colGiaPhong";
+            this.colGiaPhong.ReadOnly = true;
+            this.colGiaPhong.Width = 73;
             // 
-            // colSucChua
+            // colSucChuaToiDa
             // 
-            this.colSucChua.HeaderText = "Sức chứa";
-            this.colSucChua.Name = "colSucChua";
-            this.colSucChua.ReadOnly = true;
+            this.colSucChuaToiDa.DataPropertyName = "SucChuaToiDa";
+            this.colSucChuaToiDa.HeaderText = "Sức chứa";
+            this.colSucChuaToiDa.MinimumWidth = 6;
+            this.colSucChuaToiDa.Name = "colSucChuaToiDa";
+            this.colSucChuaToiDa.ReadOnly = true;
+            this.colSucChuaToiDa.Width = 123;
             // 
             // colTrangThai
             // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
             this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.MinimumWidth = 6;
             this.colTrangThai.Name = "colTrangThai";
             this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Width = 105;
+            this.colTrangThai.Width = 131;
             // 
             // ucRoom
             // 
@@ -752,13 +767,13 @@
         private System.Windows.Forms.NumericUpDown nudPriceMin;
         private System.Windows.Forms.NumericUpDown nudSucChua;
         private System.Windows.Forms.DataGridView dgvRoom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaPhong;
-        private System.Windows.Forms.DataGridViewComboBoxColumn colMaLoai;
-        private System.Windows.Forms.DataGridViewComboBoxColumn colMaTinhTrangPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaPHG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaLoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaTinhTrangPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn colHinhAnh;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMoTa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colGia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSucChua;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGiaPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSucChuaToiDa;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
     }
 }
