@@ -21,12 +21,13 @@ namespace GUI.UserControls
         public ucRoomBooking()
         {
             InitializeComponent();
-            LoadAvailableRooms();
+            this.DoubleBuffered = true;
+            
         }
 
         private void ucRoomBooking_Load(object sender, EventArgs e)
         {
-          
+            LoadAvailableRooms();
         }
         private void LoadAvailableRooms()
         {
@@ -37,8 +38,9 @@ namespace GUI.UserControls
                 foreach (var room in availableRooms)
                 {
                     Panel roomPanel = TaoPanelPhong(room);
-                    roomPanel.Dock = DockStyle.Top; // Set the room panel to fill the remaining space
+                    roomPanel.Dock = DockStyle.Top; 
                     flpRoom.Controls.Add(roomPanel);
+
                 }
             }
             catch (Exception ex)
@@ -51,30 +53,44 @@ namespace GUI.UserControls
         {
             Panel panelPhong = new Panel();
             panelPhong.BorderStyle = BorderStyle.FixedSingle;
-            panelPhong.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-            int w = (flpRoom.Size.Width / 2) -10;
-            panelPhong.Size = new Size(w, 200);
+
+            SplitContainer chiaPanel = new SplitContainer();
+            Label thongTinLabel = new Label();
+            PictureBox hinhAnhPictureBox = new PictureBox();
+
+
+            panelPhong.ParentChanged += (sender, e) =>
+            {
+                if (panelPhong.Parent != null)
+                {
+                    panelPhong.Parent.SizeChanged += (parentSender, parentE) =>
+                    {
+                        int w = (panelPhong.Parent.Size.Width / 2) -20 ;
+                        panelPhong.Size = new Size(w, 200);
+                        hinhAnhPictureBox.Width = panelPhong.Width / 3;
+                    };
+                }
+            };
+
             panelPhong.Cursor = Cursors.Hand;
             panelPhong.Click += (sender, e) =>
             {
                 MessageBox.Show($"Bạn đã đặt phòng: {phong.MoTa}");
             };
 
-            SplitContainer chiaPanel = new SplitContainer();
+          
             chiaPanel.Dock = DockStyle.Fill;
             chiaPanel.BorderStyle = BorderStyle.None;
             chiaPanel.SplitterWidth = 5;
             chiaPanel.IsSplitterFixed = false;
             chiaPanel.FixedPanel = FixedPanel.None;
 
-            PictureBox hinhAnhPictureBox = new PictureBox();
             hinhAnhPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             hinhAnhPictureBox.Dock = DockStyle.Left;
-            hinhAnhPictureBox.Width = panelPhong.Width / 3; // Set the width to one-third of the panel width
+            
             hinhAnhPictureBox.Margin = new Padding(0);
             chiaPanel.Panel1.Controls.Add(hinhAnhPictureBox);
 
-            Label thongTinLabel = new Label();
             thongTinLabel.Dock = DockStyle.Fill;
             thongTinLabel.Padding = new Padding(10, 5, 10, 5);
             thongTinLabel.Text = $"Phòng: {phong.MoTa}\nGiá: {phong.GiaPhong:C}\nMô tả: {phong.MoTa}";
@@ -89,14 +105,12 @@ namespace GUI.UserControls
                 }
                 else
                 {
-                    // Handle case where the byte array cannot be converted to an image
-                    // Maybe display a placeholder image or show an error message
+                   
                 }
             }
             else
             {
-                // Handle case where HinhAnh is null or empty
-                // Maybe display a placeholder image or show an error message
+                
             }
 
             panelPhong.Controls.Add(chiaPanel);
@@ -113,8 +127,7 @@ namespace GUI.UserControls
         private Image ByteArrayToImage(byte[] byteArray)
         {
             if (byteArray == null)
-            {
-                // Handle null byte array case, maybe return a default image or throw an exception
+            { 
                 throw new ArgumentNullException(nameof(byteArray), "Byte array cannot be null.");
             }
             else
