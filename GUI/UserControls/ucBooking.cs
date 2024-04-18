@@ -9,14 +9,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BLL;
+using DTO;
 namespace GUI.UserControls
 {
     public partial class ucBooking : UserControl
     {
         public customMessageBox thongBao;
         public frmDatPhong frm = new frmDatPhong();
-
+        DatPhongBLL DatPhongBLL=new DatPhongBLL();
+        List<DatPhongDTO> datPhongDTOs = new List<DatPhongDTO>();
         public ucBooking()
         {
             InitializeComponent();
@@ -24,24 +26,53 @@ namespace GUI.UserControls
 
         private void ucBooking_Load(object sender, EventArgs e)
         {
-           
+            layds();
+            dgvBooking.AutoGenerateColumns = false;
+            laycombo();
+        }
+        private void layds()
+        {
+            datPhongDTOs = DatPhongBLL.laydsp();
+            dgvBooking.DataSource = datPhongDTOs;
         }
 
+        private void laycombo()
+        {
+            DuLieuChoComboBox.duLieuSort(cboSortRoomID);
+            DuLieuChoComboBox.duLieuSort(cboSortBookingID);
+            DuLieuChoComboBox.duLieuFilter(cboStateBooking);
+
+        }
         private void btnAddBooking_Click(object sender, EventArgs e)
         {
+            
             frm.isAdd = true;
             frm.ShowDialog();
+            dgvBooking.ClearSelection();
+            layds();
         }
-
+        private void LayDuLieuTuForm(frmDatPhong frm)
+        {
+            //Gán giá trị như bình thường
+            frm.DatPhongDTO.MaDatPhong = (int)dgvBooking.SelectedRows[0].Cells["colMaDatPhong"].Value;
+            frm.DatPhongDTO.MaPHG = (int)dgvBooking.SelectedRows[0].Cells["colMaPHG"].Value;
+            frm.DatPhongDTO.MaKH = (int)dgvBooking.SelectedRows[0].Cells["colMaKH"].Value;
+            frm.DatPhongDTO.NgayDatPhong = (DateTime)dgvBooking.SelectedRows[0].Cells["colNgayDatPhong"].Value;
+            frm.DatPhongDTO.NgayNhanPhong = (DateTime)dgvBooking.SelectedRows[0].Cells["colNgayNhanPhong"].Value;
+            frm.DatPhongDTO.NgayTraPhong = (DateTime)dgvBooking.SelectedRows[0].Cells["colNgayTraPhong"].Value;
+            frm.DatPhongDTO.SoLuongKH =(int)dgvBooking.SelectedRows[0].Cells["colSoLuongKH"].Value;
+            frm.DatPhongDTO.TrangThai = Convert.ToBoolean(dgvBooking.SelectedRows[0].Cells["colTrangThai"].Value);
+        }
         private void btnEditBooking_Click(object sender, EventArgs e)
         {
             if (dgvBooking.SelectedRows.Count > 0)
             {
 
                 frm.isAdd = false;
-
-
-
+                LayDuLieuTuForm(frm);
+                frm.ShowDialog();
+                dgvBooking.ClearSelection();
+                layds();
 
                 frm.ShowDialog();
             }
