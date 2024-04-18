@@ -1,8 +1,10 @@
 ﻿using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,6 +12,35 @@ namespace DAL
 {
     public class PhongDAL
     {
+        public List<PhongDTO> FilterTrangThai(bool v)
+        {
+            List<PhongDTO> dsPhong = new List<PhongDTO>();
+
+            string lenhLayDanhSachPhong = "SELECT * FROM Phong WHERE TrangThai = @TrangThai";
+
+            SqlConnection conn = DataProvider.KetNoiDuLieu();
+
+            conn.Open();
+
+            SqlDataReader reader = DataProvider.ThucHienTruyVan(lenhLayDanhSachPhong, conn, "@TrangThai", SqlDbType.Binary, v ? (object)1 : (object)0);
+            while (reader.Read())
+            {
+                PhongDTO PhongDTO = new PhongDTO();
+                PhongDTO.MaPHG = (int)reader[0];
+                PhongDTO.MaLoai = (int)reader[1];
+                PhongDTO.MaTinhTrangPhong = (int)reader[2];
+                PhongDTO.HinhAnh = reader[3].ToString();
+                PhongDTO.MoTa = reader[4].ToString();
+                PhongDTO.GiaPhong = (decimal)reader[5];
+                PhongDTO.SucChuaToiDa = (int)reader[6];
+                PhongDTO.TrangThai = v;
+
+                dsPhong.Add(PhongDTO);
+            }
+
+            return dsPhong;
+        }
+
         public bool kqphong(int maphong)
         {
             string lenhkpphong =

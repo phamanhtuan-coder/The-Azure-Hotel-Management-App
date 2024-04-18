@@ -181,6 +181,61 @@ namespace GUI.UserControls
             thongBao.ShowDialog();
         }
 
-        
+        private void btnTraCuuRoom_Click(object sender, EventArgs e)
+        {
+            phongDTOs = PhongBLL.laydsp();
+            dgvRoom.DataSource = phongDTOs;
+            string searchKeyword = txtSearchRoom.Text.Trim();
+            if (searchKeyword.Count() > 0)
+            {
+                phongDTOstk = PhongBLL.TraCuuPhong(phongDTOs, searchKeyword);
+
+                dgvRoom.DataSource = phongDTOstk;
+
+            }
+            else
+            {
+                layds();
+            }
+        }
+
+        private void cboStateRoom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            phongDTOs = PhongBLL.FilterTrangThai(cboStateRoom.Text);
+            dgvRoom.ClearSelection();
+            dgvRoom.DataSource = phongDTOs;
+        }
+
+        private void cboSortPrice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sortOption = cboSortPrice.SelectedItem.ToString();
+            switch (sortOption)
+            {
+                case "Giảm dần":
+                    phongDTOs = phongDTOs.OrderByDescending(item => item.GiaPhong).ToList();
+                    break;
+                default:
+                    phongDTOs = phongDTOs.OrderBy(item => item.GiaPhong).ToList();
+                    break;
+            }
+
+            dgvRoom.DataSource = phongDTOs;
+        }
+
+        private void cboSortRoomID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sortOption = cboSortRoomID.SelectedItem.ToString();
+            switch (sortOption)
+            {
+                case "Giảm dần":
+                    phongDTOs = phongDTOs.OrderByDescending(item => item.MaPHG).ToList();
+                    break;
+                default:
+                    phongDTOs = phongDTOs.OrderBy(item => item.MaPHG).ToList();
+                    break;
+            }
+
+            dgvRoom.DataSource = phongDTOs;
+        }
     }
 }
