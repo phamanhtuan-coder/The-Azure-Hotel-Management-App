@@ -115,14 +115,14 @@ namespace GUI.UserControls
                 {
                     thongBao = new customMessageBox("Hủy xóa!");
                 }
-            
+                thongBao.ShowDialog();
             }
             else
             {
                 customMessageBox thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn xóa!");
                 thongBao.ShowDialog();
             }
-            thongBao.ShowDialog();
+            
         }
 
         private void btnRecoverDeviceStatus_Click(object sender, EventArgs e)
@@ -151,13 +151,14 @@ namespace GUI.UserControls
                         );
                     }
                 }
+                thongBao.ShowDialog();
             }
             else
             {
                 customMessageBox thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
                 thongBao.ShowDialog();
             }
-            thongBao.ShowDialog();
+            
         }
 
         private void btnTraCuuDeviceStatus_Click(object sender, EventArgs e)

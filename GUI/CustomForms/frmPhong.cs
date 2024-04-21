@@ -39,7 +39,7 @@ namespace GUI.customForm
                 cboLoaiPhong.DataSource=loaiPhongDTOs;
                 cboLoaiPhong.DisplayMember = "TenLoai";
                 cboLoaiPhong.ValueMember = "MaLoai";
-                tinhTrangPhongDTOs = TinhTrangPhongBLL.laydsttphong();
+                tinhTrangPhongDTOs = TinhTrangPhongBLL.laydsttphong2();
                 cboTinhTrangPhong.DataSource = tinhTrangPhongDTOs;
                 cboTinhTrangPhong.DisplayMember = "TenTinhTrang";
                 cboTinhTrangPhong.ValueMember = "MaTinhTrangPhong";
@@ -51,7 +51,7 @@ namespace GUI.customForm
                 cboLoaiPhong.DataSource = loaiPhongDTOs;
                 cboLoaiPhong.DisplayMember = "TenLoai";
                 cboLoaiPhong.ValueMember = "MaLoai";
-                tinhTrangPhongDTOs = TinhTrangPhongBLL.laydsttphong();
+                tinhTrangPhongDTOs = TinhTrangPhongBLL.laydsttphong3();
                 cboTinhTrangPhong.DataSource = tinhTrangPhongDTOs;
                 cboTinhTrangPhong.DisplayMember = "TenTinhTrang";
                 cboTinhTrangPhong.ValueMember = "MaTinhTrangPhong";
@@ -68,8 +68,8 @@ namespace GUI.customForm
 
         private void laydltuform(PhongDTO p)
         {
-            p.MaLoai = cboLoaiPhong.SelectedIndex;
-            p.MaTinhTrangPhong=cboTinhTrangPhong.SelectedIndex ;
+            p.MaLoai = cboLoaiPhong.SelectedIndex+1;
+            p.MaTinhTrangPhong=cboTinhTrangPhong.SelectedIndex+1 ;
             p.GiaPhong = nudGiaPhong.Value;
             p.SucChuaToiDa = (int)nudSucChuaToiDa.Value;
             p.MoTa= rtxtMoTa.Text ;

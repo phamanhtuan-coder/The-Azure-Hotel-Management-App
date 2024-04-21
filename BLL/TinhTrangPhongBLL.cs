@@ -37,6 +37,16 @@ namespace BLL
             return TinhTrangPhongDAL.laydsttphong();
         }
 
+        public List<TinhTrangPhongDTO> laydsttphong2()
+        {
+            return TinhTrangPhongDAL.laydsttphong2();
+        }
+
+        public List<TinhTrangPhongDTO> laydsttphong3()
+        {
+            return TinhTrangPhongDAL.laydsttphong3();
+        }
+
         public bool suattphong(TinhTrangPhongDTO tinhTrang)
         {
             return TinhTrangPhongDAL.suattp(tinhTrang);

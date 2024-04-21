@@ -135,13 +135,14 @@ namespace GUI.UserControls
                 {
                     thongBao = new customMessageBox("Hủy xóa!");
                 }
+                thongBao.ShowDialog();
             }
             else
             {
                 thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn xóa!");
 
             }
-            thongBao.ShowDialog();
+            
         }
 
         private void btnRecoverRoom_Click(object sender, EventArgs e)
@@ -172,13 +173,14 @@ namespace GUI.UserControls
                         );
                     }
                 }
-            }
+                thongBao.ShowDialog();
+            }        
             else
             {
                 thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
 
             }
-            thongBao.ShowDialog();
+            
         }
 
         private void btnTraCuuRoom_Click(object sender, EventArgs e)

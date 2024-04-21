@@ -72,6 +72,52 @@ namespace DAL
             return dsttp;
         }
 
+        public List<TinhTrangPhongDTO> laydsttphong2()
+        {
+            List<TinhTrangPhongDTO> dsttp = new List<TinhTrangPhongDTO>();
+            SqlConnection conn = DataProvider.KetNoiDuLieu();
+            string strlaydanhsach = "select * from TinhTrangPhong where MaTinhTrangPhong=1";
+            conn.Open();
+            SqlDataReader reader = DataProvider.ThucHienTruyVan(strlaydanhsach, conn);
+            while (reader.Read())
+            {
+                TinhTrangPhongDTO ttphong = new TinhTrangPhongDTO();
+                ttphong.MaTinhTrangPhong = (int)reader[0];
+                ttphong.TenTinhTrang = reader[1].ToString();
+                ttphong.MoTa = reader[2].ToString();
+                byte[] trangThaiBytes = (byte[])reader[3];
+                bool trangThai = trangThaiBytes[0] == 1;
+                ttphong.TrangThai = trangThai;
+                dsttp.Add(ttphong);
+            }
+            reader.Close();
+            conn.Close();
+            return dsttp;
+        }
+
+        public List<TinhTrangPhongDTO> laydsttphong3()
+        {
+            List<TinhTrangPhongDTO> dsttp = new List<TinhTrangPhongDTO>();
+            SqlConnection conn = DataProvider.KetNoiDuLieu();
+            string strlaydanhsach = "select * from TinhTrangPhong where TrangThai=1";
+            conn.Open();
+            SqlDataReader reader = DataProvider.ThucHienTruyVan(strlaydanhsach, conn);
+            while (reader.Read())
+            {
+                TinhTrangPhongDTO ttphong = new TinhTrangPhongDTO();
+                ttphong.MaTinhTrangPhong = (int)reader[0];
+                ttphong.TenTinhTrang = reader[1].ToString();
+                ttphong.MoTa = reader[2].ToString();
+                byte[] trangThaiBytes = (byte[])reader[3];
+                bool trangThai = trangThaiBytes[0] == 1;
+                ttphong.TrangThai = trangThai;
+                dsttp.Add(ttphong);
+            }
+            reader.Close();
+            conn.Close();
+            return dsttp;
+        }
+
         public bool suattp(TinhTrangPhongDTO tinhTrang)
         {
             string lenhCapNhatttphong =
