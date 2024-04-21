@@ -18,6 +18,7 @@ namespace GUI.UserControls
     {
         public customMessageBox thongBao;
         List<TTThietBiDTO> thietBiDTOs=new List<TTThietBiDTO>();
+        List<TTThietBiDTO> thietBiDTOstk = new List<TTThietBiDTO>();
         TTThietBiBLL TTThietBiBLL = new TTThietBiBLL();
 
         public ucDeviceStatus()
@@ -114,14 +115,14 @@ namespace GUI.UserControls
                 {
                     thongBao = new customMessageBox("Hủy xóa!");
                 }
-            
+                thongBao.ShowDialog();
             }
             else
             {
                 customMessageBox thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn xóa!");
                 thongBao.ShowDialog();
             }
-            thongBao.ShowDialog();
+            
         }
 
         private void btnRecoverDeviceStatus_Click(object sender, EventArgs e)
@@ -150,13 +151,56 @@ namespace GUI.UserControls
                         );
                     }
                 }
+                thongBao.ShowDialog();
             }
             else
             {
                 customMessageBox thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
                 thongBao.ShowDialog();
             }
-            thongBao.ShowDialog();
+            
+        }
+
+        private void btnTraCuuDeviceStatus_Click(object sender, EventArgs e)
+        {
+
+            thietBiDTOs = TTThietBiBLL.laydsTBi();
+            dgvDeviceStatus.DataSource = thietBiDTOs;
+            string searchKeyword = txtSearchDeviceStatus.Text.Trim();
+            if (searchKeyword.Count() > 0)
+            {
+                thietBiDTOstk = TTThietBiBLL.tracutttb(thietBiDTOs, searchKeyword);
+
+                dgvDeviceStatus.DataSource = thietBiDTOstk;
+
+            }
+            else
+            {
+                laydstb();
+            }
+        }
+
+        private void cboStateDeviceStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            thietBiDTOs = TTThietBiBLL.FilterTrangThai(cboStateDeviceStatus.Text);
+            dgvDeviceStatus.ClearSelection();
+            dgvDeviceStatus.DataSource = thietBiDTOs;
+        }
+
+        private void cboSortDeviceStatusID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sortOption = cboSortDeviceStatusID.SelectedItem.ToString();
+            switch (sortOption)
+            {
+                case "Giảm dần":
+                    thietBiDTOs = thietBiDTOs.OrderByDescending(item => item.MaTinhTrangThietBi).ToList();
+                    break;
+                default:
+                    thietBiDTOs = thietBiDTOs.OrderBy(item => item.MaTinhTrangThietBi).ToList();
+                    break;
+            }
+
+            dgvDeviceStatus.DataSource = thietBiDTOs;
         }
     }
 }

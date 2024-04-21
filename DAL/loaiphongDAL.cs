@@ -38,10 +38,8 @@ namespace DAL
         {
             List<LoaiPhongDTO> dsLoaiPhong = new List<LoaiPhongDTO>();
 
-            // Create the SQL query with a parameterized filter
             string lenhLayDanhSachLoaiPhong = "SELECT * FROM LoaiPhong WHERE TrangThai = @TrangThai";
 
-            // Establish connection
             SqlConnection conn = DataProvider.KetNoiDuLieu();
 
             conn.Open();

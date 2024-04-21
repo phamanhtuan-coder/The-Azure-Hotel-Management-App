@@ -91,10 +91,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataProvider.cs" />
+    <Compile Include="DatPhongDAL.cs" />
     <Compile Include="LoaiPhongDAL.cs" />
     <Compile Include="NhanVienDAL.cs" />
     <Compile Include="PhongBanDAL.cs" />
+    <Compile Include="PhongDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TinhTrangPhongDAL.cs" />
     <Compile Include="TTThietBiDAL.cs" />
     <Compile Include="RoleDAL.cs" />
     <Compile Include="TaiKhoanDAL.cs" />
