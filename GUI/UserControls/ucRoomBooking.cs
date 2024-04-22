@@ -34,11 +34,16 @@ namespace GUI.UserControls
             try
             {
                 var availableRooms = phongBLL.GetAvailableRooms();
-
+                int i = 0;
                 foreach (var room in availableRooms)
                 {
                     Panel roomPanel = TaoPanelPhong(room);
-                    roomPanel.Dock = DockStyle.Top; 
+                    roomPanel.Dock = DockStyle.Top;
+                    if (i ==0)
+                    {
+                        roomPanel.Margin = new Padding(5, 5, 0, 0);
+
+                    }
                     flpRoom.Controls.Add(roomPanel);
 
                 }
@@ -53,6 +58,7 @@ namespace GUI.UserControls
         {
             Panel panelPhong = new Panel();
             panelPhong.BorderStyle = BorderStyle.FixedSingle;
+            panelPhong.BackColor = Color.White;
 
             SplitContainer chiaPanel = new SplitContainer();
             Label thongTinLabel = new Label();

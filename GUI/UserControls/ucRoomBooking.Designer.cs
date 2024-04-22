@@ -35,13 +35,16 @@
             this.lblCheckInDate = new System.Windows.Forms.Label();
             this.dtpCheckInDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.dtpCheckOutDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
-            this.txtSearchBooking = new System.Windows.Forms.TextBox();
-            this.btnTraCuuBooking = new Syncfusion.WinForms.Controls.SfButton();
-            this.cboSortRoomID = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.lblSortRoomType = new System.Windows.Forms.Label();
+            this.nudSucChua = new System.Windows.Forms.NumericUpDown();
+            this.nudPriceMax = new System.Windows.Forms.NumericUpDown();
+            this.nudPriceMin = new System.Windows.Forms.NumericUpDown();
+            this.lblPriceRange = new System.Windows.Forms.Label();
+            this.lblSortSucChua = new System.Windows.Forms.Label();
             this.panController.SuspendLayout();
             this.panContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cboSortRoomID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSucChua)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPriceMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPriceMin)).BeginInit();
             this.SuspendLayout();
             // 
             // flpRoom
@@ -49,6 +52,7 @@
             this.flpRoom.AutoScroll = true;
             this.flpRoom.AutoSize = true;
             this.flpRoom.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flpRoom.BackColor = System.Drawing.SystemColors.ControlDark;
             this.flpRoom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flpRoom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpRoom.Location = new System.Drawing.Point(0, 0);
@@ -59,11 +63,12 @@
             // panController
             // 
             this.panController.BackColor = System.Drawing.Color.Lavender;
-            this.panController.Controls.Add(this.cboSortRoomID);
-            this.panController.Controls.Add(this.lblSortRoomType);
-            this.panController.Controls.Add(this.txtSearchBooking);
+            this.panController.Controls.Add(this.nudSucChua);
+            this.panController.Controls.Add(this.nudPriceMax);
+            this.panController.Controls.Add(this.nudPriceMin);
+            this.panController.Controls.Add(this.lblPriceRange);
+            this.panController.Controls.Add(this.lblSortSucChua);
             this.panController.Controls.Add(this.lblCheckOutDate);
-            this.panController.Controls.Add(this.btnTraCuuBooking);
             this.panController.Controls.Add(this.lblCheckInDate);
             this.panController.Controls.Add(this.dtpCheckInDate);
             this.panController.Controls.Add(this.dtpCheckOutDate);
@@ -106,8 +111,6 @@
             // 
             // dtpCheckInDate
             // 
-            this.dtpCheckInDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpCheckInDate.DateTimePattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
             this.dtpCheckInDate.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpCheckInDate.Location = new System.Drawing.Point(223, 23);
@@ -118,8 +121,6 @@
             // 
             // dtpCheckOutDate
             // 
-            this.dtpCheckOutDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpCheckOutDate.DateTimePattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
             this.dtpCheckOutDate.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpCheckOutDate.Location = new System.Drawing.Point(223, 77);
@@ -128,58 +129,93 @@
             this.dtpCheckOutDate.TabIndex = 13;
             this.dtpCheckOutDate.ToolTipText = "";
             // 
-            // txtSearchBooking
+            // nudSucChua
             // 
-            this.txtSearchBooking.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchBooking.Location = new System.Drawing.Point(979, 48);
-            this.txtSearchBooking.Name = "txtSearchBooking";
-            this.txtSearchBooking.Size = new System.Drawing.Size(251, 40);
-            this.txtSearchBooking.TabIndex = 4;
+            this.nudSucChua.Location = new System.Drawing.Point(829, 31);
+            this.nudSucChua.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.nudSucChua.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudSucChua.Name = "nudSucChua";
+            this.nudSucChua.Size = new System.Drawing.Size(155, 27);
+            this.nudSucChua.TabIndex = 37;
+            this.nudSucChua.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudSucChua.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // btnTraCuuBooking
+            // nudPriceMax
             // 
-            this.btnTraCuuBooking.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTraCuuBooking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnTraCuuBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTraCuuBooking.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTraCuuBooking.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuBooking.Location = new System.Drawing.Point(1236, 48);
-            this.btnTraCuuBooking.Name = "btnTraCuuBooking";
-            this.btnTraCuuBooking.Size = new System.Drawing.Size(118, 40);
-            this.btnTraCuuBooking.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnTraCuuBooking.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuBooking.TabIndex = 3;
-            this.btnTraCuuBooking.Text = "Tra cứu";
-            this.btnTraCuuBooking.UseVisualStyleBackColor = false;
+            this.nudPriceMax.Increment = new decimal(new int[] {
+            500000,
+            0,
+            0,
+            0});
+            this.nudPriceMax.Location = new System.Drawing.Point(864, 82);
+            this.nudPriceMax.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.nudPriceMax.Name = "nudPriceMax";
+            this.nudPriceMax.Size = new System.Drawing.Size(120, 27);
+            this.nudPriceMax.TabIndex = 36;
+            this.nudPriceMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudPriceMax.ThousandsSeparator = true;
+            this.nudPriceMax.Value = new decimal(new int[] {
+            500000,
+            0,
+            0,
+            0});
             // 
-            // cboSortRoomID
+            // nudPriceMin
             // 
-            this.cboSortRoomID.DelimiterChar = "";
-            this.cboSortRoomID.DisplayMember = "";
-            this.cboSortRoomID.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboSortRoomID.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortRoomID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortRoomID.Location = new System.Drawing.Point(726, 48);
-            this.cboSortRoomID.Name = "cboSortRoomID";
-            this.cboSortRoomID.Size = new System.Drawing.Size(212, 40);
-            this.cboSortRoomID.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortRoomID.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortRoomID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortRoomID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortRoomID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortRoomID.TabIndex = 26;
+            this.nudPriceMin.Increment = new decimal(new int[] {
+            500000,
+            0,
+            0,
+            0});
+            this.nudPriceMin.Location = new System.Drawing.Point(737, 82);
+            this.nudPriceMin.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.nudPriceMin.Name = "nudPriceMin";
+            this.nudPriceMin.Size = new System.Drawing.Size(120, 27);
+            this.nudPriceMin.TabIndex = 35;
+            this.nudPriceMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudPriceMin.ThousandsSeparator = true;
             // 
-            // lblSortRoomType
+            // lblPriceRange
             // 
-            this.lblSortRoomType.AutoSize = true;
-            this.lblSortRoomType.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortRoomType.Location = new System.Drawing.Point(501, 60);
-            this.lblSortRoomType.Name = "lblSortRoomType";
-            this.lblSortRoomType.Size = new System.Drawing.Size(210, 26);
-            this.lblSortRoomType.TabIndex = 25;
-            this.lblSortRoomType.Text = "Tìm theo loại phòng";
-            this.lblSortRoomType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblPriceRange.AutoSize = true;
+            this.lblPriceRange.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPriceRange.Location = new System.Drawing.Point(604, 83);
+            this.lblPriceRange.Name = "lblPriceRange";
+            this.lblPriceRange.Size = new System.Drawing.Size(125, 26);
+            this.lblPriceRange.TabIndex = 34;
+            this.lblPriceRange.Text = "Khoảng giá";
+            this.lblPriceRange.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblSortSucChua
+            // 
+            this.lblSortSucChua.AutoSize = true;
+            this.lblSortSucChua.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortSucChua.Location = new System.Drawing.Point(604, 30);
+            this.lblSortSucChua.Name = "lblSortSucChua";
+            this.lblSortSucChua.Size = new System.Drawing.Size(163, 26);
+            this.lblSortSucChua.TabIndex = 33;
+            this.lblSortSucChua.Text = "Sức chứa tối đa";
+            this.lblSortSucChua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ucRoomBooking
             // 
@@ -195,7 +231,9 @@
             this.panController.PerformLayout();
             this.panContent.ResumeLayout(false);
             this.panContent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cboSortRoomID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSucChua)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPriceMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPriceMin)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -209,9 +247,10 @@
         private System.Windows.Forms.Label lblCheckInDate;
         private Syncfusion.WinForms.Input.SfDateTimeEdit dtpCheckInDate;
         private Syncfusion.WinForms.Input.SfDateTimeEdit dtpCheckOutDate;
-        private System.Windows.Forms.TextBox txtSearchBooking;
-        private Syncfusion.WinForms.Controls.SfButton btnTraCuuBooking;
-        private Syncfusion.WinForms.ListView.SfComboBox cboSortRoomID;
-        private System.Windows.Forms.Label lblSortRoomType;
+        private System.Windows.Forms.NumericUpDown nudSucChua;
+        private System.Windows.Forms.NumericUpDown nudPriceMax;
+        private System.Windows.Forms.NumericUpDown nudPriceMin;
+        private System.Windows.Forms.Label lblPriceRange;
+        private System.Windows.Forms.Label lblSortSucChua;
     }
 }
