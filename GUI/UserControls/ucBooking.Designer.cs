@@ -163,7 +163,7 @@
             this.btnDeleteBooking.Size = new System.Drawing.Size(191, 41);
             this.btnDeleteBooking.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnDeleteBooking.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteBooking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnDeleteBooking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDeleteBooking.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnDeleteBooking.TabIndex = 4;
             this.btnDeleteBooking.Text = "Xóa";
@@ -184,7 +184,7 @@
             this.btnRecoverBooking.Size = new System.Drawing.Size(191, 41);
             this.btnRecoverBooking.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverBooking.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverBooking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnRecoverBooking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnRecoverBooking.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRecoverBooking.TabIndex = 5;
             this.btnRecoverBooking.Text = "Khôi phục";
