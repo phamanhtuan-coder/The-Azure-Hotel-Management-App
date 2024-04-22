@@ -32,7 +32,7 @@
             this.btnSubmit = new Syncfusion.WinForms.Controls.SfButton();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.txtHoTenNV = new System.Windows.Forms.TextBox();
-            this.txtMaTaiKhoan = new System.Windows.Forms.TextBox();
+            this.txtTenTaiKhoan = new System.Windows.Forms.TextBox();
             this.txtCCCD = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
@@ -51,13 +51,18 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblSDT = new System.Windows.Forms.Label();
             this.lblDiaChi = new System.Windows.Forms.Label();
+            this.cboMaNQL = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.nupLuong = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupLuong)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(568, 379);
+            this.btnSubmit.Location = new System.Drawing.Point(582, 400);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
             this.btnSubmit.TabIndex = 3;
@@ -67,7 +72,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(395, 379);
+            this.btnCancel.Location = new System.Drawing.Point(387, 400);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
             this.btnCancel.TabIndex = 5;
@@ -81,12 +86,12 @@
             this.txtHoTenNV.Size = new System.Drawing.Size(194, 26);
             this.txtHoTenNV.TabIndex = 6;
             // 
-            // txtMaTaiKhoan
+            // txtTenTaiKhoan
             // 
-            this.txtMaTaiKhoan.Location = new System.Drawing.Point(12, 288);
-            this.txtMaTaiKhoan.Name = "txtMaTaiKhoan";
-            this.txtMaTaiKhoan.Size = new System.Drawing.Size(175, 26);
-            this.txtMaTaiKhoan.TabIndex = 7;
+            this.txtTenTaiKhoan.Location = new System.Drawing.Point(12, 270);
+            this.txtTenTaiKhoan.Name = "txtTenTaiKhoan";
+            this.txtTenTaiKhoan.Size = new System.Drawing.Size(175, 26);
+            this.txtTenTaiKhoan.TabIndex = 7;
             // 
             // txtCCCD
             // 
@@ -150,9 +155,9 @@
             // btnTaoTK
             // 
             this.btnTaoTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaoTK.Location = new System.Drawing.Point(193, 288);
+            this.btnTaoTK.Location = new System.Drawing.Point(193, 270);
             this.btnTaoTK.Name = "btnTaoTK";
-            this.btnTaoTK.Size = new System.Drawing.Size(150, 27);
+            this.btnTaoTK.Size = new System.Drawing.Size(169, 27);
             this.btnTaoTK.TabIndex = 15;
             this.btnTaoTK.Text = "Tạo tài khoản";
             this.btnTaoTK.Click += new System.EventHandler(this.btnTaoTK_Click);
@@ -180,7 +185,7 @@
             // lblMaTaiKhoan
             // 
             this.lblMaTaiKhoan.AutoSize = true;
-            this.lblMaTaiKhoan.Location = new System.Drawing.Point(12, 263);
+            this.lblMaTaiKhoan.Location = new System.Drawing.Point(12, 249);
             this.lblMaTaiKhoan.Name = "lblMaTaiKhoan";
             this.lblMaTaiKhoan.Size = new System.Drawing.Size(91, 20);
             this.lblMaTaiKhoan.TabIndex = 18;
@@ -249,11 +254,48 @@
             this.lblDiaChi.TabIndex = 25;
             this.lblDiaChi.Text = "Địa chỉ";
             // 
+            // cboMaNQL
+            // 
+            this.cboMaNQL.FormattingEnabled = true;
+            this.cboMaNQL.Location = new System.Drawing.Point(193, 303);
+            this.cboMaNQL.Name = "cboMaNQL";
+            this.cboMaNQL.Size = new System.Drawing.Size(169, 28);
+            this.cboMaNQL.TabIndex = 26;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 308);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(144, 20);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Mã người quản lý";
+            // 
+            // nupLuong
+            // 
+            this.nupLuong.Location = new System.Drawing.Point(193, 337);
+            this.nupLuong.Name = "nupLuong";
+            this.nupLuong.Size = new System.Drawing.Size(169, 26);
+            this.nupLuong.TabIndex = 29;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 343);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 20);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Lương";
+            // 
             // frmNhanVien
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 473);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.nupLuong);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cboMaNQL);
             this.Controls.Add(this.lblDiaChi);
             this.Controls.Add(this.lblSDT);
             this.Controls.Add(this.lblEmail);
@@ -272,7 +314,7 @@
             this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtCCCD);
-            this.Controls.Add(this.txtMaTaiKhoan);
+            this.Controls.Add(this.txtTenTaiKhoan);
             this.Controls.Add(this.txtHoTenNV);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSubmit);
@@ -283,6 +325,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupLuong)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,7 +335,7 @@
         private Syncfusion.WinForms.Controls.SfButton btnSubmit;
         private Syncfusion.WinForms.Controls.SfButton btnCancel;
         private System.Windows.Forms.TextBox txtHoTenNV;
-        private System.Windows.Forms.TextBox txtMaTaiKhoan;
+        private System.Windows.Forms.TextBox txtTenTaiKhoan;
         private System.Windows.Forms.TextBox txtCCCD;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtSDT;
@@ -311,5 +354,9 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblSDT;
         private System.Windows.Forms.Label lblDiaChi;
+        private System.Windows.Forms.ComboBox cboMaNQL;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown nupLuong;
+        private System.Windows.Forms.Label label1;
     }
 }

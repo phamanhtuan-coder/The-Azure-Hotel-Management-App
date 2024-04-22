@@ -9,11 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Utilities;
+using BLL;
+using DTO;
 
 namespace GUI.customForm
 {
     public partial class frmNhanVien : Form
     {
+        NhanVienBLL  nhanVienBLL= new NhanVienBLL();
+        List<NhanVienDTO> nhanVienDTOs = new List<NhanVienDTO>();
         public string username { get; set; }
         public string maNhanVien { get; set; }
         public string maTaikhoan { get; set; }
@@ -25,6 +29,7 @@ namespace GUI.customForm
         public string soDienThoai { get; set; }
         public string email { get; set; }
         public Image anhDaiDien { get; set; }
+        public bool wasAdd { get; set; }
         public bool isAdd { get; set; }
 
         public frmNhanVien()
@@ -35,9 +40,9 @@ namespace GUI.customForm
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
             // gán giá trị mặc định bằng các biến trên
-            txtMaTaiKhoan.Text = username;
+            txtTenTaiKhoan.Text = username;
             picAvatar.Image = anhDaiDien;
-            txtMaTaiKhoan.Text = maTaikhoan;
+            txtTenTaiKhoan.Text = maTaikhoan;
             txtHoTenNV.Text = hoTen;
             txtCCCD.Text = CCCD;
             if (!string.IsNullOrEmpty(ngaySinh))
@@ -59,9 +64,25 @@ namespace GUI.customForm
             txtDiaChi.Text = diaChi;
             txtSDT.Text = soDienThoai;
             txtEmail.Text = email;
+            loadNQL();
         }
 
-        
+        private void loadNQL()
+        {
+            NhanVienDTO TatCa = new NhanVienDTO();
+            TatCa.MaNV = -1;
+            TatCa.HoTenNV = "Không có";
+            nhanVienDTOs.Add(TatCa);
+            List<NhanVienDTO> tam = nhanVienBLL.LoadIDAndNameBLL();
+            foreach (var item in tam)
+            {
+                nhanVienDTOs.Add(item);
+            }
+            cboMaNQL.DataSource = nhanVienDTOs;
+            cboMaNQL.DisplayMember = "HoTenNV";
+            cboMaNQL.ValueMember = "MaNV";
+            cboMaNQL.SelectedIndex = 0;
+        }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -72,14 +93,13 @@ namespace GUI.customForm
                 if (AddTaiKhoan())
                 {
                     thongBao = new customMessageBox("Đã thêm thành công dữ liệu nhân viên mới!");
-                    thongBao.ShowDialog();
+                    thongBao.ShowDialog();                   
                 }
                 else
                 {
                     thongBao = new customMessageBox("Đã thêm thất bại dữ liệu nhân viên mới!");
                     thongBao.ShowDialog();
                 }
-
             }
             else
             {
@@ -92,8 +112,21 @@ namespace GUI.customForm
         }
 
         private bool AddTaiKhoan()
-        {
-            return false;
+        {        
+            NhanVienDTO nhanvien= new NhanVienDTO();
+            nhanvien.HinhAnh = ImageToByteArray(picAvatar.Image);
+            nhanvien.HoTenNV=txtHoTenNV.Text;
+            nhanvien.CCCD=txtCCCD.Text;
+            nhanvien.GioiTinh = radNam.Checked ? "Nam" : "Nữ";
+            string ns = dtpNgaySinh.Value.ToString("yyyy-MM-dd");
+            nhanvien.NgaySinh = DateTime.Parse(ns);
+            nhanvien.Email= txtEmail.Text;
+            nhanvien.SDT=txtSDT.Text;
+            nhanvien.DiaChi=txtDiaChi.Text;
+            nhanvien.TenTaiKhoan = txtTenTaiKhoan.Text;
+            nhanvien.MaNQL=(int)cboMaNQL.SelectedValue;
+            nhanvien.Luong=nupLuong.Value;
+            return nhanVienBLL.AddNhanVienBLL(nhanvien);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -105,11 +138,17 @@ namespace GUI.customForm
         {
             frmTaiKhoan taoTaiKhoan = new frmTaiKhoan();
             taoTaiKhoan.isAdd = true;
+            taoTaiKhoan.isNhanVien = true;
             taoTaiKhoan.ShowDialog();
             //Sau đó thực hiện lệnh query để lấy mã tài khoản vừa tạo và gán mã đó vào biến maTaiKhoan
-            txtMaTaiKhoan.Text = Program.username;
+            
+            string user= nhanVienBLL.TruyVanUsernameBLL();
+            if (BienTam.username.Equals(user) && BienTam.kiemtraAdd)
+            {
+                txtTenTaiKhoan.Text =user;
+            }            
         }
-
+        
         private void btnChonHinh_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
@@ -117,7 +156,6 @@ namespace GUI.customForm
             if (open.ShowDialog() == DialogResult.OK)
             {
                 picAvatar.Image= Image.FromFile(open.FileName);
-                this.Text = open.FileName;
             }
         }
 
@@ -127,5 +165,6 @@ namespace GUI.customForm
             img.Save(m, System.Drawing.Imaging.ImageFormat.Png);
             return m.ToArray();
         }
+
     }
 }

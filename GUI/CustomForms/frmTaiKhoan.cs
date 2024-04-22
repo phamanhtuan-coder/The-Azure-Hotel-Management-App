@@ -20,12 +20,13 @@ namespace GUI.customForm
         TaiKhoanBLL taiKhoanBLL = new TaiKhoanBLL();
         RoleBLL roleBLL = new RoleBLL();
         public string password { get; set; }
-        public bool isAdd { get; set; }        
+        public bool isAdd { get; set; }       
+        public bool isNhanVien { get; set; }
         public frmTaiKhoan()
         {
             InitializeComponent();
         }
-
+        
         private void frmTaiKhoan_Load(object sender, EventArgs e)
         {
             // gán giá trị mặc định bằng các biến trên, néu là edit có giá trị truyền vào thì kiểm tra và chọn giá trị
@@ -53,7 +54,8 @@ namespace GUI.customForm
             // Kiểm tra if tiến hành xử lý sự kiện thêm/sửa phòng ban
             if (isAdd)
             {
-                if (AddTaiKhoan())
+                BienTam.kiemtraAdd= AddTaiKhoan();
+                if (BienTam.kiemtraAdd)
                 {
                     thongBao = new customMessageBox("Đã thêm thành công dữ liệu tài khoản mới!");
                     thongBao.ShowDialog();
@@ -79,14 +81,13 @@ namespace GUI.customForm
             if (taiKhoanDTO.MatKhau.Equals(password))
             {
                 taiKhoanDTO.MatKhau = HashPassword(taiKhoanDTO.MatKhau);
-                string a = taiKhoanBLL.AddTaiKhoanBLL(taiKhoanDTO);
-                if (a.Equals(""))
+                BienTam.username = taiKhoanBLL.AddTaiKhoanBLL(taiKhoanDTO);
+                if (BienTam.username.Equals(""))
                 {
                     return false;
                 }
                 else
                 {
-                    Program.username = a;
                     return true;
                 }
             }

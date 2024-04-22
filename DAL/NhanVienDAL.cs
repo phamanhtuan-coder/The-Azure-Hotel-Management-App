@@ -13,6 +13,41 @@ namespace DAL
     {
         List<NhanVienDTO> list = new List<NhanVienDTO>();
 
+        public bool AddNhanVienDAL(NhanVienDTO nhanvien)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("sp_ThemNhanVien", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaNQL", nhanvien.MaNQL);
+                com.Parameters.AddWithValue("@TenTaiKhoan", nhanvien.TenTaiKhoan);
+                com.Parameters.AddWithValue("@HinhAnh", nhanvien.HinhAnh);
+                com.Parameters.AddWithValue("@HoTenNV", nhanvien.HoTenNV);
+                com.Parameters.AddWithValue("@SDT", nhanvien.SDT);
+                com.Parameters.AddWithValue("@Email", nhanvien.Email);
+                com.Parameters.AddWithValue("@CCCD", nhanvien.CCCD);
+                com.Parameters.AddWithValue("@NgaySinh", nhanvien.NgaySinh);
+                com.Parameters.AddWithValue("@DiaChi", nhanvien.DiaChi);
+                com.Parameters.AddWithValue("@Luong", nhanvien.Luong);
+                com.Parameters.AddWithValue("@GioiTinh", nhanvien.GioiTinh);
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+                if (count > 0)
+                {
+                    return true;
+                }
+                else return false;
+
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public List<NhanVienDTO> Filter(int phanQuyen, string phongBan, string gioiTinh, int nguoiQuanLy, string trangThai)
         {
             try
@@ -30,11 +65,11 @@ namespace DAL
                 {
                     com.Parameters.AddWithValue("@MaPhongBan", phongBan);
                 }
-                if(gioiTinh=="Nam" || gioiTinh == "Nữ")
+                if (gioiTinh == "Nam" || gioiTinh == "Nữ")
                 {
                     com.Parameters.AddWithValue("@GioiTinh", gioiTinh);
                 }
-                if (nguoiQuanLy!=-1)
+                if (nguoiQuanLy != -1)
                 {
                     com.Parameters.AddWithValue("@MaNQL", nguoiQuanLy);
                 }
@@ -42,7 +77,7 @@ namespace DAL
                 {
                     com.Parameters.AddWithValue("@TrangThai", 1);
                 }
-                else if(trangThai == "Đã xóa")
+                else if (trangThai == "Đã xóa")
                 {
                     com.Parameters.AddWithValue("@TrangThai", 0);
                 }
@@ -80,8 +115,7 @@ namespace DAL
         }
 
         public List<NhanVienDTO> LoadIDAndNameDAL()
-        {
-            
+        {            
             try
             {
                 SqlConnection conn = DataProvider.KetNoiDuLieu();
@@ -107,6 +141,25 @@ namespace DAL
             catch (Exception)
             {
                 return new List<NhanVienDTO>();
+            }
+        }
+
+        public string TruyVanUsernameDAL()
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("sp_TruyVanUsername", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                string user = (string) com.ExecuteScalar();                
+                conn.Close();
+                return user;
+            }
+            catch (Exception)
+            {
+                return "";
             }
         }
     }

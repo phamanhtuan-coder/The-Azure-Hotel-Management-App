@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,8 @@ namespace GUI.UserControls
         NhanVienBLL nhanVienBLL = new NhanVienBLL();
         List<NhanVienDTO> nhanVienDTOs = new List<NhanVienDTO>();
         List<PhongBanDTO> phongBanDTOs = new List<PhongBanDTO>();
+        List<NhanVienDTO> dsNV = new List<NhanVienDTO>();
+        List<NhanVienDTO> dsSearch = new List<NhanVienDTO>();
         List<VaiTroDTO> vaiTroDTOs = new List<VaiTroDTO>();
         public ucStaff()
         {
@@ -34,7 +37,6 @@ namespace GUI.UserControls
         private void ucStaff_Load(object sender, EventArgs e)
         {
             CapNhatCBBNhanVien();
-            LoadDSNhanVien();
         }
 
         private void LoadDSNhanVien()
@@ -183,37 +185,98 @@ namespace GUI.UserControls
 
         private void cboStateAccounts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tt=cboStateAccounts.SelectedValue.ToString();
+            picAvata.Image = null;
+            tt =cboStateAccounts.SelectedValue.ToString();
             LoadDSNhanVien();
         }
 
         private void cboGioiTinh_SelectedIndexChanged(object sender, EventArgs e)
         {
+            picAvata.Image = null;
             GioiTinh = cboGioiTinh.Text;
             LoadDSNhanVien();
         }
 
         private void cboNguoiQuanLy_SelectedIndexChanged(object sender, EventArgs e)
         {
+            picAvata.Image = null;
             NguoiQuanLy = (int) cboNguoiQuanLy.SelectedValue;
             LoadDSNhanVien();
         }
 
         private void cboPhanQuyen_SelectedIndexChanged(object sender, EventArgs e)
         {
+            picAvata.Image = null;
             PhanQuyen = (int)cboPhanQuyen.SelectedValue;
             LoadDSNhanVien();
         }
 
         private void cboPhongBan_SelectedIndexChanged(object sender, EventArgs e)
         {
+            picAvata.Image = null;
             PhongBan = cboPhongBan.SelectedValue.ToString();
             LoadDSNhanVien();
         }
 
-        private void dgvStaff_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void cboSortAccountTypeID_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string sortOption = cboSortStaffID.SelectedItem.ToString();
+            switch (sortOption)
+            {
+                case "Giảm dần":
+                    nhanVienDTOs = nhanVienDTOs.OrderByDescending(item => item.MaTaiKhoan).ToList();
+                    break;
+                default:
+                    nhanVienDTOs = nhanVienDTOs.OrderBy(item => item.MaTaiKhoan).ToList();
+                    break;
+            }
 
+            dgvStaff.DataSource = nhanVienDTOs;
+        }
+
+        private void dgvStaff_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvStaff.SelectedRows.Count > 0)
+            {
+                string columnName = "HinhAnh";
+
+                int columnIndex = dgvStaff.Columns[columnName].Index;
+                object cellValue = dgvStaff.SelectedRows[0].Cells[columnIndex].Value;
+
+                if (cellValue != null)
+                {
+                    byte[] hinh = (byte[])cellValue;
+                    picAvata.Image = ByteArrayToImage(hinh);
+                }
+                else
+                {
+                    picAvata.Image = null;
+                }
+            }
+        }
+
+        Image ByteArrayToImage(byte[] hinh)
+        {
+            using (MemoryStream m = new MemoryStream(hinh))
+            {
+                return Image.FromStream(m);
+            }
+        }
+
+        private void btnTraCuuStaff_Click(object sender, EventArgs e)
+        {
+            dgvStaff.DataSource = nhanVienDTOs;
+            string searchKeyword = txtSearchStaff.Text.Trim().ToLower();
+            if (searchKeyword.Count() > 0)
+            {
+                dsSearch = nhanVienBLL.TraCuuNhanVien(nhanVienDTOs, searchKeyword);
+                dgvStaff.DataSource = dsSearch;
+
+            }
+            else
+            {
+                LoadDSNhanVien();
+            }
         }
     }
 }
