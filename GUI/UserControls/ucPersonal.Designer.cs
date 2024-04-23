@@ -30,13 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucPersonal));
             this.spcPersonal = new System.Windows.Forms.SplitContainer();
-            this.btnTraCuuHD = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnTraCuuDanhGia = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnLichSuDP = new Syncfusion.WinForms.Controls.SfButton();
-            this.lblHangTV = new System.Windows.Forms.Label();
-            this.txtHangThanhVien = new System.Windows.Forms.TextBox();
             this.btnChonHinh = new Syncfusion.WinForms.Controls.SfButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grpThongTin = new System.Windows.Forms.GroupBox();
             this.rtxtDiaChi = new System.Windows.Forms.RichTextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -59,13 +53,21 @@
             this.lblRePW = new System.Windows.Forms.Label();
             this.btnReset = new Syncfusion.WinForms.Controls.SfButton();
             this.btnLuu = new Syncfusion.WinForms.Controls.SfButton();
+            this.panCustomerController = new System.Windows.Forms.Panel();
+            this.btnTraCuuHD = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnTraCuuDanhGia = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnLichSuDP = new Syncfusion.WinForms.Controls.SfButton();
+            this.lblHangTV = new System.Windows.Forms.Label();
+            this.txtHangThanhVien = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.spcPersonal)).BeginInit();
             this.spcPersonal.Panel1.SuspendLayout();
             this.spcPersonal.Panel2.SuspendLayout();
             this.spcPersonal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grpThongTin.SuspendLayout();
             this.grpThayDoiMatKhau.SuspendLayout();
+            this.panCustomerController.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // spcPersonal
@@ -77,11 +79,7 @@
             // spcPersonal.Panel1
             // 
             this.spcPersonal.Panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.spcPersonal.Panel1.Controls.Add(this.btnTraCuuHD);
-            this.spcPersonal.Panel1.Controls.Add(this.btnTraCuuDanhGia);
-            this.spcPersonal.Panel1.Controls.Add(this.btnLichSuDP);
-            this.spcPersonal.Panel1.Controls.Add(this.lblHangTV);
-            this.spcPersonal.Panel1.Controls.Add(this.txtHangThanhVien);
+            this.spcPersonal.Panel1.Controls.Add(this.panCustomerController);
             this.spcPersonal.Panel1.Controls.Add(this.btnChonHinh);
             this.spcPersonal.Panel1.Controls.Add(this.pictureBox1);
             // 
@@ -95,77 +93,6 @@
             this.spcPersonal.Size = new System.Drawing.Size(1370, 840);
             this.spcPersonal.SplitterDistance = 366;
             this.spcPersonal.TabIndex = 0;
-            // 
-            // btnTraCuuHD
-            // 
-            this.btnTraCuuHD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTraCuuHD.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnTraCuuHD.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTraCuuHD.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuHD.Location = new System.Drawing.Point(3, 761);
-            this.btnTraCuuHD.Name = "btnTraCuuHD";
-            this.btnTraCuuHD.Size = new System.Drawing.Size(360, 56);
-            this.btnTraCuuHD.Style.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnTraCuuHD.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuHD.TabIndex = 35;
-            this.btnTraCuuHD.Text = "Tra cứu hóa đơn";
-            this.btnTraCuuHD.UseVisualStyleBackColor = false;
-            // 
-            // btnTraCuuDanhGia
-            // 
-            this.btnTraCuuDanhGia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTraCuuDanhGia.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnTraCuuDanhGia.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTraCuuDanhGia.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuDanhGia.Location = new System.Drawing.Point(3, 700);
-            this.btnTraCuuDanhGia.Name = "btnTraCuuDanhGia";
-            this.btnTraCuuDanhGia.Size = new System.Drawing.Size(360, 56);
-            this.btnTraCuuDanhGia.Style.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnTraCuuDanhGia.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuDanhGia.TabIndex = 34;
-            this.btnTraCuuDanhGia.Text = "Tra cứu lịch sử đánh giá";
-            this.btnTraCuuDanhGia.UseVisualStyleBackColor = false;
-            // 
-            // btnLichSuDP
-            // 
-            this.btnLichSuDP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLichSuDP.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnLichSuDP.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLichSuDP.ForeColor = System.Drawing.Color.White;
-            this.btnLichSuDP.Location = new System.Drawing.Point(3, 638);
-            this.btnLichSuDP.Name = "btnLichSuDP";
-            this.btnLichSuDP.Size = new System.Drawing.Size(360, 56);
-            this.btnLichSuDP.Style.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnLichSuDP.Style.ForeColor = System.Drawing.Color.White;
-            this.btnLichSuDP.TabIndex = 33;
-            this.btnLichSuDP.Text = "Tra cứu lịch sử đặt phòng";
-            this.btnLichSuDP.UseVisualStyleBackColor = false;
-            this.btnLichSuDP.Click += new System.EventHandler(this.btnLichSuDP_Click);
-            // 
-            // lblHangTV
-            // 
-            this.lblHangTV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblHangTV.AutoSize = true;
-            this.lblHangTV.Location = new System.Drawing.Point(61, 408);
-            this.lblHangTV.Name = "lblHangTV";
-            this.lblHangTV.Size = new System.Drawing.Size(229, 22);
-            this.lblHangTV.TabIndex = 32;
-            this.lblHangTV.Text = "Hạng thành viên của bạn là";
-            // 
-            // txtHangThanhVien
-            // 
-            this.txtHangThanhVien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtHangThanhVien.Enabled = false;
-            this.txtHangThanhVien.Location = new System.Drawing.Point(65, 447);
-            this.txtHangThanhVien.Name = "txtHangThanhVien";
-            this.txtHangThanhVien.ReadOnly = true;
-            this.txtHangThanhVien.Size = new System.Drawing.Size(246, 27);
-            this.txtHangThanhVien.TabIndex = 4;
             // 
             // btnChonHinh
             // 
@@ -182,18 +109,6 @@
             this.btnChonHinh.TabIndex = 1;
             this.btnChonHinh.Text = "Thay đổi hình";
             this.btnChonHinh.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(65, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(246, 227);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // grpThongTin
             // 
@@ -444,6 +359,103 @@
             this.btnLuu.Text = "Lưu thay đổi";
             this.btnLuu.UseVisualStyleBackColor = false;
             // 
+            // panCustomerController
+            // 
+            this.panCustomerController.Controls.Add(this.btnTraCuuHD);
+            this.panCustomerController.Controls.Add(this.btnTraCuuDanhGia);
+            this.panCustomerController.Controls.Add(this.btnLichSuDP);
+            this.panCustomerController.Controls.Add(this.lblHangTV);
+            this.panCustomerController.Controls.Add(this.txtHangThanhVien);
+            this.panCustomerController.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panCustomerController.Location = new System.Drawing.Point(0, 370);
+            this.panCustomerController.Name = "panCustomerController";
+            this.panCustomerController.Size = new System.Drawing.Size(366, 470);
+            this.panCustomerController.TabIndex = 36;
+            // 
+            // btnTraCuuHD
+            // 
+            this.btnTraCuuHD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTraCuuHD.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnTraCuuHD.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTraCuuHD.ForeColor = System.Drawing.Color.White;
+            this.btnTraCuuHD.Location = new System.Drawing.Point(3, 384);
+            this.btnTraCuuHD.Name = "btnTraCuuHD";
+            this.btnTraCuuHD.Size = new System.Drawing.Size(360, 56);
+            this.btnTraCuuHD.Style.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnTraCuuHD.Style.ForeColor = System.Drawing.Color.White;
+            this.btnTraCuuHD.TabIndex = 40;
+            this.btnTraCuuHD.Text = "Tra cứu hóa đơn";
+            this.btnTraCuuHD.UseVisualStyleBackColor = false;
+            // 
+            // btnTraCuuDanhGia
+            // 
+            this.btnTraCuuDanhGia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTraCuuDanhGia.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnTraCuuDanhGia.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTraCuuDanhGia.ForeColor = System.Drawing.Color.White;
+            this.btnTraCuuDanhGia.Location = new System.Drawing.Point(3, 323);
+            this.btnTraCuuDanhGia.Name = "btnTraCuuDanhGia";
+            this.btnTraCuuDanhGia.Size = new System.Drawing.Size(360, 56);
+            this.btnTraCuuDanhGia.Style.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnTraCuuDanhGia.Style.ForeColor = System.Drawing.Color.White;
+            this.btnTraCuuDanhGia.TabIndex = 39;
+            this.btnTraCuuDanhGia.Text = "Tra cứu lịch sử đánh giá";
+            this.btnTraCuuDanhGia.UseVisualStyleBackColor = false;
+            this.btnTraCuuDanhGia.Click += new System.EventHandler(this.btnTraCuuDanhGia_Click);
+            // 
+            // btnLichSuDP
+            // 
+            this.btnLichSuDP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLichSuDP.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnLichSuDP.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLichSuDP.ForeColor = System.Drawing.Color.White;
+            this.btnLichSuDP.Location = new System.Drawing.Point(3, 261);
+            this.btnLichSuDP.Name = "btnLichSuDP";
+            this.btnLichSuDP.Size = new System.Drawing.Size(360, 56);
+            this.btnLichSuDP.Style.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnLichSuDP.Style.ForeColor = System.Drawing.Color.White;
+            this.btnLichSuDP.TabIndex = 38;
+            this.btnLichSuDP.Text = "Tra cứu lịch sử đặt phòng";
+            this.btnLichSuDP.UseVisualStyleBackColor = false;
+            this.btnLichSuDP.Click += new System.EventHandler(this.btnLichSuDP_Click);
+            // 
+            // lblHangTV
+            // 
+            this.lblHangTV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblHangTV.AutoSize = true;
+            this.lblHangTV.Location = new System.Drawing.Point(61, 31);
+            this.lblHangTV.Name = "lblHangTV";
+            this.lblHangTV.Size = new System.Drawing.Size(229, 22);
+            this.lblHangTV.TabIndex = 37;
+            this.lblHangTV.Text = "Hạng thành viên của bạn là";
+            // 
+            // txtHangThanhVien
+            // 
+            this.txtHangThanhVien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtHangThanhVien.Enabled = false;
+            this.txtHangThanhVien.Location = new System.Drawing.Point(65, 70);
+            this.txtHangThanhVien.Name = "txtHangThanhVien";
+            this.txtHangThanhVien.ReadOnly = true;
+            this.txtHangThanhVien.Size = new System.Drawing.Size(246, 27);
+            this.txtHangThanhVien.TabIndex = 36;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(65, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(246, 227);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // ucPersonal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -454,15 +466,16 @@
             this.Size = new System.Drawing.Size(1370, 840);
             this.Load += new System.EventHandler(this.ucPersonal_Load);
             this.spcPersonal.Panel1.ResumeLayout(false);
-            this.spcPersonal.Panel1.PerformLayout();
             this.spcPersonal.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcPersonal)).EndInit();
             this.spcPersonal.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.grpThongTin.ResumeLayout(false);
             this.grpThongTin.PerformLayout();
             this.grpThayDoiMatKhau.ResumeLayout(false);
             this.grpThayDoiMatKhau.PerformLayout();
+            this.panCustomerController.ResumeLayout(false);
+            this.panCustomerController.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -494,10 +507,11 @@
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private System.Windows.Forms.TextBox txtCCCD;
-        private System.Windows.Forms.TextBox txtHangThanhVien;
-        private System.Windows.Forms.Label lblHangTV;
-        private Syncfusion.WinForms.Controls.SfButton btnLichSuDP;
+        private System.Windows.Forms.Panel panCustomerController;
         private Syncfusion.WinForms.Controls.SfButton btnTraCuuHD;
         private Syncfusion.WinForms.Controls.SfButton btnTraCuuDanhGia;
+        private Syncfusion.WinForms.Controls.SfButton btnLichSuDP;
+        private System.Windows.Forms.Label lblHangTV;
+        private System.Windows.Forms.TextBox txtHangThanhVien;
     }
 }

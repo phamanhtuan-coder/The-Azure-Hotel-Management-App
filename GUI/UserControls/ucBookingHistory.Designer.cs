@@ -336,7 +336,7 @@
             // 
             this.btnReturn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnReturn.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnReturn.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturn.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold);
             this.btnReturn.ForeColor = System.Drawing.Color.White;
             this.btnReturn.Location = new System.Drawing.Point(132, 19);
             this.btnReturn.Name = "btnReturn";
