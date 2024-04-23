@@ -48,6 +48,14 @@ namespace GUI.UserControls
             parentForm.SwitchUserControl(ucRatingHistory);
             this.Dispose();
         }
+
+        private void btnTraCuuHD_Click(object sender, EventArgs e)
+        {
+            frmMain parentForm = this.ParentForm as frmMain;
+            ucBillHistory ucBillHistory = new ucBillHistory(parentForm);
+            parentForm.SwitchUserControl(ucBillHistory);
+            this.Dispose();
+        }
     }
        
 }

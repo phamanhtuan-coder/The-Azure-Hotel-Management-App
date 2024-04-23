@@ -299,6 +299,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ucBillHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucBillHistory.Designer.cs">
+      <DependentUpon>ucBillHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ucBookingHistory.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -546,6 +552,9 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucBillHistory.resx">
+      <DependentUpon>ucBillHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucBookingHistory.resx">
       <DependentUpon>ucBookingHistory.cs</DependentUpon>
