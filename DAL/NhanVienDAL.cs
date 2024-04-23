@@ -23,7 +23,10 @@ namespace DAL
 
                 SqlCommand com = new SqlCommand("sp_ThemNhanVien", conn);
                 com.CommandType = System.Data.CommandType.StoredProcedure;
-                com.Parameters.AddWithValue("@MaNQL", nhanvien.MaNQL);
+                if (nhanvien.MaNQL!= -1)
+                {
+                    com.Parameters.AddWithValue("@MaNQL", nhanvien.MaNQL);
+                }             
                 com.Parameters.AddWithValue("@TenTaiKhoan", nhanvien.TenTaiKhoan);
                 com.Parameters.AddWithValue("@HinhAnh", nhanvien.HinhAnh);
                 com.Parameters.AddWithValue("@HoTenNV", nhanvien.HoTenNV);

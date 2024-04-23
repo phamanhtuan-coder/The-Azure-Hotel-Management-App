@@ -41,6 +41,7 @@ namespace GUI.UserControls
 
         private void LoadDSNhanVien()
         {
+            nhanVienDTOs = new List<NhanVienDTO>();
             nhanVienDTOs = nhanVienBLL.Filer(PhanQuyen, PhongBan, GioiTinh, NguoiQuanLy, tt);
             dgvStaff.ClearSelection();
             dgvStaff.DataSource = nhanVienDTOs;
@@ -48,6 +49,7 @@ namespace GUI.UserControls
 
         private void loadNQL()
         {
+            nhanVienDTOs = new List<NhanVienDTO>();
             NhanVienDTO TatCa= new NhanVienDTO();
             TatCa.MaNV = -1;
             TatCa.HoTenNV = "Tất cả";
@@ -124,6 +126,7 @@ namespace GUI.UserControls
             frmNhanVien frm = new frmNhanVien();
             frm.isAdd = true;
             frm.ShowDialog();
+            loadNQL();
             LoadDSNhanVien();
         }
 
@@ -166,6 +169,7 @@ namespace GUI.UserControls
                 frm.nv.Luong = (decimal) dgvStaff.SelectedRows[0].Cells[Luong].Value;
                 //Kết thúc đoạn được sửa
                 frm.ShowDialog();
+                loadNQL();
                 LoadDSNhanVien();
             }
             else
@@ -189,6 +193,7 @@ namespace GUI.UserControls
                     {
                         if (XoaNhanVien())
                         {
+                            loadNQL();
                             LoadDSNhanVien();
                             thongBao = new customMessageBox("Xóa thành công!");
                             thongBao.ShowDialog();
@@ -242,6 +247,7 @@ namespace GUI.UserControls
                     {
                         if (KhoiPhucNhanVien())
                         {
+                            loadNQL();
                             LoadDSNhanVien();
                             thongBao = new customMessageBox("Khôi phục thành công!");
                             thongBao.ShowDialog();
