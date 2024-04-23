@@ -1,6 +1,7 @@
 ﻿using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -48,6 +49,48 @@ namespace DAL
             }
         }
 
+        public bool EditNhanVienDAL(NhanVienDTO nhanvien)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("sp_CapNhatNhanVien", conn);
+                com.CommandType = CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaNhanVien", nhanvien.MaNV);
+                com.Parameters.AddWithValue("@MaNQL", nhanvien.MaNQL);
+                com.Parameters.AddWithValue("@TenTaiKhoan", nhanvien.TenTaiKhoan);
+                com.Parameters.AddWithValue("@HinhAnh", nhanvien.HinhAnh);
+                com.Parameters.AddWithValue("@HoTenNV", nhanvien.HoTenNV);
+                com.Parameters.AddWithValue("@SDT", nhanvien.SDT);
+                com.Parameters.AddWithValue("@Email", nhanvien.Email);
+                com.Parameters.AddWithValue("@CCCD", nhanvien.CCCD);
+                com.Parameters.AddWithValue("@NgaySinh", nhanvien.NgaySinh);
+                com.Parameters.AddWithValue("@DiaChi", nhanvien.DiaChi);
+                com.Parameters.AddWithValue("@Luong", nhanvien.Luong);
+                com.Parameters.AddWithValue("@GioiTinh", nhanvien.GioiTinh);
+
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+
+                if (count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+
+
         public List<NhanVienDTO> Filter(int phanQuyen, string phongBan, string gioiTinh, int nguoiQuanLy, string trangThai)
         {
             try
@@ -90,6 +133,7 @@ namespace DAL
                     nhanVien.MaNV = (int)(reader["MaNV"]);
                     nhanVien.MaNQL = reader["MaNQL"] as int?;
                     nhanVien.MaTaiKhoan = (int)(reader["MaTaiKhoan"]);
+                    nhanVien.TenTaiKhoan = (string)(reader["TenDangNhap"]);
                     nhanVien.HinhAnh = reader["HinhAnh"] as byte[];
                     nhanVien.HoTenNV = reader["HoTenNV"] as string;
                     nhanVien.SDT = reader["SDT"] as string;
