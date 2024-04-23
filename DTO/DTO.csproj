@@ -46,6 +46,7 @@
     <Compile Include="PhongBanDTO.cs" />
     <Compile Include="PhongDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThietBiDTO.cs" />
     <Compile Include="TinhTrangPhongDTO.cs" />
     <Compile Include="TTThietBiDTO.cs" />
   </ItemGroup>
