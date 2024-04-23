@@ -38,26 +38,11 @@
             this.txtSearchStaff = new System.Windows.Forms.TextBox();
             this.btnTraCuuStaff = new Syncfusion.WinForms.Controls.SfButton();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
-            this.cboNguoiQuanLy = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.lblSortNQL = new System.Windows.Forms.Label();
-            this.cboGioiTinh = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.lblSortGioiTinh = new System.Windows.Forms.Label();
-            this.cboPhongBan = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.lblSorttheoPhong = new System.Windows.Forms.Label();
-            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
-            this.cboPhanQuyen = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.lblSortMaPQ = new System.Windows.Forms.Label();
-            this.cboSortStaffID = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.lblSortStaffID = new System.Windows.Forms.Label();
-            this.cboStateAccounts = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.lblNgaySinh = new System.Windows.Forms.Label();
-            this.lblStateAccounts = new System.Windows.Forms.Label();
-            this.panUcHeader = new System.Windows.Forms.Panel();
-            this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.dgvStaff = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNQL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,11 +52,26 @@
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cboNguoiQuanLy = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.lblSortNQL = new System.Windows.Forms.Label();
+            this.cboGioiTinh = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.lblSortGioiTinh = new System.Windows.Forms.Label();
+            this.cboPhongBan = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.lblSorttheoPhong = new System.Windows.Forms.Label();
+            this.cboPhanQuyen = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.lblSortMaPQ = new System.Windows.Forms.Label();
+            this.cboSortStaffID = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.lblSortStaffID = new System.Windows.Forms.Label();
+            this.cboStateAccounts = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.lblStateAccounts = new System.Windows.Forms.Label();
+            this.panUcHeader = new System.Windows.Forms.Panel();
+            this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
             this.spcQuery.Panel1.SuspendLayout();
             this.spcQuery.Panel2.SuspendLayout();
             this.spcQuery.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboNguoiQuanLy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboGioiTinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPhongBan)).BeginInit();
@@ -83,14 +83,13 @@
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             this.SuspendLayout();
             // 
             // lblStaff
             // 
             this.lblStaff.BackColor = System.Drawing.Color.Lavender;
             this.lblStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblStaff.Font = new System.Drawing.Font("Montserrat ExtraBold", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblStaff.ForeColor = System.Drawing.Color.RoyalBlue;
             this.lblStaff.Location = new System.Drawing.Point(0, 0);
             this.lblStaff.Name = "lblStaff";
@@ -122,7 +121,7 @@
             this.btnAddStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.btnAddStaff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAddStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddStaff.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddStaff.ForeColor = System.Drawing.Color.White;
             this.btnAddStaff.ImageSize = new System.Drawing.Size(32, 32);
             this.btnAddStaff.Location = new System.Drawing.Point(3, 3);
@@ -143,7 +142,7 @@
             this.btnEditStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
             this.btnEditStaff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnEditStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditStaff.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditStaff.ForeColor = System.Drawing.Color.White;
             this.btnEditStaff.ImageSize = new System.Drawing.Size(32, 32);
             this.btnEditStaff.Location = new System.Drawing.Point(3, 50);
@@ -164,7 +163,7 @@
             this.btnDeleteStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnDeleteStaff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDeleteStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteStaff.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteStaff.ForeColor = System.Drawing.Color.White;
             this.btnDeleteStaff.ImageSize = new System.Drawing.Size(32, 32);
             this.btnDeleteStaff.Location = new System.Drawing.Point(200, 3);
@@ -172,7 +171,7 @@
             this.btnDeleteStaff.Size = new System.Drawing.Size(191, 41);
             this.btnDeleteStaff.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnDeleteStaff.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnDeleteStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDeleteStaff.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnDeleteStaff.TabIndex = 4;
             this.btnDeleteStaff.Text = "Xóa";
@@ -185,7 +184,7 @@
             this.btnRecoverStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverStaff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRecoverStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecoverStaff.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecoverStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecoverStaff.ForeColor = System.Drawing.Color.White;
             this.btnRecoverStaff.ImageSize = new System.Drawing.Size(32, 32);
             this.btnRecoverStaff.Location = new System.Drawing.Point(200, 50);
@@ -193,7 +192,7 @@
             this.btnRecoverStaff.Size = new System.Drawing.Size(191, 41);
             this.btnRecoverStaff.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverStaff.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnRecoverStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnRecoverStaff.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRecoverStaff.TabIndex = 5;
             this.btnRecoverStaff.Text = "Khôi phục";
@@ -203,10 +202,10 @@
             // 
             // txtSearchStaff
             // 
-            this.txtSearchStaff.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchStaff.Location = new System.Drawing.Point(6, 16);
             this.txtSearchStaff.Name = "txtSearchStaff";
-            this.txtSearchStaff.Size = new System.Drawing.Size(251, 40);
+            this.txtSearchStaff.Size = new System.Drawing.Size(251, 38);
             this.txtSearchStaff.TabIndex = 2;
             // 
             // btnTraCuuStaff
@@ -215,7 +214,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTraCuuStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTraCuuStaff.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTraCuuStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTraCuuStaff.ForeColor = System.Drawing.Color.White;
             this.btnTraCuuStaff.Location = new System.Drawing.Point(264, 16);
             this.btnTraCuuStaff.Name = "btnTraCuuStaff";
@@ -246,13 +245,11 @@
             this.spcQuery.Panel2.Controls.Add(this.lblSortGioiTinh);
             this.spcQuery.Panel2.Controls.Add(this.cboPhongBan);
             this.spcQuery.Panel2.Controls.Add(this.lblSorttheoPhong);
-            this.spcQuery.Panel2.Controls.Add(this.dtpNgaySinh);
             this.spcQuery.Panel2.Controls.Add(this.cboPhanQuyen);
             this.spcQuery.Panel2.Controls.Add(this.lblSortMaPQ);
             this.spcQuery.Panel2.Controls.Add(this.cboSortStaffID);
             this.spcQuery.Panel2.Controls.Add(this.lblSortStaffID);
             this.spcQuery.Panel2.Controls.Add(this.cboStateAccounts);
-            this.spcQuery.Panel2.Controls.Add(this.lblNgaySinh);
             this.spcQuery.Panel2.Controls.Add(this.lblStateAccounts);
             this.spcQuery.Panel2.Controls.Add(this.txtSearchStaff);
             this.spcQuery.Panel2.Controls.Add(this.btnTraCuuStaff);
@@ -260,30 +257,156 @@
             this.spcQuery.SplitterDistance = 973;
             this.spcQuery.TabIndex = 38;
             // 
+            // dgvStaff
+            // 
+            this.dgvStaff.AllowUserToAddRows = false;
+            this.dgvStaff.AllowUserToDeleteRows = false;
+            this.dgvStaff.AllowUserToResizeColumns = false;
+            this.dgvStaff.AllowUserToResizeRows = false;
+            this.dgvStaff.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStaff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.MaNQL,
+            this.MaTaiKhoan,
+            this.colGioiTinh,
+            this.HoTen,
+            this.HinhAnh,
+            this.SDT,
+            this.Email,
+            this.CCCD,
+            this.NgaySinh,
+            this.DiaChi,
+            this.Luong,
+            this.TrangThai});
+            this.dgvStaff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvStaff.Location = new System.Drawing.Point(0, 0);
+            this.dgvStaff.MultiSelect = false;
+            this.dgvStaff.Name = "dgvStaff";
+            this.dgvStaff.RowHeadersVisible = false;
+            this.dgvStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvStaff.Size = new System.Drawing.Size(973, 746);
+            this.dgvStaff.TabIndex = 0;
+            this.dgvStaff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellClick);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "MaNV";
+            this.ID.HeaderText = "Mã nhân viên";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 117;
+            // 
+            // MaNQL
+            // 
+            this.MaNQL.DataPropertyName = "MaNQL";
+            this.MaNQL.HeaderText = "Mã người quản lý";
+            this.MaNQL.Name = "MaNQL";
+            this.MaNQL.Width = 127;
+            // 
+            // MaTaiKhoan
+            // 
+            this.MaTaiKhoan.DataPropertyName = "MaTaiKhoan";
+            this.MaTaiKhoan.HeaderText = "Mã tài khoản";
+            this.MaTaiKhoan.Name = "MaTaiKhoan";
+            this.MaTaiKhoan.Width = 115;
+            // 
+            // colGioiTinh
+            // 
+            this.colGioiTinh.DataPropertyName = "GioiTinh";
+            this.colGioiTinh.HeaderText = "Giới tính";
+            this.colGioiTinh.Name = "colGioiTinh";
+            this.colGioiTinh.Width = 85;
+            // 
+            // HoTen
+            // 
+            this.HoTen.DataPropertyName = "HoTenNV";
+            this.HoTen.HeaderText = "Họ và tên";
+            this.HoTen.Name = "HoTen";
+            this.HoTen.Width = 94;
+            // 
+            // HinhAnh
+            // 
+            this.HinhAnh.DataPropertyName = "HinhAnh";
+            this.HinhAnh.HeaderText = "Hình ảnh";
+            this.HinhAnh.Name = "HinhAnh";
+            this.HinhAnh.Width = 90;
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "SĐT";
+            this.SDT.Name = "SDT";
+            this.SDT.Width = 66;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.Width = 73;
+            // 
+            // CCCD
+            // 
+            this.CCCD.DataPropertyName = "CCCD";
+            this.CCCD.HeaderText = "CCCD";
+            this.CCCD.Name = "CCCD";
+            this.CCCD.Width = 79;
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.HeaderText = "Ngày sinh";
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.Width = 95;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.Width = 58;
+            // 
+            // Luong
+            // 
+            this.Luong.DataPropertyName = "Luong";
+            this.Luong.HeaderText = "Lương";
+            this.Luong.Name = "Luong";
+            this.Luong.Width = 79;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.DataPropertyName = "TrangThai";
+            this.TrangThai.HeaderText = "Trạng thái";
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.Visible = false;
+            this.TrangThai.Width = 97;
+            // 
             // cboNguoiQuanLy
             // 
             this.cboNguoiQuanLy.DelimiterChar = "";
             this.cboNguoiQuanLy.DisplayMember = "";
             this.cboNguoiQuanLy.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboNguoiQuanLy.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboNguoiQuanLy.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboNguoiQuanLy.Location = new System.Drawing.Point(226, 365);
+            this.cboNguoiQuanLy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboNguoiQuanLy.Location = new System.Drawing.Point(226, 309);
             this.cboNguoiQuanLy.Name = "cboNguoiQuanLy";
             this.cboNguoiQuanLy.Size = new System.Drawing.Size(156, 33);
             this.cboNguoiQuanLy.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboNguoiQuanLy.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboNguoiQuanLy.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboNguoiQuanLy.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboNguoiQuanLy.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboNguoiQuanLy.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboNguoiQuanLy.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboNguoiQuanLy.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboNguoiQuanLy.TabIndex = 38;
+            this.cboNguoiQuanLy.SelectedIndexChanged += new System.EventHandler(this.cboNguoiQuanLy_SelectedIndexChanged);
             // 
             // lblSortNQL
             // 
             this.lblSortNQL.AutoSize = true;
-            this.lblSortNQL.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortNQL.Location = new System.Drawing.Point(3, 372);
+            this.lblSortNQL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortNQL.Location = new System.Drawing.Point(3, 316);
             this.lblSortNQL.Name = "lblSortNQL";
-            this.lblSortNQL.Size = new System.Drawing.Size(149, 26);
+            this.lblSortNQL.Size = new System.Drawing.Size(140, 24);
             this.lblSortNQL.TabIndex = 37;
             this.lblSortNQL.Text = "Người quản lý";
             this.lblSortNQL.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -294,24 +417,25 @@
             this.cboGioiTinh.DisplayMember = "";
             this.cboGioiTinh.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboGioiTinh.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboGioiTinh.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboGioiTinh.Location = new System.Drawing.Point(226, 255);
             this.cboGioiTinh.Name = "cboGioiTinh";
             this.cboGioiTinh.Size = new System.Drawing.Size(156, 33);
             this.cboGioiTinh.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboGioiTinh.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboGioiTinh.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboGioiTinh.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboGioiTinh.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboGioiTinh.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboGioiTinh.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboGioiTinh.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboGioiTinh.TabIndex = 36;
+            this.cboGioiTinh.SelectedIndexChanged += new System.EventHandler(this.cboGioiTinh_SelectedIndexChanged);
             // 
             // lblSortGioiTinh
             // 
             this.lblSortGioiTinh.AutoSize = true;
-            this.lblSortGioiTinh.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortGioiTinh.Location = new System.Drawing.Point(3, 262);
             this.lblSortGioiTinh.Name = "lblSortGioiTinh";
-            this.lblSortGioiTinh.Size = new System.Drawing.Size(183, 26);
+            this.lblSortGioiTinh.Size = new System.Drawing.Size(171, 24);
             this.lblSortGioiTinh.TabIndex = 35;
             this.lblSortGioiTinh.Text = "Lọc theo giới tính";
             this.lblSortGioiTinh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -322,36 +446,28 @@
             this.cboPhongBan.DisplayMember = "";
             this.cboPhongBan.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboPhongBan.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboPhongBan.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboPhongBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPhongBan.Location = new System.Drawing.Point(226, 197);
             this.cboPhongBan.Name = "cboPhongBan";
             this.cboPhongBan.Size = new System.Drawing.Size(156, 33);
             this.cboPhongBan.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboPhongBan.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboPhongBan.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboPhongBan.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboPhongBan.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPhongBan.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboPhongBan.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboPhongBan.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPhongBan.TabIndex = 34;
+            this.cboPhongBan.SelectedIndexChanged += new System.EventHandler(this.cboPhongBan_SelectedIndexChanged);
             // 
             // lblSorttheoPhong
             // 
             this.lblSorttheoPhong.AutoSize = true;
-            this.lblSorttheoPhong.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSorttheoPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSorttheoPhong.Location = new System.Drawing.Point(3, 204);
             this.lblSorttheoPhong.Name = "lblSorttheoPhong";
-            this.lblSorttheoPhong.Size = new System.Drawing.Size(166, 26);
+            this.lblSorttheoPhong.Size = new System.Drawing.Size(158, 24);
             this.lblSorttheoPhong.TabIndex = 33;
             this.lblSorttheoPhong.Text = "Lọc theo Phòng";
             this.lblSorttheoPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // dtpNgaySinh
-            // 
-            this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(182, 313);
-            this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(200, 27);
-            this.dtpNgaySinh.TabIndex = 32;
             // 
             // cboPhanQuyen
             // 
@@ -359,24 +475,25 @@
             this.cboPhanQuyen.DisplayMember = "";
             this.cboPhanQuyen.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboPhanQuyen.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboPhanQuyen.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboPhanQuyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPhanQuyen.Location = new System.Drawing.Point(226, 139);
             this.cboPhanQuyen.Name = "cboPhanQuyen";
             this.cboPhanQuyen.Size = new System.Drawing.Size(156, 33);
             this.cboPhanQuyen.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboPhanQuyen.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboPhanQuyen.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboPhanQuyen.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboPhanQuyen.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPhanQuyen.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboPhanQuyen.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboPhanQuyen.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPhanQuyen.TabIndex = 31;
+            this.cboPhanQuyen.SelectedIndexChanged += new System.EventHandler(this.cboPhanQuyen_SelectedIndexChanged);
             // 
             // lblSortMaPQ
             // 
             this.lblSortMaPQ.AutoSize = true;
-            this.lblSortMaPQ.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortMaPQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortMaPQ.Location = new System.Drawing.Point(3, 146);
             this.lblSortMaPQ.Name = "lblSortMaPQ";
-            this.lblSortMaPQ.Size = new System.Drawing.Size(163, 26);
+            this.lblSortMaPQ.Size = new System.Drawing.Size(153, 24);
             this.lblSortMaPQ.TabIndex = 30;
             this.lblSortMaPQ.Text = "Lọc theo vai trò";
             this.lblSortMaPQ.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -387,24 +504,24 @@
             this.cboSortStaffID.DisplayMember = "";
             this.cboSortStaffID.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboSortStaffID.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortStaffID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortStaffID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortStaffID.Location = new System.Drawing.Point(226, 81);
             this.cboSortStaffID.Name = "cboSortStaffID";
             this.cboSortStaffID.Size = new System.Drawing.Size(156, 33);
             this.cboSortStaffID.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortStaffID.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortStaffID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortStaffID.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortStaffID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortStaffID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortStaffID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortStaffID.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortStaffID.TabIndex = 29;
             // 
             // lblSortStaffID
             // 
             this.lblSortStaffID.AutoSize = true;
-            this.lblSortStaffID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortStaffID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortStaffID.Location = new System.Drawing.Point(3, 88);
             this.lblSortStaffID.Name = "lblSortStaffID";
-            this.lblSortStaffID.Size = new System.Drawing.Size(217, 26);
+            this.lblSortStaffID.Size = new System.Drawing.Size(202, 24);
             this.lblSortStaffID.TabIndex = 28;
             this.lblSortStaffID.Text = "Sort theo ID Account";
             this.lblSortStaffID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -415,35 +532,25 @@
             this.cboStateAccounts.DisplayMember = "";
             this.cboStateAccounts.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboStateAccounts.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboStateAccounts.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateAccounts.Location = new System.Drawing.Point(226, 423);
+            this.cboStateAccounts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateAccounts.Location = new System.Drawing.Point(226, 367);
             this.cboStateAccounts.Name = "cboStateAccounts";
             this.cboStateAccounts.Size = new System.Drawing.Size(156, 33);
             this.cboStateAccounts.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboStateAccounts.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateAccounts.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateAccounts.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateAccounts.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateAccounts.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboStateAccounts.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateAccounts.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateAccounts.TabIndex = 23;
-            // 
-            // lblNgaySinh
-            // 
-            this.lblNgaySinh.AutoSize = true;
-            this.lblNgaySinh.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgaySinh.Location = new System.Drawing.Point(3, 314);
-            this.lblNgaySinh.Name = "lblNgaySinh";
-            this.lblNgaySinh.Size = new System.Drawing.Size(110, 26);
-            this.lblNgaySinh.TabIndex = 14;
-            this.lblNgaySinh.Text = "Ngày sinh";
-            this.lblNgaySinh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cboStateAccounts.SelectedIndexChanged += new System.EventHandler(this.cboStateAccounts_SelectedIndexChanged);
             // 
             // lblStateAccounts
             // 
             this.lblStateAccounts.AutoSize = true;
-            this.lblStateAccounts.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStateAccounts.Location = new System.Drawing.Point(3, 430);
+            this.lblStateAccounts.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStateAccounts.Location = new System.Drawing.Point(3, 374);
             this.lblStateAccounts.Name = "lblStateAccounts";
-            this.lblStateAccounts.Size = new System.Drawing.Size(186, 26);
+            this.lblStateAccounts.Size = new System.Drawing.Size(174, 24);
             this.lblStateAccounts.TabIndex = 9;
             this.lblStateAccounts.Text = "Trạng thái dữ liệu";
             this.lblStateAccounts.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -477,125 +584,12 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // dgvStaff
-            // 
-            this.dgvStaff.AllowUserToAddRows = false;
-            this.dgvStaff.AllowUserToDeleteRows = false;
-            this.dgvStaff.AllowUserToResizeColumns = false;
-            this.dgvStaff.AllowUserToResizeRows = false;
-            this.dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStaff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.MaNQL,
-            this.MaTaiKhoan,
-            this.HoTen,
-            this.HinhAnh,
-            this.SDT,
-            this.Email,
-            this.CCCD,
-            this.NgaySinh,
-            this.DiaChi,
-            this.Luong,
-            this.TrangThai});
-            this.dgvStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvStaff.Location = new System.Drawing.Point(0, 0);
-            this.dgvStaff.MultiSelect = false;
-            this.dgvStaff.Name = "dgvStaff";
-            this.dgvStaff.ReadOnly = true;
-            this.dgvStaff.RowHeadersVisible = false;
-            this.dgvStaff.Size = new System.Drawing.Size(973, 746);
-            this.dgvStaff.TabIndex = 0;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "Mã nhân viên";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 88;
-            // 
-            // MaNQL
-            // 
-            this.MaNQL.HeaderText = "Mã người quản lý";
-            this.MaNQL.Name = "MaNQL";
-            this.MaNQL.ReadOnly = true;
-            this.MaNQL.Width = 88;
-            // 
-            // MaTaiKhoan
-            // 
-            this.MaTaiKhoan.HeaderText = "Mã tài khoản";
-            this.MaTaiKhoan.Name = "MaTaiKhoan";
-            this.MaTaiKhoan.ReadOnly = true;
-            this.MaTaiKhoan.Width = 89;
-            // 
-            // HoTen
-            // 
-            this.HoTen.HeaderText = "Họ và tên";
-            this.HoTen.Name = "HoTen";
-            this.HoTen.ReadOnly = true;
-            this.HoTen.Width = 88;
-            // 
-            // HinhAnh
-            // 
-            this.HinhAnh.HeaderText = "Hình ảnh";
-            this.HinhAnh.Name = "HinhAnh";
-            this.HinhAnh.ReadOnly = true;
-            this.HinhAnh.Width = 88;
-            // 
-            // SDT
-            // 
-            this.SDT.HeaderText = "SĐT";
-            this.SDT.Name = "SDT";
-            this.SDT.ReadOnly = true;
-            this.SDT.Width = 88;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Width = 88;
-            // 
-            // CCCD
-            // 
-            this.CCCD.HeaderText = "CCCD";
-            this.CCCD.Name = "CCCD";
-            this.CCCD.ReadOnly = true;
-            this.CCCD.Width = 88;
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.HeaderText = "Ngày sinh";
-            this.NgaySinh.Name = "NgaySinh";
-            this.NgaySinh.ReadOnly = true;
-            this.NgaySinh.Width = 89;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.HeaderText = "Địa chỉ";
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.ReadOnly = true;
-            this.DiaChi.Width = 88;
-            // 
-            // Luong
-            // 
-            this.Luong.HeaderText = "Lương";
-            this.Luong.Name = "Luong";
-            this.Luong.ReadOnly = true;
-            this.Luong.Width = 88;
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.HeaderText = "Trạng thái";
-            this.TrangThai.Name = "TrangThai";
-            this.TrangThai.ReadOnly = true;
-            this.TrangThai.Visible = false;
-            // 
             // ucStaff
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.spcQuery);
             this.Controls.Add(this.panUcHeader);
-            this.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ucStaff";
             this.Size = new System.Drawing.Size(1370, 840);
@@ -606,6 +600,7 @@
             this.spcQuery.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).EndInit();
             this.spcQuery.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboNguoiQuanLy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboGioiTinh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPhongBan)).EndInit();
@@ -617,7 +612,6 @@
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -641,8 +635,6 @@
         private System.Windows.Forms.Label lblSortStaffID;
         private Syncfusion.WinForms.ListView.SfComboBox cboPhanQuyen;
         private System.Windows.Forms.Label lblSortMaPQ;
-        private System.Windows.Forms.DateTimePicker dtpNgaySinh;
-        private System.Windows.Forms.Label lblNgaySinh;
         private Syncfusion.WinForms.ListView.SfComboBox cboPhongBan;
         private System.Windows.Forms.Label lblSorttheoPhong;
         private Syncfusion.WinForms.ListView.SfComboBox cboGioiTinh;
@@ -653,6 +645,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNQL;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTaiKhoan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn HinhAnh;
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;

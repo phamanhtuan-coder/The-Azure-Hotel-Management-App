@@ -525,6 +525,12 @@ namespace GUI
             openForm(frm);
         }
 
+        private void cpicProfile_Click(object sender, EventArgs e)
+        {
+            ucPersonal personal = new ucPersonal();
+            openForm(personal);
+        }
+
         /*-------------------------------------------------------------------------------------------------------------------
                                                   KẾT THÚC ĐOẠN XỬ LÝ MỞ MENU
         --------------------------------------------------------------------------------------------------------------------*/
@@ -760,6 +766,8 @@ namespace GUI
             ucBooking Home = new ucBooking();
             openForm(Home);
         }
+
+        
 
         /*-------------------------------------------------------------------------------------------------------------------
                                     KẾT THÚC  HÀM MAIN VÀ HÀM KHỞI TẠO
