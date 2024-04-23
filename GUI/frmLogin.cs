@@ -21,10 +21,15 @@ namespace GUI
         /*-------------------------------------------------------------------------------------------------------------------
                                 BẮT ĐẦU ĐOẠN KHAI BÁO CÁC BIẾN TOÀN CỤC
        --------------------------------------------------------------------------------------------------------------------*/
+        public string phanQuyen { get; set; }
+        public string hoTen { get; set; }
+        public Image hinhAnh { get; set; }
 
         private Timer timerLoop;
         private int gifDuration = 18000;
         private int elapsed = 0;
+
+        customMessageBox thongBao;
 
         /*-------------------------------------------------------------------------------------------------------------------
                                     KẾT THÚC ĐOẠN KHAI BÁO CÁC BIẾN TOÀN CỤC
@@ -161,34 +166,30 @@ namespace GUI
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            frmMain mainForm = new frmMain();
-            this.Hide();
-            mainForm.Show();
-            this.Close();
+
+            if (KiemTraDangNhap())
+            {
+                frmMain mainForm = new frmMain();
+                mainForm.hoTen = hoTen;
+                mainForm.hinhAnh = hinhAnh;
+                mainForm.phanQuyen = phanQuyen;
+                this.Hide();
+                mainForm.Show();
+                this.Close();
+            }
+            else
+            {
+                thongBao = new customMessageBox("Đăng nhập thất bại, hãy kiểm tra lại thông tin!");
+                thongBao.ShowDialog();
+            }
+           
 
 
-            //string username = txtUsername.Text.Trim();
-            //string password = txtPassword.Text.Trim();
+        }
 
-            //bool isValidLogin = userBLL.KiemTraDangNhap(username, password);
-
-            //if (isValidLogin)
-            //{
-            //    //MessageBox.Show("Đăng nhập thành công!");
-            //    // Thực hiện các hành động sau khi đăng nhập thành công
-            //    frmMain mainForm = new frmMain();
-            //    mainForm.Show();
-            //    this.Hide();
-            //    this.FormClosing -= frmLogin_FormClosing;
-            //    this.Close();
-            //    this.FormClosing += frmLogin_FormClosing;
-            //}
-            //else
-            //{
-            //    // Đăng nhập thất bại
-            //    //MessageBox.Show("Tên người dùng hoặc mật khẩu không đúng!");
-            //}
-
+        private bool KiemTraDangNhap()
+        {
+            return true;
         }
 
         private void btnShowHidePassword_Click(object sender, EventArgs e)

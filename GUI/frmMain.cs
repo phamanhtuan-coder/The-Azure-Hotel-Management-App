@@ -21,6 +21,10 @@ namespace GUI
         /*-------------------------------------------------------------------------------------------------------------------
                                          BẮT ĐẦU KHAI BÁO CÁC BIẾN TOÀN CỤC
        --------------------------------------------------------------------------------------------------------------------*/
+        //Biến xác định User đang login
+        public string phanQuyen { get; set; }
+        public string hoTen { get; set; } 
+        public Image hinhAnh { get; set; }
 
 
         //Biến xác định menu đang mở
