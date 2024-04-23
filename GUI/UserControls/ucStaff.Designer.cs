@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucStaff));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblStaff = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddStaff = new Syncfusion.WinForms.Controls.SfButton();
@@ -39,20 +40,6 @@
             this.btnTraCuuStaff = new Syncfusion.WinForms.Controls.SfButton();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvStaff = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNQL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HinhAnh = new System.Windows.Forms.DataGridViewImageColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.picAvata = new System.Windows.Forms.PictureBox();
             this.cboNguoiQuanLy = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortNQL = new System.Windows.Forms.Label();
@@ -68,6 +55,20 @@
             this.lblStateAccounts = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNQL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HinhAnh = new System.Windows.Forms.DataGridViewImageColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
             this.spcQuery.Panel1.SuspendLayout();
@@ -268,7 +269,7 @@
             this.dgvStaff.AllowUserToDeleteRows = false;
             this.dgvStaff.AllowUserToResizeColumns = false;
             this.dgvStaff.AllowUserToResizeRows = false;
-            this.dgvStaff.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvStaff.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStaff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -289,119 +290,16 @@
             this.dgvStaff.Location = new System.Drawing.Point(0, 0);
             this.dgvStaff.MultiSelect = false;
             this.dgvStaff.Name = "dgvStaff";
+            this.dgvStaff.ReadOnly = true;
             this.dgvStaff.RowHeadersVisible = false;
             this.dgvStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStaff.Size = new System.Drawing.Size(973, 746);
             this.dgvStaff.TabIndex = 0;
             this.dgvStaff.SelectionChanged += new System.EventHandler(this.dgvStaff_SelectionChanged);
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "MaNV";
-            this.ID.HeaderText = "Mã nhân viên";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 128;
-            // 
-            // colTTK
-            // 
-            this.colTTK.DataPropertyName = "TenTaiKhoan";
-            this.colTTK.HeaderText = "Tên tài khoản";
-            this.colTTK.Name = "colTTK";
-            this.colTTK.Visible = false;
-            this.colTTK.Width = 130;
-            // 
-            // MaNQL
-            // 
-            this.MaNQL.DataPropertyName = "MaNQL";
-            this.MaNQL.HeaderText = "Mã người quản lý";
-            this.MaNQL.Name = "MaNQL";
-            this.MaNQL.Visible = false;
-            this.MaNQL.Width = 153;
-            // 
-            // MaTaiKhoan
-            // 
-            this.MaTaiKhoan.DataPropertyName = "MaTaiKhoan";
-            this.MaTaiKhoan.HeaderText = "Mã tài khoản";
-            this.MaTaiKhoan.Name = "MaTaiKhoan";
-            this.MaTaiKhoan.Visible = false;
-            this.MaTaiKhoan.Width = 125;
-            // 
-            // HoTen
-            // 
-            this.HoTen.DataPropertyName = "HoTenNV";
-            this.HoTen.HeaderText = "Họ và tên";
-            this.HoTen.Name = "HoTen";
-            this.HoTen.Width = 102;
-            // 
-            // colGioiTinh
-            // 
-            this.colGioiTinh.DataPropertyName = "GioiTinh";
-            this.colGioiTinh.HeaderText = "Giới tính";
-            this.colGioiTinh.Name = "colGioiTinh";
-            this.colGioiTinh.Width = 92;
-            // 
-            // HinhAnh
-            // 
-            this.HinhAnh.DataPropertyName = "HinhAnh";
-            this.HinhAnh.HeaderText = "Hình ảnh";
-            this.HinhAnh.Name = "HinhAnh";
-            this.HinhAnh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.HinhAnh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.HinhAnh.Visible = false;
-            this.HinhAnh.Width = 98;
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "SĐT";
-            this.SDT.Name = "SDT";
-            this.SDT.Width = 66;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.Width = 73;
-            // 
-            // CCCD
-            // 
-            this.CCCD.DataPropertyName = "CCCD";
-            this.CCCD.HeaderText = "CCCD";
-            this.CCCD.Name = "CCCD";
-            this.CCCD.Width = 79;
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.DataPropertyName = "NgaySinh";
-            this.NgaySinh.HeaderText = "Ngày sinh";
-            this.NgaySinh.Name = "NgaySinh";
-            this.NgaySinh.Width = 103;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.DataPropertyName = "DiaChi";
-            this.DiaChi.HeaderText = "Địa chỉ";
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.Width = 82;
-            // 
-            // Luong
-            // 
-            this.Luong.DataPropertyName = "Luong";
-            this.Luong.HeaderText = "Lương";
-            this.Luong.Name = "Luong";
-            this.Luong.Width = 79;
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.DataPropertyName = "TrangThai";
-            this.TrangThai.HeaderText = "Trạng thái";
-            this.TrangThai.Name = "TrangThai";
-            this.TrangThai.Width = 105;
-            // 
             // picAvata
             // 
+            this.picAvata.Image = ((System.Drawing.Image)(resources.GetObject("picAvata.Image")));
             this.picAvata.Location = new System.Drawing.Point(131, 6);
             this.picAvata.Name = "picAvata";
             this.picAvata.Size = new System.Drawing.Size(147, 131);
@@ -612,6 +510,127 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "MaNV";
+            this.ID.HeaderText = "Mã nhân viên";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 128;
+            // 
+            // colTTK
+            // 
+            this.colTTK.DataPropertyName = "TenTaiKhoan";
+            this.colTTK.HeaderText = "Tên tài khoản";
+            this.colTTK.Name = "colTTK";
+            this.colTTK.ReadOnly = true;
+            this.colTTK.Visible = false;
+            this.colTTK.Width = 130;
+            // 
+            // MaNQL
+            // 
+            this.MaNQL.DataPropertyName = "MaNQL";
+            this.MaNQL.HeaderText = "Mã người quản lý";
+            this.MaNQL.Name = "MaNQL";
+            this.MaNQL.ReadOnly = true;
+            this.MaNQL.Visible = false;
+            this.MaNQL.Width = 153;
+            // 
+            // MaTaiKhoan
+            // 
+            this.MaTaiKhoan.DataPropertyName = "MaTaiKhoan";
+            this.MaTaiKhoan.HeaderText = "Mã tài khoản";
+            this.MaTaiKhoan.Name = "MaTaiKhoan";
+            this.MaTaiKhoan.ReadOnly = true;
+            this.MaTaiKhoan.Visible = false;
+            this.MaTaiKhoan.Width = 125;
+            // 
+            // HoTen
+            // 
+            this.HoTen.DataPropertyName = "HoTenNV";
+            this.HoTen.HeaderText = "Họ và tên";
+            this.HoTen.Name = "HoTen";
+            this.HoTen.ReadOnly = true;
+            this.HoTen.Width = 102;
+            // 
+            // colGioiTinh
+            // 
+            this.colGioiTinh.DataPropertyName = "GioiTinh";
+            this.colGioiTinh.HeaderText = "Giới tính";
+            this.colGioiTinh.Name = "colGioiTinh";
+            this.colGioiTinh.ReadOnly = true;
+            this.colGioiTinh.Width = 92;
+            // 
+            // HinhAnh
+            // 
+            this.HinhAnh.DataPropertyName = "HinhAnh";
+            this.HinhAnh.HeaderText = "Hình ảnh";
+            this.HinhAnh.Name = "HinhAnh";
+            this.HinhAnh.ReadOnly = true;
+            this.HinhAnh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.HinhAnh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.HinhAnh.Visible = false;
+            this.HinhAnh.Width = 98;
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "SĐT";
+            this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
+            this.SDT.Width = 66;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 73;
+            // 
+            // CCCD
+            // 
+            this.CCCD.DataPropertyName = "CCCD";
+            this.CCCD.HeaderText = "CCCD";
+            this.CCCD.Name = "CCCD";
+            this.CCCD.ReadOnly = true;
+            this.CCCD.Width = 79;
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.HeaderText = "Ngày sinh";
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.ReadOnly = true;
+            this.NgaySinh.Width = 103;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.ReadOnly = true;
+            this.DiaChi.Width = 82;
+            // 
+            // Luong
+            // 
+            this.Luong.DataPropertyName = "Luong";
+            dataGridViewCellStyle2.Format = "#### VND";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Luong.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Luong.HeaderText = "Lương";
+            this.Luong.Name = "Luong";
+            this.Luong.ReadOnly = true;
+            this.Luong.Width = 79;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.DataPropertyName = "TrangThai";
+            this.TrangThai.HeaderText = "Trạng thái";
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.ReadOnly = true;
+            this.TrangThai.Width = 105;
+            // 
             // ucStaff
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -671,6 +690,7 @@
         private System.Windows.Forms.Label lblSortNQL;
         private System.Windows.Forms.DataGridView dgvStaff;
         private System.Windows.Forms.PictureBox picAvata;
+        private Syncfusion.WinForms.ListView.SfComboBox cboSortStaffID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTTK;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNQL;
@@ -685,6 +705,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Luong;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
-        private Syncfusion.WinForms.ListView.SfComboBox cboSortStaffID;
     }
 }

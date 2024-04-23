@@ -134,11 +134,39 @@ namespace GUI.UserControls
                 frmNhanVien frm = new frmNhanVien();
                 frm.isAdd = false;
                 //Bắt đầu sửa từ đoạn này
-               
-                frm.anhDaiDien = null;
+                int MaNV = dgvStaff.Columns["ID"].Index;
+                int HoTen = dgvStaff.Columns["HoTen"].Index;
+                int CCCD = dgvStaff.Columns["CCCD"].Index;
+                int GioiTinh = dgvStaff.Columns["colGioiTinh"].Index;
+                int NgaySinh = dgvStaff.Columns["NgaySinh"].Index;
+                int Email = dgvStaff.Columns["Email"].Index;
+                int SDT = dgvStaff.Columns["SDT"].Index;
+                int DiaChi = dgvStaff.Columns["DiaChi"].Index ;
+                int username = dgvStaff.Columns["colTTK"].Index;
+                int MaNQL = dgvStaff.Columns["MaNQL"].Index;
+                int Luong = dgvStaff.Columns["Luong"].Index;
+                int columnIndex = dgvStaff.Columns["HinhAnh"].Index;
 
+                frm.nv.MaNV = (int) dgvStaff.SelectedRows[0].Cells[MaNV].Value;
+                object cellValue = dgvStaff.SelectedRows[0].Cells[columnIndex].Value;
+                if (cellValue != null)
+                {
+                    frm.nv.HinhAnh = (byte[])dgvStaff.SelectedRows[0].Cells[columnIndex].Value;
+                }
+                
+                frm.nv.HoTenNV= dgvStaff.SelectedRows[0].Cells[HoTen].Value.ToString();
+                frm.nv.CCCD= dgvStaff.SelectedRows[0].Cells[CCCD].Value.ToString();
+                frm.nv.GioiTinh = dgvStaff.SelectedRows[0].Cells[GioiTinh].Value.ToString();
+                frm.nv.NgaySinh = (DateTime) dgvStaff.SelectedRows[0].Cells[NgaySinh].Value;
+                frm.nv.Email = dgvStaff.SelectedRows[0].Cells[Email].Value.ToString();
+                frm.nv.SDT = dgvStaff.SelectedRows[0].Cells[SDT].Value.ToString();
+                frm.nv.DiaChi = dgvStaff.SelectedRows[0].Cells[DiaChi].Value.ToString();
+                frm.nv.TenTaiKhoan = (string) dgvStaff.SelectedRows[0].Cells[username].Value;
+                frm.nv.MaNQL = (int?) dgvStaff.SelectedRows[0].Cells[MaNQL].Value;
+                frm.nv.Luong = (decimal) dgvStaff.SelectedRows[0].Cells[Luong].Value;
                 //Kết thúc đoạn được sửa
                 frm.ShowDialog();
+                LoadDSNhanVien();
             }
             else
             {
@@ -239,7 +267,6 @@ namespace GUI.UserControls
             if (dgvStaff.SelectedRows.Count > 0)
             {
                 string columnName = "HinhAnh";
-
                 int columnIndex = dgvStaff.Columns[columnName].Index;
                 object cellValue = dgvStaff.SelectedRows[0].Cells[columnIndex].Value;
 
@@ -254,7 +281,12 @@ namespace GUI.UserControls
                 }
             }
         }
-
+        private static byte[] ImageToByteArray(Image img)
+        {
+            MemoryStream m = new MemoryStream();
+            img.Save(m, System.Drawing.Imaging.ImageFormat.Png);
+            return m.ToArray();
+        }
         Image ByteArrayToImage(byte[] hinh)
         {
             using (MemoryStream m = new MemoryStream(hinh))

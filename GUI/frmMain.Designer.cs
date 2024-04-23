@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            Syncfusion.Windows.Forms.Tools.DigitalClockRenderer digitalClockRenderer2 = new Syncfusion.Windows.Forms.Tools.DigitalClockRenderer();
-            Syncfusion.Windows.Forms.Tools.ClockRenderer clockRenderer2 = new Syncfusion.Windows.Forms.Tools.ClockRenderer();
+            Syncfusion.Windows.Forms.Tools.DigitalClockRenderer digitalClockRenderer1 = new Syncfusion.Windows.Forms.Tools.DigitalClockRenderer();
+            Syncfusion.Windows.Forms.Tools.ClockRenderer clockRenderer1 = new Syncfusion.Windows.Forms.Tools.ClockRenderer();
             this.tmrSideBar = new System.Windows.Forms.Timer(this.components);
             this.panDesktop = new System.Windows.Forms.Panel();
             this.flpMaintanceManagement = new System.Windows.Forms.FlowLayoutPanel();
@@ -91,6 +91,8 @@
             this.btnCustomer = new Syncfusion.WinForms.Controls.SfButton();
             this.panCustomerRanking = new System.Windows.Forms.Panel();
             this.btnCustomerRanking = new Syncfusion.WinForms.Controls.SfButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRating = new Syncfusion.WinForms.Controls.SfButton();
             this.flpRoomManagement = new System.Windows.Forms.FlowLayoutPanel();
             this.panRoomManagement = new System.Windows.Forms.Panel();
             this.btnRoomManagement = new Syncfusion.WinForms.Controls.SfButton();
@@ -122,8 +124,6 @@
             this.btnBookingManagement = new Syncfusion.WinForms.Controls.SfButton();
             this.panServiceType = new System.Windows.Forms.Panel();
             this.btnServiceType = new Syncfusion.WinForms.Controls.SfButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnRating = new Syncfusion.WinForms.Controls.SfButton();
             this.flpMaintanceManagement.SuspendLayout();
             this.panMaintanceManagement.SuspendLayout();
             this.panMaintance.SuspendLayout();
@@ -155,6 +155,7 @@
             this.panCustomerManagement.SuspendLayout();
             this.panCustomer.SuspendLayout();
             this.panCustomerRanking.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.flpRoomManagement.SuspendLayout();
             this.panRoomManagement.SuspendLayout();
             this.panRoom.SuspendLayout();
@@ -171,7 +172,6 @@
             this.flpBookingManagement.SuspendLayout();
             this.panBookingManagement.SuspendLayout();
             this.panServiceType.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tmrSideBar
@@ -185,7 +185,7 @@
             this.panDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panDesktop.Location = new System.Drawing.Point(220, 50);
             this.panDesktop.Name = "panDesktop";
-            this.panDesktop.Size = new System.Drawing.Size(1380, 850);
+            this.panDesktop.Size = new System.Drawing.Size(1064, 731);
             this.panDesktop.TabIndex = 12;
             // 
             // flpMaintanceManagement
@@ -215,7 +215,7 @@
             // 
             this.btnMaintanceManagement.AccessibleName = "Button";
             this.btnMaintanceManagement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnMaintanceManagement.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaintanceManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaintanceManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMaintanceManagement.ImageSize = new System.Drawing.Size(32, 32);
             this.btnMaintanceManagement.Location = new System.Drawing.Point(0, 0);
@@ -229,7 +229,7 @@
             this.btnMaintanceManagement.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnMaintanceManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnMaintanceManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnMaintanceManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            this.btnMaintanceManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnMaintanceManagement.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnMaintanceManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnMaintanceManagement.Style.PressedForeColor = System.Drawing.Color.White;
@@ -252,7 +252,7 @@
             this.btnMaintance.AccessibleName = "Button";
             this.btnMaintance.BackColor = System.Drawing.Color.SlateBlue;
             this.btnMaintance.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnMaintance.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaintance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaintance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMaintance.ImageSize = new System.Drawing.Size(32, 32);
             this.btnMaintance.Location = new System.Drawing.Point(0, 0);
@@ -266,7 +266,7 @@
             this.btnMaintance.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnMaintance.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnMaintance.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnMaintance.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            this.btnMaintance.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnMaintance.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnMaintance.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnMaintance.Style.PressedForeColor = System.Drawing.Color.White;
@@ -299,7 +299,7 @@
             this.btnLogOut.AccessibleName = "Button";
             this.btnLogOut.BackColor = System.Drawing.Color.DarkRed;
             this.btnLogOut.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnLogOut.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogOut.ImageSize = new System.Drawing.Size(32, 32);
             this.btnLogOut.Location = new System.Drawing.Point(0, 0);
@@ -313,7 +313,7 @@
             this.btnLogOut.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnLogOut.Style.HoverForeColor = System.Drawing.Color.DarkRed;
             this.btnLogOut.Style.HoverImageForeColor = System.Drawing.Color.DarkRed;
-            this.btnLogOut.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.btnLogOut.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnLogOut.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnLogOut.Style.PressedBackColor = System.Drawing.Color.DarkRed;
             this.btnLogOut.Style.PressedForeColor = System.Drawing.Color.White;
@@ -350,7 +350,7 @@
             // 
             this.btnHousekeepingManagement.AccessibleName = "Button";
             this.btnHousekeepingManagement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnHousekeepingManagement.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHousekeepingManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHousekeepingManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHousekeepingManagement.ImageSize = new System.Drawing.Size(32, 32);
             this.btnHousekeepingManagement.Location = new System.Drawing.Point(0, 0);
@@ -364,7 +364,7 @@
             this.btnHousekeepingManagement.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnHousekeepingManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnHousekeepingManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnHousekeepingManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
+            this.btnHousekeepingManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnHousekeepingManagement.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnHousekeepingManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnHousekeepingManagement.Style.PressedForeColor = System.Drawing.Color.White;
@@ -387,7 +387,7 @@
             this.btnHousekeeping.AccessibleName = "Button";
             this.btnHousekeeping.BackColor = System.Drawing.Color.SlateBlue;
             this.btnHousekeeping.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnHousekeeping.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHousekeeping.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHousekeeping.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHousekeeping.ImageSize = new System.Drawing.Size(32, 32);
             this.btnHousekeeping.Location = new System.Drawing.Point(0, 0);
@@ -401,7 +401,7 @@
             this.btnHousekeeping.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnHousekeeping.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnHousekeeping.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnHousekeeping.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
+            this.btnHousekeeping.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.btnHousekeeping.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnHousekeeping.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnHousekeeping.Style.PressedForeColor = System.Drawing.Color.White;
@@ -446,7 +446,7 @@
             // 
             this.btnDeviceManagement.AccessibleName = "Button";
             this.btnDeviceManagement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeviceManagement.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeviceManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeviceManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDeviceManagement.ImageSize = new System.Drawing.Size(32, 32);
             this.btnDeviceManagement.Location = new System.Drawing.Point(0, 0);
@@ -460,7 +460,7 @@
             this.btnDeviceManagement.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnDeviceManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnDeviceManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnDeviceManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image13")));
+            this.btnDeviceManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
             this.btnDeviceManagement.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnDeviceManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnDeviceManagement.Style.PressedForeColor = System.Drawing.Color.White;
@@ -483,7 +483,7 @@
             this.btnThietBi.AccessibleName = "Button";
             this.btnThietBi.BackColor = System.Drawing.Color.SlateBlue;
             this.btnThietBi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnThietBi.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThietBi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThietBi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThietBi.ImageSize = new System.Drawing.Size(32, 32);
             this.btnThietBi.Location = new System.Drawing.Point(0, 0);
@@ -497,7 +497,7 @@
             this.btnThietBi.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnThietBi.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnThietBi.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnThietBi.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image14")));
+            this.btnThietBi.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
             this.btnThietBi.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnThietBi.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnThietBi.Style.PressedForeColor = System.Drawing.Color.White;
@@ -521,7 +521,7 @@
             this.btnDeviceStatus.AccessibleName = "Button";
             this.btnDeviceStatus.BackColor = System.Drawing.Color.SlateBlue;
             this.btnDeviceStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeviceStatus.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeviceStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeviceStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDeviceStatus.ImageSize = new System.Drawing.Size(32, 32);
             this.btnDeviceStatus.Location = new System.Drawing.Point(0, 0);
@@ -535,7 +535,7 @@
             this.btnDeviceStatus.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnDeviceStatus.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnDeviceStatus.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnDeviceStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image15")));
+            this.btnDeviceStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
             this.btnDeviceStatus.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnDeviceStatus.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnDeviceStatus.Style.PressedForeColor = System.Drawing.Color.White;
@@ -575,7 +575,7 @@
             // 
             this.btnFinaceManagement.AccessibleName = "Button";
             this.btnFinaceManagement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFinaceManagement.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinaceManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinaceManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFinaceManagement.ImageSize = new System.Drawing.Size(32, 32);
             this.btnFinaceManagement.Location = new System.Drawing.Point(0, 0);
@@ -589,7 +589,7 @@
             this.btnFinaceManagement.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnFinaceManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnFinaceManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnFinaceManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image19")));
+            this.btnFinaceManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
             this.btnFinaceManagement.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnFinaceManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnFinaceManagement.Style.PressedForeColor = System.Drawing.Color.White;
@@ -612,7 +612,7 @@
             this.btnHoaDon.AccessibleName = "Button";
             this.btnHoaDon.BackColor = System.Drawing.Color.SlateBlue;
             this.btnHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnHoaDon.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHoaDon.ImageSize = new System.Drawing.Size(32, 32);
             this.btnHoaDon.Location = new System.Drawing.Point(0, 0);
@@ -626,7 +626,7 @@
             this.btnHoaDon.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnHoaDon.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnHoaDon.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnHoaDon.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image20")));
+            this.btnHoaDon.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image9")));
             this.btnHoaDon.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnHoaDon.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnHoaDon.Style.PressedForeColor = System.Drawing.Color.White;
@@ -650,7 +650,7 @@
             this.btnBillDetails.AccessibleName = "Button";
             this.btnBillDetails.BackColor = System.Drawing.Color.SlateBlue;
             this.btnBillDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBillDetails.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBillDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBillDetails.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBillDetails.ImageSize = new System.Drawing.Size(32, 32);
             this.btnBillDetails.Location = new System.Drawing.Point(0, 0);
@@ -664,7 +664,7 @@
             this.btnBillDetails.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnBillDetails.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnBillDetails.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnBillDetails.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image21")));
+            this.btnBillDetails.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image10")));
             this.btnBillDetails.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnBillDetails.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnBillDetails.Style.PressedForeColor = System.Drawing.Color.White;
@@ -688,7 +688,7 @@
             this.btnTax.AccessibleName = "Button";
             this.btnTax.BackColor = System.Drawing.Color.SlateBlue;
             this.btnTax.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnTax.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTax.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTax.ImageSize = new System.Drawing.Size(32, 32);
             this.btnTax.Location = new System.Drawing.Point(0, 0);
@@ -702,7 +702,7 @@
             this.btnTax.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnTax.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnTax.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnTax.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image22")));
+            this.btnTax.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image11")));
             this.btnTax.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnTax.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnTax.Style.PressedForeColor = System.Drawing.Color.White;
@@ -726,7 +726,7 @@
             this.btnDiscount.AccessibleName = "Button";
             this.btnDiscount.BackColor = System.Drawing.Color.SlateBlue;
             this.btnDiscount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDiscount.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDiscount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDiscount.ImageSize = new System.Drawing.Size(32, 32);
             this.btnDiscount.Location = new System.Drawing.Point(0, 0);
@@ -740,7 +740,7 @@
             this.btnDiscount.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnDiscount.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnDiscount.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnDiscount.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image23")));
+            this.btnDiscount.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image12")));
             this.btnDiscount.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnDiscount.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnDiscount.Style.PressedForeColor = System.Drawing.Color.White;
@@ -764,7 +764,7 @@
             this.btnReportings.AccessibleName = "Button";
             this.btnReportings.BackColor = System.Drawing.Color.SlateBlue;
             this.btnReportings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnReportings.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReportings.ImageSize = new System.Drawing.Size(32, 32);
             this.btnReportings.Location = new System.Drawing.Point(0, 0);
@@ -778,7 +778,7 @@
             this.btnReportings.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnReportings.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnReportings.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnReportings.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image24")));
+            this.btnReportings.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image13")));
             this.btnReportings.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnReportings.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnReportings.Style.PressedForeColor = System.Drawing.Color.White;
@@ -786,7 +786,6 @@
             this.btnReportings.TabIndex = 9;
             this.btnReportings.Text = "Báo cáo";
             this.btnReportings.UseVisualStyleBackColor = false;
-
             // 
             // flpStaffManagement
             // 
@@ -817,7 +816,7 @@
             // 
             this.btnStaffManagement.AccessibleName = "Button";
             this.btnStaffManagement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnStaffManagement.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStaffManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStaffManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStaffManagement.ImageSize = new System.Drawing.Size(32, 32);
             this.btnStaffManagement.Location = new System.Drawing.Point(0, 0);
@@ -831,7 +830,7 @@
             this.btnStaffManagement.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnStaffManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnStaffManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnStaffManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnStaffManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image14")));
             this.btnStaffManagement.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnStaffManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnStaffManagement.Style.PressedForeColor = System.Drawing.Color.White;
@@ -854,7 +853,7 @@
             this.btnStaff.AccessibleName = "Button";
             this.btnStaff.BackColor = System.Drawing.Color.SlateBlue;
             this.btnStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnStaff.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStaff.ImageSize = new System.Drawing.Size(32, 32);
             this.btnStaff.Location = new System.Drawing.Point(0, 0);
@@ -868,7 +867,7 @@
             this.btnStaff.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnStaff.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnStaff.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image15")));
             this.btnStaff.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnStaff.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnStaff.Style.PressedForeColor = System.Drawing.Color.White;
@@ -892,7 +891,7 @@
             this.btnDepartment.AccessibleName = "Button";
             this.btnDepartment.BackColor = System.Drawing.Color.SlateBlue;
             this.btnDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDepartment.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDepartment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDepartment.ImageSize = new System.Drawing.Size(32, 32);
             this.btnDepartment.Location = new System.Drawing.Point(0, 0);
@@ -906,7 +905,7 @@
             this.btnDepartment.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnDepartment.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnDepartment.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image16")));
             this.btnDepartment.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnDepartment.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnDepartment.Style.PressedForeColor = System.Drawing.Color.White;
@@ -930,7 +929,7 @@
             this.btnRole.AccessibleName = "Button";
             this.btnRole.BackColor = System.Drawing.Color.SlateBlue;
             this.btnRole.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRole.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRole.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRole.ImageSize = new System.Drawing.Size(32, 32);
             this.btnRole.Location = new System.Drawing.Point(0, 0);
@@ -944,7 +943,7 @@
             this.btnRole.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnRole.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnRole.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnRole.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnRole.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image17")));
             this.btnRole.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRole.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnRole.Style.PressedForeColor = System.Drawing.Color.White;
@@ -981,7 +980,7 @@
             // 
             this.btnAccountManagement.AccessibleName = "Button";
             this.btnAccountManagement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAccountManagement.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccountManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccountManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAccountManagement.ImageSize = new System.Drawing.Size(32, 32);
             this.btnAccountManagement.Location = new System.Drawing.Point(0, 0);
@@ -995,7 +994,7 @@
             this.btnAccountManagement.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnAccountManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnAccountManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnAccountManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image16")));
+            this.btnAccountManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image18")));
             this.btnAccountManagement.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnAccountManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnAccountManagement.Style.PressedForeColor = System.Drawing.Color.White;
@@ -1018,7 +1017,7 @@
             this.btnAccount.AccessibleName = "Button";
             this.btnAccount.BackColor = System.Drawing.Color.SlateBlue;
             this.btnAccount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAccount.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAccount.ImageSize = new System.Drawing.Size(32, 32);
             this.btnAccount.Location = new System.Drawing.Point(0, 0);
@@ -1032,7 +1031,7 @@
             this.btnAccount.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnAccount.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnAccount.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnAccount.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image17")));
+            this.btnAccount.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image19")));
             this.btnAccount.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnAccount.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnAccount.Style.PressedForeColor = System.Drawing.Color.White;
@@ -1056,7 +1055,7 @@
             this.btnAccountType.AccessibleName = "Button";
             this.btnAccountType.BackColor = System.Drawing.Color.SlateBlue;
             this.btnAccountType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAccountType.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccountType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccountType.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAccountType.ImageSize = new System.Drawing.Size(32, 32);
             this.btnAccountType.Location = new System.Drawing.Point(0, 0);
@@ -1070,7 +1069,7 @@
             this.btnAccountType.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnAccountType.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnAccountType.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnAccountType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image18")));
+            this.btnAccountType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image20")));
             this.btnAccountType.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnAccountType.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnAccountType.Style.PressedForeColor = System.Drawing.Color.White;
@@ -1108,7 +1107,7 @@
             // 
             this.btnCustomerManagement.AccessibleName = "Button";
             this.btnCustomerManagement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCustomerManagement.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomerManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomerManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCustomerManagement.ImageSize = new System.Drawing.Size(32, 32);
             this.btnCustomerManagement.Location = new System.Drawing.Point(0, 0);
@@ -1122,7 +1121,7 @@
             this.btnCustomerManagement.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnCustomerManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnCustomerManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnCustomerManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image9")));
+            this.btnCustomerManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image21")));
             this.btnCustomerManagement.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnCustomerManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnCustomerManagement.Style.PressedForeColor = System.Drawing.Color.White;
@@ -1145,7 +1144,7 @@
             this.btnCustomer.AccessibleName = "Button";
             this.btnCustomer.BackColor = System.Drawing.Color.SlateBlue;
             this.btnCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCustomer.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCustomer.ImageSize = new System.Drawing.Size(32, 32);
             this.btnCustomer.Location = new System.Drawing.Point(0, 0);
@@ -1159,7 +1158,7 @@
             this.btnCustomer.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnCustomer.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnCustomer.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnCustomer.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image10")));
+            this.btnCustomer.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image22")));
             this.btnCustomer.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnCustomer.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnCustomer.Style.PressedForeColor = System.Drawing.Color.White;
@@ -1183,7 +1182,7 @@
             this.btnCustomerRanking.AccessibleName = "Button";
             this.btnCustomerRanking.BackColor = System.Drawing.Color.SlateBlue;
             this.btnCustomerRanking.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCustomerRanking.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomerRanking.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomerRanking.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCustomerRanking.ImageSize = new System.Drawing.Size(32, 32);
             this.btnCustomerRanking.Location = new System.Drawing.Point(0, 0);
@@ -1197,7 +1196,7 @@
             this.btnCustomerRanking.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnCustomerRanking.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnCustomerRanking.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnCustomerRanking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image11")));
+            this.btnCustomerRanking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image23")));
             this.btnCustomerRanking.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnCustomerRanking.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnCustomerRanking.Style.PressedForeColor = System.Drawing.Color.White;
@@ -1206,6 +1205,44 @@
             this.btnCustomerRanking.Text = "Hạng khách hàng";
             this.btnCustomerRanking.UseVisualStyleBackColor = false;
             this.btnCustomerRanking.Click += new System.EventHandler(this.btnCustomerRanking_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnRating);
+            this.panel1.Location = new System.Drawing.Point(0, 150);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(220, 50);
+            this.panel1.TabIndex = 17;
+            // 
+            // btnRating
+            // 
+            this.btnRating.AccessibleName = "Button";
+            this.btnRating.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnRating.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRating.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRating.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnRating.Location = new System.Drawing.Point(0, 0);
+            this.btnRating.Name = "btnRating";
+            this.btnRating.Size = new System.Drawing.Size(220, 50);
+            this.btnRating.Style.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnRating.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnRating.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnRating.Style.FocusedImageForeColor = System.Drawing.Color.White;
+            this.btnRating.Style.ForeColor = System.Drawing.Color.White;
+            this.btnRating.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnRating.Style.HoverForeColor = System.Drawing.Color.Teal;
+            this.btnRating.Style.HoverImageForeColor = System.Drawing.Color.Teal;
+            this.btnRating.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image24")));
+            this.btnRating.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnRating.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnRating.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnRating.Style.PressedImageForeColor = System.Drawing.Color.White;
+            this.btnRating.TabIndex = 5;
+            this.btnRating.Text = "Đánh giá";
+            this.btnRating.UseVisualStyleBackColor = false;
+            this.btnRating.Click += new System.EventHandler(this.btnRating_Click);
             // 
             // flpRoomManagement
             // 
@@ -1235,7 +1272,7 @@
             // 
             this.btnRoomManagement.AccessibleName = "Button";
             this.btnRoomManagement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRoomManagement.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoomManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRoomManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRoomManagement.ImageSize = new System.Drawing.Size(32, 32);
             this.btnRoomManagement.Location = new System.Drawing.Point(0, 0);
@@ -1272,7 +1309,7 @@
             this.btnRoom.AccessibleName = "Button";
             this.btnRoom.BackColor = System.Drawing.Color.SlateBlue;
             this.btnRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRoom.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRoom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRoom.ImageSize = new System.Drawing.Size(32, 32);
             this.btnRoom.Location = new System.Drawing.Point(0, 0);
@@ -1310,7 +1347,7 @@
             this.btnRoomType.AccessibleName = "Button";
             this.btnRoomType.BackColor = System.Drawing.Color.SlateBlue;
             this.btnRoomType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRoomType.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRoomType.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRoomType.ImageSize = new System.Drawing.Size(32, 32);
             this.btnRoomType.Location = new System.Drawing.Point(0, 0);
@@ -1348,7 +1385,7 @@
             this.btnRoomStatus.AccessibleName = "Button";
             this.btnRoomStatus.BackColor = System.Drawing.Color.SlateBlue;
             this.btnRoomStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRoomStatus.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoomStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRoomStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRoomStatus.ImageSize = new System.Drawing.Size(32, 32);
             this.btnRoomStatus.Location = new System.Drawing.Point(0, 0);
@@ -1386,7 +1423,7 @@
             this.btnBooking.AccessibleName = "Button";
             this.btnBooking.BackColor = System.Drawing.Color.SlateBlue;
             this.btnBooking.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBooking.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBooking.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBooking.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBooking.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBooking.ImageSize = new System.Drawing.Size(32, 32);
@@ -1425,7 +1462,7 @@
             this.btnService.AccessibleName = "Button";
             this.btnService.BackColor = System.Drawing.Color.SlateBlue;
             this.btnService.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnService.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnService.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnService.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnService.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnService.ImageSize = new System.Drawing.Size(32, 32);
@@ -1462,7 +1499,7 @@
             this.panHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panHeader.Location = new System.Drawing.Point(0, 0);
             this.panHeader.Name = "panHeader";
-            this.panHeader.Size = new System.Drawing.Size(1600, 50);
+            this.panHeader.Size = new System.Drawing.Size(1284, 50);
             this.panHeader.TabIndex = 0;
             this.panHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panHeader_MouseDown);
             // 
@@ -1480,7 +1517,7 @@
             // 
             this.btnMenu.AccessibleName = "Button";
             this.btnMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnMenu.Font = new System.Drawing.Font("Montserrat SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenu.ImageSize = new System.Drawing.Size(32, 32);
             this.btnMenu.Location = new System.Drawing.Point(0, 0);
@@ -1508,7 +1545,7 @@
             this.panWelcome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panWelcome.Controls.Add(this.lblHiUser);
             this.panWelcome.Controls.Add(this.cpicProfile);
-            this.panWelcome.Location = new System.Drawing.Point(951, 3);
+            this.panWelcome.Location = new System.Drawing.Point(635, 3);
             this.panWelcome.Name = "panWelcome";
             this.panWelcome.Size = new System.Drawing.Size(393, 47);
             this.panWelcome.TabIndex = 0;
@@ -1546,7 +1583,7 @@
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.btnMinimize.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnMinimize.Location = new System.Drawing.Point(1450, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(1134, 0);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(50, 50);
             this.btnMinimize.Style.BackColor = System.Drawing.Color.Gold;
@@ -1580,10 +1617,10 @@
             this.realTimeClock.ClockShape = Syncfusion.Windows.Forms.Tools.ClockShapes.RoundedRectangle;
             this.realTimeClock.ClockType = Syncfusion.Windows.Forms.Tools.ClockTypes.Digital;
             this.realTimeClock.CurrentDateTime = new System.DateTime(2024, 3, 9, 23, 55, 38, 42);
-            this.realTimeClock.CustomTime = new System.DateTime(2024, 3, 29, 14, 19, 38, 956);
-            this.realTimeClock.DigitalRenderer = digitalClockRenderer2;
+            this.realTimeClock.CustomTime = new System.DateTime(2024, 4, 23, 7, 31, 28, 102);
+            this.realTimeClock.DigitalRenderer = digitalClockRenderer1;
             this.realTimeClock.DisplayDates = false;
-            this.realTimeClock.Location = new System.Drawing.Point(1347, 0);
+            this.realTimeClock.Location = new System.Drawing.Point(1031, 0);
             this.realTimeClock.Margin = new System.Windows.Forms.Padding(0);
             this.realTimeClock.MaximumSize = new System.Drawing.Size(100, 50);
             this.realTimeClock.MinimumSize = new System.Drawing.Size(50, 50);
@@ -1591,7 +1628,7 @@
             this.realTimeClock.Name = "realTimeClock";
             this.realTimeClock.Now = new System.DateTime(((long)(0)));
             this.realTimeClock.Remainder = new System.DateTime(2024, 3, 9, 23, 55, 38, 34);
-            this.realTimeClock.Renderer = clockRenderer2;
+            this.realTimeClock.Renderer = clockRenderer1;
             this.realTimeClock.ShowClockFrame = false;
             this.realTimeClock.ShowCustomTimeClock = true;
             this.realTimeClock.ShowHourDesignator = false;
@@ -1607,7 +1644,7 @@
             this.btnFullScreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFullScreen.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.btnFullScreen.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnFullScreen.Location = new System.Drawing.Point(1500, 0);
+            this.btnFullScreen.Location = new System.Drawing.Point(1184, 0);
             this.btnFullScreen.Name = "btnFullScreen";
             this.btnFullScreen.Size = new System.Drawing.Size(50, 50);
             this.btnFullScreen.Style.BackColor = System.Drawing.Color.LimeGreen;
@@ -1637,7 +1674,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.btnClose.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnClose.Location = new System.Drawing.Point(1550, 0);
+            this.btnClose.Location = new System.Drawing.Point(1234, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(50, 50);
             this.btnClose.Style.BackColor = System.Drawing.Color.DarkRed;
@@ -1677,7 +1714,7 @@
             this.flpanSideBar.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpanSideBar.Location = new System.Drawing.Point(0, 50);
             this.flpanSideBar.Name = "flpanSideBar";
-            this.flpanSideBar.Size = new System.Drawing.Size(220, 850);
+            this.flpanSideBar.Size = new System.Drawing.Size(220, 731);
             this.flpanSideBar.TabIndex = 1;
             this.flpanSideBar.WrapContents = false;
             // 
@@ -1694,7 +1731,7 @@
             // 
             this.btnDashBoard.AccessibleName = "Button";
             this.btnDashBoard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDashBoard.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashBoard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashBoard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashBoard.ImageSize = new System.Drawing.Size(32, 32);
             this.btnDashBoard.Location = new System.Drawing.Point(0, 0);
@@ -1745,7 +1782,7 @@
             // 
             this.btnBookingManagement.AccessibleName = "Button";
             this.btnBookingManagement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBookingManagement.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBookingManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBookingManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBookingManagement.ImageSize = new System.Drawing.Size(32, 32);
             this.btnBookingManagement.Location = new System.Drawing.Point(0, 0);
@@ -1782,7 +1819,7 @@
             this.btnServiceType.AccessibleName = "Button";
             this.btnServiceType.BackColor = System.Drawing.Color.SlateBlue;
             this.btnServiceType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnServiceType.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnServiceType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnServiceType.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnServiceType.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnServiceType.ImageSize = new System.Drawing.Size(32, 32);
@@ -1807,44 +1844,6 @@
             this.btnServiceType.UseVisualStyleBackColor = false;
             this.btnServiceType.Click += new System.EventHandler(this.btnServiceType_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnRating);
-            this.panel1.Location = new System.Drawing.Point(0, 150);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(220, 50);
-            this.panel1.TabIndex = 17;
-            // 
-            // btnRating
-            // 
-            this.btnRating.AccessibleName = "Button";
-            this.btnRating.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnRating.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRating.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRating.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRating.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnRating.Location = new System.Drawing.Point(0, 0);
-            this.btnRating.Name = "btnRating";
-            this.btnRating.Size = new System.Drawing.Size(220, 50);
-            this.btnRating.Style.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnRating.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnRating.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnRating.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnRating.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRating.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnRating.Style.HoverForeColor = System.Drawing.Color.Teal;
-            this.btnRating.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnRating.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image12")));
-            this.btnRating.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRating.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnRating.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnRating.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnRating.TabIndex = 5;
-            this.btnRating.Text = "Đánh giá";
-            this.btnRating.UseVisualStyleBackColor = false;
-            this.btnRating.Click += new System.EventHandler(this.btnRating_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1852,12 +1851,12 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.ClientSize = new System.Drawing.Size(1284, 781);
             this.Controls.Add(this.panDesktop);
             this.Controls.Add(this.flpanSideBar);
             this.Controls.Add(this.panHeader);
             this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1896,6 +1895,7 @@
             this.panCustomerManagement.ResumeLayout(false);
             this.panCustomer.ResumeLayout(false);
             this.panCustomerRanking.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.flpRoomManagement.ResumeLayout(false);
             this.panRoomManagement.ResumeLayout(false);
             this.panRoom.ResumeLayout(false);
@@ -1912,7 +1912,6 @@
             this.flpBookingManagement.ResumeLayout(false);
             this.panBookingManagement.ResumeLayout(false);
             this.panServiceType.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

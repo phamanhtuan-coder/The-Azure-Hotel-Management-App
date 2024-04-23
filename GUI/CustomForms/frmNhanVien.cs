@@ -11,6 +11,7 @@ using System.IO;
 using Utilities;
 using BLL;
 using DTO;
+using Syncfusion.XlsIO.Implementation.XmlReaders;
 
 namespace GUI.customForm
 {
@@ -18,20 +19,8 @@ namespace GUI.customForm
     {
         NhanVienBLL  nhanVienBLL= new NhanVienBLL();
         List<NhanVienDTO> nhanVienDTOs = new List<NhanVienDTO>();
-        public string username { get; set; }
-        public string maNhanVien { get; set; }
-        public string maTaikhoan { get; set; }
-        public string hoTen { get; set; }
-        public string CCCD { get; set; }
-        public string ngaySinh { get; set; }
-        public string gioiTinh { get; set; }
-        public string diaChi { get; set; }
-        public string soDienThoai { get; set; }
-        public string email { get; set; }
-        public Image anhDaiDien { get; set; }
-        public bool wasAdd { get; set; }
+        public NhanVienDTO nv = new NhanVienDTO();       
         public bool isAdd { get; set; }
-
         public frmNhanVien()
         {
             InitializeComponent();
@@ -40,31 +29,44 @@ namespace GUI.customForm
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
             // gán giá trị mặc định bằng các biến trên
-            txtTenTaiKhoan.Text = username;
-            picAvatar.Image = anhDaiDien;
-            txtTenTaiKhoan.Text = maTaikhoan;
-            txtHoTenNV.Text = hoTen;
-            txtCCCD.Text = CCCD;
-            if (!string.IsNullOrEmpty(ngaySinh))
+            loadNQL();
+            if (!isAdd)
             {
-                dtpNgaySinh.Value = DateTime.Parse(ngaySinh);
+                LoadBien();
+            }
+        }
+
+        private void LoadBien()
+        {
+            if (nv.HinhAnh != null)
+            {
+                picAvatar.Image = ByteArrayToImage(nv.HinhAnh);
+            }
+            txtTenTaiKhoan.Text = nv.TenTaiKhoan;
+            txtHoTenNV.Text = nv.HoTenNV;
+            txtCCCD.Text = nv.CCCD;
+            dtpNgaySinh.Value = nv.NgaySinh;
+            if (nv.GioiTinh == "Nam")
+            {
+                radNam.Checked = true;
             }
             else
             {
-              
-            }
-
-            if ( gioiTinh == "Nam") {
-                radNam.Checked = true; 
-            } else
-            {
                 radNu.Checked = true;
             }
-
-            txtDiaChi.Text = diaChi;
-            txtSDT.Text = soDienThoai;
-            txtEmail.Text = email;
-            loadNQL();
+            txtDiaChi.Text = nv.DiaChi;
+            txtSDT.Text = nv.SDT;
+            txtEmail.Text = nv.Email;
+            nupLuong.Value = nv.Luong;
+            foreach (var item in cboMaNQL.Items)
+            {
+                int value = (int)item.GetType().GetProperty(cboMaNQL.ValueMember).GetValue(item);
+                if (value == nv.MaNQL)
+                {
+                    cboMaNQL.SelectedItem = item;
+                    break;
+                }
+            }
         }
 
         private void loadNQL()
@@ -80,8 +82,11 @@ namespace GUI.customForm
             }
             cboMaNQL.DataSource = nhanVienDTOs;
             cboMaNQL.DisplayMember = "HoTenNV";
-            cboMaNQL.ValueMember = "MaNV";
-            cboMaNQL.SelectedIndex = 0;
+            cboMaNQL.ValueMember = "MaNV";          
+            if (isAdd)
+            {
+                cboMaNQL.SelectedIndex = 0;
+            }
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -93,7 +98,7 @@ namespace GUI.customForm
                 if (AddTaiKhoan())
                 {
                     thongBao = new customMessageBox("Đã thêm thành công dữ liệu nhân viên mới!");
-                    thongBao.ShowDialog();                   
+                    thongBao.ShowDialog();    
                 }
                 else
                 {
@@ -104,12 +109,20 @@ namespace GUI.customForm
             else
             {
                 // nếu không thì chạy lệnh update
-                thongBao = new customMessageBox("Sửa thành công thông tin nhân viên đã chọn!");
-                thongBao.ShowDialog();
+                if (EditNhanVien())
+                {
+                    thongBao = new customMessageBox("Sửa thành công thông tin nhân viên đã chọn!");
+                    thongBao.ShowDialog();
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Sửa thất bại thông tin nhân viên đã chọn!");
+                    thongBao.ShowDialog();
+                }
             }
             this.Close();
             
-        }
+        } 
 
         private bool AddTaiKhoan()
         {        
@@ -127,6 +140,25 @@ namespace GUI.customForm
             nhanvien.MaNQL=(int)cboMaNQL.SelectedValue;
             nhanvien.Luong=nupLuong.Value;
             return nhanVienBLL.AddNhanVienBLL(nhanvien);
+        }
+
+        private bool EditNhanVien()
+        {
+            NhanVienDTO nhanvien = new NhanVienDTO();
+            nhanvien.MaNV=nv.MaNV;
+            nhanvien.HinhAnh = ImageToByteArray(picAvatar.Image);
+            nhanvien.HoTenNV = txtHoTenNV.Text;
+            nhanvien.CCCD = txtCCCD.Text;
+            nhanvien.GioiTinh = radNam.Checked ? "Nam" : "Nữ";
+            string ns = dtpNgaySinh.Value.ToString("yyyy-MM-dd");
+            nhanvien.NgaySinh = DateTime.Parse(ns);
+            nhanvien.Email = txtEmail.Text;
+            nhanvien.SDT = txtSDT.Text;
+            nhanvien.DiaChi = txtDiaChi.Text;
+            nhanvien.TenTaiKhoan = txtTenTaiKhoan.Text;
+            nhanvien.MaNQL = (int)cboMaNQL.SelectedValue;
+            nhanvien.Luong = nupLuong.Value;
+            return nhanVienBLL.EditNhanVienBLL(nhanvien);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -166,5 +198,12 @@ namespace GUI.customForm
             return m.ToArray();
         }
 
+        Image ByteArrayToImage(byte[] hinh)
+        {
+            using (MemoryStream m = new MemoryStream(hinh))
+            {
+                return Image.FromStream(m);
+            }
+        }
     }
 }

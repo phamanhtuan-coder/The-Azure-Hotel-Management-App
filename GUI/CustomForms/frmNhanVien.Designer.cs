@@ -274,6 +274,11 @@
             // nupLuong
             // 
             this.nupLuong.Location = new System.Drawing.Point(193, 337);
+            this.nupLuong.Maximum = new decimal(new int[] {
+            1569325055,
+            23283064,
+            0,
+            0});
             this.nupLuong.Name = "nupLuong";
             this.nupLuong.Size = new System.Drawing.Size(169, 26);
             this.nupLuong.TabIndex = 29;
