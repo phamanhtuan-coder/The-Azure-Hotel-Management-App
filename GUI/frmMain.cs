@@ -248,6 +248,18 @@ namespace GUI
             frm.Show();
         }
 
+        //Thay đổi User Control khi bấm button trong User Control
+        public void SwitchUserControl(UserControl newControl)
+        {
+            panDesktop.Controls.Clear();
+            newControl.Dock = DockStyle.Fill;
+            panDesktop.Controls.Add(newControl);
+            panDesktop.Tag = newControl;
+            newControl.BringToFront();
+            newControl.Show();
+        }
+
+
         /// <summary>
         /// Hàm xử lý sự kiện khi nút Loai TK được bấm
         /// </summary>
