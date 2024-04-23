@@ -12,6 +12,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Syncfusion.Windows.Forms;
+using Syncfusion.WinForms.Controls;
 
 namespace GUI.UserControls
 {
@@ -97,10 +99,22 @@ namespace GUI.UserControls
             hinhAnhPictureBox.Margin = new Padding(0);
             chiaPanel.Panel1.Controls.Add(hinhAnhPictureBox);
 
-            thongTinLabel.Dock = DockStyle.Fill;
+            thongTinLabel.AutoSize = true;
+            thongTinLabel.Location = new Point(10, 10);
+            thongTinLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left;
             thongTinLabel.Padding = new Padding(10, 5, 10, 5);
             thongTinLabel.Text = $"Phòng: {phong.MoTa}\nGiá: {phong.GiaPhong:C}\nMô tả: {phong.MoTa}";
             chiaPanel.Panel2.Controls.Add(thongTinLabel);
+
+            SfButton btnDatPhong = new SfButton();
+            btnDatPhong.Location = new Point(300, thongTinLabel.Bottom + 50); 
+            btnDatPhong.Margin= new Padding(10,5,10,5);
+            btnDatPhong.Text = "Chọn phòng";
+            btnDatPhong.Font = new Font("Montserrat", 12F);
+            btnDatPhong.AutoSize = true;
+            btnDatPhong.Style.BackColor = Color.ForestGreen;
+            btnDatPhong.Style.ForeColor = Color.White;
+            chiaPanel.Panel2.Controls.Add(btnDatPhong);
 
             if (phong.HinhAnh != null && phong.HinhAnh.Length > 0)
             {
