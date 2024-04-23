@@ -179,11 +179,31 @@ namespace GUI.UserControls
         {
             if (dgvStaff.SelectedRows.Count > 0)
             {
-                customMessageBox thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
+                customMessageBox thongBao;
+                int TrangThai = dgvStaff.Columns["TrangThai"].Index;
+                if ((bool)dgvStaff.SelectedRows[0].Cells[TrangThai].Value)
                 {
-                    // Xóa 
+                    thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
+                    DialogResult dr = thongBao.ShowDialog();
+                    if (dr != DialogResult.Cancel)
+                    {
+                        if (XoaNhanVien())
+                        {
+                            LoadDSNhanVien();
+                            thongBao = new customMessageBox("Xóa thành công!");
+                            thongBao.ShowDialog();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox("Xóa thất bại!");
+                            thongBao.ShowDialog();
+                        }
+                    }
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Bạn không thể xóa nhân viên đã xóa!");
+                    thongBao.ShowDialog();
                 }
             }
             else
@@ -193,21 +213,71 @@ namespace GUI.UserControls
             }
         }
 
+        private bool XoaNhanVien()
+        {
+            if (dgvStaff.SelectedRows.Count > 0)//  Sửa điều kiện đoạn này
+            {
+                frmNhanVien frm = new frmNhanVien();
+                int vitriMaNV = dgvStaff.Columns["ID"].Index;
+                int  MaNV= (int)dgvStaff.SelectedRows[0].Cells[vitriMaNV].Value;
+                return nhanVienBLL.XoaNhanVienBLL(MaNV);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         private void btnRecoverStaff_Click(object sender, EventArgs e)
         {
             if (dgvStaff.SelectedRows.Count > 0)
             {
-                customMessageBox thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
+                customMessageBox thongBao;
+                int TrangThai = dgvStaff.Columns["TrangThai"].Index;
+                if (!(bool)dgvStaff.SelectedRows[0].Cells[TrangThai].Value)
                 {
-                    // Khôi phục
+                    thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
+                    DialogResult dr = thongBao.ShowDialog();
+                    if (dr != DialogResult.Cancel)
+                    {
+                        if (KhoiPhucNhanVien())
+                        {
+                            LoadDSNhanVien();
+                            thongBao = new customMessageBox("Khôi phục thành công!");
+                            thongBao.ShowDialog();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox("Khôi phục thất bại!");
+                            thongBao.ShowDialog();
+                        }
+                    }
+                }
+                else
+                {                   
+                    thongBao = new customMessageBox("Bạn không thể khôi phục nhân viên khi chưa xóa!");
+                    thongBao.ShowDialog();                   
                 }
             }
             else
             {
                 customMessageBox thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
                 thongBao.ShowDialog();
+            }
+        }
+
+        private bool KhoiPhucNhanVien()
+        {
+            if (dgvStaff.SelectedRows.Count > 0)//  Sửa điều kiện đoạn này
+            {
+                frmNhanVien frm = new frmNhanVien();
+                int vitriMaNV = dgvStaff.Columns["ID"].Index;
+                int MaNV = (int)dgvStaff.SelectedRows[0].Cells[vitriMaNV].Value;
+                return nhanVienBLL.KhoiPhucNhanVienBLL(MaNV);
+            }
+            else
+            {
+                return false;
             }
         }
 

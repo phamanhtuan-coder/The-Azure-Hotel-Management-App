@@ -39,10 +39,34 @@ namespace BLL
             }
         }
 
+        public bool XoaNhanVienBLL(int maNV)
+        {
+            if (maNV > 0)
+            {
+                return nhanVienDAL.XoaNhanVienDAL(maNV);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool KhoiPhucNhanVienBLL(int maNV)
+        {
+            if (maNV > 0)
+            {
+                return nhanVienDAL.KhoiPhucNhanVienDAL(maNV);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public List<NhanVienDTO> Filer(int PhanQuyen, string PhongBan, string GioiTinh, int NguoiQuanLy, string TrangThai)
         {
             return nhanVienDAL.Filter(PhanQuyen, PhongBan, GioiTinh, NguoiQuanLy, TrangThai);
-        }
+        }    
 
         public List<NhanVienDTO> LoadIDAndNameBLL()
         {
@@ -60,6 +84,6 @@ namespace BLL
         public string TruyVanUsernameBLL()
         {
             return nhanVienDAL.TruyVanUsernameDAL();
-        }
+        }        
     }
 }

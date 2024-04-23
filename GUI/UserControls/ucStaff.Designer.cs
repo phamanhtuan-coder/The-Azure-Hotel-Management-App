@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucStaff));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblStaff = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddStaff = new Syncfusion.WinForms.Controls.SfButton();
@@ -615,9 +615,9 @@
             // Luong
             // 
             this.Luong.DataPropertyName = "Luong";
-            dataGridViewCellStyle2.Format = "#### VND";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Luong.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "#### VND";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Luong.DefaultCellStyle = dataGridViewCellStyle1;
             this.Luong.HeaderText = "Lương";
             this.Luong.Name = "Luong";
             this.Luong.ReadOnly = true;
