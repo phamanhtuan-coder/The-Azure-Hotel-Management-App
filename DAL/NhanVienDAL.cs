@@ -60,9 +60,12 @@ namespace DAL
                 conn.Open();
 
                 SqlCommand com = new SqlCommand("sp_CapNhatNhanVien", conn);
-                com.CommandType = CommandType.StoredProcedure;
+                com.CommandType = System.Data.CommandType.StoredProcedure;
                 com.Parameters.AddWithValue("@MaNhanVien", nhanvien.MaNV);
-                com.Parameters.AddWithValue("@MaNQL", nhanvien.MaNQL);
+                if (nhanvien.MaNQL != -1)
+                {
+                    com.Parameters.AddWithValue("@MaNQL", nhanvien.MaNQL);
+                }
                 com.Parameters.AddWithValue("@TenTaiKhoan", nhanvien.TenTaiKhoan);
                 com.Parameters.AddWithValue("@HinhAnh", nhanvien.HinhAnh);
                 com.Parameters.AddWithValue("@HoTenNV", nhanvien.HoTenNV);
