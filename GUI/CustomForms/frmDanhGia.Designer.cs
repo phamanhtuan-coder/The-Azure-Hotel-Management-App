@@ -122,7 +122,6 @@
             this.rcDiemDG.ResetButton = resetButton1;
             this.rcDiemDG.Size = new System.Drawing.Size(151, 27);
             this.rcDiemDG.TabIndex = 11;
-            this.rcDiemDG.Text = "ratingControl1";
             this.rcDiemDG.ThemeName = "Default";
             // 
             // dtpNgayDG
