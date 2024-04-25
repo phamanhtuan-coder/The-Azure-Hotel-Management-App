@@ -198,7 +198,7 @@ namespace GUI.UserControls
 
         private void cboSortSoLuongKH_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string sortOption = cboSortCustomerRankingID.SelectedItem.ToString();
+            string sortOption = cboSortSoLuongKH.SelectedItem.ToString();
             switch (sortOption)
             {
                 case "Giảm dần":
