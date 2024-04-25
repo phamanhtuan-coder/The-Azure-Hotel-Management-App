@@ -157,5 +157,21 @@ namespace GUI.UserControls
             TT = (string)cboStateAccounts.SelectedValue;
             LoadDSKhachHang();
         }
+
+        private void cboSortCustomerID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sortOption = cboSortCustomerID.SelectedItem.ToString();
+            switch (sortOption)
+            {
+                case "Giảm dần":
+                    khachHangDTOs = khachHangDTOs.OrderByDescending(item => item.MaTaiKhoan).ToList();
+                    break;
+                default:
+                    khachHangDTOs = khachHangDTOs.OrderBy(item => item.MaTaiKhoan).ToList();
+                    break;
+            }
+
+            dgvCustomer.DataSource = khachHangDTOs;
+        }
     }
 }
