@@ -55,5 +55,10 @@ namespace BLL
           ).ToList();
             return searchResults;
         }
+
+        public List<HangThanhVienDTO> LoadIDAndNameBLL()
+        {
+            return hangThanhVienDAL.LoadIDAndNameBLL();
+        }
     }
 }

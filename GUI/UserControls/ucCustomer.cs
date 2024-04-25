@@ -1,4 +1,6 @@
-﻿using GUI.customForm;
+﻿using BLL;
+using DTO;
+using GUI.customForm;
 using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
@@ -14,7 +16,7 @@ namespace GUI.UserControls
 {
     public partial class ucCustomer : UserControl
     {
-
+        List<HangThanhVienDTO> hangThanhVienDTOs= new List<HangThanhVienDTO> ();
         public ucCustomer()
         {
             InitializeComponent();
@@ -22,14 +24,52 @@ namespace GUI.UserControls
 
         private void ucCustomer_Load(object sender, EventArgs e)
         {
-         
+            CapNhatCBBNhanVien();
+        }
+
+        private void CapNhatCBBNhanVien()
+        {
+            LodCboHangThanhVien();
+            DuLieuChoComboBox.duLieuSort(cboSortCustomerID);
+            DuLieuChoComboBox.duLieuFilter(cboStateAccounts);
+            List<string> sortOptions = new List<string>
+            {
+                "Tất cả",
+                "Nam",
+                "Nữ"
+            };
+            cboGioiTinh.DataSource = sortOptions;
+            cboGioiTinh.SelectedIndex = 0;
+            if (cboHangTV.SelectedIndex != 0)
+            {
+                cboHangTV.SelectedIndex = 0;
+                cboHangTV.SelectedIndex = 0;
+            }
+        }
+
+        private void LodCboHangThanhVien()
+        {
+            HangThanhVienBLL hangThanhVienBLL = new HangThanhVienBLL();
+            HangThanhVienDTO TatCa = new HangThanhVienDTO();
+            TatCa.MaLoaiHangThanhVien = -1;
+            TatCa.TenHang = "Tất cả";
+            hangThanhVienDTOs.Add(TatCa);
+            List<HangThanhVienDTO> tam = hangThanhVienBLL.LoadIDAndNameBLL();
+            foreach (var item in tam)
+            {
+                hangThanhVienDTOs.Add(item);
+            }
+            cboHangTV.DataSource = hangThanhVienDTOs;
+            cboHangTV.DisplayMember = "TenHang";
+            cboHangTV.ValueMember = "MaLoaiHangThanhVien";
+
         }
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
             frmKhachHang frm = new frmKhachHang();
             frm.isAdd = true;
-            frm.ShowDialog();
+            frm.ShowDialog();           
         }
 
         private void btnEditCustomer_Click(object sender, EventArgs e)

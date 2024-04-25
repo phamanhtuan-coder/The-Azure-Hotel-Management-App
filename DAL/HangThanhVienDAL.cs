@@ -154,5 +154,35 @@ namespace DAL
                 return new List<HangThanhVienDTO>();
             }
         }
+
+        public List<HangThanhVienDTO> LoadIDAndNameBLL()
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spIDandNameHangThanhVien", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                SqlDataReader reader = com.ExecuteReader();
+                list = new List<HangThanhVienDTO>();
+                while (reader.Read())
+                {
+                    HangThanhVienDTO hangThanhVienDTO = new HangThanhVienDTO();
+
+                    hangThanhVienDTO.MaLoaiHangThanhVien = (int)reader["MaLoaiHangThanhVien"];
+                    hangThanhVienDTO.TenHang = reader["TenHang"].ToString();
+
+                    list.Add(hangThanhVienDTO);
+                }
+
+                conn.Close();
+                return list;
+            }
+            catch (Exception)
+            {
+                return new List<HangThanhVienDTO>();
+            }
+        }
     }
 }

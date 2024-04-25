@@ -376,9 +376,9 @@
             // 
             this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(182, 255);
+            this.dtpNgaySinh.Location = new System.Drawing.Point(226, 255);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(200, 26);
+            this.dtpNgaySinh.Size = new System.Drawing.Size(156, 26);
             this.dtpNgaySinh.TabIndex = 32;
             // 
             // cboHangTV
