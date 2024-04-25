@@ -16,7 +16,12 @@ namespace GUI.UserControls
 {
     public partial class ucCustomer : UserControl
     {
+        public int MaHang { get; set; }
+        public string GioiTinh { get; set; }
+        public string TT { get; set; }
+        KhachHangBLL khachHangBLL = new KhachHangBLL();
         List<HangThanhVienDTO> hangThanhVienDTOs= new List<HangThanhVienDTO> ();
+        List<KhachHangDTO> khachHangDTOs= new List<KhachHangDTO> ();
         public ucCustomer()
         {
             InitializeComponent();
@@ -26,10 +31,17 @@ namespace GUI.UserControls
         {
             CapNhatCBBNhanVien();
         }
+        private void LoadDSKhachHang()
+        {
+            khachHangDTOs = new List<KhachHangDTO>();
+            khachHangDTOs = khachHangBLL.Filer(MaHang, GioiTinh, TT);
+            dgvCustomer.ClearSelection();
+            dgvCustomer.DataSource = khachHangDTOs;
+        }
 
         private void CapNhatCBBNhanVien()
         {
-            LodCboHangThanhVien();
+            LoadCboHangThanhVien();
             DuLieuChoComboBox.duLieuSort(cboSortCustomerID);
             DuLieuChoComboBox.duLieuFilter(cboStateAccounts);
             List<string> sortOptions = new List<string>
@@ -47,7 +59,7 @@ namespace GUI.UserControls
             }
         }
 
-        private void LodCboHangThanhVien()
+        private void LoadCboHangThanhVien()
         {
             HangThanhVienBLL hangThanhVienBLL = new HangThanhVienBLL();
             HangThanhVienDTO TatCa = new HangThanhVienDTO();
@@ -126,6 +138,24 @@ namespace GUI.UserControls
                 customMessageBox thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
                 thongBao.ShowDialog();
             }
+        }
+
+        private void cboHangTV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MaHang = (int) cboHangTV.SelectedValue;
+            LoadDSKhachHang();
+        }
+
+        private void cboGioiTinh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GioiTinh = (string)cboGioiTinh.SelectedValue;
+            LoadDSKhachHang();
+        }
+
+        private void cboStateAccounts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TT = (string)cboStateAccounts.SelectedValue;
+            LoadDSKhachHang();
         }
     }
 }
