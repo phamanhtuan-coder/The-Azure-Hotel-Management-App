@@ -15,21 +15,9 @@ namespace GUI.customForm
 {
     public partial class frmKhachHang : Form
     {
-        public string maKhachHang { get; set; }
-        public string maTaikhoan { get; set; }
-        public string hoTen { get; set; }
-        public string CCCD { get; set; }
-        public string ngaySinh { get; set; }
-        public string gioiTinh { get; set; }
-        public string diaChi { get; set; }
-        public string soDienThoai { get; set; }
-        public string email { get; set; }
-        public Image anhDaiDien { get; set; }
-
-        public string hangThanhVien { get; set; }
-
         public bool isAdd { get; set; }
         KhachHangBLL khachHangBLL = new KhachHangBLL();
+        public KhachHangDTO khachHangDTO= new KhachHangDTO();
         List<HangThanhVienDTO> hangThanhVienDTOs = new List<HangThanhVienDTO>();
 
         public frmKhachHang()
@@ -40,31 +28,36 @@ namespace GUI.customForm
         private void frmKhachHang_Load(object sender, EventArgs e)
         {
             // gán giá trị mặc định bằng các biến trên
-            LoadHangTV();          
-            picAvatar.Image = anhDaiDien;
-            txtMaTaiKhoan.Text = maTaikhoan;
-            txtHoTen.Text = hoTen;
-            txtCCCD.Text = CCCD;
-            if (!string.IsNullOrEmpty(ngaySinh))
+            LoadHangTV();
+
+            if (!isAdd)
             {
-                dtpNgaySinh.Value = DateTime.Parse(ngaySinh);
+                LoadBien();
+            }
+        }
+
+        private void LoadBien()
+        {
+            if (khachHangDTO.HinhAnh != null)
+            {
+                picAvatar.Image = ByteArrayToImage(khachHangDTO.HinhAnh);
+            }
+            txtHoTen.Text = khachHangDTO.HoTenKH;
+            txtCCCD.Text = khachHangDTO.CCCD;
+            dtpNgaySinh.Value = khachHangDTO.NgaySinh;
+            if (khachHangDTO.GioiTinh == "Nam")
+            {
+                radNam.Checked = true;
             }
             else
             {
-                
-            }
-
-            cboHangTV.Text = hangThanhVien;
-            if( gioiTinh == "Nam") {
-                radNam.Checked = true; 
-            } else
-            {
                 radNu.Checked = true;
             }
-
-            txtDiaChi.Text = diaChi;
-            txtSDT.Text = soDienThoai;
-            txtEmail.Text = email;
+            txtDiaChi.Text = khachHangDTO.DiaChi;
+            txtSDT.Text = khachHangDTO.SDT;
+            txtEmail.Text = khachHangDTO.Email;
+            cboHangTV.SelectedValue = khachHangDTO.MaLoaiHangThanhVien;
+            txtMaTaiKhoan.Text = khachHangDTO.TenDangNhap;
         }
 
         private void LoadHangTV()
@@ -108,11 +101,38 @@ namespace GUI.customForm
             else
             {
                 // nếu không thì chạy lệnh update
-                thongBao = new customMessageBox("Sửa thành công thông tin khách hàng đã chọn!");
-                thongBao.ShowDialog();
+                if (EditKhachHang())
+                {
+                    thongBao = new customMessageBox("Sửa thành công thông tin khách hàng đã chọn!");
+                    thongBao.ShowDialog();
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Sửa thất bại thông tin khách hàng đã chọn!");
+                    thongBao.ShowDialog();
+                }
+                
             }
             this.Close();
             
+        }
+
+        private bool EditKhachHang()
+        {
+            KhachHangDTO khachHang = new KhachHangDTO();
+            khachHang.MaKH = khachHangDTO.MaKH;
+            khachHang.TenDangNhap = txtMaTaiKhoan.Text;
+            khachHang.MaLoaiHangThanhVien = (int)cboHangTV.SelectedValue;
+            khachHang.HinhAnh = ImageToByteArray(picAvatar.Image);
+            khachHang.HoTenKH = txtHoTen.Text;
+            khachHang.SDT = txtSDT.Text;
+            khachHang.Email = txtEmail.Text;
+            khachHang.CCCD = txtCCCD.Text;
+            string ns = dtpNgaySinh.Value.ToString("yyyy-MM-dd");
+            khachHang.NgaySinh = DateTime.Parse(ns);
+            khachHang.DiaChi = txtDiaChi.Text;
+            khachHang.GioiTinh = radNam.Checked ? "Nam" : "Nữ";
+            return khachHangBLL.EditKhachHangBLL(khachHang);
         }
 
         private bool AddKhachHang()

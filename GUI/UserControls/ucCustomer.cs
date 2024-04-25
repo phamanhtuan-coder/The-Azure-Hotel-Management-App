@@ -93,10 +93,37 @@ namespace GUI.UserControls
                 frmKhachHang frm = new frmKhachHang();
                 frm.isAdd = false;
                 //Bắt đầu đoạn có thể chỉnh sửa
+                int MaKH = dgvCustomer.Columns["ID"].Index;
+                int TenDangNhap = dgvCustomer.Columns["colTenTaiKhoan"].Index;
+                int MaLoaiHangThanhVien = dgvCustomer.Columns["MaLoaiHangTV"].Index;
+                int HinhAnh = dgvCustomer.Columns["HinhAnh"].Index;
+                int HoTenKH = dgvCustomer.Columns["HoTen"].Index;
+                int SDT = dgvCustomer.Columns["SDT"].Index;
+                int Email = dgvCustomer.Columns["Email"].Index;
+                int CCCD = dgvCustomer.Columns["CCCD"].Index;
+                int NgaySinh = dgvCustomer.Columns["NgaySinh"].Index;
+                int DiaChi = dgvCustomer.Columns["DiaChi"].Index;
+                int GioiTinh = dgvCustomer.Columns["colGioiTinh"].Index;
 
+                frm.khachHangDTO.MaKH = (int)dgvCustomer.SelectedRows[0].Cells[MaKH].Value;
+                frm.khachHangDTO.TenDangNhap = (string)dgvCustomer.SelectedRows[0].Cells[TenDangNhap].Value;
+                frm.khachHangDTO.MaLoaiHangThanhVien=(int)dgvCustomer.SelectedRows[0].Cells[MaLoaiHangThanhVien].Value;
+                object cellValue = dgvCustomer.SelectedRows[0].Cells[HinhAnh].Value;
+                if (cellValue != null)
+                {
+                    frm.khachHangDTO.HinhAnh = (byte[])dgvCustomer.SelectedRows[0].Cells[HinhAnh].Value;
+                }
+                frm.khachHangDTO.HoTenKH = (string)dgvCustomer.SelectedRows[0].Cells[HoTenKH].Value;
+                frm.khachHangDTO.SDT = (string)dgvCustomer.SelectedRows[0].Cells[SDT].Value;
+                frm.khachHangDTO.Email = (string)dgvCustomer.SelectedRows[0].Cells[Email].Value;
+                frm.khachHangDTO.CCCD = (string)dgvCustomer.SelectedRows[0].Cells[CCCD].Value;
+                frm.khachHangDTO.NgaySinh = (DateTime)dgvCustomer.SelectedRows[0].Cells[NgaySinh].Value;
+                frm.khachHangDTO.DiaChi = (string)dgvCustomer.SelectedRows[0].Cells[DiaChi].Value;
+                frm.khachHangDTO.GioiTinh = (string)dgvCustomer.SelectedRows[0].Cells[GioiTinh].Value;
 
                 //Kết thúc đoạn có thể chỉnh sửa
                 frm.ShowDialog();
+                LoadDSKhachHang();
             }
             else
             {

@@ -25,6 +25,18 @@ namespace BLL
             }
         }
 
+        public bool EditKhachHangBLL(KhachHangDTO khachHang)
+        {
+            if (khachHang.MaKH>0&&!string.IsNullOrEmpty(khachHang.HoTenKH.Trim()) && !string.IsNullOrEmpty(khachHang.CCCD.Trim()) && !string.IsNullOrEmpty(khachHang.TenDangNhap.Trim()) && !string.IsNullOrEmpty(khachHang.DiaChi.Trim()) && !string.IsNullOrEmpty(khachHang.GioiTinh.Trim()) && !string.IsNullOrEmpty(khachHang.SDT.Trim()) && khachHang.MaLoaiHangThanhVien > 0)
+            {
+                return khachHangDAL.EditKhachHangDAL(khachHang);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public List<KhachHangDTO> Filer(int maHang, string gioiTinh, string tT)
         {
             return khachHangDAL.Filter(maHang, gioiTinh, tT);

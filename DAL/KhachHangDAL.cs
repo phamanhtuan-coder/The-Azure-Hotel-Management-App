@@ -48,6 +48,43 @@ namespace DAL
             }
         }
 
+        public bool EditKhachHangDAL(KhachHangDTO khachHang)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("sp_SuaKhachHang", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+
+                com.Parameters.AddWithValue("@MaKH", khachHang.MaKH);
+                com.Parameters.AddWithValue("@MaLoaiHangThanhVien", khachHang.MaLoaiHangThanhVien);
+                com.Parameters.AddWithValue("@TenTaiKhoan", khachHang.TenDangNhap);
+                com.Parameters.AddWithValue("@HinhAnh", khachHang.HinhAnh);
+                com.Parameters.AddWithValue("@HoTenKH", khachHang.HoTenKH);
+                com.Parameters.AddWithValue("@SDT", khachHang.SDT);
+                com.Parameters.AddWithValue("@Email", khachHang.Email);
+                com.Parameters.AddWithValue("@CCCD", khachHang.CCCD);
+                com.Parameters.AddWithValue("@NgaySinh", khachHang.NgaySinh);
+                com.Parameters.AddWithValue("@DiaChi", khachHang.DiaChi);
+                com.Parameters.AddWithValue("@GioiTinh", khachHang.GioiTinh);
+
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+                if (count > 0)
+                {
+                    return true;
+                }
+                else return false;
+
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public List<KhachHangDTO> Filter(int maHang, string gioiTinh, string tT)
         {
             try
