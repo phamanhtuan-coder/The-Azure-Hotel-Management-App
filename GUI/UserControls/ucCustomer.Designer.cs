@@ -39,18 +39,6 @@
             this.btnTraCuuCustomer = new Syncfusion.WinForms.Controls.SfButton();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
-            this.cboGioiTinh = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.lblSortGioiTinh = new System.Windows.Forms.Label();
-            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
-            this.cboHangTV = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.lblSortHangTV = new System.Windows.Forms.Label();
-            this.cboSortCustomerID = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.lblSortCustomerID = new System.Windows.Forms.Label();
-            this.cboStateAccounts = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.lblNgaySinh = new System.Windows.Forms.Label();
-            this.lblStateAccounts = new System.Windows.Forms.Label();
-            this.panUcHeader = new System.Windows.Forms.Panel();
-            this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.MaTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaLoaiHangTV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +53,18 @@
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cboGioiTinh = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.lblSortGioiTinh = new System.Windows.Forms.Label();
+            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.cboHangTV = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.lblSortHangTV = new System.Windows.Forms.Label();
+            this.cboSortCustomerID = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.lblSortCustomerID = new System.Windows.Forms.Label();
+            this.cboStateAccounts = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.lblNgaySinh = new System.Windows.Forms.Label();
+            this.lblStateAccounts = new System.Windows.Forms.Label();
+            this.panUcHeader = new System.Windows.Forms.Panel();
+            this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
             this.spcQuery.Panel1.SuspendLayout();
@@ -285,6 +285,110 @@
             this.dgvCustomer.Size = new System.Drawing.Size(973, 746);
             this.dgvCustomer.TabIndex = 0;
             // 
+            // MaTaiKhoan
+            // 
+            this.MaTaiKhoan.DataPropertyName = "MaTaiKhoan";
+            this.MaTaiKhoan.HeaderText = "Mã tài khoản";
+            this.MaTaiKhoan.Name = "MaTaiKhoan";
+            this.MaTaiKhoan.ReadOnly = true;
+            this.MaTaiKhoan.Visible = false;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "MaKH";
+            this.ID.HeaderText = "Mã khách hàng";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // MaLoaiHangTV
+            // 
+            this.MaLoaiHangTV.DataPropertyName = "MaLoaiHangThanhVien";
+            this.MaLoaiHangTV.HeaderText = "Hạng thành viên";
+            this.MaLoaiHangTV.Name = "MaLoaiHangTV";
+            this.MaLoaiHangTV.ReadOnly = true;
+            this.MaLoaiHangTV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.MaLoaiHangTV.Visible = false;
+            // 
+            // HinhAnh
+            // 
+            this.HinhAnh.DataPropertyName = "HinhAnh";
+            this.HinhAnh.HeaderText = "Hình ảnh";
+            this.HinhAnh.Name = "HinhAnh";
+            this.HinhAnh.ReadOnly = true;
+            this.HinhAnh.Visible = false;
+            // 
+            // HoTen
+            // 
+            this.HoTen.DataPropertyName = "HoTenKH";
+            this.HoTen.HeaderText = "Họ và tên";
+            this.HoTen.Name = "HoTen";
+            this.HoTen.ReadOnly = true;
+            // 
+            // colTenHang
+            // 
+            this.colTenHang.DataPropertyName = "TenHang";
+            this.colTenHang.HeaderText = "Tên hạng";
+            this.colTenHang.Name = "colTenHang";
+            this.colTenHang.ReadOnly = true;
+            // 
+            // colTenTaiKhoan
+            // 
+            this.colTenTaiKhoan.DataPropertyName = "TenDangNhap";
+            this.colTenTaiKhoan.HeaderText = "Tên đăng nhập";
+            this.colTenTaiKhoan.Name = "colTenTaiKhoan";
+            this.colTenTaiKhoan.ReadOnly = true;
+            // 
+            // colGioiTinh
+            // 
+            this.colGioiTinh.DataPropertyName = "GioiTinh";
+            this.colGioiTinh.HeaderText = "Giới tính";
+            this.colGioiTinh.Name = "colGioiTinh";
+            this.colGioiTinh.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // CCCD
+            // 
+            this.CCCD.DataPropertyName = "CCCD";
+            this.CCCD.HeaderText = "CCCD";
+            this.CCCD.Name = "CCCD";
+            this.CCCD.ReadOnly = true;
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.HeaderText = "Ngày sinh";
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.ReadOnly = true;
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "SĐT";
+            this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.ReadOnly = true;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.DataPropertyName = "TrangThai";
+            this.TrangThai.HeaderText = "Trạng thái";
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.ReadOnly = true;
+            this.TrangThai.Visible = false;
+            // 
             // cboGioiTinh
             // 
             this.cboGioiTinh.DelimiterChar = "";
@@ -449,110 +553,6 @@
             this.spcHeader.Size = new System.Drawing.Size(1370, 94);
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
-            // 
-            // MaTaiKhoan
-            // 
-            this.MaTaiKhoan.DataPropertyName = "MaTaiKhoan";
-            this.MaTaiKhoan.HeaderText = "Mã tài khoản";
-            this.MaTaiKhoan.Name = "MaTaiKhoan";
-            this.MaTaiKhoan.ReadOnly = true;
-            this.MaTaiKhoan.Visible = false;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "MaKH";
-            this.ID.HeaderText = "Mã khách hàng";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // MaLoaiHangTV
-            // 
-            this.MaLoaiHangTV.DataPropertyName = "MaLoaiHangThanhVien";
-            this.MaLoaiHangTV.HeaderText = "Hạng thành viên";
-            this.MaLoaiHangTV.Name = "MaLoaiHangTV";
-            this.MaLoaiHangTV.ReadOnly = true;
-            this.MaLoaiHangTV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.MaLoaiHangTV.Visible = false;
-            // 
-            // HinhAnh
-            // 
-            this.HinhAnh.DataPropertyName = "HinhAnh";
-            this.HinhAnh.HeaderText = "Hình ảnh";
-            this.HinhAnh.Name = "HinhAnh";
-            this.HinhAnh.ReadOnly = true;
-            this.HinhAnh.Visible = false;
-            // 
-            // HoTen
-            // 
-            this.HoTen.DataPropertyName = "HoTenKH";
-            this.HoTen.HeaderText = "Họ và tên";
-            this.HoTen.Name = "HoTen";
-            this.HoTen.ReadOnly = true;
-            // 
-            // colTenHang
-            // 
-            this.colTenHang.DataPropertyName = "TenHang";
-            this.colTenHang.HeaderText = "Tên hạng";
-            this.colTenHang.Name = "colTenHang";
-            this.colTenHang.ReadOnly = true;
-            // 
-            // colTenTaiKhoan
-            // 
-            this.colTenTaiKhoan.DataPropertyName = "TenDangNhap";
-            this.colTenTaiKhoan.HeaderText = "Tên đăng nhập";
-            this.colTenTaiKhoan.Name = "colTenTaiKhoan";
-            this.colTenTaiKhoan.ReadOnly = true;
-            // 
-            // colGioiTinh
-            // 
-            this.colGioiTinh.DataPropertyName = "GioiTinh";
-            this.colGioiTinh.HeaderText = "Giới tính";
-            this.colGioiTinh.Name = "colGioiTinh";
-            this.colGioiTinh.ReadOnly = true;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            // 
-            // CCCD
-            // 
-            this.CCCD.DataPropertyName = "CCCD";
-            this.CCCD.HeaderText = "CCCD";
-            this.CCCD.Name = "CCCD";
-            this.CCCD.ReadOnly = true;
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.DataPropertyName = "NgaySinh";
-            this.NgaySinh.HeaderText = "Ngày sinh";
-            this.NgaySinh.Name = "NgaySinh";
-            this.NgaySinh.ReadOnly = true;
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "SĐT";
-            this.SDT.Name = "SDT";
-            this.SDT.ReadOnly = true;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.DataPropertyName = "DiaChi";
-            this.DiaChi.HeaderText = "Địa chỉ";
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.ReadOnly = true;
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.DataPropertyName = "TrangThai";
-            this.TrangThai.HeaderText = "Trạng thái";
-            this.TrangThai.Name = "TrangThai";
-            this.TrangThai.ReadOnly = true;
-            this.TrangThai.Visible = false;
             // 
             // ucCustomer
             // 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -102,6 +103,31 @@ namespace GUI.customForm
             //Sau đó thực hiện lệnh query để lấy mã tài khoản vừa tạo và gán mã đó vào biến maTaiKhoan
             maTaikhoan = "mã vừa tạo";
             txtMaTaiKhoan.Text = maTaikhoan;
+        }
+
+        private void btnChonHinh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files|*.jpg;*.jpeg;*.png|All files (*.*)|*.*";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                picAvatar.Image = Image.FromFile(open.FileName);
+            }
+        }
+
+        private static byte[] ImageToByteArray(Image img)
+        {
+            MemoryStream m = new MemoryStream();
+            img.Save(m, System.Drawing.Imaging.ImageFormat.Png);
+            return m.ToArray();
+        }
+
+        Image ByteArrayToImage(byte[] hinh)
+        {
+            using (MemoryStream m = new MemoryStream(hinh))
+            {
+                return Image.FromStream(m);
+            }
         }
     }
 }
