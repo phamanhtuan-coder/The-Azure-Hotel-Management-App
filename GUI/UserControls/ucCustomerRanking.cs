@@ -112,5 +112,37 @@ namespace GUI.UserControls
         {
             LoadDSHangThanhVien();
         }
+
+        private void cboSortCustomerRankingID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sortOption = cboSortCustomerRankingID.SelectedItem.ToString();
+            switch (sortOption)
+            {
+                case "Giảm dần":
+                    hangThanhVienDTOs = hangThanhVienDTOs.OrderByDescending(item => item.MaLoaiHangThanhVien).ToList();
+                    break;
+                default:
+                    hangThanhVienDTOs = hangThanhVienDTOs.OrderBy(item => item.MaLoaiHangThanhVien).ToList();
+                    break;
+            }
+
+            dgvCustomerRank.DataSource = hangThanhVienDTOs;
+        }
+
+        private void cboSortSoLuongKH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sortOption = cboSortCustomerRankingID.SelectedItem.ToString();
+            switch (sortOption)
+            {
+                case "Giảm dần":
+                    hangThanhVienDTOs = hangThanhVienDTOs.OrderByDescending(item => item.SoLuong).ToList();
+                    break;
+                default:
+                    hangThanhVienDTOs = hangThanhVienDTOs.OrderBy(item => item.SoLuong).ToList();
+                    break;
+            }
+
+            dgvCustomerRank.DataSource = hangThanhVienDTOs;
+        }
     }
 }
