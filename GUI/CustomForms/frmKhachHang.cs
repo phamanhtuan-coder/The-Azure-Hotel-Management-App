@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +29,8 @@ namespace GUI.customForm
         public string hangThanhVien { get; set; }
 
         public bool isAdd { get; set; }
+        KhachHangBLL khachHangBLL = new KhachHangBLL();
+        List<HangThanhVienDTO> hangThanhVienDTOs = new List<HangThanhVienDTO>();
 
         public frmKhachHang()
         {
@@ -36,6 +40,7 @@ namespace GUI.customForm
         private void frmKhachHang_Load(object sender, EventArgs e)
         {
             // gán giá trị mặc định bằng các biến trên
+            LoadHangTV();          
             picAvatar.Image = anhDaiDien;
             txtMaTaiKhoan.Text = maTaikhoan;
             txtHoTen.Text = hoTen;
@@ -60,13 +65,24 @@ namespace GUI.customForm
             txtDiaChi.Text = diaChi;
             txtSDT.Text = soDienThoai;
             txtEmail.Text = email;
-
-           
-
-
         }
 
-        
+        private void LoadHangTV()
+        {
+            HangThanhVienBLL hangThanhVienBLL = new HangThanhVienBLL();
+            List<HangThanhVienDTO> tam = hangThanhVienBLL.LoadIDAndNameBLL();
+            foreach (var item in tam)
+            {
+                hangThanhVienDTOs.Add(item);
+            }
+            cboHangTV.DataSource = hangThanhVienDTOs;
+            cboHangTV.DisplayMember = "TenHang";
+            cboHangTV.ValueMember = "MaLoaiHangThanhVien";
+            if (isAdd)
+            {
+                cboHangTV.SelectedIndex = 0;
+            }
+        }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -76,8 +92,17 @@ namespace GUI.customForm
             {
                 // Nếu đúng là form Thêm thì chạy lệnh insert
 
-                thongBao = new customMessageBox("Đã thêm thành công dữ liệu khách hàng mới!");
-                thongBao.ShowDialog();
+                if (AddKhachHang())
+                {
+                    thongBao = new customMessageBox("Đã thêm thành công dữ liệu khách hàng mới!");
+                    thongBao.ShowDialog();
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Đã thêm thất bại dữ liệu khách hàng mới!");
+                    thongBao.ShowDialog();
+                }
+                
 
             }
             else
@@ -88,6 +113,23 @@ namespace GUI.customForm
             }
             this.Close();
             
+        }
+
+        private bool AddKhachHang()
+        {
+            KhachHangDTO khachHang = new KhachHangDTO();
+            khachHang.TenDangNhap = txtMaTaiKhoan.Text;
+            khachHang.MaLoaiHangThanhVien = (int) cboHangTV.SelectedValue;
+            khachHang.HinhAnh = ImageToByteArray(picAvatar.Image);
+            khachHang.HoTenKH = txtHoTen.Text;
+            khachHang.SDT = txtSDT.Text;
+            khachHang.Email = txtEmail.Text;
+            khachHang.CCCD = txtCCCD.Text;
+            string ns = dtpNgaySinh.Value.ToString("yyyy-MM-dd");
+            khachHang.NgaySinh = DateTime.Parse(ns);
+            khachHang.DiaChi = txtDiaChi.Text;
+            khachHang.GioiTinh = radNam.Checked ? "Nam" : "Nữ";
+            return khachHangBLL.AddKhachHangBLL(khachHang);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -101,8 +143,11 @@ namespace GUI.customForm
             taoTaiKhoan.isAdd = true;
             taoTaiKhoan.ShowDialog();
             //Sau đó thực hiện lệnh query để lấy mã tài khoản vừa tạo và gán mã đó vào biến maTaiKhoan
-            maTaikhoan = "mã vừa tạo";
-            txtMaTaiKhoan.Text = maTaikhoan;
+            string user = khachHangBLL.TruyVanUsernameBLL();
+            if (BienTam.username.Equals(user) && BienTam.kiemtraAdd)
+            {
+                txtMaTaiKhoan.Text = user;
+            }
         }
 
         private void btnChonHinh_Click(object sender, EventArgs e)

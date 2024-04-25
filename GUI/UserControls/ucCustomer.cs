@@ -82,7 +82,8 @@ namespace GUI.UserControls
         {
             frmKhachHang frm = new frmKhachHang();
             frm.isAdd = true;
-            frm.ShowDialog();           
+            frm.ShowDialog();
+            LoadDSKhachHang();
         }
 
         private void btnEditCustomer_Click(object sender, EventArgs e)

@@ -33,5 +33,24 @@ namespace DAL
                 return "";
             }
         }
+
+        public string TruyVanUsernameDAL()
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("sp_TruyVanUsername", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                string user = (string)com.ExecuteScalar();
+                conn.Close();
+                return user;
+            }
+            catch (Exception)
+            {
+                return "";
+            }
+        }
     }
 }
