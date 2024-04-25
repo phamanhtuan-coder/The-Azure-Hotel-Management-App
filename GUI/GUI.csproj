@@ -50,24 +50,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
-    </Reference>
     <Reference Include="Syncfusion.BulletGraph.Windows, Version=25.1462.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Calculate.Base, Version=25.1462.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Calculate.Windows, Version=25.1462.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
@@ -156,6 +138,24 @@
     <Compile Include="CustomForms\customMessageBox.Designer.cs">
       <DependentUpon>customMessageBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomForms\frmCTHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\frmCTHD.Designer.cs">
+      <DependentUpon>frmCTHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomForms\frmHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\frmHoaDon.Designer.cs">
+      <DependentUpon>frmHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomForms\frmDonPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\frmDonPhong.Designer.cs">
+      <DependentUpon>frmDonPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomForms\frmBookingController.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +168,18 @@
     <Compile Include="CustomForms\frmDangKy.Designer.cs">
       <DependentUpon>frmDangKy.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomForms\frmDatDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\frmDatDichVu.Designer.cs">
+      <DependentUpon>frmDatDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomForms\frmBaoTri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\frmBaoTri.Designer.cs">
+      <DependentUpon>frmBaoTri.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomForms\frmKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +191,24 @@
     </Compile>
     <Compile Include="CustomForms\frmDatPhong.Designer.cs">
       <DependentUpon>frmDatPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomForms\frmDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\frmDichVu.Designer.cs">
+      <DependentUpon>frmDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomForms\frmKhuyenMai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\frmKhuyenMai.Designer.cs">
+      <DependentUpon>frmKhuyenMai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomForms\frmThue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\frmThue.Designer.cs">
+      <DependentUpon>frmThue.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomForms\frmTinhTrangPhong.cs">
       <SubType>Form</SubType>
@@ -221,6 +251,12 @@
     </Compile>
     <Compile Include="CustomForms\frmLoaiPhong.Designer.cs">
       <DependentUpon>frmLoaiPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomForms\frmDanhGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\frmDanhGia.Designer.cs">
+      <DependentUpon>frmDanhGia.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomForms\frmVaiTro.cs">
       <SubType>Form</SubType>
@@ -266,7 +302,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="UserControls\ucRoomBooking.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucRoomBooking.Designer.cs">
+      <DependentUpon>ucRoomBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucPersonal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucPersonal.Designer.cs">
+      <DependentUpon>ucPersonal.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ucBillDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -408,17 +455,41 @@
     <EmbeddedResource Include="CustomForms\customMessageBox.resx">
       <DependentUpon>customMessageBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\frmCTHD.resx">
+      <DependentUpon>frmCTHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\frmHoaDon.resx">
+      <DependentUpon>frmHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\frmDonPhong.resx">
+      <DependentUpon>frmDonPhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmBookingController.resx">
       <DependentUpon>frmBookingController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmDangKy.resx">
       <DependentUpon>frmDangKy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\frmDatDichVu.resx">
+      <DependentUpon>frmDatDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\frmBaoTri.resx">
+      <DependentUpon>frmBaoTri.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmDatPhong.resx">
       <DependentUpon>frmDatPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\frmDichVu.resx">
+      <DependentUpon>frmDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\frmKhuyenMai.resx">
+      <DependentUpon>frmKhuyenMai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\frmThue.resx">
+      <DependentUpon>frmThue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmTinhTrangPhong.resx">
       <DependentUpon>frmTinhTrangPhong.cs</DependentUpon>
@@ -440,6 +511,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmLoaiPhong.resx">
       <DependentUpon>frmLoaiPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\frmDanhGia.resx">
+      <DependentUpon>frmDanhGia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmVaiTro.resx">
       <DependentUpon>frmVaiTro.cs</DependentUpon>
@@ -463,6 +537,12 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucRoomBooking.resx">
+      <DependentUpon>ucRoomBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucPersonal.resx">
+      <DependentUpon>ucPersonal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucBillDetails.resx">
       <DependentUpon>ucBillDetails.cs</DependentUpon>
@@ -755,21 +835,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\building.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Syncfusion.PdfToImageConverter.WinForms.25.1.35\build\net462\Syncfusion.PdfToImageConverter.WinForms.targets" Condition="Exists('..\packages\Syncfusion.PdfToImageConverter.WinForms.25.1.35\build\net462\Syncfusion.PdfToImageConverter.WinForms.targets')" />

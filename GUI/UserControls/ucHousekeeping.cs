@@ -1,4 +1,5 @@
-﻿using Syncfusion.WinForms.ListView;
+﻿using GUI.customForm;
+using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,93 +14,77 @@ namespace GUI.UserControls
 {
     public partial class ucHousekeeping : UserControl
     {
-
+        customMessageBox thongBao;
+        frmDonPhong frm = new frmDonPhong();
         public ucHousekeeping()
         {
             InitializeComponent();
         }
 
-
-        private void khoiTaoGiaTrichoForm()
-        {
-  
-            List<string> trangThaiSort = new List<String>();
-            List<string> trangThaiXoa = new List<string>();
-           
-
-
-            trangThaiSort.Add("Tăng dần");
-            trangThaiSort.Add("Giảm dần");
-            trangThaiSort.Add("Không sắp xếp");
- 
-            cboSortHousekeeping.DataSource = trangThaiSort;
-            cboSortHousekeeping.AllowDropDownResize = false;
-
-  
-
-            trangThaiXoa.Add("Đã bị xóa");
-            trangThaiXoa.Add("Chưa bị xóa");
-            trangThaiXoa.Add("Tất cả");
-            cboStateHousekeeping.DataSource = trangThaiXoa;
-
-            cboStateHousekeeping.AllowDropDownResize = false;
-
-            // Tạo dữ liệu giả mạo cho ListView
-            Random random = new Random();
-            for (int i = 1; i <= 10; i++)
-            {
-                string maDonPhong = "DP" + i.ToString("000");
-                string maPhong = "PH" + random.Next(1, 100).ToString("000");
-                string maNhanVien = "NV" + random.Next(1, 50).ToString("000");
-                DateTime ngayNhan = DateTime.Today.AddDays(-random.Next(1, 30));
-                DateTime ngayHoanThanh = ngayNhan.AddDays(random.Next(1, 10));
-
-                ListViewItem item = new ListViewItem(maDonPhong);
-                item.SubItems.Add(maPhong);
-                item.SubItems.Add(maNhanVien);
-                item.SubItems.Add(ngayNhan.ToString("dd/MM/yyyy"));
-                item.SubItems.Add(ngayHoanThanh.ToString("dd/MM/yyyy"));
-
-                lvwHousekeeping.Items.Add(item);
-            }
-
-
-
-
-            if (lvwHousekeeping != null)
-            {
-                // Resize columns based on column header or content
-                for (int i = 0; i < lvwHousekeeping.Columns.Count; i++)
-                {
-                    int headerWidth = TextRenderer.MeasureText(lvwHousekeeping.Columns[i].Text, lvwHousekeeping.Font).Width;
-                    int contentWidth = 0;
-
-                    // Calculate the maximum width of content in the column
-                    foreach (ListViewItem item in lvwHousekeeping.Items)
-                    {
-                        int itemWidth = TextRenderer.MeasureText(item.SubItems[i].Text, lvwHousekeeping.Font).Width;
-                        contentWidth = Math.Max(contentWidth, itemWidth);
-                    }
-
-                    // Determine the width needed for the column
-                    int columnWidth = Math.Max(headerWidth, contentWidth);
-
-                    // Set the width of the column
-                    lvwHousekeeping.Columns[i].Width = columnWidth;
-                }
-            }
-
-
-
-
-
-        }
-
-      
-
         private void ucHousekeeping_Load(object sender, EventArgs e)
         {
-            khoiTaoGiaTrichoForm();
+           
+        }
+
+        private void btnAddHousekeeping_Click(object sender, EventArgs e)
+        {
+            frm.isAdd = true;
+            frm.ShowDialog();
+        }
+
+        private void btnEditHousekeeping_Click(object sender, EventArgs e)
+        {
+            if (dgvHousekeeping.SelectedRows.Count > 0)
+            {
+
+                frm.isAdd = false;
+
+
+
+
+                frm.ShowDialog();
+            }
+            else
+            {
+                thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn chỉnh sửa!");
+                thongBao.ShowDialog();
+            }
+        }
+
+        private void btnDeleteHousekeeping_Click(object sender, EventArgs e)
+        {
+            if (dgvHousekeeping.SelectedRows.Count > 0)
+            {
+                thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
+                DialogResult dr = thongBao.ShowDialog();
+                if (dr != DialogResult.Cancel)
+                {
+                    // Xóa 
+                }
+            }
+            else
+            {
+                thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn xóa!");
+                thongBao.ShowDialog();
+            }
+        }
+
+        private void btnRecoverHousekeeping_Click(object sender, EventArgs e)
+        {
+            if (dgvHousekeeping.SelectedRows.Count > 0)
+            {
+                thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
+                DialogResult dr = thongBao.ShowDialog();
+                if (dr != DialogResult.Cancel)
+                {
+                    // Khôi phục
+                }
+            }
+            else
+            {
+                thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
+                thongBao.ShowDialog();
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Syncfusion.WinForms.ListView;
+﻿using GUI.customForm;
+using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,77 +14,80 @@ namespace GUI.UserControls
 {
     public partial class ucBillDetails : UserControl
     {
-
+        frmCTHD frm = new frmCTHD();
+        customMessageBox thongBao;
         public ucBillDetails()
         {
             InitializeComponent();
         }
 
-     
-
-        private void khoiTaoGiaTrichoForm()
+        private void ucBillDetails_Load(object sender, EventArgs e)
         {
-        
-            List<string> trangThaiSort = new List<String>();
-            List<string> trangThaiXoa = new List<string>();
+            
+        }
 
-          
+        private void btnAddBillDetails_Click(object sender, EventArgs e)
+        {
+            frm.isAdd = true;
+            frm.ShowDialog();
+        }
 
-            trangThaiSort.Add("Tăng dần");
-            trangThaiSort.Add("Giảm dần");
-            trangThaiSort.Add("Không sắp xếp");
-            cboSortBillID.DataSource = trangThaiSort;
+        private void btnEditBillDetails_Click(object sender, EventArgs e)
+        {
 
-            cboSortBillID.AllowDropDownResize = false;
-
-            cboSortSumBill.DataSource = trangThaiSort;
-            cboSortSumBill.AllowDropDownResize = false;
-
-            trangThaiXoa.Add("Đã bị xóa");
-            trangThaiXoa.Add("Chưa bị xóa");
-            trangThaiXoa.Add("Tất cả");
-            cboStateBooking.DataSource = trangThaiXoa;
-
-            cboStateBooking.AllowDropDownResize = false;
-
-            // Số lượng dòng dữ liệu bạn muốn tạo
-            int numberOfRows = 10;
-
-            // Thêm dữ liệu vào ListView
-            for (int i = 1; i <= numberOfRows; i++)
+            if (dgvBillDetails.SelectedRows.Count > 0)
             {
-                string maCTHD = "CTHD00" + i;
-                string maHD = "HD00" + i;
-                string maDP = "DP00" + i;
-                string maKM = "KM00" + i;
-                string tongTienDV = (100 * i).ToString();
-                string tongTienDP = (500 * i).ToString();
-                string thanhTien = (600 * i).ToString();
-                string trangThai = (i % 2 == 0) ? "Đã thanh toán" : "Chưa thanh toán";
 
-                string[] rowData = { maCTHD, maHD, maDP, maKM, tongTienDV, tongTienDP, thanhTien, trangThai };
+                frm.isAdd = false;
 
-                lvwBillDetails.Items.Add(new ListViewItem(rowData));
+
+
+
+                frm.ShowDialog();
             }
-
-
-            if (lvwBillDetails != null && lvwBillDetails.Columns.Count > 6) // Ensure there are enough columns
+            else
             {
-                // Resize columns based on column content
-                lvwBillDetails.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-
-                // Set a minimum width for the column at index 6 ("SoLuongKH")
-                int minWidth = TextRenderer.MeasureText(lvwBillDetails.Columns[6].Text, lvwBillDetails.Font).Width;
-                lvwBillDetails.Columns[6].Width = Math.Max(minWidth, lvwBillDetails.Columns[6].Width);
+                thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn chỉnh sửa!");
+                thongBao.ShowDialog();
             }
+        }
 
-
+        private void btnDeleteBillDetails_Click(object sender, EventArgs e)
+        {
+            if (dgvBillDetails.SelectedRows.Count > 0)
+            {
+                thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
+                DialogResult dr = thongBao.ShowDialog();
+                if (dr != DialogResult.Cancel)
+                {
+                    // Xóa 
+                }
+            }
+            else
+            {
+                thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn xóa!");
+                thongBao.ShowDialog();
+            }
 
         }
 
-        private void ucBillDetails_Load(object sender, EventArgs e)
+        private void btnRecoverBillDetails_Click(object sender, EventArgs e)
         {
-            khoiTaoGiaTrichoForm();
+
+            if (dgvBillDetails.SelectedRows.Count > 0)
+            {
+                thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
+                DialogResult dr = thongBao.ShowDialog();
+                if (dr != DialogResult.Cancel)
+                {
+                    // Khôi phục
+                }
+            }
+            else
+            {
+                thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
+                thongBao.ShowDialog();
+            }
         }
     }
 }

@@ -59,18 +59,18 @@
             // lblTenVaiTro
             // 
             this.lblTenVaiTro.AutoSize = true;
-            this.lblTenVaiTro.Location = new System.Drawing.Point(58, 29);
+            this.lblTenVaiTro.Location = new System.Drawing.Point(27, 29);
             this.lblTenVaiTro.Name = "lblTenVaiTro";
-            this.lblTenVaiTro.Size = new System.Drawing.Size(194, 22);
+            this.lblTenVaiTro.Size = new System.Drawing.Size(243, 27);
             this.lblTenVaiTro.TabIndex = 6;
             this.lblTenVaiTro.Text = "Tên trạng thái thiết bị";
             // 
             // lblMoTa
             // 
             this.lblMoTa.AutoSize = true;
-            this.lblMoTa.Location = new System.Drawing.Point(58, 84);
+            this.lblMoTa.Location = new System.Drawing.Point(27, 84);
             this.lblMoTa.Name = "lblMoTa";
-            this.lblMoTa.Size = new System.Drawing.Size(57, 22);
+            this.lblMoTa.Size = new System.Drawing.Size(71, 27);
             this.lblMoTa.TabIndex = 10;
             this.lblMoTa.Text = "Mô tả";
             // 
@@ -86,7 +86,7 @@
             // 
             this.txtTenTrangThaiTB.Location = new System.Drawing.Point(276, 26);
             this.txtTenTrangThaiTB.Name = "txtTenTrangThaiTB";
-            this.txtTenTrangThaiTB.Size = new System.Drawing.Size(252, 27);
+            this.txtTenTrangThaiTB.Size = new System.Drawing.Size(252, 32);
             this.txtTenTrangThaiTB.TabIndex = 12;
             // 
             // frmTinhTrangTB

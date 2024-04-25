@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +16,10 @@ namespace GUI.customForm
     {
 
         public bool isAdd { get; set; }
-
+        public DatPhongDTO DatPhongDTO = new DatPhongDTO();
+        DatPhongBLL DatPhongBLL = new DatPhongBLL();
+        List<PhongDTO> PhongDTOs = new List<PhongDTO>();
+        PhongBLL PhongBLL = new PhongBLL();
         public frmDatPhong()
         {
             InitializeComponent();
@@ -22,25 +27,63 @@ namespace GUI.customForm
 
         private void frmPhanQuyen_Load(object sender, EventArgs e)
         {
-          // gán giá trị mặc định bằng các biến trên, néu là edit có giá trị truyền vào thì kiểm tra và chọn giá trị
-        
+            // gán giá trị mặc định bằng các biến trên, néu là edit có giá trị truyền vào thì kiểm tra và chọn giá trị
 
 
+            if (isAdd)
+            {
+                txtMaKH.Clear();
+                PhongDTOs = PhongBLL.laydsp();
+                cboMaPHG.DataSource = PhongDTOs;
+                cboMaPHG.DisplayMember = "MaPHG";
+                cboMaPHG.ValueMember = "MaPHG";
+                dtpNgayDat.Value = DateTime.Now;
+                dtpNgayNhanPhong.Value = DateTime.Now;
+                dtpNgayTraPhong.Value= DateTime.Now;
+                nudSoLuongKhach.Value = 1;
+            }
+            else
+            {
+                
+                txtMaKH.Text =DatPhongDTO.MaKH.ToString();
+                PhongDTOs = PhongBLL.laydsp();
+                cboMaPHG.DataSource = PhongDTOs;
+                cboMaPHG.DisplayMember = "MaPHG";
+                cboMaPHG.ValueMember = "MaPHG";
+                cboMaPHG.SelectedIndex = DatPhongDTO.MaPHG;
+                dtpNgayDat.Value = DatPhongDTO.NgayDatPhong;
+                dtpNgayNhanPhong.Value = DatPhongDTO.NgayNhanPhong;
+                dtpNgayTraPhong.Value = DatPhongDTO.NgayTraPhong;
+                nudSoLuongKhach.Value = DatPhongDTO.SoLuongKH;
+            }
+
+
+
+
+        }
+        private void laydltuform(DatPhongDTO p)
+        {
             
-            
+            p.MaPHG = cboMaPHG.SelectedIndex + 1;
+            p.MaKH =int.Parse(txtMaKH.Text);
+            p.NgayDatPhong = dtpNgayDat.Value;
+            p.NgayNhanPhong = dtpNgayNhanPhong.Value;
+            p.NgayTraPhong = dtpNgayTraPhong.Value;
+            p.SoLuongKH =(int)nudSoLuongKhach.Value;
 
         }
 
-        
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             customMessageBox thongBao;
+            laydltuform(DatPhongDTO);
+            bool check;
             // Kiểm tra if tiến hành xử lý sự kiện thêm/sửa phòng ban
             if (isAdd)
             {
                 // Nếu đúng là form Thêm thì chạy lệnh insert
-
+                check = DatPhongBLL.them(DatPhongDTO);
                 thongBao = new customMessageBox("Đã thêm thành công dữ liệu đặt phòng mới!");
                 thongBao.ShowDialog();
 
@@ -48,13 +91,14 @@ namespace GUI.customForm
             else
             {
                 // nếu không thì chạy lệnh update
+                check = DatPhongBLL.sua(DatPhongDTO);
                 thongBao = new customMessageBox("Sửa thành công thông tin đặt phòng đã chọn!");
                 thongBao.ShowDialog();
             }
             this.Close();
             
         }
-
+        
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();

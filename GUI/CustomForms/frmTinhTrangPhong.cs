@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +16,8 @@ namespace GUI.customForm
     {
         public bool isAdd { get; set; }
         public customMessageBox thongBao;
+        public TinhTrangPhongDTO tinhTrang = new TinhTrangPhongDTO();
+        TinhTrangPhongBLL tinhTrangPhongBLL = new TinhTrangPhongBLL();
 
         public frmTinhTrangPhong()
         {
@@ -22,33 +26,52 @@ namespace GUI.customForm
 
         private void frmTinhTrangPhong_Load(object sender, EventArgs e)
         {
-           
-            
+            if (isAdd)
+            {
+                txtTenLP.Clear();
+                rtxtMoTa.Clear();
+            }
+            else
+            {
+                txtTenLP.Text = tinhTrang.TenTinhTrang;
+                rtxtMoTa.Text = tinhTrang.MoTa;
+            }
 
         }
-
-      
+        private void laydltuform(TinhTrangPhongDTO lp)
+        {
+            lp.TenTinhTrang = txtTenLP.Text;
+            lp.MoTa = rtxtMoTa.Text;
+        }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-           
-            // Kiểm tra if tiến hành xử lý sự kiện thêm/sửa 
+
+            laydltuform(tinhTrang);
+            bool check;
             if (isAdd)
             {
-                // Nếu đúng là form Thêm thì chạy lệnh insert
-                
-                thongBao = new customMessageBox("Đã thêm thành công dữ liệu tình trạng phòng!");
-                thongBao.ShowDialog();
+
+                check = tinhTrangPhongBLL.themttphong(tinhTrang);
+                if (check)
+                {
+                    thongBao = new customMessageBox("Đã thêm thành công dữ liệu tình trạng phòng mới!");
+                    thongBao.ShowDialog();
+                }
 
             }
             else
             {
-                // nếu không thì chạy lệnh update
-                thongBao = new customMessageBox("Sửa thành công thông tin tình trạng phòng!");
-                thongBao.ShowDialog();
+                check = tinhTrangPhongBLL.suattphong(tinhTrang);
+                if (check)
+                {
+                    thongBao = new customMessageBox("Sửa thành công thông tin tình trạng phòng đã chọn!");
+                    thongBao.ShowDialog();
+                }
             }
             this.Close();
-            
+
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

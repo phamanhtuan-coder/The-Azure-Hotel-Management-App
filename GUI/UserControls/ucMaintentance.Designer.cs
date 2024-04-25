@@ -31,29 +31,30 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucMaintentance));
             this.lblMaintentance = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAddMaintentance = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnEditMaintentance = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnDeleteMaintentance = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnRecoverMaintentance = new Syncfusion.WinForms.Controls.SfButton();
             this.txtSearchMaintentance = new System.Windows.Forms.TextBox();
             this.btnTraCuuMaintentance = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateMaintentance = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
-            this.lvwMaintentance = new System.Windows.Forms.ListView();
-            this.colMaDP = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colPHG = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colNV = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colNgayNhan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colNgayHT = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.dtpNgayHoanThanh = new System.Windows.Forms.DateTimePicker();
-            this.dtpNgayNhan = new System.Windows.Forms.DateTimePicker();
-            this.lblNgayHoanThanh = new System.Windows.Forms.Label();
+            this.dtpNgayBaoTri = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayHuHong = new System.Windows.Forms.DateTimePicker();
+            this.lblNgayBaoTri = new System.Windows.Forms.Label();
             this.cboSortMaintentanceD = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortMaintentanceID = new System.Windows.Forms.Label();
-            this.lblLocNgayNhan = new System.Windows.Forms.Label();
+            this.lblLocNgayHuHong = new System.Windows.Forms.Label();
             this.lblStateMaintance = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.btnAddMaintentance = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnEditMaintentance = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnDeleteMaintentance = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnRecoverMaintentance = new Syncfusion.WinForms.Controls.SfButton();
+            this.dgvMaintenance = new System.Windows.Forms.DataGridView();
+            this.colMaBaoTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayHuHong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayBaoTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateMaintentance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -66,6 +67,7 @@
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenance)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMaintentance
@@ -98,86 +100,6 @@
             this.tlpController.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpController.Size = new System.Drawing.Size(394, 94);
             this.tlpController.TabIndex = 6;
-            // 
-            // btnAddMaintentance
-            // 
-            this.btnAddMaintentance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddMaintentance.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddMaintentance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddMaintentance.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddMaintentance.ForeColor = System.Drawing.Color.White;
-            this.btnAddMaintentance.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnAddMaintentance.Location = new System.Drawing.Point(3, 3);
-            this.btnAddMaintentance.Name = "btnAddMaintentance";
-            this.btnAddMaintentance.Size = new System.Drawing.Size(191, 41);
-            this.btnAddMaintentance.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddMaintentance.Style.ForeColor = System.Drawing.Color.White;
-            this.btnAddMaintentance.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnAddMaintentance.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddMaintentance.TabIndex = 1;
-            this.btnAddMaintentance.Text = "Thêm";
-            this.btnAddMaintentance.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddMaintentance.UseVisualStyleBackColor = false;
-            // 
-            // btnEditMaintentance
-            // 
-            this.btnEditMaintentance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditMaintentance.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEditMaintentance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditMaintentance.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditMaintentance.ForeColor = System.Drawing.Color.White;
-            this.btnEditMaintentance.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnEditMaintentance.Location = new System.Drawing.Point(3, 50);
-            this.btnEditMaintentance.Name = "btnEditMaintentance";
-            this.btnEditMaintentance.Size = new System.Drawing.Size(191, 41);
-            this.btnEditMaintentance.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditMaintentance.Style.ForeColor = System.Drawing.Color.White;
-            this.btnEditMaintentance.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnEditMaintentance.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditMaintentance.TabIndex = 3;
-            this.btnEditMaintentance.Text = "Sửa";
-            this.btnEditMaintentance.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditMaintentance.UseVisualStyleBackColor = false;
-            // 
-            // btnDeleteMaintentance
-            // 
-            this.btnDeleteMaintentance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteMaintentance.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleteMaintentance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteMaintentance.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteMaintentance.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteMaintentance.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnDeleteMaintentance.Location = new System.Drawing.Point(200, 3);
-            this.btnDeleteMaintentance.Name = "btnDeleteMaintentance";
-            this.btnDeleteMaintentance.Size = new System.Drawing.Size(191, 41);
-            this.btnDeleteMaintentance.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteMaintentance.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteMaintentance.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.btnDeleteMaintentance.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteMaintentance.TabIndex = 4;
-            this.btnDeleteMaintentance.Text = "Xóa";
-            this.btnDeleteMaintentance.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDeleteMaintentance.UseVisualStyleBackColor = false;
-            // 
-            // btnRecoverMaintentance
-            // 
-            this.btnRecoverMaintentance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverMaintentance.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRecoverMaintentance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecoverMaintentance.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecoverMaintentance.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverMaintentance.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnRecoverMaintentance.Location = new System.Drawing.Point(200, 50);
-            this.btnRecoverMaintentance.Name = "btnRecoverMaintentance";
-            this.btnRecoverMaintentance.Size = new System.Drawing.Size(191, 41);
-            this.btnRecoverMaintentance.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverMaintentance.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverMaintentance.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            this.btnRecoverMaintentance.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRecoverMaintentance.TabIndex = 5;
-            this.btnRecoverMaintentance.Text = "Khôi phục";
-            this.btnRecoverMaintentance.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRecoverMaintentance.UseVisualStyleBackColor = false;
             // 
             // txtSearchMaintentance
             // 
@@ -230,17 +152,17 @@
             // 
             // spcQuery.Panel1
             // 
-            this.spcQuery.Panel1.Controls.Add(this.lvwMaintentance);
+            this.spcQuery.Panel1.Controls.Add(this.dgvMaintenance);
             // 
             // spcQuery.Panel2
             // 
             this.spcQuery.Panel2.BackColor = System.Drawing.Color.Lavender;
-            this.spcQuery.Panel2.Controls.Add(this.dtpNgayHoanThanh);
-            this.spcQuery.Panel2.Controls.Add(this.dtpNgayNhan);
-            this.spcQuery.Panel2.Controls.Add(this.lblNgayHoanThanh);
+            this.spcQuery.Panel2.Controls.Add(this.dtpNgayBaoTri);
+            this.spcQuery.Panel2.Controls.Add(this.dtpNgayHuHong);
+            this.spcQuery.Panel2.Controls.Add(this.lblNgayBaoTri);
             this.spcQuery.Panel2.Controls.Add(this.cboSortMaintentanceD);
             this.spcQuery.Panel2.Controls.Add(this.lblSortMaintentanceID);
-            this.spcQuery.Panel2.Controls.Add(this.lblLocNgayNhan);
+            this.spcQuery.Panel2.Controls.Add(this.lblLocNgayHuHong);
             this.spcQuery.Panel2.Controls.Add(this.lblStateMaintance);
             this.spcQuery.Panel2.Controls.Add(this.txtSearchMaintentance);
             this.spcQuery.Panel2.Controls.Add(this.btnTraCuuMaintentance);
@@ -249,84 +171,34 @@
             this.spcQuery.SplitterDistance = 973;
             this.spcQuery.TabIndex = 38;
             // 
-            // lvwMaintentance
+            // dtpNgayBaoTri
             // 
-            this.lvwMaintentance.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colMaDP,
-            this.colPHG,
-            this.colNV,
-            this.colNgayNhan,
-            this.colNgayHT});
-            this.lvwMaintentance.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvwMaintentance.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvwMaintentance.FullRowSelect = true;
-            this.lvwMaintentance.GridLines = true;
-            this.lvwMaintentance.HideSelection = false;
-            this.lvwMaintentance.Location = new System.Drawing.Point(0, 0);
-            this.lvwMaintentance.MultiSelect = false;
-            this.lvwMaintentance.Name = "lvwMaintentance";
-            this.lvwMaintentance.Size = new System.Drawing.Size(973, 746);
-            this.lvwMaintentance.TabIndex = 0;
-            this.lvwMaintentance.UseCompatibleStateImageBehavior = false;
-            this.lvwMaintentance.View = System.Windows.Forms.View.Details;
+            this.dtpNgayBaoTri.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayBaoTri.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayBaoTri.Location = new System.Drawing.Point(182, 197);
+            this.dtpNgayBaoTri.Name = "dtpNgayBaoTri";
+            this.dtpNgayBaoTri.Size = new System.Drawing.Size(200, 27);
+            this.dtpNgayBaoTri.TabIndex = 32;
             // 
-            // colMaDP
+            // dtpNgayHuHong
             // 
-            this.colMaDP.Text = "Mã dọn phòng";
-            this.colMaDP.Width = 81;
+            this.dtpNgayHuHong.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayHuHong.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayHuHong.Location = new System.Drawing.Point(182, 138);
+            this.dtpNgayHuHong.Name = "dtpNgayHuHong";
+            this.dtpNgayHuHong.Size = new System.Drawing.Size(200, 27);
+            this.dtpNgayHuHong.TabIndex = 31;
             // 
-            // colPHG
+            // lblNgayBaoTri
             // 
-            this.colPHG.Text = "Mã phòng";
-            this.colPHG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colPHG.Width = 207;
-            // 
-            // colNV
-            // 
-            this.colNV.Text = "Mã NV";
-            this.colNV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colNV.Width = 179;
-            // 
-            // colNgayNhan
-            // 
-            this.colNgayNhan.Text = "Ngày nhận";
-            this.colNgayNhan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colNgayNhan.Width = 127;
-            // 
-            // colNgayHT
-            // 
-            this.colNgayHT.Text = "Ngày hoàn thành";
-            this.colNgayHT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colNgayHT.Width = 186;
-            // 
-            // dtpNgayHoanThanh
-            // 
-            this.dtpNgayHoanThanh.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgayHoanThanh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayHoanThanh.Location = new System.Drawing.Point(182, 197);
-            this.dtpNgayHoanThanh.Name = "dtpNgayHoanThanh";
-            this.dtpNgayHoanThanh.Size = new System.Drawing.Size(200, 27);
-            this.dtpNgayHoanThanh.TabIndex = 32;
-            // 
-            // dtpNgayNhan
-            // 
-            this.dtpNgayNhan.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgayNhan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayNhan.Location = new System.Drawing.Point(182, 138);
-            this.dtpNgayNhan.Name = "dtpNgayNhan";
-            this.dtpNgayNhan.Size = new System.Drawing.Size(200, 27);
-            this.dtpNgayNhan.TabIndex = 31;
-            // 
-            // lblNgayHoanThanh
-            // 
-            this.lblNgayHoanThanh.AutoSize = true;
-            this.lblNgayHoanThanh.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgayHoanThanh.Location = new System.Drawing.Point(1, 198);
-            this.lblNgayHoanThanh.Name = "lblNgayHoanThanh";
-            this.lblNgayHoanThanh.Size = new System.Drawing.Size(182, 26);
-            this.lblNgayHoanThanh.TabIndex = 30;
-            this.lblNgayHoanThanh.Text = "Ngày hoàn thành";
-            this.lblNgayHoanThanh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblNgayBaoTri.AutoSize = true;
+            this.lblNgayBaoTri.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNgayBaoTri.Location = new System.Drawing.Point(1, 198);
+            this.lblNgayBaoTri.Name = "lblNgayBaoTri";
+            this.lblNgayBaoTri.Size = new System.Drawing.Size(132, 26);
+            this.lblNgayBaoTri.TabIndex = 30;
+            this.lblNgayBaoTri.Text = "Ngày bảo trì";
+            this.lblNgayBaoTri.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cboSortMaintentanceD
             // 
@@ -356,16 +228,16 @@
             this.lblSortMaintentanceID.Text = "Sort Maintentance ID";
             this.lblSortMaintentanceID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblLocNgayNhan
+            // lblLocNgayHuHong
             // 
-            this.lblLocNgayNhan.AutoSize = true;
-            this.lblLocNgayNhan.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLocNgayNhan.Location = new System.Drawing.Point(3, 139);
-            this.lblLocNgayNhan.Name = "lblLocNgayNhan";
-            this.lblLocNgayNhan.Size = new System.Drawing.Size(119, 26);
-            this.lblLocNgayNhan.TabIndex = 14;
-            this.lblLocNgayNhan.Text = "Ngày nhận";
-            this.lblLocNgayNhan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblLocNgayHuHong.AutoSize = true;
+            this.lblLocNgayHuHong.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocNgayHuHong.Location = new System.Drawing.Point(3, 139);
+            this.lblLocNgayHuHong.Name = "lblLocNgayHuHong";
+            this.lblLocNgayHuHong.Size = new System.Drawing.Size(150, 26);
+            this.lblLocNgayHuHong.TabIndex = 14;
+            this.lblLocNgayHuHong.Text = "Ngày hư hỏng";
+            this.lblLocNgayHuHong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblStateMaintance
             // 
@@ -407,14 +279,160 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // ucMaintance
+            // btnAddMaintentance
+            // 
+            this.btnAddMaintentance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddMaintentance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddMaintentance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddMaintentance.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddMaintentance.ForeColor = System.Drawing.Color.White;
+            this.btnAddMaintentance.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnAddMaintentance.Location = new System.Drawing.Point(3, 3);
+            this.btnAddMaintentance.Name = "btnAddMaintentance";
+            this.btnAddMaintentance.Size = new System.Drawing.Size(191, 41);
+            this.btnAddMaintentance.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddMaintentance.Style.ForeColor = System.Drawing.Color.White;
+            this.btnAddMaintentance.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnAddMaintentance.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnAddMaintentance.TabIndex = 1;
+            this.btnAddMaintentance.Text = "Thêm";
+            this.btnAddMaintentance.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddMaintentance.UseVisualStyleBackColor = false;
+            this.btnAddMaintentance.Click += new System.EventHandler(this.btnAddMaintentance_Click);
+            // 
+            // btnEditMaintentance
+            // 
+            this.btnEditMaintentance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditMaintentance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEditMaintentance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditMaintentance.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditMaintentance.ForeColor = System.Drawing.Color.White;
+            this.btnEditMaintentance.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnEditMaintentance.Location = new System.Drawing.Point(3, 50);
+            this.btnEditMaintentance.Name = "btnEditMaintentance";
+            this.btnEditMaintentance.Size = new System.Drawing.Size(191, 41);
+            this.btnEditMaintentance.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditMaintentance.Style.ForeColor = System.Drawing.Color.White;
+            this.btnEditMaintentance.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnEditMaintentance.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnEditMaintentance.TabIndex = 3;
+            this.btnEditMaintentance.Text = "Sửa";
+            this.btnEditMaintentance.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditMaintentance.UseVisualStyleBackColor = false;
+            this.btnEditMaintentance.Click += new System.EventHandler(this.btnEditMaintentance_Click);
+            // 
+            // btnDeleteMaintentance
+            // 
+            this.btnDeleteMaintentance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteMaintentance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDeleteMaintentance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteMaintentance.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteMaintentance.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteMaintentance.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnDeleteMaintentance.Location = new System.Drawing.Point(200, 3);
+            this.btnDeleteMaintentance.Name = "btnDeleteMaintentance";
+            this.btnDeleteMaintentance.Size = new System.Drawing.Size(191, 41);
+            this.btnDeleteMaintentance.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteMaintentance.Style.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteMaintentance.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnDeleteMaintentance.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnDeleteMaintentance.TabIndex = 4;
+            this.btnDeleteMaintentance.Text = "Xóa";
+            this.btnDeleteMaintentance.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeleteMaintentance.UseVisualStyleBackColor = false;
+            this.btnDeleteMaintentance.Click += new System.EventHandler(this.btnDeleteMaintentance_Click);
+            // 
+            // btnRecoverMaintentance
+            // 
+            this.btnRecoverMaintentance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverMaintentance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRecoverMaintentance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecoverMaintentance.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecoverMaintentance.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverMaintentance.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnRecoverMaintentance.Location = new System.Drawing.Point(200, 50);
+            this.btnRecoverMaintentance.Name = "btnRecoverMaintentance";
+            this.btnRecoverMaintentance.Size = new System.Drawing.Size(191, 41);
+            this.btnRecoverMaintentance.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverMaintentance.Style.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverMaintentance.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnRecoverMaintentance.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnRecoverMaintentance.TabIndex = 5;
+            this.btnRecoverMaintentance.Text = "Khôi phục";
+            this.btnRecoverMaintentance.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRecoverMaintentance.UseVisualStyleBackColor = false;
+            this.btnRecoverMaintentance.Click += new System.EventHandler(this.btnRecoverMaintentance_Click);
+            // 
+            // dgvMaintenance
+            // 
+            this.dgvMaintenance.AllowUserToAddRows = false;
+            this.dgvMaintenance.AllowUserToDeleteRows = false;
+            this.dgvMaintenance.AllowUserToResizeColumns = false;
+            this.dgvMaintenance.AllowUserToResizeRows = false;
+            this.dgvMaintenance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMaintenance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMaintenance.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colMaBaoTri,
+            this.colMaThietBi,
+            this.colMaNV,
+            this.colNgayHuHong,
+            this.colNgayBaoTri,
+            this.colTrangThai});
+            this.dgvMaintenance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMaintenance.Location = new System.Drawing.Point(0, 0);
+            this.dgvMaintenance.MultiSelect = false;
+            this.dgvMaintenance.Name = "dgvMaintenance";
+            this.dgvMaintenance.ReadOnly = true;
+            this.dgvMaintenance.RowHeadersVisible = false;
+            this.dgvMaintenance.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMaintenance.Size = new System.Drawing.Size(973, 746);
+            this.dgvMaintenance.TabIndex = 0;
+            // 
+            // colMaBaoTri
+            // 
+            this.colMaBaoTri.HeaderText = "Mã bảo trì";
+            this.colMaBaoTri.Name = "colMaBaoTri";
+            this.colMaBaoTri.ReadOnly = true;
+            // 
+            // colMaThietBi
+            // 
+            this.colMaThietBi.HeaderText = "Mã thiết bị";
+            this.colMaThietBi.Name = "colMaThietBi";
+            this.colMaThietBi.ReadOnly = true;
+            // 
+            // colMaNV
+            // 
+            this.colMaNV.HeaderText = "Nhân viên thực hiện";
+            this.colMaNV.Name = "colMaNV";
+            this.colMaNV.ReadOnly = true;
+            // 
+            // colNgayHuHong
+            // 
+            this.colNgayHuHong.HeaderText = "Ngày hư hỏng";
+            this.colNgayHuHong.Name = "colNgayHuHong";
+            this.colNgayHuHong.ReadOnly = true;
+            // 
+            // colNgayBaoTri
+            // 
+            this.colNgayBaoTri.HeaderText = "Ngày bảo trì";
+            this.colNgayBaoTri.Name = "colNgayBaoTri";
+            this.colNgayBaoTri.ReadOnly = true;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Visible = false;
+            // 
+            // ucMaintentance
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.spcQuery);
             this.Controls.Add(this.panUcHeader);
             this.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(0);
-            this.Name = "ucMaintance";
+            this.Name = "ucMaintentance";
             this.Size = new System.Drawing.Size(1370, 840);
             this.Load += new System.EventHandler(this.ucMaintance_Load);
             this.tlpController.ResumeLayout(false);
@@ -430,6 +448,7 @@
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenance)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -447,19 +466,20 @@
         private System.Windows.Forms.SplitContainer spcQuery;
         private System.Windows.Forms.TableLayoutPanel tlpController;
         private System.Windows.Forms.Label lblStateMaintance;
-        private System.Windows.Forms.ListView lvwMaintentance;
-        private System.Windows.Forms.ColumnHeader colMaDP;
-        private System.Windows.Forms.ColumnHeader colPHG;
-        private System.Windows.Forms.ColumnHeader colNV;
-        private System.Windows.Forms.ColumnHeader colNgayNhan;
-        private System.Windows.Forms.ColumnHeader colNgayHT;
-        private System.Windows.Forms.Label lblLocNgayNhan;
+        private System.Windows.Forms.Label lblLocNgayHuHong;
         private System.Windows.Forms.Panel panUcHeader;
         private System.Windows.Forms.SplitContainer spcHeader;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortMaintentanceD;
         private System.Windows.Forms.Label lblSortMaintentanceID;
-        private System.Windows.Forms.Label lblNgayHoanThanh;
-        private System.Windows.Forms.DateTimePicker dtpNgayHoanThanh;
-        private System.Windows.Forms.DateTimePicker dtpNgayNhan;
+        private System.Windows.Forms.Label lblNgayBaoTri;
+        private System.Windows.Forms.DateTimePicker dtpNgayBaoTri;
+        private System.Windows.Forms.DateTimePicker dtpNgayHuHong;
+        private System.Windows.Forms.DataGridView dgvMaintenance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaBaoTri;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaThietBi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNgayHuHong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNgayBaoTri;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
     }
 }

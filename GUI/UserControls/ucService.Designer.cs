@@ -40,15 +40,7 @@
             this.cboStateService = new Syncfusion.WinForms.ListView.SfComboBox();
             this.dtpServiceDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
-            this.lvwService = new System.Windows.Forms.ListView();
-            this.colMaDichVu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMaDatPhong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colTenDichVu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colMaPHG = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colNgayDat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colSoLuong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colDonGia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colThanhTien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dgvServices = new System.Windows.Forms.DataGridView();
             this.cboSortThanhTien = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortThanhTien = new System.Windows.Forms.Label();
             this.cboSortServiceType = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -61,12 +53,20 @@
             this.cboSortBookingID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.colMaDatDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateService)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
             this.spcQuery.Panel1.SuspendLayout();
             this.spcQuery.Panel2.SuspendLayout();
             this.spcQuery.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvServices)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortThanhTien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortServiceType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortServiceD)).BeginInit();
@@ -128,6 +128,7 @@
             this.btnAddlService.Text = "Thêm";
             this.btnAddlService.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddlService.UseVisualStyleBackColor = false;
+            this.btnAddlService.Click += new System.EventHandler(this.btnAddlService_Click);
             // 
             // btnEditlService
             // 
@@ -148,6 +149,7 @@
             this.btnEditlService.Text = "Sửa";
             this.btnEditlService.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditlService.UseVisualStyleBackColor = false;
+            this.btnEditlService.Click += new System.EventHandler(this.btnEditlService_Click);
             // 
             // btnDeletelService
             // 
@@ -168,6 +170,7 @@
             this.btnDeletelService.Text = "Xóa";
             this.btnDeletelService.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeletelService.UseVisualStyleBackColor = false;
+            this.btnDeletelService.Click += new System.EventHandler(this.btnDeletelService_Click);
             // 
             // btnRecoverlService
             // 
@@ -188,6 +191,7 @@
             this.btnRecoverlService.Text = "Khôi phục";
             this.btnRecoverlService.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRecoverlService.UseVisualStyleBackColor = false;
+            this.btnRecoverlService.Click += new System.EventHandler(this.btnRecoverlService_Click);
             // 
             // txtSearchlService
             // 
@@ -237,7 +241,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpServiceDate.DateTimePattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
             this.dtpServiceDate.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpServiceDate.Location = new System.Drawing.Point(225, 243);
+            this.dtpServiceDate.Location = new System.Drawing.Point(225, 302);
             this.dtpServiceDate.Name = "dtpServiceDate";
             this.dtpServiceDate.Size = new System.Drawing.Size(156, 34);
             this.dtpServiceDate.TabIndex = 6;
@@ -252,7 +256,7 @@
             // 
             // spcQuery.Panel1
             // 
-            this.spcQuery.Panel1.Controls.Add(this.lvwService);
+            this.spcQuery.Panel1.Controls.Add(this.dgvServices);
             // 
             // spcQuery.Panel2
             // 
@@ -275,74 +279,31 @@
             this.spcQuery.SplitterDistance = 973;
             this.spcQuery.TabIndex = 38;
             // 
-            // lvwService
+            // dgvServices
             // 
-            this.lvwService.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colMaDichVu,
-            this.colMaDatPhong,
-            this.colTenDichVu,
-            this.colMaPHG,
-            this.colNgayDat,
+            this.dgvServices.AllowUserToAddRows = false;
+            this.dgvServices.AllowUserToDeleteRows = false;
+            this.dgvServices.AllowUserToResizeColumns = false;
+            this.dgvServices.AllowUserToResizeRows = false;
+            this.dgvServices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvServices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvServices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colMaDatDV,
+            this.colMaDP,
+            this.colMaDV,
             this.colSoLuong,
-            this.colDonGia,
-            this.colThanhTien});
-            this.lvwService.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvwService.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvwService.FullRowSelect = true;
-            this.lvwService.GridLines = true;
-            this.lvwService.HideSelection = false;
-            this.lvwService.Location = new System.Drawing.Point(0, 0);
-            this.lvwService.MultiSelect = false;
-            this.lvwService.Name = "lvwService";
-            this.lvwService.Size = new System.Drawing.Size(973, 746);
-            this.lvwService.TabIndex = 0;
-            this.lvwService.UseCompatibleStateImageBehavior = false;
-            this.lvwService.View = System.Windows.Forms.View.Details;
-            // 
-            // colMaDichVu
-            // 
-            this.colMaDichVu.Text = "Mã đặt DV";
-            this.colMaDichVu.Width = 81;
-            // 
-            // colMaDatPhong
-            // 
-            this.colMaDatPhong.Text = "Mã đặt phòng";
-            this.colMaDatPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colMaDatPhong.Width = 86;
-            // 
-            // colTenDichVu
-            // 
-            this.colTenDichVu.Text = "Tên dịch vụ";
-            // 
-            // colMaPHG
-            // 
-            this.colMaPHG.Text = "PHG";
-            this.colMaPHG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colMaPHG.Width = 93;
-            // 
-            // colNgayDat
-            // 
-            this.colNgayDat.Text = "Ngày đặt";
-            this.colNgayDat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colNgayDat.Width = 127;
-            // 
-            // colSoLuong
-            // 
-            this.colSoLuong.Text = "Số lượng";
-            this.colSoLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colSoLuong.Width = 144;
-            // 
-            // colDonGia
-            // 
-            this.colDonGia.Text = "Đơn giá";
-            this.colDonGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colDonGia.Width = 146;
-            // 
-            // colThanhTien
-            // 
-            this.colThanhTien.Text = "Thành Tiền";
-            this.colThanhTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colThanhTien.Width = 138;
+            this.colThanhTien,
+            this.colNgayDat,
+            this.colTrangThai});
+            this.dgvServices.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvServices.Location = new System.Drawing.Point(0, 0);
+            this.dgvServices.MultiSelect = false;
+            this.dgvServices.Name = "dgvServices";
+            this.dgvServices.ReadOnly = true;
+            this.dgvServices.RowHeadersVisible = false;
+            this.dgvServices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvServices.Size = new System.Drawing.Size(973, 746);
+            this.dgvServices.TabIndex = 0;
             // 
             // cboSortThanhTien
             // 
@@ -351,7 +312,7 @@
             this.cboSortThanhTien.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboSortThanhTien.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboSortThanhTien.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortThanhTien.Location = new System.Drawing.Point(225, 299);
+            this.cboSortThanhTien.Location = new System.Drawing.Point(225, 190);
             this.cboSortThanhTien.Name = "cboSortThanhTien";
             this.cboSortThanhTien.Size = new System.Drawing.Size(156, 33);
             this.cboSortThanhTien.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -365,11 +326,11 @@
             // 
             this.lblSortThanhTien.AutoSize = true;
             this.lblSortThanhTien.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortThanhTien.Location = new System.Drawing.Point(4, 306);
+            this.lblSortThanhTien.Location = new System.Drawing.Point(4, 197);
             this.lblSortThanhTien.Name = "lblSortThanhTien";
-            this.lblSortThanhTien.Size = new System.Drawing.Size(210, 26);
+            this.lblSortThanhTien.Size = new System.Drawing.Size(138, 26);
             this.lblSortThanhTien.TabIndex = 25;
-            this.lblSortThanhTien.Text = "Sort theo thành tiền";
+            this.lblSortThanhTien.Text = "Sort theo giá";
             this.lblSortThanhTien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cboSortServiceType
@@ -379,7 +340,7 @@
             this.cboSortServiceType.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboSortServiceType.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboSortServiceType.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortServiceType.Location = new System.Drawing.Point(225, 188);
+            this.cboSortServiceType.Location = new System.Drawing.Point(225, 246);
             this.cboSortServiceType.Name = "cboSortServiceType";
             this.cboSortServiceType.Size = new System.Drawing.Size(156, 33);
             this.cboSortServiceType.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -410,7 +371,7 @@
             // 
             this.lblSortlServiceType.AutoSize = true;
             this.lblSortlServiceType.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortlServiceType.Location = new System.Drawing.Point(4, 195);
+            this.lblSortlServiceType.Location = new System.Drawing.Point(5, 253);
             this.lblSortlServiceType.Name = "lblSortlServiceType";
             this.lblSortlServiceType.Size = new System.Drawing.Size(214, 26);
             this.lblSortlServiceType.TabIndex = 16;
@@ -432,7 +393,7 @@
             // 
             this.lblServiceDate.AutoSize = true;
             this.lblServiceDate.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblServiceDate.Location = new System.Drawing.Point(5, 251);
+            this.lblServiceDate.Location = new System.Drawing.Point(5, 310);
             this.lblServiceDate.Name = "lblServiceDate";
             this.lblServiceDate.Size = new System.Drawing.Size(101, 26);
             this.lblServiceDate.TabIndex = 10;
@@ -507,6 +468,48 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
+            // colMaDatDV
+            // 
+            this.colMaDatDV.HeaderText = "Mã đặt dịch vụ";
+            this.colMaDatDV.Name = "colMaDatDV";
+            this.colMaDatDV.ReadOnly = true;
+            // 
+            // colMaDP
+            // 
+            this.colMaDP.HeaderText = "Mã đặt phòng";
+            this.colMaDP.Name = "colMaDP";
+            this.colMaDP.ReadOnly = true;
+            // 
+            // colMaDV
+            // 
+            this.colMaDV.HeaderText = "Mã dịch vụ";
+            this.colMaDV.Name = "colMaDV";
+            this.colMaDV.ReadOnly = true;
+            // 
+            // colSoLuong
+            // 
+            this.colSoLuong.HeaderText = "Số lượng";
+            this.colSoLuong.Name = "colSoLuong";
+            this.colSoLuong.ReadOnly = true;
+            // 
+            // colThanhTien
+            // 
+            this.colThanhTien.HeaderText = "Thành tiền";
+            this.colThanhTien.Name = "colThanhTien";
+            this.colThanhTien.ReadOnly = true;
+            // 
+            // colNgayDat
+            // 
+            this.colNgayDat.HeaderText = "Ngày đặt";
+            this.colNgayDat.Name = "colNgayDat";
+            this.colNgayDat.ReadOnly = true;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            // 
             // ucService
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -524,6 +527,7 @@
             this.spcQuery.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).EndInit();
             this.spcQuery.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvServices)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortThanhTien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortServiceType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortServiceD)).EndInit();
@@ -554,14 +558,6 @@
         private System.Windows.Forms.Label lblSortBookingID;
         private System.Windows.Forms.Label lblStateService;
         private System.Windows.Forms.Label lblServiceDate;
-        private System.Windows.Forms.ListView lvwService;
-        private System.Windows.Forms.ColumnHeader colMaDichVu;
-        private System.Windows.Forms.ColumnHeader colMaDatPhong;
-        private System.Windows.Forms.ColumnHeader colMaPHG;
-        private System.Windows.Forms.ColumnHeader colNgayDat;
-        private System.Windows.Forms.ColumnHeader colSoLuong;
-        private System.Windows.Forms.ColumnHeader colDonGia;
-        private System.Windows.Forms.ColumnHeader colThanhTien;
         private System.Windows.Forms.Label lblSortlServiceType;
         private System.Windows.Forms.Label lblSortServiceID;
         private System.Windows.Forms.Panel panUcHeader;
@@ -570,6 +566,13 @@
         private Syncfusion.WinForms.ListView.SfComboBox cboSortServiceD;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortThanhTien;
         private System.Windows.Forms.Label lblSortThanhTien;
-        private System.Windows.Forms.ColumnHeader colTenDichVu;
+        private System.Windows.Forms.DataGridView dgvServices;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaDatDV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaDP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaDV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colThanhTien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNgayDat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
     }
 }
