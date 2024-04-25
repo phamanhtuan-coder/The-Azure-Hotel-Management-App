@@ -207,6 +207,7 @@
             this.btnTraCuuCustomerRanking.TabIndex = 0;
             this.btnTraCuuCustomerRanking.Text = "Tra cứu";
             this.btnTraCuuCustomerRanking.UseVisualStyleBackColor = false;
+            this.btnTraCuuCustomerRanking.Click += new System.EventHandler(this.btnTraCuuCustomerRanking_Click);
             // 
             // cboStateCustomerRanking
             // 

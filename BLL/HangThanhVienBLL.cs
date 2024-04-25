@@ -19,5 +19,13 @@ namespace BLL
             }
             return new List<HangThanhVienDTO>();
         }
+
+        public List<HangThanhVienDTO> TraCuuNhanVien(List<HangThanhVienDTO> hangThanhVienDTOs, string searchKeyword)
+        {
+            List<HangThanhVienDTO> searchResults = hangThanhVienDTOs.Where(item =>
+              item.TenHang.ToLower().Contains(searchKeyword)
+          ).ToList();
+            return searchResults;
+        }
     }
 }

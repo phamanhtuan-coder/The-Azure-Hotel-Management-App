@@ -20,6 +20,7 @@ namespace GUI.UserControls
         public string trangthai { get; set; } = "";
         HangThanhVienBLL hangThanhVienBLL = new HangThanhVienBLL();
         List<HangThanhVienDTO> hangThanhVienDTOs = new List<HangThanhVienDTO>();
+        List<HangThanhVienDTO> dsSearch = new List<HangThanhVienDTO>();
         public ucCustomerRanking()
         {
             InitializeComponent();
@@ -143,6 +144,22 @@ namespace GUI.UserControls
             }
 
             dgvCustomerRank.DataSource = hangThanhVienDTOs;
+        }
+
+        private void btnTraCuuCustomerRanking_Click(object sender, EventArgs e)
+        {
+            dgvCustomerRank.DataSource = hangThanhVienDTOs;
+            string searchKeyword = txtSearchCustomerRanking.Text.Trim().ToLower();
+            if (searchKeyword.Count() > 0)
+            {
+                dsSearch = hangThanhVienBLL.TraCuuNhanVien(hangThanhVienDTOs, searchKeyword);
+                dgvCustomerRank.DataSource = dsSearch;
+
+            }
+            else
+            {
+                LoadDSHangThanhVien();
+            }
         }
     }
 }
