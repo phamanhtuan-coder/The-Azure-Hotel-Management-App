@@ -22,7 +22,14 @@ namespace GUI.UserControls
 
         private void ucCustomerRanking_Load(object sender, EventArgs e)
         {
-            
+            CapNhatCBBHangThanhVien();
+        }
+
+        private void CapNhatCBBHangThanhVien()
+        {
+            DuLieuChoComboBox.duLieuSort(cboSortCustomerRankingID);
+            DuLieuChoComboBox.duLieuSort(cboSortSoLuongKH);
+            DuLieuChoComboBox.duLieuFilter(cboStateCustomerRanking);       
         }
 
         private void btnAddCustomerRanking_Click(object sender, EventArgs e)
