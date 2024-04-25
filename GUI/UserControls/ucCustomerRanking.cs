@@ -50,6 +50,7 @@ namespace GUI.UserControls
             frmHangThanhVien frm = new frmHangThanhVien();
             frm.isAdd = true;
             frm.ShowDialog();
+            LoadDSHangThanhVien();
         }
 
         private void btnEditCustomerRanking_Click(object sender, EventArgs e)

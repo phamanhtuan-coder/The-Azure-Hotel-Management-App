@@ -11,6 +11,16 @@ namespace BLL
     public class HangThanhVienBLL
     {
         HangThanhVienDAL hangThanhVienDAL = new HangThanhVienDAL();
+
+        public bool AddHangThanhVien(HangThanhVienDTO hangThanhVienDTO)
+        {
+            if(!string.IsNullOrEmpty(hangThanhVienDTO.TenHang.Trim())&& hangThanhVienDTO.MucGiamGia > 0)
+            {
+                return hangThanhVienDAL.AddHangThanhVien(hangThanhVienDTO);
+            }
+            return false;
+        }
+
         public List<HangThanhVienDTO> Filer(string trangthai)
         {
             if (trangthai.Length > 0)
