@@ -8,10 +8,11 @@ namespace DTO
 {
     public class NhanVienDTO
     {
+        public byte[] HinhAnh { get; set; }
         public int MaNV { get; set; }
         public int? MaNQL { get; set; }
         public int MaTaiKhoan { get; set; }
-        public byte[] HinhAnh { get; set; }
+        public string TenTaiKhoan { get; set; }       
         public string HoTenNV { get; set; }
         public string SDT { get; set; }
         public string Email { get; set; }
