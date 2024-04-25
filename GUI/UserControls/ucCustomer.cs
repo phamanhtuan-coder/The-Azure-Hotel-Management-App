@@ -22,6 +22,7 @@ namespace GUI.UserControls
         KhachHangBLL khachHangBLL = new KhachHangBLL();
         List<HangThanhVienDTO> hangThanhVienDTOs= new List<HangThanhVienDTO> ();
         List<KhachHangDTO> khachHangDTOs= new List<KhachHangDTO> ();
+        List<KhachHangDTO> dsSearch = new List<KhachHangDTO>();
         public ucCustomer()
         {
             InitializeComponent();
@@ -172,6 +173,22 @@ namespace GUI.UserControls
             }
 
             dgvCustomer.DataSource = khachHangDTOs;
+        }
+
+        private void btnTraCuuCustomer_Click(object sender, EventArgs e)
+        {
+            dgvCustomer.DataSource = khachHangDTOs;
+            string searchKeyword = txtSearchCustomer.Text.Trim().ToLower();
+            if (searchKeyword.Count() > 0)
+            {
+                dsSearch = khachHangBLL.TraCuuNhanVien(khachHangDTOs, searchKeyword);
+                dgvCustomer.DataSource = dsSearch;
+
+            }
+            else
+            {
+                LoadDSKhachHang();
+            }
         }
     }
 }

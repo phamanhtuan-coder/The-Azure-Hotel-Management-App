@@ -15,5 +15,13 @@ namespace BLL
         {
             return khachHangDAL.Filter(maHang, gioiTinh, tT);
         }
+
+        public List<KhachHangDTO> TraCuuNhanVien(List<KhachHangDTO> khachHangDTOs, string searchKeyword)
+        {
+            List<KhachHangDTO> searchResults = khachHangDTOs.Where(item =>
+             item.HoTenKH.ToLower().Contains(searchKeyword)
+         ).ToList();
+            return searchResults;
+        }
     }
 }

@@ -51,13 +51,13 @@
             this.lblStateAccounts = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaLoaiHangTV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -221,6 +221,7 @@
             this.btnTraCuuCustomer.TabIndex = 0;
             this.btnTraCuuCustomer.Text = "Tra cứu";
             this.btnTraCuuCustomer.UseVisualStyleBackColor = false;
+            this.btnTraCuuCustomer.Click += new System.EventHandler(this.btnTraCuuCustomer_Click);
             // 
             // spcQuery
             // 
@@ -260,13 +261,13 @@
             this.dgvCustomer.AllowUserToResizeRows = false;
             this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
             this.MaTaiKhoan,
+            this.ID,
             this.MaLoaiHangTV,
-            this.colTenHang,
-            this.colTenTaiKhoan,
             this.HinhAnh,
             this.HoTen,
+            this.colTenHang,
+            this.colTenTaiKhoan,
             this.colGioiTinh,
             this.Email,
             this.CCCD,
@@ -449,19 +450,21 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "MaKH";
-            this.ID.HeaderText = "Mã khách hàng";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
             // MaTaiKhoan
             // 
             this.MaTaiKhoan.DataPropertyName = "MaTaiKhoan";
             this.MaTaiKhoan.HeaderText = "Mã tài khoản";
             this.MaTaiKhoan.Name = "MaTaiKhoan";
             this.MaTaiKhoan.ReadOnly = true;
+            this.MaTaiKhoan.Visible = false;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "MaKH";
+            this.ID.HeaderText = "Mã khách hàng";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
             // 
             // MaLoaiHangTV
             // 
@@ -471,20 +474,6 @@
             this.MaLoaiHangTV.ReadOnly = true;
             this.MaLoaiHangTV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.MaLoaiHangTV.Visible = false;
-            // 
-            // colTenHang
-            // 
-            this.colTenHang.DataPropertyName = "TenHang";
-            this.colTenHang.HeaderText = "Tên hạng";
-            this.colTenHang.Name = "colTenHang";
-            this.colTenHang.ReadOnly = true;
-            // 
-            // colTenTaiKhoan
-            // 
-            this.colTenTaiKhoan.DataPropertyName = "TenDangNhap";
-            this.colTenTaiKhoan.HeaderText = "Tên đăng nhập";
-            this.colTenTaiKhoan.Name = "colTenTaiKhoan";
-            this.colTenTaiKhoan.ReadOnly = true;
             // 
             // HinhAnh
             // 
@@ -500,6 +489,20 @@
             this.HoTen.HeaderText = "Họ và tên";
             this.HoTen.Name = "HoTen";
             this.HoTen.ReadOnly = true;
+            // 
+            // colTenHang
+            // 
+            this.colTenHang.DataPropertyName = "TenHang";
+            this.colTenHang.HeaderText = "Tên hạng";
+            this.colTenHang.Name = "colTenHang";
+            this.colTenHang.ReadOnly = true;
+            // 
+            // colTenTaiKhoan
+            // 
+            this.colTenTaiKhoan.DataPropertyName = "TenDangNhap";
+            this.colTenTaiKhoan.HeaderText = "Tên đăng nhập";
+            this.colTenTaiKhoan.Name = "colTenTaiKhoan";
+            this.colTenTaiKhoan.ReadOnly = true;
             // 
             // colGioiTinh
             // 
@@ -605,13 +608,13 @@
         private Syncfusion.WinForms.ListView.SfComboBox cboGioiTinh;
         private System.Windows.Forms.Label lblSortGioiTinh;
         private System.Windows.Forms.DataGridView dgvCustomer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTaiKhoan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaLoaiHangTV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTenHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTenTaiKhoan;
         private System.Windows.Forms.DataGridViewTextBoxColumn HinhAnh;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTenHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTenTaiKhoan;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn CCCD;
