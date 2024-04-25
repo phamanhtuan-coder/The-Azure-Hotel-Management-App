@@ -6,42 +6,35 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Utilities;
 
 namespace GUI.customForm
 {
     public partial class frmTaiKhoan : Form
     {
-        public string maTaikhoan { get; set; }
-        public string username { get; set; }
+        TaiKhoanDTO taiKhoanDTO = new TaiKhoanDTO();
+        TaiKhoanBLL taiKhoanBLL = new TaiKhoanBLL();
+        RoleBLL roleBLL = new RoleBLL();
         public string password { get; set; }
-
-        public string phanQuyen { get; set; }
-
-        public bool isAdd { get; set; }
-
-        RoleBLL  roleBLL = new RoleBLL();
+        public bool isAdd { get; set; }       
+        public bool isNhanVien { get; set; }
         public frmTaiKhoan()
         {
             InitializeComponent();
         }
-
+        
         private void frmTaiKhoan_Load(object sender, EventArgs e)
         {
             // gán giá trị mặc định bằng các biến trên, néu là edit có giá trị truyền vào thì kiểm tra và chọn giá trị
-            txtUsername.Text = username;
-            txtPassword.Text = password;
+            txtUsername.Text = taiKhoanDTO.TenDangNhap;
+            txtPassword.Text = taiKhoanDTO.MatKhau;
             txtRePw.Text = password;
-            cboPhanQuyen.Text = phanQuyen;
-
-            LoadcboMaPhanQuyen();
-
-
-            
-            
-
+            cboPhanQuyen.Text = taiKhoanDTO.MaPQ;
+            LoadcboMaPhanQuyen();         
         }
 
         private void LoadcboMaPhanQuyen()
@@ -54,14 +47,24 @@ namespace GUI.customForm
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             customMessageBox thongBao;
+            taiKhoanDTO.TenDangNhap= txtUsername.Text;
+            taiKhoanDTO.MatKhau=txtPassword.Text;
+            password=txtRePw.Text;
+            taiKhoanDTO.MaPQ = cboPhanQuyen.Text;
             // Kiểm tra if tiến hành xử lý sự kiện thêm/sửa phòng ban
             if (isAdd)
             {
-                // Nếu đúng là form Thêm thì chạy lệnh insert
-
-                thongBao = new customMessageBox("Đã thêm thành công dữ liệu tài khoản mới!");
-                thongBao.ShowDialog();
-
+                BienTam.kiemtraAdd= AddTaiKhoan();
+                if (BienTam.kiemtraAdd)
+                {
+                    thongBao = new customMessageBox("Đã thêm thành công dữ liệu tài khoản mới!");
+                    thongBao.ShowDialog();
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Đã thêm thất bại dữ liệu tài khoản mới!");
+                    thongBao.ShowDialog();
+                }
             }
             else
             {
@@ -73,9 +76,46 @@ namespace GUI.customForm
             
         }
 
+        private bool AddTaiKhoan()
+        {
+            if (taiKhoanDTO.MatKhau.Equals(password))
+            {
+                taiKhoanDTO.MatKhau = HashPassword(taiKhoanDTO.MatKhau);
+                BienTam.username = taiKhoanBLL.AddTaiKhoanBLL(taiKhoanDTO);
+                if (BienTam.username.Equals(""))
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static string HashPassword(string password)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
+
+                StringBuilder chuoiMatKhau = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    chuoiMatKhau.Append(bytes[i].ToString("x2"));
+                }
+                return chuoiMatKhau.ToString();
+            }
+        }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
     }
 }
