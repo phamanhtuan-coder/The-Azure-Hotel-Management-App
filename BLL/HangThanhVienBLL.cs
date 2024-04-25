@@ -19,12 +19,7 @@ namespace BLL
                 return hangThanhVienDAL.AddHangThanhVien(hangThanhVienDTO);
             }
             return false;
-        }
-
-        public bool DelHangThanhVien(HangThanhVienDTO hangThanhVienDTO)
-        {
-            return hangThanhVienDAL.DelHangThanhVien(hangThanhVienDTO);
-        }
+        }      
 
         public bool EditHangThanhVien(HangThanhVienDTO hangThanhVienDTO)
         {
@@ -35,6 +30,16 @@ namespace BLL
             return false;
         }
 
+        public bool DelHangThanhVien(HangThanhVienDTO hangThanhVienDTO)
+        {
+            return hangThanhVienDAL.DelHangThanhVien(hangThanhVienDTO);
+        }
+
+        public bool RecoHangThanhVien(HangThanhVienDTO hangThanhVienDTO)
+        {
+            return hangThanhVienDAL.RecoHangThanhVien(hangThanhVienDTO);
+        }
+
         public List<HangThanhVienDTO> Filer(string trangthai)
         {
             if (trangthai.Length > 0)
@@ -43,7 +48,6 @@ namespace BLL
             }
             return new List<HangThanhVienDTO>();
         }
-
         public List<HangThanhVienDTO> TraCuuNhanVien(List<HangThanhVienDTO> hangThanhVienDTOs, string searchKeyword)
         {
             List<HangThanhVienDTO> searchResults = hangThanhVienDTOs.Where(item =>

@@ -98,6 +98,7 @@ namespace GUI.UserControls
                     {
                         if (DelHangThanhVien(hangThanhVienDTO))
                         {
+                            LoadDSHangThanhVien();
                             thongBao = new customMessageBox("Bạn đã xóa thành công?");
                             thongBao.ShowDialog();
                         }
@@ -135,7 +136,31 @@ namespace GUI.UserControls
                 DialogResult dr = thongBao.ShowDialog();
                 if (dr != DialogResult.Cancel)
                 {
-                    // Khôi phục
+                    hangThanhVienDTO = new HangThanhVienDTO();
+                    int indexMHTV = dgvCustomerRank.Columns["ID"].Index;
+                    hangThanhVienDTO.MaLoaiHangThanhVien = (int)dgvCustomerRank.SelectedRows[0].Cells[indexMHTV].Value;
+                    int indexTT = dgvCustomerRank.Columns["TrangThai"].Index;
+                    hangThanhVienDTO.TrangThai = (bool)dgvCustomerRank.SelectedRows[0].Cells[indexTT].Value;
+
+                    if (!hangThanhVienDTO.TrangThai)
+                    {
+                        if (RecoHangThanhVien(hangThanhVienDTO))
+                        {
+                            LoadDSHangThanhVien();
+                            thongBao = new customMessageBox("Bạn đã khôi phục thành công?");
+                            thongBao.ShowDialog();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox("Bạn đã khôi phục thất bại?");
+                            thongBao.ShowDialog();
+                        }
+                    }
+                    else
+                    {
+                        thongBao = new customMessageBox("Hạng thành viên này chưa xóa bạn không thể khôi phục!");
+                        thongBao.ShowDialog();
+                    }
                 }
             }
             else
@@ -143,6 +168,11 @@ namespace GUI.UserControls
                 customMessageBox thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
                 thongBao.ShowDialog();
             }
+        }
+
+        private bool RecoHangThanhVien(HangThanhVienDTO hangThanhVienDTO)
+        {
+            return hangThanhVienBLL.RecoHangThanhVien(hangThanhVienDTO);
         }
 
         private void cboStateCustomerRanking_SelectedIndexChanged(object sender, EventArgs e)
