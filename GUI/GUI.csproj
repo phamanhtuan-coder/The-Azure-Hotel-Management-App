@@ -119,6 +119,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BienTam.cs" />
     <Compile Include="CustomControls\CircularPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
