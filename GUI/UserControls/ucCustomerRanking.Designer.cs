@@ -50,6 +50,7 @@
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MucGiamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateCustomerRanking)).BeginInit();
@@ -223,6 +224,7 @@
             this.cboStateCustomerRanking.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateCustomerRanking.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateCustomerRanking.TabIndex = 3;
+            this.cboStateCustomerRanking.SelectedIndexChanged += new System.EventHandler(this.cboStateCustomerRanking_SelectedIndexChanged);
             // 
             // spcQuery
             // 
@@ -262,6 +264,7 @@
             this.ID,
             this.TenHang,
             this.MucGiamGia,
+            this.colSoLuong,
             this.TrangThai});
             this.dgvCustomerRank.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCustomerRank.Location = new System.Drawing.Point(0, 0);
@@ -269,6 +272,7 @@
             this.dgvCustomerRank.Name = "dgvCustomerRank";
             this.dgvCustomerRank.ReadOnly = true;
             this.dgvCustomerRank.RowHeadersVisible = false;
+            this.dgvCustomerRank.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCustomerRank.Size = new System.Drawing.Size(973, 746);
             this.dgvCustomerRank.TabIndex = 0;
             // 
@@ -389,6 +393,13 @@
             this.MucGiamGia.Name = "MucGiamGia";
             this.MucGiamGia.ReadOnly = true;
             // 
+            // colSoLuong
+            // 
+            this.colSoLuong.DataPropertyName = "SoLuong";
+            this.colSoLuong.HeaderText = "Số lượng";
+            this.colSoLuong.Name = "colSoLuong";
+            this.colSoLuong.ReadOnly = true;
+            // 
             // TrangThai
             // 
             this.TrangThai.DataPropertyName = "TrangThai";
@@ -449,6 +460,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn MucGiamGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
     }
 }

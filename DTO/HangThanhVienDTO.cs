@@ -10,7 +10,8 @@ namespace DTO
     {
       public int MaLoaiHangThanhVien {get;set;}
       public string TenHang {get;set;}
-      public float MucGiamGia {get;set;}
+      public double MucGiamGia {get;set;}
+      public int SoLuong { get;set;}
       public bool TrangThai {get;set;}
     }
 }

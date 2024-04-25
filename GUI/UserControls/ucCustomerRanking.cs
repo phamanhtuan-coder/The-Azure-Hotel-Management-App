@@ -1,4 +1,6 @@
-﻿using GUI.customForm;
+﻿using BLL;
+using DTO;
+using GUI.customForm;
 using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
@@ -6,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Management.Instrumentation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,7 +17,9 @@ namespace GUI.UserControls
 {
     public partial class ucCustomerRanking : UserControl
     {
-
+        public string trangthai { get; set; } = "";
+        HangThanhVienBLL hangThanhVienBLL = new HangThanhVienBLL();
+        List<HangThanhVienDTO> hangThanhVienDTOs = new List<HangThanhVienDTO>();
         public ucCustomerRanking()
         {
             InitializeComponent();
@@ -22,14 +27,21 @@ namespace GUI.UserControls
 
         private void ucCustomerRanking_Load(object sender, EventArgs e)
         {
-            CapNhatCBBHangThanhVien();
+            CapNhatCBBHangThanhVien();           
         }
-
+        private void LoadDSHangThanhVien()
+        {
+            trangthai = cboStateCustomerRanking.Text;
+            hangThanhVienDTOs = new List<HangThanhVienDTO>();
+            hangThanhVienDTOs = hangThanhVienBLL.Filer(trangthai);
+            dgvCustomerRank.ClearSelection();
+            dgvCustomerRank.DataSource = hangThanhVienDTOs;
+        }
         private void CapNhatCBBHangThanhVien()
         {
             DuLieuChoComboBox.duLieuSort(cboSortCustomerRankingID);
             DuLieuChoComboBox.duLieuSort(cboSortSoLuongKH);
-            DuLieuChoComboBox.duLieuFilter(cboStateCustomerRanking);       
+            DuLieuChoComboBox.duLieuFilter(cboStateCustomerRanking);
         }
 
         private void btnAddCustomerRanking_Click(object sender, EventArgs e)
@@ -94,6 +106,11 @@ namespace GUI.UserControls
                 customMessageBox thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
                 thongBao.ShowDialog();
             }
+        }
+
+        private void cboStateCustomerRanking_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadDSHangThanhVien();
         }
     }
 }

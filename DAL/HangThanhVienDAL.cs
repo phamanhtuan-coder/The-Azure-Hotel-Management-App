@@ -1,5 +1,7 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,5 +10,47 @@ namespace DAL
 {
     public class HangThanhVienDAL
     {
+        List<HangThanhVienDTO> list = new List<HangThanhVienDTO>();
+        public List<HangThanhVienDTO> Filer(string trangthai)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spDSHangThanhVien", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+
+                if (trangthai == "Đang hoạt động")
+                {
+                    com.Parameters.AddWithValue("@TrangThai", 1);
+                }
+                else if (trangthai == "Đã xóa")
+                {
+                    com.Parameters.AddWithValue("@TrangThai", 0);
+                }
+                
+                SqlDataReader reader = com.ExecuteReader();
+                list = new List<HangThanhVienDTO>();
+                while (reader.Read())
+                {
+                    HangThanhVienDTO hangThanhVienDTO = new HangThanhVienDTO();
+                    hangThanhVienDTO.MaLoaiHangThanhVien = (int) reader["MaLoaiHangThanhVien"];
+                    hangThanhVienDTO.TenHang = (string)reader["TenHang"];
+                    hangThanhVienDTO.MucGiamGia = (double)reader["MucGiamGia"];
+                    hangThanhVienDTO.SoLuong = (int)reader["SoLuong"];
+                    byte[] trangThaiBytes = (byte[])reader["TrangThai"];
+                    hangThanhVienDTO.TrangThai = BitConverter.ToBoolean(trangThaiBytes, 0);
+                    list.Add(hangThanhVienDTO);
+                }
+                reader.Close();
+                conn.Close();
+                return list;
+            }
+            catch (Exception)
+            {
+                return new List<HangThanhVienDTO>();
+            }
+        }
     }
 }
