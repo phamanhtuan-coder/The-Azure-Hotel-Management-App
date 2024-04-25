@@ -140,13 +140,47 @@ namespace GUI.UserControls
                 DialogResult dr = thongBao.ShowDialog();
                 if (dr != DialogResult.Cancel)
                 {
-                    // Xóa 
+                    int TrangThai = dgvCustomer.Columns["TrangThai"].Index;
+                    if ((bool)dgvCustomer.SelectedRows[0].Cells[TrangThai].Value)
+                    {
+                        if (XoaKhachHang())
+                        {
+                            LoadDSKhachHang();
+                            thongBao = new customMessageBox("Xóa thành công!");
+                            thongBao.ShowDialog();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox("Xóa thất bại!");
+                            thongBao.ShowDialog();
+                        }                        
+                    }
+                    else
+                    {
+                        thongBao = new customMessageBox("Bạn không thể xóa khách hàng đã xóa!");
+                        thongBao.ShowDialog();
+                    }
                 }
             }
             else
             {
                 customMessageBox thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn xóa!");
                 thongBao.ShowDialog();
+            }
+        }
+
+        private bool XoaKhachHang()
+        {
+            if (dgvCustomer.SelectedRows.Count > 0)//  Sửa điều kiện đoạn này
+            {
+                frmNhanVien frm = new frmNhanVien();
+                int vitriMaKH = dgvCustomer.Columns["ID"].Index;
+                int MaKH = (int)dgvCustomer.SelectedRows[0].Cells[vitriMaKH].Value;
+                return khachHangBLL.XoaNhanVienBLL(MaKH);
+            }
+            else
+            {
+                return false;
             }
         }
 
@@ -159,13 +193,49 @@ namespace GUI.UserControls
                 DialogResult dr = thongBao.ShowDialog();
                 if (dr != DialogResult.Cancel)
                 {
-                    // Khôi phục
+                    int TrangThai = dgvCustomer.Columns["TrangThai"].Index;
+                    if (!(bool)dgvCustomer.SelectedRows[0].Cells[TrangThai].Value)
+                    {
+                       
+                        if (KhoiPhuckhachHang())
+                        {
+                            LoadDSKhachHang();
+                            thongBao = new customMessageBox("Khôi phục thành công!");
+                            thongBao.ShowDialog();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox("Khôi phục thất bại!");
+                            thongBao.ShowDialog();
+                        }
+                        
+                    }
+                    else
+                    {
+                        thongBao = new customMessageBox("Bạn không thể khôi phục khách hàng khi chưa xóa!");
+                        thongBao.ShowDialog();
+                    }
                 }
             }
             else
             {
                 customMessageBox thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
                 thongBao.ShowDialog();
+            }
+        }
+
+        private bool KhoiPhuckhachHang()
+        {
+            if (dgvCustomer.SelectedRows.Count > 0)//  Sửa điều kiện đoạn này
+            {
+                frmNhanVien frm = new frmNhanVien();
+                int vitriMaKH = dgvCustomer.Columns["ID"].Index;
+                int MaKH = (int)dgvCustomer.SelectedRows[0].Cells[vitriMaKH].Value;
+                return khachHangBLL.KhoiPhucKhachHangBLL(MaKH);
+            }
+            else
+            {
+                return false;
             }
         }
 

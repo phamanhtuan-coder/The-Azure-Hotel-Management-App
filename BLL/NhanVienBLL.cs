@@ -84,6 +84,6 @@ namespace BLL
         public string TruyVanUsernameBLL()
         {
             return nhanVienDAL.TruyVanUsernameDAL();
-        }        
+        }
     }
 }

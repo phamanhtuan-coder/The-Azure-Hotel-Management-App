@@ -42,6 +42,18 @@ namespace BLL
             return khachHangDAL.Filter(maHang, gioiTinh, tT);
         }
 
+        public bool KhoiPhucKhachHangBLL(int maKH)
+        {
+            if (maKH > 0)
+            {
+                return khachHangDAL.KhoiPhucNhanVienDAL(maKH);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public List<KhachHangDTO> TraCuuNhanVien(List<KhachHangDTO> khachHangDTOs, string searchKeyword)
         {
             List<KhachHangDTO> searchResults = khachHangDTOs.Where(item =>
@@ -53,6 +65,18 @@ namespace BLL
         public string TruyVanUsernameBLL()
         {
             return TaiKhoanDAL.TruyVanUsernameDAL();
+        }
+
+        public bool XoaNhanVienBLL(int maKH)
+        {
+            if (maKH > 0)
+            {
+                return khachHangDAL.XoaNhanVienDAL(maKH);
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
