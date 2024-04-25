@@ -60,10 +60,15 @@ namespace GUI.UserControls
                 frmHangThanhVien frm = new frmHangThanhVien();
                 frm.isAdd = false;
                 //Batdau doan co the chinh sua
-               
-
+                int indexMHTV = dgvCustomerRank.Columns["ID"].Index;
+                int indexTenHang = dgvCustomerRank.Columns["TenHang"].Index;
+                int indexMucGiamGia = dgvCustomerRank.Columns["MucGiamGia"].Index;
+                frm.hangThanhVienDTO.MaLoaiHangThanhVien = (int) dgvCustomerRank.SelectedRows[0].Cells[indexMHTV].Value;
+                frm.hangThanhVienDTO.TenHang = dgvCustomerRank.SelectedRows[0].Cells[indexTenHang].Value.ToString();
+                frm.hangThanhVienDTO.MucGiamGia = (double)dgvCustomerRank.SelectedRows[0].Cells[indexMucGiamGia].Value;
                 //ket thuc doan co the chinh sua
                 frm.ShowDialog();
+                LoadDSHangThanhVien();
             }
             else
             {

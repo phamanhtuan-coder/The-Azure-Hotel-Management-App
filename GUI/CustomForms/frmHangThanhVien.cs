@@ -14,11 +14,8 @@ namespace GUI.customForm
 {
     public partial class frmHangThanhVien : Form
     {
-        HangThanhVienBLL hangThanhVienBLL = new HangThanhVienBLL();
-        HangThanhVienDTO hangThanhVienDTO = new HangThanhVienDTO();
-        public string maHang { get; set; }
-        public string tenhang { get; set; }
-        public double mucChietKhau { get; set; }
+        private HangThanhVienBLL hangThanhVienBLL = new HangThanhVienBLL();
+        public HangThanhVienDTO hangThanhVienDTO = new HangThanhVienDTO();
         public bool isAdd { get; set; }
 
         public frmHangThanhVien()
@@ -27,8 +24,11 @@ namespace GUI.customForm
         }
         private void frmTaiKhoan_Load(object sender, EventArgs e)
         {
-            txtTenHang.Text = tenhang;
-            nudChietKhau.Value = (Decimal)mucChietKhau;
+            if (!isAdd)
+            {
+                txtTenHang.Text = hangThanhVienDTO.TenHang;
+                nudChietKhau.Value = (decimal)hangThanhVienDTO.MucGiamGia;
+            }
         }
         private void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -51,9 +51,19 @@ namespace GUI.customForm
             }
             else
             {
+                LoadDuLieu();
                 // nếu không thì chạy lệnh update
-                thongBao = new customMessageBox("Sửa thành công thông tin hạng thành viên đã chọn!");
-                thongBao.ShowDialog();
+                if (EditHangThanhVien())
+                {
+                    thongBao = new customMessageBox("Sửa thành công thông tin hạng thành viên đã chọn!");
+                    thongBao.ShowDialog();
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Sửa thất bại thông tin hạng thành viên đã chọn!");
+                    thongBao.ShowDialog(); ;
+                }
+                
             }
             this.Close();         
         }
@@ -65,6 +75,10 @@ namespace GUI.customForm
         private bool AddHangThanhVien()
         {
             return hangThanhVienBLL.AddHangThanhVien(hangThanhVienDTO);
+        }
+        private bool EditHangThanhVien()
+        {
+            return hangThanhVienBLL.EditHangThanhVien(hangThanhVienDTO);
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {

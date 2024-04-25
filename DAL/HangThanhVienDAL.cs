@@ -38,6 +38,33 @@ namespace DAL
             }
         }
 
+        public bool EditHangThanhVien(HangThanhVienDTO hangThanhVienDTO)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spCapNhatHangThanhVien", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaLoaiHangThanhVien", hangThanhVienDTO.MaLoaiHangThanhVien);
+                com.Parameters.AddWithValue("@TenHang", hangThanhVienDTO.TenHang);
+                com.Parameters.AddWithValue("@MucGiamGia", hangThanhVienDTO.MucGiamGia);
+
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+                if (count > 0)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public List<HangThanhVienDTO> Filer(string trangthai)
         {
             try

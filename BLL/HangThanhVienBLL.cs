@@ -21,6 +21,15 @@ namespace BLL
             return false;
         }
 
+        public bool EditHangThanhVien(HangThanhVienDTO hangThanhVienDTO)
+        {
+            if (!string.IsNullOrEmpty(hangThanhVienDTO.TenHang.Trim()) && hangThanhVienDTO.MucGiamGia > 0 && hangThanhVienDTO.MaLoaiHangThanhVien>0)
+            {
+                return hangThanhVienDAL.EditHangThanhVien(hangThanhVienDTO);
+            }
+            return false;
+        }
+
         public List<HangThanhVienDTO> Filer(string trangthai)
         {
             if (trangthai.Length > 0)
