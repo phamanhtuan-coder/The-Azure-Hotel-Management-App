@@ -21,6 +21,11 @@ namespace BLL
             return false;
         }
 
+        public bool DelHangThanhVien(HangThanhVienDTO hangThanhVienDTO)
+        {
+            return hangThanhVienDAL.DelHangThanhVien(hangThanhVienDTO);
+        }
+
         public bool EditHangThanhVien(HangThanhVienDTO hangThanhVienDTO)
         {
             if (!string.IsNullOrEmpty(hangThanhVienDTO.TenHang.Trim()) && hangThanhVienDTO.MucGiamGia > 0 && hangThanhVienDTO.MaLoaiHangThanhVien>0)

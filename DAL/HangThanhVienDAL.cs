@@ -37,7 +37,6 @@ namespace DAL
                 return false;
             }
         }
-
         public bool EditHangThanhVien(HangThanhVienDTO hangThanhVienDTO)
         {
             try
@@ -64,7 +63,30 @@ namespace DAL
                 return false;
             }
         }
+        public bool DelHangThanhVien(HangThanhVienDTO hangThanhVienDTO)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
 
+                SqlCommand com = new SqlCommand("spXoatHangThanhVien", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaLoaiHangThanhVien", hangThanhVienDTO.MaLoaiHangThanhVien);
+
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+                if (count > 0)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
         public List<HangThanhVienDTO> Filer(string trangthai)
         {
             try
