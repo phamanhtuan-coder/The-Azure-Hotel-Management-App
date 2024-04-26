@@ -63,7 +63,7 @@ namespace GUI.UserControls
 
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
-            frmPhong frm = new frmPhong();
+            frm = new frmPhong();
             frm.isAdd = true;
             frm.ShowDialog();
             dgvRoom.ClearSelection();
@@ -85,16 +85,13 @@ namespace GUI.UserControls
             if (dgvRoom.SelectedRows.Count > 0)
             {
 
-
-                frmPhong frm = new frmPhong();
+                frm.Close();
+                frm = new frmPhong();
                 frm.isAdd = false;
                 LayDuLieuTuForm(frm);
                 frm.ShowDialog();
                 dgvRoom.ClearSelection();
                 layds();
-
-
-                frm.ShowDialog();
             }
             else
             {
