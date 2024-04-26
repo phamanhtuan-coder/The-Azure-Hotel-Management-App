@@ -1,4 +1,6 @@
-﻿using GUI.customForm;
+﻿using BLL;
+using DTO;
+using GUI.customForm;
 using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
@@ -14,7 +16,8 @@ namespace GUI.UserControls
 {
     public partial class ucAccounts : UserControl
     {
-
+        VaiTroBLL vaiTroBLL= new VaiTroBLL();
+        List<VaiTroDTO> vaiTroDTOs= new List<VaiTroDTO>();
         public ucAccounts()
         {
             InitializeComponent();
@@ -22,7 +25,31 @@ namespace GUI.UserControls
 
         private void ucAccounts_Load(object sender, EventArgs e)
         {
-          
+            CapNhatDuLieuCBO();
+        }
+
+        private void CapNhatDuLieuCBO()
+        {
+            DuLieuChoComboBox.duLieuSort(cboSortAccountsID);
+            DuLieuChoComboBox.duLieuFilter(cboStateAccounts);
+            LoadVaiTro();
+        }
+
+        private void LoadVaiTro()
+        {
+            VaiTroDTO tatca = new VaiTroDTO();
+            tatca.MaVaiTro = -1;
+            tatca.TenVaiTro = "Tất cả";
+            vaiTroDTOs.Add(tatca);
+            List<VaiTroDTO> tam = vaiTroBLL.LoadIDAndNameBLL();
+            foreach (VaiTroDTO item in tam)
+            {
+                vaiTroDTOs.Add(item);
+            }
+            cboPhanQuyen.DataSource=vaiTroDTOs;
+            cboPhanQuyen.DisplayMember = "TenVaiTro";
+            cboPhanQuyen.ValueMember = "MaVaiTro";
+            cboPhanQuyen.SelectedIndex = 0;
         }
 
         private void btnAddAccounts_Click(object sender, EventArgs e)
@@ -40,7 +67,7 @@ namespace GUI.UserControls
                 frm.isAdd = false;
 
                 //Bắt đầu sửa từ đoạn này
-               
+                
 
 
                 //Kết thúc sửa từ đoạn này
