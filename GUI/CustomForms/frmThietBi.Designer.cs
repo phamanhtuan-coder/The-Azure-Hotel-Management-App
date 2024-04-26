@@ -33,8 +33,6 @@
             this.lblTenThietBi = new System.Windows.Forms.Label();
             this.cboTrangThai = new System.Windows.Forms.ComboBox();
             this.lblTenTrangThaiBi = new System.Windows.Forms.Label();
-            this.lblMoTa = new System.Windows.Forms.Label();
-            this.rtxtMoTa = new System.Windows.Forms.RichTextBox();
             this.txttenthietbi = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -85,23 +83,6 @@
             this.lblTenTrangThaiBi.TabIndex = 8;
             this.lblTenTrangThaiBi.Text = "Trạng thái";
             // 
-            // lblMoTa
-            // 
-            this.lblMoTa.AutoSize = true;
-            this.lblMoTa.Location = new System.Drawing.Point(58, 143);
-            this.lblMoTa.Name = "lblMoTa";
-            this.lblMoTa.Size = new System.Drawing.Size(71, 27);
-            this.lblMoTa.TabIndex = 10;
-            this.lblMoTa.Text = "Mô tả";
-            // 
-            // rtxtMoTa
-            // 
-            this.rtxtMoTa.Location = new System.Drawing.Point(276, 143);
-            this.rtxtMoTa.Name = "rtxtMoTa";
-            this.rtxtMoTa.Size = new System.Drawing.Size(252, 96);
-            this.rtxtMoTa.TabIndex = 11;
-            this.rtxtMoTa.Text = "";
-            // 
             // txttenthietbi
             // 
             this.txttenthietbi.Location = new System.Drawing.Point(276, 33);
@@ -115,8 +96,6 @@
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(600, 350);
             this.Controls.Add(this.txttenthietbi);
-            this.Controls.Add(this.rtxtMoTa);
-            this.Controls.Add(this.lblMoTa);
             this.Controls.Add(this.cboTrangThai);
             this.Controls.Add(this.lblTenTrangThaiBi);
             this.Controls.Add(this.lblTenThietBi);
@@ -139,8 +118,6 @@
         private System.Windows.Forms.Label lblTenThietBi;
         private System.Windows.Forms.ComboBox cboTrangThai;
         private System.Windows.Forms.Label lblTenTrangThaiBi;
-        private System.Windows.Forms.Label lblMoTa;
-        private System.Windows.Forms.RichTextBox rtxtMoTa;
         private System.Windows.Forms.TextBox txttenthietbi;
     }
 }

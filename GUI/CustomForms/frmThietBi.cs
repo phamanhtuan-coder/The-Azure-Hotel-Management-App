@@ -41,8 +41,6 @@ namespace GUI.customForm
                 cboTrangThai.DataSource = tttb;
                 cboTrangThai.DisplayMember = "TenTinhTrang";
                 cboTrangThai.ValueMember = "MaTinhTrangThietBi";
-                rtxtMoTa.Clear();
-                rtxtMoTa.Clear();
             }
             else
             {
