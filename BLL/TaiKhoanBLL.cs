@@ -54,9 +54,10 @@ namespace BLL
                         {
                             tt = false;
                         }
+
                         List<TaiKhoanDTO> searchResults =
                                     taiKhoanDTOs.Where
-                                    (item => item.MaPQ == MaPQ && item.TrangThai == tt && item.NgayTao == DateTime.Parse(NgayTao)).ToList();
+                                    (item => item.MaPQ == MaPQ && item.TrangThai == tt && item.NgayTao.Date == DateTime.Parse(NgayTao)).ToList();
                         return searchResults;
                     }
                     else
@@ -82,7 +83,7 @@ namespace BLL
                     {
                         List<TaiKhoanDTO> searchResults =
                                     taiKhoanDTOs.Where
-                                    (item => item.MaPQ == MaPQ && item.NgayTao == DateTime.Parse(NgayTao)).ToList();
+                                    (item => item.MaPQ == MaPQ && item.NgayTao.Date == DateTime.Parse(NgayTao)).ToList();
                         return searchResults;
                     }
                     else
@@ -111,7 +112,7 @@ namespace BLL
                         }
                         List<TaiKhoanDTO> searchResults =
                                     taiKhoanDTOs.Where
-                                    (item => item.TrangThai == tt && item.NgayTao == DateTime.Parse(NgayTao)).ToList();
+                                    (item => item.TrangThai == tt && item.NgayTao.Date == DateTime.Parse(NgayTao)).ToList();
                         return searchResults;
                     }
                     else
@@ -137,7 +138,7 @@ namespace BLL
                     {
                         List<TaiKhoanDTO> searchResults =
                                     taiKhoanDTOs.Where
-                                    (item => item.NgayTao == DateTime.Parse(NgayTao)).ToList();
+                                    (item => item.NgayTao.Date == DateTime.Parse(NgayTao)).ToList();
                         return searchResults;
                     }
                     else

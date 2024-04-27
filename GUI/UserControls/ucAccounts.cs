@@ -194,6 +194,7 @@ namespace GUI.UserControls
         private void cboPhanQuyen_SelectedIndexChanged(object sender, EventArgs e)
         {
             phanquyen= cboPhanQuyen.Text;
+            ngaytao = "";
             if (phanquyen.Length > 0)
             {
                 dsSearch = taiKhoanBLL.TraCuuNhanVien(taiKhoanDTOs, phanquyen, TT, ngaytao);
@@ -204,6 +205,7 @@ namespace GUI.UserControls
         private void cboStateAccounts_SelectedIndexChanged(object sender, EventArgs e)
         {
             TT = cboStateAccounts.Text;
+            ngaytao = "";
             if (TT.Length > 0)
             {
                 dsSearch = taiKhoanBLL.TraCuuNhanVien(taiKhoanDTOs, phanquyen, TT, ngaytao);
