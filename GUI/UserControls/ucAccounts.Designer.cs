@@ -39,6 +39,13 @@
             this.btnTraCuuAccounts = new Syncfusion.WinForms.Controls.SfButton();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvAccounts = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDangNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaPhanQuyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayTao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnNgayTao = new Syncfusion.WinForms.Controls.SfButton();
             this.dtpNgayTao = new System.Windows.Forms.DateTimePicker();
             this.cboPhanQuyen = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortTheoPhanQuyen = new System.Windows.Forms.Label();
@@ -49,12 +56,6 @@
             this.lblStateAccounts = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDangNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaPhanQuyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayTao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
             this.spcQuery.Panel1.SuspendLayout();
@@ -210,6 +211,7 @@
             this.btnTraCuuAccounts.TabIndex = 0;
             this.btnTraCuuAccounts.Text = "Tra cứu";
             this.btnTraCuuAccounts.UseVisualStyleBackColor = false;
+            this.btnTraCuuAccounts.Click += new System.EventHandler(this.btnTraCuuAccounts_Click);
             // 
             // spcQuery
             // 
@@ -225,6 +227,7 @@
             // spcQuery.Panel2
             // 
             this.spcQuery.Panel2.BackColor = System.Drawing.Color.Lavender;
+            this.spcQuery.Panel2.Controls.Add(this.btnNgayTao);
             this.spcQuery.Panel2.Controls.Add(this.dtpNgayTao);
             this.spcQuery.Panel2.Controls.Add(this.cboPhanQuyen);
             this.spcQuery.Panel2.Controls.Add(this.lblSortTheoPhanQuyen);
@@ -263,13 +266,75 @@
             this.dgvAccounts.Size = new System.Drawing.Size(973, 746);
             this.dgvAccounts.TabIndex = 0;
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "MaTaiKhoan";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // TenDangNhap
+            // 
+            this.TenDangNhap.DataPropertyName = "TenDangNhap";
+            this.TenDangNhap.HeaderText = "Tên đăng nhập";
+            this.TenDangNhap.Name = "TenDangNhap";
+            this.TenDangNhap.ReadOnly = true;
+            // 
+            // MatKhau
+            // 
+            this.MatKhau.DataPropertyName = "MatKhau";
+            this.MatKhau.HeaderText = "Mật khẩu";
+            this.MatKhau.Name = "MatKhau";
+            this.MatKhau.ReadOnly = true;
+            this.MatKhau.Visible = false;
+            // 
+            // MaPhanQuyen
+            // 
+            this.MaPhanQuyen.DataPropertyName = "MaPQ";
+            this.MaPhanQuyen.HeaderText = "Phân quyền";
+            this.MaPhanQuyen.Name = "MaPhanQuyen";
+            this.MaPhanQuyen.ReadOnly = true;
+            // 
+            // NgayTao
+            // 
+            this.NgayTao.DataPropertyName = "NgayTao";
+            this.NgayTao.HeaderText = "Ngày tạo";
+            this.NgayTao.Name = "NgayTao";
+            this.NgayTao.ReadOnly = true;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.DataPropertyName = "TrangThai";
+            this.TrangThai.HeaderText = "Trạng thái";
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.ReadOnly = true;
+            // 
+            // btnNgayTao
+            // 
+            this.btnNgayTao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNgayTao.BackColor = System.Drawing.Color.White;
+            this.btnNgayTao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNgayTao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNgayTao.ForeColor = System.Drawing.Color.White;
+            this.btnNgayTao.Location = new System.Drawing.Point(356, 193);
+            this.btnNgayTao.Name = "btnNgayTao";
+            this.btnNgayTao.Size = new System.Drawing.Size(26, 26);
+            this.btnNgayTao.Style.BackColor = System.Drawing.Color.White;
+            this.btnNgayTao.Style.ForeColor = System.Drawing.Color.White;
+            this.btnNgayTao.Style.Image = global::GUI.Properties.Resources.SearchIcon;
+            this.btnNgayTao.TabIndex = 33;
+            this.btnNgayTao.UseVisualStyleBackColor = false;
+            this.btnNgayTao.Click += new System.EventHandler(this.btnNgayTao_Click);
+            // 
             // dtpNgayTao
             // 
             this.dtpNgayTao.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayTao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayTao.Location = new System.Drawing.Point(182, 194);
+            this.dtpNgayTao.Location = new System.Drawing.Point(226, 194);
             this.dtpNgayTao.Name = "dtpNgayTao";
-            this.dtpNgayTao.Size = new System.Drawing.Size(200, 26);
+            this.dtpNgayTao.Size = new System.Drawing.Size(124, 26);
             this.dtpNgayTao.TabIndex = 32;
             // 
             // cboPhanQuyen
@@ -288,6 +353,7 @@
             this.cboPhanQuyen.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboPhanQuyen.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPhanQuyen.TabIndex = 31;
+            this.cboPhanQuyen.SelectedIndexChanged += new System.EventHandler(this.cboPhanQuyen_SelectedIndexChanged);
             // 
             // lblSortTheoPhanQuyen
             // 
@@ -316,6 +382,7 @@
             this.cboSortAccountsID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortAccountsID.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortAccountsID.TabIndex = 29;
+            this.cboSortAccountsID.SelectedIndexChanged += new System.EventHandler(this.cboSortAccountsID_SelectedIndexChanged);
             // 
             // lblSortAccountsID
             // 
@@ -344,6 +411,7 @@
             this.cboStateAccounts.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateAccounts.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateAccounts.TabIndex = 23;
+            this.cboStateAccounts.SelectedIndexChanged += new System.EventHandler(this.cboStateAccounts_SelectedIndexChanged);
             // 
             // lblNgayTao
             // 
@@ -395,50 +463,6 @@
             this.spcHeader.Size = new System.Drawing.Size(1370, 94);
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "MaTaiKhoan";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // TenDangNhap
-            // 
-            this.TenDangNhap.DataPropertyName = "TenDangNhap";
-            this.TenDangNhap.HeaderText = "Tên đăng nhập";
-            this.TenDangNhap.Name = "TenDangNhap";
-            this.TenDangNhap.ReadOnly = true;
-            // 
-            // MatKhau
-            // 
-            this.MatKhau.DataPropertyName = "MatKhau";
-            this.MatKhau.HeaderText = "Mật khẩu";
-            this.MatKhau.Name = "MatKhau";
-            this.MatKhau.ReadOnly = true;
-            this.MatKhau.Visible = false;
-            // 
-            // MaPhanQuyen
-            // 
-            this.MaPhanQuyen.DataPropertyName = "MaPQ";
-            this.MaPhanQuyen.HeaderText = "Phân quyền";
-            this.MaPhanQuyen.Name = "MaPhanQuyen";
-            this.MaPhanQuyen.ReadOnly = true;
-            // 
-            // NgayTao
-            // 
-            this.NgayTao.DataPropertyName = "NgayTao";
-            this.NgayTao.HeaderText = "Ngày tạo";
-            this.NgayTao.Name = "NgayTao";
-            this.NgayTao.ReadOnly = true;
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.DataPropertyName = "TrangThai";
-            this.TrangThai.HeaderText = "Trạng thái";
-            this.TrangThai.Name = "TrangThai";
-            this.TrangThai.ReadOnly = true;
             // 
             // ucAccounts
             // 
@@ -497,5 +521,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPhanQuyen;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayTao;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
+        private Syncfusion.WinForms.Controls.SfButton btnNgayTao;
     }
 }

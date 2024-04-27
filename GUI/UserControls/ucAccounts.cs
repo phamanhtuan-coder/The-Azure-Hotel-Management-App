@@ -16,13 +16,15 @@ namespace GUI.UserControls
 {
     public partial class ucAccounts : UserControl
     {
-        public string phanquyen { get; set; }
-        public DateTime ngaytao {  get; set; }
-        public string TT { get; set; }
+        public string phanquyen { get; set; } = "";
+        public string ngaytao { get; set; } = "";
+        public string TT { get; set; } = "";
         RoleBLL roleBLL = new RoleBLL();
         List<RoleDTO> roleDTOs= new List<RoleDTO>();
         TaiKhoanBLL taiKhoanBLL = new TaiKhoanBLL();
         List<TaiKhoanDTO> taiKhoanDTOs= new List<TaiKhoanDTO>();
+        List<TaiKhoanDTO> dsSearch = new List<TaiKhoanDTO>();
+
         public ucAccounts()
         {
             InitializeComponent();
@@ -125,6 +127,47 @@ namespace GUI.UserControls
             {
                 customMessageBox thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
                 thongBao.ShowDialog();
+            }
+        }
+
+        private void cboPhanQuyen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            phanquyen= cboPhanQuyen.Text;
+            if (phanquyen.Length > 0)
+            {
+                dsSearch = taiKhoanBLL.TraCuuNhanVien(taiKhoanDTOs, phanquyen, TT, ngaytao);
+                dgvAccounts.DataSource = dsSearch;
+            }         
+        }
+
+        private void cboStateAccounts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TT = cboStateAccounts.Text;
+            if (TT.Length > 0)
+            {
+                dsSearch = taiKhoanBLL.TraCuuNhanVien(taiKhoanDTOs, phanquyen, TT, ngaytao);
+                dgvAccounts.DataSource = dsSearch;
+            }          
+        }
+
+        private void cboSortAccountsID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTraCuuAccounts_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNgayTao_Click(object sender, EventArgs e)
+        {
+            ngaytao = dtpNgayTao.Value.ToString("MM/dd/yyyy");
+
+            if (TT.Length > 0 && phanquyen.Length > 0)
+            {
+                dsSearch = taiKhoanBLL.TraCuuNhanVien(taiKhoanDTOs, phanquyen, TT, ngaytao);
+                dgvAccounts.DataSource = dsSearch;
             }
         }
     }

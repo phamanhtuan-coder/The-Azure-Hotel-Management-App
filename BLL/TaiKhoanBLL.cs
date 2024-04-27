@@ -24,5 +24,118 @@ namespace BLL
         {
             return taiKhoanDAL.Filter();
         }
+
+        public List<TaiKhoanDTO> TraCuuNhanVien(List<TaiKhoanDTO> taiKhoanDTOs, string MaPQ, string TrangThai, string NgayTao)
+        {
+
+            if (!MaPQ.Equals("None"))
+            {
+                if (!TrangThai.Equals("Tất cả"))
+                {
+                    if ((NgayTao.Length > 0))
+                    {
+                        bool tt;
+                        if (TrangThai.Equals("Đang hoạt động"))
+                        {
+                            tt = true;
+                        }
+                        else
+                        {
+                            tt = false;
+                        }
+                        List<TaiKhoanDTO> searchResults =
+                                    taiKhoanDTOs.Where
+                                    (item => item.MaPQ == MaPQ && item.TrangThai == tt && item.NgayTao == DateTime.Parse(NgayTao)).ToList();
+                        return searchResults;
+                    }
+                    else
+                    {
+                        bool tt;
+                        if (TrangThai.Equals("Đang hoạt động"))
+                        {
+                            tt = true;
+                        }
+                        else
+                        {
+                            tt = false;
+                        }
+                        List<TaiKhoanDTO> searchResults =
+                                    taiKhoanDTOs.Where
+                                    (item => item.MaPQ == MaPQ && item.TrangThai == tt).ToList();
+                        return searchResults;
+                    }
+                }
+                else
+                {
+                    if ((NgayTao.Length > 0))
+                    {
+                        List<TaiKhoanDTO> searchResults =
+                                    taiKhoanDTOs.Where
+                                    (item => item.MaPQ == MaPQ && item.NgayTao == DateTime.Parse(NgayTao)).ToList();
+                        return searchResults;
+                    }
+                    else
+                    {
+                        List<TaiKhoanDTO> searchResults =
+                                    taiKhoanDTOs.Where
+                                    (item => item.MaPQ == MaPQ).ToList();
+                        return searchResults;
+                    }
+                }
+            }
+            else
+            {
+                if (!TrangThai.Equals("Tất cả"))
+                {
+                    if ((NgayTao.Length > 0))
+                    {
+                        bool tt;
+                        if (TrangThai.Equals("Đang hoạt động"))
+                        {
+                            tt = true;
+                        }
+                        else
+                        {
+                            tt = false;
+                        }
+                        List<TaiKhoanDTO> searchResults =
+                                    taiKhoanDTOs.Where
+                                    (item => item.TrangThai == tt && item.NgayTao == DateTime.Parse(NgayTao)).ToList();
+                        return searchResults;
+                    }
+                    else
+                    {
+                        bool tt;
+                        if (TrangThai.Equals("Đang hoạt động"))
+                        {
+                            tt = true;
+                        }
+                        else
+                        {
+                            tt = false;
+                        }
+                        List<TaiKhoanDTO> searchResults =
+                                    taiKhoanDTOs.Where
+                                    (item => item.TrangThai == tt).ToList();
+                        return searchResults;
+                    }
+                }
+                else
+                {
+                    if ((NgayTao.Length > 0))
+                    {
+                        List<TaiKhoanDTO> searchResults =
+                                    taiKhoanDTOs.Where
+                                    (item => item.NgayTao == DateTime.Parse(NgayTao)).ToList();
+                        return searchResults;
+                    }
+                    else
+                    {
+                        List<TaiKhoanDTO> searchResults = taiKhoanDAL.Filter();
+                        return searchResults;
+                    }
+                }
+            }
+        }
     }
 }
