@@ -31,6 +31,11 @@ namespace BLL
             return taiKhoanDAL.Filter();
         }
 
+        public bool KhoiPhucTaiKhoan(int maTK)
+        {
+            return taiKhoanDAL.KhoiPhucTaiKhoan(maTK);
+        }
+
         public List<TaiKhoanDTO> TraCuuNhanVien(List<TaiKhoanDTO> taiKhoanDTOs, string MaPQ, string TrangThai, string NgayTao)
         {
 
@@ -150,6 +155,11 @@ namespace BLL
              item.TenDangNhap.ToLower().Contains(searchKeyword)
          ).ToList();
             return searchResults;
+        }
+
+        public bool XoaTaiKhoan(int maTK)
+        {
+            return taiKhoanDAL.XoaTaiKhoan(maTK);
         }
     }
 }

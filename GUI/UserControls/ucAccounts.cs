@@ -104,11 +104,31 @@ namespace GUI.UserControls
         {
             if (dgvAccounts.SelectedRows.Count > 0)
             {
-                customMessageBox thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
+                customMessageBox thongBao;
+                int TrangThai = dgvAccounts.Columns["TrangThai"].Index;
+                if ((bool)dgvAccounts.SelectedRows[0].Cells[TrangThai].Value)
                 {
-                    // Xóa 
+                    thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
+                    DialogResult dr = thongBao.ShowDialog();
+                    if (dr != DialogResult.Cancel)
+                    {
+                        if (XoaTaiKhoan())
+                        {
+                            LoadDSTaiKhoan();
+                            thongBao = new customMessageBox("Xóa thành công!");
+                            thongBao.ShowDialog();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox("Xóa thất bại!");
+                            thongBao.ShowDialog();
+                        }
+                    }
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Bạn không thể xóa tài khoản đã xóa!");
+                    thongBao.ShowDialog();
                 }
             }
             else
@@ -119,15 +139,42 @@ namespace GUI.UserControls
 
         }
 
+        private bool XoaTaiKhoan()
+        {
+            int indexMaTaiKhoan = dgvAccounts.Columns["ID"].Index;
+            int MaTK = (int)dgvAccounts.SelectedRows[0].Cells[indexMaTaiKhoan].Value;
+            return taiKhoanBLL.XoaTaiKhoan(MaTK);
+        }
+
         private void btnRecoverAccounts_Click(object sender, EventArgs e)
         {
             if (dgvAccounts.SelectedRows.Count > 0)
             {
-                customMessageBox thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
+                customMessageBox thongBao;
+                int TrangThai = dgvAccounts.Columns["TrangThai"].Index;
+                if (!(bool)dgvAccounts.SelectedRows[0].Cells[TrangThai].Value)
                 {
-                    // Khôi phục
+                    thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
+                    DialogResult dr = thongBao.ShowDialog();
+                    if (dr != DialogResult.Cancel)
+                    {
+                        if (KhoiPhucTaiKhoan())
+                        {
+                            LoadDSTaiKhoan();
+                            thongBao = new customMessageBox("Khôi phục thành công!");
+                            thongBao.ShowDialog();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox("Khôi phục thất bại!");
+                            thongBao.ShowDialog();
+                        }
+                    }
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Bạn không thể khôi phục tài khoản khi chưa xóa!");
+                    thongBao.ShowDialog();
                 }
             }
             else
@@ -135,6 +182,13 @@ namespace GUI.UserControls
                 customMessageBox thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
                 thongBao.ShowDialog();
             }
+        }
+
+        private bool KhoiPhucTaiKhoan()
+        {
+            int indexMaTaiKhoan = dgvAccounts.Columns["ID"].Index;
+            int MaTK = (int)dgvAccounts.SelectedRows[0].Cells[indexMaTaiKhoan].Value;
+            return taiKhoanBLL.KhoiPhucTaiKhoan(MaTK);
         }
 
         private void cboPhanQuyen_SelectedIndexChanged(object sender, EventArgs e)

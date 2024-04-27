@@ -97,6 +97,31 @@ namespace DAL
             }
         }
 
+        public bool KhoiPhucTaiKhoan(int maTK)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("sp_KhoiPhucTaiKhoan", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaTaiKhoan", maTK);
+
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+                if (count > 0)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public string TruyVanUsernameDAL()
         {
             try
@@ -113,6 +138,31 @@ namespace DAL
             catch (Exception)
             {
                 return "";
+            }
+        }
+
+        public bool XoaTaiKhoan(int maTK)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("sp_XoaTaiKhoan", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaTaiKhoan", maTK);
+
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+                if (count>0)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
     }
