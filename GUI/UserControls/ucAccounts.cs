@@ -152,7 +152,18 @@ namespace GUI.UserControls
 
         private void cboSortAccountsID_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string sortOption = cboSortAccountsID.SelectedItem.ToString();
+            switch (sortOption)
+            {
+                case "Giảm dần":
+                    taiKhoanDTOs = taiKhoanDTOs.OrderByDescending(item => item.MaTaiKhoan).ToList();
+                    break;
+                default:
+                    taiKhoanDTOs = taiKhoanDTOs.OrderBy(item => item.MaTaiKhoan).ToList();
+                    break;
+            }
 
+            dgvAccounts.DataSource = taiKhoanDTOs;
         }
 
         private void btnTraCuuAccounts_Click(object sender, EventArgs e)
