@@ -6,11 +6,13 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using Utilities;
 
 namespace DAL
 {
     public class TaiKhoanDAL
     {
+        List<TaiKhoanDTO> list;
         public string AddTaiKhoanDAL(TaiKhoanDTO taiKhoanDTO)
         {
             try
@@ -31,6 +33,42 @@ namespace DAL
             }catch (Exception)
             {
                 return "";
+            }
+        }
+
+        public List<TaiKhoanDTO> Filter()
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+                SqlCommand com = new SqlCommand("spTruyVanBangTaiKhoan", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;                           
+                SqlDataReader reader = com.ExecuteReader();
+                list = new List<TaiKhoanDTO>();
+
+                while (reader.Read())
+                {
+                    TaiKhoanDTO taiKhoanDTO = new TaiKhoanDTO();
+
+                    taiKhoanDTO.MaTaiKhoan = (int) reader["MaTaiKhoan"];
+                    taiKhoanDTO.TenDangNhap = reader["TenDangNhap"].ToString();
+                    taiKhoanDTO.MatKhau = reader["MatKhau"].ToString();
+                    taiKhoanDTO.NgayTao = (DateTime) reader["NgayTao"];
+                    taiKhoanDTO.MaPQ = reader["MaPQ"].ToString();
+                    byte[] trangThaiBytes = (byte[])reader["TrangThai"];
+                    taiKhoanDTO.TrangThai = BitConverter.ToBoolean(trangThaiBytes, 0);
+
+                    list.Add(taiKhoanDTO);
+                }
+
+                reader.Close();
+                conn.Close();
+                return list;
+            }
+            catch (Exception)
+            {
+                return new List<TaiKhoanDTO>();
             }
         }
 

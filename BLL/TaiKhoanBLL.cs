@@ -19,5 +19,10 @@ namespace BLL
             string a= taiKhoanDAL.AddTaiKhoanDAL(taiKhoanDTO);
             return a;
         }
+
+        public List<TaiKhoanDTO> Filter()
+        {
+            return taiKhoanDAL.Filter();
+        }
     }
 }

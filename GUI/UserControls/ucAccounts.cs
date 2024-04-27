@@ -16,8 +16,13 @@ namespace GUI.UserControls
 {
     public partial class ucAccounts : UserControl
     {
-        VaiTroBLL vaiTroBLL= new VaiTroBLL();
-        List<VaiTroDTO> vaiTroDTOs= new List<VaiTroDTO>();
+        public string phanquyen { get; set; }
+        public DateTime ngaytao {  get; set; }
+        public string TT { get; set; }
+        RoleBLL roleBLL = new RoleBLL();
+        List<RoleDTO> roleDTOs= new List<RoleDTO>();
+        TaiKhoanBLL taiKhoanBLL = new TaiKhoanBLL();
+        List<TaiKhoanDTO> taiKhoanDTOs= new List<TaiKhoanDTO>();
         public ucAccounts()
         {
             InitializeComponent();
@@ -26,8 +31,15 @@ namespace GUI.UserControls
         private void ucAccounts_Load(object sender, EventArgs e)
         {
             CapNhatDuLieuCBO();
+            LoadDSTaiKhoan();
         }
-
+        private void LoadDSTaiKhoan()
+        {
+            taiKhoanDTOs = new List<TaiKhoanDTO>();
+            taiKhoanDTOs = taiKhoanBLL.Filter();
+            dgvAccounts.ClearSelection(); 
+            dgvAccounts.DataSource = taiKhoanDTOs;
+        }
         private void CapNhatDuLieuCBO()
         {
             DuLieuChoComboBox.duLieuSort(cboSortAccountsID);
@@ -37,18 +49,16 @@ namespace GUI.UserControls
 
         private void LoadVaiTro()
         {
-            VaiTroDTO tatca = new VaiTroDTO();
-            tatca.MaVaiTro = -1;
-            tatca.TenVaiTro = "Tất cả";
-            vaiTroDTOs.Add(tatca);
-            List<VaiTroDTO> tam = vaiTroBLL.LoadIDAndNameBLL();
-            foreach (VaiTroDTO item in tam)
+            RoleDTO tatca = new RoleDTO();
+            tatca.MaPhanQuyen = "None";
+            roleDTOs.Add(tatca);
+            List<RoleDTO> tam = roleBLL.LoadMaPhanQuyen();
+            foreach (RoleDTO item in tam)
             {
-                vaiTroDTOs.Add(item);
+                roleDTOs.Add(item);
             }
-            cboPhanQuyen.DataSource=vaiTroDTOs;
-            cboPhanQuyen.DisplayMember = "TenVaiTro";
-            cboPhanQuyen.ValueMember = "MaVaiTro";
+            cboPhanQuyen.DataSource=roleDTOs;
+            cboPhanQuyen.DisplayMember = "MaPhanQuyen";
             cboPhanQuyen.SelectedIndex = 0;
         }
 
