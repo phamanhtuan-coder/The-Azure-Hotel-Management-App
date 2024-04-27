@@ -20,6 +20,12 @@ namespace BLL
             return a;
         }
 
+        public string EditTaiKhoanBLL(TaiKhoanDTO taiKhoanDTO)
+        {
+            string a = taiKhoanDAL.EditTaiKhoanDAL(taiKhoanDTO);
+            return a;
+        }
+
         public List<TaiKhoanDTO> Filter()
         {
             return taiKhoanDAL.Filter();

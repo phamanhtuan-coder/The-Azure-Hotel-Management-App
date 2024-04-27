@@ -263,6 +263,7 @@
             this.dgvAccounts.Name = "dgvAccounts";
             this.dgvAccounts.ReadOnly = true;
             this.dgvAccounts.RowHeadersVisible = false;
+            this.dgvAccounts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAccounts.Size = new System.Drawing.Size(973, 746);
             this.dgvAccounts.TabIndex = 0;
             // 

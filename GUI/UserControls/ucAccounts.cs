@@ -69,6 +69,7 @@ namespace GUI.UserControls
             frmTaiKhoan frm = new frmTaiKhoan();
             frm.isAdd = true;
             frm.ShowDialog();
+            LoadDSTaiKhoan();
         }
 
         private void btnEditAccounts_Click(object sender, EventArgs e)
@@ -79,11 +80,17 @@ namespace GUI.UserControls
                 frm.isAdd = false;
 
                 //Bắt đầu sửa từ đoạn này
-                
+                int indexMaTaiKhoan = dgvAccounts.Columns["ID"].Index;
+                int indexTenDangNhap = dgvAccounts.Columns["TenDangNhap"].Index;
+                int indexMaPQ = dgvAccounts.Columns["MaPhanQuyen"].Index;
 
+                frm.taiKhoanDTO.MaTaiKhoan= (int) dgvAccounts.SelectedRows[0].Cells[indexMaTaiKhoan].Value;
+                frm.taiKhoanDTO.TenDangNhap = (string)dgvAccounts.SelectedRows[0].Cells[indexTenDangNhap].Value;
+                frm.taiKhoanDTO.MaPQ = (string)dgvAccounts.SelectedRows[0].Cells[indexMaPQ].Value;
 
                 //Kết thúc sửa từ đoạn này
                 frm.ShowDialog();
+                LoadDSTaiKhoan();
             }
             else
             {

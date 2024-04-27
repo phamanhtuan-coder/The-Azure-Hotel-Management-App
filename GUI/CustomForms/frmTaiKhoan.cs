@@ -16,7 +16,7 @@ namespace GUI.customForm
 {
     public partial class frmTaiKhoan : Form
     {
-        TaiKhoanDTO taiKhoanDTO = new TaiKhoanDTO();
+        public TaiKhoanDTO taiKhoanDTO = new TaiKhoanDTO();
         TaiKhoanBLL taiKhoanBLL = new TaiKhoanBLL();
         RoleBLL roleBLL = new RoleBLL();
         public string password { get; set; }
@@ -29,13 +29,30 @@ namespace GUI.customForm
         
         private void frmTaiKhoan_Load(object sender, EventArgs e)
         {
+            LoadcboMaPhanQuyen();
             // gán giá trị mặc định bằng các biến trên, néu là edit có giá trị truyền vào thì kiểm tra và chọn giá trị
-            txtUsername.Text = taiKhoanDTO.TenDangNhap;
-            txtPassword.Text = taiKhoanDTO.MatKhau;
-            txtRePw.Text = password;
-            cboPhanQuyen.Text = taiKhoanDTO.MaPQ;
-            LoadcboMaPhanQuyen();         
+            if (!isAdd)
+            {
+                LoadDuLieu();              
+            }                            
         }
+
+        private void LoadDuLieu()
+        {
+            txtUsername.Text = taiKhoanDTO.TenDangNhap;
+
+            foreach (var item in cboPhanQuyen.Items)
+            {
+                // Kiểm tra nếu item là một RoleDTO và MaPhanQuyen của nó trùng với MaPQ trong taiKhoanDTO
+                if (item is RoleDTO role && role.MaPhanQuyen == taiKhoanDTO.MaPQ)
+                {
+                    // Chọn item đó trong ComboBox và thoát khỏi vòng lặp
+                    cboPhanQuyen.SelectedItem = item;
+                    break;
+                }
+            }
+        }
+
 
         private void LoadcboMaPhanQuyen()
         {
@@ -47,15 +64,13 @@ namespace GUI.customForm
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             customMessageBox thongBao;
-            taiKhoanDTO.TenDangNhap= txtUsername.Text;
-            taiKhoanDTO.MatKhau=txtPassword.Text;
-            password=txtRePw.Text;
-            taiKhoanDTO.MaPQ = cboPhanQuyen.Text;
+            LoadThongTin();
+            
             // Kiểm tra if tiến hành xử lý sự kiện thêm/sửa phòng ban
             if (isAdd)
             {
-                BienTam.kiemtraAdd= AddTaiKhoan();
-                if (BienTam.kiemtraAdd)
+                BienTam.kiemtra= AddTaiKhoan();
+                if (BienTam.kiemtra)
                 {
                     thongBao = new customMessageBox("Đã thêm thành công dữ liệu tài khoản mới!");
                     thongBao.ShowDialog();
@@ -69,11 +84,50 @@ namespace GUI.customForm
             else
             {
                 // nếu không thì chạy lệnh update
-                thongBao = new customMessageBox("Sửa thành công thông tin tài khoản đã chọn!");
-                thongBao.ShowDialog();
+                BienTam.kiemtra = EditTaiKhoan();
+                if (BienTam.kiemtra)
+                {
+                    thongBao = new customMessageBox("Sửa thành công thông tin tài khoản đã chọn!");
+                    thongBao.ShowDialog();
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Sửa thất bại thông tin tài khoản đã chọn!");
+                    thongBao.ShowDialog();
+                }
+
             }
             this.Close();
             
+        }
+
+        private void LoadThongTin()
+        {
+            taiKhoanDTO.TenDangNhap = txtUsername.Text;
+            taiKhoanDTO.MatKhau = txtPassword.Text;
+            password = txtRePw.Text;
+            taiKhoanDTO.MaPQ = cboPhanQuyen.Text;
+        }
+
+        private bool EditTaiKhoan()
+        {
+            if (taiKhoanDTO.MatKhau.Equals(password))
+            {
+                taiKhoanDTO.MatKhau = HashPassword(taiKhoanDTO.MatKhau);
+                BienTam.username = taiKhoanBLL.EditTaiKhoanBLL(taiKhoanDTO);
+                if (BienTam.username.Equals(""))
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private bool AddTaiKhoan()

@@ -36,6 +36,31 @@ namespace DAL
             }
         }
 
+        public string EditTaiKhoanDAL(TaiKhoanDTO taiKhoanDTO)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spCapNhatBangTaiKhoan", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaTaiKhoan", taiKhoanDTO.MaTaiKhoan);
+                com.Parameters.AddWithValue("@TenDangNhap", taiKhoanDTO.TenDangNhap);
+                com.Parameters.AddWithValue("@MatKhau", taiKhoanDTO.MatKhau);
+                com.Parameters.AddWithValue("@MaPQ", taiKhoanDTO.MaPQ);
+
+
+                string user = com.ExecuteScalar().ToString();
+                conn.Close();
+                return user;
+            }
+            catch (Exception)
+            {
+                return "";
+            }
+        }
+
         public List<TaiKhoanDTO> Filter()
         {
             try

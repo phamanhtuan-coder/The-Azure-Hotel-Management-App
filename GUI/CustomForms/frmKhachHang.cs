@@ -164,7 +164,7 @@ namespace GUI.customForm
             taoTaiKhoan.ShowDialog();
             //Sau đó thực hiện lệnh query để lấy mã tài khoản vừa tạo và gán mã đó vào biến maTaiKhoan
             string user = khachHangBLL.TruyVanUsernameBLL();
-            if (BienTam.username.Equals(user) && BienTam.kiemtraAdd)
+            if (BienTam.username.Equals(user) && BienTam.kiemtra)
             {
                 txtMaTaiKhoan.Text = user;
             }

@@ -9,6 +9,6 @@ namespace GUI
     public static class BienTam
     {
         public static string username="";
-        public static bool kiemtraAdd = false;
+        public static bool kiemtra = false;
     }
 }
