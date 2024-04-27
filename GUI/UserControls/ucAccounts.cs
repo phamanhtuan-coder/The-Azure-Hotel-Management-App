@@ -168,7 +168,18 @@ namespace GUI.UserControls
 
         private void btnTraCuuAccounts_Click(object sender, EventArgs e)
         {
+            dgvAccounts.DataSource = taiKhoanDTOs;
+            string searchKeyword = txtSearchAccounts.Text.Trim().ToLower();
+            if (searchKeyword.Count() > 0)
+            {
+                dsSearch = taiKhoanBLL.TraCuuNhanVienTen(taiKhoanDTOs, searchKeyword);
+                dgvAccounts.DataSource = dsSearch;
 
+            }
+            else
+            {
+                LoadDSTaiKhoan();
+            }
         }
 
         private void btnNgayTao_Click(object sender, EventArgs e)

@@ -137,5 +137,13 @@ namespace BLL
                 }
             }
         }
+
+        public List<TaiKhoanDTO> TraCuuNhanVienTen(List<TaiKhoanDTO> taiKhoanDTOs, string searchKeyword)
+        {
+            List<TaiKhoanDTO> searchResults = taiKhoanDTOs.Where(item =>
+             item.TenDangNhap.ToLower().Contains(searchKeyword)
+         ).ToList();
+            return searchResults;
+        }
     }
 }
