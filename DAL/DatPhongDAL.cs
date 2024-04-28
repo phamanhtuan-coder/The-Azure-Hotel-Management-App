@@ -76,6 +76,32 @@ namespace DAL
             conn.Close();
             return ds;
         }
+        public List<DatPhongDTO> layds2()
+        {
+            List<DatPhongDTO> ds = new List<DatPhongDTO>();
+            SqlConnection conn = DataProvider.KetNoiDuLieu();
+            string strlaydanhsach = "select * from DatPhong where TrangThai=1";
+            conn.Open();
+            SqlDataReader reader = DataProvider.ThucHienTruyVan(strlaydanhsach, conn);
+            while (reader.Read())
+            {
+                DatPhongDTO phong = new DatPhongDTO();
+                phong.MaDatPhong = (int)reader[0];
+                phong.MaKH = (int)reader[1];
+                phong.MaPHG = (int)reader[2];
+                phong.NgayDatPhong = DateTime.Parse(reader[3].ToString());
+                phong.NgayNhanPhong = DateTime.Parse(reader[4].ToString());
+                phong.NgayTraPhong = DateTime.Parse(reader[5].ToString());
+                phong.SoLuongKH = (int)reader[6];
+                byte[] trangThaiBytes = (byte[])reader[7];
+                bool trangThai = trangThaiBytes[0] == 1;
+                phong.TrangThai = trangThai;
+                ds.Add(phong);
+            }
+            reader.Close();
+            conn.Close();
+            return ds;
+        }
 
         public bool suad(DatPhongDTO datPhongDTO)
         {

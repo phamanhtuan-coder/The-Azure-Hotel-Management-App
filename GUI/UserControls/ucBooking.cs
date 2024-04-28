@@ -20,6 +20,8 @@ namespace GUI.UserControls
         DatPhongBLL DatPhongBLL=new DatPhongBLL();
         List<DatPhongDTO> datPhongDTOs = new List<DatPhongDTO>();
         List<DatPhongDTO> datPhongDTOstk = new List<DatPhongDTO>();
+        List<PhongDTO> PhongDTOs = new List<PhongDTO>();
+        PhongBLL PhongBLL = new PhongBLL();
 
         public ucBooking()
         {
@@ -75,8 +77,6 @@ namespace GUI.UserControls
                 frm.ShowDialog();
                 dgvBooking.ClearSelection();
                 layds();
-
-                frm.ShowDialog();
             }
             else
             {
