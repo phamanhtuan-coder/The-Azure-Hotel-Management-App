@@ -72,7 +72,14 @@ namespace GUI.customForm
             {
                 // Nếu đúng là form Thêm thì chạy lệnh insert
                 check = thietBiBLL.themtbi(thietBiDTO);
-                thongBao = new customMessageBox("Đã thêm thành công dữ liệu thiết bị mới!");
+                if (check)
+                {
+                    thongBao = new customMessageBox("Đã thêm thành công dữ liệu thiết bị mới!");
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Đã thêm thất bại dữ liệu thiết bị mới!");
+                }
                 thongBao.ShowDialog();
 
             }
@@ -80,7 +87,14 @@ namespace GUI.customForm
             {
                 // nếu không thì chạy lệnh update
                 check = thietBiBLL.suatbi(thietBiDTO);
-                thongBao = new customMessageBox("Sửa thành công thông tin thiết bị đã chọn!");
+                if (check)
+                {
+                    thongBao = new customMessageBox("Sửa thành công thông tin thiết bị đã chọn!");
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Sửa thất bại thông tin thiết bị đã chọn!");
+                }
                 thongBao.ShowDialog();
             }
             this.Close();

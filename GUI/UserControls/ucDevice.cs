@@ -154,7 +154,7 @@ namespace GUI.UserControls
         private void btnTraCuuDevice_Click(object sender, EventArgs e)
         {
             ThietBiDTOs = ThietBiBLL.laydstbi();
-            dgvDevice.DataSource = ThietBiBLL;
+            dgvDevice.DataSource = ThietBiDTOs;
             string searchKeyword = txtSearchDevice.Text.Trim();
             if (searchKeyword.Count() > 0)
             {

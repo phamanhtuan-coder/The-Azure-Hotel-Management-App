@@ -92,6 +92,7 @@
   <ItemGroup>
     <Compile Include="DataProvider.cs" />
     <Compile Include="DatPhongDAL.cs" />
+    <Compile Include="DichVuDAL.cs" />
     <Compile Include="LoaiPhongDAL.cs" />
     <Compile Include="NhanVienDAL.cs" />
     <Compile Include="PhongBanDAL.cs" />

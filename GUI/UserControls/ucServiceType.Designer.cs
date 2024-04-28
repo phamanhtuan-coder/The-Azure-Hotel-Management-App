@@ -39,6 +39,7 @@
             this.btnTraCuuServiceType = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateRoomType = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
+            this.dgvServiceType = new System.Windows.Forms.DataGridView();
             this.nudPriceMax = new System.Windows.Forms.NumericUpDown();
             this.nudPriceMin = new System.Windows.Forms.NumericUpDown();
             this.lblPriceRangeServiceType = new System.Windows.Forms.Label();
@@ -49,10 +50,9 @@
             this.lblStateRoomType = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.dgvServiceType = new System.Windows.Forms.DataGridView();
-            this.colMaDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGiaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
@@ -61,6 +61,7 @@
             this.spcQuery.Panel1.SuspendLayout();
             this.spcQuery.Panel2.SuspendLayout();
             this.spcQuery.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvServiceType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPriceMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPriceMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortServiceTypeID)).BeginInit();
@@ -70,7 +71,6 @@
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvServiceType)).BeginInit();
             this.SuspendLayout();
             // 
             // lblServiceType
@@ -159,7 +159,7 @@
             this.btnDeleteServiceType.Size = new System.Drawing.Size(191, 41);
             this.btnDeleteServiceType.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnDeleteServiceType.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteServiceType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnDeleteServiceType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDeleteServiceType.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnDeleteServiceType.TabIndex = 4;
             this.btnDeleteServiceType.Text = "Xóa";
@@ -180,7 +180,7 @@
             this.btnRecoverServiceType.Size = new System.Drawing.Size(191, 41);
             this.btnRecoverServiceType.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverServiceType.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverServiceType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnRecoverServiceType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnRecoverServiceType.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRecoverServiceType.TabIndex = 5;
             this.btnRecoverServiceType.Text = "Khôi phục";
@@ -193,7 +193,7 @@
             this.txtSearchServiceType.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchServiceType.Location = new System.Drawing.Point(6, 16);
             this.txtSearchServiceType.Name = "txtSearchServiceType";
-            this.txtSearchServiceType.Size = new System.Drawing.Size(251, 40);
+            this.txtSearchServiceType.Size = new System.Drawing.Size(251, 49);
             this.txtSearchServiceType.TabIndex = 2;
             // 
             // btnTraCuuServiceType
@@ -212,6 +212,7 @@
             this.btnTraCuuServiceType.TabIndex = 0;
             this.btnTraCuuServiceType.Text = "Tra cứu";
             this.btnTraCuuServiceType.UseVisualStyleBackColor = false;
+            this.btnTraCuuServiceType.Click += new System.EventHandler(this.btnTraCuuServiceType_Click);
             // 
             // cboStateRoomType
             // 
@@ -229,6 +230,7 @@
             this.cboStateRoomType.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateRoomType.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateRoomType.TabIndex = 3;
+            this.cboStateRoomType.SelectedIndexChanged += new System.EventHandler(this.cboStateRoomType_SelectedIndexChanged);
             // 
             // spcQuery
             // 
@@ -259,6 +261,31 @@
             this.spcQuery.SplitterDistance = 973;
             this.spcQuery.TabIndex = 38;
             // 
+            // dgvServiceType
+            // 
+            this.dgvServiceType.AllowUserToAddRows = false;
+            this.dgvServiceType.AllowUserToDeleteRows = false;
+            this.dgvServiceType.AllowUserToResizeColumns = false;
+            this.dgvServiceType.AllowUserToResizeRows = false;
+            this.dgvServiceType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvServiceType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvServiceType.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colMaDV,
+            this.colTenDV,
+            this.colGiaDV,
+            this.colHinhAnh,
+            this.colTrangThai});
+            this.dgvServiceType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvServiceType.Location = new System.Drawing.Point(0, 0);
+            this.dgvServiceType.MultiSelect = false;
+            this.dgvServiceType.Name = "dgvServiceType";
+            this.dgvServiceType.ReadOnly = true;
+            this.dgvServiceType.RowHeadersVisible = false;
+            this.dgvServiceType.RowHeadersWidth = 51;
+            this.dgvServiceType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvServiceType.Size = new System.Drawing.Size(973, 746);
+            this.dgvServiceType.TabIndex = 1;
+            // 
             // nudPriceMax
             // 
             this.nudPriceMax.Increment = new decimal(new int[] {
@@ -273,7 +300,7 @@
             0,
             0});
             this.nudPriceMax.Name = "nudPriceMax";
-            this.nudPriceMax.Size = new System.Drawing.Size(120, 27);
+            this.nudPriceMax.Size = new System.Drawing.Size(120, 32);
             this.nudPriceMax.TabIndex = 34;
             this.nudPriceMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudPriceMax.ThousandsSeparator = true;
@@ -297,7 +324,7 @@
             0,
             0});
             this.nudPriceMin.Name = "nudPriceMin";
-            this.nudPriceMin.Size = new System.Drawing.Size(120, 27);
+            this.nudPriceMin.Size = new System.Drawing.Size(120, 32);
             this.nudPriceMin.TabIndex = 33;
             this.nudPriceMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudPriceMin.ThousandsSeparator = true;
@@ -308,7 +335,7 @@
             this.lblPriceRangeServiceType.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPriceRangeServiceType.Location = new System.Drawing.Point(3, 187);
             this.lblPriceRangeServiceType.Name = "lblPriceRangeServiceType";
-            this.lblPriceRangeServiceType.Size = new System.Drawing.Size(125, 26);
+            this.lblPriceRangeServiceType.Size = new System.Drawing.Size(161, 33);
             this.lblPriceRangeServiceType.TabIndex = 32;
             this.lblPriceRangeServiceType.Text = "Khoảng giá";
             this.lblPriceRangeServiceType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -329,6 +356,7 @@
             this.cboSortServiceTypeID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortServiceTypeID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortServiceTypeID.TabIndex = 29;
+            this.cboSortServiceTypeID.SelectedIndexChanged += new System.EventHandler(this.cboSortServiceTypeID_SelectedIndexChanged);
             // 
             // lblSortServiceTypeID
             // 
@@ -336,7 +364,7 @@
             this.lblSortServiceTypeID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortServiceTypeID.Location = new System.Drawing.Point(3, 85);
             this.lblSortServiceTypeID.Name = "lblSortServiceTypeID";
-            this.lblSortServiceTypeID.Size = new System.Drawing.Size(208, 26);
+            this.lblSortServiceTypeID.Size = new System.Drawing.Size(265, 33);
             this.lblSortServiceTypeID.TabIndex = 28;
             this.lblSortServiceTypeID.Text = "Sort Service Type ID";
             this.lblSortServiceTypeID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -357,6 +385,7 @@
             this.cboSortGiaServiceType.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortGiaServiceType.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortGiaServiceType.TabIndex = 23;
+            this.cboSortGiaServiceType.SelectedIndexChanged += new System.EventHandler(this.cboSortGiaServiceType_SelectedIndexChanged);
             // 
             // lblSortGiaServiceTypeID
             // 
@@ -364,7 +393,7 @@
             this.lblSortGiaServiceTypeID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortGiaServiceTypeID.Location = new System.Drawing.Point(3, 140);
             this.lblSortGiaServiceTypeID.Name = "lblSortGiaServiceTypeID";
-            this.lblSortGiaServiceTypeID.Size = new System.Drawing.Size(138, 26);
+            this.lblSortGiaServiceTypeID.Size = new System.Drawing.Size(177, 33);
             this.lblSortGiaServiceTypeID.TabIndex = 14;
             this.lblSortGiaServiceTypeID.Text = "Sort theo giá";
             this.lblSortGiaServiceTypeID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -375,7 +404,7 @@
             this.lblStateRoomType.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStateRoomType.Location = new System.Drawing.Point(3, 244);
             this.lblStateRoomType.Name = "lblStateRoomType";
-            this.lblStateRoomType.Size = new System.Drawing.Size(186, 26);
+            this.lblStateRoomType.Size = new System.Drawing.Size(237, 33);
             this.lblStateRoomType.TabIndex = 9;
             this.lblStateRoomType.Text = "Trạng thái dữ liệu";
             this.lblStateRoomType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -409,57 +438,43 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // dgvServiceType
+            // colMaDV
             // 
-            this.dgvServiceType.AllowUserToAddRows = false;
-            this.dgvServiceType.AllowUserToDeleteRows = false;
-            this.dgvServiceType.AllowUserToResizeColumns = false;
-            this.dgvServiceType.AllowUserToResizeRows = false;
-            this.dgvServiceType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvServiceType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvServiceType.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaDichVu,
-            this.colTenDichVu,
-            this.colGia,
-            this.colHinhAnh,
-            this.colTrangThai});
-            this.dgvServiceType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvServiceType.Location = new System.Drawing.Point(0, 0);
-            this.dgvServiceType.MultiSelect = false;
-            this.dgvServiceType.Name = "dgvServiceType";
-            this.dgvServiceType.ReadOnly = true;
-            this.dgvServiceType.RowHeadersVisible = false;
-            this.dgvServiceType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvServiceType.Size = new System.Drawing.Size(973, 746);
-            this.dgvServiceType.TabIndex = 1;
+            this.colMaDV.DataPropertyName = "MaDV";
+            this.colMaDV.HeaderText = "Mã dịch vụ";
+            this.colMaDV.MinimumWidth = 6;
+            this.colMaDV.Name = "colMaDV";
+            this.colMaDV.ReadOnly = true;
             // 
-            // colMaDichVu
+            // colTenDV
             // 
-            this.colMaDichVu.HeaderText = "Mã dịch vụ";
-            this.colMaDichVu.Name = "colMaDichVu";
-            this.colMaDichVu.ReadOnly = true;
+            this.colTenDV.DataPropertyName = "TenDV";
+            this.colTenDV.HeaderText = "Tên dịch vụ";
+            this.colTenDV.MinimumWidth = 6;
+            this.colTenDV.Name = "colTenDV";
+            this.colTenDV.ReadOnly = true;
             // 
-            // colTenDichVu
+            // colGiaDV
             // 
-            this.colTenDichVu.HeaderText = "Tên dịch vụ";
-            this.colTenDichVu.Name = "colTenDichVu";
-            this.colTenDichVu.ReadOnly = true;
-            // 
-            // colGia
-            // 
-            this.colGia.HeaderText = "Giá";
-            this.colGia.Name = "colGia";
-            this.colGia.ReadOnly = true;
+            this.colGiaDV.DataPropertyName = "GiaDV";
+            this.colGiaDV.HeaderText = "Giá";
+            this.colGiaDV.MinimumWidth = 6;
+            this.colGiaDV.Name = "colGiaDV";
+            this.colGiaDV.ReadOnly = true;
             // 
             // colHinhAnh
             // 
+            this.colHinhAnh.DataPropertyName = "HinhAnh";
             this.colHinhAnh.HeaderText = "Hình ảnh";
+            this.colHinhAnh.MinimumWidth = 6;
             this.colHinhAnh.Name = "colHinhAnh";
             this.colHinhAnh.ReadOnly = true;
             // 
             // colTrangThai
             // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
             this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.MinimumWidth = 6;
             this.colTrangThai.Name = "colTrangThai";
             this.colTrangThai.ReadOnly = true;
             this.colTrangThai.Visible = false;
@@ -481,6 +496,7 @@
             this.spcQuery.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).EndInit();
             this.spcQuery.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvServiceType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPriceMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPriceMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortServiceTypeID)).EndInit();
@@ -490,7 +506,6 @@
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvServiceType)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -518,9 +533,9 @@
         private System.Windows.Forms.NumericUpDown nudPriceMin;
         private System.Windows.Forms.Label lblPriceRangeServiceType;
         private System.Windows.Forms.DataGridView dgvServiceType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaDichVu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTenDichVu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaDV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTenDV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGiaDV;
         private System.Windows.Forms.DataGridViewTextBoxColumn colHinhAnh;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
     }
