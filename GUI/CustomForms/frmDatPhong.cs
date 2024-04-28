@@ -50,7 +50,7 @@ namespace GUI.customForm
                 cboMaPHG.DataSource = PhongDTOs;
                 cboMaPHG.DisplayMember = "MaPHG";
                 cboMaPHG.ValueMember = "MaPHG";
-                cboMaPHG.SelectedIndex = DatPhongDTO.MaPHG-1;
+                cboMaPHG.SelectedItem = DatPhongDTO.MaPHG;
                 dtpNgayDat.Value = DatPhongDTO.NgayDatPhong;
                 dtpNgayNhanPhong.Value = DatPhongDTO.NgayNhanPhong;
                 dtpNgayTraPhong.Value = DatPhongDTO.NgayTraPhong;
@@ -64,7 +64,7 @@ namespace GUI.customForm
         private void laydltuform(DatPhongDTO p)
         {
             
-            p.MaPHG = cboMaPHG.SelectedIndex +1;
+            p.MaPHG = int.Parse(cboMaPHG.Text);
             p.MaKH =int.Parse(txtMaKH.Text);
             p.NgayDatPhong = dtpNgayDat.Value;
             p.NgayNhanPhong = dtpNgayNhanPhong.Value;

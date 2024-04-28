@@ -47,7 +47,7 @@ namespace GUI.customForm
                 datPhongDTOs = datPhongBLL.laydsp2();
                 cboMaDP.DataSource = datPhongDTOs;
                 cboMaDP.ValueMember = "MaDatPhong";
-                cboMaDP.SelectedIndex = DatDichVuDTO.MaDatPhong-1;
+                cboMaDP.SelectedItem = DatDichVuDTO.MaDatPhong;
                 dichVuDTOs = DichVuBLL.laydsdvu();
                 cboMaDV.DataSource = dichVuDTOs;
                 cboMaDV.DisplayMember = "TenDV";
@@ -63,8 +63,8 @@ namespace GUI.customForm
         }
         private void laydltuform(DatDichVuDTO p)
         {
-            
-            p.MaDatPhong =int.Parse(cboMaDP.SelectedIndex + 1.ToString());
+
+            p.MaDatPhong =int.Parse(cboMaDP.Text);
             p.MaDV =cboMaDV.SelectedIndex + 1;
             p.SoLuong = int.Parse(nudSoLuong.Text);
             p.NgayDat = dtpNgayDat.Value;
