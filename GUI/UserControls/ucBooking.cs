@@ -38,6 +38,7 @@ namespace GUI.UserControls
         {
             datPhongDTOs = DatPhongBLL.laydsp();
             dgvBooking.DataSource = datPhongDTOs;
+            
         }
 
         private void laycombo()

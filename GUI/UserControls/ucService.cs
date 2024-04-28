@@ -41,13 +41,6 @@ namespace GUI.UserControls
         {
             datDichVuDTOs = datDichVuBLL.laydsddv();
             dgvServices.DataSource = datDichVuDTOs;
-            datPhongDTOs = datPhongBLL.laydsp2();
-            colMaDatPhong.DataSource = datPhongDTOs;
-            colMaDatPhong.ValueMember = "MaDatPhong";
-            dichVuDTOs = DichVuBLL.laydsdvu();
-            colMaDV.DataSource = dichVuDTOs;
-            colMaDV.DisplayMember = "TenDV";
-            colMaDV.ValueMember = "MaDV";
         }
 
         private void Loadcombo()

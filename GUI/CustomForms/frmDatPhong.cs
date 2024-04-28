@@ -64,7 +64,7 @@ namespace GUI.customForm
         private void laydltuform(DatPhongDTO p)
         {
             
-            p.MaPHG = cboMaPHG.SelectedIndex + 1;
+            p.MaPHG = cboMaPHG.SelectedIndex +1;
             p.MaKH =int.Parse(txtMaKH.Text);
             p.NgayDatPhong = dtpNgayDat.Value;
             p.NgayNhanPhong = dtpNgayNhanPhong.Value;

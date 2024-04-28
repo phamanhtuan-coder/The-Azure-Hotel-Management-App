@@ -52,8 +52,8 @@
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.colMaDatDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaDatPhong = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colMaDV = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colMaDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNgayDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -449,24 +449,20 @@
             // colMaDatPhong
             // 
             this.colMaDatPhong.DataPropertyName = "MaDatPhong";
-            this.colMaDatPhong.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.colMaDatPhong.HeaderText = "Mã đặt phòng";
             this.colMaDatPhong.MinimumWidth = 6;
             this.colMaDatPhong.Name = "colMaDatPhong";
             this.colMaDatPhong.ReadOnly = true;
             this.colMaDatPhong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaDatPhong.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // colMaDV
             // 
             this.colMaDV.DataPropertyName = "MaDV";
-            this.colMaDV.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.colMaDV.HeaderText = "Mã dịch vụ";
             this.colMaDV.MinimumWidth = 6;
             this.colMaDV.Name = "colMaDV";
             this.colMaDV.ReadOnly = true;
             this.colMaDV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaDV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // colSoLuong
             // 
@@ -547,8 +543,8 @@
         private Syncfusion.WinForms.ListView.SfComboBox cboSortServiceD;
         private System.Windows.Forms.DataGridView dgvServices;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaDatDichVu;
-        private System.Windows.Forms.DataGridViewComboBoxColumn colMaDatPhong;
-        private System.Windows.Forms.DataGridViewComboBoxColumn colMaDV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaDatPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaDV;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayDat;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
