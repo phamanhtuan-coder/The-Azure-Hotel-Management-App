@@ -15,9 +15,21 @@ namespace BLL
 
         public bool AddKhachHangBLL(KhachHangDTO khachHang)
         {
-            if (!string.IsNullOrEmpty(khachHang.HoTenKH.Trim()) && !string.IsNullOrEmpty(khachHang.CCCD.Trim()) && !string.IsNullOrEmpty(khachHang.TenDangNhap.Trim()) && !string.IsNullOrEmpty(khachHang.DiaChi.Trim()) && !string.IsNullOrEmpty(khachHang.GioiTinh.Trim()) && !string.IsNullOrEmpty(khachHang.SDT.Trim()) && khachHang.MaLoaiHangThanhVien>0)
+            if (!string.IsNullOrWhiteSpace(khachHang.HoTenKH.Trim()) && !string.IsNullOrWhiteSpace(khachHang.CCCD.Trim()) && !string.IsNullOrWhiteSpace(khachHang.TenDangNhap.Trim()) && !string.IsNullOrWhiteSpace(khachHang.DiaChi.Trim()) && !string.IsNullOrWhiteSpace(khachHang.GioiTinh.Trim()) && !string.IsNullOrWhiteSpace(khachHang.SDT.Trim()) && khachHang.MaLoaiHangThanhVien>0)
             {
                 return khachHangDAL.AddKhachHangDAL(khachHang);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool AddKhachHangBLL(TaiKhoanDTO taiKhoanDTO, KhachHangDTO khachHangDTO)
+        {
+            if (!string.IsNullOrWhiteSpace(khachHangDTO.HoTenKH.Trim()) && !string.IsNullOrWhiteSpace(khachHangDTO.CCCD.Trim()) && !string.IsNullOrWhiteSpace(khachHangDTO.DiaChi.Trim()) && !string.IsNullOrWhiteSpace(khachHangDTO.GioiTinh.Trim()) && !string.IsNullOrWhiteSpace(khachHangDTO.SDT.Trim()) && khachHangDTO.MaLoaiHangThanhVien > 0)
+            {
+                return khachHangDAL.AddKhachHangDAL(taiKhoanDTO, khachHangDTO);
             }
             else
             {

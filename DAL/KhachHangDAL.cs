@@ -11,6 +11,7 @@ namespace DAL
 {
     public class KhachHangDAL
     {
+        TaiKhoanDAL taiKhoanDAL = new TaiKhoanDAL();
         List<KhachHangDTO> list = new List<KhachHangDTO> ();
 
         public bool AddKhachHangDAL(KhachHangDTO khachHang)
@@ -44,6 +45,19 @@ namespace DAL
 
             }
             catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool AddKhachHangDAL(TaiKhoanDTO taiKhoanDTO, KhachHangDTO khachHangDTO)
+        {
+            khachHangDTO.TenDangNhap=taiKhoanDAL.AddTaiKhoanDAL(taiKhoanDTO);
+            if (!string.IsNullOrWhiteSpace(khachHangDTO.TenDangNhap.Trim()))
+            {
+                return AddKhachHangDAL(khachHangDTO);
+            }
+            else
             {
                 return false;
             }
