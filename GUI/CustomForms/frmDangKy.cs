@@ -51,7 +51,7 @@ namespace GUI.customForm
             if (txtPassword.Text == txtRePassword.Text)
             {
                 taiKhoanDTO.TenDangNhap= txtUsername.Text;
-                taiKhoanDTO.MatKhau = txtPassword.Text;
+                taiKhoanDTO.MatKhau = Utilities.HashMatKhau.HashPassword(txtPassword.Text);
                 taiKhoanDTO.MaPQ = "KH-01";
                             
                 khachHangDTO.HoTenKH = txtHoTen.Text;

@@ -158,6 +158,18 @@ namespace BLL
             return searchResults;
         }
 
+        public bool XacThuc(TaiKhoanDTO taiKhoanDTO)
+        {
+            if(!string.IsNullOrWhiteSpace(taiKhoanDTO.TenDangNhap.Trim()) && !string.IsNullOrWhiteSpace(taiKhoanDTO.MatKhau.Trim()))
+            {
+                return taiKhoanDAL.XacThuc(taiKhoanDTO);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public bool XoaTaiKhoan(int maTK)
         {
             return taiKhoanDAL.XoaTaiKhoan(maTK);

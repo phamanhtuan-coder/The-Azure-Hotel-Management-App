@@ -188,6 +188,34 @@ namespace DAL
             }
         }
 
+        public bool XacThuc(KhachHangDTO khachHangDTO)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spXacThuc", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+             
+                com.Parameters.AddWithValue("@Email", khachHangDTO.Email);
+                com.Parameters.AddWithValue("@CCCD", khachHangDTO.CCCD);
+
+                int count = (int) com.ExecuteScalar();
+                conn.Close();
+                if (count > 0)
+                {
+                    return true;
+                }
+                else return false;
+
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public bool XoaNhanVienDAL(int maKH)
         {
             try

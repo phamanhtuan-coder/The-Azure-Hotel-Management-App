@@ -141,6 +141,32 @@ namespace DAL
             }
         }
 
+        public bool XacThuc(TaiKhoanDTO taiKhoanDTO)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spDangNhap", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@TenDangNhap", taiKhoanDTO.TenDangNhap);
+                com.Parameters.AddWithValue("@MatKhau", taiKhoanDTO.MatKhau);
+
+                int count = (int) com.ExecuteScalar();
+                conn.Close();
+                if (count == 1)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public bool XoaTaiKhoan(int maTK)
         {
             try

@@ -79,6 +79,18 @@ namespace BLL
             return TaiKhoanDAL.TruyVanUsernameDAL();
         }
 
+        public bool XacThuc(KhachHangDTO khachHangDTO)
+        {
+            if (!string.IsNullOrWhiteSpace(khachHangDTO.Email) && !string.IsNullOrWhiteSpace(khachHangDTO.CCCD))
+            {
+                return khachHangDAL.XacThuc(khachHangDTO);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public bool XoaNhanVienBLL(int maKH)
         {
             if (maKH > 0)

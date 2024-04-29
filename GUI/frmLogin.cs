@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GUI.customForm;
+using DTO;
+using BLL;
 
 namespace GUI
 {
@@ -25,7 +27,10 @@ namespace GUI
         private Timer timerLoop;
         private int gifDuration = 18000;
         private int elapsed = 0;
-
+        TaiKhoanBLL taiKhoanBLL = new TaiKhoanBLL();
+        TaiKhoanDTO taiKhoanDTO = new TaiKhoanDTO();    
+        KhachHangBLL khachHangBLL = new KhachHangBLL();
+        KhachHangDTO khachHangDTO = new KhachHangDTO();
         /*-------------------------------------------------------------------------------------------------------------------
                                     KẾT THÚC ĐOẠN KHAI BÁO CÁC BIẾN TOÀN CỤC
        --------------------------------------------------------------------------------------------------------------------*/
@@ -105,7 +110,7 @@ namespace GUI
                 tbtnRemember.Show();
                 btnAdmin.Hide();
                 linkForget.Text = "Quên mật khẩu?";
-                btnSubmit.Text = "Đăng nhập";
+                btnSubmit.Text = "LOGIN";
             }
         }
 
@@ -156,13 +161,45 @@ namespace GUI
 
 
         private void btnSubmit_Click(object sender, EventArgs e)
-        {
-            frmMain mainForm = new frmMain();
-            this.Hide();
-            mainForm.Show();
-            this.Close();
-
-
+        {          
+            if (btnSubmit.Text.Equals("Xác thực"))
+            {
+                khachHangDTO.Email = txtUsername.Text;
+                khachHangDTO.CCCD= txtPassword.Text;
+                if (XacThuc())
+                {
+                    customMessageBox thongBao = new customMessageBox("Xác thực thành công!");
+                    thongBao.ShowDialog();
+                    frmMain mainForm = new frmMain();
+                    this.Hide();
+                    mainForm.Show();
+                    this.Close();
+                }
+                else
+                {
+                    customMessageBox thongBao = new customMessageBox("Xác thực thất bại!");
+                    thongBao.ShowDialog();
+                }
+            }
+            else if (btnSubmit.Text.Equals("LOGIN"))
+            {
+                taiKhoanDTO.TenDangNhap = txtUsername.Text;
+                taiKhoanDTO.MatKhau = Utilities.HashMatKhau.HashPassword(txtPassword.Text);
+                if (DangNhap())
+                {
+                    customMessageBox thongBao = new customMessageBox("Đăng nhập thành công!");
+                    thongBao.ShowDialog();
+                    frmMain mainForm = new frmMain();
+                    this.Hide();
+                    mainForm.Show();
+                    this.Close();
+                }
+                else
+                {
+                    customMessageBox thongBao = new customMessageBox("Đăng nhập thất bại!");
+                    thongBao.ShowDialog();
+                }
+            }
             //string username = txtUsername.Text.Trim();
             //string password = txtPassword.Text.Trim();
 
@@ -185,6 +222,16 @@ namespace GUI
             //    //MessageBox.Show("Tên người dùng hoặc mật khẩu không đúng!");
             //}
 
+        }
+
+        private bool XacThuc()
+        {
+            return khachHangBLL.XacThuc(khachHangDTO);
+        }
+
+        private bool DangNhap()
+        {          
+            return taiKhoanBLL.XacThuc(taiKhoanDTO);
         }
 
         private void btnShowHidePassword_Click(object sender, EventArgs e)
