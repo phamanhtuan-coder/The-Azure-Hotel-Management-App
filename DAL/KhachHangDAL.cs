@@ -188,8 +188,10 @@ namespace DAL
             }
         }
 
-        public bool XacThuc(KhachHangDTO khachHangDTO)
+        public TaiKhoanDTO XacThuc(KhachHangDTO khachHangDTO)
         {
+            TaiKhoanDTO taiKhoanDTO = new TaiKhoanDTO();
+
             try
             {
                 SqlConnection conn = DataProvider.KetNoiDuLieu();
@@ -197,24 +199,27 @@ namespace DAL
 
                 SqlCommand com = new SqlCommand("spXacThuc", conn);
                 com.CommandType = System.Data.CommandType.StoredProcedure;
-             
+
                 com.Parameters.AddWithValue("@Email", khachHangDTO.Email);
                 com.Parameters.AddWithValue("@CCCD", khachHangDTO.CCCD);
 
-                int count = (int) com.ExecuteScalar();
-                conn.Close();
-                if (count > 0)
-                {
-                    return true;
-                }
-                else return false;
+                SqlDataReader reader = com.ExecuteReader();
 
+                while (reader.Read())
+                {
+                    taiKhoanDTO.MaTaiKhoan = (int)reader["MaTaiKhoan"];
+                    taiKhoanDTO.TenDangNhap = reader["TenDangNhap"].ToString();
+                }
+
+                conn.Close();
+                return taiKhoanDTO;
             }
             catch (Exception)
             {
-                return false;
+                return new TaiKhoanDTO();
             }
         }
+
 
         public bool XoaNhanVienDAL(int maKH)
         {

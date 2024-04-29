@@ -20,6 +20,15 @@ namespace BLL
             return a;
         }
 
+        public bool DoiMatKhau(TaiKhoanDTO taiKhoanDTO)
+        {
+            if (!string.IsNullOrWhiteSpace(taiKhoanDTO.TenDangNhap))
+            {
+                return taiKhoanDAL.DoiMatKhau(taiKhoanDTO);
+            }
+            return false;
+        }
+
         public string EditTaiKhoanBLL(TaiKhoanDTO taiKhoanDTO)
         {
             string a = taiKhoanDAL.EditTaiKhoanDAL(taiKhoanDTO);

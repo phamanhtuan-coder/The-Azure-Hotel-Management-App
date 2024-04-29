@@ -144,6 +144,12 @@
     <Compile Include="CustomForms\frmCTHD.Designer.cs">
       <DependentUpon>frmCTHD.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomForms\frmDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\frmDoiMatKhau.Designer.cs">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomForms\frmHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -457,6 +463,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmCTHD.resx">
       <DependentUpon>frmCTHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\frmDoiMatKhau.resx">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmHoaDon.resx">
       <DependentUpon>frmHoaDon.cs</DependentUpon>

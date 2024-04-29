@@ -79,7 +79,7 @@ namespace BLL
             return TaiKhoanDAL.TruyVanUsernameDAL();
         }
 
-        public bool XacThuc(KhachHangDTO khachHangDTO)
+        public TaiKhoanDTO XacThuc(KhachHangDTO khachHangDTO)
         {
             if (!string.IsNullOrWhiteSpace(khachHangDTO.Email) && !string.IsNullOrWhiteSpace(khachHangDTO.CCCD))
             {
@@ -87,7 +87,7 @@ namespace BLL
             }
             else
             {
-                return false;
+                return new TaiKhoanDTO();
             }
         }
 

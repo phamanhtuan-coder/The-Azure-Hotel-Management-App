@@ -168,11 +168,12 @@ namespace GUI
                 khachHangDTO.CCCD= txtPassword.Text;
                 if (XacThuc())
                 {
-                    customMessageBox thongBao = new customMessageBox("Xác thực thành công!");
-                    thongBao.ShowDialog();
-                    frmMain mainForm = new frmMain();
+                    //customMessageBox thongBao = new customMessageBox("Xác thực thành công!");
+                    //thongBao.ShowDialog();
+                    frmDoiMatKhau DoiMatKhau = new frmDoiMatKhau();
+                    DoiMatKhau.taiKhoanDTO= taiKhoanDTO;
                     this.Hide();
-                    mainForm.Show();
+                    DoiMatKhau.Show();
                     this.Close();
                 }
                 else
@@ -226,7 +227,15 @@ namespace GUI
 
         private bool XacThuc()
         {
-            return khachHangBLL.XacThuc(khachHangDTO);
+            taiKhoanDTO = khachHangBLL.XacThuc(khachHangDTO);
+            if (taiKhoanDTO.MaTaiKhoan>0 && !string.IsNullOrWhiteSpace(taiKhoanDTO.TenDangNhap))
+            {             
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private bool DangNhap()

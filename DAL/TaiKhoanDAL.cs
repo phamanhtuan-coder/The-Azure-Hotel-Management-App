@@ -36,6 +36,34 @@ namespace DAL
             }
         }
 
+        public bool DoiMatKhau(TaiKhoanDTO taiKhoanDTO)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spDoiMatKhau", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaTaiKhoan", taiKhoanDTO.MaTaiKhoan);
+                com.Parameters.AddWithValue("@TenDangNhap", taiKhoanDTO.TenDangNhap);
+                com.Parameters.AddWithValue("@MatKhau", taiKhoanDTO.MatKhau);
+                
+                int count = com.ExecuteNonQuery();
+
+                conn.Close();
+                if (count > 0)
+                {
+                    return true;
+                }
+                else return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public string EditTaiKhoanDAL(TaiKhoanDTO taiKhoanDTO)
         {
             try
