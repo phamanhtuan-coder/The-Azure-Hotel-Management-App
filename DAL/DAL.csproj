@@ -90,6 +90,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaoTriDAL.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="DatDichVuDAL.cs" />
     <Compile Include="DatPhongDAL.cs" />
