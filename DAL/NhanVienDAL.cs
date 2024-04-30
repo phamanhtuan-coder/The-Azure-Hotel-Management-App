@@ -97,6 +97,7 @@ namespace DAL
 
         public bool XoaNhanVienDAL(int maNV)
         {
+            TaiKhoanDAL taiKhoanDAL = new TaiKhoanDAL();    
             try
             {
                 SqlConnection conn = DataProvider.KetNoiDuLieu();
@@ -107,14 +108,22 @@ namespace DAL
                 com.Parameters.AddWithValue("@MaNhanVien", maNV);
                 
                 int count = com.ExecuteNonQuery();
-                conn.Close();
-
+                
                 if (count > 0)
                 {
+                    com = new SqlCommand("spLayMaTaiKhoan", conn);
+                    com.CommandType = CommandType.StoredProcedure;
+                    com.Parameters.AddWithValue("@Loai", 1);
+                    com.Parameters.AddWithValue("@Ma", maNV);
+
+                    int tam = (int)com.ExecuteScalar();
+                    taiKhoanDAL.XoaTaiKhoan(tam);
+                    conn.Close();
                     return true;
                 }
                 else
                 {
+                    conn.Close();
                     return false;
                 }
             }
@@ -126,6 +135,7 @@ namespace DAL
 
         public bool KhoiPhucNhanVienDAL(int maNV)
         {
+            TaiKhoanDAL taiKhoanDAL = new TaiKhoanDAL();
             try
             {
                 SqlConnection conn = DataProvider.KetNoiDuLieu();
@@ -136,16 +146,26 @@ namespace DAL
                 com.Parameters.AddWithValue("@MaNhanVien", maNV);
 
                 int count = com.ExecuteNonQuery();
-                conn.Close();
 
                 if (count > 0)
                 {
+                    com = new SqlCommand("spLayMaTaiKhoan", conn);
+                    com.CommandType = CommandType.StoredProcedure;
+                    com.Parameters.AddWithValue("@Loai", 1);
+                    com.Parameters.AddWithValue("@Ma", maNV);
+
+                    int tam = (int)com.ExecuteScalar();
+                    taiKhoanDAL.KhoiPhucTaiKhoan(tam);
+                    conn.Close();
                     return true;
                 }
                 else
                 {
+                    conn.Close();
                     return false;
                 }
+
+                
             }
             catch (Exception)
             {
