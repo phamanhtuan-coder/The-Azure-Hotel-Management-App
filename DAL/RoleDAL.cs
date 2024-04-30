@@ -79,7 +79,7 @@ namespace DAL
                     conn.Open();
 
                     string strTV = "Select MaPhanQuyen, TenVaiTro, PhanQuyen.MaPhongBan, COUNT(MaTaiKhoan) as SoLuongTK, PhanQuyen.TrangThai, PhongBan.TenPhong " +
-                                "From PhanQuyen join VaiTro on PhanQuyen.MaVaiTro=VaiTro.MaVaiTro left join BangTaiKhoan on BangTaiKhoan.MaPQ=PhanQuyen.MaPhanQuyen " +
+                                "From PhanQuyen join VaiTro on PhanQuyen.MaVaiTro=VaiTro.MaVaiTro left join BangTaiKhoan on BangTaiKhoan.MaPQ=PhanQuyen.MaPhanQuyen and BangTaiKhoan.TrangThai =1 " +
                                 "join PhongBan on PhanQuyen.MaPhongBan=PhongBan.MaPhongBan " +
                                 "Where PhanQuyen.TrangThai = 1 " +
                                 "Group by MaPhanQuyen, TenVaiTro, PhanQuyen.MaPhongBan, PhanQuyen.TrangThai, PhongBan.TenPhong";
@@ -116,7 +116,7 @@ namespace DAL
                     conn.Open();
 
                     string strTV = "Select MaPhanQuyen, TenVaiTro, PhanQuyen.MaPhongBan, COUNT(MaTaiKhoan) as SoLuongTK, PhanQuyen.TrangThai, PhongBan.TenPhong " +
-                                "From PhanQuyen join VaiTro on PhanQuyen.MaVaiTro=VaiTro.MaVaiTro left join BangTaiKhoan on BangTaiKhoan.MaPQ=PhanQuyen.MaPhanQuyen " +
+                                "From PhanQuyen join VaiTro on PhanQuyen.MaVaiTro=VaiTro.MaVaiTro left join BangTaiKhoan on BangTaiKhoan.MaPQ=PhanQuyen.MaPhanQuyen and BangTaiKhoan.TrangThai =1 " +
                                 "join PhongBan on PhanQuyen.MaPhongBan=PhongBan.MaPhongBan " +
                                 "Where PhanQuyen.TrangThai = 0 " +
                                 "Group by MaPhanQuyen, TenVaiTro, PhanQuyen.MaPhongBan, PhanQuyen.TrangThai, PhongBan.TenPhong";
@@ -155,7 +155,7 @@ namespace DAL
                 conn.Open();
 
                 string strTV = "Select MaPhanQuyen, TenVaiTro, PhanQuyen.MaPhongBan, COUNT(MaTaiKhoan) as SoLuongTK, PhanQuyen.TrangThai, PhongBan.TenPhong " +
-                            "From PhanQuyen join VaiTro on PhanQuyen.MaVaiTro=VaiTro.MaVaiTro left join BangTaiKhoan on BangTaiKhoan.MaPQ=PhanQuyen.MaPhanQuyen " +
+                            "From PhanQuyen join VaiTro on PhanQuyen.MaVaiTro=VaiTro.MaVaiTro left join BangTaiKhoan on BangTaiKhoan.MaPQ=PhanQuyen.MaPhanQuyen and BangTaiKhoan.TrangThai =1 " +
                             "join PhongBan on PhanQuyen.MaPhongBan=PhongBan.MaPhongBan " +
                             "Group by MaPhanQuyen, TenVaiTro, PhanQuyen.MaPhongBan, PhanQuyen.TrangThai, PhongBan.TenPhong";
 
@@ -245,15 +245,29 @@ namespace DAL
             {
                 SqlConnection conn = DataProvider.KetNoiDuLieu();
                 conn.Open();
-                SqlCommand com = new SqlCommand("sp_CapNhatTrangThaiPhanQuyen", conn);
+                SqlCommand com = new SqlCommand("spKiemTraSLTaiKhoan", conn);
                 com.CommandType = System.Data.CommandType.StoredProcedure;
-                com.Parameters.AddWithValue("@MaPhanQuyen", pq);
-                com.Parameters.AddWithValue("@TrangThai", 0);
-                int count = com.ExecuteNonQuery();  
-                conn.Close();
+                com.Parameters.AddWithValue("@MaPQ", pq);
 
-                if (count > 0) return true;
-                else return false;         
+                int dem= (int)com.ExecuteScalar();
+                if (dem == 0)
+                {
+                    com = new SqlCommand("sp_CapNhatTrangThaiPhanQuyen", conn);
+                    com.CommandType = System.Data.CommandType.StoredProcedure;
+                    com.Parameters.AddWithValue("@MaPhanQuyen", pq);
+                    com.Parameters.AddWithValue("@TrangThai", 0);
+                    int count = com.ExecuteNonQuery();
+                    conn.Close();
+
+                    if (count > 0) return true;
+                    else return false;
+                }
+                else
+                {
+                    return false;
+                }
+
+                         
             }catch (Exception)
             {
                 return false;
