@@ -27,14 +27,28 @@ namespace DAL
         //Hàm xóa
         public static bool XoaPhongBan(string maPhongBan)
         {
-            string lenhXoaPhongBan =
-                "UPDATE PhongBan SET TrangThai = 0 WHERE MaPhongBan = @MaPhongBan";
-            SqlParameter parMaPhongBan = new SqlParameter("@MaPhongBan", maPhongBan);
             SqlConnection conn = DataProvider.KetNoiDuLieu();
             conn.Open();
-            int kq = DataProvider.ThucHienCauLenh(lenhXoaPhongBan, conn, parMaPhongBan);
-            conn.Close();
-            return kq > 0;
+            SqlCommand com = new SqlCommand("spKiemTraPhanQuyenPB", conn);
+            com.CommandType = System.Data.CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@MaPhongBan", maPhongBan);
+
+            int dem = (int)com.ExecuteScalar();
+            if (dem == 0)
+            {
+                string lenhXoaPhongBan =
+                "UPDATE PhongBan SET TrangThai = 0 WHERE MaPhongBan = @MaPhongBan";
+                SqlParameter parMaPhongBan = new SqlParameter("@MaPhongBan", maPhongBan);
+                conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+                int kq = DataProvider.ThucHienCauLenh(lenhXoaPhongBan, conn, parMaPhongBan);
+                conn.Close();
+                return kq > 0;
+            }
+            else
+            {
+                return false;
+            }
         }
         //Hàm lọc
         public List<PhongBanDTO> FilterTrangThai(bool trangThai)
