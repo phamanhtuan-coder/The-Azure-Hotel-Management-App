@@ -13,6 +13,7 @@ namespace DAL
     public class TaiKhoanDAL
     {
         List<TaiKhoanDTO> list;
+       
         public string AddTaiKhoanDAL(TaiKhoanDTO taiKhoanDTO)
         {
             try
@@ -127,19 +128,42 @@ namespace DAL
 
         public bool KhoiPhucTaiKhoan(int maTK)
         {
+            NhanVienDAL nhanVienDAL = new NhanVienDAL();
+            KhachHangDAL KhachHangDAL = new KhachHangDAL();
             try
             {
+                int loai=-1;
+                int ma=-1;
                 SqlConnection conn = DataProvider.KetNoiDuLieu();
                 conn.Open();
 
-                SqlCommand com = new SqlCommand("sp_KhoiPhucTaiKhoan", conn);
+                SqlCommand com = new SqlCommand("spKTKhoiPhucTaiKhoan", conn);
                 com.CommandType = System.Data.CommandType.StoredProcedure;
                 com.Parameters.AddWithValue("@MaTaiKhoan", maTK);
+                SqlDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    loai = (int) reader["LOAI"];
+                    ma = (int)reader["MA"];
+                }
+                reader.Close();
+
+                com = new SqlCommand("sp_KhoiPhucTaiKhoan", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaTaiKhoan", maTK);               
 
                 int count = com.ExecuteNonQuery();
                 conn.Close();
                 if (count > 0)
                 {
+                    if (loai == 1)
+                    {
+                        nhanVienDAL.KhoiPhucNhanVienDAL(ma);
+                    }
+                    if (loai == 2)
+                    {
+                        KhachHangDAL.KhoiPhucNhanVienDAL(ma);
+                    }
                     return true;
                 }
                 return false;
@@ -197,22 +221,45 @@ namespace DAL
 
         public bool XoaTaiKhoan(int maTK)
         {
+            NhanVienDAL nhanVienDAL = new NhanVienDAL();
+            KhachHangDAL KhachHangDAL = new KhachHangDAL();
             try
             {
+                int loai = -1;
+                int ma = -1;
                 SqlConnection conn = DataProvider.KetNoiDuLieu();
                 conn.Open();
 
-                SqlCommand com = new SqlCommand("sp_XoaTaiKhoan", conn);
+                SqlCommand com = new SqlCommand("spKTTaiKhoanCoThongTin", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaTaiKhoan", maTK);
+                SqlDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    loai = (int)reader["LOAI"];
+                    ma = (int)reader["MA"];
+                }
+                reader.Close();
+                com = new SqlCommand("sp_XoaTaiKhoan", conn);
                 com.CommandType = System.Data.CommandType.StoredProcedure;
                 com.Parameters.AddWithValue("@MaTaiKhoan", maTK);
 
                 int count = com.ExecuteNonQuery();
                 conn.Close();
-                if (count>0)
+                if (count > 0)
                 {
-                    return true;
+                    if (loai == 1)
+                    {
+                        nhanVienDAL.XoaNhanVienDAL(ma);
+                    }
+                    if (loai == 2)
+                    {
+                        KhachHangDAL.XoaNhanVienDAL(ma);
+                    }
+                    return true;                    
                 }
                 return false;
+                
             }
             catch (Exception)
             {
