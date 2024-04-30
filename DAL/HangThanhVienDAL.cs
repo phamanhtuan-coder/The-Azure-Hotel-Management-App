@@ -70,17 +70,29 @@ namespace DAL
                 SqlConnection conn = DataProvider.KetNoiDuLieu();
                 conn.Open();
 
-                SqlCommand com = new SqlCommand("spXoatHangThanhVien", conn);
+                SqlCommand com = new SqlCommand("spSoLuongKhachHang", conn);
                 com.CommandType = System.Data.CommandType.StoredProcedure;
                 com.Parameters.AddWithValue("@MaLoaiHangThanhVien", hangThanhVienDTO.MaLoaiHangThanhVien);
 
-                int count = com.ExecuteNonQuery();
-                conn.Close();
-                if (count > 0)
+                int dem = (int)com.ExecuteScalar();
+                if (dem == 0)
                 {
-                    return true;
+                    com = new SqlCommand("spXoatHangThanhVien", conn);
+                    com.CommandType = System.Data.CommandType.StoredProcedure;
+                    com.Parameters.AddWithValue("@MaLoaiHangThanhVien", hangThanhVienDTO.MaLoaiHangThanhVien);
+
+                    int count = com.ExecuteNonQuery();
+                    conn.Close();
+                    if (count > 0)
+                    {
+                        return true;
+                    }
+                    else return false;
                 }
-                return false;
+                else
+                {
+                    return false;
+                }
             }
             catch (Exception)
             {
