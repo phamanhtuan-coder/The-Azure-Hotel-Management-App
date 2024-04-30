@@ -42,16 +42,26 @@ namespace DAL
             {
                 SqlConnection conn = DataProvider.KetNoiDuLieu();
                 conn.Open();
-
-                SqlCommand com = new SqlCommand("spCapNhatTrangThaiVaiTro", conn);
+                SqlCommand com = new SqlCommand("spKiemTraPhanQuyen", conn);
                 com.CommandType = System.Data.CommandType.StoredProcedure;
                 com.Parameters.AddWithValue("@MaVaiTro", iD);
-                com.Parameters.AddWithValue("@TrangThai", 0);
-                int count = com.ExecuteNonQuery();
-                conn.Close();
-
-                if (count > 0) return true;
-                else return false;
+                int dem = (int) com.ExecuteScalar();
+                if (dem==0)
+                {
+                    com = new SqlCommand("spCapNhatTrangThaiVaiTro", conn);
+                    com.CommandType = System.Data.CommandType.StoredProcedure;
+                    com.Parameters.AddWithValue("@MaVaiTro", iD);
+                    com.Parameters.AddWithValue("@TrangThai", 0);
+                    int count = com.ExecuteNonQuery();
+                    conn.Close();
+                    if (count > 0) return true;
+                    else return false;
+                }
+                else
+                {
+                    conn.Close();
+                    return false;
+                }                                         
             }
             catch (Exception)
             {
