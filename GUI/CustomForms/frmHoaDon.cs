@@ -18,6 +18,8 @@ namespace GUI.customForm
         public bool isAdd { get; set; }
         NhanVienBLL nhanVienBLL = new NhanVienBLL();
         List<NhanVienDTO> nhanVienDTOs = new List<NhanVienDTO>();
+        ThueBLL thueBLL = new ThueBLL();
+        List<ThueDTO> thueDTOs = new List<ThueDTO>();
 
         public frmHoaDon()
         {
@@ -33,6 +35,23 @@ namespace GUI.customForm
         private void LoadDuLieuCombobox()
         {
             LoadTenVaMaNhanVien();
+            LoadTenVaMaThue();
+        }
+
+        private void LoadTenVaMaThue()
+        {
+            ThueDTO khong = new ThueDTO();
+            khong.TenThue = "None";
+            khong.MaThue = -1;
+            thueDTOs.Add(khong);
+            foreach (ThueDTO item in thueBLL.TruyVanTenVaMaThue())
+            {
+                thueDTOs.Add(item);
+            }
+            cboMaThue.DataSource = thueDTOs;
+            cboMaThue.DisplayMember = "TenThue";
+            cboMaThue.ValueMember = "MaThue";
+            cboMaThue.SelectedIndex = 0;
         }
 
         private void LoadTenVaMaNhanVien()
