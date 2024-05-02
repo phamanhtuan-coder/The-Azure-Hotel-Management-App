@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +16,8 @@ namespace GUI.customForm
     {
 
         public bool isAdd { get; set; }
+        NhanVienBLL nhanVienBLL = new NhanVienBLL();
+        List<NhanVienDTO> nhanVienDTOs = new List<NhanVienDTO>();
 
         public frmHoaDon()
         {
@@ -22,16 +26,30 @@ namespace GUI.customForm
 
         private void frmHoaDon_Load(object sender, EventArgs e)
         {
-          // gán giá trị mặc định bằng các biến trên, néu là edit có giá trị truyền vào thì kiểm tra và chọn giá trị
-        
-
-
-            
-            
-
+            // gán giá trị mặc định bằng các biến trên, néu là edit có giá trị truyền vào thì kiểm tra và chọn giá trị
+            LoadDuLieuCombobox();       
         }
 
-        
+        private void LoadDuLieuCombobox()
+        {
+            LoadTenVaMaNhanVien();
+        }
+
+        private void LoadTenVaMaNhanVien()
+        {
+            NhanVienDTO Khong= new NhanVienDTO();
+            Khong.HoTenNV = "None";
+            Khong.MaNV = -1;
+            nhanVienDTOs.Add(Khong);          
+            foreach(NhanVienDTO item in nhanVienBLL.TruyVanTenVaMaNhanVien())
+            {
+                nhanVienDTOs.Add(item);
+            }
+            cboMaNV.DataSource = nhanVienDTOs;
+            cboMaNV.DisplayMember = "HoTenNV";
+            cboMaNV.ValueMember = "MaNV";
+            cboMaNV.SelectedIndex = 0;
+        }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {

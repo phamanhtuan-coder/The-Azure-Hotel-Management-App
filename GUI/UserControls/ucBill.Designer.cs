@@ -40,6 +40,7 @@
             this.cboStateBooking = new Syncfusion.WinForms.ListView.SfComboBox();
             this.dtpBillDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
+            this.dgvBill = new System.Windows.Forms.DataGridView();
             this.cboSortSumBill = new Syncfusion.WinForms.ListView.SfComboBox();
             this.cboSortBillID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortSumBill = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.lblStateBooking = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.dgvBill = new System.Windows.Forms.DataGridView();
             this.colMaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,12 +58,14 @@
             this.colTienNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTienThoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnNgayTao = new Syncfusion.WinForms.Controls.SfButton();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateBooking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
             this.spcQuery.Panel1.SuspendLayout();
             this.spcQuery.Panel2.SuspendLayout();
             this.spcQuery.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortSumBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortBillID)).BeginInit();
             this.panUcHeader.SuspendLayout();
@@ -71,14 +73,13 @@
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBill
             // 
             this.lblBill.BackColor = System.Drawing.Color.Lavender;
             this.lblBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblBill.Font = new System.Drawing.Font("Montserrat ExtraBold", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblBill.ForeColor = System.Drawing.Color.RoyalBlue;
             this.lblBill.Location = new System.Drawing.Point(0, 0);
             this.lblBill.Name = "lblBill";
@@ -110,7 +111,7 @@
             this.btnAddBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.btnAddBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAddBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddBill.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddBill.ForeColor = System.Drawing.Color.White;
             this.btnAddBill.ImageSize = new System.Drawing.Size(32, 32);
             this.btnAddBill.Location = new System.Drawing.Point(3, 3);
@@ -131,7 +132,7 @@
             this.btnEditBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
             this.btnEditBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnEditBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditBill.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditBill.ForeColor = System.Drawing.Color.White;
             this.btnEditBill.ImageSize = new System.Drawing.Size(32, 32);
             this.btnEditBill.Location = new System.Drawing.Point(3, 50);
@@ -152,7 +153,7 @@
             this.btnDeleteBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnDeleteBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDeleteBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteBill.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteBill.ForeColor = System.Drawing.Color.White;
             this.btnDeleteBill.ImageSize = new System.Drawing.Size(32, 32);
             this.btnDeleteBill.Location = new System.Drawing.Point(200, 3);
@@ -160,7 +161,7 @@
             this.btnDeleteBill.Size = new System.Drawing.Size(191, 41);
             this.btnDeleteBill.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnDeleteBill.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteBill.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnDeleteBill.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDeleteBill.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnDeleteBill.TabIndex = 4;
             this.btnDeleteBill.Text = "Xóa";
@@ -173,7 +174,7 @@
             this.btnRecoverBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRecoverBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecoverBill.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecoverBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecoverBill.ForeColor = System.Drawing.Color.White;
             this.btnRecoverBill.ImageSize = new System.Drawing.Size(32, 32);
             this.btnRecoverBill.Location = new System.Drawing.Point(200, 50);
@@ -181,7 +182,7 @@
             this.btnRecoverBill.Size = new System.Drawing.Size(191, 41);
             this.btnRecoverBill.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverBill.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverBill.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnRecoverBill.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnRecoverBill.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRecoverBill.TabIndex = 5;
             this.btnRecoverBill.Text = "Khôi phục";
@@ -191,10 +192,10 @@
             // 
             // txtSearchBill
             // 
-            this.txtSearchBill.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchBill.Location = new System.Drawing.Point(6, 16);
             this.txtSearchBill.Name = "txtSearchBill";
-            this.txtSearchBill.Size = new System.Drawing.Size(251, 40);
+            this.txtSearchBill.Size = new System.Drawing.Size(251, 38);
             this.txtSearchBill.TabIndex = 2;
             // 
             // btnTraCuuBill
@@ -203,7 +204,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTraCuuBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTraCuuBill.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTraCuuBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTraCuuBill.ForeColor = System.Drawing.Color.White;
             this.btnTraCuuBill.Location = new System.Drawing.Point(263, 16);
             this.btnTraCuuBill.Name = "btnTraCuuBill";
@@ -213,6 +214,7 @@
             this.btnTraCuuBill.TabIndex = 0;
             this.btnTraCuuBill.Text = "Tra cứu";
             this.btnTraCuuBill.UseVisualStyleBackColor = false;
+            this.btnTraCuuBill.Click += new System.EventHandler(this.btnTraCuuBill_Click);
             // 
             // cboStateBooking
             // 
@@ -220,26 +222,28 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboStateBooking.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboStateBooking.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboStateBooking.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateBooking.Location = new System.Drawing.Point(228, 233);
+            this.cboStateBooking.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateBooking.Location = new System.Drawing.Point(186, 231);
             this.cboStateBooking.Name = "cboStateBooking";
-            this.cboStateBooking.Size = new System.Drawing.Size(156, 33);
+            this.cboStateBooking.Size = new System.Drawing.Size(195, 33);
             this.cboStateBooking.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboStateBooking.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateBooking.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateBooking.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateBooking.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateBooking.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboStateBooking.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateBooking.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateBooking.TabIndex = 3;
+            this.cboStateBooking.SelectedIndexChanged += new System.EventHandler(this.cboStateBooking_SelectedIndexChanged);
             // 
             // dtpBillDate
             // 
             this.dtpBillDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpBillDate.DateTimePattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
-            this.dtpBillDate.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBillDate.Location = new System.Drawing.Point(225, 177);
+            this.dtpBillDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBillDate.Format = "MM-dd-yyyy";
+            this.dtpBillDate.Location = new System.Drawing.Point(186, 175);
             this.dtpBillDate.Name = "dtpBillDate";
-            this.dtpBillDate.Size = new System.Drawing.Size(156, 34);
+            this.dtpBillDate.Size = new System.Drawing.Size(146, 34);
             this.dtpBillDate.TabIndex = 6;
             this.dtpBillDate.ToolTipText = "";
             // 
@@ -257,6 +261,7 @@
             // spcQuery.Panel2
             // 
             this.spcQuery.Panel2.BackColor = System.Drawing.Color.Lavender;
+            this.spcQuery.Panel2.Controls.Add(this.btnNgayTao);
             this.spcQuery.Panel2.Controls.Add(this.cboSortSumBill);
             this.spcQuery.Panel2.Controls.Add(this.cboSortBillID);
             this.spcQuery.Panel2.Controls.Add(this.lblSortSumBill);
@@ -271,22 +276,51 @@
             this.spcQuery.SplitterDistance = 973;
             this.spcQuery.TabIndex = 38;
             // 
+            // dgvBill
+            // 
+            this.dgvBill.AllowUserToAddRows = false;
+            this.dgvBill.AllowUserToDeleteRows = false;
+            this.dgvBill.AllowUserToResizeColumns = false;
+            this.dgvBill.AllowUserToResizeRows = false;
+            this.dgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colMaHD,
+            this.colMaKH,
+            this.colMaNV,
+            this.colMaThue,
+            this.colNgayLapHoaDon,
+            this.colTongHD,
+            this.colTienNhan,
+            this.colTienThoi,
+            this.colTrangThai});
+            this.dgvBill.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvBill.Location = new System.Drawing.Point(0, 0);
+            this.dgvBill.MultiSelect = false;
+            this.dgvBill.Name = "dgvBill";
+            this.dgvBill.ReadOnly = true;
+            this.dgvBill.RowHeadersVisible = false;
+            this.dgvBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBill.Size = new System.Drawing.Size(973, 746);
+            this.dgvBill.TabIndex = 0;
+            // 
             // cboSortSumBill
             // 
             this.cboSortSumBill.DelimiterChar = "";
             this.cboSortSumBill.DisplayMember = "";
             this.cboSortSumBill.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboSortSumBill.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortSumBill.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSumBill.Location = new System.Drawing.Point(225, 121);
+            this.cboSortSumBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortSumBill.Location = new System.Drawing.Point(186, 119);
             this.cboSortSumBill.Name = "cboSortSumBill";
-            this.cboSortSumBill.Size = new System.Drawing.Size(156, 33);
+            this.cboSortSumBill.Size = new System.Drawing.Size(195, 33);
             this.cboSortSumBill.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortSumBill.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSumBill.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortSumBill.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortSumBill.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortSumBill.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortSumBill.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortSumBill.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortSumBill.TabIndex = 24;
+            this.cboSortSumBill.SelectedIndexChanged += new System.EventHandler(this.cboSortSumBill_SelectedIndexChanged);
             // 
             // cboSortBillID
             // 
@@ -294,24 +328,25 @@
             this.cboSortBillID.DisplayMember = "";
             this.cboSortBillID.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboSortBillID.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortBillID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortBillID.Location = new System.Drawing.Point(225, 72);
+            this.cboSortBillID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortBillID.Location = new System.Drawing.Point(186, 72);
             this.cboSortBillID.Name = "cboSortBillID";
-            this.cboSortBillID.Size = new System.Drawing.Size(156, 33);
+            this.cboSortBillID.Size = new System.Drawing.Size(195, 33);
             this.cboSortBillID.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortBillID.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortBillID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortBillID.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortBillID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortBillID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortBillID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortBillID.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortBillID.TabIndex = 23;
+            this.cboSortBillID.SelectedIndexChanged += new System.EventHandler(this.cboSortBillID_SelectedIndexChanged);
             // 
             // lblSortSumBill
             // 
             this.lblSortSumBill.AutoSize = true;
-            this.lblSortSumBill.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortSumBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortSumBill.Location = new System.Drawing.Point(4, 128);
             this.lblSortSumBill.Name = "lblSortSumBill";
-            this.lblSortSumBill.Size = new System.Drawing.Size(197, 26);
+            this.lblSortSumBill.Size = new System.Drawing.Size(181, 24);
             this.lblSortSumBill.TabIndex = 16;
             this.lblSortSumBill.Text = "Sort theo tổng tiền";
             this.lblSortSumBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -319,10 +354,10 @@
             // lblSortBillID
             // 
             this.lblSortBillID.AutoSize = true;
-            this.lblSortBillID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortBillID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortBillID.Location = new System.Drawing.Point(4, 72);
             this.lblSortBillID.Name = "lblSortBillID";
-            this.lblSortBillID.Size = new System.Drawing.Size(167, 26);
+            this.lblSortBillID.Size = new System.Drawing.Size(153, 24);
             this.lblSortBillID.TabIndex = 14;
             this.lblSortBillID.Text = "Sort theo Bill ID";
             this.lblSortBillID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -330,10 +365,10 @@
             // lblBillDate
             // 
             this.lblBillDate.AutoSize = true;
-            this.lblBillDate.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBillDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBillDate.Location = new System.Drawing.Point(4, 185);
             this.lblBillDate.Name = "lblBillDate";
-            this.lblBillDate.Size = new System.Drawing.Size(184, 26);
+            this.lblBillDate.Size = new System.Drawing.Size(176, 24);
             this.lblBillDate.TabIndex = 10;
             this.lblBillDate.Text = "Ngày lập hóa đơn";
             this.lblBillDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -341,10 +376,10 @@
             // lblStateBooking
             // 
             this.lblStateBooking.AutoSize = true;
-            this.lblStateBooking.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStateBooking.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStateBooking.Location = new System.Drawing.Point(7, 240);
             this.lblStateBooking.Name = "lblStateBooking";
-            this.lblStateBooking.Size = new System.Drawing.Size(186, 26);
+            this.lblStateBooking.Size = new System.Drawing.Size(174, 24);
             this.lblStateBooking.TabIndex = 9;
             this.lblStateBooking.Text = "Trạng thái dữ liệu";
             this.lblStateBooking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -378,103 +413,102 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // dgvBill
-            // 
-            this.dgvBill.AllowUserToAddRows = false;
-            this.dgvBill.AllowUserToDeleteRows = false;
-            this.dgvBill.AllowUserToResizeColumns = false;
-            this.dgvBill.AllowUserToResizeRows = false;
-            this.dgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaHD,
-            this.colMaKH,
-            this.colMaNV,
-            this.colMaThue,
-            this.colNgayLapHoaDon,
-            this.colTongHD,
-            this.colTienNhan,
-            this.colTienThoi,
-            this.colTrangThai});
-            this.dgvBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvBill.Location = new System.Drawing.Point(0, 0);
-            this.dgvBill.MultiSelect = false;
-            this.dgvBill.Name = "dgvBill";
-            this.dgvBill.ReadOnly = true;
-            this.dgvBill.RowHeadersVisible = false;
-            this.dgvBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBill.Size = new System.Drawing.Size(973, 746);
-            this.dgvBill.TabIndex = 0;
-            // 
             // colMaHD
             // 
+            this.colMaHD.DataPropertyName = "MaHoaDon";
             this.colMaHD.HeaderText = "Mã hóa đơn";
             this.colMaHD.Name = "colMaHD";
             this.colMaHD.ReadOnly = true;
-            this.colMaHD.Width = 129;
+            this.colMaHD.Width = 118;
             // 
             // colMaKH
             // 
+            this.colMaKH.DataPropertyName = "MaKH";
             this.colMaKH.HeaderText = "Mã khách hàng";
             this.colMaKH.Name = "colMaKH";
             this.colMaKH.ReadOnly = true;
-            this.colMaKH.Width = 145;
+            this.colMaKH.Width = 143;
             // 
             // colMaNV
             // 
+            this.colMaNV.DataPropertyName = "MaNV";
             this.colMaNV.HeaderText = "Mã nhân viên";
             this.colMaNV.Name = "colMaNV";
             this.colMaNV.ReadOnly = true;
-            this.colMaNV.Width = 131;
+            this.colMaNV.Width = 128;
             // 
             // colMaThue
             // 
+            this.colMaThue.DataPropertyName = "MaThue";
             this.colMaThue.HeaderText = "Mã thuế";
             this.colMaThue.Name = "colMaThue";
             this.colMaThue.ReadOnly = true;
-            this.colMaThue.Width = 93;
+            this.colMaThue.Width = 92;
             // 
             // colNgayLapHoaDon
             // 
+            this.colNgayLapHoaDon.DataPropertyName = "NgayLapHoaDon";
             this.colNgayLapHoaDon.HeaderText = "Ngày lập hóa đơn";
             this.colNgayLapHoaDon.Name = "colNgayLapHoaDon";
             this.colNgayLapHoaDon.ReadOnly = true;
-            this.colNgayLapHoaDon.Width = 131;
+            this.colNgayLapHoaDon.Width = 119;
             // 
             // colTongHD
             // 
+            this.colTongHD.DataPropertyName = "TongHoaDon";
             this.colTongHD.HeaderText = "Tổng hóa đơn";
             this.colTongHD.Name = "colTongHD";
             this.colTongHD.ReadOnly = true;
-            this.colTongHD.Width = 104;
+            this.colTongHD.Width = 97;
             // 
             // colTienNhan
             // 
+            this.colTienNhan.DataPropertyName = "TienNhan";
             this.colTienNhan.HeaderText = "Tiền nhận";
             this.colTienNhan.Name = "colTienNhan";
             this.colTienNhan.ReadOnly = true;
-            this.colTienNhan.Width = 106;
+            this.colTienNhan.Width = 96;
             // 
             // colTienThoi
             // 
+            this.colTienThoi.DataPropertyName = "TienThoi";
             this.colTienThoi.HeaderText = "Tiền thối";
             this.colTienThoi.Name = "colTienThoi";
             this.colTienThoi.ReadOnly = true;
-            this.colTienThoi.Width = 96;
+            this.colTienThoi.Width = 87;
             // 
             // colTrangThai
             // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
             this.colTrangThai.HeaderText = "Trạng thái";
             this.colTrangThai.Name = "colTrangThai";
             this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Width = 105;
+            this.colTrangThai.Width = 97;
+            // 
+            // btnNgayTao
+            // 
+            this.btnNgayTao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNgayTao.BackColor = System.Drawing.Color.White;
+            this.btnNgayTao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNgayTao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNgayTao.ForeColor = System.Drawing.Color.White;
+            this.btnNgayTao.Location = new System.Drawing.Point(338, 175);
+            this.btnNgayTao.Name = "btnNgayTao";
+            this.btnNgayTao.Size = new System.Drawing.Size(43, 34);
+            this.btnNgayTao.Style.BackColor = System.Drawing.Color.White;
+            this.btnNgayTao.Style.ForeColor = System.Drawing.Color.White;
+            this.btnNgayTao.Style.Image = global::GUI.Properties.Resources.SearchIcon;
+            this.btnNgayTao.TabIndex = 34;
+            this.btnNgayTao.UseVisualStyleBackColor = false;
+            this.btnNgayTao.Click += new System.EventHandler(this.btnNgayTao_Click);
             // 
             // ucBill
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.spcQuery);
             this.Controls.Add(this.panUcHeader);
-            this.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ucBill";
             this.Size = new System.Drawing.Size(1370, 840);
@@ -486,6 +520,7 @@
             this.spcQuery.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).EndInit();
             this.spcQuery.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortSumBill)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortBillID)).EndInit();
             this.panUcHeader.ResumeLayout(false);
@@ -493,7 +528,6 @@
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -529,5 +563,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTienNhan;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTienThoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
+        private Syncfusion.WinForms.Controls.SfButton btnNgayTao;
     }
 }

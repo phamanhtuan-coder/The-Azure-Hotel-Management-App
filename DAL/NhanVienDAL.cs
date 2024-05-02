@@ -287,6 +287,36 @@ namespace DAL
             {
                 return "";
             }
-        }      
+        }
+
+        public List<NhanVienDTO> TruyVanTenVaMaNhanVien()
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spTruyVanNhanVienLHD", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                SqlDataReader reader = com.ExecuteReader();
+                list = new List<NhanVienDTO>();
+                while (reader.Read())
+                {
+                    NhanVienDTO nhanVien = new NhanVienDTO();
+
+                    nhanVien.MaNV = (int)reader["MaNV"];
+                    nhanVien.HoTenNV = reader["HoTenNV"].ToString();
+
+                    list.Add(nhanVien);
+                }
+
+                conn.Close();
+                return list;
+            }
+            catch (Exception)
+            {
+                return new List<NhanVienDTO>();
+            }
+        }
     }
 }

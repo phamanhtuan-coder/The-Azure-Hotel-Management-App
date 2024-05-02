@@ -85,5 +85,10 @@ namespace BLL
         {
             return nhanVienDAL.TruyVanUsernameDAL();
         }
+
+        public List<NhanVienDTO> TruyVanTenVaMaNhanVien()
+        {
+            return nhanVienDAL.TruyVanTenVaMaNhanVien();
+        }
     }
 }
