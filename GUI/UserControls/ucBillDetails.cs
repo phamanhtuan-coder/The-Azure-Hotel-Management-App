@@ -23,7 +23,14 @@ namespace GUI.UserControls
 
         private void ucBillDetails_Load(object sender, EventArgs e)
         {
-            
+            LoadDuLieuCombobox();
+        }
+
+        private void LoadDuLieuCombobox()
+        {
+            DuLieuChoComboBox.duLieuSort(cboSortBillID);
+            DuLieuChoComboBox.duLieuSort(cboSortSumBill);
+            DuLieuChoComboBox.duLieuFilter(cboStateBooking);
         }
 
         private void btnAddBillDetails_Click(object sender, EventArgs e)
