@@ -30,7 +30,6 @@ namespace GUI.customForm
         private void frmTaiKhoan_Load(object sender, EventArgs e)
         {
             LoadcboMaPhanQuyen();
-            // gán giá trị mặc định bằng các biến trên, néu là edit có giá trị truyền vào thì kiểm tra và chọn giá trị
             if (!isAdd)
             {
                 LoadDuLieu();              
@@ -43,10 +42,8 @@ namespace GUI.customForm
 
             foreach (var item in cboPhanQuyen.Items)
             {
-                // Kiểm tra nếu item là một RoleDTO và MaPhanQuyen của nó trùng với MaPQ trong taiKhoanDTO
                 if (item is RoleDTO role && role.MaPhanQuyen == taiKhoanDTO.MaPQ)
                 {
-                    // Chọn item đó trong ComboBox và thoát khỏi vòng lặp
                     cboPhanQuyen.SelectedItem = item;
                     break;
                 }

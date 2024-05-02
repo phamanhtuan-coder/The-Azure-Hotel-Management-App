@@ -16,8 +16,13 @@ namespace GUI.customForm
     {
 
         public bool isAdd { get; set; }
+
+        HoaDonBLL hoaDonBLL = new HoaDonBLL();
+        public HoaDonDTO hoaDonDTO = new HoaDonDTO();
+
         NhanVienBLL nhanVienBLL = new NhanVienBLL();
         List<NhanVienDTO> nhanVienDTOs = new List<NhanVienDTO>();
+
         ThueBLL thueBLL = new ThueBLL();
         List<ThueDTO> thueDTOs = new List<ThueDTO>();
 
@@ -29,7 +34,29 @@ namespace GUI.customForm
         private void frmHoaDon_Load(object sender, EventArgs e)
         {
             // gán giá trị mặc định bằng các biến trên, néu là edit có giá trị truyền vào thì kiểm tra và chọn giá trị
-            LoadDuLieuCombobox();       
+            LoadDuLieuCombobox();
+            if (!isAdd)
+            {
+                txtMaKH.Text = hoaDonDTO.MaKH.ToString();
+                foreach (var item in cboMaNV.DataSource as List<NhanVienDTO>)
+                {
+                    if(item.MaNV == hoaDonDTO.MaNV)
+                    {
+                        cboMaNV.SelectedItem = item;
+                    }
+                }
+                foreach (var item in cboMaThue.DataSource as List<ThueDTO>)
+                {
+                    if (item.MaThue == hoaDonDTO.MaNV)
+                    {
+                        cboMaThue.SelectedItem = item;
+                    }
+                }
+                dtpNgayDat.Value = hoaDonDTO.NgayLapHoaDon;
+                nudTienNhan.Value = hoaDonDTO.TienNhan;
+                nudTienThua.Value = hoaDonDTO.TienThoi;
+                nudTongTien.Value = hoaDonDTO.TongHoaDon;
+            }
         }
 
         private void LoadDuLieuCombobox()
@@ -77,19 +104,56 @@ namespace GUI.customForm
             if (isAdd)
             {
                 // Nếu đúng là form Thêm thì chạy lệnh insert
-
-                thongBao = new customMessageBox("Đã thêm thành công dữ liệu hóa đơn!");
-                thongBao.ShowDialog();
-
+                if (AddHoaDon())
+                {
+                    thongBao = new customMessageBox("Đã thêm thành công dữ liệu hóa đơn!");
+                    thongBao.ShowDialog();
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Đã thêm thất bại dữ liệu hóa đơn!");
+                    thongBao.ShowDialog();
+                }
             }
             else
             {
                 // nếu không thì chạy lệnh update
-                thongBao = new customMessageBox("Sửa thành công thông tin hóa đơn!");
-                thongBao.ShowDialog();
+                if (EditHoaDon())
+                {
+                    thongBao = new customMessageBox("Sửa thành công thông tin hóa đơn!");
+                    thongBao.ShowDialog();
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Sửa thất bại thông tin hóa đơn!");
+                    thongBao.ShowDialog();
+                }
             }
             this.Close();
             
+        }
+
+        private bool EditHoaDon()
+        {
+            CapNhatGiaTri();
+            return hoaDonBLL.EditHoaDon(hoaDonDTO);
+        }
+
+        private bool AddHoaDon()
+        {
+            CapNhatGiaTri();          
+            return hoaDonBLL.AddHoaDon(hoaDonDTO);
+        }
+
+        private void CapNhatGiaTri()
+        {
+            hoaDonDTO.NgayLapHoaDon = DateTime.Parse(dtpNgayDat.Value.ToString("MM/dd/yyyy"));
+            hoaDonDTO.MaKH = int.Parse(txtMaKH.Text);
+            hoaDonDTO.MaNV = (int)cboMaNV.SelectedValue;
+            hoaDonDTO.MaThue = (int)cboMaThue.SelectedValue;
+            hoaDonDTO.TongHoaDon = (decimal)nudTongTien.Value;
+            hoaDonDTO.TienNhan = (decimal)nudTienNhan.Value;
+            hoaDonDTO.TienThoi = (decimal)nudTienThua.Value;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -97,6 +161,28 @@ namespace GUI.customForm
             this.Close();
         }
 
-       
+        private void nudTongTien_ValueChanged(object sender, EventArgs e)
+        {
+            if (nudTienNhan.Value > nudTongTien.Value)
+            {
+                nudTienThua.Value = nudTienNhan.Value - nudTongTien.Value;
+            }
+            else
+            {
+                nudTienThua.Value = 0;
+            }
+        }
+
+        private void nudTienNhan_ValueChanged(object sender, EventArgs e)
+        {
+            if (nudTienNhan.Value > nudTongTien.Value)
+            {
+                nudTienThua.Value = nudTienNhan.Value - nudTongTien.Value;
+            }
+            else
+            {
+                nudTienThua.Value = 0;
+            }
+        }
     }
 }

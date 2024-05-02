@@ -12,6 +12,33 @@ namespace BLL
     {
         HoaDonDAL hoaDonDAL = new HoaDonDAL();
 
+        public bool AddHoaDon(HoaDonDTO hoaDonDTO)
+        {
+            if(hoaDonDTO.MaKH>0 && hoaDonDTO.MaNV>0 && hoaDonDTO.MaThue > 0)
+            {
+                return hoaDonDAL.AddHoaDon(hoaDonDTO);
+            }
+            return false;
+        }
+
+        public bool EditHoaDon(HoaDonDTO hoaDonDTO)
+        {
+            if (hoaDonDTO.MaKH > 0 && hoaDonDTO.MaNV > 0 && hoaDonDTO.MaThue > 0 &&  hoaDonDTO.MaHoaDon > 0)
+            {
+                return hoaDonDAL.EditHoaDon(hoaDonDTO);
+            }
+            return false;
+        }
+
+        public bool KhoiPhucHoaDon(int maHoaDon)
+        {
+            if (maHoaDon > 0)
+            {
+                return hoaDonDAL.XoaHoaDon(maHoaDon, 1);
+            }
+            return false;
+        }
+
         public List<HoaDonDTO> TraCuuHoaDon(List<HoaDonDTO> hoaDonDTOs, string searchKeyword)
         {
             List<HoaDonDTO> searchResults = hoaDonDTOs.Where(item =>
@@ -77,6 +104,15 @@ namespace BLL
         public List<HoaDonDTO> TruyVanDanhSachHoaDon()
         {
             return hoaDonDAL.TruyVanDanhSachHoaDon();
+        }
+
+        public bool XoaHoaDon(int maHoaDon)
+        {
+            if (maHoaDon > 0)
+            {
+                return hoaDonDAL.XoaHoaDon(maHoaDon, 0);
+            }
+            return false;
         }
     }
 }

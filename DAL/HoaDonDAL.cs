@@ -11,6 +11,70 @@ namespace DAL
     public class HoaDonDAL
     {
         List<HoaDonDTO> hoaDonDTOs = new List<HoaDonDTO>();
+
+        public bool AddHoaDon(HoaDonDTO hoaDonDTO)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("ThemHoaDon", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaKH", hoaDonDTO.MaKH);
+                com.Parameters.AddWithValue("@MaNV", hoaDonDTO.MaNV);
+                com.Parameters.AddWithValue("@MaThue", hoaDonDTO.MaThue);
+                com.Parameters.AddWithValue("@NgayLapHoaDon", hoaDonDTO.NgayLapHoaDon);
+                com.Parameters.AddWithValue("@TongHoaDon", hoaDonDTO.TongHoaDon);
+                com.Parameters.AddWithValue("@TienNhan", hoaDonDTO.TienNhan);
+                com.Parameters.AddWithValue("@TienThoi", hoaDonDTO.TienThoi);
+
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+                if (count > 0)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool EditHoaDon(HoaDonDTO hoaDonDTO)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("CapNhatHoaDon", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaHoaDon", hoaDonDTO.MaHoaDon);
+                com.Parameters.AddWithValue("@MaKH", hoaDonDTO.MaKH);
+                com.Parameters.AddWithValue("@MaNV", hoaDonDTO.MaNV);
+                com.Parameters.AddWithValue("@MaThue", hoaDonDTO.MaThue);
+                com.Parameters.AddWithValue("@NgayLapHoaDon", hoaDonDTO.NgayLapHoaDon);
+                com.Parameters.AddWithValue("@TongHoaDon", hoaDonDTO.TongHoaDon);
+                com.Parameters.AddWithValue("@TienNhan", hoaDonDTO.TienNhan);
+                com.Parameters.AddWithValue("@TienThoi", hoaDonDTO.TienThoi);
+
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+                if (count > 0)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public List<HoaDonDTO> TruyVanDanhSachHoaDon()
         {
             hoaDonDTOs= new List<HoaDonDTO>();
@@ -44,6 +108,32 @@ namespace DAL
             catch (Exception)
             {
                 return new List<HoaDonDTO>();
+            }
+        }
+
+        public bool XoaHoaDon(int maHoaDon, int tt)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("ThayDoiTrangThaiHoaDon", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaHoaDon", maHoaDon);
+                com.Parameters.AddWithValue("@TrangThai", tt);
+
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+                if (count > 0)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
     }

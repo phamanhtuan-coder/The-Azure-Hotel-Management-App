@@ -25,9 +25,9 @@ namespace GUI
         {
             List<string> filterOptions = new List<string>
         {
+            "Tất cả",
             "Đang hoạt động",
-            "Đã xóa",
-            "Tất cả"
+            "Đã xóa"     
         };
             comboBox.DataSource = filterOptions;
             comboBox.SelectedIndex = 0;

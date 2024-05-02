@@ -57,19 +57,34 @@ namespace GUI.UserControls
         {
             frm.isAdd = true;
             frm.ShowDialog();
+            TruyVanDanhSachHoaDon();
         }
 
         private void btnEditBill_Click(object sender, EventArgs e)
         {
             if (dgvBill.SelectedRows.Count > 0)
             {
-
                 frm.isAdd = false;
+                int index1 = dgvBill.Columns["colMaHD"].Index;
+                int index2 = dgvBill.Columns["colMaKH"].Index;
+                int index3 = dgvBill.Columns["colMaNV"].Index;
+                int index4 = dgvBill.Columns["colMaThue"].Index;
+                int index5 = dgvBill.Columns["colNgayLapHoaDon"].Index;
+                int index6 = dgvBill.Columns["colTongHD"].Index;
+                int index7 = dgvBill.Columns["colTienNhan"].Index;
+                int index8 = dgvBill.Columns["colTienThoi"].Index;
 
-
-
+                frm.hoaDonDTO.MaHoaDon  = (int) dgvBill.SelectedRows[0].Cells[index1].Value;
+                frm.hoaDonDTO.MaKH  = (int) dgvBill.SelectedRows[0].Cells[index2].Value;
+                frm.hoaDonDTO.MaNV  = (int) dgvBill.SelectedRows[0].Cells[index3].Value;
+                frm.hoaDonDTO.MaThue  = (int) dgvBill.SelectedRows[0].Cells[index4].Value;
+                frm.hoaDonDTO.NgayLapHoaDon  = (DateTime) dgvBill.SelectedRows[0].Cells[index5].Value;
+                frm.hoaDonDTO.TongHoaDon  = (decimal) dgvBill.SelectedRows[0].Cells[index6].Value;
+                frm.hoaDonDTO.TienNhan  = (decimal) dgvBill.SelectedRows[0].Cells[index7].Value;
+                frm.hoaDonDTO.TienThoi  = (decimal) dgvBill.SelectedRows[0].Cells[index8].Value;
 
                 frm.ShowDialog();
+                TruyVanDanhSachHoaDon();
             }
             else
             {
@@ -82,11 +97,31 @@ namespace GUI.UserControls
         {
             if (dgvBill.SelectedRows.Count > 0)
             {
-                thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
+                customMessageBox thongBao;
+                int TrangThai = dgvBill.Columns["colTrangThai"].Index;
+                if ((bool)dgvBill.SelectedRows[0].Cells[TrangThai].Value)
                 {
-                    // Xóa 
+                    thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
+                    DialogResult dr = thongBao.ShowDialog();
+                    if (dr != DialogResult.Cancel)
+                    {
+                        if (XoaHoaDon())
+                        {
+                            TruyVanDanhSachHoaDon();
+                            thongBao = new customMessageBox("Xóa thành công!");
+                            thongBao.ShowDialog();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox("Xóa thất bại!");
+                            thongBao.ShowDialog();
+                        }
+                    }
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Bạn không thể xóa hóa đơn đã xóa!");
+                    thongBao.ShowDialog();
                 }
             }
             else
@@ -96,15 +131,42 @@ namespace GUI.UserControls
             }
         }
 
+        private bool XoaHoaDon()
+        {
+            int indexMaTaiKhoan = dgvBill.Columns["colMaHD"].Index;
+            int MaHoaDon = (int)dgvBill.SelectedRows[0].Cells[indexMaTaiKhoan].Value;
+            return hoaDonBLL.XoaHoaDon(MaHoaDon);
+        }
+
         private void btnRecoverBill_Click(object sender, EventArgs e)
         {
             if (dgvBill.SelectedRows.Count > 0)
             {
-                thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
+                customMessageBox thongBao;
+                int TrangThai = dgvBill.Columns["colTrangThai"].Index;
+                if (!(bool)dgvBill.SelectedRows[0].Cells[TrangThai].Value)
                 {
-                    // Khôi phục
+                    thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
+                    DialogResult dr = thongBao.ShowDialog();
+                    if (dr != DialogResult.Cancel)
+                    {
+                        if (KhoiPhucHoaDon())
+                        {
+                            TruyVanDanhSachHoaDon();
+                            thongBao = new customMessageBox("Khôi phục thành công!");
+                            thongBao.ShowDialog();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox("Khôi phục thất bại!");
+                            thongBao.ShowDialog();
+                        }
+                    }
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Bạn không thể khôi phục hóa đơn khi chưa xóa!");
+                    thongBao.ShowDialog();
                 }
             }
             else
@@ -112,6 +174,13 @@ namespace GUI.UserControls
                 thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
                 thongBao.ShowDialog();
             }
+        }
+
+        private bool KhoiPhucHoaDon()
+        {
+            int indexMaTaiKhoan = dgvBill.Columns["colMaHD"].Index;
+            int MaHoaDon = (int)dgvBill.SelectedRows[0].Cells[indexMaTaiKhoan].Value;
+            return hoaDonBLL.KhoiPhucHoaDon(MaHoaDon);
         }
 
         private void cboSortBillID_SelectedIndexChanged(object sender, EventArgs e)

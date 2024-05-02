@@ -53,7 +53,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.Location = new System.Drawing.Point(308, 311);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
@@ -63,7 +63,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(31, 311);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
@@ -76,7 +76,7 @@
             this.lblMaKH.AutoSize = true;
             this.lblMaKH.Location = new System.Drawing.Point(13, 17);
             this.lblMaKH.Name = "lblMaKH";
-            this.lblMaKH.Size = new System.Drawing.Size(140, 22);
+            this.lblMaKH.Size = new System.Drawing.Size(131, 20);
             this.lblMaKH.TabIndex = 8;
             this.lblMaKH.Text = "Mã khách hàng";
             // 
@@ -85,7 +85,7 @@
             this.lblNgayLapHD.AutoSize = true;
             this.lblNgayLapHD.Location = new System.Drawing.Point(13, 101);
             this.lblNgayLapHD.Name = "lblNgayLapHD";
-            this.lblNgayLapHD.Size = new System.Drawing.Size(158, 22);
+            this.lblNgayLapHD.Size = new System.Drawing.Size(148, 20);
             this.lblNgayLapHD.TabIndex = 10;
             this.lblNgayLapHD.Text = "Ngày lập hóa đơn";
             // 
@@ -94,7 +94,7 @@
             this.lblTongTien.AutoSize = true;
             this.lblTongTien.Location = new System.Drawing.Point(13, 185);
             this.lblTongTien.Name = "lblTongTien";
-            this.lblTongTien.Size = new System.Drawing.Size(89, 22);
+            this.lblTongTien.Size = new System.Drawing.Size(84, 20);
             this.lblTongTien.TabIndex = 13;
             this.lblTongTien.Text = "Tổng tiền";
             // 
@@ -114,7 +114,7 @@
             this.dtpNgayDat.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayDat.Location = new System.Drawing.Point(278, 97);
             this.dtpNgayDat.Name = "dtpNgayDat";
-            this.dtpNgayDat.Size = new System.Drawing.Size(180, 27);
+            this.dtpNgayDat.Size = new System.Drawing.Size(180, 26);
             this.dtpNgayDat.TabIndex = 17;
             // 
             // label1
@@ -122,7 +122,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 143);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 22);
+            this.label1.Size = new System.Drawing.Size(74, 20);
             this.label1.TabIndex = 20;
             this.label1.Text = "Mã thuế";
             // 
@@ -141,7 +141,7 @@
             this.lblMaNV.AutoSize = true;
             this.lblMaNV.Location = new System.Drawing.Point(12, 59);
             this.lblMaNV.Name = "lblMaNV";
-            this.lblMaNV.Size = new System.Drawing.Size(124, 22);
+            this.lblMaNV.Size = new System.Drawing.Size(115, 20);
             this.lblMaNV.TabIndex = 22;
             this.lblMaNV.Text = "Mã nhân viên";
             // 
@@ -149,7 +149,7 @@
             // 
             this.txtMaKH.Location = new System.Drawing.Point(278, 12);
             this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(180, 27);
+            this.txtMaKH.Size = new System.Drawing.Size(180, 26);
             this.txtMaKH.TabIndex = 23;
             // 
             // lblTienNhan
@@ -157,7 +157,7 @@
             this.lblTienNhan.AutoSize = true;
             this.lblTienNhan.Location = new System.Drawing.Point(13, 227);
             this.lblTienNhan.Name = "lblTienNhan";
-            this.lblTienNhan.Size = new System.Drawing.Size(94, 22);
+            this.lblTienNhan.Size = new System.Drawing.Size(88, 20);
             this.lblTienNhan.TabIndex = 24;
             this.lblTienNhan.Text = "Tiền nhận";
             // 
@@ -166,7 +166,7 @@
             this.lblTienThua.AutoSize = true;
             this.lblTienThua.Location = new System.Drawing.Point(13, 269);
             this.lblTienThua.Name = "lblTienThua";
-            this.lblTienThua.Size = new System.Drawing.Size(90, 22);
+            this.lblTienThua.Size = new System.Drawing.Size(84, 20);
             this.lblTienThua.TabIndex = 25;
             this.lblTienThua.Text = "Tiền thừa";
             // 
@@ -184,10 +184,11 @@
             0,
             0});
             this.nudTongTien.Name = "nudTongTien";
-            this.nudTongTien.Size = new System.Drawing.Size(180, 27);
+            this.nudTongTien.Size = new System.Drawing.Size(180, 26);
             this.nudTongTien.TabIndex = 26;
             this.nudTongTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudTongTien.ThousandsSeparator = true;
+            this.nudTongTien.ValueChanged += new System.EventHandler(this.nudTongTien_ValueChanged);
             // 
             // nudTienNhan
             // 
@@ -203,10 +204,11 @@
             0,
             0});
             this.nudTienNhan.Name = "nudTienNhan";
-            this.nudTienNhan.Size = new System.Drawing.Size(180, 27);
+            this.nudTienNhan.Size = new System.Drawing.Size(180, 26);
             this.nudTienNhan.TabIndex = 27;
             this.nudTienNhan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudTienNhan.ThousandsSeparator = true;
+            this.nudTienNhan.ValueChanged += new System.EventHandler(this.nudTienNhan_ValueChanged);
             // 
             // nudTienThua
             // 
@@ -222,7 +224,7 @@
             0,
             0});
             this.nudTienThua.Name = "nudTienThua";
-            this.nudTienThua.Size = new System.Drawing.Size(180, 27);
+            this.nudTienThua.Size = new System.Drawing.Size(180, 26);
             this.nudTienThua.TabIndex = 28;
             this.nudTienThua.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudTienThua.ThousandsSeparator = true;
@@ -248,7 +250,7 @@
             this.Controls.Add(this.lblMaKH);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSubmit);
-            this.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmHoaDon";
