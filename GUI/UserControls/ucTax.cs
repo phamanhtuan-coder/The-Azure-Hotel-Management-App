@@ -1,4 +1,6 @@
-﻿using GUI.customForm;
+﻿using BLL;
+using DTO;
+using GUI.customForm;
 using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
@@ -14,6 +16,9 @@ namespace GUI.UserControls
 {
     public partial class ucTax : UserControl
     {
+        ThueBLL thueBLL = new ThueBLL();
+        List<ThueDTO> thueDTOs = new List<ThueDTO>();
+
         public customMessageBox thongBao;
         frmThue frm = new frmThue();
         public ucTax()
@@ -23,7 +28,13 @@ namespace GUI.UserControls
 
         private void ucTax_Load(object sender, EventArgs e)
         {
-          
+            LoadDSThue();
+        }
+
+        private void LoadDSThue()
+        {
+            thueDTOs = thueBLL.TruyVanDSThue();
+            dgvTax.DataSource =thueDTOs;
         }
 
         private void btnAddTax_Click(object sender, EventArgs e)

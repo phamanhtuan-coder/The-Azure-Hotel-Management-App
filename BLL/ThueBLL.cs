@@ -11,6 +11,12 @@ namespace BLL
     public class ThueBLL
     {
         ThueDAL thueDAL = new ThueDAL();
+
+        public List<ThueDTO> TruyVanDSThue()
+        {
+            return thueDAL.TruyVanDSThue();
+        }
+
         public List<ThueDTO> TruyVanTenVaMaThue()
         {
             return thueDAL.TruyVanTenVaMaThue();

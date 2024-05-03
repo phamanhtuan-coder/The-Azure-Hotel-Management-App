@@ -10,7 +10,7 @@ namespace DTO
     {
       public int MaThue {get; set;}
       public string TenThue {get; set;}
-      public float TyLeThue {get; set;}
+      public double TyLeThue {get; set;}
       public string MoTa {get; set;}
       public bool TrangThai {get; set;}
     }
