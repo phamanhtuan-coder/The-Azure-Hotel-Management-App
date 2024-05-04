@@ -52,6 +52,7 @@ namespace GUI.UserControls
         {
             frm.isAdd = true;
             frm.ShowDialog();
+            LoadDSThue();
         }
 
         private void btnEditTax_Click(object sender, EventArgs e)
@@ -60,11 +61,9 @@ namespace GUI.UserControls
             {
 
                 frm.isAdd = false;
-
-
-
-
+                frm.thueDTO = dgvTax.SelectedRows[0].DataBoundItem as ThueDTO;
                 frm.ShowDialog();
+                LoadDSThue() ;
             }
             else
             {

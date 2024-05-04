@@ -41,7 +41,7 @@ namespace GUI.customForm
                 foreach (var item in cboMaNV.DataSource as List<NhanVienDTO>)
                 {
                     if(item.MaNV == hoaDonDTO.MaNV)
-                    {
+                    {                     
                         cboMaNV.SelectedItem = item;
                     }
                 }
@@ -56,6 +56,16 @@ namespace GUI.customForm
                 nudTienNhan.Value = hoaDonDTO.TienNhan;
                 nudTienThua.Value = hoaDonDTO.TienThoi;
                 nudTongTien.Value = hoaDonDTO.TongHoaDon;
+            }
+            else
+            {
+                txtMaKH.Text = "";
+                cboMaNV.SelectedIndex = 0;
+                cboMaThue.SelectedIndex = 0;
+                dtpNgayDat.Value = DateTime.Now;
+                nudTienNhan.Value = 0;
+                nudTienThua.Value = 0;
+                nudTongTien.Value = 0;
             }
         }
 

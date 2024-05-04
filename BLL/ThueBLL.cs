@@ -12,6 +12,30 @@ namespace BLL
     {
         ThueDAL thueDAL = new ThueDAL();
 
+        public bool AddThue(ThueDTO thueDTO)
+        {
+            if(!string.IsNullOrWhiteSpace(thueDTO.TenThue.Trim()) && thueDTO.TyLeThue > 0)
+            {
+                return thueDAL.AddThue(thueDTO);
+            }
+            else
+            {
+                return false;   
+            }
+        }
+
+        public bool EditThue(ThueDTO thueDTO)
+        {
+            if (thueDTO.MaThue>0 && !string.IsNullOrWhiteSpace(thueDTO.TenThue.Trim()) && thueDTO.TyLeThue > 0)
+            {
+                return thueDAL.EditThue(thueDTO);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public List<ThueDTO> TraCuThue(List<ThueDTO> thueDTOs, string tt)
         {
             if (!tt.Equals("Tất cả"))

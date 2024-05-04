@@ -274,5 +274,14 @@ namespace GUI
 
         }
 
+        private void panLogin_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void picLoginBG_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

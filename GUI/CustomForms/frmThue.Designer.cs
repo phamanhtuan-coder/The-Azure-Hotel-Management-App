@@ -41,7 +41,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.Location = new System.Drawing.Point(378, 271);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
@@ -51,7 +51,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(62, 271);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
@@ -64,7 +64,7 @@
             this.lblTenThue.AutoSize = true;
             this.lblTenThue.Location = new System.Drawing.Point(58, 29);
             this.lblTenThue.Name = "lblTenThue";
-            this.lblTenThue.Size = new System.Drawing.Size(84, 22);
+            this.lblTenThue.Size = new System.Drawing.Size(80, 20);
             this.lblTenThue.TabIndex = 6;
             this.lblTenThue.Text = "Tên thuế";
             // 
@@ -73,7 +73,7 @@
             this.lblMoTa.AutoSize = true;
             this.lblMoTa.Location = new System.Drawing.Point(58, 146);
             this.lblMoTa.Name = "lblMoTa";
-            this.lblMoTa.Size = new System.Drawing.Size(57, 22);
+            this.lblMoTa.Size = new System.Drawing.Size(54, 20);
             this.lblMoTa.TabIndex = 10;
             this.lblMoTa.Text = "Mô tả";
             // 
@@ -90,7 +90,7 @@
             this.lblMucThue.AutoSize = true;
             this.lblMucThue.Location = new System.Drawing.Point(58, 83);
             this.lblMucThue.Name = "lblMucThue";
-            this.lblMucThue.Size = new System.Drawing.Size(89, 22);
+            this.lblMucThue.Size = new System.Drawing.Size(83, 20);
             this.lblMucThue.TabIndex = 8;
             this.lblMucThue.Text = "Mức thuế";
             // 
@@ -98,25 +98,15 @@
             // 
             this.txtMucThue.Location = new System.Drawing.Point(276, 29);
             this.txtMucThue.Name = "txtMucThue";
-            this.txtMucThue.Size = new System.Drawing.Size(252, 27);
+            this.txtMucThue.Size = new System.Drawing.Size(252, 26);
             this.txtMucThue.TabIndex = 12;
             // 
             // nudMucThue
             // 
             this.nudMucThue.DecimalPlaces = 2;
-            this.nudMucThue.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
             this.nudMucThue.Location = new System.Drawing.Point(276, 84);
-            this.nudMucThue.Maximum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.nudMucThue.Name = "nudMucThue";
-            this.nudMucThue.Size = new System.Drawing.Size(252, 27);
+            this.nudMucThue.Size = new System.Drawing.Size(252, 26);
             this.nudMucThue.TabIndex = 13;
             this.nudMucThue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -133,7 +123,7 @@
             this.Controls.Add(this.lblTenThue);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSubmit);
-            this.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmThue";

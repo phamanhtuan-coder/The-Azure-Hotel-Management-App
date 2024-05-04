@@ -32,9 +32,9 @@ namespace GUI
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            Syncfusion.Windows.Forms.Tools.ActiveStateCollection activeStateCollection1 = new Syncfusion.Windows.Forms.Tools.ActiveStateCollection();
-            Syncfusion.Windows.Forms.Tools.InactiveStateCollection inactiveStateCollection1 = new Syncfusion.Windows.Forms.Tools.InactiveStateCollection();
-            Syncfusion.Windows.Forms.Tools.SliderCollection sliderCollection1 = new Syncfusion.Windows.Forms.Tools.SliderCollection();
+            Syncfusion.Windows.Forms.Tools.ActiveStateCollection activeStateCollection2 = new Syncfusion.Windows.Forms.Tools.ActiveStateCollection();
+            Syncfusion.Windows.Forms.Tools.InactiveStateCollection inactiveStateCollection2 = new Syncfusion.Windows.Forms.Tools.InactiveStateCollection();
+            Syncfusion.Windows.Forms.Tools.SliderCollection sliderCollection2 = new Syncfusion.Windows.Forms.Tools.SliderCollection();
             this.btnClose = new Syncfusion.WinForms.Controls.SfButton();
             this.picLoginBG = new System.Windows.Forms.PictureBox();
             this.tmrTransistion = new System.Windows.Forms.Timer(this.components);
@@ -97,6 +97,7 @@ namespace GUI
             this.picLoginBG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLoginBG.TabIndex = 5;
             this.picLoginBG.TabStop = false;
+            this.picLoginBG.Click += new System.EventHandler(this.picLoginBG_Click);
             // 
             // tmrTransistion
             // 
@@ -122,17 +123,18 @@ namespace GUI
             this.panLogin.Controls.Add(this.picUsername);
             this.panLogin.Controls.Add(this.lblPassword);
             this.panLogin.Controls.Add(this.lblUsername);
-            this.panLogin.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panLogin.Location = new System.Drawing.Point(60, 50);
             this.panLogin.Name = "panLogin";
             this.panLogin.Size = new System.Drawing.Size(360, 440);
             this.panLogin.TabIndex = 0;
+            this.panLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.panLogin_Paint);
             // 
             // btnSignUp
             // 
             this.btnSignUp.AccessibleName = "Button";
             this.btnSignUp.BackColor = System.Drawing.Color.Teal;
-            this.btnSignUp.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignUp.ForeColor = System.Drawing.Color.White;
             this.btnSignUp.Location = new System.Drawing.Point(8, 362);
             this.btnSignUp.Name = "btnSignUp";
@@ -147,24 +149,24 @@ namespace GUI
             // 
             // tbtnRemember
             // 
-            activeStateCollection1.Text = "Không ghi nhớ";
-            this.tbtnRemember.ActiveState = activeStateCollection1;
-            this.tbtnRemember.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            activeStateCollection2.Text = "Không ghi nhớ";
+            this.tbtnRemember.ActiveState = activeStateCollection2;
+            this.tbtnRemember.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbtnRemember.ForeColor = System.Drawing.Color.Black;
-            inactiveStateCollection1.Text = "Ghi nhớ mật khẩu";
-            this.tbtnRemember.InactiveState = inactiveStateCollection1;
+            inactiveStateCollection2.Text = "Ghi nhớ mật khẩu";
+            this.tbtnRemember.InactiveState = inactiveStateCollection2;
             this.tbtnRemember.Location = new System.Drawing.Point(160, 309);
             this.tbtnRemember.MinimumSize = new System.Drawing.Size(52, 20);
             this.tbtnRemember.Name = "tbtnRemember";
             this.tbtnRemember.Size = new System.Drawing.Size(170, 40);
-            this.tbtnRemember.Slider = sliderCollection1;
+            this.tbtnRemember.Slider = sliderCollection2;
             this.tbtnRemember.TabIndex = 9;
-            this.tbtnRemember.ThemeStyle.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbtnRemember.ThemeStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // btnAdmin
             // 
             this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmin.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmin.Location = new System.Drawing.Point(160, 312);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(170, 37);
@@ -183,11 +185,11 @@ namespace GUI
             // 
             this.linkForget.ActiveLinkColor = System.Drawing.Color.Teal;
             this.linkForget.AutoSize = true;
-            this.linkForget.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkForget.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkForget.LinkColor = System.Drawing.Color.RoyalBlue;
             this.linkForget.Location = new System.Drawing.Point(62, 279);
             this.linkForget.Name = "linkForget";
-            this.linkForget.Size = new System.Drawing.Size(152, 22);
+            this.linkForget.Size = new System.Drawing.Size(131, 20);
             this.linkForget.TabIndex = 6;
             this.linkForget.TabStop = true;
             this.linkForget.Text = "Quên mật khẩu";
@@ -197,7 +199,7 @@ namespace GUI
             // lblLOGO
             // 
             this.lblLOGO.BackColor = System.Drawing.Color.Transparent;
-            this.lblLOGO.Font = new System.Drawing.Font("Montserrat ExtraBold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblLOGO.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblLOGO.ForeColor = System.Drawing.Color.RoyalBlue;
             this.lblLOGO.Location = new System.Drawing.Point(32, 20);
             this.lblLOGO.Name = "lblLOGO";
@@ -210,7 +212,7 @@ namespace GUI
             // 
             this.btnSubmit.AccessibleName = "Button";
             this.btnSubmit.BackColor = System.Drawing.Color.Teal;
-            this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
             this.btnSubmit.Location = new System.Drawing.Point(184, 362);
             this.btnSubmit.Name = "btnSubmit";
@@ -237,16 +239,16 @@ namespace GUI
             // 
             this.txtUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUsername.BackColor = System.Drawing.Color.White;
-            this.txtUsername.BeforeTouchSize = new System.Drawing.Size(238, 24);
+            this.txtUsername.BeforeTouchSize = new System.Drawing.Size(238, 22);
             this.txtUsername.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.FocusBorderColor = System.Drawing.Color.Black;
-            this.txtUsername.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.ForeColor = System.Drawing.Color.Black;
             this.txtUsername.Location = new System.Drawing.Point(9, 3);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(10);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(241, 24);
+            this.txtUsername.Size = new System.Drawing.Size(241, 22);
             this.txtUsername.TabIndex = 3;
             this.txtUsername.ThemeStyle.CornerRadius = 10;
             this.txtUsername.WordWrap = false;
@@ -279,17 +281,17 @@ namespace GUI
             // 
             this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPassword.BackColor = System.Drawing.Color.White;
-            this.txtPassword.BeforeTouchSize = new System.Drawing.Size(238, 24);
+            this.txtPassword.BeforeTouchSize = new System.Drawing.Size(238, 22);
             this.txtPassword.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.FocusBorderColor = System.Drawing.Color.Black;
-            this.txtPassword.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
             this.txtPassword.Location = new System.Drawing.Point(11, 3);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(10);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(238, 24);
+            this.txtPassword.Size = new System.Drawing.Size(238, 22);
             this.txtPassword.TabIndex = 5;
             this.txtPassword.ThemeStyle.CornerRadius = 0;
             this.txtPassword.WordWrap = false;
@@ -322,7 +324,7 @@ namespace GUI
             this.lblPassword.BorderSides = ((System.Windows.Forms.Border3DSide)((((System.Windows.Forms.Border3DSide.Left | System.Windows.Forms.Border3DSide.Top) 
             | System.Windows.Forms.Border3DSide.Right) 
             | System.Windows.Forms.Border3DSide.Bottom)));
-            this.lblPassword.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.Teal;
             this.lblPassword.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblPassword.Location = new System.Drawing.Point(64, 198);
@@ -340,7 +342,7 @@ namespace GUI
             this.lblUsername.BorderSides = ((System.Windows.Forms.Border3DSide)((((System.Windows.Forms.Border3DSide.Left | System.Windows.Forms.Border3DSide.Top) 
             | System.Windows.Forms.Border3DSide.Right) 
             | System.Windows.Forms.Border3DSide.Bottom)));
-            this.lblUsername.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.Teal;
             this.lblUsername.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblUsername.Location = new System.Drawing.Point(64, 117);

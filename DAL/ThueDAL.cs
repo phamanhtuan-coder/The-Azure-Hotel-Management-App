@@ -12,6 +12,55 @@ namespace DAL
     {
         List<ThueDTO> list = new List<ThueDTO>();
 
+        public bool AddThue(ThueDTO thueDTO)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spThemThe", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@TenThue", thueDTO.TenThue);
+                com.Parameters.AddWithValue("@TyLeThue", thueDTO.TyLeThue);
+                com.Parameters.AddWithValue("@MoTa", thueDTO.MoTa);
+
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+
+                return count>0;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool EditThue(ThueDTO thueDTO)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spCapNhatThue", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaThue", thueDTO.MaThue);
+                com.Parameters.AddWithValue("@TenThue", thueDTO.TenThue);
+                com.Parameters.AddWithValue("@TyLeThue", thueDTO.TyLeThue);
+                com.Parameters.AddWithValue("@MoTa", thueDTO.MoTa);
+
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+
+                return count > 0;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public List<ThueDTO> TruyVanDSThue()
         {
             try
