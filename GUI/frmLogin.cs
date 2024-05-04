@@ -23,6 +23,7 @@ namespace GUI
         /*-------------------------------------------------------------------------------------------------------------------
                                 BẮT ĐẦU ĐOẠN KHAI BÁO CÁC BIẾN TOÀN CỤC
        --------------------------------------------------------------------------------------------------------------------*/
+        public NhanVienDTO login = new NhanVienDTO();
 
         private Timer timerLoop;
         private int gifDuration = 18000;
@@ -186,12 +187,12 @@ namespace GUI
             {
                 taiKhoanDTO.TenDangNhap = txtUsername.Text;
                 taiKhoanDTO.MatKhau = Utilities.HashMatKhau.HashPassword(txtPassword.Text);
-                if (DangNhap())
+                if (DangNhap(ref login))
                 {
-                    customMessageBox thongBao = new customMessageBox("Đăng nhập thành công!");
-                    thongBao.ShowDialog();
+                    
                     frmMain mainForm = new frmMain();
                     this.Hide();
+                    mainForm.user = login;
                     mainForm.Show();
                     this.Close();
                 }
@@ -238,7 +239,7 @@ namespace GUI
             }
         }
 
-        private bool DangNhap()
+        private bool DangNhap(ref NhanVienDTO login)
         {          
             return taiKhoanBLL.XacThuc(taiKhoanDTO);
         }

@@ -16,8 +16,11 @@ namespace GUI.UserControls
 {
     public partial class ucTax : UserControl
     {
+        public string tt { get; set; }
+
         ThueBLL thueBLL = new ThueBLL();
         List<ThueDTO> thueDTOs = new List<ThueDTO>();
+        List<ThueDTO> dsSearch = new List<ThueDTO>();
 
         public customMessageBox thongBao;
         frmThue frm = new frmThue();
@@ -28,7 +31,15 @@ namespace GUI.UserControls
 
         private void ucTax_Load(object sender, EventArgs e)
         {
+            LoadDuLieuCombobox();
             LoadDSThue();
+        }
+
+        private void LoadDuLieuCombobox()
+        {
+            DuLieuChoComboBox.duLieuSort(cboSortTaxID);
+            DuLieuChoComboBox.duLieuSort(cboSortTaxValue);
+            DuLieuChoComboBox.duLieuFilter(cboStateTax);
         }
 
         private void LoadDSThue()
@@ -95,6 +106,49 @@ namespace GUI.UserControls
             {
                 thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
                 thongBao.ShowDialog();
+            }
+        }
+
+        private void cboSortTaxID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sortOption = cboSortTaxID.SelectedItem.ToString();
+            switch (sortOption)
+            {
+                case "Giảm dần":
+                    thueDTOs = thueDTOs.OrderByDescending(item => item.MaThue).ToList();
+                    break;
+                default:
+                    thueDTOs = thueDTOs.OrderBy(item => item.MaThue).ToList();
+                    break;
+            }
+
+            dgvTax.DataSource = thueDTOs;
+        }
+
+        private void cboSortTaxValue_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sortOption = cboSortTaxID.SelectedItem.ToString();
+            switch (sortOption)
+            {
+                case "Giảm dần":
+                    thueDTOs = thueDTOs.OrderByDescending(item => item.TyLeThue).ToList();
+                    break;
+                default:
+                    thueDTOs = thueDTOs.OrderBy(item => item.TyLeThue).ToList();
+                    break;
+            }
+
+            dgvTax.DataSource = thueDTOs;
+        }
+
+        private void cboStateTax_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tt = cboStateTax.Text;
+
+            if (tt.Length > 0)
+            {
+                dsSearch = thueBLL.TraCuThue(thueDTOs, tt);
+                dgvTax.DataSource = dsSearch;
             }
         }
     }

@@ -40,6 +40,11 @@
             this.cboStateTax = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvTax = new System.Windows.Forms.DataGridView();
+            this.coLMaThue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenThue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTiLeThue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboSortTaxID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortTaxID = new System.Windows.Forms.Label();
             this.cboSortTaxValue = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -47,11 +52,6 @@
             this.lblStateTax = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.coLMaThue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenThue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTiLeThue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateTax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -224,6 +224,7 @@
             this.cboStateTax.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateTax.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateTax.TabIndex = 3;
+            this.cboStateTax.SelectedIndexChanged += new System.EventHandler(this.cboStateTax_SelectedIndexChanged);
             // 
             // spcQuery
             // 
@@ -275,6 +276,42 @@
             this.dgvTax.Size = new System.Drawing.Size(973, 746);
             this.dgvTax.TabIndex = 0;
             // 
+            // coLMaThue
+            // 
+            this.coLMaThue.DataPropertyName = "MaThue";
+            this.coLMaThue.HeaderText = "Mã thuế";
+            this.coLMaThue.Name = "coLMaThue";
+            this.coLMaThue.ReadOnly = true;
+            // 
+            // colTenThue
+            // 
+            this.colTenThue.DataPropertyName = "TenThue";
+            this.colTenThue.HeaderText = "Tên thuế";
+            this.colTenThue.Name = "colTenThue";
+            this.colTenThue.ReadOnly = true;
+            // 
+            // colTiLeThue
+            // 
+            this.colTiLeThue.DataPropertyName = "TyLeThue";
+            this.colTiLeThue.HeaderText = "Mức thuế";
+            this.colTiLeThue.Name = "colTiLeThue";
+            this.colTiLeThue.ReadOnly = true;
+            // 
+            // colMoTa
+            // 
+            this.colMoTa.DataPropertyName = "MoTa";
+            this.colMoTa.HeaderText = "Mô tả";
+            this.colMoTa.Name = "colMoTa";
+            this.colMoTa.ReadOnly = true;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Visible = false;
+            // 
             // cboSortTaxID
             // 
             this.cboSortTaxID.DelimiterChar = "";
@@ -291,6 +328,7 @@
             this.cboSortTaxID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortTaxID.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortTaxID.TabIndex = 29;
+            this.cboSortTaxID.SelectedIndexChanged += new System.EventHandler(this.cboSortTaxID_SelectedIndexChanged);
             // 
             // lblSortTaxID
             // 
@@ -319,6 +357,7 @@
             this.cboSortTaxValue.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortTaxValue.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortTaxValue.TabIndex = 23;
+            this.cboSortTaxValue.SelectedIndexChanged += new System.EventHandler(this.cboSortTaxValue_SelectedIndexChanged);
             // 
             // lblSortTaxValue
             // 
@@ -370,42 +409,6 @@
             this.spcHeader.Size = new System.Drawing.Size(1370, 94);
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
-            // 
-            // coLMaThue
-            // 
-            this.coLMaThue.DataPropertyName = "MaThue";
-            this.coLMaThue.HeaderText = "Mã thuế";
-            this.coLMaThue.Name = "coLMaThue";
-            this.coLMaThue.ReadOnly = true;
-            // 
-            // colTenThue
-            // 
-            this.colTenThue.DataPropertyName = "TenThue";
-            this.colTenThue.HeaderText = "Tên thuế";
-            this.colTenThue.Name = "colTenThue";
-            this.colTenThue.ReadOnly = true;
-            // 
-            // colTiLeThue
-            // 
-            this.colTiLeThue.DataPropertyName = "TyLeThue";
-            this.colTiLeThue.HeaderText = "Mức thuế";
-            this.colTiLeThue.Name = "colTiLeThue";
-            this.colTiLeThue.ReadOnly = true;
-            // 
-            // colMoTa
-            // 
-            this.colMoTa.DataPropertyName = "MoTa";
-            this.colMoTa.HeaderText = "Mô tả";
-            this.colMoTa.Name = "colMoTa";
-            this.colMoTa.ReadOnly = true;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "TrangThai";
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Visible = false;
             // 
             // ucTax
             // 

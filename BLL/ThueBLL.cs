@@ -12,6 +12,31 @@ namespace BLL
     {
         ThueDAL thueDAL = new ThueDAL();
 
+        public List<ThueDTO> TraCuThue(List<ThueDTO> thueDTOs, string tt)
+        {
+            if (!tt.Equals("Tất cả"))
+            {
+                bool TT;
+                if (tt.Equals("Đang hoạt động"))
+                {
+                    TT = true;
+                }
+                else
+                {
+                    TT = false;
+                }
+
+                List<ThueDTO> searchResults =
+                                thueDTOs.Where
+                                (item => item.TrangThai == TT).ToList();
+                return searchResults;
+            }
+            else
+            {
+                return TruyVanDSThue();
+            }
+        }
+
         public List<ThueDTO> TruyVanDSThue()
         {
             return thueDAL.TruyVanDSThue();

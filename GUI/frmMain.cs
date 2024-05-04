@@ -10,6 +10,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
 using GUI.customForm;
 using GUI.UserControls;
 using Syncfusion.WinForms.Controls;
@@ -21,6 +22,8 @@ namespace GUI
         /*-------------------------------------------------------------------------------------------------------------------
                                          BẮT ĐẦU KHAI BÁO CÁC BIẾN TOÀN CỤC
        --------------------------------------------------------------------------------------------------------------------*/
+
+        public NhanVienDTO user=new NhanVienDTO();
 
 
         //Biến xác định menu đang mở
