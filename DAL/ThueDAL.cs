@@ -60,7 +60,50 @@ namespace DAL
                 return false;
             }
         }
+        public bool XoaThue(int maThue)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
 
+                SqlCommand com = new SqlCommand("spTTCapNhatThue", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaThue", maThue);
+                com.Parameters.AddWithValue("@TrangThai", 0);
+
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+
+                return count > 0;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        public bool KhoiPhucThue(int maThue)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spTTCapNhatThue", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaThue", maThue);
+                com.Parameters.AddWithValue("@TrangThai", 1);
+
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+
+                return count > 0;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
         public List<ThueDTO> TruyVanDSThue()
         {
             try
@@ -123,6 +166,6 @@ namespace DAL
             {
                 return new List<ThueDTO>();
             }
-        }
+        }       
     }
 }

@@ -76,11 +76,31 @@ namespace GUI.UserControls
         {
             if (dgvTax.SelectedRows.Count > 0)
             {
-                thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
+                customMessageBox thongBao;
+                int TrangThai = dgvTax.Columns["colTrangThai"].Index;
+                if ((bool)dgvTax.SelectedRows[0].Cells[TrangThai].Value)
                 {
-                    // Xóa 
+                    thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
+                    DialogResult dr = thongBao.ShowDialog();
+                    if (dr != DialogResult.Cancel)
+                    {
+                        if (XoaThue())
+                        {
+                            LoadDSThue();
+                            thongBao = new customMessageBox("Xóa thành công!");
+                            thongBao.ShowDialog();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox("Xóa thất bại!");
+                            thongBao.ShowDialog();
+                        }
+                    }
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Bạn không thể xóa thuế đã xóa!");
+                    thongBao.ShowDialog();
                 }
             }
             else
@@ -89,16 +109,35 @@ namespace GUI.UserControls
                 thongBao.ShowDialog();
             }
         }
-
         private void btnRecoverTax_Click(object sender, EventArgs e)
         {
             if (dgvTax.SelectedRows.Count > 0)
             {
-                thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
+                customMessageBox thongBao;
+                int TrangThai = dgvTax.Columns["colTrangThai"].Index;
+                if (!(bool)dgvTax.SelectedRows[0].Cells[TrangThai].Value)
                 {
-                    // Khôi phục
+                    thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
+                    DialogResult dr = thongBao.ShowDialog();
+                    if (dr != DialogResult.Cancel)
+                    {
+                        if (KhoiPhucThue())
+                        {
+                            LoadDSThue();
+                            thongBao = new customMessageBox("Khôi phục thành công!");
+                            thongBao.ShowDialog();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox("Khôi phục thất bại!");
+                            thongBao.ShowDialog();
+                        }
+                    }
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Bạn không thể khôi phục thuế chưa xóa!");
+                    thongBao.ShowDialog();
                 }
             }
             else
@@ -107,7 +146,18 @@ namespace GUI.UserControls
                 thongBao.ShowDialog();
             }
         }
-
+        private bool XoaThue()
+        {
+            int indexMaThue= dgvTax.Columns["coLMaThue"].Index;
+            int MaThue = (int)dgvTax.SelectedRows[0].Cells[indexMaThue].Value;
+            return thueBLL.XoaThue(MaThue);
+        }
+        private bool KhoiPhucThue()
+        {
+            int indexMaThue = dgvTax.Columns["coLMaThue"].Index;
+            int MaThue = (int)dgvTax.SelectedRows[0].Cells[indexMaThue].Value;
+            return thueBLL.KhoiPhucThue(MaThue);
+        }
         private void cboSortTaxID_SelectedIndexChanged(object sender, EventArgs e)
         {
             string sortOption = cboSortTaxID.SelectedItem.ToString();

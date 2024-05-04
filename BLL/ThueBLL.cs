@@ -35,7 +35,28 @@ namespace BLL
                 return false;
             }
         }
-
+        public bool XoaThue(int maThue)
+        {
+            if (maThue > 0)
+            {
+                return thueDAL.XoaThue(maThue);
+            }
+            else
+            {
+                return false ;
+            }
+        }
+        public bool KhoiPhucThue(int maThue)
+        {
+            if (maThue > 0)
+            {
+                return thueDAL.KhoiPhucThue(maThue);
+            }
+            else
+            {
+                return false;
+            }
+        }
         public List<ThueDTO> TraCuThue(List<ThueDTO> thueDTOs, string tt)
         {
             if (!tt.Equals("Tất cả"))
@@ -69,6 +90,6 @@ namespace BLL
         public List<ThueDTO> TruyVanTenVaMaThue()
         {
             return thueDAL.TruyVanTenVaMaThue();
-        }
+        }        
     }
 }
