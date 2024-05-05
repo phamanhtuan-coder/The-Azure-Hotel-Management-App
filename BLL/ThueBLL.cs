@@ -72,7 +72,7 @@ namespace BLL
                 }
 
                 List<ThueDTO> searchResults =
-                                thueDTOs.Where
+                                TruyVanDSThue().Where
                                 (item => item.TrangThai == TT).ToList();
                 return searchResults;
             }

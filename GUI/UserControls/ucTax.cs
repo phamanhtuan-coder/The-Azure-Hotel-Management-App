@@ -45,14 +45,14 @@ namespace GUI.UserControls
         private void LoadDSThue()
         {
             thueDTOs = thueBLL.TruyVanDSThue();
-            dgvTax.DataSource =thueDTOs;
+            dgvTax.DataSource =thueDTOs;           
         }
 
         private void btnAddTax_Click(object sender, EventArgs e)
         {
             frm.isAdd = true;
             frm.ShowDialog();
-            LoadDSThue();
+            Filter();
         }
 
         private void btnEditTax_Click(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace GUI.UserControls
                 frm.isAdd = false;
                 frm.thueDTO = dgvTax.SelectedRows[0].DataBoundItem as ThueDTO;
                 frm.ShowDialog();
-                LoadDSThue() ;
+                Filter();
             }
             else
             {
@@ -86,7 +86,7 @@ namespace GUI.UserControls
                     {
                         if (XoaThue())
                         {
-                            LoadDSThue();
+                            Filter();
                             thongBao = new customMessageBox("Xóa thành công!");
                             thongBao.ShowDialog();
                         }
@@ -123,7 +123,7 @@ namespace GUI.UserControls
                     {
                         if (KhoiPhucThue())
                         {
-                            LoadDSThue();
+                            Filter();
                             thongBao = new customMessageBox("Khôi phục thành công!");
                             thongBao.ShowDialog();
                         }
@@ -191,6 +191,11 @@ namespace GUI.UserControls
         }
 
         private void cboStateTax_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Filter();
+        }
+
+        private void Filter()
         {
             tt = cboStateTax.Text;
 

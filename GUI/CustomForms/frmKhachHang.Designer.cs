@@ -175,7 +175,7 @@
             this.picAvatar.InitialImage = ((System.Drawing.Image)(resources.GetObject("picAvatar.InitialImage")));
             this.picAvatar.Location = new System.Drawing.Point(74, 12);
             this.picAvatar.Name = "picAvatar";
-            this.picAvatar.Size = new System.Drawing.Size(180, 180);
+            this.picAvatar.Size = new System.Drawing.Size(178, 158);
             this.picAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAvatar.TabIndex = 17;
             this.picAvatar.TabStop = false;
