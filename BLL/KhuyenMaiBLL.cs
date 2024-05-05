@@ -161,5 +161,35 @@ namespace BLL
                 return false;
             }
         }
+
+        public bool EditKhuyenMai(KhuyenMaiDTO khuyenMaiDTO)
+        {
+            if (khuyenMaiDTO.MaKM >0 && !string.IsNullOrWhiteSpace(khuyenMaiDTO.TenKM.Trim()) && khuyenMaiDTO.MaLoaiHangThanhVien > 0 && khuyenMaiDTO.KhuyenMai > 0)
+            {
+                return khuyenMaiDAL.EditKhuyenMai(khuyenMaiDTO);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool XoaKhuyenMai(int maKM)
+        {
+            if (maKM > 0)
+            {
+                return khuyenMaiDAL.XoaKhuyenMai(maKM);
+            }
+            return false;
+        }
+
+        public bool KhoiPhucKhuyenMai(int maKM)
+        {
+            if (maKM > 0)
+            {
+                return khuyenMaiDAL.KhoiPhucKhuyenMai(maKM);
+            }
+            return false;
+        }
     }
 }

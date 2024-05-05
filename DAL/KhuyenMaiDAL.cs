@@ -36,6 +36,29 @@ namespace DAL
             }
         }
 
+        public bool EditKhuyenMai(KhuyenMaiDTO khuyenMaiDTO)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+                SqlCommand com = new SqlCommand("spCapNhatKhuyenMai", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaKM", khuyenMaiDTO.MaKM);
+                com.Parameters.AddWithValue("@TenKM", khuyenMaiDTO.TenKM);
+                com.Parameters.AddWithValue("@KhuyenMai", khuyenMaiDTO.KhuyenMai);
+                com.Parameters.AddWithValue("@MaLoaiHangThanhVien", khuyenMaiDTO.MaLoaiHangThanhVien);
+
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+
+                return count > 0;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }      
         public List<KhuyenMaiDTO> LoadDSKhuyenMai()
         {
             try
@@ -90,6 +113,50 @@ namespace DAL
             catch (Exception)
             {
                 return new List<KhuyenMaiDTO>();
+            }
+        }
+
+        public bool XoaKhuyenMai(int maKM)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+                SqlCommand com = new SqlCommand("spCapNhatTTKhuyenMai", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaKM", maKM);
+                com.Parameters.AddWithValue("@TrangThai", 0);
+
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+
+                return count > 0;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool KhoiPhucKhuyenMai(int maKM)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+                SqlCommand com = new SqlCommand("spCapNhatTTKhuyenMai", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaKM", maKM);
+                com.Parameters.AddWithValue("@TrangThai", 1);
+
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+
+                return count > 0;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
     }

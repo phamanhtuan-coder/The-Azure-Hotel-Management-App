@@ -57,7 +57,7 @@ namespace GUI.UserControls
             KhuyenMaiDTO tatca = new KhuyenMaiDTO();
             tatca.KhuyenMai = 0;
             list.Add(tatca);
-            foreach(var item in khuyenMaiBLL.TruyVanSoKhuyenMai())
+            foreach (var item in khuyenMaiBLL.TruyVanSoKhuyenMai())
             {
                 list.Add(item);
             }
@@ -96,7 +96,7 @@ namespace GUI.UserControls
             if (dgvDiscount.SelectedRows.Count > 0)
             {
                 frm.isAdd = false;
-                frm.khuyenMaiDTO= dgvDiscount.SelectedRows[0].DataBoundItem as KhuyenMaiDTO;
+                frm.khuyenMaiDTO = dgvDiscount.SelectedRows[0].DataBoundItem as KhuyenMaiDTO;
                 frm.ShowDialog();
                 Filter();
             }
@@ -111,11 +111,33 @@ namespace GUI.UserControls
         {
             if (dgvDiscount.SelectedRows.Count > 0)
             {
-                thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
+                customMessageBox thongBao;
+                int TrangThai = dgvDiscount.Columns["colTrangThai"].Index;
+                if ((bool)dgvDiscount.SelectedRows[0].Cells[TrangThai].Value)
                 {
-                    // Xóa 
+                    thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
+                    DialogResult dr = thongBao.ShowDialog();
+                    if (dr != DialogResult.Cancel)
+                    {
+                        int khuyenMai = dgvDiscount.Columns["colMaKM"].Index;
+                        int maKM = (int)dgvDiscount.SelectedRows[0].Cells[khuyenMai].Value;
+                        if (XoaKhuyenMai(maKM))
+                        {
+                            Filter();
+                            thongBao = new customMessageBox("Xóa thành công!");
+                            thongBao.ShowDialog();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox("Xóa thất bại!");
+                            thongBao.ShowDialog();
+                        }
+                    }
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Bạn không thể xóa khuyến mãi đã xóa!");
+                    thongBao.ShowDialog();
                 }
             }
             else
@@ -125,15 +147,43 @@ namespace GUI.UserControls
             }
         }
 
+        private bool XoaKhuyenMai(int maKM)
+        {
+            return khuyenMaiBLL.XoaKhuyenMai(maKM);
+        }
+
         private void btnRecoverDiscount_Click(object sender, EventArgs e)
         {
             if (dgvDiscount.SelectedRows.Count > 0)
             {
-                thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
+                customMessageBox thongBao;
+                int TrangThai = dgvDiscount.Columns["colTrangThai"].Index;
+                if (!(bool)dgvDiscount.SelectedRows[0].Cells[TrangThai].Value)
                 {
-                    // Khôi phục
+                    thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
+                    DialogResult dr = thongBao.ShowDialog();
+                    if (dr != DialogResult.Cancel)
+                    {
+                        int khuyenMai = dgvDiscount.Columns["colMaKM"].Index;
+                        int maKM = (int) dgvDiscount.SelectedRows[0].Cells[khuyenMai].Value;
+                        if (KhoiPhucKhuyenMai(maKM))
+                        {
+                            Filter();
+                            thongBao = new customMessageBox("Khôi phục thành công!");
+                            thongBao.ShowDialog();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox("Khôi phục thất bại!");
+                            thongBao.ShowDialog();
+                        }
+                    }
+
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Bạn không thể khôi phục khuyến mãi chưa xóa!");
+                    thongBao.ShowDialog();
                 }
             }
             else
@@ -143,11 +193,16 @@ namespace GUI.UserControls
             }
         }
 
+        private bool KhoiPhucKhuyenMai(int maKM)
+        {
+            return khuyenMaiBLL.KhoiPhucKhuyenMai(maKM);
+        }
+
         private void cboSortDiscountValue_SelectedIndexChanged(object sender, EventArgs e)
         {
             khuyenmai = int.Parse(cboSortDiscountValue.Text);
-            
-            if(khuyenmai >= 0)
+
+            if (khuyenmai >= 0)
             {
                 Filter();
             }
@@ -155,12 +210,12 @@ namespace GUI.UserControls
 
         private void cboLocHangTV_SelectedIndexChanged(object sender, EventArgs e)
         {
-            hangthanhvien= (int) cboLocHangTV.SelectedValue;
-            
-            if(hangthanhvien >= -1)
+            hangthanhvien = (int)cboLocHangTV.SelectedValue;
+
+            if (hangthanhvien >= -1)
             {
                 Filter();
-            }           
+            }
         }
 
         private void cboStateDiscount_SelectedIndexChanged(object sender, EventArgs e)
@@ -170,7 +225,7 @@ namespace GUI.UserControls
             if (trangthai.Length > 0)
             {
                 Filter();
-            }           
+            }
         }
 
         private void cboSortDiscountID_SelectedIndexChanged(object sender, EventArgs e)

@@ -85,25 +85,34 @@ namespace GUI.customForm
             else
             {
                 // nếu không thì chạy lệnh update
-                thongBao = new customMessageBox("Sửa thành công thông tin khuyến mãi đã chọn!");
-                thongBao.ShowDialog();
+                if (EditKhuyenMai())
+                {
+                    thongBao = new customMessageBox("Sửa thành công thông tin khuyến mãi đã chọn!");
+                    thongBao.ShowDialog();
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Sửa thất bại thông tin khuyến mãi đã chọn!");
+                    thongBao.ShowDialog();
+                }                
             }
             this.Close();
             
-        }
-
+        }      
         private void GanDuLieu()
         {
             khuyenMaiDTO.TenKM = txtMucKM.Text;
             khuyenMaiDTO.KhuyenMai = nudMucKM.Value;
             khuyenMaiDTO.MaLoaiHangThanhVien = (int) cboHangTV.SelectedValue;
         }
-
         private bool AddKhuyenMai()
         {
             return khuyenMaiBLL.AddKhuyenMai(khuyenMaiDTO);
         }
-
+        private bool EditKhuyenMai()
+        {
+            return khuyenMaiBLL.EditKhuyenMai(khuyenMaiDTO);
+        }
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
