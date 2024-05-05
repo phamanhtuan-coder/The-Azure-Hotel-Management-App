@@ -205,5 +205,21 @@ namespace GUI.UserControls
                 dgvTax.DataSource = dsSearch;
             }
         }
+
+        private void btnTraCuuTax_Click(object sender, EventArgs e)
+        {
+            dgvTax.DataSource = thueDTOs;
+            string searchKeyword = txtSearchTax.Text.Trim().ToLower();
+            if (searchKeyword.Count() > 0)
+            {
+                dsSearch = thueBLL.TraCuuThue(thueDTOs, searchKeyword);
+                dgvTax.DataSource = dsSearch;
+
+            }
+            else
+            {
+                Filter();
+            }
+        }
     }
 }

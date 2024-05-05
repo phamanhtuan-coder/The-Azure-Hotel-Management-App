@@ -90,6 +90,14 @@ namespace BLL
         public List<ThueDTO> TruyVanTenVaMaThue()
         {
             return thueDAL.TruyVanTenVaMaThue();
-        }        
+        }
+
+        public List<ThueDTO> TraCuuThue(List<ThueDTO> thueDTOs, string searchKeyword)
+        {
+            List<ThueDTO> searchResults = thueDTOs.Where(item =>
+             item.TenThue.ToLower().Contains(searchKeyword)
+         ).ToList();
+            return searchResults;
+        }
     }
 }

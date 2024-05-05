@@ -95,6 +95,7 @@
     <Compile Include="HangThanhVienDAL.cs" />
     <Compile Include="DatPhongDAL.cs" />
     <Compile Include="HoaDonDAL.cs" />
+    <Compile Include="KhuyenMaiDAL.cs" />
     <Compile Include="LoaiPhongDAL.cs" />
     <Compile Include="KhachHangDAL.cs" />
     <Compile Include="NhanVienDAL.cs" />

@@ -35,14 +35,13 @@
             this.lblMucKM = new System.Windows.Forms.Label();
             this.txtMucKM = new System.Windows.Forms.TextBox();
             this.nudMucKM = new System.Windows.Forms.NumericUpDown();
-            this.cboHangTV = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.cboHangTV = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudMucKM)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboHangTV)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.Location = new System.Drawing.Point(327, 207);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
@@ -52,7 +51,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(76, 207);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
@@ -65,7 +64,7 @@
             this.lblTenKM.AutoSize = true;
             this.lblTenKM.Location = new System.Drawing.Point(46, 28);
             this.lblTenKM.Name = "lblTenKM";
-            this.lblTenKM.Size = new System.Drawing.Size(146, 22);
+            this.lblTenKM.Size = new System.Drawing.Size(134, 20);
             this.lblTenKM.TabIndex = 6;
             this.lblTenKM.Text = "Tên khuyến mãi";
             // 
@@ -74,7 +73,7 @@
             this.lblHangTV.AutoSize = true;
             this.lblHangTV.Location = new System.Drawing.Point(46, 140);
             this.lblHangTV.Name = "lblHangTV";
-            this.lblHangTV.Size = new System.Drawing.Size(234, 22);
+            this.lblHangTV.Size = new System.Drawing.Size(219, 20);
             this.lblHangTV.TabIndex = 10;
             this.lblHangTV.Text = "Dành cho hạng thành viên";
             // 
@@ -83,45 +82,33 @@
             this.lblMucKM.AutoSize = true;
             this.lblMucKM.Location = new System.Drawing.Point(46, 82);
             this.lblMucKM.Name = "lblMucKM";
-            this.lblMucKM.Size = new System.Drawing.Size(151, 22);
+            this.lblMucKM.Size = new System.Drawing.Size(137, 20);
             this.lblMucKM.TabIndex = 8;
             this.lblMucKM.Text = "Mức khuyến mãi";
             // 
             // txtMucKM
             // 
-            this.txtMucKM.Location = new System.Drawing.Point(264, 28);
+            this.txtMucKM.Location = new System.Drawing.Point(271, 28);
             this.txtMucKM.Name = "txtMucKM";
-            this.txtMucKM.Size = new System.Drawing.Size(252, 27);
+            this.txtMucKM.Size = new System.Drawing.Size(245, 26);
             this.txtMucKM.TabIndex = 12;
             // 
             // nudMucKM
             // 
             this.nudMucKM.DecimalPlaces = 2;
-            this.nudMucKM.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.nudMucKM.Location = new System.Drawing.Point(264, 83);
-            this.nudMucKM.Maximum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.nudMucKM.Location = new System.Drawing.Point(271, 83);
             this.nudMucKM.Name = "nudMucKM";
-            this.nudMucKM.Size = new System.Drawing.Size(252, 27);
+            this.nudMucKM.Size = new System.Drawing.Size(245, 26);
             this.nudMucKM.TabIndex = 13;
             this.nudMucKM.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cboHangTV
             // 
-            this.cboHangTV.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboHangTV.Location = new System.Drawing.Point(303, 135);
+            this.cboHangTV.FormattingEnabled = true;
+            this.cboHangTV.Location = new System.Drawing.Point(271, 138);
             this.cboHangTV.Name = "cboHangTV";
-            this.cboHangTV.Size = new System.Drawing.Size(213, 27);
-            this.cboHangTV.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboHangTV.Size = new System.Drawing.Size(245, 28);
             this.cboHangTV.TabIndex = 14;
-            this.cboHangTV.TabStop = false;
             // 
             // frmKhuyenMai
             // 
@@ -136,14 +123,13 @@
             this.Controls.Add(this.lblTenKM);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSubmit);
-            this.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmKhuyenMai";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmKhuyenMai_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudMucKM)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboHangTV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,6 +143,6 @@
         private System.Windows.Forms.Label lblMucKM;
         private System.Windows.Forms.TextBox txtMucKM;
         private System.Windows.Forms.NumericUpDown nudMucKM;
-        private Syncfusion.WinForms.ListView.SfComboBox cboHangTV;
+        private System.Windows.Forms.ComboBox cboHangTV;
     }
 }

@@ -207,6 +207,7 @@
             this.btnTraCuuTax.TabIndex = 0;
             this.btnTraCuuTax.Text = "Tra cứu";
             this.btnTraCuuTax.UseVisualStyleBackColor = false;
+            this.btnTraCuuTax.Click += new System.EventHandler(this.btnTraCuuTax_Click);
             // 
             // cboStateTax
             // 
