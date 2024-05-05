@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChiTietHoaDonBLL.cs" />
+    <Compile Include="DonPhongBLL.cs" />
     <Compile Include="HangThanhVienBLL.cs" />
     <Compile Include="DatPhongBLL.cs" />
     <Compile Include="HoaDonBLL.cs" />

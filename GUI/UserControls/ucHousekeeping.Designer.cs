@@ -31,10 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucHousekeeping));
             this.lblHousekeeping = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAddHousekeeping = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnEditHousekeeping = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnDeleteHousekeeping = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnRecoverHousekeeping = new Syncfusion.WinForms.Controls.SfButton();
             this.txtSearchHousekeeping = new System.Windows.Forms.TextBox();
             this.btnTraCuuHousekeeping = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateHousekeeping = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
+            this.dgvHousekeeping = new System.Windows.Forms.DataGridView();
             this.dtpNgayHoanThanh = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayNhan = new System.Windows.Forms.DateTimePicker();
             this.lblNgayHoanThanh = new System.Windows.Forms.Label();
@@ -44,11 +49,7 @@
             this.lblStateHousekeeping = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.dgvHousekeeping = new System.Windows.Forms.DataGridView();
-            this.btnAddHousekeeping = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnEditHousekeeping = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnDeleteHousekeeping = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnRecoverHousekeeping = new Syncfusion.WinForms.Controls.SfButton();
+            this.button1 = new System.Windows.Forms.Button();
             this.colMaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,20 +62,20 @@
             this.spcQuery.Panel1.SuspendLayout();
             this.spcQuery.Panel2.SuspendLayout();
             this.spcQuery.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHousekeeping)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortHousekeeping)).BeginInit();
             this.panUcHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).BeginInit();
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHousekeeping)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHousekeeping
             // 
             this.lblHousekeeping.BackColor = System.Drawing.Color.Lavender;
             this.lblHousekeeping.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblHousekeeping.Font = new System.Drawing.Font("Montserrat ExtraBold", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblHousekeeping.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblHousekeeping.ForeColor = System.Drawing.Color.RoyalBlue;
             this.lblHousekeeping.Location = new System.Drawing.Point(0, 0);
             this.lblHousekeeping.Name = "lblHousekeeping";
@@ -101,12 +102,96 @@
             this.tlpController.Size = new System.Drawing.Size(394, 94);
             this.tlpController.TabIndex = 6;
             // 
+            // btnAddHousekeeping
+            // 
+            this.btnAddHousekeeping.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddHousekeeping.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddHousekeeping.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddHousekeeping.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddHousekeeping.ForeColor = System.Drawing.Color.White;
+            this.btnAddHousekeeping.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnAddHousekeeping.Location = new System.Drawing.Point(3, 3);
+            this.btnAddHousekeeping.Name = "btnAddHousekeeping";
+            this.btnAddHousekeeping.Size = new System.Drawing.Size(191, 41);
+            this.btnAddHousekeeping.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddHousekeeping.Style.ForeColor = System.Drawing.Color.White;
+            this.btnAddHousekeeping.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnAddHousekeeping.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnAddHousekeeping.TabIndex = 1;
+            this.btnAddHousekeeping.Text = "Thêm";
+            this.btnAddHousekeeping.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddHousekeeping.UseVisualStyleBackColor = false;
+            this.btnAddHousekeeping.Click += new System.EventHandler(this.btnAddHousekeeping_Click);
+            // 
+            // btnEditHousekeeping
+            // 
+            this.btnEditHousekeeping.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditHousekeeping.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEditHousekeeping.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditHousekeeping.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditHousekeeping.ForeColor = System.Drawing.Color.White;
+            this.btnEditHousekeeping.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnEditHousekeeping.Location = new System.Drawing.Point(3, 50);
+            this.btnEditHousekeeping.Name = "btnEditHousekeeping";
+            this.btnEditHousekeeping.Size = new System.Drawing.Size(191, 41);
+            this.btnEditHousekeeping.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEditHousekeeping.Style.ForeColor = System.Drawing.Color.White;
+            this.btnEditHousekeeping.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnEditHousekeeping.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnEditHousekeeping.TabIndex = 3;
+            this.btnEditHousekeeping.Text = "Sửa";
+            this.btnEditHousekeeping.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditHousekeeping.UseVisualStyleBackColor = false;
+            this.btnEditHousekeeping.Click += new System.EventHandler(this.btnEditHousekeeping_Click);
+            // 
+            // btnDeleteHousekeeping
+            // 
+            this.btnDeleteHousekeeping.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteHousekeeping.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDeleteHousekeeping.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteHousekeeping.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteHousekeeping.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteHousekeeping.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnDeleteHousekeeping.Location = new System.Drawing.Point(200, 3);
+            this.btnDeleteHousekeeping.Name = "btnDeleteHousekeeping";
+            this.btnDeleteHousekeeping.Size = new System.Drawing.Size(191, 41);
+            this.btnDeleteHousekeeping.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteHousekeeping.Style.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteHousekeeping.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnDeleteHousekeeping.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnDeleteHousekeeping.TabIndex = 4;
+            this.btnDeleteHousekeeping.Text = "Xóa";
+            this.btnDeleteHousekeeping.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeleteHousekeeping.UseVisualStyleBackColor = false;
+            this.btnDeleteHousekeeping.Click += new System.EventHandler(this.btnDeleteHousekeeping_Click);
+            // 
+            // btnRecoverHousekeeping
+            // 
+            this.btnRecoverHousekeeping.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverHousekeeping.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRecoverHousekeeping.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecoverHousekeeping.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecoverHousekeeping.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverHousekeeping.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnRecoverHousekeeping.Location = new System.Drawing.Point(200, 50);
+            this.btnRecoverHousekeeping.Name = "btnRecoverHousekeeping";
+            this.btnRecoverHousekeeping.Size = new System.Drawing.Size(191, 41);
+            this.btnRecoverHousekeeping.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverHousekeeping.Style.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverHousekeeping.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnRecoverHousekeeping.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnRecoverHousekeeping.TabIndex = 5;
+            this.btnRecoverHousekeeping.Text = "Khôi phục";
+            this.btnRecoverHousekeeping.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRecoverHousekeeping.UseVisualStyleBackColor = false;
+            this.btnRecoverHousekeeping.Click += new System.EventHandler(this.btnRecoverHousekeeping_Click);
+            // 
             // txtSearchHousekeeping
             // 
-            this.txtSearchHousekeeping.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchHousekeeping.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchHousekeeping.Location = new System.Drawing.Point(6, 16);
             this.txtSearchHousekeeping.Name = "txtSearchHousekeeping";
-            this.txtSearchHousekeeping.Size = new System.Drawing.Size(251, 40);
+            this.txtSearchHousekeeping.Size = new System.Drawing.Size(251, 38);
             this.txtSearchHousekeeping.TabIndex = 2;
             // 
             // btnTraCuuHousekeeping
@@ -115,7 +200,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTraCuuHousekeeping.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuHousekeeping.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTraCuuHousekeeping.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTraCuuHousekeeping.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTraCuuHousekeeping.ForeColor = System.Drawing.Color.White;
             this.btnTraCuuHousekeeping.Location = new System.Drawing.Point(264, 16);
             this.btnTraCuuHousekeeping.Name = "btnTraCuuHousekeeping";
@@ -125,6 +210,7 @@
             this.btnTraCuuHousekeeping.TabIndex = 0;
             this.btnTraCuuHousekeeping.Text = "Tra cứu";
             this.btnTraCuuHousekeeping.UseVisualStyleBackColor = false;
+            this.btnTraCuuHousekeeping.Click += new System.EventHandler(this.btnTraCuuHousekeeping_Click);
             // 
             // cboStateHousekeeping
             // 
@@ -132,16 +218,17 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboStateHousekeeping.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboStateHousekeeping.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboStateHousekeeping.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateHousekeeping.Location = new System.Drawing.Point(221, 257);
+            this.cboStateHousekeeping.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateHousekeeping.Location = new System.Drawing.Point(226, 210);
             this.cboStateHousekeeping.Name = "cboStateHousekeeping";
             this.cboStateHousekeeping.Size = new System.Drawing.Size(156, 33);
             this.cboStateHousekeeping.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboStateHousekeeping.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateHousekeeping.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateHousekeeping.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateHousekeeping.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateHousekeeping.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboStateHousekeeping.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateHousekeeping.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateHousekeeping.TabIndex = 3;
+            this.cboStateHousekeeping.SelectedIndexChanged += new System.EventHandler(this.cboStateHousekeeping_SelectedIndexChanged);
             // 
             // spcQuery
             // 
@@ -157,6 +244,7 @@
             // spcQuery.Panel2
             // 
             this.spcQuery.Panel2.BackColor = System.Drawing.Color.Lavender;
+            this.spcQuery.Panel2.Controls.Add(this.button1);
             this.spcQuery.Panel2.Controls.Add(this.dtpNgayHoanThanh);
             this.spcQuery.Panel2.Controls.Add(this.dtpNgayNhan);
             this.spcQuery.Panel2.Controls.Add(this.lblNgayHoanThanh);
@@ -171,31 +259,56 @@
             this.spcQuery.SplitterDistance = 973;
             this.spcQuery.TabIndex = 38;
             // 
+            // dgvHousekeeping
+            // 
+            this.dgvHousekeeping.AllowUserToAddRows = false;
+            this.dgvHousekeeping.AllowUserToDeleteRows = false;
+            this.dgvHousekeeping.AllowUserToResizeColumns = false;
+            this.dgvHousekeeping.AllowUserToResizeRows = false;
+            this.dgvHousekeeping.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHousekeeping.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHousekeeping.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colMaDP,
+            this.colMaPhong,
+            this.colMaNV,
+            this.colNgayNhan,
+            this.colNgayHoanThanh,
+            this.colTrangThai});
+            this.dgvHousekeeping.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHousekeeping.Location = new System.Drawing.Point(0, 0);
+            this.dgvHousekeeping.MultiSelect = false;
+            this.dgvHousekeeping.Name = "dgvHousekeeping";
+            this.dgvHousekeeping.ReadOnly = true;
+            this.dgvHousekeeping.RowHeadersVisible = false;
+            this.dgvHousekeeping.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHousekeeping.Size = new System.Drawing.Size(973, 746);
+            this.dgvHousekeeping.TabIndex = 0;
+            // 
             // dtpNgayHoanThanh
             // 
             this.dtpNgayHoanThanh.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayHoanThanh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayHoanThanh.Location = new System.Drawing.Point(182, 197);
+            this.dtpNgayHoanThanh.Location = new System.Drawing.Point(182, 170);
             this.dtpNgayHoanThanh.Name = "dtpNgayHoanThanh";
-            this.dtpNgayHoanThanh.Size = new System.Drawing.Size(200, 27);
+            this.dtpNgayHoanThanh.Size = new System.Drawing.Size(119, 26);
             this.dtpNgayHoanThanh.TabIndex = 32;
             // 
             // dtpNgayNhan
             // 
             this.dtpNgayNhan.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayNhan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayNhan.Location = new System.Drawing.Point(182, 138);
+            this.dtpNgayNhan.Location = new System.Drawing.Point(182, 124);
             this.dtpNgayNhan.Name = "dtpNgayNhan";
-            this.dtpNgayNhan.Size = new System.Drawing.Size(200, 27);
+            this.dtpNgayNhan.Size = new System.Drawing.Size(119, 26);
             this.dtpNgayNhan.TabIndex = 31;
             // 
             // lblNgayHoanThanh
             // 
             this.lblNgayHoanThanh.AutoSize = true;
-            this.lblNgayHoanThanh.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgayHoanThanh.Location = new System.Drawing.Point(1, 198);
+            this.lblNgayHoanThanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNgayHoanThanh.Location = new System.Drawing.Point(8, 172);
             this.lblNgayHoanThanh.Name = "lblNgayHoanThanh";
-            this.lblNgayHoanThanh.Size = new System.Drawing.Size(182, 26);
+            this.lblNgayHoanThanh.Size = new System.Drawing.Size(169, 24);
             this.lblNgayHoanThanh.TabIndex = 30;
             this.lblNgayHoanThanh.Text = "Ngày hoàn thành";
             this.lblNgayHoanThanh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -206,24 +319,25 @@
             this.cboSortHousekeeping.DisplayMember = "";
             this.cboSortHousekeeping.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboSortHousekeeping.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortHousekeeping.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortHousekeeping.Location = new System.Drawing.Point(226, 75);
+            this.cboSortHousekeeping.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortHousekeeping.Location = new System.Drawing.Point(226, 71);
             this.cboSortHousekeeping.Name = "cboSortHousekeeping";
             this.cboSortHousekeeping.Size = new System.Drawing.Size(156, 33);
             this.cboSortHousekeeping.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortHousekeeping.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortHousekeeping.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortHousekeeping.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortHousekeeping.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortHousekeeping.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortHousekeeping.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortHousekeeping.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortHousekeeping.TabIndex = 29;
+            this.cboSortHousekeeping.SelectedIndexChanged += new System.EventHandler(this.cboSortHousekeeping_SelectedIndexChanged);
             // 
             // lblSortHousekeepingID
             // 
             this.lblSortHousekeepingID.AutoSize = true;
-            this.lblSortHousekeepingID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortHousekeepingID.Location = new System.Drawing.Point(-3, 82);
+            this.lblSortHousekeepingID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortHousekeepingID.Location = new System.Drawing.Point(6, 80);
             this.lblSortHousekeepingID.Name = "lblSortHousekeepingID";
-            this.lblSortHousekeepingID.Size = new System.Drawing.Size(228, 26);
+            this.lblSortHousekeepingID.Size = new System.Drawing.Size(214, 24);
             this.lblSortHousekeepingID.TabIndex = 28;
             this.lblSortHousekeepingID.Text = "Sort Housekeeping ID";
             this.lblSortHousekeepingID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -231,10 +345,10 @@
             // lblLocNgayNhan
             // 
             this.lblLocNgayNhan.AutoSize = true;
-            this.lblLocNgayNhan.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLocNgayNhan.Location = new System.Drawing.Point(3, 139);
+            this.lblLocNgayNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocNgayNhan.Location = new System.Drawing.Point(6, 126);
             this.lblLocNgayNhan.Name = "lblLocNgayNhan";
-            this.lblLocNgayNhan.Size = new System.Drawing.Size(119, 26);
+            this.lblLocNgayNhan.Size = new System.Drawing.Size(111, 24);
             this.lblLocNgayNhan.TabIndex = 14;
             this.lblLocNgayNhan.Text = "Ngày nhận";
             this.lblLocNgayNhan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -242,10 +356,10 @@
             // lblStateHousekeeping
             // 
             this.lblStateHousekeeping.AutoSize = true;
-            this.lblStateHousekeeping.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStateHousekeeping.Location = new System.Drawing.Point(-3, 264);
+            this.lblStateHousekeeping.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStateHousekeeping.Location = new System.Drawing.Point(8, 219);
             this.lblStateHousekeeping.Name = "lblStateHousekeeping";
-            this.lblStateHousekeeping.Size = new System.Drawing.Size(186, 26);
+            this.lblStateHousekeeping.Size = new System.Drawing.Size(174, 24);
             this.lblStateHousekeeping.TabIndex = 9;
             this.lblStateHousekeeping.Text = "Trạng thái dữ liệu";
             this.lblStateHousekeeping.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -279,147 +393,54 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // dgvHousekeeping
+            // button1
             // 
-            this.dgvHousekeeping.AllowUserToAddRows = false;
-            this.dgvHousekeeping.AllowUserToDeleteRows = false;
-            this.dgvHousekeeping.AllowUserToResizeColumns = false;
-            this.dgvHousekeeping.AllowUserToResizeRows = false;
-            this.dgvHousekeeping.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvHousekeeping.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHousekeeping.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaDP,
-            this.colMaPhong,
-            this.colMaNV,
-            this.colNgayNhan,
-            this.colNgayHoanThanh,
-            this.colTrangThai});
-            this.dgvHousekeeping.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHousekeeping.Location = new System.Drawing.Point(0, 0);
-            this.dgvHousekeeping.MultiSelect = false;
-            this.dgvHousekeeping.Name = "dgvHousekeeping";
-            this.dgvHousekeeping.ReadOnly = true;
-            this.dgvHousekeeping.RowHeadersVisible = false;
-            this.dgvHousekeeping.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHousekeeping.Size = new System.Drawing.Size(973, 746);
-            this.dgvHousekeeping.TabIndex = 0;
-            // 
-            // btnAddHousekeeping
-            // 
-            this.btnAddHousekeeping.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddHousekeeping.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddHousekeeping.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddHousekeeping.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddHousekeeping.ForeColor = System.Drawing.Color.White;
-            this.btnAddHousekeeping.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnAddHousekeeping.Location = new System.Drawing.Point(3, 3);
-            this.btnAddHousekeeping.Name = "btnAddHousekeeping";
-            this.btnAddHousekeeping.Size = new System.Drawing.Size(191, 41);
-            this.btnAddHousekeeping.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddHousekeeping.Style.ForeColor = System.Drawing.Color.White;
-            this.btnAddHousekeeping.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnAddHousekeeping.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddHousekeeping.TabIndex = 1;
-            this.btnAddHousekeeping.Text = "Thêm";
-            this.btnAddHousekeeping.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddHousekeeping.UseVisualStyleBackColor = false;
-            this.btnAddHousekeeping.Click += new System.EventHandler(this.btnAddHousekeeping_Click);
-            // 
-            // btnEditHousekeeping
-            // 
-            this.btnEditHousekeeping.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditHousekeeping.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEditHousekeeping.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditHousekeeping.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditHousekeeping.ForeColor = System.Drawing.Color.White;
-            this.btnEditHousekeeping.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnEditHousekeeping.Location = new System.Drawing.Point(3, 50);
-            this.btnEditHousekeeping.Name = "btnEditHousekeeping";
-            this.btnEditHousekeeping.Size = new System.Drawing.Size(191, 41);
-            this.btnEditHousekeeping.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditHousekeeping.Style.ForeColor = System.Drawing.Color.White;
-            this.btnEditHousekeeping.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnEditHousekeeping.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditHousekeeping.TabIndex = 3;
-            this.btnEditHousekeeping.Text = "Sửa";
-            this.btnEditHousekeeping.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditHousekeeping.UseVisualStyleBackColor = false;
-            this.btnEditHousekeeping.Click += new System.EventHandler(this.btnEditHousekeeping_Click);
-            // 
-            // btnDeleteHousekeeping
-            // 
-            this.btnDeleteHousekeeping.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteHousekeeping.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleteHousekeeping.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteHousekeeping.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteHousekeeping.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteHousekeeping.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnDeleteHousekeeping.Location = new System.Drawing.Point(200, 3);
-            this.btnDeleteHousekeeping.Name = "btnDeleteHousekeeping";
-            this.btnDeleteHousekeeping.Size = new System.Drawing.Size(191, 41);
-            this.btnDeleteHousekeeping.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteHousekeeping.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteHousekeeping.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnDeleteHousekeeping.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteHousekeeping.TabIndex = 4;
-            this.btnDeleteHousekeeping.Text = "Xóa";
-            this.btnDeleteHousekeeping.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDeleteHousekeeping.UseVisualStyleBackColor = false;
-            this.btnDeleteHousekeeping.Click += new System.EventHandler(this.btnDeleteHousekeeping_Click);
-            // 
-            // btnRecoverHousekeeping
-            // 
-            this.btnRecoverHousekeeping.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverHousekeeping.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRecoverHousekeeping.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecoverHousekeeping.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecoverHousekeeping.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverHousekeeping.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnRecoverHousekeeping.Location = new System.Drawing.Point(200, 50);
-            this.btnRecoverHousekeeping.Name = "btnRecoverHousekeeping";
-            this.btnRecoverHousekeeping.Size = new System.Drawing.Size(191, 41);
-            this.btnRecoverHousekeeping.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverHousekeeping.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverHousekeeping.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnRecoverHousekeeping.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRecoverHousekeeping.TabIndex = 5;
-            this.btnRecoverHousekeeping.Text = "Khôi phục";
-            this.btnRecoverHousekeeping.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRecoverHousekeeping.UseVisualStyleBackColor = false;
-            this.btnRecoverHousekeeping.Click += new System.EventHandler(this.btnRecoverHousekeeping_Click);
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(307, 124);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 72);
+            this.button1.TabIndex = 33;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // colMaDP
             // 
+            this.colMaDP.DataPropertyName = "MaDonPhong";
             this.colMaDP.HeaderText = "Mã dọn phòng";
             this.colMaDP.Name = "colMaDP";
             this.colMaDP.ReadOnly = true;
             // 
             // colMaPhong
             // 
+            this.colMaPhong.DataPropertyName = "MaPhong";
             this.colMaPhong.HeaderText = "Mã phòng";
             this.colMaPhong.Name = "colMaPhong";
             this.colMaPhong.ReadOnly = true;
             // 
             // colMaNV
             // 
+            this.colMaNV.DataPropertyName = "MaNV";
             this.colMaNV.HeaderText = "Mã nhân viên";
             this.colMaNV.Name = "colMaNV";
             this.colMaNV.ReadOnly = true;
             // 
             // colNgayNhan
             // 
+            this.colNgayNhan.DataPropertyName = "NgayNhan";
             this.colNgayNhan.HeaderText = "Ngày nhận";
             this.colNgayNhan.Name = "colNgayNhan";
             this.colNgayNhan.ReadOnly = true;
             // 
             // colNgayHoanThanh
             // 
+            this.colNgayHoanThanh.DataPropertyName = "NgayHoanThanh";
             this.colNgayHoanThanh.HeaderText = "Ngày hoàn thành";
             this.colNgayHoanThanh.Name = "colNgayHoanThanh";
             this.colNgayHoanThanh.ReadOnly = true;
             // 
             // colTrangThai
             // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
             this.colTrangThai.HeaderText = "Trạng thái";
             this.colTrangThai.Name = "colTrangThai";
             this.colTrangThai.ReadOnly = true;
@@ -430,7 +451,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.spcQuery);
             this.Controls.Add(this.panUcHeader);
-            this.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ucHousekeeping";
             this.Size = new System.Drawing.Size(1370, 840);
@@ -442,13 +463,13 @@
             this.spcQuery.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).EndInit();
             this.spcQuery.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHousekeeping)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortHousekeeping)).EndInit();
             this.panUcHeader.ResumeLayout(false);
             this.spcHeader.Panel1.ResumeLayout(false);
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHousekeeping)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -475,6 +496,7 @@
         private System.Windows.Forms.DateTimePicker dtpNgayHoanThanh;
         private System.Windows.Forms.DateTimePicker dtpNgayNhan;
         private System.Windows.Forms.DataGridView dgvHousekeeping;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaDP;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaNV;

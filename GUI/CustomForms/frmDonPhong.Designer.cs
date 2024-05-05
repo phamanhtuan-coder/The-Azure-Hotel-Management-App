@@ -44,7 +44,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.Location = new System.Drawing.Point(220, 198);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
@@ -54,7 +54,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(28, 198);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
@@ -67,16 +67,16 @@
             this.lblMaTB.AutoSize = true;
             this.lblMaTB.Location = new System.Drawing.Point(13, 22);
             this.lblMaTB.Name = "lblMaTB";
-            this.lblMaTB.Size = new System.Drawing.Size(101, 22);
+            this.lblMaTB.Size = new System.Drawing.Size(88, 20);
             this.lblMaTB.TabIndex = 6;
-            this.lblMaTB.Text = "Mã thiết bị";
+            this.lblMaTB.Text = "Mã phòng";
             // 
             // lblMaNV
             // 
             this.lblMaNV.AutoSize = true;
             this.lblMaNV.Location = new System.Drawing.Point(13, 64);
             this.lblMaNV.Name = "lblMaNV";
-            this.lblMaNV.Size = new System.Drawing.Size(181, 22);
+            this.lblMaNV.Size = new System.Drawing.Size(167, 20);
             this.lblMaNV.TabIndex = 8;
             this.lblMaNV.Text = "Nhân viên thực hiện";
             // 
@@ -85,7 +85,7 @@
             this.lblNgayHuHong.AutoSize = true;
             this.lblNgayHuHong.Location = new System.Drawing.Point(12, 107);
             this.lblNgayHuHong.Name = "lblNgayHuHong";
-            this.lblNgayHuHong.Size = new System.Drawing.Size(129, 22);
+            this.lblNgayHuHong.Size = new System.Drawing.Size(119, 20);
             this.lblNgayHuHong.TabIndex = 10;
             this.lblNgayHuHong.Text = "Ngày hư hỏng";
             // 
@@ -94,7 +94,7 @@
             this.lblNgayBaoTri.AutoSize = true;
             this.lblNgayBaoTri.Location = new System.Drawing.Point(12, 150);
             this.lblNgayBaoTri.Name = "lblNgayBaoTri";
-            this.lblNgayBaoTri.Size = new System.Drawing.Size(114, 22);
+            this.lblNgayBaoTri.Size = new System.Drawing.Size(105, 20);
             this.lblNgayBaoTri.TabIndex = 11;
             this.lblNgayBaoTri.Text = "Ngày bảo trì";
             // 
@@ -114,7 +114,7 @@
             this.dtpNgayHuHong.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayHuHong.Location = new System.Drawing.Point(205, 102);
             this.dtpNgayHuHong.Name = "dtpNgayHuHong";
-            this.dtpNgayHuHong.Size = new System.Drawing.Size(180, 27);
+            this.dtpNgayHuHong.Size = new System.Drawing.Size(180, 26);
             this.dtpNgayHuHong.TabIndex = 17;
             // 
             // dtpNgayBaoTri
@@ -123,7 +123,7 @@
             this.dtpNgayBaoTri.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayBaoTri.Location = new System.Drawing.Point(205, 145);
             this.dtpNgayBaoTri.Name = "dtpNgayBaoTri";
-            this.dtpNgayBaoTri.Size = new System.Drawing.Size(180, 27);
+            this.dtpNgayBaoTri.Size = new System.Drawing.Size(180, 26);
             this.dtpNgayBaoTri.TabIndex = 18;
             // 
             // cboThietBi
@@ -136,7 +136,7 @@
             this.cboThietBi.TabIndex = 19;
             this.cboThietBi.TabStop = false;
             // 
-            // frmBaoTri
+            // frmDonPhong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
@@ -151,10 +151,10 @@
             this.Controls.Add(this.lblMaTB);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSubmit);
-            this.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmBaoTri";
+            this.Name = "frmDonPhong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmDonPhong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cboNVBaoTri)).EndInit();
