@@ -90,5 +90,10 @@ namespace BLL
         {
             return nhanVienDAL.TruyVanTenVaMaNhanVien();
         }
+
+        public List<NhanVienDTO> LoadIDAndNameBLLDonPhong()
+        {
+            return nhanVienDAL.LoadIDAndNameBLLDonPhong();
+        }
     }
 }

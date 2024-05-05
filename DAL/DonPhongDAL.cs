@@ -10,7 +10,7 @@ namespace DAL
 {
     public class DonPhongDAL
     {
-        List<DonPhongDTO> list = new List<DonPhongDTO>(); 
+        List<DonPhongDTO> list = new List<DonPhongDTO>();      
         public List<DonPhongDTO> LoadDuLieuDonPhong()
         {
             try
@@ -50,6 +50,100 @@ namespace DAL
             catch (Exception)
             {
                 return new List<DonPhongDTO>();
+            }
+        }
+        public bool XoaDonPhong(int maDP)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spCapNhatTTDonPhong", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaDonPhong", maDP);
+                com.Parameters.AddWithValue("@TrangThai", 0);
+
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+
+                return count>0;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        public bool KhoiPhucDonPhong(int maDP)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spCapNhatTTDonPhong", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaDonPhong", maDP);
+                com.Parameters.AddWithValue("@TrangThai", 1);
+
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+
+                return count > 0;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool AddDonPhong(DonPhongDTO donPhongDTO)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spThemDonPhong", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaNV", donPhongDTO.MaNV);
+                com.Parameters.AddWithValue("@MaPhong", donPhongDTO.MaPhong);
+                com.Parameters.AddWithValue("@NgayNhan", donPhongDTO.NgayNhan);
+
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+
+                return count > 0;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool EditDonPhong(DonPhongDTO donPhongDTO)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spCapNhatDonPhong", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaDonPhong", donPhongDTO.MaDonPhong);
+                com.Parameters.AddWithValue("@MaNV", donPhongDTO.MaNV);
+                com.Parameters.AddWithValue("@MaPhong", donPhongDTO.MaPhong);
+                com.Parameters.AddWithValue("@NgayNhan", donPhongDTO.NgayNhan);
+                com.Parameters.AddWithValue("@NgayHoanThanh", donPhongDTO.NgayHoanThanh);
+
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+
+                return count > 0;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
     }

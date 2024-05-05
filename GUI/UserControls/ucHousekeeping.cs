@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,8 +20,7 @@ namespace GUI.UserControls
         customMessageBox thongBao;
         frmDonPhong frm = new frmDonPhong();
 
-        string ngayBD = "";
-        string ngayKT = "";
+        DateTime ngayBD;
         string TT = "";
         DonPhongBLL donPhongBLL = new DonPhongBLL();
         List<DonPhongDTO> donPhongDTOs = new List<DonPhongDTO>();
@@ -53,6 +53,7 @@ namespace GUI.UserControls
         {
             frm.isAdd = true;
             frm.ShowDialog();
+            Filter();
         }
 
         private void btnEditHousekeeping_Click(object sender, EventArgs e)
@@ -62,10 +63,10 @@ namespace GUI.UserControls
 
                 frm.isAdd = false;
 
-
-
+                frm.donPhongDTO = dgvHousekeeping.SelectedRows[0].DataBoundItem as DonPhongDTO;
 
                 frm.ShowDialog();
+                Filter();
             }
             else
             {
@@ -78,11 +79,34 @@ namespace GUI.UserControls
         {
             if (dgvHousekeeping.SelectedRows.Count > 0)
             {
-                thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
+                customMessageBox thongBao;
+                int TrangThai = dgvHousekeeping.Columns["colTrangThai"].Index;
+                if ((bool)dgvHousekeeping.SelectedRows[0].Cells[TrangThai].Value)
                 {
-                    // Xóa 
+                    thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
+                    DialogResult dr = thongBao.ShowDialog();
+                    if (dr != DialogResult.Cancel)
+                    {
+                        int donPhong = dgvHousekeeping.Columns["colMaDP"].Index;
+                        int maDP = (int)dgvHousekeeping.SelectedRows[0].Cells[donPhong].Value;
+                        if (XoaDonPhong(maDP))
+                        {
+                            Filter();
+                            thongBao = new customMessageBox("Xóa thành công!");
+                            thongBao.ShowDialog();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox("Xóa thất bại!");
+                            thongBao.ShowDialog();
+                        }
+                    }
+
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Bạn không thể xóa dọn phòng đã xóa!");
+                    thongBao.ShowDialog();
                 }
             }
             else
@@ -92,15 +116,43 @@ namespace GUI.UserControls
             }
         }
 
+        private bool XoaDonPhong(int maDP)
+        {
+            return donPhongBLL.XoaDonPhong(maDP);
+        }
+
         private void btnRecoverHousekeeping_Click(object sender, EventArgs e)
         {
             if (dgvHousekeeping.SelectedRows.Count > 0)
             {
-                thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
+                customMessageBox thongBao;
+                int TrangThai = dgvHousekeeping.Columns["colTrangThai"].Index;
+                if (!(bool)dgvHousekeeping.SelectedRows[0].Cells[TrangThai].Value)
                 {
-                    // Khôi phục
+                    thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
+                    DialogResult dr = thongBao.ShowDialog();
+                    if (dr != DialogResult.Cancel)
+                    {
+                        int donPhong = dgvHousekeeping.Columns["colMaDP"].Index;
+                        int maDP = (int)dgvHousekeeping.SelectedRows[0].Cells[donPhong].Value;
+                        if (KhoiPhucDonPhong(maDP))
+                        {
+                            Filter();
+                            thongBao = new customMessageBox("Khôi phục thành công!");
+                            thongBao.ShowDialog();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox("Khôi phục thất bại!");
+                            thongBao.ShowDialog();
+                        }
+                    }
+
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Bạn không thể khôi phục dọn phòng chưa xóa!");
+                    thongBao.ShowDialog();
                 }
             }
             else
@@ -110,9 +162,15 @@ namespace GUI.UserControls
             }
         }
 
+        private bool KhoiPhucDonPhong(int maDP)
+        {
+            return donPhongBLL.KhoiPhucDonPhong(maDP);
+        }
+
         private void cboStateHousekeeping_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TT= cboSortHousekeeping.Text;
+            TT= cboStateHousekeeping.Text;
+            ngayBD = DateTime.Parse("1/1/1900");
 
             if (TT.Length > 0)
             {
@@ -122,15 +180,9 @@ namespace GUI.UserControls
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ngayBD = dtpNgayNhan.Value.ToString();
-            ngayKT = dtpNgayHoanThanh.Value.ToString();
-
-            if(ngayBD.Length>0 && ngayKT.Length > 0)
-            {
-                Filter();
-            }          
+            DateTime.TryParseExact(dtpNgayNhan.Value.ToString("dd/MM/yyyy"), "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out ngayBD);
+            Filter();        
         }
-
         private void cboSortHousekeeping_SelectedIndexChanged(object sender, EventArgs e)
         {
             string sortOption = cboSortHousekeeping.SelectedItem.ToString();
@@ -165,8 +217,8 @@ namespace GUI.UserControls
 
         private void Filter()
         {
-            dsSearch = donPhongBLL.Filter(TT, ngayBD, ngayKT);
+            dsSearch = donPhongBLL.Filter(TT, ngayBD);
             dgvHousekeeping.DataSource = dsSearch;
-        }
+        }       
     }
 }

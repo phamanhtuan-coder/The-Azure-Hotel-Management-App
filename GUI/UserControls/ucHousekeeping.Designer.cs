@@ -40,22 +40,20 @@
             this.cboStateHousekeeping = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvHousekeeping = new System.Windows.Forms.DataGridView();
-            this.dtpNgayHoanThanh = new System.Windows.Forms.DateTimePicker();
-            this.dtpNgayNhan = new System.Windows.Forms.DateTimePicker();
-            this.lblNgayHoanThanh = new System.Windows.Forms.Label();
-            this.cboSortHousekeeping = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.lblSortHousekeepingID = new System.Windows.Forms.Label();
-            this.lblLocNgayNhan = new System.Windows.Forms.Label();
-            this.lblStateHousekeeping = new System.Windows.Forms.Label();
-            this.panUcHeader = new System.Windows.Forms.Panel();
-            this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.button1 = new System.Windows.Forms.Button();
             this.colMaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNgayNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNgayHoanThanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dtpNgayNhan = new System.Windows.Forms.DateTimePicker();
+            this.cboSortHousekeeping = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.lblSortHousekeepingID = new System.Windows.Forms.Label();
+            this.lblLocNgayNhan = new System.Windows.Forms.Label();
+            this.lblStateHousekeeping = new System.Windows.Forms.Label();
+            this.panUcHeader = new System.Windows.Forms.Panel();
+            this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateHousekeeping)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -219,7 +217,7 @@
             this.cboStateHousekeeping.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboStateHousekeeping.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboStateHousekeeping.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateHousekeeping.Location = new System.Drawing.Point(226, 210);
+            this.cboStateHousekeeping.Location = new System.Drawing.Point(226, 173);
             this.cboStateHousekeeping.Name = "cboStateHousekeeping";
             this.cboStateHousekeeping.Size = new System.Drawing.Size(156, 33);
             this.cboStateHousekeeping.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -245,9 +243,7 @@
             // 
             this.spcQuery.Panel2.BackColor = System.Drawing.Color.Lavender;
             this.spcQuery.Panel2.Controls.Add(this.button1);
-            this.spcQuery.Panel2.Controls.Add(this.dtpNgayHoanThanh);
             this.spcQuery.Panel2.Controls.Add(this.dtpNgayNhan);
-            this.spcQuery.Panel2.Controls.Add(this.lblNgayHoanThanh);
             this.spcQuery.Panel2.Controls.Add(this.cboSortHousekeeping);
             this.spcQuery.Panel2.Controls.Add(this.lblSortHousekeepingID);
             this.spcQuery.Panel2.Controls.Add(this.lblLocNgayNhan);
@@ -284,34 +280,67 @@
             this.dgvHousekeeping.Size = new System.Drawing.Size(973, 746);
             this.dgvHousekeeping.TabIndex = 0;
             // 
-            // dtpNgayHoanThanh
+            // colMaDP
             // 
-            this.dtpNgayHoanThanh.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgayHoanThanh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayHoanThanh.Location = new System.Drawing.Point(182, 170);
-            this.dtpNgayHoanThanh.Name = "dtpNgayHoanThanh";
-            this.dtpNgayHoanThanh.Size = new System.Drawing.Size(119, 26);
-            this.dtpNgayHoanThanh.TabIndex = 32;
+            this.colMaDP.DataPropertyName = "MaDonPhong";
+            this.colMaDP.HeaderText = "Mã dọn phòng";
+            this.colMaDP.Name = "colMaDP";
+            this.colMaDP.ReadOnly = true;
+            // 
+            // colMaPhong
+            // 
+            this.colMaPhong.DataPropertyName = "MaPhong";
+            this.colMaPhong.HeaderText = "Mã phòng";
+            this.colMaPhong.Name = "colMaPhong";
+            this.colMaPhong.ReadOnly = true;
+            // 
+            // colMaNV
+            // 
+            this.colMaNV.DataPropertyName = "MaNV";
+            this.colMaNV.HeaderText = "Mã nhân viên";
+            this.colMaNV.Name = "colMaNV";
+            this.colMaNV.ReadOnly = true;
+            // 
+            // colNgayNhan
+            // 
+            this.colNgayNhan.DataPropertyName = "NgayNhan";
+            this.colNgayNhan.HeaderText = "Ngày nhận";
+            this.colNgayNhan.Name = "colNgayNhan";
+            this.colNgayNhan.ReadOnly = true;
+            // 
+            // colNgayHoanThanh
+            // 
+            this.colNgayHoanThanh.DataPropertyName = "NgayHoanThanh";
+            this.colNgayHoanThanh.HeaderText = "Ngày hoàn thành";
+            this.colNgayHoanThanh.Name = "colNgayHoanThanh";
+            this.colNgayHoanThanh.ReadOnly = true;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(354, 124);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(28, 31);
+            this.button1.TabIndex = 33;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dtpNgayNhan
             // 
             this.dtpNgayNhan.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayNhan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayNhan.Location = new System.Drawing.Point(182, 124);
+            this.dtpNgayNhan.Location = new System.Drawing.Point(226, 124);
             this.dtpNgayNhan.Name = "dtpNgayNhan";
             this.dtpNgayNhan.Size = new System.Drawing.Size(119, 26);
             this.dtpNgayNhan.TabIndex = 31;
-            // 
-            // lblNgayHoanThanh
-            // 
-            this.lblNgayHoanThanh.AutoSize = true;
-            this.lblNgayHoanThanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgayHoanThanh.Location = new System.Drawing.Point(8, 172);
-            this.lblNgayHoanThanh.Name = "lblNgayHoanThanh";
-            this.lblNgayHoanThanh.Size = new System.Drawing.Size(169, 24);
-            this.lblNgayHoanThanh.TabIndex = 30;
-            this.lblNgayHoanThanh.Text = "Ngày hoàn thành";
-            this.lblNgayHoanThanh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cboSortHousekeeping
             // 
@@ -357,7 +386,7 @@
             // 
             this.lblStateHousekeeping.AutoSize = true;
             this.lblStateHousekeeping.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStateHousekeeping.Location = new System.Drawing.Point(8, 219);
+            this.lblStateHousekeeping.Location = new System.Drawing.Point(8, 182);
             this.lblStateHousekeeping.Name = "lblStateHousekeeping";
             this.lblStateHousekeeping.Size = new System.Drawing.Size(174, 24);
             this.lblStateHousekeeping.TabIndex = 9;
@@ -392,59 +421,6 @@
             this.spcHeader.Size = new System.Drawing.Size(1370, 94);
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(307, 124);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 72);
-            this.button1.TabIndex = 33;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // colMaDP
-            // 
-            this.colMaDP.DataPropertyName = "MaDonPhong";
-            this.colMaDP.HeaderText = "Mã dọn phòng";
-            this.colMaDP.Name = "colMaDP";
-            this.colMaDP.ReadOnly = true;
-            // 
-            // colMaPhong
-            // 
-            this.colMaPhong.DataPropertyName = "MaPhong";
-            this.colMaPhong.HeaderText = "Mã phòng";
-            this.colMaPhong.Name = "colMaPhong";
-            this.colMaPhong.ReadOnly = true;
-            // 
-            // colMaNV
-            // 
-            this.colMaNV.DataPropertyName = "MaNV";
-            this.colMaNV.HeaderText = "Mã nhân viên";
-            this.colMaNV.Name = "colMaNV";
-            this.colMaNV.ReadOnly = true;
-            // 
-            // colNgayNhan
-            // 
-            this.colNgayNhan.DataPropertyName = "NgayNhan";
-            this.colNgayNhan.HeaderText = "Ngày nhận";
-            this.colNgayNhan.Name = "colNgayNhan";
-            this.colNgayNhan.ReadOnly = true;
-            // 
-            // colNgayHoanThanh
-            // 
-            this.colNgayHoanThanh.DataPropertyName = "NgayHoanThanh";
-            this.colNgayHoanThanh.HeaderText = "Ngày hoàn thành";
-            this.colNgayHoanThanh.Name = "colNgayHoanThanh";
-            this.colNgayHoanThanh.ReadOnly = true;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "TrangThai";
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Visible = false;
             // 
             // ucHousekeeping
             // 
@@ -492,8 +468,6 @@
         private System.Windows.Forms.SplitContainer spcHeader;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortHousekeeping;
         private System.Windows.Forms.Label lblSortHousekeepingID;
-        private System.Windows.Forms.Label lblNgayHoanThanh;
-        private System.Windows.Forms.DateTimePicker dtpNgayHoanThanh;
         private System.Windows.Forms.DateTimePicker dtpNgayNhan;
         private System.Windows.Forms.DataGridView dgvHousekeeping;
         private System.Windows.Forms.Button button1;
