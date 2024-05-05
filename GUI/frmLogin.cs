@@ -189,7 +189,6 @@ namespace GUI
                 taiKhoanDTO.MatKhau = Utilities.HashMatKhau.HashPassword(txtPassword.Text);
                 if (DangNhap(ref login))
                 {
-                    
                     frmMain mainForm = new frmMain();
                     this.Hide();
                     mainForm.user = login;
@@ -241,7 +240,7 @@ namespace GUI
 
         private bool DangNhap(ref NhanVienDTO login)
         {          
-            return taiKhoanBLL.XacThuc(taiKhoanDTO);
+            return taiKhoanBLL.XacThuc(taiKhoanDTO, ref login);            
         }
 
         private void btnShowHidePassword_Click(object sender, EventArgs e)

@@ -49,6 +49,7 @@ namespace BLL
 
         public List<HoaDonDTO> TraCuuHoaDon(List<HoaDonDTO> hoaDonDTOs, string tT, string ngaytao)
         {
+            hoaDonDTOs = TruyVanDanhSachHoaDon();
             if (!tT.Equals("Tất cả"))
             {
                 if (ngaytao.Length>0)

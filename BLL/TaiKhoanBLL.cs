@@ -167,11 +167,20 @@ namespace BLL
             return searchResults;
         }
 
-        public bool XacThuc(TaiKhoanDTO taiKhoanDTO)
+        public bool XacThuc(TaiKhoanDTO taiKhoanDTO, ref NhanVienDTO login)
         {
-            if(!string.IsNullOrWhiteSpace(taiKhoanDTO.TenDangNhap.Trim()) && !string.IsNullOrWhiteSpace(taiKhoanDTO.MatKhau.Trim()))
+            if (!string.IsNullOrWhiteSpace(taiKhoanDTO.TenDangNhap.Trim()) && !string.IsNullOrWhiteSpace(taiKhoanDTO.MatKhau.Trim()))
             {
-                return taiKhoanDAL.XacThuc(taiKhoanDTO);
+                login = taiKhoanDAL.XacThuc(taiKhoanDTO);
+                if (login.TenTaiKhoan != null)
+                {
+                    
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {

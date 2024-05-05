@@ -57,7 +57,7 @@ namespace GUI.UserControls
         {
             frm.isAdd = true;
             frm.ShowDialog();
-            TruyVanDanhSachHoaDon();
+            Filter();
         }
 
         private void btnEditBill_Click(object sender, EventArgs e)
@@ -84,7 +84,7 @@ namespace GUI.UserControls
                 frm.hoaDonDTO.TienThoi  = (decimal) dgvBill.SelectedRows[0].Cells[index8].Value;
 
                 frm.ShowDialog();
-                TruyVanDanhSachHoaDon();
+                Filter();
             }
             else
             {
@@ -107,7 +107,7 @@ namespace GUI.UserControls
                     {
                         if (XoaHoaDon())
                         {
-                            TruyVanDanhSachHoaDon();
+                            Filter();
                             thongBao = new customMessageBox("Xóa thành công!");
                             thongBao.ShowDialog();
                         }
@@ -152,7 +152,7 @@ namespace GUI.UserControls
                     {
                         if (KhoiPhucHoaDon())
                         {
-                            TruyVanDanhSachHoaDon();
+                            Filter();
                             thongBao = new customMessageBox("Khôi phục thành công!");
                             thongBao.ShowDialog();
                         }
@@ -220,18 +220,19 @@ namespace GUI.UserControls
             TT= cboStateBooking.Text;
             ngaytao = "";
 
-            if (TT.Length > 0 && TT.Length > 0)
-            {
-                dsSearch = hoaDonBLL.TraCuuHoaDon(hoaDonDTOs, TT, ngaytao);
-                dgvBill.DataSource = dsSearch;
-            }
+            Filter();
         }
 
         private void btnNgayTao_Click(object sender, EventArgs e)
         {
             ngaytao = dtpBillDate.Value.ToString();
+         
+            Filter();
+        }
 
-            if (TT.Length > 0 && TT.Length > 0)
+        private void Filter()
+        {
+            if (TT.Length > 0)
             {
                 dsSearch = hoaDonBLL.TraCuuHoaDon(hoaDonDTOs, TT, ngaytao);
                 dgvBill.DataSource = dsSearch;
