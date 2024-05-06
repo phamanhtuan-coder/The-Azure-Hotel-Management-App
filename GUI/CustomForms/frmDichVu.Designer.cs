@@ -35,10 +35,9 @@
             this.picHinhAnh = new System.Windows.Forms.PictureBox();
             this.lblTenDV = new System.Windows.Forms.Label();
             this.lblGia = new System.Windows.Forms.Label();
-            this.cboLoaiPhong = new Syncfusion.WinForms.ListView.SfComboBox();
             this.nudGia = new System.Windows.Forms.NumericUpDown();
+            this.txttendichvu = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picHinhAnh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboLoaiPhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGia)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,7 +85,7 @@
             this.lblTenDV.AutoSize = true;
             this.lblTenDV.Location = new System.Drawing.Point(318, 36);
             this.lblTenDV.Name = "lblTenDV";
-            this.lblTenDV.Size = new System.Drawing.Size(107, 22);
+            this.lblTenDV.Size = new System.Drawing.Size(134, 27);
             this.lblTenDV.TabIndex = 19;
             this.lblTenDV.Text = "Tên dịch vụ";
             // 
@@ -95,19 +94,9 @@
             this.lblGia.AutoSize = true;
             this.lblGia.Location = new System.Drawing.Point(318, 93);
             this.lblGia.Name = "lblGia";
-            this.lblGia.Size = new System.Drawing.Size(104, 22);
+            this.lblGia.Size = new System.Drawing.Size(129, 27);
             this.lblGia.TabIndex = 23;
             this.lblGia.Text = "Giá dịch vụ";
-            // 
-            // cboLoaiPhong
-            // 
-            this.cboLoaiPhong.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboLoaiPhong.Location = new System.Drawing.Point(505, 28);
-            this.cboLoaiPhong.Name = "cboLoaiPhong";
-            this.cboLoaiPhong.Size = new System.Drawing.Size(150, 30);
-            this.cboLoaiPhong.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboLoaiPhong.TabIndex = 26;
-            this.cboLoaiPhong.TabStop = false;
             // 
             // nudGia
             // 
@@ -123,18 +112,25 @@
             0,
             0});
             this.nudGia.Name = "nudGia";
-            this.nudGia.Size = new System.Drawing.Size(150, 27);
+            this.nudGia.Size = new System.Drawing.Size(150, 32);
             this.nudGia.TabIndex = 28;
             this.nudGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudGia.ThousandsSeparator = true;
+            // 
+            // txttendichvu
+            // 
+            this.txttendichvu.Location = new System.Drawing.Point(505, 40);
+            this.txttendichvu.Name = "txttendichvu";
+            this.txttendichvu.Size = new System.Drawing.Size(150, 32);
+            this.txttendichvu.TabIndex = 29;
             // 
             // frmDichVu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(691, 236);
+            this.Controls.Add(this.txttendichvu);
             this.Controls.Add(this.nudGia);
-            this.Controls.Add(this.cboLoaiPhong);
             this.Controls.Add(this.lblGia);
             this.Controls.Add(this.lblTenDV);
             this.Controls.Add(this.picHinhAnh);
@@ -148,7 +144,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picHinhAnh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboLoaiPhong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGia)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -162,7 +157,7 @@
         private System.Windows.Forms.PictureBox picHinhAnh;
         private System.Windows.Forms.Label lblTenDV;
         private System.Windows.Forms.Label lblGia;
-        private Syncfusion.WinForms.ListView.SfComboBox cboLoaiPhong;
         private System.Windows.Forms.NumericUpDown nudGia;
+        private System.Windows.Forms.TextBox txttendichvu;
     }
 }

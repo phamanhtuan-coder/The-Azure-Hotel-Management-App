@@ -36,7 +36,10 @@ namespace BLL
         {
             return ThietBiDAL.layDSTBi();
         }
-
+        public List<TTThietBiDTO> laydsTBi2()
+        {
+            return ThietBiDAL.layDSTBi2();
+        }
         public bool suaTTTBi(TTThietBiDTO tTThietBiDTO)
         {
             return ThietBiDAL.suaTTTbi(tTThietBiDTO);

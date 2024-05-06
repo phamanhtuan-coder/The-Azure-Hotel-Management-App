@@ -36,6 +36,10 @@ namespace BLL
         {
             return DatPhongDAL.layds();
         }
+        public List<DatPhongDTO> laydsp2()
+        {
+            return DatPhongDAL.layds2();
+        }
 
         public bool sua(DatPhongDTO datPhongDTO)
         {
