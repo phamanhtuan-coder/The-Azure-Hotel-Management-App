@@ -41,15 +41,16 @@
             // txtUsername
             // 
             this.txtUsername.Enabled = false;
-            this.txtUsername.Location = new System.Drawing.Point(266, 44);
+            this.txtUsername.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.txtUsername.Location = new System.Drawing.Point(294, 44);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.ReadOnly = true;
-            this.txtUsername.Size = new System.Drawing.Size(306, 26);
+            this.txtUsername.Size = new System.Drawing.Size(278, 27);
             this.txtUsername.TabIndex = 0;
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.btnSubmit.Location = new System.Drawing.Point(358, 236);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
@@ -59,7 +60,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Location = new System.Drawing.Point(87, 236);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
@@ -70,44 +71,49 @@
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.lblUsername.Location = new System.Drawing.Point(53, 50);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(184, 20);
+            this.lblUsername.Size = new System.Drawing.Size(192, 22);
             this.lblUsername.TabIndex = 6;
             this.lblUsername.Text = "Username của bạn là:";
             // 
             // lblPW
             // 
             this.lblPW.AutoSize = true;
+            this.lblPW.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.lblPW.Location = new System.Drawing.Point(52, 114);
             this.lblPW.Name = "lblPW";
-            this.lblPW.Size = new System.Drawing.Size(204, 20);
+            this.lblPW.Size = new System.Drawing.Size(217, 22);
             this.lblPW.TabIndex = 8;
             this.lblPW.Text = "Hãy nhập password mới:";
             // 
             // txtNewPassword
             // 
-            this.txtNewPassword.Location = new System.Drawing.Point(266, 108);
+            this.txtNewPassword.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.txtNewPassword.Location = new System.Drawing.Point(294, 108);
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.PasswordChar = '*';
-            this.txtNewPassword.Size = new System.Drawing.Size(306, 26);
+            this.txtNewPassword.Size = new System.Drawing.Size(278, 27);
             this.txtNewPassword.TabIndex = 7;
             // 
             // lblRePW
             // 
             this.lblRePW.AutoSize = true;
+            this.lblRePW.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.lblRePW.Location = new System.Drawing.Point(52, 178);
             this.lblRePW.Name = "lblRePW";
-            this.lblRePW.Size = new System.Drawing.Size(194, 20);
+            this.lblRePW.Size = new System.Drawing.Size(205, 22);
             this.lblRePW.TabIndex = 10;
             this.lblRePW.Text = "Hãy nhập lại password:";
             // 
             // txtRePassword
             // 
-            this.txtRePassword.Location = new System.Drawing.Point(266, 172);
+            this.txtRePassword.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.txtRePassword.Location = new System.Drawing.Point(294, 172);
             this.txtRePassword.Name = "txtRePassword";
             this.txtRePassword.PasswordChar = '*';
-            this.txtRePassword.Size = new System.Drawing.Size(306, 26);
+            this.txtRePassword.Size = new System.Drawing.Size(278, 27);
             this.txtRePassword.TabIndex = 9;
             // 
             // frmDoiMatKhau
@@ -131,7 +137,6 @@
             this.Load += new System.EventHandler(this.frmQuenMatKhau_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-
 
         }
 

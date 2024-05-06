@@ -61,7 +61,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.btnSubmit.Location = new System.Drawing.Point(582, 400);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
@@ -71,7 +71,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Location = new System.Drawing.Point(387, 400);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
@@ -81,61 +81,69 @@
             // 
             // txtHoTenNV
             // 
+            this.txtHoTenNV.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.txtHoTenNV.Location = new System.Drawing.Point(538, 12);
             this.txtHoTenNV.Name = "txtHoTenNV";
-            this.txtHoTenNV.Size = new System.Drawing.Size(194, 26);
+            this.txtHoTenNV.Size = new System.Drawing.Size(194, 27);
             this.txtHoTenNV.TabIndex = 6;
             // 
             // txtTenTaiKhoan
             // 
+            this.txtTenTaiKhoan.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.txtTenTaiKhoan.Location = new System.Drawing.Point(12, 270);
             this.txtTenTaiKhoan.Name = "txtTenTaiKhoan";
-            this.txtTenTaiKhoan.Size = new System.Drawing.Size(175, 26);
+            this.txtTenTaiKhoan.Size = new System.Drawing.Size(175, 27);
             this.txtTenTaiKhoan.TabIndex = 7;
             // 
             // txtCCCD
             // 
+            this.txtCCCD.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.txtCCCD.Location = new System.Drawing.Point(538, 64);
             this.txtCCCD.Name = "txtCCCD";
-            this.txtCCCD.Size = new System.Drawing.Size(194, 26);
+            this.txtCCCD.Size = new System.Drawing.Size(194, 27);
             this.txtCCCD.TabIndex = 8;
             // 
             // txtEmail
             // 
+            this.txtEmail.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.txtEmail.Location = new System.Drawing.Point(538, 219);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(194, 26);
+            this.txtEmail.Size = new System.Drawing.Size(194, 27);
             this.txtEmail.TabIndex = 9;
             // 
             // txtSDT
             // 
+            this.txtSDT.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.txtSDT.Location = new System.Drawing.Point(538, 271);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(194, 26);
+            this.txtSDT.Size = new System.Drawing.Size(194, 27);
             this.txtSDT.TabIndex = 10;
             // 
             // txtDiaChi
             // 
+            this.txtDiaChi.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.txtDiaChi.Location = new System.Drawing.Point(538, 323);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(194, 26);
+            this.txtDiaChi.Size = new System.Drawing.Size(194, 27);
             this.txtDiaChi.TabIndex = 11;
             // 
             // dtpNgaySinh
             // 
             this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgaySinh.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgaySinh.Location = new System.Drawing.Point(538, 167);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(194, 26);
+            this.dtpNgaySinh.Size = new System.Drawing.Size(194, 27);
             this.dtpNgaySinh.TabIndex = 12;
             // 
             // radNam
             // 
             this.radNam.AutoSize = true;
+            this.radNam.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.radNam.Location = new System.Drawing.Point(538, 117);
             this.radNam.Name = "radNam";
-            this.radNam.Size = new System.Drawing.Size(63, 24);
+            this.radNam.Size = new System.Drawing.Size(68, 26);
             this.radNam.TabIndex = 13;
             this.radNam.TabStop = true;
             this.radNam.Text = "Nam";
@@ -144,9 +152,10 @@
             // radNu
             // 
             this.radNu.AutoSize = true;
+            this.radNu.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.radNu.Location = new System.Drawing.Point(648, 117);
             this.radNu.Name = "radNu";
-            this.radNu.Size = new System.Drawing.Size(49, 24);
+            this.radNu.Size = new System.Drawing.Size(52, 26);
             this.radNu.TabIndex = 14;
             this.radNu.TabStop = true;
             this.radNu.Text = "Nữ";
@@ -154,7 +163,7 @@
             // 
             // btnTaoTK
             // 
-            this.btnTaoTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaoTK.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.btnTaoTK.Location = new System.Drawing.Point(193, 270);
             this.btnTaoTK.Name = "btnTaoTK";
             this.btnTaoTK.Size = new System.Drawing.Size(169, 27);
@@ -164,7 +173,7 @@
             // 
             // btnChonHinh
             // 
-            this.btnChonHinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChonHinh.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.btnChonHinh.Location = new System.Drawing.Point(90, 208);
             this.btnChonHinh.Name = "btnChonHinh";
             this.btnChonHinh.Size = new System.Drawing.Size(150, 38);
@@ -185,94 +194,105 @@
             // lblMaTaiKhoan
             // 
             this.lblMaTaiKhoan.AutoSize = true;
+            this.lblMaTaiKhoan.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.lblMaTaiKhoan.Location = new System.Drawing.Point(12, 249);
             this.lblMaTaiKhoan.Name = "lblMaTaiKhoan";
-            this.lblMaTaiKhoan.Size = new System.Drawing.Size(91, 20);
+            this.lblMaTaiKhoan.Size = new System.Drawing.Size(96, 22);
             this.lblMaTaiKhoan.TabIndex = 18;
             this.lblMaTaiKhoan.Text = "Username";
             // 
             // lblHoTen
             // 
             this.lblHoTen.AutoSize = true;
+            this.lblHoTen.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.lblHoTen.Location = new System.Drawing.Point(381, 17);
             this.lblHoTen.Name = "lblHoTen";
-            this.lblHoTen.Size = new System.Drawing.Size(86, 20);
+            this.lblHoTen.Size = new System.Drawing.Size(91, 22);
             this.lblHoTen.TabIndex = 19;
             this.lblHoTen.Text = "Họ và tên";
             // 
             // lblCCCD
             // 
             this.lblCCCD.AutoSize = true;
+            this.lblCCCD.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.lblCCCD.Location = new System.Drawing.Point(381, 69);
             this.lblCCCD.Name = "lblCCCD";
-            this.lblCCCD.Size = new System.Drawing.Size(58, 20);
+            this.lblCCCD.Size = new System.Drawing.Size(59, 22);
             this.lblCCCD.TabIndex = 20;
             this.lblCCCD.Text = "CCCD";
             // 
             // lblGioiTinh
             // 
             this.lblGioiTinh.AutoSize = true;
+            this.lblGioiTinh.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.lblGioiTinh.Location = new System.Drawing.Point(381, 117);
             this.lblGioiTinh.Name = "lblGioiTinh";
-            this.lblGioiTinh.Size = new System.Drawing.Size(76, 20);
+            this.lblGioiTinh.Size = new System.Drawing.Size(81, 22);
             this.lblGioiTinh.TabIndex = 21;
             this.lblGioiTinh.Text = "Giới tính";
             // 
             // lblNgaySinh
             // 
             this.lblNgaySinh.AutoSize = true;
+            this.lblNgaySinh.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.lblNgaySinh.Location = new System.Drawing.Point(381, 172);
             this.lblNgaySinh.Name = "lblNgaySinh";
-            this.lblNgaySinh.Size = new System.Drawing.Size(87, 20);
+            this.lblNgaySinh.Size = new System.Drawing.Size(94, 22);
             this.lblNgaySinh.TabIndex = 22;
             this.lblNgaySinh.Text = "Ngày sinh";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.lblEmail.Location = new System.Drawing.Point(381, 222);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(53, 20);
+            this.lblEmail.Size = new System.Drawing.Size(58, 22);
             this.lblEmail.TabIndex = 23;
             this.lblEmail.Text = "Email";
             // 
             // lblSDT
             // 
             this.lblSDT.AutoSize = true;
+            this.lblSDT.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.lblSDT.Location = new System.Drawing.Point(381, 274);
             this.lblSDT.Name = "lblSDT";
-            this.lblSDT.Size = new System.Drawing.Size(44, 20);
+            this.lblSDT.Size = new System.Drawing.Size(43, 22);
             this.lblSDT.TabIndex = 24;
             this.lblSDT.Text = "SĐT";
             // 
             // lblDiaChi
             // 
             this.lblDiaChi.AutoSize = true;
+            this.lblDiaChi.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.lblDiaChi.Location = new System.Drawing.Point(383, 328);
             this.lblDiaChi.Name = "lblDiaChi";
-            this.lblDiaChi.Size = new System.Drawing.Size(64, 20);
+            this.lblDiaChi.Size = new System.Drawing.Size(68, 22);
             this.lblDiaChi.TabIndex = 25;
             this.lblDiaChi.Text = "Địa chỉ";
             // 
             // cboMaNQL
             // 
+            this.cboMaNQL.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboMaNQL.FormattingEnabled = true;
             this.cboMaNQL.Location = new System.Drawing.Point(193, 303);
             this.cboMaNQL.Name = "cboMaNQL";
-            this.cboMaNQL.Size = new System.Drawing.Size(169, 28);
+            this.cboMaNQL.Size = new System.Drawing.Size(169, 30);
             this.cboMaNQL.TabIndex = 26;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(12, 308);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 20);
+            this.label2.Size = new System.Drawing.Size(156, 22);
             this.label2.TabIndex = 28;
             this.label2.Text = "Mã người quản lý";
             // 
             // nupLuong
             // 
+            this.nupLuong.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.nupLuong.Location = new System.Drawing.Point(193, 337);
             this.nupLuong.Maximum = new decimal(new int[] {
             1569325055,
@@ -280,15 +300,16 @@
             0,
             0});
             this.nupLuong.Name = "nupLuong";
-            this.nupLuong.Size = new System.Drawing.Size(169, 26);
+            this.nupLuong.Size = new System.Drawing.Size(169, 27);
             this.nupLuong.TabIndex = 29;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(12, 343);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 20);
+            this.label1.Size = new System.Drawing.Size(63, 22);
             this.label1.TabIndex = 30;
             this.label1.Text = "Lương";
             // 

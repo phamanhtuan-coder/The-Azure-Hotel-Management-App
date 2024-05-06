@@ -38,7 +38,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.btnSubmit.Location = new System.Drawing.Point(365, 157);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
@@ -48,7 +48,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Location = new System.Drawing.Point(49, 157);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
@@ -59,36 +59,40 @@
             // lblTenVaiTro
             // 
             this.lblTenVaiTro.AutoSize = true;
+            this.lblTenVaiTro.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.lblTenVaiTro.Location = new System.Drawing.Point(45, 36);
             this.lblTenVaiTro.Name = "lblTenVaiTro";
-            this.lblTenVaiTro.Size = new System.Drawing.Size(93, 20);
+            this.lblTenVaiTro.Size = new System.Drawing.Size(99, 22);
             this.lblTenVaiTro.TabIndex = 6;
             this.lblTenVaiTro.Text = "Tên vai trò";
             // 
             // cboVaiTro
             // 
             this.cboVaiTro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboVaiTro.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboVaiTro.FormattingEnabled = true;
             this.cboVaiTro.Location = new System.Drawing.Point(263, 28);
             this.cboVaiTro.Name = "cboVaiTro";
-            this.cboVaiTro.Size = new System.Drawing.Size(252, 28);
+            this.cboVaiTro.Size = new System.Drawing.Size(252, 30);
             this.cboVaiTro.TabIndex = 7;
             // 
             // cboTenPhongBan
             // 
             this.cboTenPhongBan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTenPhongBan.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboTenPhongBan.FormattingEnabled = true;
             this.cboTenPhongBan.Location = new System.Drawing.Point(263, 89);
             this.cboTenPhongBan.Name = "cboTenPhongBan";
-            this.cboTenPhongBan.Size = new System.Drawing.Size(252, 28);
+            this.cboTenPhongBan.Size = new System.Drawing.Size(252, 30);
             this.cboTenPhongBan.TabIndex = 9;
             // 
             // lblTenPhongBan
             // 
             this.lblTenPhongBan.AutoSize = true;
+            this.lblTenPhongBan.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.lblTenPhongBan.Location = new System.Drawing.Point(45, 97);
             this.lblTenPhongBan.Name = "lblTenPhongBan";
-            this.lblTenPhongBan.Size = new System.Drawing.Size(129, 20);
+            this.lblTenPhongBan.Size = new System.Drawing.Size(136, 22);
             this.lblTenPhongBan.TabIndex = 8;
             this.lblTenPhongBan.Text = "Tên phòng ban";
             // 

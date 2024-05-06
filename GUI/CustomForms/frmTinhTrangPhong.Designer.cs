@@ -38,6 +38,7 @@
             // 
             // txtTenLP
             // 
+            this.txtTenLP.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.txtTenLP.Location = new System.Drawing.Point(266, 44);
             this.txtTenLP.Name = "txtTenLP";
             this.txtTenLP.Size = new System.Drawing.Size(306, 27);
@@ -45,7 +46,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.btnSubmit.Location = new System.Drawing.Point(361, 271);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
@@ -55,7 +56,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Location = new System.Drawing.Point(94, 271);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
@@ -66,6 +67,7 @@
             // lblTenLP
             // 
             this.lblTenLP.AutoSize = true;
+            this.lblTenLP.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.lblTenLP.Location = new System.Drawing.Point(52, 49);
             this.lblTenLP.Name = "lblTenLP";
             this.lblTenLP.Size = new System.Drawing.Size(134, 22);
@@ -75,6 +77,7 @@
             // lblMoTa
             // 
             this.lblMoTa.AutoSize = true;
+            this.lblMoTa.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.lblMoTa.Location = new System.Drawing.Point(52, 117);
             this.lblMoTa.Name = "lblMoTa";
             this.lblMoTa.Size = new System.Drawing.Size(57, 22);
@@ -83,13 +86,14 @@
             // 
             // rtxtMoTa
             // 
+            this.rtxtMoTa.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.rtxtMoTa.Location = new System.Drawing.Point(266, 117);
             this.rtxtMoTa.Name = "rtxtMoTa";
             this.rtxtMoTa.Size = new System.Drawing.Size(306, 96);
             this.rtxtMoTa.TabIndex = 8;
             this.rtxtMoTa.Text = "";
             // 
-            // frmLoaiPhong
+            // frmTinhTrangPhong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
@@ -103,7 +107,7 @@
             this.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmLoaiPhong";
+            this.Name = "frmTinhTrangPhong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmTinhTrangPhong_Load);
             this.ResumeLayout(false);
