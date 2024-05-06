@@ -17,6 +17,11 @@ namespace BLL
            
         }
 
+        public List<PhongDTO> FilterRooms(DateTime ngayCheckIn, int soLuongKhach, decimal priceMin, decimal priceMax)
+        {
+            return phongDAL.FilterRooms(ngayCheckIn, soLuongKhach, priceMin, priceMax);
+        }
+
         public List<PhongDTO> GetAvailableRooms()
         {
             try
