@@ -63,8 +63,8 @@ namespace GUI.UserControls
             frm.DatPhongDTO.MaPHG = (int)dgvBooking.SelectedRows[0].Cells["colMaPHG"].Value;
             frm.DatPhongDTO.MaKH = (int)dgvBooking.SelectedRows[0].Cells["colMaKH"].Value;
             frm.DatPhongDTO.NgayDatPhong = (DateTime)dgvBooking.SelectedRows[0].Cells["colNgayDatPhong"].Value;
-            frm.DatPhongDTO.NgayNhanPhong = (DateTime)dgvBooking.SelectedRows[0].Cells["colNgayNhanPhong"].Value;
-            frm.DatPhongDTO.NgayTraPhong = (DateTime)dgvBooking.SelectedRows[0].Cells["colNgayTraPhong"].Value;
+            frm.DatPhongDTO.NgayNhanPhong = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy"));
+            frm.DatPhongDTO.NgayTraPhong = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy"));
             frm.DatPhongDTO.SoLuongKH =(int)dgvBooking.SelectedRows[0].Cells["colSoLuongKH"].Value;
             frm.DatPhongDTO.TrangThai = Convert.ToBoolean(dgvBooking.SelectedRows[0].Cells["colTrangThai"].Value);
         }
@@ -216,6 +216,39 @@ namespace GUI.UserControls
             {
                 layds();
             }
+        }
+
+        private void btncheckin_Click(object sender, EventArgs e)
+        {
+            DatPhongDTO datPhongDTO = new DatPhongDTO();
+            datPhongDTO.MaDatPhong = (int)dgvBooking.SelectedRows[0].Cells["colMaDatPhong"].Value;
+            datPhongDTO.MaPHG = (int)dgvBooking.SelectedRows[0].Cells["colMaPHG"].Value;
+            datPhongDTO.MaKH = (int)dgvBooking.SelectedRows[0].Cells["colMaKH"].Value;
+            datPhongDTO.NgayDatPhong = (DateTime)dgvBooking.SelectedRows[0].Cells["colNgayDatPhong"].Value;
+            datPhongDTO.NgayNhanPhong = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy"));
+            datPhongDTO.NgayTraPhong = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy"));
+            datPhongDTO.SoLuongKH = (int)dgvBooking.SelectedRows[0].Cells["colSoLuongKH"].Value;
+            datPhongDTO.TrangThai = Convert.ToBoolean(dgvBooking.SelectedRows[0].Cells["colTrangThai"].Value);
+
+            int madatphong = (int)dgvBooking.SelectedRows[0].Cells["colMaDatPhong"].Value;
+            DatPhongBLL.checkin(madatphong, datPhongDTO);
+
+        }
+
+        private void btncheckout_Click(object sender, EventArgs e)
+        {
+            DatPhongDTO datPhongDTO = new DatPhongDTO();
+            datPhongDTO.MaDatPhong = (int)dgvBooking.SelectedRows[0].Cells["colMaDatPhong"].Value;
+            datPhongDTO.MaPHG = (int)dgvBooking.SelectedRows[0].Cells["colMaPHG"].Value;
+            datPhongDTO.MaKH = (int)dgvBooking.SelectedRows[0].Cells["colMaKH"].Value;
+            datPhongDTO.NgayDatPhong = (DateTime)dgvBooking.SelectedRows[0].Cells["colNgayDatPhong"].Value;
+            datPhongDTO.NgayNhanPhong = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy"));
+            datPhongDTO.NgayTraPhong = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy"));
+            datPhongDTO.SoLuongKH = (int)dgvBooking.SelectedRows[0].Cells["colSoLuongKH"].Value;
+            datPhongDTO.TrangThai = Convert.ToBoolean(dgvBooking.SelectedRows[0].Cells["colTrangThai"].Value);
+
+            int madatphong = (int)dgvBooking.SelectedRows[0].Cells["colMaDatPhong"].Value;
+            DatPhongBLL.checkout(madatphong, datPhongDTO);
         }
     }
 }

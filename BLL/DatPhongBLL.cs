@@ -31,6 +31,14 @@ namespace BLL
         {
             return DatPhongDAL.kpd(madatphong);
         }
+        public bool checkout(int madatphong, DatPhongDTO datPhongDTO)
+        {
+            return DatPhongDAL.checkout(madatphong,datPhongDTO);
+        }
+        public bool checkin(int madatphong, DatPhongDTO datPhongDTO)
+        {
+            return DatPhongDAL.checkin(madatphong, datPhongDTO);
+        }
 
         public List<DatPhongDTO> laydsp()
         {

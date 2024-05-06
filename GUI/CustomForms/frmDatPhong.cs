@@ -38,8 +38,6 @@ namespace GUI.customForm
                 cboMaPHG.DisplayMember = "MaPHG";
                 cboMaPHG.ValueMember = "MaPHG";
                 dtpNgayDat.Value = DateTime.Now;
-                dtpNgayNhanPhong.Value = DateTime.Now;
-                dtpNgayTraPhong.Value= DateTime.Now;
                 nudSoLuongKhach.Value = 1;
             }
             else
@@ -52,8 +50,6 @@ namespace GUI.customForm
                 cboMaPHG.ValueMember = "MaPHG";
                 cboMaPHG.SelectedItem = DatPhongDTO.MaPHG;
                 dtpNgayDat.Value = DatPhongDTO.NgayDatPhong;
-                dtpNgayNhanPhong.Value = DatPhongDTO.NgayNhanPhong;
-                dtpNgayTraPhong.Value = DatPhongDTO.NgayTraPhong;
                 nudSoLuongKhach.Value = DatPhongDTO.SoLuongKH;
             }
 
@@ -67,9 +63,9 @@ namespace GUI.customForm
             p.MaPHG = int.Parse(cboMaPHG.Text);
             p.MaKH =int.Parse(txtMaKH.Text);
             p.NgayDatPhong = dtpNgayDat.Value;
-            p.NgayNhanPhong = dtpNgayNhanPhong.Value;
-            p.NgayTraPhong = dtpNgayTraPhong.Value;
             p.SoLuongKH =(int)nudSoLuongKhach.Value;
+            p.NgayNhanPhong =DateTime.Parse( DateTime.Now.ToString("dd/MM/yyyy"));
+            p.NgayTraPhong =DateTime.Parse( DateTime.Now.ToString("dd/MM/yyyy"));
 
         }
 

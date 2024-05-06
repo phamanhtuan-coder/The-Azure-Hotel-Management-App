@@ -49,7 +49,32 @@ namespace DAL
             conn.Close();
             return kq > 0;
         }
-
+        public bool checkin(int madatphong, DatPhongDTO datPhongDTO)
+        {
+            string lenhkp =
+                "UPDATE DatPhong SET NgayNhanPhong = @NgayNhanPhong WHERE MaDatPhong = @MaDatPhong";
+            SqlParameter[] pars = new SqlParameter[2];
+            pars[0] = new SqlParameter("@MaDatPhong", madatphong);
+            pars[1] = new SqlParameter("@NgayNhanPhong", datPhongDTO.NgayNhanPhong);
+            SqlConnection conn = DataProvider.KetNoiDuLieu();
+            conn.Open();
+            int kq = DataProvider.ThucHienCauLenh(lenhkp, conn, pars);
+            conn.Close();
+            return kq > 0;
+        }
+        public bool checkout(int madatphong, DatPhongDTO datPhongDTO)
+        {
+            string lenhkp =
+                "UPDATE DatPhong SET NgayTraPhong = @NgayTraPhong WHERE MaDatPhong = @MaDatPhong";
+            SqlParameter[] pars = new SqlParameter[2];
+            pars[0] = new SqlParameter("@MaDatPhong", madatphong);
+            pars[1] = new SqlParameter("@NgayTraPhong", datPhongDTO.NgayTraPhong);
+            SqlConnection conn = DataProvider.KetNoiDuLieu();
+            conn.Open();
+            int kq = DataProvider.ThucHienCauLenh(lenhkp, conn, pars);
+            conn.Close();
+            return kq > 0;
+        }
         public List<DatPhongDTO> layds()
         {
             List<DatPhongDTO> ds = new List<DatPhongDTO>();
@@ -127,15 +152,14 @@ namespace DAL
         public bool themd(DatPhongDTO datPhongDTO)
         {
             string lenhThem =
-                "INSERT INTO DatPhong (MaKH, MaPHG,NgayDatPhong,NgayNhanPhong,NgayTraPhong,SoLuongKH,TrangThai) VALUES (@MaKH, @MaPHG,@NgayDatPhong,@NgayNhanPhong,@NgayTraPhong,@SoLuongKH, 1)";
+                "INSERT INTO DatPhong (MaKH, MaPHG,NgayDatPhong,SoLuongKH,TrangThai) VALUES (@MaKH, @MaPHG,@NgayDatPhong,@SoLuongKH, 1)";
 
-            SqlParameter[] pars = new SqlParameter[6];
+            SqlParameter[] pars = new SqlParameter[4];
             pars[0] = new SqlParameter("MaKH", datPhongDTO.MaKH);
             pars[1] = new SqlParameter("MaPHG", datPhongDTO.MaPHG);
             pars[2] = new SqlParameter("NgayDatPhong", datPhongDTO.NgayDatPhong);
-            pars[3] = new SqlParameter("NgayNhanPhong", datPhongDTO.NgayNhanPhong);
-            pars[4] = new SqlParameter("NgayTraPhong", datPhongDTO.NgayTraPhong);
-            pars[5] = new SqlParameter("SoLuongKH", datPhongDTO.SoLuongKH);
+            
+            pars[3] = new SqlParameter("SoLuongKH", datPhongDTO.SoLuongKH);
             SqlConnection conn = DataProvider.KetNoiDuLieu();
             conn.Open();
             int kq = DataProvider.ThucHienCauLenh(lenhThem, conn, pars);
