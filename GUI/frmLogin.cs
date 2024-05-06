@@ -179,7 +179,7 @@ namespace GUI
                 }
                 else
                 {
-                    customMessageBox thongBao = new customMessageBox("Xác thực thất bại!");
+                    customMessageBox thongBao = new customMessageBox("Xác thực thất bại! Hãy kiểm tra lại thông tin!");
                     thongBao.ShowDialog();
                 }
             }
@@ -197,31 +197,10 @@ namespace GUI
                 }
                 else
                 {
-                    customMessageBox thongBao = new customMessageBox("Đăng nhập thất bại!");
+                    customMessageBox thongBao = new customMessageBox("Đăng nhập thất bại! Hãy kiểm tra lại thông tin!");
                     thongBao.ShowDialog();
                 }
             }
-            //string username = txtUsername.Text.Trim();
-            //string password = txtPassword.Text.Trim();
-
-            //bool isValidLogin = userBLL.KiemTraDangNhap(username, password);
-
-            //if (isValidLogin)
-            //{
-            //    //MessageBox.Show("Đăng nhập thành công!");
-            //    // Thực hiện các hành động sau khi đăng nhập thành công
-            //    frmMain mainForm = new frmMain();
-            //    mainForm.Show();
-            //    this.Hide();
-            //    this.FormClosing -= frmLogin_FormClosing;
-            //    this.Close();
-            //    this.FormClosing += frmLogin_FormClosing;
-            //}
-            //else
-            //{
-            //    // Đăng nhập thất bại
-            //    //MessageBox.Show("Tên người dùng hoặc mật khẩu không đúng!");
-            //}
 
         }
 

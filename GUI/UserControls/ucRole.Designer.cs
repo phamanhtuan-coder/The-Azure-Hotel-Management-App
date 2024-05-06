@@ -76,7 +76,7 @@
             // 
             this.lblRole.BackColor = System.Drawing.Color.Lavender;
             this.lblRole.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblRole.Font = new System.Drawing.Font("Montserrat", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblRole.ForeColor = System.Drawing.Color.RoyalBlue;
             this.lblRole.Location = new System.Drawing.Point(0, 0);
             this.lblRole.Name = "lblRole";
@@ -108,7 +108,7 @@
             this.btnAddRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.btnAddRole.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAddRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddRole.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddRole.ForeColor = System.Drawing.Color.White;
             this.btnAddRole.ImageSize = new System.Drawing.Size(32, 32);
             this.btnAddRole.Location = new System.Drawing.Point(3, 3);
@@ -129,7 +129,7 @@
             this.btnEditRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
             this.btnEditRole.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnEditRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditRole.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditRole.ForeColor = System.Drawing.Color.White;
             this.btnEditRole.ImageSize = new System.Drawing.Size(32, 32);
             this.btnEditRole.Location = new System.Drawing.Point(3, 50);
@@ -150,7 +150,7 @@
             this.btnDeleteRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnDeleteRole.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDeleteRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteRole.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteRole.ForeColor = System.Drawing.Color.White;
             this.btnDeleteRole.ImageSize = new System.Drawing.Size(32, 32);
             this.btnDeleteRole.Location = new System.Drawing.Point(200, 3);
@@ -171,7 +171,7 @@
             this.btnRecoverRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverRole.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRecoverRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecoverRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecoverRole.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecoverRole.ForeColor = System.Drawing.Color.White;
             this.btnRecoverRole.ImageSize = new System.Drawing.Size(32, 32);
             this.btnRecoverRole.Location = new System.Drawing.Point(200, 50);
@@ -189,10 +189,10 @@
             // 
             // txtSearchRole
             // 
-            this.txtSearchRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchRole.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchRole.Location = new System.Drawing.Point(6, 16);
             this.txtSearchRole.Name = "txtSearchRole";
-            this.txtSearchRole.Size = new System.Drawing.Size(251, 38);
+            this.txtSearchRole.Size = new System.Drawing.Size(251, 27);
             this.txtSearchRole.TabIndex = 2;
             // 
             // btnTraCuuRole
@@ -201,7 +201,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTraCuuRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTraCuuRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTraCuuRole.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTraCuuRole.ForeColor = System.Drawing.Color.White;
             this.btnTraCuuRole.Location = new System.Drawing.Point(264, 16);
             this.btnTraCuuRole.Name = "btnTraCuuRole";
@@ -219,15 +219,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboStateRole.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboStateRole.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboStateRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateRole.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateRole.Location = new System.Drawing.Point(226, 185);
             this.cboStateRole.Name = "cboStateRole";
             this.cboStateRole.Size = new System.Drawing.Size(156, 33);
             this.cboStateRole.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboStateRole.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateRole.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateRole.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateRole.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateRole.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboStateRole.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateRole.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateRole.TabIndex = 3;
             this.cboStateRole.SelectedIndexChanged += new System.EventHandler(this.cboStateRole_SelectedIndexChanged);
             // 
@@ -361,25 +361,25 @@
             this.cboSortRole.DisplayMember = "";
             this.cboSortRole.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboSortRole.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortRole.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortRole.Location = new System.Drawing.Point(226, 77);
             this.cboSortRole.Name = "cboSortRole";
             this.cboSortRole.Size = new System.Drawing.Size(156, 33);
             this.cboSortRole.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortRole.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortRole.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortRole.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortRole.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortRole.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortRole.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortRole.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortRole.TabIndex = 29;
             this.cboSortRole.SelectedIndexChanged += new System.EventHandler(this.cboSortRole_SelectedIndexChanged);
             // 
             // lblSortServiceTypeID
             // 
             this.lblSortServiceTypeID.AutoSize = true;
-            this.lblSortServiceTypeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortServiceTypeID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortServiceTypeID.Location = new System.Drawing.Point(3, 84);
             this.lblSortServiceTypeID.Name = "lblSortServiceTypeID";
-            this.lblSortServiceTypeID.Size = new System.Drawing.Size(168, 24);
+            this.lblSortServiceTypeID.Size = new System.Drawing.Size(152, 22);
             this.lblSortServiceTypeID.TabIndex = 28;
             this.lblSortServiceTypeID.Text = "Sort theo Role ID";
             this.lblSortServiceTypeID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -390,25 +390,25 @@
             this.cboSortSoLuong.DisplayMember = "";
             this.cboSortSoLuong.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboSortSoLuong.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortSoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortSoLuong.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortSoLuong.Location = new System.Drawing.Point(227, 131);
             this.cboSortSoLuong.Name = "cboSortSoLuong";
             this.cboSortSoLuong.Size = new System.Drawing.Size(156, 33);
             this.cboSortSoLuong.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortSoLuong.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSoLuong.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortSoLuong.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortSoLuong.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortSoLuong.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortSoLuong.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortSoLuong.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortSoLuong.TabIndex = 23;
             this.cboSortSoLuong.SelectedIndexChanged += new System.EventHandler(this.cboSortSoLuong_SelectedIndexChanged);
             // 
             // lblSortSoLuongRole
             // 
             this.lblSortSoLuongRole.AutoSize = true;
-            this.lblSortSoLuongRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortSoLuongRole.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortSoLuongRole.Location = new System.Drawing.Point(3, 138);
             this.lblSortSoLuongRole.Name = "lblSortSoLuongRole";
-            this.lblSortSoLuongRole.Size = new System.Drawing.Size(178, 24);
+            this.lblSortSoLuongRole.Size = new System.Drawing.Size(158, 22);
             this.lblSortSoLuongRole.TabIndex = 14;
             this.lblSortSoLuongRole.Text = "Lọc theo số lượng";
             this.lblSortSoLuongRole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -416,10 +416,10 @@
             // lblStateRole
             // 
             this.lblStateRole.AutoSize = true;
-            this.lblStateRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStateRole.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStateRole.Location = new System.Drawing.Point(3, 192);
             this.lblStateRole.Name = "lblStateRole";
-            this.lblStateRole.Size = new System.Drawing.Size(174, 24);
+            this.lblStateRole.Size = new System.Drawing.Size(159, 22);
             this.lblStateRole.TabIndex = 9;
             this.lblStateRole.Text = "Trạng thái dữ liệu";
             this.lblStateRole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

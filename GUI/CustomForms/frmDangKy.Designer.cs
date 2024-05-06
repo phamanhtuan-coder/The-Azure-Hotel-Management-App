@@ -40,6 +40,9 @@ namespace GUI.customForm
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.btnUpload = new Syncfusion.WinForms.Controls.SfButton();
+            this.cpicAvatar = new GUI.CircularPictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPhone = new System.Windows.Forms.TextBox();
             this.lblDiaChi = new System.Windows.Forms.Label();
             this.lblNgSinh = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -54,9 +57,6 @@ namespace GUI.customForm
             this.txtCCCD = new System.Windows.Forms.TextBox();
             this.btnSignUp = new Syncfusion.WinForms.Controls.SfButton();
             this.btnQuayLai = new Syncfusion.WinForms.Controls.SfButton();
-            this.cpicAvatar = new GUI.CircularPictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtPhone = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.spcInput)).BeginInit();
             this.spcInput.Panel1.SuspendLayout();
             this.spcInput.Panel2.SuspendLayout();
@@ -68,7 +68,7 @@ namespace GUI.customForm
             // 
             this.lblTitle.BackColor = System.Drawing.Color.White;
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblTitle.Font = new System.Drawing.Font("Montserrat", 28F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.Color.RoyalBlue;
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
@@ -81,7 +81,7 @@ namespace GUI.customForm
             // 
             this.txtHoTen.Location = new System.Drawing.Point(202, 28);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(246, 26);
+            this.txtHoTen.Size = new System.Drawing.Size(246, 27);
             this.txtHoTen.TabIndex = 5;
             // 
             // spcInput
@@ -100,7 +100,7 @@ namespace GUI.customForm
             this.spcInput.Panel1.Controls.Add(this.txtUsername);
             this.spcInput.Panel1.Controls.Add(this.btnUpload);
             this.spcInput.Panel1.Controls.Add(this.cpicAvatar);
-            this.spcInput.Panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.spcInput.Panel1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.spcInput.Panel1.ForeColor = System.Drawing.Color.White;
             // 
             // spcInput.Panel2
@@ -120,7 +120,7 @@ namespace GUI.customForm
             this.spcInput.Panel2.Controls.Add(this.txtEmail);
             this.spcInput.Panel2.Controls.Add(this.txtCCCD);
             this.spcInput.Panel2.Controls.Add(this.txtHoTen);
-            this.spcInput.Panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.spcInput.Panel2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.spcInput.Panel2.ForeColor = System.Drawing.Color.White;
             this.spcInput.Size = new System.Drawing.Size(749, 375);
             this.spcInput.SplitterDistance = 285;
@@ -131,7 +131,7 @@ namespace GUI.customForm
             this.lblRePw.AutoSize = true;
             this.lblRePw.Location = new System.Drawing.Point(21, 303);
             this.lblRePw.Name = "lblRePw";
-            this.lblRePw.Size = new System.Drawing.Size(120, 20);
+            this.lblRePw.Size = new System.Drawing.Size(123, 22);
             this.lblRePw.TabIndex = 7;
             this.lblRePw.Text = "Re-Password:";
             // 
@@ -140,7 +140,7 @@ namespace GUI.customForm
             this.lblPw.AutoSize = true;
             this.lblPw.Location = new System.Drawing.Point(21, 235);
             this.lblPw.Name = "lblPw";
-            this.lblPw.Size = new System.Drawing.Size(91, 20);
+            this.lblPw.Size = new System.Drawing.Size(95, 22);
             this.lblPw.TabIndex = 6;
             this.lblPw.Text = "Password:";
             // 
@@ -149,7 +149,7 @@ namespace GUI.customForm
             this.lblUsername.AutoSize = true;
             this.lblUsername.Location = new System.Drawing.Point(21, 167);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(96, 20);
+            this.lblUsername.Size = new System.Drawing.Size(100, 22);
             this.lblUsername.TabIndex = 5;
             this.lblUsername.Text = "Username:";
             // 
@@ -158,7 +158,7 @@ namespace GUI.customForm
             this.txtRePassword.Location = new System.Drawing.Point(25, 328);
             this.txtRePassword.Name = "txtRePassword";
             this.txtRePassword.PasswordChar = '*';
-            this.txtRePassword.Size = new System.Drawing.Size(246, 26);
+            this.txtRePassword.Size = new System.Drawing.Size(246, 27);
             this.txtRePassword.TabIndex = 4;
             // 
             // txtPassword
@@ -166,19 +166,19 @@ namespace GUI.customForm
             this.txtPassword.Location = new System.Drawing.Point(25, 260);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(246, 26);
+            this.txtPassword.Size = new System.Drawing.Size(246, 27);
             this.txtPassword.TabIndex = 3;
             // 
             // txtUsername
             // 
             this.txtUsername.Location = new System.Drawing.Point(25, 192);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(246, 26);
+            this.txtUsername.Size = new System.Drawing.Size(246, 27);
             this.txtUsername.TabIndex = 2;
             // 
             // btnUpload
             // 
-            this.btnUpload.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnUpload.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.btnUpload.Location = new System.Drawing.Point(155, 78);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(116, 27);
@@ -186,12 +186,40 @@ namespace GUI.customForm
             this.btnUpload.Text = "Tải lên";
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
+            // cpicAvatar
+            // 
+            this.cpicAvatar.BackColor = System.Drawing.Color.White;
+            this.cpicAvatar.Image = ((System.Drawing.Image)(resources.GetObject("cpicAvatar.Image")));
+            this.cpicAvatar.InitialImage = ((System.Drawing.Image)(resources.GetObject("cpicAvatar.InitialImage")));
+            this.cpicAvatar.Location = new System.Drawing.Point(9, 19);
+            this.cpicAvatar.Name = "cpicAvatar";
+            this.cpicAvatar.Size = new System.Drawing.Size(128, 128);
+            this.cpicAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cpicAvatar.TabIndex = 0;
+            this.cpicAvatar.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(18, 180);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 22);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Phone:";
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Location = new System.Drawing.Point(199, 174);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(246, 27);
+            this.txtPhone.TabIndex = 16;
+            // 
             // lblDiaChi
             // 
             this.lblDiaChi.AutoSize = true;
             this.lblDiaChi.Location = new System.Drawing.Point(18, 328);
             this.lblDiaChi.Name = "lblDiaChi";
-            this.lblDiaChi.Size = new System.Drawing.Size(69, 20);
+            this.lblDiaChi.Size = new System.Drawing.Size(72, 22);
             this.lblDiaChi.TabIndex = 15;
             this.lblDiaChi.Text = "Địa chỉ:";
             // 
@@ -200,7 +228,7 @@ namespace GUI.customForm
             this.lblNgSinh.AutoSize = true;
             this.lblNgSinh.Location = new System.Drawing.Point(18, 278);
             this.lblNgSinh.Name = "lblNgSinh";
-            this.lblNgSinh.Size = new System.Drawing.Size(92, 20);
+            this.lblNgSinh.Size = new System.Drawing.Size(98, 22);
             this.lblNgSinh.TabIndex = 14;
             this.lblNgSinh.Text = "Ngày sinh:";
             // 
@@ -209,7 +237,7 @@ namespace GUI.customForm
             this.lblEmail.AutoSize = true;
             this.lblEmail.Location = new System.Drawing.Point(18, 135);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(58, 20);
+            this.lblEmail.Size = new System.Drawing.Size(62, 22);
             this.lblEmail.TabIndex = 13;
             this.lblEmail.Text = "Email:";
             // 
@@ -218,7 +246,7 @@ namespace GUI.customForm
             this.lblGioiTinh.AutoSize = true;
             this.lblGioiTinh.Location = new System.Drawing.Point(18, 224);
             this.lblGioiTinh.Name = "lblGioiTinh";
-            this.lblGioiTinh.Size = new System.Drawing.Size(81, 20);
+            this.lblGioiTinh.Size = new System.Drawing.Size(85, 22);
             this.lblGioiTinh.TabIndex = 13;
             this.lblGioiTinh.Text = "Giới tính:";
             // 
@@ -227,7 +255,7 @@ namespace GUI.customForm
             this.lblCCCD.AutoSize = true;
             this.lblCCCD.Location = new System.Drawing.Point(18, 84);
             this.lblCCCD.Name = "lblCCCD";
-            this.lblCCCD.Size = new System.Drawing.Size(164, 20);
+            this.lblCCCD.Size = new System.Drawing.Size(167, 22);
             this.lblCCCD.TabIndex = 12;
             this.lblCCCD.Text = "CCCD/Paasport ID:";
             // 
@@ -236,7 +264,7 @@ namespace GUI.customForm
             this.lblHoTen.AutoSize = true;
             this.lblHoTen.Location = new System.Drawing.Point(18, 33);
             this.lblHoTen.Name = "lblHoTen";
-            this.lblHoTen.Size = new System.Drawing.Size(90, 20);
+            this.lblHoTen.Size = new System.Drawing.Size(93, 22);
             this.lblHoTen.TabIndex = 8;
             this.lblHoTen.Text = "Họ và Tên";
             // 
@@ -270,28 +298,28 @@ namespace GUI.customForm
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(202, 328);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(246, 26);
+            this.txtDiaChi.Size = new System.Drawing.Size(246, 27);
             this.txtDiaChi.TabIndex = 11;
             // 
             // dtpNgaySinh
             // 
             this.dtpNgaySinh.Location = new System.Drawing.Point(202, 274);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(246, 26);
+            this.dtpNgaySinh.Size = new System.Drawing.Size(246, 27);
             this.dtpNgaySinh.TabIndex = 10;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(202, 130);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(246, 26);
+            this.txtEmail.Size = new System.Drawing.Size(246, 27);
             this.txtEmail.TabIndex = 7;
             // 
             // txtCCCD
             // 
             this.txtCCCD.Location = new System.Drawing.Point(202, 78);
             this.txtCCCD.Name = "txtCCCD";
-            this.txtCCCD.Size = new System.Drawing.Size(246, 26);
+            this.txtCCCD.Size = new System.Drawing.Size(246, 27);
             this.txtCCCD.TabIndex = 6;
             // 
             // btnSignUp
@@ -299,7 +327,7 @@ namespace GUI.customForm
             this.btnSignUp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnSignUp.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.btnSignUp.Location = new System.Drawing.Point(388, 493);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(166, 40);
@@ -312,41 +340,13 @@ namespace GUI.customForm
             this.btnQuayLai.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnQuayLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnQuayLai.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.btnQuayLai.Location = new System.Drawing.Point(165, 493);
             this.btnQuayLai.Name = "btnQuayLai";
             this.btnQuayLai.Size = new System.Drawing.Size(166, 40);
             this.btnQuayLai.TabIndex = 13;
             this.btnQuayLai.Text = "Quay lại login";
             this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
-            // 
-            // cpicAvatar
-            // 
-            this.cpicAvatar.BackColor = System.Drawing.Color.White;
-            this.cpicAvatar.Image = ((System.Drawing.Image)(resources.GetObject("cpicAvatar.Image")));
-            this.cpicAvatar.InitialImage = ((System.Drawing.Image)(resources.GetObject("cpicAvatar.InitialImage")));
-            this.cpicAvatar.Location = new System.Drawing.Point(9, 19);
-            this.cpicAvatar.Name = "cpicAvatar";
-            this.cpicAvatar.Size = new System.Drawing.Size(128, 128);
-            this.cpicAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.cpicAvatar.TabIndex = 0;
-            this.cpicAvatar.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 180);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 20);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Phone:";
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Location = new System.Drawing.Point(199, 174);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(246, 26);
-            this.txtPhone.TabIndex = 16;
             // 
             // frmDangKy
             // 
@@ -358,7 +358,7 @@ namespace GUI.customForm
             this.Controls.Add(this.spcInput);
             this.Controls.Add(this.lblTitle);
             this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDangKy";
             this.ShowInTaskbar = false;

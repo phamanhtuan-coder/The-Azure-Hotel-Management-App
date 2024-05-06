@@ -40,6 +40,11 @@
             this.cboStateCustomerRanking = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvCustomerRank = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MucGiamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboSortCustomerRankingID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortCustomerRankingID = new System.Windows.Forms.Label();
             this.cboSortSoLuongKH = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -47,11 +52,6 @@
             this.lblStateCustomerRanking = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MucGiamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateCustomerRanking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -72,7 +72,7 @@
             // 
             this.lblCustomerRanking.BackColor = System.Drawing.Color.Lavender;
             this.lblCustomerRanking.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCustomerRanking.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblCustomerRanking.Font = new System.Drawing.Font("Montserrat", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblCustomerRanking.ForeColor = System.Drawing.Color.RoyalBlue;
             this.lblCustomerRanking.Location = new System.Drawing.Point(0, 0);
             this.lblCustomerRanking.Name = "lblCustomerRanking";
@@ -104,7 +104,7 @@
             this.btnAddCustomerRanking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.btnAddCustomerRanking.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAddCustomerRanking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddCustomerRanking.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCustomerRanking.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCustomerRanking.ForeColor = System.Drawing.Color.White;
             this.btnAddCustomerRanking.ImageSize = new System.Drawing.Size(32, 32);
             this.btnAddCustomerRanking.Location = new System.Drawing.Point(3, 3);
@@ -125,7 +125,7 @@
             this.btnEditCustomerRanking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
             this.btnEditCustomerRanking.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnEditCustomerRanking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditCustomerRanking.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditCustomerRanking.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditCustomerRanking.ForeColor = System.Drawing.Color.White;
             this.btnEditCustomerRanking.ImageSize = new System.Drawing.Size(32, 32);
             this.btnEditCustomerRanking.Location = new System.Drawing.Point(3, 50);
@@ -146,7 +146,7 @@
             this.btnDeleteCustomerRanking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnDeleteCustomerRanking.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDeleteCustomerRanking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteCustomerRanking.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteCustomerRanking.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteCustomerRanking.ForeColor = System.Drawing.Color.White;
             this.btnDeleteCustomerRanking.ImageSize = new System.Drawing.Size(32, 32);
             this.btnDeleteCustomerRanking.Location = new System.Drawing.Point(200, 3);
@@ -167,7 +167,7 @@
             this.btnRecoverCustomerRanking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverCustomerRanking.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRecoverCustomerRanking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecoverCustomerRanking.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecoverCustomerRanking.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecoverCustomerRanking.ForeColor = System.Drawing.Color.White;
             this.btnRecoverCustomerRanking.ImageSize = new System.Drawing.Size(32, 32);
             this.btnRecoverCustomerRanking.Location = new System.Drawing.Point(200, 50);
@@ -185,10 +185,10 @@
             // 
             // txtSearchCustomerRanking
             // 
-            this.txtSearchCustomerRanking.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchCustomerRanking.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchCustomerRanking.Location = new System.Drawing.Point(6, 16);
             this.txtSearchCustomerRanking.Name = "txtSearchCustomerRanking";
-            this.txtSearchCustomerRanking.Size = new System.Drawing.Size(251, 38);
+            this.txtSearchCustomerRanking.Size = new System.Drawing.Size(251, 27);
             this.txtSearchCustomerRanking.TabIndex = 2;
             // 
             // btnTraCuuCustomerRanking
@@ -197,7 +197,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTraCuuCustomerRanking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuCustomerRanking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTraCuuCustomerRanking.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTraCuuCustomerRanking.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTraCuuCustomerRanking.ForeColor = System.Drawing.Color.White;
             this.btnTraCuuCustomerRanking.Location = new System.Drawing.Point(264, 16);
             this.btnTraCuuCustomerRanking.Name = "btnTraCuuCustomerRanking";
@@ -215,15 +215,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboStateCustomerRanking.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboStateCustomerRanking.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboStateCustomerRanking.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateCustomerRanking.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateCustomerRanking.Location = new System.Drawing.Point(226, 193);
             this.cboStateCustomerRanking.Name = "cboStateCustomerRanking";
             this.cboStateCustomerRanking.Size = new System.Drawing.Size(156, 33);
             this.cboStateCustomerRanking.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboStateCustomerRanking.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateCustomerRanking.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateCustomerRanking.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateCustomerRanking.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateCustomerRanking.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboStateCustomerRanking.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateCustomerRanking.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateCustomerRanking.TabIndex = 3;
             this.cboStateCustomerRanking.SelectedIndexChanged += new System.EventHandler(this.cboStateCustomerRanking_SelectedIndexChanged);
             // 
@@ -277,104 +277,6 @@
             this.dgvCustomerRank.Size = new System.Drawing.Size(973, 746);
             this.dgvCustomerRank.TabIndex = 0;
             // 
-            // cboSortCustomerRankingID
-            // 
-            this.cboSortCustomerRankingID.DelimiterChar = "";
-            this.cboSortCustomerRankingID.DisplayMember = "";
-            this.cboSortCustomerRankingID.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboSortCustomerRankingID.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortCustomerRankingID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortCustomerRankingID.Location = new System.Drawing.Point(226, 79);
-            this.cboSortCustomerRankingID.Name = "cboSortCustomerRankingID";
-            this.cboSortCustomerRankingID.Size = new System.Drawing.Size(156, 33);
-            this.cboSortCustomerRankingID.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortCustomerRankingID.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortCustomerRankingID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortCustomerRankingID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortCustomerRankingID.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortCustomerRankingID.TabIndex = 29;
-            this.cboSortCustomerRankingID.SelectedIndexChanged += new System.EventHandler(this.cboSortCustomerRankingID_SelectedIndexChanged);
-            // 
-            // lblSortCustomerRankingID
-            // 
-            this.lblSortCustomerRankingID.AutoSize = true;
-            this.lblSortCustomerRankingID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortCustomerRankingID.Location = new System.Drawing.Point(2, 86);
-            this.lblSortCustomerRankingID.Name = "lblSortCustomerRankingID";
-            this.lblSortCustomerRankingID.Size = new System.Drawing.Size(158, 24);
-            this.lblSortCustomerRankingID.TabIndex = 28;
-            this.lblSortCustomerRankingID.Text = "Sort theo ID loại";
-            this.lblSortCustomerRankingID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cboSortSoLuongKH
-            // 
-            this.cboSortSoLuongKH.DelimiterChar = "";
-            this.cboSortSoLuongKH.DisplayMember = "";
-            this.cboSortSoLuongKH.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboSortSoLuongKH.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortSoLuongKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSoLuongKH.Location = new System.Drawing.Point(227, 136);
-            this.cboSortSoLuongKH.Name = "cboSortSoLuongKH";
-            this.cboSortSoLuongKH.Size = new System.Drawing.Size(156, 33);
-            this.cboSortSoLuongKH.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortSoLuongKH.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSoLuongKH.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSoLuongKH.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortSoLuongKH.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSoLuongKH.TabIndex = 23;
-            this.cboSortSoLuongKH.SelectedIndexChanged += new System.EventHandler(this.cboSortSoLuongKH_SelectedIndexChanged);
-            // 
-            // lblSortSoLuongKH
-            // 
-            this.lblSortSoLuongKH.AutoSize = true;
-            this.lblSortSoLuongKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortSoLuongKH.Location = new System.Drawing.Point(2, 143);
-            this.lblSortSoLuongKH.Name = "lblSortSoLuongKH";
-            this.lblSortSoLuongKH.Size = new System.Drawing.Size(181, 24);
-            this.lblSortSoLuongKH.TabIndex = 14;
-            this.lblSortSoLuongKH.Text = "Sort theo số lượng";
-            this.lblSortSoLuongKH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblStateCustomerRanking
-            // 
-            this.lblStateCustomerRanking.AutoSize = true;
-            this.lblStateCustomerRanking.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStateCustomerRanking.Location = new System.Drawing.Point(2, 200);
-            this.lblStateCustomerRanking.Name = "lblStateCustomerRanking";
-            this.lblStateCustomerRanking.Size = new System.Drawing.Size(174, 24);
-            this.lblStateCustomerRanking.TabIndex = 9;
-            this.lblStateCustomerRanking.Text = "Trạng thái dữ liệu";
-            this.lblStateCustomerRanking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panUcHeader
-            // 
-            this.panUcHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(224)))), ((int)(((byte)(155)))));
-            this.panUcHeader.Controls.Add(this.spcHeader);
-            this.panUcHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panUcHeader.Location = new System.Drawing.Point(0, 0);
-            this.panUcHeader.Name = "panUcHeader";
-            this.panUcHeader.Size = new System.Drawing.Size(1370, 94);
-            this.panUcHeader.TabIndex = 37;
-            // 
-            // spcHeader
-            // 
-            this.spcHeader.BackColor = System.Drawing.Color.Lavender;
-            this.spcHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.spcHeader.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.spcHeader.Location = new System.Drawing.Point(0, 0);
-            this.spcHeader.Name = "spcHeader";
-            // 
-            // spcHeader.Panel1
-            // 
-            this.spcHeader.Panel1.Controls.Add(this.lblCustomerRanking);
-            // 
-            // spcHeader.Panel2
-            // 
-            this.spcHeader.Panel2.Controls.Add(this.tlpController);
-            this.spcHeader.Size = new System.Drawing.Size(1370, 94);
-            this.spcHeader.SplitterDistance = 972;
-            this.spcHeader.TabIndex = 0;
-            // 
             // ID
             // 
             this.ID.DataPropertyName = "MaLoaiHangThanhVien";
@@ -410,6 +312,104 @@
             this.TrangThai.Name = "TrangThai";
             this.TrangThai.ReadOnly = true;
             this.TrangThai.Visible = false;
+            // 
+            // cboSortCustomerRankingID
+            // 
+            this.cboSortCustomerRankingID.DelimiterChar = "";
+            this.cboSortCustomerRankingID.DisplayMember = "";
+            this.cboSortCustomerRankingID.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboSortCustomerRankingID.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+            this.cboSortCustomerRankingID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortCustomerRankingID.Location = new System.Drawing.Point(226, 79);
+            this.cboSortCustomerRankingID.Name = "cboSortCustomerRankingID";
+            this.cboSortCustomerRankingID.Size = new System.Drawing.Size(156, 33);
+            this.cboSortCustomerRankingID.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.cboSortCustomerRankingID.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortCustomerRankingID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortCustomerRankingID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboSortCustomerRankingID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortCustomerRankingID.TabIndex = 29;
+            this.cboSortCustomerRankingID.SelectedIndexChanged += new System.EventHandler(this.cboSortCustomerRankingID_SelectedIndexChanged);
+            // 
+            // lblSortCustomerRankingID
+            // 
+            this.lblSortCustomerRankingID.AutoSize = true;
+            this.lblSortCustomerRankingID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortCustomerRankingID.Location = new System.Drawing.Point(2, 86);
+            this.lblSortCustomerRankingID.Name = "lblSortCustomerRankingID";
+            this.lblSortCustomerRankingID.Size = new System.Drawing.Size(145, 22);
+            this.lblSortCustomerRankingID.TabIndex = 28;
+            this.lblSortCustomerRankingID.Text = "Sort theo ID loại";
+            this.lblSortCustomerRankingID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cboSortSoLuongKH
+            // 
+            this.cboSortSoLuongKH.DelimiterChar = "";
+            this.cboSortSoLuongKH.DisplayMember = "";
+            this.cboSortSoLuongKH.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboSortSoLuongKH.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+            this.cboSortSoLuongKH.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortSoLuongKH.Location = new System.Drawing.Point(227, 136);
+            this.cboSortSoLuongKH.Name = "cboSortSoLuongKH";
+            this.cboSortSoLuongKH.Size = new System.Drawing.Size(156, 33);
+            this.cboSortSoLuongKH.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.cboSortSoLuongKH.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortSoLuongKH.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortSoLuongKH.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboSortSoLuongKH.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortSoLuongKH.TabIndex = 23;
+            this.cboSortSoLuongKH.SelectedIndexChanged += new System.EventHandler(this.cboSortSoLuongKH_SelectedIndexChanged);
+            // 
+            // lblSortSoLuongKH
+            // 
+            this.lblSortSoLuongKH.AutoSize = true;
+            this.lblSortSoLuongKH.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortSoLuongKH.Location = new System.Drawing.Point(2, 143);
+            this.lblSortSoLuongKH.Name = "lblSortSoLuongKH";
+            this.lblSortSoLuongKH.Size = new System.Drawing.Size(163, 22);
+            this.lblSortSoLuongKH.TabIndex = 14;
+            this.lblSortSoLuongKH.Text = "Sort theo số lượng";
+            this.lblSortSoLuongKH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblStateCustomerRanking
+            // 
+            this.lblStateCustomerRanking.AutoSize = true;
+            this.lblStateCustomerRanking.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStateCustomerRanking.Location = new System.Drawing.Point(2, 200);
+            this.lblStateCustomerRanking.Name = "lblStateCustomerRanking";
+            this.lblStateCustomerRanking.Size = new System.Drawing.Size(159, 22);
+            this.lblStateCustomerRanking.TabIndex = 9;
+            this.lblStateCustomerRanking.Text = "Trạng thái dữ liệu";
+            this.lblStateCustomerRanking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panUcHeader
+            // 
+            this.panUcHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(224)))), ((int)(((byte)(155)))));
+            this.panUcHeader.Controls.Add(this.spcHeader);
+            this.panUcHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panUcHeader.Location = new System.Drawing.Point(0, 0);
+            this.panUcHeader.Name = "panUcHeader";
+            this.panUcHeader.Size = new System.Drawing.Size(1370, 94);
+            this.panUcHeader.TabIndex = 37;
+            // 
+            // spcHeader
+            // 
+            this.spcHeader.BackColor = System.Drawing.Color.Lavender;
+            this.spcHeader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.spcHeader.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.spcHeader.Location = new System.Drawing.Point(0, 0);
+            this.spcHeader.Name = "spcHeader";
+            // 
+            // spcHeader.Panel1
+            // 
+            this.spcHeader.Panel1.Controls.Add(this.lblCustomerRanking);
+            // 
+            // spcHeader.Panel2
+            // 
+            this.spcHeader.Panel2.Controls.Add(this.tlpController);
+            this.spcHeader.Size = new System.Drawing.Size(1370, 94);
+            this.spcHeader.SplitterDistance = 972;
+            this.spcHeader.TabIndex = 0;
             // 
             // ucCustomerRanking
             // 

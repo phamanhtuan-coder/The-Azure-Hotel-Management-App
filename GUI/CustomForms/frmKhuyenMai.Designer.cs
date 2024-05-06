@@ -41,7 +41,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.btnSubmit.Location = new System.Drawing.Point(327, 207);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
@@ -51,7 +51,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Location = new System.Drawing.Point(76, 207);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
@@ -62,52 +62,58 @@
             // lblTenKM
             // 
             this.lblTenKM.AutoSize = true;
+            this.lblTenKM.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.lblTenKM.Location = new System.Drawing.Point(46, 28);
             this.lblTenKM.Name = "lblTenKM";
-            this.lblTenKM.Size = new System.Drawing.Size(134, 20);
+            this.lblTenKM.Size = new System.Drawing.Size(146, 22);
             this.lblTenKM.TabIndex = 6;
             this.lblTenKM.Text = "Tên khuyến mãi";
             // 
             // lblHangTV
             // 
             this.lblHangTV.AutoSize = true;
+            this.lblHangTV.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.lblHangTV.Location = new System.Drawing.Point(46, 140);
             this.lblHangTV.Name = "lblHangTV";
-            this.lblHangTV.Size = new System.Drawing.Size(219, 20);
+            this.lblHangTV.Size = new System.Drawing.Size(234, 22);
             this.lblHangTV.TabIndex = 10;
             this.lblHangTV.Text = "Dành cho hạng thành viên";
             // 
             // lblMucKM
             // 
             this.lblMucKM.AutoSize = true;
+            this.lblMucKM.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.lblMucKM.Location = new System.Drawing.Point(46, 82);
             this.lblMucKM.Name = "lblMucKM";
-            this.lblMucKM.Size = new System.Drawing.Size(137, 20);
+            this.lblMucKM.Size = new System.Drawing.Size(151, 22);
             this.lblMucKM.TabIndex = 8;
             this.lblMucKM.Text = "Mức khuyến mãi";
             // 
             // txtMucKM
             // 
-            this.txtMucKM.Location = new System.Drawing.Point(271, 28);
+            this.txtMucKM.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.txtMucKM.Location = new System.Drawing.Point(327, 28);
             this.txtMucKM.Name = "txtMucKM";
-            this.txtMucKM.Size = new System.Drawing.Size(245, 26);
+            this.txtMucKM.Size = new System.Drawing.Size(189, 27);
             this.txtMucKM.TabIndex = 12;
             // 
             // nudMucKM
             // 
             this.nudMucKM.DecimalPlaces = 2;
-            this.nudMucKM.Location = new System.Drawing.Point(271, 83);
+            this.nudMucKM.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.nudMucKM.Location = new System.Drawing.Point(327, 83);
             this.nudMucKM.Name = "nudMucKM";
-            this.nudMucKM.Size = new System.Drawing.Size(245, 26);
+            this.nudMucKM.Size = new System.Drawing.Size(189, 27);
             this.nudMucKM.TabIndex = 13;
             this.nudMucKM.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cboHangTV
             // 
+            this.cboHangTV.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboHangTV.FormattingEnabled = true;
-            this.cboHangTV.Location = new System.Drawing.Point(271, 138);
+            this.cboHangTV.Location = new System.Drawing.Point(327, 138);
             this.cboHangTV.Name = "cboHangTV";
-            this.cboHangTV.Size = new System.Drawing.Size(245, 28);
+            this.cboHangTV.Size = new System.Drawing.Size(189, 30);
             this.cboHangTV.TabIndex = 14;
             // 
             // frmKhuyenMai

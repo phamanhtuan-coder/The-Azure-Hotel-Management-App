@@ -38,6 +38,7 @@
             // 
             // txtTenVT
             // 
+            this.txtTenVT.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.txtTenVT.Location = new System.Drawing.Point(266, 44);
             this.txtTenVT.Name = "txtTenVT";
             this.txtTenVT.Size = new System.Drawing.Size(306, 27);
@@ -45,7 +46,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.btnSubmit.Location = new System.Drawing.Point(361, 271);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
@@ -55,7 +56,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Location = new System.Drawing.Point(94, 271);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
@@ -66,6 +67,7 @@
             // lblTenVT
             // 
             this.lblTenVT.AutoSize = true;
+            this.lblTenVT.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.lblTenVT.Location = new System.Drawing.Point(52, 49);
             this.lblTenVT.Name = "lblTenVT";
             this.lblTenVT.Size = new System.Drawing.Size(99, 22);
@@ -75,6 +77,7 @@
             // lblMoTa
             // 
             this.lblMoTa.AutoSize = true;
+            this.lblMoTa.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.lblMoTa.Location = new System.Drawing.Point(52, 117);
             this.lblMoTa.Name = "lblMoTa";
             this.lblMoTa.Size = new System.Drawing.Size(57, 22);
@@ -83,6 +86,7 @@
             // 
             // rtxtMoTa
             // 
+            this.rtxtMoTa.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.rtxtMoTa.Location = new System.Drawing.Point(266, 117);
             this.rtxtMoTa.Name = "rtxtMoTa";
             this.rtxtMoTa.Size = new System.Drawing.Size(306, 96);

@@ -68,7 +68,7 @@
             // 
             this.lblAccountType.BackColor = System.Drawing.Color.Lavender;
             this.lblAccountType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblAccountType.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblAccountType.Font = new System.Drawing.Font("Montserrat", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblAccountType.ForeColor = System.Drawing.Color.RoyalBlue;
             this.lblAccountType.Location = new System.Drawing.Point(0, 0);
             this.lblAccountType.Name = "lblAccountType";
@@ -100,7 +100,7 @@
             this.btnAddAccountType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.btnAddAccountType.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAddAccountType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddAccountType.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddAccountType.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.btnAddAccountType.ForeColor = System.Drawing.Color.White;
             this.btnAddAccountType.ImageSize = new System.Drawing.Size(32, 32);
             this.btnAddAccountType.Location = new System.Drawing.Point(3, 3);
@@ -121,7 +121,7 @@
             this.btnEditAccountType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
             this.btnEditAccountType.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnEditAccountType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditAccountType.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditAccountType.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.btnEditAccountType.ForeColor = System.Drawing.Color.White;
             this.btnEditAccountType.ImageSize = new System.Drawing.Size(32, 32);
             this.btnEditAccountType.Location = new System.Drawing.Point(3, 50);
@@ -142,7 +142,7 @@
             this.btnDeleteAccountType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnDeleteAccountType.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDeleteAccountType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteAccountType.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteAccountType.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.btnDeleteAccountType.ForeColor = System.Drawing.Color.White;
             this.btnDeleteAccountType.ImageSize = new System.Drawing.Size(32, 32);
             this.btnDeleteAccountType.Location = new System.Drawing.Point(200, 3);
@@ -163,7 +163,7 @@
             this.btnRecoverAccountType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverAccountType.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRecoverAccountType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecoverAccountType.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecoverAccountType.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.btnRecoverAccountType.ForeColor = System.Drawing.Color.White;
             this.btnRecoverAccountType.ImageSize = new System.Drawing.Size(32, 32);
             this.btnRecoverAccountType.Location = new System.Drawing.Point(200, 50);
@@ -181,10 +181,10 @@
             // 
             // txtSearchAccountType
             // 
-            this.txtSearchAccountType.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchAccountType.Location = new System.Drawing.Point(6, 16);
+            this.txtSearchAccountType.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.txtSearchAccountType.Location = new System.Drawing.Point(5, 22);
             this.txtSearchAccountType.Name = "txtSearchAccountType";
-            this.txtSearchAccountType.Size = new System.Drawing.Size(251, 38);
+            this.txtSearchAccountType.Size = new System.Drawing.Size(251, 27);
             this.txtSearchAccountType.TabIndex = 2;
             // 
             // btnTraCuuAccountType
@@ -193,7 +193,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTraCuuAccountType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuAccountType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTraCuuAccountType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTraCuuAccountType.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.btnTraCuuAccountType.ForeColor = System.Drawing.Color.White;
             this.btnTraCuuAccountType.Location = new System.Drawing.Point(264, 16);
             this.btnTraCuuAccountType.Name = "btnTraCuuAccountType";
@@ -211,15 +211,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboStateAccountType.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboStateAccountType.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboStateAccountType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateAccountType.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboStateAccountType.Location = new System.Drawing.Point(226, 138);
             this.cboStateAccountType.Name = "cboStateAccountType";
             this.cboStateAccountType.Size = new System.Drawing.Size(156, 33);
             this.cboStateAccountType.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboStateAccountType.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateAccountType.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateAccountType.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.cboStateAccountType.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboStateAccountType.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboStateAccountType.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateAccountType.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboStateAccountType.TabIndex = 3;
             this.cboStateAccountType.SelectedIndexChanged += new System.EventHandler(this.cboStateAccountType_SelectedIndexChanged);
             // 
@@ -305,25 +305,25 @@
             this.cboSortAccountTypeID.DisplayMember = "";
             this.cboSortAccountTypeID.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboSortAccountTypeID.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortAccountTypeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortAccountTypeID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboSortAccountTypeID.Location = new System.Drawing.Point(226, 78);
             this.cboSortAccountTypeID.Name = "cboSortAccountTypeID";
             this.cboSortAccountTypeID.Size = new System.Drawing.Size(156, 33);
             this.cboSortAccountTypeID.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortAccountTypeID.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortAccountTypeID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortAccountTypeID.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.cboSortAccountTypeID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboSortAccountTypeID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortAccountTypeID.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortAccountTypeID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboSortAccountTypeID.TabIndex = 29;
             this.cboSortAccountTypeID.SelectedIndexChanged += new System.EventHandler(this.cboSortAccountTypeID_SelectedIndexChanged);
             // 
             // lblSortAccountTypeID
             // 
             this.lblSortAccountTypeID.AutoSize = true;
-            this.lblSortAccountTypeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortAccountTypeID.Location = new System.Drawing.Point(3, 85);
+            this.lblSortAccountTypeID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.lblSortAccountTypeID.Location = new System.Drawing.Point(3, 89);
             this.lblSortAccountTypeID.Name = "lblSortAccountTypeID";
-            this.lblSortAccountTypeID.Size = new System.Drawing.Size(158, 24);
+            this.lblSortAccountTypeID.Size = new System.Drawing.Size(145, 22);
             this.lblSortAccountTypeID.TabIndex = 28;
             this.lblSortAccountTypeID.Text = "Sort theo ID loại";
             this.lblSortAccountTypeID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -331,10 +331,10 @@
             // lblStateAccountType
             // 
             this.lblStateAccountType.AutoSize = true;
-            this.lblStateAccountType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStateAccountType.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.lblStateAccountType.Location = new System.Drawing.Point(3, 145);
             this.lblStateAccountType.Name = "lblStateAccountType";
-            this.lblStateAccountType.Size = new System.Drawing.Size(174, 24);
+            this.lblStateAccountType.Size = new System.Drawing.Size(159, 22);
             this.lblStateAccountType.TabIndex = 9;
             this.lblStateAccountType.Text = "Trạng thái dữ liệu";
             this.lblStateAccountType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
