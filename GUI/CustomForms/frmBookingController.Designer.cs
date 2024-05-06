@@ -69,6 +69,7 @@
             // dtpNgayDat
             // 
             this.dtpNgayDat.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayDat.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpNgayDat.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayDat.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayDat.Location = new System.Drawing.Point(228, 179);
