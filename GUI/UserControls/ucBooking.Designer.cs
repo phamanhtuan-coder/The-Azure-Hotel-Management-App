@@ -40,9 +40,13 @@
             this.cboStateBooking = new Syncfusion.WinForms.ListView.SfComboBox();
             this.dtpCheckOutDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.dtpCheckInDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
-            this.dtpBookingDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
+            this.dtpNgayDat = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvBooking = new System.Windows.Forms.DataGridView();
+            this.lblQuickControl = new System.Windows.Forms.Label();
+            this.btnCheckIn = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnCheckOut = new Syncfusion.WinForms.Controls.SfButton();
             this.cboSortRoomID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.cboSortBookingID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortRoomId = new System.Windows.Forms.Label();
@@ -53,6 +57,12 @@
             this.lblStateBooking = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtTraCuuUser = new System.Windows.Forms.TextBox();
+            this.btnTraCuuDP = new Syncfusion.WinForms.Controls.SfButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtCCCD = new System.Windows.Forms.TextBox();
             this.colMaDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaPHG = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +71,8 @@
             this.colNgayTraPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSoLuongKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateBooking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -197,7 +209,7 @@
             this.txtSearchBooking.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchBooking.Location = new System.Drawing.Point(6, 16);
             this.txtSearchBooking.Name = "txtSearchBooking";
-            this.txtSearchBooking.Size = new System.Drawing.Size(251, 49);
+            this.txtSearchBooking.Size = new System.Drawing.Size(251, 40);
             this.txtSearchBooking.TabIndex = 2;
             // 
             // btnTraCuuBooking
@@ -225,7 +237,7 @@
             this.cboStateBooking.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboStateBooking.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboStateBooking.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateBooking.Location = new System.Drawing.Point(225, 356);
+            this.cboStateBooking.Location = new System.Drawing.Point(224, 238);
             this.cboStateBooking.Name = "cboStateBooking";
             this.cboStateBooking.Size = new System.Drawing.Size(156, 33);
             this.cboStateBooking.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -242,7 +254,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpCheckOutDate.DateTimePattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
             this.dtpCheckOutDate.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpCheckOutDate.Location = new System.Drawing.Point(225, 299);
+            this.dtpCheckOutDate.Location = new System.Drawing.Point(225, 198);
             this.dtpCheckOutDate.Name = "dtpCheckOutDate";
             this.dtpCheckOutDate.Size = new System.Drawing.Size(156, 34);
             this.dtpCheckOutDate.TabIndex = 4;
@@ -254,23 +266,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpCheckInDate.DateTimePattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
             this.dtpCheckInDate.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpCheckInDate.Location = new System.Drawing.Point(225, 242);
+            this.dtpCheckInDate.Location = new System.Drawing.Point(225, 158);
             this.dtpCheckInDate.Name = "dtpCheckInDate";
             this.dtpCheckInDate.Size = new System.Drawing.Size(156, 34);
             this.dtpCheckInDate.TabIndex = 5;
             this.dtpCheckInDate.ToolTipText = "";
             // 
-            // dtpBookingDate
+            // dtpNgayDat
             // 
-            this.dtpBookingDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dtpNgayDat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpBookingDate.DateTimePattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
-            this.dtpBookingDate.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBookingDate.Location = new System.Drawing.Point(225, 185);
-            this.dtpBookingDate.Name = "dtpBookingDate";
-            this.dtpBookingDate.Size = new System.Drawing.Size(156, 34);
-            this.dtpBookingDate.TabIndex = 6;
-            this.dtpBookingDate.ToolTipText = "";
+            this.dtpNgayDat.DateTimePattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
+            this.dtpNgayDat.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayDat.Location = new System.Drawing.Point(140, 404);
+            this.dtpNgayDat.Name = "dtpNgayDat";
+            this.dtpNgayDat.Size = new System.Drawing.Size(239, 34);
+            this.dtpNgayDat.TabIndex = 6;
+            this.dtpNgayDat.ToolTipText = "";
             // 
             // spcQuery
             // 
@@ -286,6 +298,16 @@
             // spcQuery.Panel2
             // 
             this.spcQuery.Panel2.BackColor = System.Drawing.Color.Lavender;
+            this.spcQuery.Panel2.Controls.Add(this.label3);
+            this.spcQuery.Panel2.Controls.Add(this.txtCCCD);
+            this.spcQuery.Panel2.Controls.Add(this.label2);
+            this.spcQuery.Panel2.Controls.Add(this.txtTraCuuUser);
+            this.spcQuery.Panel2.Controls.Add(this.btnTraCuuDP);
+            this.spcQuery.Panel2.Controls.Add(this.label1);
+            this.spcQuery.Panel2.Controls.Add(this.lblQuickControl);
+            this.spcQuery.Panel2.Controls.Add(this.btnCheckIn);
+            this.spcQuery.Panel2.Controls.Add(this.btnCancel);
+            this.spcQuery.Panel2.Controls.Add(this.btnCheckOut);
             this.spcQuery.Panel2.Controls.Add(this.cboSortRoomID);
             this.spcQuery.Panel2.Controls.Add(this.cboSortBookingID);
             this.spcQuery.Panel2.Controls.Add(this.lblSortRoomId);
@@ -294,7 +316,7 @@
             this.spcQuery.Panel2.Controls.Add(this.lblCheckInDate);
             this.spcQuery.Panel2.Controls.Add(this.lblBookingDate);
             this.spcQuery.Panel2.Controls.Add(this.lblStateBooking);
-            this.spcQuery.Panel2.Controls.Add(this.dtpBookingDate);
+            this.spcQuery.Panel2.Controls.Add(this.dtpNgayDat);
             this.spcQuery.Panel2.Controls.Add(this.dtpCheckInDate);
             this.spcQuery.Panel2.Controls.Add(this.txtSearchBooking);
             this.spcQuery.Panel2.Controls.Add(this.dtpCheckOutDate);
@@ -320,10 +342,11 @@
             this.colNgayNhanPhong,
             this.colNgayTraPhong,
             this.colSoLuongKH,
-            this.colTrangThai});
+            this.colTrangThai,
+            this.colTenTaiKhoan,
+            this.colCCCD});
             this.dgvBooking.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBooking.Location = new System.Drawing.Point(0, 0);
-            this.dgvBooking.MultiSelect = false;
             this.dgvBooking.Name = "dgvBooking";
             this.dgvBooking.ReadOnly = true;
             this.dgvBooking.RowHeadersVisible = false;
@@ -332,6 +355,82 @@
             this.dgvBooking.Size = new System.Drawing.Size(973, 746);
             this.dgvBooking.TabIndex = 0;
             // 
+            // lblQuickControl
+            // 
+            this.lblQuickControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblQuickControl.AutoSize = true;
+            this.lblQuickControl.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuickControl.Location = new System.Drawing.Point(63, 487);
+            this.lblQuickControl.Name = "lblQuickControl";
+            this.lblQuickControl.Size = new System.Drawing.Size(273, 26);
+            this.lblQuickControl.TabIndex = 28;
+            this.lblQuickControl.Text = "Cập nhật trạng thái nhanh";
+            this.lblQuickControl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btnCheckIn
+            // 
+            this.btnCheckIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckIn.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckIn.ForeColor = System.Drawing.Color.White;
+            this.btnCheckIn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCheckIn.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnCheckIn.Location = new System.Drawing.Point(9, 516);
+            this.btnCheckIn.Name = "btnCheckIn";
+            this.btnCheckIn.Size = new System.Drawing.Size(108, 64);
+            this.btnCheckIn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnCheckIn.Style.ForeColor = System.Drawing.Color.White;
+            this.btnCheckIn.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnCheckIn.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnCheckIn.TabIndex = 25;
+            this.btnCheckIn.Text = "Check-In";
+            this.btnCheckIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCheckIn.UseVisualStyleBackColor = false;
+            this.btnCheckIn.Click += new System.EventHandler(this.btnCheckIn_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCancel.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnCancel.Location = new System.Drawing.Point(271, 516);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(108, 64);
+            this.btnCancel.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnCancel.Style.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnCancel.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnCancel.TabIndex = 27;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnCheckOut
+            // 
+            this.btnCheckOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckOut.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckOut.ForeColor = System.Drawing.Color.White;
+            this.btnCheckOut.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCheckOut.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnCheckOut.Location = new System.Drawing.Point(140, 516);
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.Size = new System.Drawing.Size(108, 64);
+            this.btnCheckOut.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnCheckOut.Style.ForeColor = System.Drawing.Color.White;
+            this.btnCheckOut.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnCheckOut.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnCheckOut.TabIndex = 26;
+            this.btnCheckOut.Text = "Check-Out";
+            this.btnCheckOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCheckOut.UseVisualStyleBackColor = false;
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
+            // 
             // cboSortRoomID
             // 
             this.cboSortRoomID.DelimiterChar = "";
@@ -339,7 +438,7 @@
             this.cboSortRoomID.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboSortRoomID.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboSortRoomID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortRoomID.Location = new System.Drawing.Point(225, 129);
+            this.cboSortRoomID.Location = new System.Drawing.Point(225, 119);
             this.cboSortRoomID.Name = "cboSortRoomID";
             this.cboSortRoomID.Size = new System.Drawing.Size(156, 33);
             this.cboSortRoomID.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -372,9 +471,9 @@
             // 
             this.lblSortRoomId.AutoSize = true;
             this.lblSortRoomId.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortRoomId.Location = new System.Drawing.Point(4, 136);
+            this.lblSortRoomId.Location = new System.Drawing.Point(4, 126);
             this.lblSortRoomId.Name = "lblSortRoomId";
-            this.lblSortRoomId.Size = new System.Drawing.Size(248, 33);
+            this.lblSortRoomId.Size = new System.Drawing.Size(192, 26);
             this.lblSortRoomId.TabIndex = 16;
             this.lblSortRoomId.Text = "Sort theo Room ID";
             this.lblSortRoomId.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -383,9 +482,9 @@
             // 
             this.lblSortBookingID.AutoSize = true;
             this.lblSortBookingID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortBookingID.Location = new System.Drawing.Point(4, 80);
+            this.lblSortBookingID.Location = new System.Drawing.Point(4, 87);
             this.lblSortBookingID.Name = "lblSortBookingID";
-            this.lblSortBookingID.Size = new System.Drawing.Size(280, 33);
+            this.lblSortBookingID.Size = new System.Drawing.Size(218, 26);
             this.lblSortBookingID.TabIndex = 14;
             this.lblSortBookingID.Text = "Sort theo Booking ID";
             this.lblSortBookingID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -394,9 +493,9 @@
             // 
             this.lblCheckOutDate.AutoSize = true;
             this.lblCheckOutDate.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCheckOutDate.Location = new System.Drawing.Point(4, 307);
+            this.lblCheckOutDate.Location = new System.Drawing.Point(4, 206);
             this.lblCheckOutDate.Name = "lblCheckOutDate";
-            this.lblCheckOutDate.Size = new System.Drawing.Size(222, 33);
+            this.lblCheckOutDate.Size = new System.Drawing.Size(175, 26);
             this.lblCheckOutDate.TabIndex = 12;
             this.lblCheckOutDate.Text = "Ngày Check-Out";
             this.lblCheckOutDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -405,9 +504,9 @@
             // 
             this.lblCheckInDate.AutoSize = true;
             this.lblCheckInDate.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCheckInDate.Location = new System.Drawing.Point(4, 250);
+            this.lblCheckInDate.Location = new System.Drawing.Point(4, 166);
             this.lblCheckInDate.Name = "lblCheckInDate";
-            this.lblCheckInDate.Size = new System.Drawing.Size(201, 33);
+            this.lblCheckInDate.Size = new System.Drawing.Size(157, 26);
             this.lblCheckInDate.TabIndex = 11;
             this.lblCheckInDate.Text = "Ngày Check-In";
             this.lblCheckInDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -416,20 +515,20 @@
             // 
             this.lblBookingDate.AutoSize = true;
             this.lblBookingDate.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBookingDate.Location = new System.Drawing.Point(5, 193);
+            this.lblBookingDate.Location = new System.Drawing.Point(11, 412);
             this.lblBookingDate.Name = "lblBookingDate";
-            this.lblBookingDate.Size = new System.Drawing.Size(129, 33);
+            this.lblBookingDate.Size = new System.Drawing.Size(106, 26);
             this.lblBookingDate.TabIndex = 10;
-            this.lblBookingDate.Text = "Ngày đặt";
+            this.lblBookingDate.Text = "Ngày đặt:";
             this.lblBookingDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblStateBooking
             // 
             this.lblStateBooking.AutoSize = true;
             this.lblStateBooking.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStateBooking.Location = new System.Drawing.Point(4, 363);
+            this.lblStateBooking.Location = new System.Drawing.Point(4, 245);
             this.lblStateBooking.Name = "lblStateBooking";
-            this.lblStateBooking.Size = new System.Drawing.Size(237, 33);
+            this.lblStateBooking.Size = new System.Drawing.Size(186, 26);
             this.lblStateBooking.TabIndex = 9;
             this.lblStateBooking.Text = "Trạng thái dữ liệu";
             this.lblStateBooking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -463,6 +562,79 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(99, 274);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(192, 26);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Tra cứu đặt phòng";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtTraCuuUser
+            // 
+            this.txtTraCuuUser.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTraCuuUser.Location = new System.Drawing.Point(140, 312);
+            this.txtTraCuuUser.Name = "txtTraCuuUser";
+            this.txtTraCuuUser.Size = new System.Drawing.Size(240, 40);
+            this.txtTraCuuUser.TabIndex = 31;
+            // 
+            // btnTraCuuDP
+            // 
+            this.btnTraCuuDP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTraCuuDP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnTraCuuDP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTraCuuDP.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTraCuuDP.ForeColor = System.Drawing.Color.White;
+            this.btnTraCuuDP.Location = new System.Drawing.Point(68, 444);
+            this.btnTraCuuDP.Name = "btnTraCuuDP";
+            this.btnTraCuuDP.Size = new System.Drawing.Size(268, 40);
+            this.btnTraCuuDP.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnTraCuuDP.Style.ForeColor = System.Drawing.Color.White;
+            this.btnTraCuuDP.TabIndex = 30;
+            this.btnTraCuuDP.Text = "Tra cứu";
+            this.btnTraCuuDP.UseVisualStyleBackColor = false;
+            this.btnTraCuuDP.Click += new System.EventHandler(this.btnTraCuuDP_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(8, 326);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(119, 26);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "Username:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(8, 372);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 26);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "CCCD:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtCCCD
+            // 
+            this.txtCCCD.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCCCD.Location = new System.Drawing.Point(140, 358);
+            this.txtCCCD.Name = "txtCCCD";
+            this.txtCCCD.Size = new System.Drawing.Size(240, 40);
+            this.txtCCCD.TabIndex = 33;
+            // 
             // colMaDatPhong
             // 
             this.colMaDatPhong.DataPropertyName = "MaDatPhong";
@@ -470,7 +642,7 @@
             this.colMaDatPhong.MinimumWidth = 6;
             this.colMaDatPhong.Name = "colMaDatPhong";
             this.colMaDatPhong.ReadOnly = true;
-            this.colMaDatPhong.Width = 185;
+            this.colMaDatPhong.Width = 147;
             // 
             // colMaKH
             // 
@@ -479,7 +651,7 @@
             this.colMaKH.MinimumWidth = 6;
             this.colMaKH.Name = "colMaKH";
             this.colMaKH.ReadOnly = true;
-            this.colMaKH.Width = 107;
+            this.colMaKH.Width = 87;
             // 
             // colMaPHG
             // 
@@ -489,7 +661,7 @@
             this.colMaPHG.Name = "colMaPHG";
             this.colMaPHG.ReadOnly = true;
             this.colMaPHG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaPHG.Width = 122;
+            this.colMaPHG.Width = 99;
             // 
             // colNgayDatPhong
             // 
@@ -498,7 +670,7 @@
             this.colNgayDatPhong.MinimumWidth = 6;
             this.colNgayDatPhong.Name = "colNgayDatPhong";
             this.colNgayDatPhong.ReadOnly = true;
-            this.colNgayDatPhong.Width = 133;
+            this.colNgayDatPhong.Width = 107;
             // 
             // colNgayNhanPhong
             // 
@@ -507,7 +679,7 @@
             this.colNgayNhanPhong.MinimumWidth = 6;
             this.colNgayNhanPhong.Name = "colNgayNhanPhong";
             this.colNgayNhanPhong.ReadOnly = true;
-            this.colNgayNhanPhong.Width = 207;
+            this.colNgayNhanPhong.Width = 165;
             // 
             // colNgayTraPhong
             // 
@@ -516,7 +688,7 @@
             this.colNgayTraPhong.MinimumWidth = 6;
             this.colNgayTraPhong.Name = "colNgayTraPhong";
             this.colNgayTraPhong.ReadOnly = true;
-            this.colNgayTraPhong.Width = 182;
+            this.colNgayTraPhong.Width = 145;
             // 
             // colSoLuongKH
             // 
@@ -525,7 +697,7 @@
             this.colSoLuongKH.MinimumWidth = 6;
             this.colSoLuongKH.Name = "colSoLuongKH";
             this.colSoLuongKH.ReadOnly = true;
-            this.colSoLuongKH.Width = 152;
+            this.colSoLuongKH.Width = 123;
             // 
             // colTrangThai
             // 
@@ -534,7 +706,24 @@
             this.colTrangThai.MinimumWidth = 6;
             this.colTrangThai.Name = "colTrangThai";
             this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Width = 131;
+            this.colTrangThai.Width = 105;
+            // 
+            // colTenTaiKhoan
+            // 
+            this.colTenTaiKhoan.DataPropertyName = "TenDangNhap";
+            this.colTenTaiKhoan.HeaderText = "Tên Tài Khoản";
+            this.colTenTaiKhoan.Name = "colTenTaiKhoan";
+            this.colTenTaiKhoan.ReadOnly = true;
+            this.colTenTaiKhoan.Visible = false;
+            this.colTenTaiKhoan.Width = 133;
+            // 
+            // colCCCD
+            // 
+            this.colCCCD.DataPropertyName = "CCCD";
+            this.colCCCD.HeaderText = "CCCD";
+            this.colCCCD.Name = "colCCCD";
+            this.colCCCD.ReadOnly = true;
+            this.colCCCD.Width = 84;
             // 
             // ucBooking
             // 
@@ -575,7 +764,7 @@
         private Syncfusion.WinForms.Controls.SfButton btnEditBooking;
         private Syncfusion.WinForms.Controls.SfButton btnRecoverBooking;
         private Syncfusion.WinForms.ListView.SfComboBox cboStateBooking;
-        private Syncfusion.WinForms.Input.SfDateTimeEdit dtpBookingDate;
+        private Syncfusion.WinForms.Input.SfDateTimeEdit dtpNgayDat;
         private Syncfusion.WinForms.Input.SfDateTimeEdit dtpCheckInDate;
         private Syncfusion.WinForms.Input.SfDateTimeEdit dtpCheckOutDate;
         private System.Windows.Forms.SplitContainer spcQuery;
@@ -591,6 +780,16 @@
         private Syncfusion.WinForms.ListView.SfComboBox cboSortRoomID;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortBookingID;
         private System.Windows.Forms.DataGridView dgvBooking;
+        private System.Windows.Forms.Label lblQuickControl;
+        private Syncfusion.WinForms.Controls.SfButton btnCheckIn;
+        private Syncfusion.WinForms.Controls.SfButton btnCancel;
+        private Syncfusion.WinForms.Controls.SfButton btnCheckOut;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtTraCuuUser;
+        private Syncfusion.WinForms.Controls.SfButton btnTraCuuDP;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtCCCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaDatPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaPHG;
@@ -599,5 +798,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayTraPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSoLuongKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTenTaiKhoan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCCCD;
     }
 }

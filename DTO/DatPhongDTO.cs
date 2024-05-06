@@ -8,12 +8,14 @@ namespace DTO
 {
     public class DatPhongDTO
     {
+        public string TenTaiKhoan { get; set; }
+        public string CCCD { get; set; }
         public int MaDatPhong { get; set; }
         public int MaKH { get; set; }
         public int MaPHG { get; set; }
         public DateTime NgayDatPhong { get; set; }
-        public DateTime NgayNhanPhong { get; set; }
-        public DateTime NgayTraPhong { get; set; }
+        public DateTime? NgayNhanPhong { get; set; }
+        public DateTime? NgayTraPhong { get; set; }
         public int SoLuongKH { get; set; }
         public bool TrangThai { get; set; }
     }

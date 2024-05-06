@@ -10,6 +10,38 @@ namespace DAL
 {
     public class DatPhongDAL
     {
+        public bool Check_in(List<DatPhongDTO> list)
+        {
+            try
+            {              
+                foreach (var item in list)
+                {
+                    SqlConnection conn = DataProvider.KetNoiDuLieu();
+                    conn.Open();
+                    SqlCommand com = new SqlCommand("spCheckin", conn);
+                    com.CommandType = CommandType.StoredProcedure;
+                    com.Parameters.AddWithValue("@MaDatPhong", item.MaDatPhong);
+
+                    int count = com.ExecuteNonQuery();
+                    conn.Close();
+                    if (count > 0)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        return false;
+                    }                    
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+
         public List<DatPhongDTO> FilterTrangThai(bool v)
         {
             List<DatPhongDTO> ds = new List<DatPhongDTO>();
@@ -54,20 +86,42 @@ namespace DAL
         {
             List<DatPhongDTO> ds = new List<DatPhongDTO>();
             SqlConnection conn = DataProvider.KetNoiDuLieu();
-            string strlaydanhsach = "select * from DatPhong";
+            string strlaydanhsach = "select BangTaiKhoan.TenDangNhap, KhachHang.CCCD, DatPhong.* " +
+                " from DatPhong join KhachHang on DatPhong.MaKH = KhachHang.MaKH " +
+                " join BangTaiKhoan on KhachHang.MaTaiKhoan = BangTaiKhoan.MaTaiKhoan";
             conn.Open();
             SqlDataReader reader = DataProvider.ThucHienTruyVan(strlaydanhsach, conn);
             while (reader.Read())
             {
                 DatPhongDTO phong = new DatPhongDTO();
-                phong.MaDatPhong = (int)reader[0];
-                phong.MaKH = (int)reader[1];
-                phong.MaPHG = (int)reader[2];
-                phong.NgayDatPhong =DateTime.Parse( reader[3].ToString());
-                phong.NgayNhanPhong = DateTime.Parse(reader[4].ToString());
-                phong.NgayTraPhong = DateTime.Parse(reader[5].ToString());
-                phong.SoLuongKH = (int)reader[6];
-                byte[] trangThaiBytes = (byte[])reader[7];
+                phong.TenTaiKhoan = (string)reader["TenDangNhap"];
+                phong.CCCD = (string)reader["CCCD"];
+                phong.MaDatPhong = (int)reader["MaDatPhong"];
+                phong.MaKH = (int)reader["MaKH"];
+                phong.MaPHG = (int)reader["MaPHG"];
+                phong.NgayDatPhong =DateTime.Parse( reader["NgayDatPhong"].ToString());
+                object ngayNhanPhongObject = reader["NgayNhanPhong"];
+                if (ngayNhanPhongObject != DBNull.Value)
+                {
+                    phong.NgayNhanPhong = DateTime.Parse(ngayNhanPhongObject.ToString());
+                }
+                else
+                {
+                    phong.NgayNhanPhong = null;
+                }
+
+                object ngayTraPhongObject = reader["NgayTraPhong"];
+                if (ngayTraPhongObject != DBNull.Value)
+                {
+                    phong.NgayTraPhong = DateTime.Parse(ngayTraPhongObject.ToString());
+                }
+                else
+                {
+                    phong.NgayTraPhong = null;
+                }
+
+                phong.SoLuongKH = (int)reader["SoLuongKH"];
+                byte[] trangThaiBytes = (byte[])reader["trangThai"];
                 bool trangThai = trangThaiBytes[0] == 1;
                 phong.TrangThai = trangThai;
                 ds.Add(phong);
@@ -80,22 +134,42 @@ namespace DAL
         {
             List<DatPhongDTO> ds = new List<DatPhongDTO>();
             SqlConnection conn = DataProvider.KetNoiDuLieu();
-            string strlaydanhsach = "select * from DatPhong where TrangThai=1";
+            string strlaydanhsach = "select BangTaiKhoan.TenDangNhap, KhachHang.CCCD, DatPhong.* " +
+                                    " from DatPhong join KhachHang on DatPhong.MaKH = KhachHang.MaKH " +
+                                    " join BangTaiKhoan on KhachHang.MaTaiKhoan = BangTaiKhoan.MaTaiKhoan " +
+                                    " where DatPhong.TrangThai=1 and KhachHang.TrangThai=1";
             conn.Open();
             SqlDataReader reader = DataProvider.ThucHienTruyVan(strlaydanhsach, conn);
             while (reader.Read())
             {
                 DatPhongDTO phong = new DatPhongDTO();
-                phong.MaDatPhong = (int)reader[0];
-                phong.MaKH = (int)reader[1];
-                phong.MaPHG = (int)reader[2];
-                phong.NgayDatPhong = DateTime.Parse(reader[3].ToString());
-                phong.NgayNhanPhong = DateTime.Parse(reader[4].ToString());
-                phong.NgayTraPhong = DateTime.Parse(reader[5].ToString());
-                phong.SoLuongKH = (int)reader[6];
-                byte[] trangThaiBytes = (byte[])reader[7];
-                bool trangThai = trangThaiBytes[0] == 1;
-                phong.TrangThai = trangThai;
+                phong.TenTaiKhoan = (string)reader["TenDangNhap"];
+                phong.CCCD = (string)reader["CCCD"];
+                phong.MaDatPhong = (int)reader["MaDatPhong"];
+                phong.MaKH = (int)reader["MaKH"];
+                phong.MaPHG = (int)reader["MaPHG"];
+                phong.NgayDatPhong = DateTime.Parse(reader["NgayDatPhong"].ToString());
+                object ngayNhanPhongObject = reader["NgayNhanPhong"];
+                if (ngayNhanPhongObject != DBNull.Value)
+                {
+                    phong.NgayNhanPhong = DateTime.Parse(ngayNhanPhongObject.ToString());
+                }
+                else
+                {
+                    phong.NgayNhanPhong = null;
+                }
+
+                object ngayTraPhongObject = reader["NgayTraPhong"];
+                if (ngayTraPhongObject != DBNull.Value)
+                {
+                    phong.NgayTraPhong = DateTime.Parse(ngayTraPhongObject.ToString());
+                }
+                else
+                {
+                    phong.NgayTraPhong = null;
+                }
+                phong.SoLuongKH = (int)reader["SoLuongKH"];
+                phong.TrangThai = true;
                 ds.Add(phong);
             }
             reader.Close();
@@ -127,15 +201,15 @@ namespace DAL
         public bool themd(DatPhongDTO datPhongDTO)
         {
             string lenhThem =
-                "INSERT INTO DatPhong (MaKH, MaPHG,NgayDatPhong,NgayNhanPhong,NgayTraPhong,SoLuongKH,TrangThai) VALUES (@MaKH, @MaPHG,@NgayDatPhong,@NgayNhanPhong,@NgayTraPhong,@SoLuongKH, 1)";
+                "INSERT INTO DatPhong (MaKH, MaPHG,NgayDatPhong,SoLuongKH,TrangThai) VALUES (@MaKH, @MaPHG,@NgayDatPhong,@SoLuongKH, 1)";
 
-            SqlParameter[] pars = new SqlParameter[6];
+            SqlParameter[] pars = new SqlParameter[4];
             pars[0] = new SqlParameter("MaKH", datPhongDTO.MaKH);
             pars[1] = new SqlParameter("MaPHG", datPhongDTO.MaPHG);
             pars[2] = new SqlParameter("NgayDatPhong", datPhongDTO.NgayDatPhong);
-            pars[3] = new SqlParameter("NgayNhanPhong", datPhongDTO.NgayNhanPhong);
-            pars[4] = new SqlParameter("NgayTraPhong", datPhongDTO.NgayTraPhong);
-            pars[5] = new SqlParameter("SoLuongKH", datPhongDTO.SoLuongKH);
+            //pars[3] = new SqlParameter("NgayNhanPhong", datPhongDTO.NgayNhanPhong);
+            //pars[4] = new SqlParameter("NgayTraPhong", datPhongDTO.NgayTraPhong);
+            pars[3] = new SqlParameter("SoLuongKH", datPhongDTO.SoLuongKH);
             SqlConnection conn = DataProvider.KetNoiDuLieu();
             conn.Open();
             int kq = DataProvider.ThucHienCauLenh(lenhThem, conn, pars);

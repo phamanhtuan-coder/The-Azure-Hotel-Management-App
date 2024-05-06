@@ -58,10 +58,6 @@
             this.lblSortTheoLoaiPhong = new System.Windows.Forms.Label();
             this.cboSortRoomType = new Syncfusion.WinForms.ListView.SfComboBox();
             this.cboSortRoomID = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.lblQuickControl = new System.Windows.Forms.Label();
-            this.btnCheckIn = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnCheckOut = new Syncfusion.WinForms.Controls.SfButton();
             this.lblSortSucChua = new System.Windows.Forms.Label();
             this.lblSortMaPHG = new System.Windows.Forms.Label();
             this.lblStateRoom = new System.Windows.Forms.Label();
@@ -209,7 +205,7 @@
             this.txtSearchRoom.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchRoom.Location = new System.Drawing.Point(6, 16);
             this.txtSearchRoom.Name = "txtSearchRoom";
-            this.txtSearchRoom.Size = new System.Drawing.Size(251, 49);
+            this.txtSearchRoom.Size = new System.Drawing.Size(251, 40);
             this.txtSearchRoom.TabIndex = 2;
             // 
             // btnTraCuuRoom
@@ -272,10 +268,6 @@
             this.spcQuery.Panel2.Controls.Add(this.lblSortTheoLoaiPhong);
             this.spcQuery.Panel2.Controls.Add(this.cboSortRoomType);
             this.spcQuery.Panel2.Controls.Add(this.cboSortRoomID);
-            this.spcQuery.Panel2.Controls.Add(this.lblQuickControl);
-            this.spcQuery.Panel2.Controls.Add(this.btnCheckIn);
-            this.spcQuery.Panel2.Controls.Add(this.btnCancel);
-            this.spcQuery.Panel2.Controls.Add(this.btnCheckOut);
             this.spcQuery.Panel2.Controls.Add(this.lblSortSucChua);
             this.spcQuery.Panel2.Controls.Add(this.lblSortMaPHG);
             this.spcQuery.Panel2.Controls.Add(this.lblStateRoom);
@@ -322,7 +314,7 @@
             this.colMaPHG.MinimumWidth = 6;
             this.colMaPHG.Name = "colMaPHG";
             this.colMaPHG.ReadOnly = true;
-            this.colMaPHG.Width = 134;
+            this.colMaPHG.Width = 107;
             // 
             // colMaLoai
             // 
@@ -332,7 +324,7 @@
             this.colMaLoai.Name = "colMaLoai";
             this.colMaLoai.ReadOnly = true;
             this.colMaLoai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaLoai.Width = 103;
+            this.colMaLoai.Width = 83;
             // 
             // colMaTinhTrangPhong
             // 
@@ -342,7 +334,7 @@
             this.colMaTinhTrangPhong.Name = "colMaTinhTrangPhong";
             this.colMaTinhTrangPhong.ReadOnly = true;
             this.colMaTinhTrangPhong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaTinhTrangPhong.Width = 229;
+            this.colMaTinhTrangPhong.Width = 181;
             // 
             // colHinhAnh
             // 
@@ -351,7 +343,6 @@
             this.colHinhAnh.MinimumWidth = 6;
             this.colHinhAnh.Name = "colHinhAnh";
             this.colHinhAnh.ReadOnly = true;
-            this.colHinhAnh.Width = 124;
             // 
             // colMoTa
             // 
@@ -360,7 +351,7 @@
             this.colMoTa.MinimumWidth = 6;
             this.colMoTa.Name = "colMoTa";
             this.colMoTa.ReadOnly = true;
-            this.colMoTa.Width = 73;
+            this.colMoTa.Width = 60;
             // 
             // colGiaPhong
             // 
@@ -369,7 +360,7 @@
             this.colGiaPhong.MinimumWidth = 6;
             this.colGiaPhong.Name = "colGiaPhong";
             this.colGiaPhong.ReadOnly = true;
-            this.colGiaPhong.Width = 73;
+            this.colGiaPhong.Width = 60;
             // 
             // colSucChuaToiDa
             // 
@@ -378,7 +369,6 @@
             this.colSucChuaToiDa.MinimumWidth = 6;
             this.colSucChuaToiDa.Name = "colSucChuaToiDa";
             this.colSucChuaToiDa.ReadOnly = true;
-            this.colSucChuaToiDa.Width = 123;
             // 
             // colTrangThai
             // 
@@ -387,7 +377,7 @@
             this.colTrangThai.MinimumWidth = 6;
             this.colTrangThai.Name = "colTrangThai";
             this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Width = 131;
+            this.colTrangThai.Width = 105;
             // 
             // nudSucChua
             // 
@@ -403,7 +393,7 @@
             0,
             0});
             this.nudSucChua.Name = "nudSucChua";
-            this.nudSucChua.Size = new System.Drawing.Size(155, 32);
+            this.nudSucChua.Size = new System.Drawing.Size(155, 27);
             this.nudSucChua.TabIndex = 32;
             this.nudSucChua.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudSucChua.Value = new decimal(new int[] {
@@ -426,7 +416,7 @@
             0,
             0});
             this.nudPriceMax.Name = "nudPriceMax";
-            this.nudPriceMax.Size = new System.Drawing.Size(120, 32);
+            this.nudPriceMax.Size = new System.Drawing.Size(120, 27);
             this.nudPriceMax.TabIndex = 31;
             this.nudPriceMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudPriceMax.ThousandsSeparator = true;
@@ -450,7 +440,7 @@
             0,
             0});
             this.nudPriceMin.Name = "nudPriceMin";
-            this.nudPriceMin.Size = new System.Drawing.Size(120, 32);
+            this.nudPriceMin.Size = new System.Drawing.Size(120, 27);
             this.nudPriceMin.TabIndex = 30;
             this.nudPriceMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudPriceMin.ThousandsSeparator = true;
@@ -479,7 +469,7 @@
             this.lblSortPrice.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortPrice.Location = new System.Drawing.Point(4, 298);
             this.lblSortPrice.Name = "lblSortPrice";
-            this.lblSortPrice.Size = new System.Drawing.Size(179, 33);
+            this.lblSortPrice.Size = new System.Drawing.Size(140, 26);
             this.lblSortPrice.TabIndex = 28;
             this.lblSortPrice.Text = "Sort theo Giá";
             this.lblSortPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -490,7 +480,7 @@
             this.lblPriceRange.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPriceRange.Location = new System.Drawing.Point(4, 241);
             this.lblPriceRange.Name = "lblPriceRange";
-            this.lblPriceRange.Size = new System.Drawing.Size(161, 33);
+            this.lblPriceRange.Size = new System.Drawing.Size(125, 26);
             this.lblPriceRange.TabIndex = 27;
             this.lblPriceRange.Text = "Khoảng giá";
             this.lblPriceRange.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -518,7 +508,7 @@
             this.lblSortTheoLoaiPhong.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortTheoLoaiPhong.Location = new System.Drawing.Point(4, 132);
             this.lblSortTheoLoaiPhong.Name = "lblSortTheoLoaiPhong";
-            this.lblSortTheoLoaiPhong.Size = new System.Drawing.Size(158, 33);
+            this.lblSortTheoLoaiPhong.Size = new System.Drawing.Size(122, 26);
             this.lblSortTheoLoaiPhong.TabIndex = 25;
             this.lblSortTheoLoaiPhong.Text = "Loại phòng";
             this.lblSortTheoLoaiPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -558,86 +548,13 @@
             this.cboSortRoomID.TabIndex = 23;
             this.cboSortRoomID.SelectedIndexChanged += new System.EventHandler(this.cboSortRoomID_SelectedIndexChanged);
             // 
-            // lblQuickControl
-            // 
-            this.lblQuickControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblQuickControl.AutoSize = true;
-            this.lblQuickControl.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuickControl.Location = new System.Drawing.Point(69, 471);
-            this.lblQuickControl.Name = "lblQuickControl";
-            this.lblQuickControl.Size = new System.Drawing.Size(352, 33);
-            this.lblQuickControl.TabIndex = 22;
-            this.lblQuickControl.Text = "Cập nhật trạng thái nhanh";
-            this.lblQuickControl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // btnCheckIn
-            // 
-            this.btnCheckIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckIn.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckIn.ForeColor = System.Drawing.Color.White;
-            this.btnCheckIn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCheckIn.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnCheckIn.Location = new System.Drawing.Point(14, 522);
-            this.btnCheckIn.Name = "btnCheckIn";
-            this.btnCheckIn.Size = new System.Drawing.Size(108, 64);
-            this.btnCheckIn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnCheckIn.Style.ForeColor = System.Drawing.Color.White;
-            this.btnCheckIn.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
-            this.btnCheckIn.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnCheckIn.TabIndex = 13;
-            this.btnCheckIn.Text = "Check-In";
-            this.btnCheckIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCheckIn.UseVisualStyleBackColor = false;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancel.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnCancel.Location = new System.Drawing.Point(276, 522);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(108, 64);
-            this.btnCancel.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnCancel.Style.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
-            this.btnCancel.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnCancel.TabIndex = 21;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCancel.UseVisualStyleBackColor = false;
-            // 
-            // btnCheckOut
-            // 
-            this.btnCheckOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckOut.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckOut.ForeColor = System.Drawing.Color.White;
-            this.btnCheckOut.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCheckOut.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnCheckOut.Location = new System.Drawing.Point(145, 522);
-            this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(108, 64);
-            this.btnCheckOut.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnCheckOut.Style.ForeColor = System.Drawing.Color.White;
-            this.btnCheckOut.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
-            this.btnCheckOut.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnCheckOut.TabIndex = 20;
-            this.btnCheckOut.Text = "Check-Out";
-            this.btnCheckOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCheckOut.UseVisualStyleBackColor = false;
-            // 
             // lblSortSucChua
             // 
             this.lblSortSucChua.AutoSize = true;
             this.lblSortSucChua.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortSucChua.Location = new System.Drawing.Point(4, 188);
             this.lblSortSucChua.Name = "lblSortSucChua";
-            this.lblSortSucChua.Size = new System.Drawing.Size(210, 33);
+            this.lblSortSucChua.Size = new System.Drawing.Size(163, 26);
             this.lblSortSucChua.TabIndex = 16;
             this.lblSortSucChua.Text = "Sức chứa tối đa";
             this.lblSortSucChua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -648,7 +565,7 @@
             this.lblSortMaPHG.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortMaPHG.Location = new System.Drawing.Point(4, 355);
             this.lblSortMaPHG.Name = "lblSortMaPHG";
-            this.lblSortMaPHG.Size = new System.Drawing.Size(248, 33);
+            this.lblSortMaPHG.Size = new System.Drawing.Size(192, 26);
             this.lblSortMaPHG.TabIndex = 14;
             this.lblSortMaPHG.Text = "Sort theo Room ID";
             this.lblSortMaPHG.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -659,7 +576,7 @@
             this.lblStateRoom.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStateRoom.Location = new System.Drawing.Point(4, 412);
             this.lblStateRoom.Name = "lblStateRoom";
-            this.lblStateRoom.Size = new System.Drawing.Size(237, 33);
+            this.lblStateRoom.Size = new System.Drawing.Size(186, 26);
             this.lblStateRoom.TabIndex = 9;
             this.lblStateRoom.Text = "Trạng thái dữ liệu";
             this.lblStateRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -670,7 +587,7 @@
             this.lblStatusRoom.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatusRoom.Location = new System.Drawing.Point(4, 82);
             this.lblStatusRoom.Name = "lblStatusRoom";
-            this.lblStatusRoom.Size = new System.Drawing.Size(237, 33);
+            this.lblStatusRoom.Size = new System.Drawing.Size(183, 26);
             this.lblStatusRoom.TabIndex = 8;
             this.lblStatusRoom.Text = "Tình trạng phòng";
             this.lblStatusRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -754,10 +671,6 @@
         private System.Windows.Forms.Label lblStateRoom;
         private System.Windows.Forms.Label lblSortSucChua;
         private System.Windows.Forms.Label lblSortMaPHG;
-        private Syncfusion.WinForms.Controls.SfButton btnCheckIn;
-        private Syncfusion.WinForms.Controls.SfButton btnCancel;
-        private Syncfusion.WinForms.Controls.SfButton btnCheckOut;
-        private System.Windows.Forms.Label lblQuickControl;
         private System.Windows.Forms.Panel panUcHeader;
         private System.Windows.Forms.SplitContainer spcHeader;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortRoomType;

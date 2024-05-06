@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using DTO;
+using System.Net.NetworkInformation;
 namespace GUI.UserControls
 {
     public partial class ucBooking : UserControl
@@ -18,11 +19,13 @@ namespace GUI.UserControls
         public customMessageBox thongBao;
         public frmDatPhong frm = new frmDatPhong();
         DatPhongBLL DatPhongBLL=new DatPhongBLL();
+        List<DatPhongDTO> list = new List<DatPhongDTO>();
         List<DatPhongDTO> datPhongDTOs = new List<DatPhongDTO>();
         List<DatPhongDTO> datPhongDTOstk = new List<DatPhongDTO>();
         List<PhongDTO> PhongDTOs = new List<PhongDTO>();
         PhongBLL PhongBLL = new PhongBLL();
 
+        bool KT = false;
         public ucBooking()
         {
             InitializeComponent();
@@ -216,6 +219,81 @@ namespace GUI.UserControls
             {
                 layds();
             }
+        }
+        private void btnCheckIn_Click(object sender, EventArgs e)
+        {
+            if (dgvBooking.SelectedRows.Count > 0)
+            {
+                foreach (DataGridViewRow item in dgvBooking.SelectedRows)
+                {
+                    DatPhongDTO datPhongDTO = item.DataBoundItem as DatPhongDTO;
+                    if (datPhongDTO.NgayNhanPhong.ToString().Length == 0)
+                    {
+                        if(datPhongDTO.NgayDatPhong.ToString("dd/MM/yyyy").Equals(DateTime.Now.ToString("dd/MM/yyyy")))
+                        {
+                            list.Add(datPhongDTO);
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox("Thông tin ngày đặt phòng của mã " + datPhongDTO.MaDatPhong + " không khớp, vui lòng kiểm tra lại!");
+                            thongBao.ShowDialog();
+                        }       
+                    }
+                    else
+                    {
+                        thongBao = new customMessageBox("Đặt phòng với mã " + datPhongDTO.MaDatPhong + " đã được check-in, bạn không thể check-in nữa!");
+                        thongBao.ShowDialog();
+                    }
+                }
+
+                if (list.Count > 0)
+                {
+                    if (DatPhongBLL.Check_in(list))
+                    {
+                        layds();
+                    }
+                    else
+                    {
+                        thongBao = new customMessageBox("Bạn đã Check-in thất bại!");
+                        thongBao.ShowDialog();
+                    }
+                }              
+            }
+            else
+            {
+                thongBao = new customMessageBox("Bạn vui lòng chọn đặt phòng để check-in!");
+                thongBao.ShowDialog();
+            }
+        }
+        private void btnCheckOut_Click(object sender, EventArgs e)
+        {
+        }
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            KT = false;
+            layds();
+            txtCCCD.Text = "";
+            txtTraCuuUser.Text = "";
+            dtpNgayDat.Value = DateTime.Now;
+        }
+
+        private void btnTraCuuDP_Click(object sender, EventArgs e)
+        {
+            object ngayNhanPhongObject = dtpNgayDat.Value;
+            DateTime ng;
+            if (ngayNhanPhongObject != DBNull.Value)
+            {
+                ng = DateTime.Parse(ngayNhanPhongObject.ToString());
+            }
+            else
+            {
+                ng = DateTime.Now;
+            }
+            datPhongDTOs = DatPhongBLL.Filter(txtCCCD.Text,txtTraCuuUser.Text, ng);
+            dgvBooking.ClearSelection();
+            dgvBooking.DataSource = datPhongDTOs;
+
+            KT = true;
         }
     }
 }

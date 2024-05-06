@@ -52,8 +52,8 @@ namespace GUI.customForm
                 cboMaPHG.ValueMember = "MaPHG";
                 cboMaPHG.SelectedItem = DatPhongDTO.MaPHG;
                 dtpNgayDat.Value = DatPhongDTO.NgayDatPhong;
-                dtpNgayNhanPhong.Value = DatPhongDTO.NgayNhanPhong;
-                dtpNgayTraPhong.Value = DatPhongDTO.NgayTraPhong;
+                dtpNgayNhanPhong.Value = DateTime.Now;
+                dtpNgayTraPhong.Value = DateTime.Now;
                 nudSoLuongKhach.Value = DatPhongDTO.SoLuongKH;
             }
 
