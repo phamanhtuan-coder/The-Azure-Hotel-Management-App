@@ -58,10 +58,6 @@ namespace DAL
                 com.Parameters.AddWithValue("@MaKH", hoaDonDTO.MaKH);
                 com.Parameters.AddWithValue("@MaNV", hoaDonDTO.MaNV);
                 com.Parameters.AddWithValue("@MaThue", hoaDonDTO.MaThue);
-                com.Parameters.AddWithValue("@NgayLapHoaDon", hoaDonDTO.NgayLapHoaDon);
-                com.Parameters.AddWithValue("@TongHoaDon", hoaDonDTO.TongHoaDon);
-                com.Parameters.AddWithValue("@TienNhan", hoaDonDTO.TienNhan);
-                com.Parameters.AddWithValue("@TienThoi", hoaDonDTO.TienThoi);
 
                 int count = com.ExecuteNonQuery();
                 conn.Close();

@@ -17,9 +17,9 @@ namespace BLL
             return DatPhongDAL.Check_in(list);
         }
 
-        public bool Check_out(int MaHoaDon,List<DatPhongDTO> list)
+        public bool Check_out(int MaKM, int MaHoaDon, List<DatPhongDTO> list)
         {
-            return DatPhongDAL.Check_out(MaHoaDon,list);
+            return DatPhongDAL.Check_out(MaKM, MaHoaDon,list);
         }
 
         public List<DatPhongDTO> Filter(string text1, string text2, DateTime value)

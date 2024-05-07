@@ -292,7 +292,7 @@ namespace GUI.UserControls
                         frmHoaDon.ShowDialog();
                         if (BienTam.KTThemHoaDon != -1) 
                         {
-                            if (DatPhongBLL.Check_out(BienTam.KTThemHoaDon, list))
+                            if (DatPhongBLL.Check_out(BienTam.MaKM, BienTam.KTThemHoaDon, list))
                             {
                                 layds();
                             }

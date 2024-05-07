@@ -41,7 +41,7 @@ namespace DAL
             }
         }
 
-        public bool Check_out(int maHoaDon, List<DatPhongDTO> list)
+        public bool Check_out(int MaKM, int maHoaDon, List<DatPhongDTO> list)
         {
             try
             {
@@ -53,6 +53,10 @@ namespace DAL
                     com.CommandType = CommandType.StoredProcedure;
                     com.Parameters.AddWithValue("@MaHoaDon", maHoaDon);
                     com.Parameters.AddWithValue("@MaDatPhong", item.MaDatPhong);
+                    if (MaKM != -1)
+                    {
+                        com.Parameters.AddWithValue("@MaKhuyenMai", MaKM);
+                    }
 
                     int count = com.ExecuteNonQuery();
                     conn.Close();

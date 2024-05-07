@@ -253,5 +253,18 @@ namespace GUI.UserControls
                 TruyVanDanhSachHoaDon();
             }
         }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            if (dgvBill.SelectedRows.Count > 0)
+            {
+
+            }
+            else
+            {
+                thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
+                thongBao.ShowDialog();
+            }
+        }
     }
 }

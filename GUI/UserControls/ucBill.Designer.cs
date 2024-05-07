@@ -50,6 +50,8 @@
             this.colTienNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTienThoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnThanhToan = new Syncfusion.WinForms.Controls.SfButton();
             this.btnNgayTao = new Syncfusion.WinForms.Controls.SfButton();
             this.cboSortSumBill = new Syncfusion.WinForms.ListView.SfComboBox();
             this.cboSortBillID = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -66,6 +68,7 @@
             this.spcQuery.Panel2.SuspendLayout();
             this.spcQuery.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortSumBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortBillID)).BeginInit();
             this.panUcHeader.SuspendLayout();
@@ -261,6 +264,7 @@
             // spcQuery.Panel2
             // 
             this.spcQuery.Panel2.BackColor = System.Drawing.Color.Lavender;
+            this.spcQuery.Panel2.Controls.Add(this.panel1);
             this.spcQuery.Panel2.Controls.Add(this.btnNgayTao);
             this.spcQuery.Panel2.Controls.Add(this.cboSortSumBill);
             this.spcQuery.Panel2.Controls.Add(this.cboSortBillID);
@@ -375,6 +379,35 @@
             this.colTrangThai.Name = "colTrangThai";
             this.colTrangThai.ReadOnly = true;
             this.colTrangThai.Width = 97;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnThanhToan);
+            this.panel1.Location = new System.Drawing.Point(51, 426);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(304, 76);
+            this.panel1.TabIndex = 35;
+            // 
+            // btnThanhToan
+            // 
+            this.btnThanhToan.BackColor = System.Drawing.Color.Black;
+            this.btnThanhToan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThanhToan.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThanhToan.ForeColor = System.Drawing.Color.White;
+            this.btnThanhToan.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnThanhToan.Location = new System.Drawing.Point(0, 0);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.Size = new System.Drawing.Size(304, 76);
+            this.btnThanhToan.Style.BackColor = System.Drawing.Color.Black;
+            this.btnThanhToan.Style.ForeColor = System.Drawing.Color.White;
+            this.btnThanhToan.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.btnThanhToan.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnThanhToan.TabIndex = 4;
+            this.btnThanhToan.Text = "Thanh Toán";
+            this.btnThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThanhToan.UseVisualStyleBackColor = false;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // btnNgayTao
             // 
@@ -521,6 +554,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).EndInit();
             this.spcQuery.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).EndInit();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cboSortSumBill)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortBillID)).EndInit();
             this.panUcHeader.ResumeLayout(false);
@@ -564,5 +598,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTienThoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
         private Syncfusion.WinForms.Controls.SfButton btnNgayTao;
+        private System.Windows.Forms.Panel panel1;
+        private Syncfusion.WinForms.Controls.SfButton btnThanhToan;
     }
 }
