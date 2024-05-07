@@ -12,7 +12,7 @@ namespace DAL
     {
         List<HoaDonDTO> hoaDonDTOs = new List<HoaDonDTO>();
 
-        public bool AddHoaDon(HoaDonDTO hoaDonDTO)
+        public int AddHoaDon(HoaDonDTO hoaDonDTO)
         {
             try
             {
@@ -24,24 +24,26 @@ namespace DAL
                 com.Parameters.AddWithValue("@MaKH", hoaDonDTO.MaKH);
                 com.Parameters.AddWithValue("@MaNV", hoaDonDTO.MaNV);
                 com.Parameters.AddWithValue("@MaThue", hoaDonDTO.MaThue);
-                com.Parameters.AddWithValue("@NgayLapHoaDon", hoaDonDTO.NgayLapHoaDon);
-                com.Parameters.AddWithValue("@TongHoaDon", hoaDonDTO.TongHoaDon);
-                com.Parameters.AddWithValue("@TienNhan", hoaDonDTO.TienNhan);
-                com.Parameters.AddWithValue("@TienThoi", hoaDonDTO.TienThoi);
 
-                int count = com.ExecuteNonQuery();
-                conn.Close();
-                if (count > 0)
+                object result = com.ExecuteScalar();
+
+                if (result != null && int.TryParse(result.ToString(), out int MaHoaDon))
                 {
-                    return true;
+                    conn.Close();
+                    return MaHoaDon;
                 }
-                return false;
+                else
+                {
+                    conn.Close();
+                    return -1;
+                }
             }
             catch (Exception)
             {
-                return false;
+                return -1;
             }
         }
+
 
         public bool EditHoaDon(HoaDonDTO hoaDonDTO)
         {

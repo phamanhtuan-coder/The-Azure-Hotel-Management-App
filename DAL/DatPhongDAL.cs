@@ -41,6 +41,37 @@ namespace DAL
             }
         }
 
+        public bool Check_out(int maHoaDon, List<DatPhongDTO> list)
+        {
+            try
+            {
+                foreach (var item in list)
+                {
+                    SqlConnection conn = DataProvider.KetNoiDuLieu();
+                    conn.Open();
+                    SqlCommand com = new SqlCommand("CheckOut", conn);
+                    com.CommandType = CommandType.StoredProcedure;
+                    com.Parameters.AddWithValue("@MaHoaDon", maHoaDon);
+                    com.Parameters.AddWithValue("@MaDatPhong", item.MaDatPhong);
+
+                    int count = com.ExecuteNonQuery();
+                    conn.Close();
+                    if (count > 0)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
         public List<DatPhongDTO> FilterTrangThai(bool v)
         {

@@ -24,7 +24,6 @@ namespace GUI.UserControls
         List<DatPhongDTO> datPhongDTOstk = new List<DatPhongDTO>();
         List<PhongDTO> PhongDTOs = new List<PhongDTO>();
         PhongBLL PhongBLL = new PhongBLL();
-
         bool KT = false;
         public ucBooking()
         {
@@ -267,6 +266,55 @@ namespace GUI.UserControls
         }
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
+            if (KT)
+            {
+                if (dgvBooking.SelectedRows.Count > 0)
+                {
+                    foreach (DataGridViewRow item in dgvBooking.SelectedRows)
+                    {
+                        DatPhongDTO datPhongDTO = item.DataBoundItem as DatPhongDTO;
+                        if (datPhongDTO.NgayTraPhong.ToString().Length == 0)
+                        {
+                            list.Add(datPhongDTO);
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox("Đặt phòng với mã " + datPhongDTO.MaDatPhong + " đã được check-out, bạn không thể check-out nữa!");
+                            thongBao.ShowDialog();
+                        }
+                    }
+
+                    if (list.Count > 0)
+                    {
+                        frmHoaDon frmHoaDon = new frmHoaDon();
+                        frmHoaDon.isAdd = true;
+                        frmHoaDon.hoaDonDTO.MaKH = (int) dgvBooking.SelectedRows[0].Cells["colMaKH"].Value;
+                        frmHoaDon.ShowDialog();
+                        if (BienTam.KTThemHoaDon != -1) 
+                        {
+                            if (DatPhongBLL.Check_out(BienTam.KTThemHoaDon, list))
+                            {
+                                layds();
+                            }
+                            else
+                            {
+                                thongBao = new customMessageBox("Bạn đã Check-out thất bại!");
+                                thongBao.ShowDialog();
+                            } 
+                        }
+                    }
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Bạn vui lòng chọn đặt phòng để check-out!");
+                    thongBao.ShowDialog();
+                }
+            }
+            else
+            {
+                thongBao = new customMessageBox("Bạn vui lòng tìm thông tin khách hàng!");
+                thongBao.ShowDialog();
+            }
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {

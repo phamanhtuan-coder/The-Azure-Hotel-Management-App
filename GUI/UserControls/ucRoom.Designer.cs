@@ -48,17 +48,12 @@
             this.colGiaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSucChuaToiDa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nudSucChua = new System.Windows.Forms.NumericUpDown();
-            this.nudPriceMax = new System.Windows.Forms.NumericUpDown();
-            this.nudPriceMin = new System.Windows.Forms.NumericUpDown();
             this.cboSortPrice = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortPrice = new System.Windows.Forms.Label();
-            this.lblPriceRange = new System.Windows.Forms.Label();
             this.cboRoomStatus = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortTheoLoaiPhong = new System.Windows.Forms.Label();
             this.cboSortRoomType = new Syncfusion.WinForms.ListView.SfComboBox();
             this.cboSortRoomID = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.lblSortSucChua = new System.Windows.Forms.Label();
             this.lblSortMaPHG = new System.Windows.Forms.Label();
             this.lblStateRoom = new System.Windows.Forms.Label();
             this.lblStatusRoom = new System.Windows.Forms.Label();
@@ -71,9 +66,6 @@
             this.spcQuery.Panel2.SuspendLayout();
             this.spcQuery.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSucChua)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPriceMax)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPriceMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboRoomStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortRoomType)).BeginInit();
@@ -233,7 +225,7 @@
             this.cboStateRoom.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboStateRoom.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboStateRoom.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateRoom.Location = new System.Drawing.Point(228, 405);
+            this.cboStateRoom.Location = new System.Drawing.Point(228, 302);
             this.cboStateRoom.Name = "cboStateRoom";
             this.cboStateRoom.Size = new System.Drawing.Size(156, 33);
             this.cboStateRoom.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -258,17 +250,12 @@
             // spcQuery.Panel2
             // 
             this.spcQuery.Panel2.BackColor = System.Drawing.Color.Lavender;
-            this.spcQuery.Panel2.Controls.Add(this.nudSucChua);
-            this.spcQuery.Panel2.Controls.Add(this.nudPriceMax);
-            this.spcQuery.Panel2.Controls.Add(this.nudPriceMin);
             this.spcQuery.Panel2.Controls.Add(this.cboSortPrice);
             this.spcQuery.Panel2.Controls.Add(this.lblSortPrice);
-            this.spcQuery.Panel2.Controls.Add(this.lblPriceRange);
             this.spcQuery.Panel2.Controls.Add(this.cboRoomStatus);
             this.spcQuery.Panel2.Controls.Add(this.lblSortTheoLoaiPhong);
             this.spcQuery.Panel2.Controls.Add(this.cboSortRoomType);
             this.spcQuery.Panel2.Controls.Add(this.cboSortRoomID);
-            this.spcQuery.Panel2.Controls.Add(this.lblSortSucChua);
             this.spcQuery.Panel2.Controls.Add(this.lblSortMaPHG);
             this.spcQuery.Panel2.Controls.Add(this.lblStateRoom);
             this.spcQuery.Panel2.Controls.Add(this.lblStatusRoom);
@@ -379,72 +366,6 @@
             this.colTrangThai.ReadOnly = true;
             this.colTrangThai.Width = 105;
             // 
-            // nudSucChua
-            // 
-            this.nudSucChua.Location = new System.Drawing.Point(229, 189);
-            this.nudSucChua.Maximum = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
-            this.nudSucChua.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudSucChua.Name = "nudSucChua";
-            this.nudSucChua.Size = new System.Drawing.Size(155, 27);
-            this.nudSucChua.TabIndex = 32;
-            this.nudSucChua.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nudSucChua.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // nudPriceMax
-            // 
-            this.nudPriceMax.Increment = new decimal(new int[] {
-            500000,
-            0,
-            0,
-            0});
-            this.nudPriceMax.Location = new System.Drawing.Point(264, 240);
-            this.nudPriceMax.Maximum = new decimal(new int[] {
-            10000000,
-            0,
-            0,
-            0});
-            this.nudPriceMax.Name = "nudPriceMax";
-            this.nudPriceMax.Size = new System.Drawing.Size(120, 27);
-            this.nudPriceMax.TabIndex = 31;
-            this.nudPriceMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.nudPriceMax.ThousandsSeparator = true;
-            this.nudPriceMax.Value = new decimal(new int[] {
-            500000,
-            0,
-            0,
-            0});
-            // 
-            // nudPriceMin
-            // 
-            this.nudPriceMin.Increment = new decimal(new int[] {
-            500000,
-            0,
-            0,
-            0});
-            this.nudPriceMin.Location = new System.Drawing.Point(137, 240);
-            this.nudPriceMin.Maximum = new decimal(new int[] {
-            10000000,
-            0,
-            0,
-            0});
-            this.nudPriceMin.Name = "nudPriceMin";
-            this.nudPriceMin.Size = new System.Drawing.Size(120, 27);
-            this.nudPriceMin.TabIndex = 30;
-            this.nudPriceMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.nudPriceMin.ThousandsSeparator = true;
-            // 
             // cboSortPrice
             // 
             this.cboSortPrice.DelimiterChar = "";
@@ -452,7 +373,7 @@
             this.cboSortPrice.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboSortPrice.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboSortPrice.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortPrice.Location = new System.Drawing.Point(228, 291);
+            this.cboSortPrice.Location = new System.Drawing.Point(228, 188);
             this.cboSortPrice.Name = "cboSortPrice";
             this.cboSortPrice.Size = new System.Drawing.Size(156, 33);
             this.cboSortPrice.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -467,23 +388,12 @@
             // 
             this.lblSortPrice.AutoSize = true;
             this.lblSortPrice.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortPrice.Location = new System.Drawing.Point(4, 298);
+            this.lblSortPrice.Location = new System.Drawing.Point(4, 195);
             this.lblSortPrice.Name = "lblSortPrice";
             this.lblSortPrice.Size = new System.Drawing.Size(140, 26);
             this.lblSortPrice.TabIndex = 28;
             this.lblSortPrice.Text = "Sort theo Giá";
             this.lblSortPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblPriceRange
-            // 
-            this.lblPriceRange.AutoSize = true;
-            this.lblPriceRange.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPriceRange.Location = new System.Drawing.Point(4, 241);
-            this.lblPriceRange.Name = "lblPriceRange";
-            this.lblPriceRange.Size = new System.Drawing.Size(125, 26);
-            this.lblPriceRange.TabIndex = 27;
-            this.lblPriceRange.Text = "Khoảng giá";
-            this.lblPriceRange.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cboRoomStatus
             // 
@@ -537,7 +447,7 @@
             this.cboSortRoomID.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboSortRoomID.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboSortRoomID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortRoomID.Location = new System.Drawing.Point(229, 348);
+            this.cboSortRoomID.Location = new System.Drawing.Point(229, 245);
             this.cboSortRoomID.Name = "cboSortRoomID";
             this.cboSortRoomID.Size = new System.Drawing.Size(156, 33);
             this.cboSortRoomID.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -548,22 +458,11 @@
             this.cboSortRoomID.TabIndex = 23;
             this.cboSortRoomID.SelectedIndexChanged += new System.EventHandler(this.cboSortRoomID_SelectedIndexChanged);
             // 
-            // lblSortSucChua
-            // 
-            this.lblSortSucChua.AutoSize = true;
-            this.lblSortSucChua.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortSucChua.Location = new System.Drawing.Point(4, 188);
-            this.lblSortSucChua.Name = "lblSortSucChua";
-            this.lblSortSucChua.Size = new System.Drawing.Size(163, 26);
-            this.lblSortSucChua.TabIndex = 16;
-            this.lblSortSucChua.Text = "Sức chứa tối đa";
-            this.lblSortSucChua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // lblSortMaPHG
             // 
             this.lblSortMaPHG.AutoSize = true;
             this.lblSortMaPHG.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortMaPHG.Location = new System.Drawing.Point(4, 355);
+            this.lblSortMaPHG.Location = new System.Drawing.Point(4, 252);
             this.lblSortMaPHG.Name = "lblSortMaPHG";
             this.lblSortMaPHG.Size = new System.Drawing.Size(192, 26);
             this.lblSortMaPHG.TabIndex = 14;
@@ -574,7 +473,7 @@
             // 
             this.lblStateRoom.AutoSize = true;
             this.lblStateRoom.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStateRoom.Location = new System.Drawing.Point(4, 412);
+            this.lblStateRoom.Location = new System.Drawing.Point(4, 309);
             this.lblStateRoom.Name = "lblStateRoom";
             this.lblStateRoom.Size = new System.Drawing.Size(186, 26);
             this.lblStateRoom.TabIndex = 9;
@@ -639,9 +538,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).EndInit();
             this.spcQuery.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSucChua)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPriceMax)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPriceMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboRoomStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortRoomType)).EndInit();
@@ -669,7 +565,6 @@
         private System.Windows.Forms.TableLayoutPanel tlpController;
         private System.Windows.Forms.Label lblStatusRoom;
         private System.Windows.Forms.Label lblStateRoom;
-        private System.Windows.Forms.Label lblSortSucChua;
         private System.Windows.Forms.Label lblSortMaPHG;
         private System.Windows.Forms.Panel panUcHeader;
         private System.Windows.Forms.SplitContainer spcHeader;
@@ -677,12 +572,8 @@
         private Syncfusion.WinForms.ListView.SfComboBox cboSortRoomID;
         private System.Windows.Forms.Label lblSortTheoLoaiPhong;
         private Syncfusion.WinForms.ListView.SfComboBox cboRoomStatus;
-        private System.Windows.Forms.Label lblPriceRange;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortPrice;
         private System.Windows.Forms.Label lblSortPrice;
-        private System.Windows.Forms.NumericUpDown nudPriceMax;
-        private System.Windows.Forms.NumericUpDown nudPriceMin;
-        private System.Windows.Forms.NumericUpDown nudSucChua;
         private System.Windows.Forms.DataGridView dgvRoom;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaPHG;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaLoai;

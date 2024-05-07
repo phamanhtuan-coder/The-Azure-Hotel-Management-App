@@ -10,5 +10,6 @@ namespace GUI
     {
         public static string username="";
         public static bool kiemtra = false;
+        public static int KTThemHoaDon = -1;
     }
 }

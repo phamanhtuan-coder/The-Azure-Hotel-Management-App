@@ -12,13 +12,13 @@ namespace BLL
     {
         HoaDonDAL hoaDonDAL = new HoaDonDAL();
 
-        public bool AddHoaDon(HoaDonDTO hoaDonDTO)
+        public int AddHoaDon(HoaDonDTO hoaDonDTO)
         {
             if(hoaDonDTO.MaKH>0 && hoaDonDTO.MaNV>0 && hoaDonDTO.MaThue > 0)
             {
                 return hoaDonDAL.AddHoaDon(hoaDonDTO);
             }
-            return false;
+            return -1;
         }
 
         public bool EditHoaDon(HoaDonDTO hoaDonDTO)

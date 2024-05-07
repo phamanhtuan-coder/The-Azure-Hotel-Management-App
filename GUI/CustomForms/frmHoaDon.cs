@@ -34,7 +34,7 @@ namespace GUI.customForm
         private void frmHoaDon_Load(object sender, EventArgs e)
         {
             // gán giá trị mặc định bằng các biến trên, néu là edit có giá trị truyền vào thì kiểm tra và chọn giá trị
-            LoadDuLieuCombobox();
+            LoadDuLieuCombobox();         
             if (!isAdd)
             {
                 txtMaKH.Text = hoaDonDTO.MaKH.ToString();
@@ -59,7 +59,14 @@ namespace GUI.customForm
             }
             else
             {
-                txtMaKH.Text = "";
+                if (hoaDonDTO.MaKH > 0)
+                {
+                    txtMaKH.Text = hoaDonDTO.MaKH.ToString();
+                }
+                else
+                {
+                    txtMaKH.Text = "";
+                }
                 cboMaNV.SelectedIndex = 0;
                 cboMaThue.SelectedIndex = 0;
                 dtpNgayDat.Value = DateTime.Now;
@@ -151,8 +158,9 @@ namespace GUI.customForm
 
         private bool AddHoaDon()
         {
-            CapNhatGiaTri();          
-            return hoaDonBLL.AddHoaDon(hoaDonDTO);
+            CapNhatGiaTri();
+            BienTam.KTThemHoaDon = hoaDonBLL.AddHoaDon(hoaDonDTO);
+            return BienTam.KTThemHoaDon>0;
         }
 
         private void CapNhatGiaTri()
