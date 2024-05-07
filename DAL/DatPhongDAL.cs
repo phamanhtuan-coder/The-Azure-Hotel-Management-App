@@ -28,8 +28,25 @@ namespace DAL
                 phong.MaKH = (int)reader[1];
                 phong.MaPHG = (int)reader[2];
                 phong.NgayDatPhong = DateTime.Parse(reader[3].ToString());
-                phong.NgayNhanPhong = DateTime.Parse(reader[4].ToString());
-                phong.NgayTraPhong = DateTime.Parse(reader[5].ToString());
+                object ngayNhanPhongObject = reader["NgayNhanPhong"];
+                if (ngayNhanPhongObject != DBNull.Value)
+                {
+                    phong.NgayNhanPhong = DateTime.Parse(ngayNhanPhongObject.ToString());
+                }
+                else
+                {
+                    phong.NgayNhanPhong = null;
+                }
+
+                object ngayTraPhongObject = reader["NgayTraPhong"];
+                if (ngayTraPhongObject != DBNull.Value)
+                {
+                    phong.NgayTraPhong = DateTime.Parse(ngayTraPhongObject.ToString());
+                }
+                else
+                {
+                    phong.NgayTraPhong = null;
+                }
                 phong.SoLuongKH = (int)reader[6];
                 phong.TrangThai = v;
 
@@ -89,8 +106,25 @@ namespace DAL
                 phong.MaKH = (int)reader[1];
                 phong.MaPHG = (int)reader[2];
                 phong.NgayDatPhong =DateTime.Parse( reader[3].ToString());
-                phong.NgayNhanPhong = DateTime.Parse(reader[4].ToString());
-                phong.NgayTraPhong = DateTime.Parse(reader[5].ToString());
+                object ngayNhanPhongObject = reader["NgayNhanPhong"];
+                if (ngayNhanPhongObject != DBNull.Value)
+                {
+                    phong.NgayNhanPhong = DateTime.Parse(ngayNhanPhongObject.ToString());
+                }
+                else
+                {
+                    phong.NgayNhanPhong = null;
+                }
+
+                object ngayTraPhongObject = reader["NgayTraPhong"];
+                if (ngayTraPhongObject != DBNull.Value)
+                {
+                    phong.NgayTraPhong = DateTime.Parse(ngayTraPhongObject.ToString());
+                }
+                else
+                {
+                    phong.NgayTraPhong = null;
+                }
                 phong.SoLuongKH = (int)reader[6];
                 byte[] trangThaiBytes = (byte[])reader[7];
                 bool trangThai = trangThaiBytes[0] == 1;
@@ -115,8 +149,25 @@ namespace DAL
                 phong.MaKH = (int)reader[1];
                 phong.MaPHG = (int)reader[2];
                 phong.NgayDatPhong = DateTime.Parse(reader[3].ToString());
-                phong.NgayNhanPhong = DateTime.Parse(reader[4].ToString());
-                phong.NgayTraPhong = DateTime.Parse(reader[5].ToString());
+                object ngayNhanPhongObject = reader["NgayNhanPhong"];
+                if (ngayNhanPhongObject != DBNull.Value)
+                {
+                    phong.NgayNhanPhong = DateTime.Parse(ngayNhanPhongObject.ToString());
+                }
+                else
+                {
+                    phong.NgayNhanPhong = null;
+                }
+
+                object ngayTraPhongObject = reader["NgayTraPhong"];
+                if (ngayTraPhongObject != DBNull.Value)
+                {
+                    phong.NgayTraPhong = DateTime.Parse(ngayTraPhongObject.ToString());
+                }
+                else
+                {
+                    phong.NgayTraPhong = null;
+                }
                 phong.SoLuongKH = (int)reader[6];
                 byte[] trangThaiBytes = (byte[])reader[7];
                 bool trangThai = trangThaiBytes[0] == 1;

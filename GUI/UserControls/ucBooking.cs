@@ -232,7 +232,7 @@ namespace GUI.UserControls
 
             int madatphong = (int)dgvBooking.SelectedRows[0].Cells["colMaDatPhong"].Value;
             DatPhongBLL.checkin(madatphong, datPhongDTO);
-
+            layds();
         }
 
         private void btncheckout_Click(object sender, EventArgs e)
@@ -249,6 +249,7 @@ namespace GUI.UserControls
 
             int madatphong = (int)dgvBooking.SelectedRows[0].Cells["colMaDatPhong"].Value;
             DatPhongBLL.checkout(madatphong, datPhongDTO);
+            layds();
         }
     }
 }

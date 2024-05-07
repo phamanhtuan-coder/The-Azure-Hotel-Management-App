@@ -40,7 +40,7 @@ namespace GUI.customForm
                 cboMaDV.DisplayMember = "TenDV";
                 cboMaDV.ValueMember = "MaDV";
                 nudSoLuong.Value = nudSoLuong.Minimum;
-                dtpNgayDat.Value = DateTime.Now;
+                dtpNgayDat.Value =DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy"));
             }
             else
             {
@@ -82,6 +82,10 @@ namespace GUI.customForm
             {
                 // Nếu đúng là form Thêm thì chạy lệnh insert
                 check = datDichVuBLL.them(DatDichVuDTO);
+                DatDichVuDTO = datDichVuBLL.mamoi();
+                int ma = DatDichVuDTO.MaDatDichVu;
+                datDichVuBLL.thanhtien(ma);
+
                 if (check)
                 {
                     thongBao = new customMessageBox("Đã thêm thành công dữ liệu đặt dịch vụ!");
