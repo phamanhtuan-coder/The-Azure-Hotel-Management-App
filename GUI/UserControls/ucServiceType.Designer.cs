@@ -40,11 +40,6 @@
             this.cboStateRoomType = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvServiceType = new System.Windows.Forms.DataGridView();
-            this.colMaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGiaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboSortServiceTypeID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortServiceTypeID = new System.Windows.Forms.Label();
             this.cboSortGiaServiceType = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -52,6 +47,11 @@
             this.lblStateRoomType = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.colMaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGiaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHinhAnh = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRoomType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -278,47 +278,6 @@
             this.dgvServiceType.Size = new System.Drawing.Size(973, 746);
             this.dgvServiceType.TabIndex = 1;
             // 
-            // colMaDV
-            // 
-            this.colMaDV.DataPropertyName = "MaDV";
-            this.colMaDV.HeaderText = "Mã dịch vụ";
-            this.colMaDV.MinimumWidth = 6;
-            this.colMaDV.Name = "colMaDV";
-            this.colMaDV.ReadOnly = true;
-            // 
-            // colTenDV
-            // 
-            this.colTenDV.DataPropertyName = "TenDV";
-            this.colTenDV.HeaderText = "Tên dịch vụ";
-            this.colTenDV.MinimumWidth = 6;
-            this.colTenDV.Name = "colTenDV";
-            this.colTenDV.ReadOnly = true;
-            // 
-            // colGiaDV
-            // 
-            this.colGiaDV.DataPropertyName = "GiaDV";
-            this.colGiaDV.HeaderText = "Giá";
-            this.colGiaDV.MinimumWidth = 6;
-            this.colGiaDV.Name = "colGiaDV";
-            this.colGiaDV.ReadOnly = true;
-            // 
-            // colHinhAnh
-            // 
-            this.colHinhAnh.DataPropertyName = "HinhAnh";
-            this.colHinhAnh.HeaderText = "Hình ảnh";
-            this.colHinhAnh.MinimumWidth = 6;
-            this.colHinhAnh.Name = "colHinhAnh";
-            this.colHinhAnh.ReadOnly = true;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "TrangThai";
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.MinimumWidth = 6;
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Visible = false;
-            // 
             // cboSortServiceTypeID
             // 
             this.cboSortServiceTypeID.DelimiterChar = "";
@@ -417,6 +376,49 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
+            // colMaDV
+            // 
+            this.colMaDV.DataPropertyName = "MaDV";
+            this.colMaDV.HeaderText = "Mã dịch vụ";
+            this.colMaDV.MinimumWidth = 6;
+            this.colMaDV.Name = "colMaDV";
+            this.colMaDV.ReadOnly = true;
+            // 
+            // colTenDV
+            // 
+            this.colTenDV.DataPropertyName = "TenDV";
+            this.colTenDV.HeaderText = "Tên dịch vụ";
+            this.colTenDV.MinimumWidth = 6;
+            this.colTenDV.Name = "colTenDV";
+            this.colTenDV.ReadOnly = true;
+            // 
+            // colGiaDV
+            // 
+            this.colGiaDV.DataPropertyName = "GiaDV";
+            this.colGiaDV.HeaderText = "Giá";
+            this.colGiaDV.MinimumWidth = 6;
+            this.colGiaDV.Name = "colGiaDV";
+            this.colGiaDV.ReadOnly = true;
+            // 
+            // colHinhAnh
+            // 
+            this.colHinhAnh.DataPropertyName = "HinhAnh";
+            this.colHinhAnh.HeaderText = "Hình ảnh";
+            this.colHinhAnh.MinimumWidth = 6;
+            this.colHinhAnh.Name = "colHinhAnh";
+            this.colHinhAnh.ReadOnly = true;
+            this.colHinhAnh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colHinhAnh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.MinimumWidth = 6;
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Visible = false;
+            // 
             // ucServiceType
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -469,7 +471,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaDV;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenDV;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGiaDV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHinhAnh;
+        private System.Windows.Forms.DataGridViewImageColumn colHinhAnh;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
     }
 }

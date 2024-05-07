@@ -69,6 +69,7 @@
             this.btnChonHinh.Size = new System.Drawing.Size(150, 38);
             this.btnChonHinh.TabIndex = 16;
             this.btnChonHinh.Text = "Submit";
+            this.btnChonHinh.Click += new System.EventHandler(this.btnChonHinh_Click);
             // 
             // picHinhAnh
             // 

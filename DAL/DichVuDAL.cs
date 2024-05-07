@@ -52,6 +52,7 @@ namespace DAL
                 dichVu.MaDV = (int)reader[0];
                 dichVu.TenDV = reader[1].ToString();
                 dichVu.GiaDV =decimal.Parse(reader[2].ToString());
+                dichVu.HinhAnh= reader["HinhAnh"] as byte[];
                 dichVu.TrangThai = v;
 
                 dsdvu.Add(dichVu);
@@ -74,6 +75,7 @@ namespace DAL
                 dv.MaDV = (int)reader["MaDV"];
                 dv.TenDV = reader["TenDV"].ToString();
                 dv.GiaDV = (decimal)reader["GiaDV"];
+                dv.HinhAnh = reader["HinhAnh"] as byte[];
                 byte[] trangThaiBytes = (byte[])reader["TrangThai"];
                 bool trangThai = trangThaiBytes[0] == 1;
                 dv.TrangThai = trangThai;
@@ -97,6 +99,7 @@ namespace DAL
                 dv.MaDV = (int)reader["MaDV"];
                 dv.TenDV = reader["TenDV"].ToString();
                 dv.GiaDV = (decimal)reader["GiaDV"];
+                dv.HinhAnh = reader["HinhAnh"] as byte[] ;
                 byte[] trangThaiBytes = (byte[])reader["TrangThai"];
                 bool trangThai = trangThaiBytes[0] == 1;
                 dv.TrangThai = trangThai;
@@ -110,12 +113,13 @@ namespace DAL
         public bool suadvu(DichVuDTO dichVu)
         {
             string lenhCapNhatdvu =
-                "UPDATE DichVu SET TenDV = @TenDV, GiaDV = @GiaDV WHERE MaDV = @MaDV";
-            SqlParameter[] pars = new SqlParameter[3];
+                "UPDATE DichVu SET TenDV = @TenDV, GiaDV = @GiaDV ,HinhAnh=@HinhAnh WHERE MaDV = @MaDV";
+            SqlParameter[] pars = new SqlParameter[4];
 
             pars[0] = new SqlParameter("MaDV", dichVu.MaDV);
             pars[1] = new SqlParameter("TenDV", dichVu.TenDV);
             pars[2] = new SqlParameter("GiaDV", dichVu.GiaDV);
+            pars[3] = new SqlParameter("HinhAnh", dichVu.HinhAnh);
             SqlConnection conn = DataProvider.KetNoiDuLieu();
             conn.Open();
             int kq = DataProvider.ThucHienCauLenh(lenhCapNhatdvu, conn, pars);
@@ -126,11 +130,12 @@ namespace DAL
         public bool themdvu(DichVuDTO dichVu)
         {
             string lenhThemdichvu =
-                "INSERT INTO DichVu (TenDV, GiaDV,TrangThai) VALUES (@TenDV, @GiaDV, 1)";
+                "INSERT INTO DichVu (TenDV, GiaDV,HinhAnh,TrangThai) VALUES (@TenDV, @GiaDV,@HinhAnh, 1)";
 
-            SqlParameter[] pars = new SqlParameter[2];
+            SqlParameter[] pars = new SqlParameter[3];
             pars[0] = new SqlParameter("TenDV", dichVu.TenDV);
             pars[1] = new SqlParameter("GiaDV", dichVu.GiaDV);
+            pars[2] = new SqlParameter("HinhAnh", dichVu.HinhAnh);
 
             SqlConnection conn = DataProvider.KetNoiDuLieu();
             conn.Open();
