@@ -295,30 +295,56 @@ namespace GUI.UserControls
             if (dgvBill.SelectedRows.Count > 0)
             {
                 HoaDonDTO hoaDonDTO = new HoaDonDTO();
-                hoaDonDTO = dgvBill.SelectedRows[0].DataBoundItem as HoaDonDTO;
-                decimal TongTien = 0;
-                hoaDonDTO.TongHoaDon = 0;
-
-                if (hoaDonDTO.MaHoaDon > 0)
+                LoadDuLieuCuaHoaDon(ref hoaDonDTO);
+                Decimal TongTien = 0;
+                foreach (ChiTietHoaDonDTO item in hoaDonDTO.chiTietHoaDonDTOs)
                 {
-                    hoaDonDTO.chiTietHoaDonDTOs = new List<ChiTietHoaDonDTO>();
-                    hoaDonDTO.chiTietHoaDonDTOs = chiTietHoaDonBLL.TruyVanChiTiet(hoaDonDTO.MaHoaDon);
+                    TongTien += item.ThanhTien;
+                }
+                hoaDonDTO.TongHoaDon = TongTien;
+                frmThanhToan frm = new frmThanhToan();
+                frm.hoaDonDTO = hoaDonDTO;
+                frm.ShowDialog();
+                Filter();
+            }
+            else
+            {
+                thongBao = new customMessageBox("Vui lòng chọn hóa đơn!");
+                thongBao.ShowDialog();
+            }
+        }
+        private bool LoadDuLieuCuaHoaDon(ref HoaDonDTO hoaDonDTO)
+        {
+            hoaDonDTO = dgvBill.SelectedRows[0].DataBoundItem as HoaDonDTO;
+            hoaDonDTO.TongHoaDon = 0;
 
-                    foreach (ChiTietHoaDonDTO item in hoaDonDTO.chiTietHoaDonDTOs)
-                    {
-                        TongTien += item.ThanhTien;
-                    }
-                    hoaDonDTO.TongHoaDon = TongTien;
-                    frmThanhToan frm = new frmThanhToan();
-                    frm.hoaDonDTO = hoaDonDTO;
-                    frm.ShowDialog();
-                    Filter();
-                }
-                else
-                {
-                    thongBao = new customMessageBox("Vui lòng chọn hóa đơn!");
-                    thongBao.ShowDialog();
-                }
+            if (hoaDonDTO.MaHoaDon > 0)
+            {
+                hoaDonDTO.chiTietHoaDonDTOs = new List<ChiTietHoaDonDTO>();
+                hoaDonDTO.chiTietHoaDonDTOs = chiTietHoaDonBLL.TruyVanChiTiet(hoaDonDTO.MaHoaDon);    
+            }
+            else
+            {
+                thongBao = new customMessageBox("Không tìm thấy hóa đơn!");
+                thongBao.ShowDialog();
+            }
+            return hoaDonDTO.MaHoaDon > 0;
+        }
+        private void txtXemCT_Click(object sender, EventArgs e)
+        {
+            if (dgvBill.SelectedRows.Count > 0)
+            {
+                HoaDonDTO hoaDonDTO = new HoaDonDTO();
+                LoadDuLieuCuaHoaDon(ref hoaDonDTO);
+
+                frmHienCTHD frm = new frmHienCTHD();
+                frm.hs = hoaDonDTO.chiTietHoaDonDTOs;
+                frm.ShowDialog();             
+            }
+            else
+            {
+                thongBao = new customMessageBox("Vui lòng chọn hóa đơn!");
+                thongBao.ShowDialog();
             }
         }
     }

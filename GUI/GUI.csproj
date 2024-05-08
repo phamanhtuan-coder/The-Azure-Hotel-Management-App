@@ -150,6 +150,12 @@
     <Compile Include="CustomForms\frmDoiMatKhau.Designer.cs">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomForms\frmHienCTHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\frmHienCTHD.Designer.cs">
+      <DependentUpon>frmHienCTHD.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomForms\frmThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -472,6 +478,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\frmHienCTHD.resx">
+      <DependentUpon>frmHienCTHD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmThanhToan.resx">
       <DependentUpon>frmThanhToan.cs</DependentUpon>

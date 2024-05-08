@@ -68,6 +68,7 @@
             this.lblStateBooking = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.txtXemCT = new Syncfusion.WinForms.Controls.SfButton();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateBooking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -244,6 +245,7 @@
             // spcQuery.Panel2
             // 
             this.spcQuery.Panel2.BackColor = System.Drawing.Color.Lavender;
+            this.spcQuery.Panel2.Controls.Add(this.txtXemCT);
             this.spcQuery.Panel2.Controls.Add(this.btnThanhToan);
             this.spcQuery.Panel2.Controls.Add(this.btnTraCuuDP);
             this.spcQuery.Panel2.Controls.Add(this.dtpNgayDat);
@@ -392,9 +394,9 @@
             this.btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThanhToan.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThanhToan.ForeColor = System.Drawing.Color.Black;
-            this.btnThanhToan.Location = new System.Drawing.Point(236, 419);
+            this.btnThanhToan.Location = new System.Drawing.Point(252, 419);
             this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(151, 40);
+            this.btnThanhToan.Size = new System.Drawing.Size(135, 40);
             this.btnThanhToan.Style.BackColor = System.Drawing.Color.Yellow;
             this.btnThanhToan.Style.ForeColor = System.Drawing.Color.Black;
             this.btnThanhToan.TabIndex = 44;
@@ -412,7 +414,7 @@
             this.btnTraCuuDP.ForeColor = System.Drawing.Color.White;
             this.btnTraCuuDP.Location = new System.Drawing.Point(17, 419);
             this.btnTraCuuDP.Name = "btnTraCuuDP";
-            this.btnTraCuuDP.Size = new System.Drawing.Size(151, 40);
+            this.btnTraCuuDP.Size = new System.Drawing.Size(88, 40);
             this.btnTraCuuDP.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuDP.Style.ForeColor = System.Drawing.Color.White;
             this.btnTraCuuDP.TabIndex = 43;
@@ -625,6 +627,24 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
+            // txtXemCT
+            // 
+            this.txtXemCT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtXemCT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.txtXemCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txtXemCT.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtXemCT.ForeColor = System.Drawing.Color.White;
+            this.txtXemCT.Location = new System.Drawing.Point(112, 419);
+            this.txtXemCT.Name = "txtXemCT";
+            this.txtXemCT.Size = new System.Drawing.Size(134, 40);
+            this.txtXemCT.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.txtXemCT.Style.ForeColor = System.Drawing.Color.White;
+            this.txtXemCT.TabIndex = 45;
+            this.txtXemCT.Text = "Xem chi tiết";
+            this.txtXemCT.UseVisualStyleBackColor = false;
+            this.txtXemCT.Click += new System.EventHandler(this.txtXemCT_Click);
+            // 
             // ucBill
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -695,5 +715,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCCCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenDN;
+        private Syncfusion.WinForms.Controls.SfButton txtXemCT;
     }
 }
