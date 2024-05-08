@@ -72,8 +72,8 @@ namespace GUI.customForm
         private void CapNhatGiaTri()
         {
             hoaDonDTO.TongHoaDon = decimal.Parse(txtTongHoaDon.Text);
-            hoaDonDTO.TienNhan = (decimal)nupNhan.Value;
-            hoaDonDTO.TienThoi = (decimal)nupThoi.Value;
+            hoaDonDTO.TienNhan = (decimal) nupNhan.Value;
+            hoaDonDTO.TienThoi = (decimal) nupThoi.Value;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

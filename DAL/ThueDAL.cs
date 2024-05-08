@@ -166,6 +166,32 @@ namespace DAL
             {
                 return new List<ThueDTO>();
             }
-        }       
+        }
+
+        public int LayKM(int maThue)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spThue", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaThue", maThue);
+                SqlDataReader reader = com.ExecuteReader();
+                double KhuyenMai = 0;
+                while (reader.Read())
+                {
+                    KhuyenMai = (double) reader["TyLeThue"];
+                }
+
+                conn.Close();
+                return int.Parse(KhuyenMai.ToString());
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
     }
 }

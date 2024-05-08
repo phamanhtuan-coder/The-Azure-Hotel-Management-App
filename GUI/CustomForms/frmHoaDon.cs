@@ -40,6 +40,8 @@ namespace GUI.customForm
             LoadDuLieuCombobox();         
             if (!isAdd)
             {
+                label2.Visible = false;
+                cboMaKM.Visible = false;
                 txtMaKH.Text = hoaDonDTO.MaKH.ToString();
                 foreach (var item in cboMaNV.DataSource as List<NhanVienDTO>)
                 {
@@ -61,6 +63,9 @@ namespace GUI.customForm
             }
             else
             {
+                label2.Visible = true;
+                cboMaKM.Visible = true;
+
                 if (hoaDonDTO.MaKH > 0)
                 {
                     txtMaKH.Text = hoaDonDTO.MaKH.ToString();
@@ -191,9 +196,6 @@ namespace GUI.customForm
             hoaDonDTO.MaKH = int.Parse(txtMaKH.Text);
             hoaDonDTO.MaNV = (int)cboMaNV.SelectedValue;
             hoaDonDTO.MaThue = (int)cboMaThue.SelectedValue;
-            //hoaDonDTO.TongHoaDon = (decimal)nudTongTien.Value;
-            //hoaDonDTO.TienNhan = (decimal)nudTienNhan.Value;
-            //hoaDonDTO.TienThoi = (decimal)nudTienThua.Value;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

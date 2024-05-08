@@ -281,16 +281,27 @@ namespace GUI.UserControls
             {
                 HoaDonDTO hoaDonDTO = new HoaDonDTO();
                 LoadDuLieuCuaHoaDon(ref hoaDonDTO);
-                Decimal TongTien = 0;
-                foreach (ChiTietHoaDonDTO item in hoaDonDTO.chiTietHoaDonDTOs)
-                {
-                    TongTien += item.ThanhTien;
+                if (!(hoaDonDTO.TongHoaDon>0 && hoaDonDTO.TienNhan > 0))
+                {               
+                    Decimal TongTien = 0;
+                    foreach (ChiTietHoaDonDTO item in hoaDonDTO.chiTietHoaDonDTOs)
+                    {
+                        TongTien += item.ThanhTien;
+                    }
+                    ThueBLL thueBLL = new ThueBLL();
+
+                    double thue = 100 + thueBLL.LayKM(hoaDonDTO.MaThue);
+                    hoaDonDTO.TongHoaDon = TongTien * (decimal)thue / 100;
+                    frmThanhToan frm = new frmThanhToan();
+                    frm.hoaDonDTO = hoaDonDTO;
+                    frm.ShowDialog();
+                    Filter();
                 }
-                hoaDonDTO.TongHoaDon = TongTien;
-                frmThanhToan frm = new frmThanhToan();
-                frm.hoaDonDTO = hoaDonDTO;
-                frm.ShowDialog();
-                Filter();
+                else
+                {
+                    thongBao = new customMessageBox("Hóa đơn đã thanh toán!");
+                    thongBao.ShowDialog();
+                }
             }
             else
             {
@@ -302,7 +313,6 @@ namespace GUI.UserControls
         private void LoadDuLieuCuaHoaDon(ref HoaDonDTO hoaDonDTO)
         {
             hoaDonDTO = dgvBill.SelectedRows[0].DataBoundItem as HoaDonDTO;
-            hoaDonDTO.TongHoaDon = 0;
 
             if (hoaDonDTO.MaHoaDon > 0)
             {
