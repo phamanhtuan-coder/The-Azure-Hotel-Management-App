@@ -39,6 +39,7 @@
             this.btnTraCuuBillDetails = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateBooking = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
+            this.dgvBillDetails = new System.Windows.Forms.DataGridView();
             this.cboSortSumBill = new Syncfusion.WinForms.ListView.SfComboBox();
             this.cboSortBillID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortSumBill = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.lblStateBooking = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.dgvBillDetails = new System.Windows.Forms.DataGridView();
             this.colMaCTHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +59,7 @@
             this.spcQuery.Panel1.SuspendLayout();
             this.spcQuery.Panel2.SuspendLayout();
             this.spcQuery.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBillDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortSumBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortBillID)).BeginInit();
             this.panUcHeader.SuspendLayout();
@@ -66,7 +67,6 @@
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBillDetails)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBillDetails
@@ -208,6 +208,7 @@
             this.btnTraCuuBillDetails.TabIndex = 0;
             this.btnTraCuuBillDetails.Text = "Tra cứu";
             this.btnTraCuuBillDetails.UseVisualStyleBackColor = false;
+            this.btnTraCuuBillDetails.Click += new System.EventHandler(this.btnTraCuuBillDetails_Click);
             // 
             // cboStateBooking
             // 
@@ -225,6 +226,7 @@
             this.cboStateBooking.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateBooking.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateBooking.TabIndex = 3;
+            this.cboStateBooking.SelectedIndexChanged += new System.EventHandler(this.cboStateBooking_SelectedIndexChanged);
             // 
             // spcQuery
             // 
@@ -252,6 +254,31 @@
             this.spcQuery.SplitterDistance = 973;
             this.spcQuery.TabIndex = 38;
             // 
+            // dgvBillDetails
+            // 
+            this.dgvBillDetails.AllowUserToAddRows = false;
+            this.dgvBillDetails.AllowUserToDeleteRows = false;
+            this.dgvBillDetails.AllowUserToResizeColumns = false;
+            this.dgvBillDetails.AllowUserToResizeRows = false;
+            this.dgvBillDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvBillDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBillDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colMaCTHD,
+            this.colMaHD,
+            this.colMaDP,
+            this.colMaKM,
+            this.colThanhTien,
+            this.colTrangThai});
+            this.dgvBillDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvBillDetails.Location = new System.Drawing.Point(0, 0);
+            this.dgvBillDetails.MultiSelect = false;
+            this.dgvBillDetails.Name = "dgvBillDetails";
+            this.dgvBillDetails.ReadOnly = true;
+            this.dgvBillDetails.RowHeadersVisible = false;
+            this.dgvBillDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBillDetails.Size = new System.Drawing.Size(973, 746);
+            this.dgvBillDetails.TabIndex = 0;
+            // 
             // cboSortSumBill
             // 
             this.cboSortSumBill.DelimiterChar = "";
@@ -268,6 +295,7 @@
             this.cboSortSumBill.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortSumBill.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortSumBill.TabIndex = 24;
+            this.cboSortSumBill.SelectedIndexChanged += new System.EventHandler(this.cboSortSumBill_SelectedIndexChanged);
             // 
             // cboSortBillID
             // 
@@ -285,6 +313,7 @@
             this.cboSortBillID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortBillID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortBillID.TabIndex = 23;
+            this.cboSortBillID.SelectedIndexChanged += new System.EventHandler(this.cboSortBillID_SelectedIndexChanged);
             // 
             // lblSortSumBill
             // 
@@ -348,33 +377,9 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // dgvBillDetails
-            // 
-            this.dgvBillDetails.AllowUserToAddRows = false;
-            this.dgvBillDetails.AllowUserToDeleteRows = false;
-            this.dgvBillDetails.AllowUserToResizeColumns = false;
-            this.dgvBillDetails.AllowUserToResizeRows = false;
-            this.dgvBillDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvBillDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBillDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaCTHD,
-            this.colMaHD,
-            this.colMaDP,
-            this.colMaKM,
-            this.colThanhTien,
-            this.colTrangThai});
-            this.dgvBillDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvBillDetails.Location = new System.Drawing.Point(0, 0);
-            this.dgvBillDetails.MultiSelect = false;
-            this.dgvBillDetails.Name = "dgvBillDetails";
-            this.dgvBillDetails.ReadOnly = true;
-            this.dgvBillDetails.RowHeadersVisible = false;
-            this.dgvBillDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBillDetails.Size = new System.Drawing.Size(973, 746);
-            this.dgvBillDetails.TabIndex = 0;
-            // 
             // colMaCTHD
             // 
+            this.colMaCTHD.DataPropertyName = "MaCTHD";
             this.colMaCTHD.HeaderText = "Mã CTHD";
             this.colMaCTHD.Name = "colMaCTHD";
             this.colMaCTHD.ReadOnly = true;
@@ -382,6 +387,7 @@
             // 
             // colMaHD
             // 
+            this.colMaHD.DataPropertyName = "MaHD";
             this.colMaHD.HeaderText = "Mã hóa đơn";
             this.colMaHD.Name = "colMaHD";
             this.colMaHD.ReadOnly = true;
@@ -389,6 +395,7 @@
             // 
             // colMaDP
             // 
+            this.colMaDP.DataPropertyName = "MaDatPhong";
             this.colMaDP.HeaderText = "Mã đặt phòng";
             this.colMaDP.Name = "colMaDP";
             this.colMaDP.ReadOnly = true;
@@ -396,6 +403,7 @@
             // 
             // colMaKM
             // 
+            this.colMaKM.DataPropertyName = "MaKhuyenMai";
             this.colMaKM.HeaderText = "Mã khuyến mãi";
             this.colMaKM.Name = "colMaKM";
             this.colMaKM.ReadOnly = true;
@@ -403,6 +411,7 @@
             // 
             // colThanhTien
             // 
+            this.colThanhTien.DataPropertyName = "ThanhTien";
             this.colThanhTien.HeaderText = "Thành tiền";
             this.colThanhTien.Name = "colThanhTien";
             this.colThanhTien.ReadOnly = true;
@@ -410,6 +419,7 @@
             // 
             // colTrangThai
             // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
             this.colTrangThai.HeaderText = "Trạng thái";
             this.colTrangThai.Name = "colTrangThai";
             this.colTrangThai.ReadOnly = true;
@@ -433,6 +443,7 @@
             this.spcQuery.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).EndInit();
             this.spcQuery.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBillDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortSumBill)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortBillID)).EndInit();
             this.panUcHeader.ResumeLayout(false);
@@ -440,7 +451,6 @@
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBillDetails)).EndInit();
             this.ResumeLayout(false);
 
         }

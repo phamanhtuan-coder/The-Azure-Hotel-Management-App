@@ -207,7 +207,6 @@ namespace GUI.UserControls
             {
                 dsSearch = donPhongBLL.TraCuuDonPhong(donPhongDTOs, searchKeyword);
                 dgvHousekeeping.DataSource = dsSearch;
-
             }
             else
             {
