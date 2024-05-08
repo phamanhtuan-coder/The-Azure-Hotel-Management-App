@@ -18,10 +18,12 @@ namespace GUI.UserControls
     {
         public customMessageBox thongBao;
         public frmDatPhong frm = new frmDatPhong();
+
         DatPhongBLL DatPhongBLL=new DatPhongBLL();
         List<DatPhongDTO> list = new List<DatPhongDTO>();
         List<DatPhongDTO> datPhongDTOs = new List<DatPhongDTO>();
         List<DatPhongDTO> datPhongDTOstk = new List<DatPhongDTO>();
+
         List<PhongDTO> PhongDTOs = new List<PhongDTO>();
         PhongBLL PhongBLL = new PhongBLL();
         bool KT = false;

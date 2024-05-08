@@ -20,12 +20,16 @@ namespace GUI.UserControls
         public string ngaytao { get; set; } = "";
         public string TT { get; set; } = "";
 
+        ChiTietHoaDonBLL chiTietHoaDonBLL = new ChiTietHoaDonBLL();
+
         HoaDonBLL hoaDonBLL= new HoaDonBLL();
         List<HoaDonDTO> hoaDonDTOs = new List<HoaDonDTO>();
         List<HoaDonDTO> dsSearch = new List<HoaDonDTO>();
 
         frmHoaDon frm = new frmHoaDon();
         customMessageBox thongBao;
+
+        bool KT = false;
         public ucBill()
         {
             InitializeComponent();
@@ -239,20 +243,20 @@ namespace GUI.UserControls
             }
         }
 
-        private void btnTraCuuBill_Click(object sender, EventArgs e)
-        {
-            string searchKeyword = txtSearchBill.Text.Trim().ToLower();
-            if (searchKeyword.Count() > 0)
-            {
-                dsSearch = hoaDonBLL.TraCuuHoaDon(hoaDonDTOs, searchKeyword);
-                dgvBill.DataSource = dsSearch;
+        //private void btnTraCuuBill_Click(object sender, EventArgs e)
+        //{
+        //    string searchKeyword = txtSearchBill.Text.Trim().ToLower();
+        //    if (searchKeyword.Count() > 0)
+        //    {
+        //        dsSearch = hoaDonBLL.TraCuuHoaDon(hoaDonDTOs, searchKeyword);
+        //        dgvBill.DataSource = dsSearch;
 
-            }
-            else
-            {
-                TruyVanDanhSachHoaDon();
-            }
-        }
+        //    }
+        //    else
+        //    {
+        //        TruyVanDanhSachHoaDon();
+        //    }
+        //}
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
@@ -264,6 +268,57 @@ namespace GUI.UserControls
             {
                 thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
                 thongBao.ShowDialog();
+            }
+        }
+
+        private void btnTraCuuDP_Click(object sender, EventArgs e)
+        {
+            object ngayNhanPhongObject = dtpNgayDat.Value;
+            DateTime ng;
+            if (ngayNhanPhongObject != DBNull.Value)
+            {
+                ng = DateTime.Parse(ngayNhanPhongObject.ToString());
+            }
+            else
+            {
+                ng = DateTime.Now;
+            }
+            hoaDonDTOs = hoaDonBLL.Filter(txtCCCD.Text, txtTraCuuUser.Text, ng);
+            dgvBill.ClearSelection();
+            dgvBill.DataSource = hoaDonDTOs;
+
+            KT = true;
+        }
+
+        private void sfButton1_Click(object sender, EventArgs e)
+        {
+            if (dgvBill.SelectedRows.Count > 0)
+            {
+                HoaDonDTO hoaDonDTO = new HoaDonDTO();
+                hoaDonDTO = dgvBill.SelectedRows[0].DataBoundItem as HoaDonDTO;
+                decimal TongTien = 0;
+                hoaDonDTO.TongHoaDon = 0;
+
+                if (hoaDonDTO.MaHoaDon > 0)
+                {
+                    hoaDonDTO.chiTietHoaDonDTOs = new List<ChiTietHoaDonDTO>();
+                    hoaDonDTO.chiTietHoaDonDTOs = chiTietHoaDonBLL.TruyVanChiTiet(hoaDonDTO.MaHoaDon);
+
+                    foreach (ChiTietHoaDonDTO item in hoaDonDTO.chiTietHoaDonDTOs)
+                    {
+                        TongTien += item.ThanhTien;
+                    }
+                    hoaDonDTO.TongHoaDon = TongTien;
+                    frmThanhToan frm = new frmThanhToan();
+                    frm.hoaDonDTO = hoaDonDTO;
+                    frm.ShowDialog();
+                    Filter();
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Vui lòng chọn hóa đơn!");
+                    thongBao.ShowDialog();
+                }
             }
         }
     }

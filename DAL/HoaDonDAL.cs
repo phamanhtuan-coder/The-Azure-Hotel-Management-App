@@ -73,6 +73,34 @@ namespace DAL
             }
         }
 
+        public bool ThanhToan(HoaDonDTO hoaDonDTO)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("ThanhToan", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaHoaDon", hoaDonDTO.MaHoaDon);
+                com.Parameters.AddWithValue("@TongHoaDon", hoaDonDTO.TongHoaDon);
+                com.Parameters.AddWithValue("@TienNhan", hoaDonDTO.TienNhan);
+                com.Parameters.AddWithValue("@TienThoi", hoaDonDTO.TienThoi);
+
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+                if (count > 0)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public List<HoaDonDTO> TruyVanDanhSachHoaDon()
         {
             hoaDonDTOs= new List<HoaDonDTO>();
@@ -97,6 +125,8 @@ namespace DAL
                     hoaDonDTO.TienThoi = (decimal) reader["TienThoi"];
                     byte[] trangThaiBytes = (byte[])reader["TrangThai"];
                     hoaDonDTO.TrangThai = BitConverter.ToBoolean(trangThaiBytes, 0);
+                    hoaDonDTO.CCCD = reader["CCCD"].ToString();
+                    hoaDonDTO.TenTaiKhoan = reader["TenDangNhap"].ToString();
                     hoaDonDTOs.Add(hoaDonDTO);
                 }
 

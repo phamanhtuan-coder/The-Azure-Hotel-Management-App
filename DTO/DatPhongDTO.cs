@@ -8,7 +8,6 @@ namespace DTO
 {
     public class DatPhongDTO
     {
-        public List<DatDichVuDTO> dsDichVu { get; set; }
         public string TenTaiKhoan { get; set; }
         public string CCCD { get; set; }
         public int MaDatPhong { get; set; }

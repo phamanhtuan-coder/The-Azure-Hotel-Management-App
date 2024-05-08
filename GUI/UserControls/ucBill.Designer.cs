@@ -35,8 +35,6 @@
             this.btnEditBill = new Syncfusion.WinForms.Controls.SfButton();
             this.btnDeleteBill = new Syncfusion.WinForms.Controls.SfButton();
             this.btnRecoverBill = new Syncfusion.WinForms.Controls.SfButton();
-            this.txtSearchBill = new System.Windows.Forms.TextBox();
-            this.btnTraCuuBill = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateBooking = new Syncfusion.WinForms.ListView.SfComboBox();
             this.dtpBillDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
@@ -50,8 +48,17 @@
             this.colTienNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTienThoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.colCCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnThanhToan = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnTraCuuDP = new Syncfusion.WinForms.Controls.SfButton();
+            this.dtpNgayDat = new Syncfusion.WinForms.Input.SfDateTimeEdit();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtCCCD = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtTraCuuUser = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblBookingDate = new System.Windows.Forms.Label();
             this.btnNgayTao = new Syncfusion.WinForms.Controls.SfButton();
             this.cboSortSumBill = new Syncfusion.WinForms.ListView.SfComboBox();
             this.cboSortBillID = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -68,7 +75,6 @@
             this.spcQuery.Panel2.SuspendLayout();
             this.spcQuery.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortSumBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortBillID)).BeginInit();
             this.panUcHeader.SuspendLayout();
@@ -193,32 +199,6 @@
             this.btnRecoverBill.UseVisualStyleBackColor = false;
             this.btnRecoverBill.Click += new System.EventHandler(this.btnRecoverBill_Click);
             // 
-            // txtSearchBill
-            // 
-            this.txtSearchBill.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchBill.Location = new System.Drawing.Point(6, 16);
-            this.txtSearchBill.Name = "txtSearchBill";
-            this.txtSearchBill.Size = new System.Drawing.Size(251, 27);
-            this.txtSearchBill.TabIndex = 2;
-            // 
-            // btnTraCuuBill
-            // 
-            this.btnTraCuuBill.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTraCuuBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnTraCuuBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTraCuuBill.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTraCuuBill.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuBill.Location = new System.Drawing.Point(263, 16);
-            this.btnTraCuuBill.Name = "btnTraCuuBill";
-            this.btnTraCuuBill.Size = new System.Drawing.Size(118, 40);
-            this.btnTraCuuBill.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnTraCuuBill.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuBill.TabIndex = 0;
-            this.btnTraCuuBill.Text = "Tra cứu";
-            this.btnTraCuuBill.UseVisualStyleBackColor = false;
-            this.btnTraCuuBill.Click += new System.EventHandler(this.btnTraCuuBill_Click);
-            // 
             // cboStateBooking
             // 
             this.cboStateBooking.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -226,7 +206,7 @@
             this.cboStateBooking.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboStateBooking.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboStateBooking.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateBooking.Location = new System.Drawing.Point(186, 231);
+            this.cboStateBooking.Location = new System.Drawing.Point(192, 172);
             this.cboStateBooking.Name = "cboStateBooking";
             this.cboStateBooking.Size = new System.Drawing.Size(195, 33);
             this.cboStateBooking.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -244,7 +224,7 @@
             this.dtpBillDate.DateTimePattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
             this.dtpBillDate.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpBillDate.Format = "MM-dd-yyyy";
-            this.dtpBillDate.Location = new System.Drawing.Point(186, 175);
+            this.dtpBillDate.Location = new System.Drawing.Point(192, 120);
             this.dtpBillDate.Name = "dtpBillDate";
             this.dtpBillDate.Size = new System.Drawing.Size(146, 30);
             this.dtpBillDate.TabIndex = 6;
@@ -264,7 +244,15 @@
             // spcQuery.Panel2
             // 
             this.spcQuery.Panel2.BackColor = System.Drawing.Color.Lavender;
-            this.spcQuery.Panel2.Controls.Add(this.panel1);
+            this.spcQuery.Panel2.Controls.Add(this.btnThanhToan);
+            this.spcQuery.Panel2.Controls.Add(this.btnTraCuuDP);
+            this.spcQuery.Panel2.Controls.Add(this.dtpNgayDat);
+            this.spcQuery.Panel2.Controls.Add(this.label3);
+            this.spcQuery.Panel2.Controls.Add(this.txtCCCD);
+            this.spcQuery.Panel2.Controls.Add(this.label2);
+            this.spcQuery.Panel2.Controls.Add(this.txtTraCuuUser);
+            this.spcQuery.Panel2.Controls.Add(this.label1);
+            this.spcQuery.Panel2.Controls.Add(this.lblBookingDate);
             this.spcQuery.Panel2.Controls.Add(this.btnNgayTao);
             this.spcQuery.Panel2.Controls.Add(this.cboSortSumBill);
             this.spcQuery.Panel2.Controls.Add(this.cboSortBillID);
@@ -273,8 +261,6 @@
             this.spcQuery.Panel2.Controls.Add(this.lblBillDate);
             this.spcQuery.Panel2.Controls.Add(this.lblStateBooking);
             this.spcQuery.Panel2.Controls.Add(this.dtpBillDate);
-            this.spcQuery.Panel2.Controls.Add(this.txtSearchBill);
-            this.spcQuery.Panel2.Controls.Add(this.btnTraCuuBill);
             this.spcQuery.Panel2.Controls.Add(this.cboStateBooking);
             this.spcQuery.Size = new System.Drawing.Size(1370, 746);
             this.spcQuery.SplitterDistance = 973;
@@ -297,7 +283,9 @@
             this.colTongHD,
             this.colTienNhan,
             this.colTienThoi,
-            this.colTrangThai});
+            this.colTrangThai,
+            this.colCCCD,
+            this.colTenDN});
             this.dgvBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBill.Location = new System.Drawing.Point(0, 0);
             this.dgvBill.MultiSelect = false;
@@ -380,34 +368,135 @@
             this.colTrangThai.ReadOnly = true;
             this.colTrangThai.Width = 97;
             // 
-            // panel1
+            // colCCCD
             // 
-            this.panel1.Controls.Add(this.btnThanhToan);
-            this.panel1.Location = new System.Drawing.Point(51, 426);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(304, 76);
-            this.panel1.TabIndex = 35;
+            this.colCCCD.DataPropertyName = "CCCD";
+            this.colCCCD.HeaderText = "CCCD";
+            this.colCCCD.Name = "colCCCD";
+            this.colCCCD.ReadOnly = true;
+            this.colCCCD.Width = 79;
+            // 
+            // colTenDN
+            // 
+            this.colTenDN.DataPropertyName = "TenTaiKhoan";
+            this.colTenDN.HeaderText = "Tên đăng nhập";
+            this.colTenDN.Name = "colTenDN";
+            this.colTenDN.ReadOnly = true;
+            this.colTenDN.Width = 129;
             // 
             // btnThanhToan
             // 
-            this.btnThanhToan.BackColor = System.Drawing.Color.Black;
-            this.btnThanhToan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnThanhToan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThanhToan.BackColor = System.Drawing.Color.Yellow;
             this.btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThanhToan.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThanhToan.ForeColor = System.Drawing.Color.White;
-            this.btnThanhToan.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnThanhToan.Location = new System.Drawing.Point(0, 0);
+            this.btnThanhToan.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThanhToan.ForeColor = System.Drawing.Color.Black;
+            this.btnThanhToan.Location = new System.Drawing.Point(236, 419);
             this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(304, 76);
-            this.btnThanhToan.Style.BackColor = System.Drawing.Color.Black;
-            this.btnThanhToan.Style.ForeColor = System.Drawing.Color.White;
-            this.btnThanhToan.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
-            this.btnThanhToan.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnThanhToan.TabIndex = 4;
-            this.btnThanhToan.Text = "Thanh Toán";
-            this.btnThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThanhToan.Size = new System.Drawing.Size(151, 40);
+            this.btnThanhToan.Style.BackColor = System.Drawing.Color.Yellow;
+            this.btnThanhToan.Style.ForeColor = System.Drawing.Color.Black;
+            this.btnThanhToan.TabIndex = 44;
+            this.btnThanhToan.Text = "Thanh toán";
             this.btnThanhToan.UseVisualStyleBackColor = false;
-            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
+            this.btnThanhToan.Click += new System.EventHandler(this.sfButton1_Click);
+            // 
+            // btnTraCuuDP
+            // 
+            this.btnTraCuuDP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTraCuuDP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnTraCuuDP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTraCuuDP.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTraCuuDP.ForeColor = System.Drawing.Color.White;
+            this.btnTraCuuDP.Location = new System.Drawing.Point(17, 419);
+            this.btnTraCuuDP.Name = "btnTraCuuDP";
+            this.btnTraCuuDP.Size = new System.Drawing.Size(151, 40);
+            this.btnTraCuuDP.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnTraCuuDP.Style.ForeColor = System.Drawing.Color.White;
+            this.btnTraCuuDP.TabIndex = 43;
+            this.btnTraCuuDP.Text = "Tra cứu";
+            this.btnTraCuuDP.UseVisualStyleBackColor = false;
+            this.btnTraCuuDP.Click += new System.EventHandler(this.btnTraCuuDP_Click);
+            // 
+            // dtpNgayDat
+            // 
+            this.dtpNgayDat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpNgayDat.DateTimePattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
+            this.dtpNgayDat.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayDat.Location = new System.Drawing.Point(148, 370);
+            this.dtpNgayDat.Name = "dtpNgayDat";
+            this.dtpNgayDat.Size = new System.Drawing.Size(239, 34);
+            this.dtpNgayDat.TabIndex = 36;
+            this.dtpNgayDat.ToolTipText = "";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 329);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 26);
+            this.label3.TabIndex = 42;
+            this.label3.Text = "CCCD:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtCCCD
+            // 
+            this.txtCCCD.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCCCD.Location = new System.Drawing.Point(147, 315);
+            this.txtCCCD.Name = "txtCCCD";
+            this.txtCCCD.Size = new System.Drawing.Size(240, 40);
+            this.txtCCCD.TabIndex = 41;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 273);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(119, 26);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Username:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtTraCuuUser
+            // 
+            this.txtTraCuuUser.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTraCuuUser.Location = new System.Drawing.Point(147, 261);
+            this.txtTraCuuUser.Name = "txtTraCuuUser";
+            this.txtTraCuuUser.Size = new System.Drawing.Size(240, 40);
+            this.txtTraCuuUser.TabIndex = 39;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(107, 221);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(231, 26);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "Tra cứu và Thanh toán";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblBookingDate
+            // 
+            this.lblBookingDate.AutoSize = true;
+            this.lblBookingDate.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBookingDate.Location = new System.Drawing.Point(12, 378);
+            this.lblBookingDate.Name = "lblBookingDate";
+            this.lblBookingDate.Size = new System.Drawing.Size(106, 26);
+            this.lblBookingDate.TabIndex = 37;
+            this.lblBookingDate.Text = "Ngày đặt:";
+            this.lblBookingDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnNgayTao
             // 
@@ -417,7 +506,7 @@
             this.btnNgayTao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNgayTao.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNgayTao.ForeColor = System.Drawing.Color.White;
-            this.btnNgayTao.Location = new System.Drawing.Point(338, 175);
+            this.btnNgayTao.Location = new System.Drawing.Point(344, 116);
             this.btnNgayTao.Name = "btnNgayTao";
             this.btnNgayTao.Size = new System.Drawing.Size(43, 34);
             this.btnNgayTao.Style.BackColor = System.Drawing.Color.White;
@@ -434,7 +523,7 @@
             this.cboSortSumBill.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboSortSumBill.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboSortSumBill.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSumBill.Location = new System.Drawing.Point(186, 119);
+            this.cboSortSumBill.Location = new System.Drawing.Point(192, 60);
             this.cboSortSumBill.Name = "cboSortSumBill";
             this.cboSortSumBill.Size = new System.Drawing.Size(195, 33);
             this.cboSortSumBill.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -452,7 +541,7 @@
             this.cboSortBillID.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboSortBillID.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboSortBillID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortBillID.Location = new System.Drawing.Point(186, 72);
+            this.cboSortBillID.Location = new System.Drawing.Point(192, 13);
             this.cboSortBillID.Name = "cboSortBillID";
             this.cboSortBillID.Size = new System.Drawing.Size(195, 33);
             this.cboSortBillID.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -467,7 +556,7 @@
             // 
             this.lblSortSumBill.AutoSize = true;
             this.lblSortSumBill.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortSumBill.Location = new System.Drawing.Point(4, 128);
+            this.lblSortSumBill.Location = new System.Drawing.Point(10, 71);
             this.lblSortSumBill.Name = "lblSortSumBill";
             this.lblSortSumBill.Size = new System.Drawing.Size(169, 22);
             this.lblSortSumBill.TabIndex = 16;
@@ -478,7 +567,7 @@
             // 
             this.lblSortBillID.AutoSize = true;
             this.lblSortBillID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortBillID.Location = new System.Drawing.Point(4, 72);
+            this.lblSortBillID.Location = new System.Drawing.Point(8, 24);
             this.lblSortBillID.Name = "lblSortBillID";
             this.lblSortBillID.Size = new System.Drawing.Size(142, 22);
             this.lblSortBillID.TabIndex = 14;
@@ -489,7 +578,7 @@
             // 
             this.lblBillDate.AutoSize = true;
             this.lblBillDate.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBillDate.Location = new System.Drawing.Point(4, 185);
+            this.lblBillDate.Location = new System.Drawing.Point(10, 128);
             this.lblBillDate.Name = "lblBillDate";
             this.lblBillDate.Size = new System.Drawing.Size(158, 22);
             this.lblBillDate.TabIndex = 10;
@@ -500,7 +589,7 @@
             // 
             this.lblStateBooking.AutoSize = true;
             this.lblStateBooking.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStateBooking.Location = new System.Drawing.Point(7, 240);
+            this.lblStateBooking.Location = new System.Drawing.Point(13, 183);
             this.lblStateBooking.Name = "lblStateBooking";
             this.lblStateBooking.Size = new System.Drawing.Size(159, 22);
             this.lblStateBooking.TabIndex = 9;
@@ -554,7 +643,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).EndInit();
             this.spcQuery.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).EndInit();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cboSortSumBill)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortBillID)).EndInit();
             this.panUcHeader.ResumeLayout(false);
@@ -569,9 +657,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblBill;
-        private Syncfusion.WinForms.Controls.SfButton btnTraCuuBill;
         private Syncfusion.WinForms.Controls.SfButton btnAddBill;
-        private System.Windows.Forms.TextBox txtSearchBill;
         private Syncfusion.WinForms.Controls.SfButton btnDeleteBill;
         private Syncfusion.WinForms.Controls.SfButton btnEditBill;
         private Syncfusion.WinForms.Controls.SfButton btnRecoverBill;
@@ -588,6 +674,16 @@
         private Syncfusion.WinForms.ListView.SfComboBox cboSortSumBill;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortBillID;
         private System.Windows.Forms.DataGridView dgvBill;
+        private Syncfusion.WinForms.Controls.SfButton btnNgayTao;
+        private Syncfusion.WinForms.Input.SfDateTimeEdit dtpNgayDat;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtCCCD;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtTraCuuUser;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblBookingDate;
+        private Syncfusion.WinForms.Controls.SfButton btnThanhToan;
+        private Syncfusion.WinForms.Controls.SfButton btnTraCuuDP;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaNV;
@@ -597,8 +693,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTienNhan;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTienThoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
-        private Syncfusion.WinForms.Controls.SfButton btnNgayTao;
-        private System.Windows.Forms.Panel panel1;
-        private Syncfusion.WinForms.Controls.SfButton btnThanhToan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCCCD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTenDN;
     }
 }

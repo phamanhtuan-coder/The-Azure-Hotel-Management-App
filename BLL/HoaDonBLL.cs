@@ -30,6 +30,26 @@ namespace BLL
             return false;
         }
 
+        public List<HoaDonDTO> Filter(string text1, string text2, DateTime ng)
+        {
+            text1 = text1.Trim();
+            text2 = text2.Trim();
+            if (text1.Length > 0)
+            {
+                List<HoaDonDTO> searchResults = TruyVanDanhSachHoaDon().Where(item =>
+                item.CCCD.ToString().Contains(text1) && item.NgayLapHoaDon.Date.ToString("dd/MM/yyyy") == ng.Date.ToString("dd/MM/yyyy") && item.TrangThai == true
+                ).ToList();
+                return searchResults;
+            }
+            else
+            {
+                List<HoaDonDTO> searchResults = TruyVanDanhSachHoaDon().Where(item =>
+                item.TenTaiKhoan.ToString().Contains(text2) && item.NgayLapHoaDon.Date.ToString("dd/MM/yyyy") == ng.Date.ToString("dd/MM/yyyy") && item.TrangThai == true
+                ).ToList();
+                return searchResults;
+            }
+        }
+
         public bool KhoiPhucHoaDon(int maHoaDon)
         {
             if (maHoaDon > 0)
@@ -37,6 +57,11 @@ namespace BLL
                 return hoaDonDAL.XoaHoaDon(maHoaDon, 1);
             }
             return false;
+        }
+
+        public bool ThanhToan(HoaDonDTO hoaDonDTO)
+        {
+            return hoaDonDAL.ThanhToan(hoaDonDTO);
         }
 
         public List<HoaDonDTO> TraCuuHoaDon(List<HoaDonDTO> hoaDonDTOs, string searchKeyword)

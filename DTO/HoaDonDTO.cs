@@ -8,14 +8,17 @@ namespace DTO
 {
     public class HoaDonDTO
     {
-      public int MaHoaDon {get; set;}
-      public int MaKH {get; set;}
-      public int MaNV {get; set;}
-      public int MaThue {get; set;}
-      public DateTime NgayLapHoaDon {get; set;}
-      public decimal TongHoaDon {get; set;}
-      public decimal TienNhan {get; set;}
-      public decimal TienThoi {get; set;}
-      public bool TrangThai {get; set;}
+        public List<ChiTietHoaDonDTO> chiTietHoaDonDTOs = new List<ChiTietHoaDonDTO>();
+        public string TenTaiKhoan { get; set; }
+        public string CCCD { get; set; }
+        public int MaHoaDon {get; set;}
+        public int MaKH {get; set;}
+        public int MaNV {get; set;}
+        public int MaThue {get; set;}
+        public DateTime NgayLapHoaDon {get; set;}
+        public decimal TongHoaDon {get; set;}
+        public decimal TienNhan {get; set;}
+        public decimal TienThoi {get; set;}
+        public bool TrangThai {get; set;}
     }
 }
