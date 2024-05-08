@@ -101,6 +101,8 @@ namespace GUI.customForm
             {
                 // nếu không thì chạy lệnh update
                 check = datDichVuBLL.sua(DatDichVuDTO);
+                int ma = DatDichVuDTO.MaDatDichVu;
+                datDichVuBLL.thanhtien(ma);
                 if (check)
                 {
                     thongBao = new customMessageBox("Sửa thành công thông tin đặt dịch vụ!");

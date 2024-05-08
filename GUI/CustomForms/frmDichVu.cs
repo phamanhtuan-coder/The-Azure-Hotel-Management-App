@@ -39,7 +39,11 @@ namespace GUI.customForm
             }
             else
             {
-                picHinhAnh.Image = ByteArrayToImage(DichVuDTO.HinhAnh);
+                if (DichVuDTO.HinhAnh != null)
+                {
+                    picHinhAnh.Image = ByteArrayToImage(DichVuDTO.HinhAnh);
+                }
+                
                 txttendichvu.Text = DichVuDTO.TenDV;
                 nudGia.Value = DichVuDTO.GiaDV;
             }
