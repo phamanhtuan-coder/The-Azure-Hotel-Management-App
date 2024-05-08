@@ -132,11 +132,11 @@ namespace BLL
             return hoaDonDAL.TruyVanDanhSachHoaDon();
         }
 
-        public bool XoaHoaDon(int maHoaDon)
+        public bool XoaHoaDon(HoaDonDTO hoaDonDTO)
         {
-            if (maHoaDon > 0)
+            if (hoaDonDTO.MaHoaDon > 0)
             {
-                return hoaDonDAL.XoaHoaDon(maHoaDon, 0);
+                return hoaDonDAL.XoaHoaDon(hoaDonDTO, 0);
             }
             return false;
         }

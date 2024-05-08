@@ -139,7 +139,7 @@ namespace DAL
             }
         }
 
-        public bool XoaHoaDon(int maHoaDon, int tt)
+        public bool XoaHoaDon(HoaDonDTO hoaDonDTO, int tt)
         {
             try
             {
@@ -148,13 +148,18 @@ namespace DAL
 
                 SqlCommand com = new SqlCommand("ThayDoiTrangThaiHoaDon", conn);
                 com.CommandType = System.Data.CommandType.StoredProcedure;
-                com.Parameters.AddWithValue("@MaHoaDon", maHoaDon);
+                com.Parameters.AddWithValue("@MaHoaDon", hoaDonDTO.MaHoaDon);
                 com.Parameters.AddWithValue("@TrangThai", tt);
 
                 int count = com.ExecuteNonQuery();
                 conn.Close();
                 if (count > 0)
                 {
+                    ChiTietHoaDonDAL chiTietHoaDonDAL = new ChiTietHoaDonDAL();
+                    foreach (ChiTietHoaDonDTO item in hoaDonDTO.chiTietHoaDonDTOs)
+                    {
+                        chiTietHoaDonDAL.ThayDoiTrangThai(item.MaCTHD, tt);
+                    }
                     return true;
                 }
                 return false;

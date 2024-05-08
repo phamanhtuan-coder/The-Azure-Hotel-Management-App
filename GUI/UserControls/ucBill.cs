@@ -100,7 +100,7 @@ namespace GUI.UserControls
         private void btnDeleteBill_Click(object sender, EventArgs e)
         {
             if (dgvBill.SelectedRows.Count > 0)
-            {
+            {               
                 customMessageBox thongBao;
                 int TrangThai = dgvBill.Columns["colTrangThai"].Index;
                 if ((bool)dgvBill.SelectedRows[0].Cells[TrangThai].Value)
@@ -137,9 +137,9 @@ namespace GUI.UserControls
 
         private bool XoaHoaDon()
         {
-            int indexMaTaiKhoan = dgvBill.Columns["colMaHD"].Index;
-            int MaHoaDon = (int)dgvBill.SelectedRows[0].Cells[indexMaTaiKhoan].Value;
-            return hoaDonBLL.XoaHoaDon(MaHoaDon);
+            HoaDonDTO hoaDonDTO = new HoaDonDTO();
+            LoadDuLieuCuaHoaDon(ref hoaDonDTO);
+            return hoaDonBLL.XoaHoaDon(hoaDonDTO);
         }
 
         private void btnRecoverBill_Click(object sender, EventArgs e)
