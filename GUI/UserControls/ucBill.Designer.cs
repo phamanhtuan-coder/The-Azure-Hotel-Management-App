@@ -39,17 +39,7 @@
             this.dtpBillDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvBill = new System.Windows.Forms.DataGridView();
-            this.colMaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaThue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayLapHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTongHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTienNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTienThoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtXemCT = new Syncfusion.WinForms.Controls.SfButton();
             this.btnThanhToan = new Syncfusion.WinForms.Controls.SfButton();
             this.btnTraCuuDP = new Syncfusion.WinForms.Controls.SfButton();
             this.dtpNgayDat = new Syncfusion.WinForms.Input.SfDateTimeEdit();
@@ -68,7 +58,17 @@
             this.lblStateBooking = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.txtXemCT = new Syncfusion.WinForms.Controls.SfButton();
+            this.colMaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaThue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayLapHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTongHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTienNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTienThoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateBooking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -298,93 +298,23 @@
             this.dgvBill.Size = new System.Drawing.Size(973, 746);
             this.dgvBill.TabIndex = 0;
             // 
-            // colMaHD
+            // txtXemCT
             // 
-            this.colMaHD.DataPropertyName = "MaHoaDon";
-            this.colMaHD.HeaderText = "Mã hóa đơn";
-            this.colMaHD.Name = "colMaHD";
-            this.colMaHD.ReadOnly = true;
-            this.colMaHD.Width = 108;
-            // 
-            // colMaKH
-            // 
-            this.colMaKH.DataPropertyName = "MaKH";
-            this.colMaKH.HeaderText = "Mã khách hàng";
-            this.colMaKH.Name = "colMaKH";
-            this.colMaKH.ReadOnly = true;
-            this.colMaKH.Width = 131;
-            // 
-            // colMaNV
-            // 
-            this.colMaNV.DataPropertyName = "MaNV";
-            this.colMaNV.HeaderText = "Mã nhân viên";
-            this.colMaNV.Name = "colMaNV";
-            this.colMaNV.ReadOnly = true;
-            this.colMaNV.Width = 117;
-            // 
-            // colMaThue
-            // 
-            this.colMaThue.DataPropertyName = "MaThue";
-            this.colMaThue.HeaderText = "Mã thuế";
-            this.colMaThue.Name = "colMaThue";
-            this.colMaThue.ReadOnly = true;
-            this.colMaThue.Width = 85;
-            // 
-            // colNgayLapHoaDon
-            // 
-            this.colNgayLapHoaDon.DataPropertyName = "NgayLapHoaDon";
-            this.colNgayLapHoaDon.HeaderText = "Ngày lập hóa đơn";
-            this.colNgayLapHoaDon.Name = "colNgayLapHoaDon";
-            this.colNgayLapHoaDon.ReadOnly = true;
-            this.colNgayLapHoaDon.Width = 119;
-            // 
-            // colTongHD
-            // 
-            this.colTongHD.DataPropertyName = "TongHoaDon";
-            this.colTongHD.HeaderText = "Tổng hóa đơn";
-            this.colTongHD.Name = "colTongHD";
-            this.colTongHD.ReadOnly = true;
-            this.colTongHD.Width = 97;
-            // 
-            // colTienNhan
-            // 
-            this.colTienNhan.DataPropertyName = "TienNhan";
-            this.colTienNhan.HeaderText = "Tiền nhận";
-            this.colTienNhan.Name = "colTienNhan";
-            this.colTienNhan.ReadOnly = true;
-            this.colTienNhan.Width = 96;
-            // 
-            // colTienThoi
-            // 
-            this.colTienThoi.DataPropertyName = "TienThoi";
-            this.colTienThoi.HeaderText = "Tiền thối";
-            this.colTienThoi.Name = "colTienThoi";
-            this.colTienThoi.ReadOnly = true;
-            this.colTienThoi.Width = 87;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "TrangThai";
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Width = 97;
-            // 
-            // colCCCD
-            // 
-            this.colCCCD.DataPropertyName = "CCCD";
-            this.colCCCD.HeaderText = "CCCD";
-            this.colCCCD.Name = "colCCCD";
-            this.colCCCD.ReadOnly = true;
-            this.colCCCD.Width = 79;
-            // 
-            // colTenDN
-            // 
-            this.colTenDN.DataPropertyName = "TenTaiKhoan";
-            this.colTenDN.HeaderText = "Tên đăng nhập";
-            this.colTenDN.Name = "colTenDN";
-            this.colTenDN.ReadOnly = true;
-            this.colTenDN.Width = 129;
+            this.txtXemCT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtXemCT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.txtXemCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txtXemCT.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtXemCT.ForeColor = System.Drawing.Color.White;
+            this.txtXemCT.Location = new System.Drawing.Point(112, 419);
+            this.txtXemCT.Name = "txtXemCT";
+            this.txtXemCT.Size = new System.Drawing.Size(134, 40);
+            this.txtXemCT.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.txtXemCT.Style.ForeColor = System.Drawing.Color.White;
+            this.txtXemCT.TabIndex = 45;
+            this.txtXemCT.Text = "Xem chi tiết";
+            this.txtXemCT.UseVisualStyleBackColor = false;
+            this.txtXemCT.Click += new System.EventHandler(this.txtXemCT_Click);
             // 
             // btnThanhToan
             // 
@@ -627,23 +557,95 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // txtXemCT
+            // colMaHD
             // 
-            this.txtXemCT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtXemCT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.txtXemCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txtXemCT.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtXemCT.ForeColor = System.Drawing.Color.White;
-            this.txtXemCT.Location = new System.Drawing.Point(112, 419);
-            this.txtXemCT.Name = "txtXemCT";
-            this.txtXemCT.Size = new System.Drawing.Size(134, 40);
-            this.txtXemCT.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.txtXemCT.Style.ForeColor = System.Drawing.Color.White;
-            this.txtXemCT.TabIndex = 45;
-            this.txtXemCT.Text = "Xem chi tiết";
-            this.txtXemCT.UseVisualStyleBackColor = false;
-            this.txtXemCT.Click += new System.EventHandler(this.txtXemCT_Click);
+            this.colMaHD.DataPropertyName = "MaHoaDon";
+            this.colMaHD.HeaderText = "Mã hóa đơn";
+            this.colMaHD.Name = "colMaHD";
+            this.colMaHD.ReadOnly = true;
+            this.colMaHD.Width = 118;
+            // 
+            // colMaKH
+            // 
+            this.colMaKH.DataPropertyName = "MaKH";
+            this.colMaKH.HeaderText = "Mã khách hàng";
+            this.colMaKH.Name = "colMaKH";
+            this.colMaKH.ReadOnly = true;
+            this.colMaKH.Width = 143;
+            // 
+            // colMaNV
+            // 
+            this.colMaNV.DataPropertyName = "MaNV";
+            this.colMaNV.HeaderText = "Mã nhân viên";
+            this.colMaNV.Name = "colMaNV";
+            this.colMaNV.ReadOnly = true;
+            this.colMaNV.Width = 128;
+            // 
+            // colMaThue
+            // 
+            this.colMaThue.DataPropertyName = "MaThue";
+            this.colMaThue.HeaderText = "Mã thuế";
+            this.colMaThue.Name = "colMaThue";
+            this.colMaThue.ReadOnly = true;
+            this.colMaThue.Width = 92;
+            // 
+            // colNgayLapHoaDon
+            // 
+            this.colNgayLapHoaDon.DataPropertyName = "NgayLapHoaDon";
+            this.colNgayLapHoaDon.HeaderText = "Ngày lập hóa đơn";
+            this.colNgayLapHoaDon.Name = "colNgayLapHoaDon";
+            this.colNgayLapHoaDon.ReadOnly = true;
+            this.colNgayLapHoaDon.Width = 119;
+            // 
+            // colTongHD
+            // 
+            this.colTongHD.DataPropertyName = "TongHoaDon";
+            this.colTongHD.HeaderText = "Tổng hóa đơn";
+            this.colTongHD.Name = "colTongHD";
+            this.colTongHD.ReadOnly = true;
+            this.colTongHD.Width = 97;
+            // 
+            // colTienNhan
+            // 
+            this.colTienNhan.DataPropertyName = "TienNhan";
+            this.colTienNhan.HeaderText = "Tiền nhận";
+            this.colTienNhan.Name = "colTienNhan";
+            this.colTienNhan.ReadOnly = true;
+            this.colTienNhan.Width = 96;
+            // 
+            // colTienThoi
+            // 
+            this.colTienThoi.DataPropertyName = "TienThoi";
+            this.colTienThoi.HeaderText = "Tiền thối";
+            this.colTienThoi.Name = "colTienThoi";
+            this.colTienThoi.ReadOnly = true;
+            this.colTienThoi.Width = 87;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Width = 97;
+            // 
+            // colCCCD
+            // 
+            this.colCCCD.DataPropertyName = "CCCD";
+            this.colCCCD.HeaderText = "CCCD";
+            this.colCCCD.Name = "colCCCD";
+            this.colCCCD.ReadOnly = true;
+            this.colCCCD.Visible = false;
+            this.colCCCD.Width = 79;
+            // 
+            // colTenDN
+            // 
+            this.colTenDN.DataPropertyName = "TenTaiKhoan";
+            this.colTenDN.HeaderText = "Tên đăng nhập";
+            this.colTenDN.Name = "colTenDN";
+            this.colTenDN.ReadOnly = true;
+            this.colTenDN.Visible = false;
+            this.colTenDN.Width = 129;
             // 
             // ucBill
             // 
@@ -704,6 +706,7 @@
         private System.Windows.Forms.Label lblBookingDate;
         private Syncfusion.WinForms.Controls.SfButton btnThanhToan;
         private Syncfusion.WinForms.Controls.SfButton btnTraCuuDP;
+        private Syncfusion.WinForms.Controls.SfButton txtXemCT;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaNV;
@@ -715,6 +718,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCCCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenDN;
-        private Syncfusion.WinForms.Controls.SfButton txtXemCT;
     }
 }

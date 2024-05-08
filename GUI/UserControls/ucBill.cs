@@ -109,6 +109,8 @@ namespace GUI.UserControls
                     DialogResult dr = thongBao.ShowDialog();
                     if (dr != DialogResult.Cancel)
                     {
+                        HoaDonDTO hoaDonDTO = new HoaDonDTO();
+                        LoadDuLieuCuaHoaDon(ref hoaDonDTO);
                         if (XoaHoaDon())
                         {
                             Filter();
@@ -133,15 +135,7 @@ namespace GUI.UserControls
                 thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn xóa!");
                 thongBao.ShowDialog();
             }
-        }
-
-        private bool XoaHoaDon()
-        {
-            HoaDonDTO hoaDonDTO = new HoaDonDTO();
-            LoadDuLieuCuaHoaDon(ref hoaDonDTO);
-            return hoaDonBLL.XoaHoaDon(hoaDonDTO);
-        }
-
+        }      
         private void btnRecoverBill_Click(object sender, EventArgs e)
         {
             if (dgvBill.SelectedRows.Count > 0)
@@ -179,14 +173,18 @@ namespace GUI.UserControls
                 thongBao.ShowDialog();
             }
         }
-
+        private bool XoaHoaDon()
+        {
+            HoaDonDTO hoaDonDTO = new HoaDonDTO();
+            LoadDuLieuCuaHoaDon(ref hoaDonDTO);
+            return hoaDonBLL.XoaHoaDon(hoaDonDTO);
+        }
         private bool KhoiPhucHoaDon()
         {
-            int indexMaTaiKhoan = dgvBill.Columns["colMaHD"].Index;
-            int MaHoaDon = (int)dgvBill.SelectedRows[0].Cells[indexMaTaiKhoan].Value;
-            return hoaDonBLL.KhoiPhucHoaDon(MaHoaDon);
+            HoaDonDTO hoaDonDTO = new HoaDonDTO();
+            LoadDuLieuCuaHoaDonDaXoa(ref hoaDonDTO);
+            return hoaDonBLL.KhoiPhucHoaDon(hoaDonDTO);
         }
-
         private void cboSortBillID_SelectedIndexChanged(object sender, EventArgs e)
         {
             string sortOption = cboSortBillID.SelectedItem.ToString();
@@ -258,19 +256,6 @@ namespace GUI.UserControls
         //    }
         //}
 
-        private void btnThanhToan_Click(object sender, EventArgs e)
-        {
-            if (dgvBill.SelectedRows.Count > 0)
-            {
-
-            }
-            else
-            {
-                thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
-                thongBao.ShowDialog();
-            }
-        }
-
         private void btnTraCuuDP_Click(object sender, EventArgs e)
         {
             object ngayNhanPhongObject = dtpNgayDat.Value;
@@ -313,7 +298,8 @@ namespace GUI.UserControls
                 thongBao.ShowDialog();
             }
         }
-        private bool LoadDuLieuCuaHoaDon(ref HoaDonDTO hoaDonDTO)
+
+        private void LoadDuLieuCuaHoaDon(ref HoaDonDTO hoaDonDTO)
         {
             hoaDonDTO = dgvBill.SelectedRows[0].DataBoundItem as HoaDonDTO;
             hoaDonDTO.TongHoaDon = 0;
@@ -328,7 +314,22 @@ namespace GUI.UserControls
                 thongBao = new customMessageBox("Không tìm thấy hóa đơn!");
                 thongBao.ShowDialog();
             }
-            return hoaDonDTO.MaHoaDon > 0;
+        }
+        private void LoadDuLieuCuaHoaDonDaXoa(ref HoaDonDTO hoaDonDTO)
+        {
+            hoaDonDTO = dgvBill.SelectedRows[0].DataBoundItem as HoaDonDTO;
+            hoaDonDTO.TongHoaDon = 0;
+
+            if (hoaDonDTO.MaHoaDon > 0)
+            {
+                hoaDonDTO.chiTietHoaDonDTOs = new List<ChiTietHoaDonDTO>();
+                hoaDonDTO.chiTietHoaDonDTOs = chiTietHoaDonBLL.TruyVanChiTietDaXoa(hoaDonDTO.MaHoaDon);
+            }
+            else
+            {
+                thongBao = new customMessageBox("Không tìm thấy hóa đơn!");
+                thongBao.ShowDialog();
+            }
         }
         private void txtXemCT_Click(object sender, EventArgs e)
         {

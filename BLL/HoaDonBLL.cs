@@ -50,11 +50,11 @@ namespace BLL
             }
         }
 
-        public bool KhoiPhucHoaDon(int maHoaDon)
+        public bool KhoiPhucHoaDon(HoaDonDTO hoaDonDTO)
         {
-            if (maHoaDon > 0)
+            if (hoaDonDTO.MaHoaDon > 0)
             {
-                return hoaDonDAL.XoaHoaDon(maHoaDon, 1);
+                return hoaDonDAL.XoaHoaDon(hoaDonDTO, 1);
             }
             return false;
         }

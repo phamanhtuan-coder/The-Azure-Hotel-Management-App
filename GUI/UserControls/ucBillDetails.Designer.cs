@@ -423,7 +423,6 @@
             this.colTrangThai.HeaderText = "Trạng thái";
             this.colTrangThai.Name = "colTrangThai";
             this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Visible = false;
             this.colTrangThai.Width = 105;
             // 
             // ucBillDetails

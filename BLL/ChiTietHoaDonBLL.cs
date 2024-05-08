@@ -15,7 +15,7 @@ namespace BLL
 
         public List<ChiTietHoaDonDTO> Filter(string tT)
         {
-            if(tT.Equals("Tất cả"))
+            if(!tT.Equals("Tất cả"))
             {
                 bool TT;
                 if (tT.Equals("Đang hoạt động"))
@@ -65,5 +65,16 @@ namespace BLL
             return chiTietHoaDonDAL.TruyVanDSChiTiet();
         }
 
+        public List<ChiTietHoaDonDTO> TruyVanChiTietDaXoa(int maHoaDon)
+        {
+            if (maHoaDon > 0)
+            {
+                return chiTietHoaDonDAL.TruyVanChiTietDaXoa(maHoaDon);
+            }
+            else
+            {
+                return new List<ChiTietHoaDonDTO>();
+            }
+        }
     }
 }
