@@ -33,8 +33,18 @@ namespace GUI.UserControls
 
         private void ucHousekeeping_Load(object sender, EventArgs e)
         {
+            LoadDuLieuNhanVien();
             LoadDuLieuCombobox();
             LoadDuLieuDonPhong();
+        }
+
+        private void LoadDuLieuNhanVien()
+        {
+            NhanVienBLL nhanVienBLL = new NhanVienBLL();
+            List<NhanVienDTO> nhanVienDTO = nhanVienBLL.LoadIDAndNameBLLDonPhong();
+            colMaNV.DataSource = nhanVienDTO;
+            colMaNV.ValueMember = "MaNV";
+            colMaNV.DisplayMember = "HoTenNV";
         }
 
         private void LoadDuLieuDonPhong()

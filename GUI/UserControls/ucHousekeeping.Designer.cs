@@ -40,12 +40,6 @@
             this.cboStateHousekeeping = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvHousekeeping = new System.Windows.Forms.DataGridView();
-            this.colMaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayHoanThanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.dtpNgayNhan = new System.Windows.Forms.DateTimePicker();
             this.cboSortHousekeeping = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -54,6 +48,12 @@
             this.lblStateHousekeeping = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.colMaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaNV = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colNgayNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayHoanThanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateHousekeeping)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -280,49 +280,6 @@
             this.dgvHousekeeping.Size = new System.Drawing.Size(973, 746);
             this.dgvHousekeeping.TabIndex = 0;
             // 
-            // colMaDP
-            // 
-            this.colMaDP.DataPropertyName = "MaDonPhong";
-            this.colMaDP.HeaderText = "Mã dọn phòng";
-            this.colMaDP.Name = "colMaDP";
-            this.colMaDP.ReadOnly = true;
-            // 
-            // colMaPhong
-            // 
-            this.colMaPhong.DataPropertyName = "MaPhong";
-            this.colMaPhong.HeaderText = "Mã phòng";
-            this.colMaPhong.Name = "colMaPhong";
-            this.colMaPhong.ReadOnly = true;
-            // 
-            // colMaNV
-            // 
-            this.colMaNV.DataPropertyName = "MaNV";
-            this.colMaNV.HeaderText = "Mã nhân viên";
-            this.colMaNV.Name = "colMaNV";
-            this.colMaNV.ReadOnly = true;
-            // 
-            // colNgayNhan
-            // 
-            this.colNgayNhan.DataPropertyName = "NgayNhan";
-            this.colNgayNhan.HeaderText = "Ngày nhận";
-            this.colNgayNhan.Name = "colNgayNhan";
-            this.colNgayNhan.ReadOnly = true;
-            // 
-            // colNgayHoanThanh
-            // 
-            this.colNgayHoanThanh.DataPropertyName = "NgayHoanThanh";
-            this.colNgayHoanThanh.HeaderText = "Ngày hoàn thành";
-            this.colNgayHoanThanh.Name = "colNgayHoanThanh";
-            this.colNgayHoanThanh.ReadOnly = true;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "TrangThai";
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Visible = false;
-            // 
             // button1
             // 
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
@@ -423,6 +380,52 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
+            // colMaDP
+            // 
+            this.colMaDP.DataPropertyName = "MaDonPhong";
+            this.colMaDP.HeaderText = "Mã dọn phòng";
+            this.colMaDP.Name = "colMaDP";
+            this.colMaDP.ReadOnly = true;
+            // 
+            // colMaPhong
+            // 
+            this.colMaPhong.DataPropertyName = "MaPhong";
+            this.colMaPhong.HeaderText = "Mã phòng";
+            this.colMaPhong.Name = "colMaPhong";
+            this.colMaPhong.ReadOnly = true;
+            // 
+            // colMaNV
+            // 
+            this.colMaNV.DataPropertyName = "MaNV";
+            this.colMaNV.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colMaNV.HeaderText = "Nhân viên";
+            this.colMaNV.Name = "colMaNV";
+            this.colMaNV.ReadOnly = true;
+            this.colMaNV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMaNV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colNgayNhan
+            // 
+            this.colNgayNhan.DataPropertyName = "NgayNhan";
+            this.colNgayNhan.HeaderText = "Ngày nhận";
+            this.colNgayNhan.Name = "colNgayNhan";
+            this.colNgayNhan.ReadOnly = true;
+            // 
+            // colNgayHoanThanh
+            // 
+            this.colNgayHoanThanh.DataPropertyName = "NgayHoanThanh";
+            this.colNgayHoanThanh.HeaderText = "Ngày hoàn thành";
+            this.colNgayHoanThanh.Name = "colNgayHoanThanh";
+            this.colNgayHoanThanh.ReadOnly = true;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Visible = false;
+            // 
             // ucHousekeeping
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -474,7 +477,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaDP;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaPhong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaNV;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colMaNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayNhan;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayHoanThanh;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
