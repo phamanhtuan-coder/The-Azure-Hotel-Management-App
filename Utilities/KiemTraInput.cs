@@ -101,7 +101,18 @@ namespace Utilities
         }
 
 
+        public static bool IsValuesCCCD(string CCCD)
+        {
+            if (CCCD.Length != 10) return false;
 
+            foreach (char c in CCCD)
+            {
+                if (!char.IsDigit(c))
+                    return false;
+            }
+
+            return true;
+        }
 
         public static bool IsStrongPassword(string password)
         {
@@ -156,6 +167,24 @@ namespace Utilities
         {
             maPhongBan = maPhongBan.ToUpper();
             return maPhongBan;
+        }
+
+        public static bool KiemTraNgaySinh(DateTime dt)
+        {
+            DateTime eighteenYearsAgo = DateTime.Today.AddYears(-18);
+
+            return dt <= eighteenYearsAgo;
+        }
+        public static bool KiemTraHoTen(string hoTen)
+        {
+            foreach (char c in hoTen)
+            {
+                if (!char.IsLetter(c) && c != ' ' && c != '-')
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

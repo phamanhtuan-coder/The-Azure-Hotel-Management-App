@@ -165,5 +165,10 @@ namespace GUI.customForm
                 return;
             }
         }
+
+        private void txtMaPhongBan_Leave(object sender, EventArgs e)
+        {
+            txtMaPhongBan.Text = KiemTraInput.ChuanHoaMaPhongBan(txtMaPhongBan.Text);
+        }
     }
 }

@@ -57,6 +57,14 @@ namespace GUI.customForm
             this.txtCCCD = new System.Windows.Forms.TextBox();
             this.btnSignUp = new Syncfusion.WinForms.Controls.SfButton();
             this.btnQuayLai = new Syncfusion.WinForms.Controls.SfButton();
+            this.lblLoiHoTen = new System.Windows.Forms.Label();
+            this.lblLoiCCCD = new System.Windows.Forms.Label();
+            this.lblLoiEmail = new System.Windows.Forms.Label();
+            this.lblLoiSDT = new System.Windows.Forms.Label();
+            this.lblLoiNS = new System.Windows.Forms.Label();
+            this.lblLoiUsername = new System.Windows.Forms.Label();
+            this.lblLoiPassword = new System.Windows.Forms.Label();
+            this.lblLoiRePassword = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.spcInput)).BeginInit();
             this.spcInput.Panel1.SuspendLayout();
             this.spcInput.Panel2.SuspendLayout();
@@ -83,6 +91,7 @@ namespace GUI.customForm
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(246, 27);
             this.txtHoTen.TabIndex = 5;
+            this.txtHoTen.Leave += new System.EventHandler(this.txtHoTen_Leave);
             // 
             // spcInput
             // 
@@ -92,6 +101,9 @@ namespace GUI.customForm
             // 
             // spcInput.Panel1
             // 
+            this.spcInput.Panel1.Controls.Add(this.lblLoiRePassword);
+            this.spcInput.Panel1.Controls.Add(this.lblLoiPassword);
+            this.spcInput.Panel1.Controls.Add(this.lblLoiUsername);
             this.spcInput.Panel1.Controls.Add(this.lblRePw);
             this.spcInput.Panel1.Controls.Add(this.lblPw);
             this.spcInput.Panel1.Controls.Add(this.lblUsername);
@@ -105,6 +117,11 @@ namespace GUI.customForm
             // 
             // spcInput.Panel2
             // 
+            this.spcInput.Panel2.Controls.Add(this.lblLoiNS);
+            this.spcInput.Panel2.Controls.Add(this.lblLoiSDT);
+            this.spcInput.Panel2.Controls.Add(this.lblLoiEmail);
+            this.spcInput.Panel2.Controls.Add(this.lblLoiCCCD);
+            this.spcInput.Panel2.Controls.Add(this.lblLoiHoTen);
             this.spcInput.Panel2.Controls.Add(this.label1);
             this.spcInput.Panel2.Controls.Add(this.txtPhone);
             this.spcInput.Panel2.Controls.Add(this.lblDiaChi);
@@ -160,6 +177,7 @@ namespace GUI.customForm
             this.txtRePassword.PasswordChar = '*';
             this.txtRePassword.Size = new System.Drawing.Size(246, 27);
             this.txtRePassword.TabIndex = 4;
+            this.txtRePassword.Leave += new System.EventHandler(this.txtRePw_Leave);
             // 
             // txtPassword
             // 
@@ -168,6 +186,7 @@ namespace GUI.customForm
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(246, 27);
             this.txtPassword.TabIndex = 3;
+            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // txtUsername
             // 
@@ -175,6 +194,7 @@ namespace GUI.customForm
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(246, 27);
             this.txtUsername.TabIndex = 2;
+            this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
             // 
             // btnUpload
             // 
@@ -201,7 +221,7 @@ namespace GUI.customForm
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 180);
+            this.label1.Location = new System.Drawing.Point(22, 185);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 22);
             this.label1.TabIndex = 17;
@@ -209,10 +229,11 @@ namespace GUI.customForm
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(199, 174);
+            this.txtPhone.Location = new System.Drawing.Point(202, 180);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(246, 27);
             this.txtPhone.TabIndex = 16;
+            this.txtPhone.Leave += new System.EventHandler(this.txtSDT_Leave);
             // 
             // lblDiaChi
             // 
@@ -244,7 +265,7 @@ namespace GUI.customForm
             // lblGioiTinh
             // 
             this.lblGioiTinh.AutoSize = true;
-            this.lblGioiTinh.Location = new System.Drawing.Point(18, 224);
+            this.lblGioiTinh.Location = new System.Drawing.Point(18, 235);
             this.lblGioiTinh.Name = "lblGioiTinh";
             this.lblGioiTinh.Size = new System.Drawing.Size(85, 22);
             this.lblGioiTinh.TabIndex = 13;
@@ -273,7 +294,7 @@ namespace GUI.customForm
             this.radNu.AutoSize = true;
             this.radNu.Checked = true;
             this.radNu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radNu.Location = new System.Drawing.Point(302, 222);
+            this.radNu.Location = new System.Drawing.Point(302, 233);
             this.radNu.Name = "radNu";
             this.radNu.Size = new System.Drawing.Size(49, 24);
             this.radNu.TabIndex = 9;
@@ -286,7 +307,7 @@ namespace GUI.customForm
             this.radNam.AutoSize = true;
             this.radNam.Checked = true;
             this.radNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radNam.Location = new System.Drawing.Point(202, 222);
+            this.radNam.Location = new System.Drawing.Point(202, 233);
             this.radNam.Name = "radNam";
             this.radNam.Size = new System.Drawing.Size(63, 24);
             this.radNam.TabIndex = 8;
@@ -307,6 +328,7 @@ namespace GUI.customForm
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(246, 27);
             this.dtpNgaySinh.TabIndex = 10;
+            this.dtpNgaySinh.ValueChanged += new System.EventHandler(this.dtpNgaySinh_ValueChanged);
             // 
             // txtEmail
             // 
@@ -314,6 +336,7 @@ namespace GUI.customForm
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(246, 27);
             this.txtEmail.TabIndex = 7;
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // txtCCCD
             // 
@@ -321,6 +344,7 @@ namespace GUI.customForm
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.Size = new System.Drawing.Size(246, 27);
             this.txtCCCD.TabIndex = 6;
+            this.txtCCCD.Leave += new System.EventHandler(this.txtCCCD_Leave);
             // 
             // btnSignUp
             // 
@@ -347,6 +371,86 @@ namespace GUI.customForm
             this.btnQuayLai.TabIndex = 13;
             this.btnQuayLai.Text = "Quay lại login";
             this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
+            // 
+            // lblLoiHoTen
+            // 
+            this.lblLoiHoTen.AutoSize = true;
+            this.lblLoiHoTen.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold);
+            this.lblLoiHoTen.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiHoTen.Location = new System.Drawing.Point(198, 53);
+            this.lblLoiHoTen.Name = "lblLoiHoTen";
+            this.lblLoiHoTen.Size = new System.Drawing.Size(0, 16);
+            this.lblLoiHoTen.TabIndex = 8;
+            // 
+            // lblLoiCCCD
+            // 
+            this.lblLoiCCCD.AutoSize = true;
+            this.lblLoiCCCD.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold);
+            this.lblLoiCCCD.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiCCCD.Location = new System.Drawing.Point(198, 105);
+            this.lblLoiCCCD.Name = "lblLoiCCCD";
+            this.lblLoiCCCD.Size = new System.Drawing.Size(0, 16);
+            this.lblLoiCCCD.TabIndex = 18;
+            // 
+            // lblLoiEmail
+            // 
+            this.lblLoiEmail.AutoSize = true;
+            this.lblLoiEmail.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold);
+            this.lblLoiEmail.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiEmail.Location = new System.Drawing.Point(198, 156);
+            this.lblLoiEmail.Name = "lblLoiEmail";
+            this.lblLoiEmail.Size = new System.Drawing.Size(0, 16);
+            this.lblLoiEmail.TabIndex = 19;
+            // 
+            // lblLoiSDT
+            // 
+            this.lblLoiSDT.AutoSize = true;
+            this.lblLoiSDT.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold);
+            this.lblLoiSDT.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiSDT.Location = new System.Drawing.Point(199, 206);
+            this.lblLoiSDT.Name = "lblLoiSDT";
+            this.lblLoiSDT.Size = new System.Drawing.Size(0, 16);
+            this.lblLoiSDT.TabIndex = 20;
+            // 
+            // lblLoiNS
+            // 
+            this.lblLoiNS.AutoSize = true;
+            this.lblLoiNS.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold);
+            this.lblLoiNS.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiNS.Location = new System.Drawing.Point(199, 302);
+            this.lblLoiNS.Name = "lblLoiNS";
+            this.lblLoiNS.Size = new System.Drawing.Size(0, 16);
+            this.lblLoiNS.TabIndex = 21;
+            // 
+            // lblLoiUsername
+            // 
+            this.lblLoiUsername.AutoSize = true;
+            this.lblLoiUsername.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold);
+            this.lblLoiUsername.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiUsername.Location = new System.Drawing.Point(21, 218);
+            this.lblLoiUsername.Name = "lblLoiUsername";
+            this.lblLoiUsername.Size = new System.Drawing.Size(0, 16);
+            this.lblLoiUsername.TabIndex = 22;
+            // 
+            // lblLoiPassword
+            // 
+            this.lblLoiPassword.AutoSize = true;
+            this.lblLoiPassword.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold);
+            this.lblLoiPassword.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiPassword.Location = new System.Drawing.Point(21, 286);
+            this.lblLoiPassword.Name = "lblLoiPassword";
+            this.lblLoiPassword.Size = new System.Drawing.Size(0, 16);
+            this.lblLoiPassword.TabIndex = 23;
+            // 
+            // lblLoiRePassword
+            // 
+            this.lblLoiRePassword.AutoSize = true;
+            this.lblLoiRePassword.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold);
+            this.lblLoiRePassword.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiRePassword.Location = new System.Drawing.Point(21, 353);
+            this.lblLoiRePassword.Name = "lblLoiRePassword";
+            this.lblLoiRePassword.Size = new System.Drawing.Size(0, 16);
+            this.lblLoiRePassword.TabIndex = 24;
             // 
             // frmDangKy
             // 
@@ -405,5 +509,13 @@ namespace GUI.customForm
         private Syncfusion.WinForms.Controls.SfButton btnQuayLai;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.Label lblLoiPassword;
+        private System.Windows.Forms.Label lblLoiUsername;
+        private System.Windows.Forms.Label lblLoiNS;
+        private System.Windows.Forms.Label lblLoiSDT;
+        private System.Windows.Forms.Label lblLoiEmail;
+        private System.Windows.Forms.Label lblLoiCCCD;
+        private System.Windows.Forms.Label lblLoiHoTen;
+        private System.Windows.Forms.Label lblLoiRePassword;
     }
 }

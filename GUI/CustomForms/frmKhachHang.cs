@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Utilities;
 
 namespace GUI.customForm
 {
@@ -27,6 +28,8 @@ namespace GUI.customForm
 
         private void frmKhachHang_Load(object sender, EventArgs e)
         {
+            dtpNgaySinh.Value = DateTime.Today.AddYears(-18);
+            radNam.Checked = true;
             // gán giá trị mặc định bằng các biến trên
             LoadHangTV();
 
@@ -80,40 +83,48 @@ namespace GUI.customForm
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             customMessageBox thongBao;
-            // Kiểm tra if tiến hành xử lý sự kiện thêm/sửa 
-            if (isAdd)
+            if (!(lblLoiEmail.Text.Length > 0 || lblLoiSDT.Text.Length > 0 || lblLoiCCCD.Text.Length > 0 || lblLoiNS.Text.Length > 0 || lblLoiHoTen.Text.Length > 0 || lblLoiUsername.Text.Length > 0))
             {
-                // Nếu đúng là form Thêm thì chạy lệnh insert
-
-                if (AddKhachHang())
+                // Kiểm tra if tiến hành xử lý sự kiện thêm/sửa 
+                if (isAdd)
                 {
-                    thongBao = new customMessageBox("Đã thêm thành công dữ liệu khách hàng mới!");
-                    thongBao.ShowDialog();
+                    // Nếu đúng là form Thêm thì chạy lệnh insert
+
+                    if (AddKhachHang())
+                    {
+                        thongBao = new customMessageBox("Đã thêm thành công dữ liệu khách hàng mới!");
+                        thongBao.ShowDialog();
+                    }
+                    else
+                    {
+                        thongBao = new customMessageBox("Đã thêm thất bại dữ liệu khách hàng mới!");
+                        thongBao.ShowDialog();
+                    }
+
+
                 }
                 else
                 {
-                    thongBao = new customMessageBox("Đã thêm thất bại dữ liệu khách hàng mới!");
-                    thongBao.ShowDialog();
-                }
-                
+                    // nếu không thì chạy lệnh update
+                    if (EditKhachHang())
+                    {
+                        thongBao = new customMessageBox("Sửa thành công thông tin khách hàng đã chọn!");
+                        thongBao.ShowDialog();
+                    }
+                    else
+                    {
+                        thongBao = new customMessageBox("Sửa thất bại thông tin khách hàng đã chọn!");
+                        thongBao.ShowDialog();
+                    }
 
+                }
+                this.Close();
             }
             else
             {
-                // nếu không thì chạy lệnh update
-                if (EditKhachHang())
-                {
-                    thongBao = new customMessageBox("Sửa thành công thông tin khách hàng đã chọn!");
-                    thongBao.ShowDialog();
-                }
-                else
-                {
-                    thongBao = new customMessageBox("Sửa thất bại thông tin khách hàng đã chọn!");
-                    thongBao.ShowDialog();
-                }
-                
+                thongBao = new customMessageBox("Vui lòng nhập đúng thông tin!");
+                thongBao.ShowDialog();
             }
-            this.Close();
             
         }
 
@@ -161,6 +172,7 @@ namespace GUI.customForm
         {
             frmTaiKhoan taoTaiKhoan = new frmTaiKhoan();
             taoTaiKhoan.isAdd = true;
+            taoTaiKhoan.isKhachHang = true;
             taoTaiKhoan.ShowDialog();
             //Sau đó thực hiện lệnh query để lấy mã tài khoản vừa tạo và gán mã đó vào biến maTaiKhoan
             string user = khachHangBLL.TruyVanUsernameBLL();
@@ -192,6 +204,75 @@ namespace GUI.customForm
             using (MemoryStream m = new MemoryStream(hinh))
             {
                 return Image.FromStream(m);
+            }
+        }
+
+        private void txtHoTen_Leave(object sender, EventArgs e)
+        {
+            if (KiemTraInput.KiemTraHoTen(txtHoTen.Text))
+            {
+                lblLoiHoTen.Text = "";
+                txtHoTen.Text = KiemTraInput.ChuanHoaHoTen(txtHoTen.Text);
+            }
+            else
+            {
+                lblLoiHoTen.Text = "Họ tên không hợp lệ!";
+            }
+        }
+
+        private void txtCCCD_Leave(object sender, EventArgs e)
+        {
+            if (!KiemTraInput.IsValuesCCCD(txtCCCD.Text))
+            {
+                lblLoiCCCD.Text = "CCCD Không hợp lệ!";
+            }
+            else
+            {
+                lblLoiCCCD.Text = "";
+            }
+        }
+
+        private void dtpNgaySinh_ValueChanged(object sender, EventArgs e)
+        {
+            if (!KiemTraInput.KiemTraNgaySinh(dtpNgaySinh.Value))
+            {
+                lblLoiNS.Text = "Ngày sinh Không hợp lệ, phải đủ 18 tuổi!";
+            }
+            else
+            {
+                lblLoiNS.Text = "";
+            }
+        }
+
+        private void txtEmail_Leave(object sender, EventArgs e)
+        {
+            if (!KiemTraInput.IsValidEmail(txtEmail.Text))
+            {
+                lblLoiEmail.Text = "Email không hợp lệ!";
+            }
+            else
+            {
+                lblLoiEmail.Text = "";
+            }
+        }
+
+        private void txtSDT_Leave(object sender, EventArgs e)
+        {
+            if (!KiemTraInput.IsValidPhoneNumber(txtSDT.Text))
+            {
+                lblLoiSDT.Text = "SDT Không hợp lệ!";
+            }
+            else
+            {
+                lblLoiSDT.Text = "";
+            }
+        }
+
+        private void txtCCCD_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

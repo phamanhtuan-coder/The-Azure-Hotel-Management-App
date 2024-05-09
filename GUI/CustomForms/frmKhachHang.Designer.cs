@@ -53,6 +53,12 @@
             this.lblDiaChi = new System.Windows.Forms.Label();
             this.lblHangTV = new System.Windows.Forms.Label();
             this.cboHangTV = new System.Windows.Forms.ComboBox();
+            this.lblLoiHoTen = new System.Windows.Forms.Label();
+            this.lblLoiCCCD = new System.Windows.Forms.Label();
+            this.lblLoiNS = new System.Windows.Forms.Label();
+            this.lblLoiEmail = new System.Windows.Forms.Label();
+            this.lblLoiSDT = new System.Windows.Forms.Label();
+            this.lblLoiUsername = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,6 +89,7 @@
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(194, 27);
             this.txtHoTen.TabIndex = 6;
+            this.txtHoTen.Leave += new System.EventHandler(this.txtHoTen_Leave);
             // 
             // txtMaTaiKhoan
             // 
@@ -95,31 +102,35 @@
             // txtCCCD
             // 
             this.txtCCCD.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.txtCCCD.Location = new System.Drawing.Point(538, 57);
+            this.txtCCCD.Location = new System.Drawing.Point(538, 60);
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.Size = new System.Drawing.Size(194, 27);
             this.txtCCCD.TabIndex = 8;
+            this.txtCCCD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCCCD_KeyPress);
+            this.txtCCCD.Leave += new System.EventHandler(this.txtCCCD_Leave);
             // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.txtEmail.Location = new System.Drawing.Point(538, 191);
+            this.txtEmail.Location = new System.Drawing.Point(538, 192);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(194, 27);
             this.txtEmail.TabIndex = 9;
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // txtSDT
             // 
             this.txtSDT.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.txtSDT.Location = new System.Drawing.Point(538, 236);
+            this.txtSDT.Location = new System.Drawing.Point(538, 238);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(194, 27);
             this.txtSDT.TabIndex = 10;
+            this.txtSDT.Leave += new System.EventHandler(this.txtSDT_Leave);
             // 
             // txtDiaChi
             // 
             this.txtDiaChi.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.txtDiaChi.Location = new System.Drawing.Point(538, 281);
+            this.txtDiaChi.Location = new System.Drawing.Point(538, 284);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(194, 27);
             this.txtDiaChi.TabIndex = 11;
@@ -133,6 +144,7 @@
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(194, 27);
             this.dtpNgaySinh.TabIndex = 12;
+            this.dtpNgaySinh.ValueChanged += new System.EventHandler(this.dtpNgaySinh_ValueChanged);
             // 
             // radNam
             // 
@@ -213,7 +225,7 @@
             // 
             this.lblCCCD.AutoSize = true;
             this.lblCCCD.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.lblCCCD.Location = new System.Drawing.Point(355, 60);
+            this.lblCCCD.Location = new System.Drawing.Point(355, 62);
             this.lblCCCD.Name = "lblCCCD";
             this.lblCCCD.Size = new System.Drawing.Size(59, 22);
             this.lblCCCD.TabIndex = 20;
@@ -253,7 +265,7 @@
             // 
             this.lblSDT.AutoSize = true;
             this.lblSDT.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.lblSDT.Location = new System.Drawing.Point(355, 239);
+            this.lblSDT.Location = new System.Drawing.Point(355, 241);
             this.lblSDT.Name = "lblSDT";
             this.lblSDT.Size = new System.Drawing.Size(43, 22);
             this.lblSDT.TabIndex = 24;
@@ -263,7 +275,7 @@
             // 
             this.lblDiaChi.AutoSize = true;
             this.lblDiaChi.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.lblDiaChi.Location = new System.Drawing.Point(355, 284);
+            this.lblDiaChi.Location = new System.Drawing.Point(355, 287);
             this.lblDiaChi.Name = "lblDiaChi";
             this.lblDiaChi.Size = new System.Drawing.Size(68, 22);
             this.lblDiaChi.TabIndex = 25;
@@ -273,7 +285,7 @@
             // 
             this.lblHangTV.AutoSize = true;
             this.lblHangTV.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.lblHangTV.Location = new System.Drawing.Point(355, 329);
+            this.lblHangTV.Location = new System.Drawing.Point(355, 332);
             this.lblHangTV.Name = "lblHangTV";
             this.lblHangTV.Size = new System.Drawing.Size(151, 22);
             this.lblHangTV.TabIndex = 26;
@@ -283,16 +295,82 @@
             // 
             this.cboHangTV.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboHangTV.FormattingEnabled = true;
-            this.cboHangTV.Location = new System.Drawing.Point(538, 326);
+            this.cboHangTV.Location = new System.Drawing.Point(538, 329);
             this.cboHangTV.Name = "cboHangTV";
             this.cboHangTV.Size = new System.Drawing.Size(194, 30);
             this.cboHangTV.TabIndex = 27;
+            // 
+            // lblLoiHoTen
+            // 
+            this.lblLoiHoTen.AutoSize = true;
+            this.lblLoiHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoiHoTen.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiHoTen.Location = new System.Drawing.Point(538, 40);
+            this.lblLoiHoTen.Name = "lblLoiHoTen";
+            this.lblLoiHoTen.Size = new System.Drawing.Size(0, 15);
+            this.lblLoiHoTen.TabIndex = 28;
+            // 
+            // lblLoiCCCD
+            // 
+            this.lblLoiCCCD.AutoSize = true;
+            this.lblLoiCCCD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoiCCCD.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiCCCD.Location = new System.Drawing.Point(538, 89);
+            this.lblLoiCCCD.Name = "lblLoiCCCD";
+            this.lblLoiCCCD.Size = new System.Drawing.Size(0, 15);
+            this.lblLoiCCCD.TabIndex = 29;
+            // 
+            // lblLoiNS
+            // 
+            this.lblLoiNS.AutoSize = true;
+            this.lblLoiNS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoiNS.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiNS.Location = new System.Drawing.Point(538, 172);
+            this.lblLoiNS.Name = "lblLoiNS";
+            this.lblLoiNS.Size = new System.Drawing.Size(0, 15);
+            this.lblLoiNS.TabIndex = 30;
+            // 
+            // lblLoiEmail
+            // 
+            this.lblLoiEmail.AutoSize = true;
+            this.lblLoiEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoiEmail.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiEmail.Location = new System.Drawing.Point(538, 218);
+            this.lblLoiEmail.Name = "lblLoiEmail";
+            this.lblLoiEmail.Size = new System.Drawing.Size(0, 15);
+            this.lblLoiEmail.TabIndex = 31;
+            // 
+            // lblLoiSDT
+            // 
+            this.lblLoiSDT.AutoSize = true;
+            this.lblLoiSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoiSDT.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiSDT.Location = new System.Drawing.Point(538, 264);
+            this.lblLoiSDT.Name = "lblLoiSDT";
+            this.lblLoiSDT.Size = new System.Drawing.Size(0, 15);
+            this.lblLoiSDT.TabIndex = 32;
+            // 
+            // lblLoiUsername
+            // 
+            this.lblLoiUsername.AutoSize = true;
+            this.lblLoiUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoiUsername.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiUsername.Location = new System.Drawing.Point(12, 318);
+            this.lblLoiUsername.Name = "lblLoiUsername";
+            this.lblLoiUsername.Size = new System.Drawing.Size(0, 15);
+            this.lblLoiUsername.TabIndex = 33;
             // 
             // frmKhachHang
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblLoiUsername);
+            this.Controls.Add(this.lblLoiSDT);
+            this.Controls.Add(this.lblLoiEmail);
+            this.Controls.Add(this.lblLoiNS);
+            this.Controls.Add(this.lblLoiCCCD);
+            this.Controls.Add(this.lblLoiHoTen);
             this.Controls.Add(this.cboHangTV);
             this.Controls.Add(this.lblHangTV);
             this.Controls.Add(this.lblDiaChi);
@@ -354,5 +432,11 @@
         private System.Windows.Forms.Label lblDiaChi;
         private System.Windows.Forms.Label lblHangTV;
         private System.Windows.Forms.ComboBox cboHangTV;
+        private System.Windows.Forms.Label lblLoiHoTen;
+        private System.Windows.Forms.Label lblLoiCCCD;
+        private System.Windows.Forms.Label lblLoiNS;
+        private System.Windows.Forms.Label lblLoiEmail;
+        private System.Windows.Forms.Label lblLoiSDT;
+        private System.Windows.Forms.Label lblLoiUsername;
     }
 }
