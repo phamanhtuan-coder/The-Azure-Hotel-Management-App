@@ -196,5 +196,26 @@ namespace DAL
                 return new List<HangThanhVienDTO>();
             }
         }
+
+        public double LayKM(int maKH)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spLayKhuyenMai", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaKH",maKH);
+                double km = (double) com.ExecuteScalar();
+
+                conn.Close();
+                return km;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
     }
 }

@@ -100,7 +100,7 @@ namespace BLL
             return searchResults;
         }
 
-        public int LayKM(int maThue)
+        public double LayKM(int maThue)
         {
             return thueDAL.LayKM(maThue);
         }

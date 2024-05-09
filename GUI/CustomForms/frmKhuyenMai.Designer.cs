@@ -102,6 +102,11 @@
             this.nudMucKM.DecimalPlaces = 2;
             this.nudMucKM.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.nudMucKM.Location = new System.Drawing.Point(327, 83);
+            this.nudMucKM.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
             this.nudMucKM.Name = "nudMucKM";
             this.nudMucKM.Size = new System.Drawing.Size(189, 27);
             this.nudMucKM.TabIndex = 13;

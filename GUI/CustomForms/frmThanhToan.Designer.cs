@@ -142,6 +142,11 @@
             this.nupThoi.TabIndex = 25;
             this.nupThoi.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nupThoi.ThousandsSeparator = true;
+            this.nupThoi.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
             // 
             // frmThanhToan
             // 

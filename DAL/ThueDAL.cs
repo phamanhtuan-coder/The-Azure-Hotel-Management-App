@@ -168,7 +168,7 @@ namespace DAL
             }
         }
 
-        public int LayKM(int maThue)
+        public double LayKM(int maThue)
         {
             try
             {
@@ -186,7 +186,7 @@ namespace DAL
                 }
 
                 conn.Close();
-                return int.Parse(KhuyenMai.ToString());
+                return KhuyenMai;
             }
             catch (Exception)
             {

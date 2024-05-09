@@ -288,10 +288,15 @@ namespace GUI.UserControls
                     {
                         TongTien += item.ThanhTien;
                     }
-                    ThueBLL thueBLL = new ThueBLL();
 
-                    double thue = 100 + thueBLL.LayKM(hoaDonDTO.MaThue);
-                    hoaDonDTO.TongHoaDon = TongTien * (decimal)thue / 100;
+                    ThueBLL thueBLL = new ThueBLL();
+                    double thue = (100 + thueBLL.LayKM(hoaDonDTO.MaThue)) / 100;
+
+                    HangThanhVienBLL hangThanhVien = new HangThanhVienBLL();
+                    double khuyenMai =(100 - hangThanhVien.LayKM(hoaDonDTO.MaKH)) / 100;
+
+                    hoaDonDTO.TongHoaDon = (TongTien* (decimal) khuyenMai) * (decimal)thue;
+
                     frmThanhToan frm = new frmThanhToan();
                     frm.hoaDonDTO = hoaDonDTO;
                     frm.ShowDialog();
