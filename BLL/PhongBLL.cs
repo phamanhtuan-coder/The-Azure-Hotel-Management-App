@@ -55,6 +55,22 @@ namespace BLL
             return searchResults;
         }
 
+        public List<PhongDTO> trloaiphong(List<PhongDTO> phongDTOs, string searchKeyword)
+        {
+            List<PhongDTO> searchResults = phongDTOs.Where(item =>
+             item.MaTinhTrangPhong.ToString().Contains(searchKeyword)
+         ).ToList();
+            return searchResults;
+        }
+
+        public List<PhongDTO> trttphong(List<PhongDTO> phongDTOs, string searchKeyword)
+        {
+            List<PhongDTO> searchResults = phongDTOs.Where(item =>
+             item.MaPHG.ToString().Contains(searchKeyword)
+         ).ToList();
+            return searchResults;
+        }
+
         public bool Xoap(int maphong)
         {
             return PhongDAL.xoaphong(maphong);

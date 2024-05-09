@@ -29,7 +29,7 @@ namespace DAL
                 PhongDTO.MaPHG = (int)reader[0];
                 PhongDTO.MaLoai = (int)reader[1];
                 PhongDTO.MaTinhTrangPhong = (int)reader[2];
-                PhongDTO.HinhAnh = reader[3].ToString();
+                PhongDTO.HinhAnh = reader["HinhAnh"] as byte[];
                 PhongDTO.MoTa = reader[4].ToString();
                 PhongDTO.GiaPhong = (decimal)reader[5];
                 PhongDTO.SucChuaToiDa = (int)reader[6];
@@ -66,7 +66,7 @@ namespace DAL
                 phong.MaPHG = (int)reader[0];
                 phong.MaLoai =(int) reader[1];
                 phong.MaTinhTrangPhong = (int)reader[2];
-                phong.HinhAnh = reader[3].ToString();
+                phong.HinhAnh = reader["HinhAnh"] as byte[];
                 phong.MoTa = reader[4].ToString();
                 phong.GiaPhong = (decimal)reader[5];
                 phong.SucChuaToiDa = (int)reader[6];
@@ -83,8 +83,8 @@ namespace DAL
         public bool suaphong(PhongDTO phongDTO)
         {
             string lenhCapNhatphong =
-                "UPDATE Phong SET MaLoai = @MaLoai, MaTinhTrangPhong = @MaTinhTrangPhong,MoTa=@MoTa,GiaPhong=@GiaPhong,SucChuaToiDa=@SucChuaToiDa WHERE MaPHG = @MaPHG";
-            SqlParameter[] pars = new SqlParameter[6];
+                "UPDATE Phong SET MaLoai = @MaLoai, MaTinhTrangPhong = @MaTinhTrangPhong,MoTa=@MoTa,GiaPhong=@GiaPhong,SucChuaToiDa=@SucChuaToiDa,HinhAnh=@HinhAnh WHERE MaPHG = @MaPHG";
+            SqlParameter[] pars = new SqlParameter[7];
 
             pars[0] = new SqlParameter("MaPHG", phongDTO.MaPHG);
             pars[1] = new SqlParameter("MaTinhTrangPhong", phongDTO.MaTinhTrangPhong);
@@ -92,6 +92,8 @@ namespace DAL
             pars[3] = new SqlParameter("MoTa", phongDTO.MoTa);
             pars[4] = new SqlParameter("GiaPhong", phongDTO.GiaPhong);
             pars[5] = new SqlParameter("SucChuaToiDa", phongDTO.SucChuaToiDa);
+            pars[6] = new SqlParameter("HinhAnh", phongDTO.HinhAnh);
+
 
             SqlConnection conn = DataProvider.KetNoiDuLieu();
             conn.Open();
@@ -103,15 +105,15 @@ namespace DAL
         public bool themphong(PhongDTO phongDTO)
         {
             string lenhThemphong =
-                "INSERT INTO Phong (MaLoai, MaTinhTrangPhong,HinhAnh,MoTa,GiaPhong,SucChuaToiDa,TrangThai) VALUES (@MaLoai, @MaTinhTrangPhong,null,@MoTa,@GiaPhong,@SucChuaToiDa, 1)";
+                "INSERT INTO Phong (MaLoai, MaTinhTrangPhong,HinhAnh,MoTa,GiaPhong,SucChuaToiDa,TrangThai) VALUES (@MaLoai, @MaTinhTrangPhong,@HinhAnh,@MoTa,@GiaPhong,@SucChuaToiDa, 1)";
 
-            SqlParameter[] pars = new SqlParameter[5];
+            SqlParameter[] pars = new SqlParameter[6];
             pars[0] = new SqlParameter("MaLoai", phongDTO.MaLoai);
             pars[1] = new SqlParameter("MaTinhTrangPhong", phongDTO.MaTinhTrangPhong);
             pars[2] = new SqlParameter("MoTa",phongDTO.MoTa);
             pars[3] = new SqlParameter("GiaPhong", phongDTO.GiaPhong);
             pars[4] = new SqlParameter("SucChuaToiDa", phongDTO.SucChuaToiDa);
-
+            pars[5] = new SqlParameter("HinhAnh", phongDTO.HinhAnh);
             SqlConnection conn = DataProvider.KetNoiDuLieu();
             conn.Open();
             int kq = DataProvider.ThucHienCauLenh(lenhThemphong, conn, pars);

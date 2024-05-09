@@ -78,6 +78,7 @@
             this.btnChonHinh.Size = new System.Drawing.Size(150, 38);
             this.btnChonHinh.TabIndex = 16;
             this.btnChonHinh.Text = "Submit";
+            this.btnChonHinh.Click += new System.EventHandler(this.btnChonHinh_Click);
             // 
             // picHinhPhong
             // 
@@ -94,7 +95,7 @@
             this.lblMaLoai.AutoSize = true;
             this.lblMaLoai.Location = new System.Drawing.Point(381, 20);
             this.lblMaLoai.Name = "lblMaLoai";
-            this.lblMaLoai.Size = new System.Drawing.Size(104, 22);
+            this.lblMaLoai.Size = new System.Drawing.Size(130, 27);
             this.lblMaLoai.TabIndex = 19;
             this.lblMaLoai.Text = "Loại phòng";
             // 
@@ -103,7 +104,7 @@
             this.lblTinhTrangPhong.AutoSize = true;
             this.lblTinhTrangPhong.Location = new System.Drawing.Point(381, 81);
             this.lblTinhTrangPhong.Name = "lblTinhTrangPhong";
-            this.lblTinhTrangPhong.Size = new System.Drawing.Size(156, 22);
+            this.lblTinhTrangPhong.Size = new System.Drawing.Size(197, 27);
             this.lblTinhTrangPhong.TabIndex = 20;
             this.lblTinhTrangPhong.Text = "Tình trạng phòng";
             // 
@@ -112,7 +113,7 @@
             this.lblGia.AutoSize = true;
             this.lblGia.Location = new System.Drawing.Point(381, 139);
             this.lblGia.Name = "lblGia";
-            this.lblGia.Size = new System.Drawing.Size(96, 22);
+            this.lblGia.Size = new System.Drawing.Size(120, 27);
             this.lblGia.TabIndex = 23;
             this.lblGia.Text = "Giá phòng";
             // 
@@ -121,7 +122,7 @@
             this.lblSucChua.AutoSize = true;
             this.lblSucChua.Location = new System.Drawing.Point(381, 197);
             this.lblSucChua.Name = "lblSucChua";
-            this.lblSucChua.Size = new System.Drawing.Size(139, 22);
+            this.lblSucChua.Size = new System.Drawing.Size(175, 27);
             this.lblSucChua.TabIndex = 24;
             this.lblSucChua.Text = "Sức chứa tối đa";
             // 
@@ -130,7 +131,7 @@
             this.lblMoTa.AutoSize = true;
             this.lblMoTa.Location = new System.Drawing.Point(381, 250);
             this.lblMoTa.Name = "lblMoTa";
-            this.lblMoTa.Size = new System.Drawing.Size(116, 22);
+            this.lblMoTa.Size = new System.Drawing.Size(146, 27);
             this.lblMoTa.TabIndex = 25;
             this.lblMoTa.Text = "Mô tả phòng";
             // 
@@ -173,7 +174,7 @@
             0,
             0});
             this.nudGiaPhong.Name = "nudGiaPhong";
-            this.nudGiaPhong.Size = new System.Drawing.Size(150, 27);
+            this.nudGiaPhong.Size = new System.Drawing.Size(150, 32);
             this.nudGiaPhong.TabIndex = 28;
             this.nudGiaPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudGiaPhong.ThousandsSeparator = true;
@@ -197,7 +198,7 @@
             0,
             0});
             this.nudSucChuaToiDa.Name = "nudSucChuaToiDa";
-            this.nudSucChuaToiDa.Size = new System.Drawing.Size(150, 27);
+            this.nudSucChuaToiDa.Size = new System.Drawing.Size(150, 32);
             this.nudSucChuaToiDa.TabIndex = 29;
             this.nudSucChuaToiDa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudSucChuaToiDa.Value = new decimal(new int[] {

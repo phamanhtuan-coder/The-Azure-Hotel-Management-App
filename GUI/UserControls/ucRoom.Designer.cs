@@ -40,19 +40,8 @@
             this.cboStateRoom = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvRoom = new System.Windows.Forms.DataGridView();
-            this.colMaPHG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaTinhTrangPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGiaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSucChuaToiDa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboSortPrice = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortPrice = new System.Windows.Forms.Label();
-            this.cboRoomStatus = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.lblSortTheoLoaiPhong = new System.Windows.Forms.Label();
-            this.cboSortRoomType = new Syncfusion.WinForms.ListView.SfComboBox();
             this.cboSortRoomID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblQuickControl = new System.Windows.Forms.Label();
             this.btnCheckIn = new Syncfusion.WinForms.Controls.SfButton();
@@ -60,9 +49,16 @@
             this.btnCheckOut = new Syncfusion.WinForms.Controls.SfButton();
             this.lblSortMaPHG = new System.Windows.Forms.Label();
             this.lblStateRoom = new System.Windows.Forms.Label();
-            this.lblStatusRoom = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.colMaPHG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaTinhTrangPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHinhAnh = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGiaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSucChuaToiDa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -71,8 +67,6 @@
             this.spcQuery.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortPrice)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboRoomStatus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboSortRoomType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortRoomID)).BeginInit();
             this.panUcHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).BeginInit();
@@ -229,7 +223,7 @@
             this.cboStateRoom.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboStateRoom.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboStateRoom.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateRoom.Location = new System.Drawing.Point(228, 294);
+            this.cboStateRoom.Location = new System.Drawing.Point(232, 193);
             this.cboStateRoom.Name = "cboStateRoom";
             this.cboStateRoom.Size = new System.Drawing.Size(156, 33);
             this.cboStateRoom.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -256,9 +250,6 @@
             this.spcQuery.Panel2.BackColor = System.Drawing.Color.Lavender;
             this.spcQuery.Panel2.Controls.Add(this.cboSortPrice);
             this.spcQuery.Panel2.Controls.Add(this.lblSortPrice);
-            this.spcQuery.Panel2.Controls.Add(this.cboRoomStatus);
-            this.spcQuery.Panel2.Controls.Add(this.lblSortTheoLoaiPhong);
-            this.spcQuery.Panel2.Controls.Add(this.cboSortRoomType);
             this.spcQuery.Panel2.Controls.Add(this.cboSortRoomID);
             this.spcQuery.Panel2.Controls.Add(this.lblQuickControl);
             this.spcQuery.Panel2.Controls.Add(this.btnCheckIn);
@@ -266,7 +257,6 @@
             this.spcQuery.Panel2.Controls.Add(this.btnCheckOut);
             this.spcQuery.Panel2.Controls.Add(this.lblSortMaPHG);
             this.spcQuery.Panel2.Controls.Add(this.lblStateRoom);
-            this.spcQuery.Panel2.Controls.Add(this.lblStatusRoom);
             this.spcQuery.Panel2.Controls.Add(this.txtSearchRoom);
             this.spcQuery.Panel2.Controls.Add(this.btnTraCuuRoom);
             this.spcQuery.Panel2.Controls.Add(this.cboStateRoom);
@@ -302,80 +292,6 @@
             this.dgvRoom.Size = new System.Drawing.Size(973, 746);
             this.dgvRoom.TabIndex = 0;
             // 
-            // colMaPHG
-            // 
-            this.colMaPHG.DataPropertyName = "MaPHG";
-            this.colMaPHG.HeaderText = "Mã phòng";
-            this.colMaPHG.MinimumWidth = 6;
-            this.colMaPHG.Name = "colMaPHG";
-            this.colMaPHG.ReadOnly = true;
-            this.colMaPHG.Width = 134;
-            // 
-            // colMaLoai
-            // 
-            this.colMaLoai.DataPropertyName = "MaLoai";
-            this.colMaLoai.HeaderText = "Mã loại";
-            this.colMaLoai.MinimumWidth = 6;
-            this.colMaLoai.Name = "colMaLoai";
-            this.colMaLoai.ReadOnly = true;
-            this.colMaLoai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaLoai.Width = 103;
-            // 
-            // colMaTinhTrangPhong
-            // 
-            this.colMaTinhTrangPhong.DataPropertyName = "MaTinhTrangPhong";
-            this.colMaTinhTrangPhong.HeaderText = "Mã tình trạng phòng";
-            this.colMaTinhTrangPhong.MinimumWidth = 6;
-            this.colMaTinhTrangPhong.Name = "colMaTinhTrangPhong";
-            this.colMaTinhTrangPhong.ReadOnly = true;
-            this.colMaTinhTrangPhong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaTinhTrangPhong.Width = 229;
-            // 
-            // colHinhAnh
-            // 
-            this.colHinhAnh.DataPropertyName = "HinhAnh";
-            this.colHinhAnh.HeaderText = "Hình ảnh";
-            this.colHinhAnh.MinimumWidth = 6;
-            this.colHinhAnh.Name = "colHinhAnh";
-            this.colHinhAnh.ReadOnly = true;
-            this.colHinhAnh.Width = 124;
-            // 
-            // colMoTa
-            // 
-            this.colMoTa.DataPropertyName = "MoTa";
-            this.colMoTa.HeaderText = "Mô tả";
-            this.colMoTa.MinimumWidth = 6;
-            this.colMoTa.Name = "colMoTa";
-            this.colMoTa.ReadOnly = true;
-            this.colMoTa.Width = 73;
-            // 
-            // colGiaPhong
-            // 
-            this.colGiaPhong.DataPropertyName = "GiaPhong";
-            this.colGiaPhong.HeaderText = "Giá";
-            this.colGiaPhong.MinimumWidth = 6;
-            this.colGiaPhong.Name = "colGiaPhong";
-            this.colGiaPhong.ReadOnly = true;
-            this.colGiaPhong.Width = 73;
-            // 
-            // colSucChuaToiDa
-            // 
-            this.colSucChuaToiDa.DataPropertyName = "SucChuaToiDa";
-            this.colSucChuaToiDa.HeaderText = "Sức chứa";
-            this.colSucChuaToiDa.MinimumWidth = 6;
-            this.colSucChuaToiDa.Name = "colSucChuaToiDa";
-            this.colSucChuaToiDa.ReadOnly = true;
-            this.colSucChuaToiDa.Width = 123;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "TrangThai";
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.MinimumWidth = 6;
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Width = 131;
-            // 
             // cboSortPrice
             // 
             this.cboSortPrice.DelimiterChar = "";
@@ -383,7 +299,7 @@
             this.cboSortPrice.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboSortPrice.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboSortPrice.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortPrice.Location = new System.Drawing.Point(228, 180);
+            this.cboSortPrice.Location = new System.Drawing.Point(232, 79);
             this.cboSortPrice.Name = "cboSortPrice";
             this.cboSortPrice.Size = new System.Drawing.Size(156, 33);
             this.cboSortPrice.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -398,57 +314,12 @@
             // 
             this.lblSortPrice.AutoSize = true;
             this.lblSortPrice.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortPrice.Location = new System.Drawing.Point(4, 187);
+            this.lblSortPrice.Location = new System.Drawing.Point(8, 86);
             this.lblSortPrice.Name = "lblSortPrice";
             this.lblSortPrice.Size = new System.Drawing.Size(179, 33);
             this.lblSortPrice.TabIndex = 28;
             this.lblSortPrice.Text = "Sort theo Giá";
             this.lblSortPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cboRoomStatus
-            // 
-            this.cboRoomStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboRoomStatus.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboRoomStatus.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboRoomStatus.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboRoomStatus.Location = new System.Drawing.Point(226, 75);
-            this.cboRoomStatus.Name = "cboRoomStatus";
-            this.cboRoomStatus.Size = new System.Drawing.Size(156, 33);
-            this.cboRoomStatus.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboRoomStatus.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboRoomStatus.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboRoomStatus.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboRoomStatus.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboRoomStatus.TabIndex = 26;
-            // 
-            // lblSortTheoLoaiPhong
-            // 
-            this.lblSortTheoLoaiPhong.AutoSize = true;
-            this.lblSortTheoLoaiPhong.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortTheoLoaiPhong.Location = new System.Drawing.Point(4, 132);
-            this.lblSortTheoLoaiPhong.Name = "lblSortTheoLoaiPhong";
-            this.lblSortTheoLoaiPhong.Size = new System.Drawing.Size(158, 33);
-            this.lblSortTheoLoaiPhong.TabIndex = 25;
-            this.lblSortTheoLoaiPhong.Text = "Loại phòng";
-            this.lblSortTheoLoaiPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cboSortRoomType
-            // 
-            this.cboSortRoomType.DelimiterChar = "";
-            this.cboSortRoomType.DisplayMember = "";
-            this.cboSortRoomType.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboSortRoomType.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortRoomType.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortRoomType.Location = new System.Drawing.Point(229, 132);
-            this.cboSortRoomType.Name = "cboSortRoomType";
-            this.cboSortRoomType.Size = new System.Drawing.Size(156, 33);
-            this.cboSortRoomType.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortRoomType.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortRoomType.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortRoomType.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortRoomType.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortRoomType.TabIndex = 24;
             // 
             // cboSortRoomID
             // 
@@ -457,7 +328,7 @@
             this.cboSortRoomID.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboSortRoomID.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboSortRoomID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortRoomID.Location = new System.Drawing.Point(229, 237);
+            this.cboSortRoomID.Location = new System.Drawing.Point(233, 136);
             this.cboSortRoomID.Name = "cboSortRoomID";
             this.cboSortRoomID.Size = new System.Drawing.Size(156, 33);
             this.cboSortRoomID.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -545,7 +416,7 @@
             // 
             this.lblSortMaPHG.AutoSize = true;
             this.lblSortMaPHG.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortMaPHG.Location = new System.Drawing.Point(4, 244);
+            this.lblSortMaPHG.Location = new System.Drawing.Point(8, 143);
             this.lblSortMaPHG.Name = "lblSortMaPHG";
             this.lblSortMaPHG.Size = new System.Drawing.Size(248, 33);
             this.lblSortMaPHG.TabIndex = 14;
@@ -556,23 +427,12 @@
             // 
             this.lblStateRoom.AutoSize = true;
             this.lblStateRoom.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStateRoom.Location = new System.Drawing.Point(4, 301);
+            this.lblStateRoom.Location = new System.Drawing.Point(8, 200);
             this.lblStateRoom.Name = "lblStateRoom";
             this.lblStateRoom.Size = new System.Drawing.Size(237, 33);
             this.lblStateRoom.TabIndex = 9;
             this.lblStateRoom.Text = "Trạng thái dữ liệu";
             this.lblStateRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblStatusRoom
-            // 
-            this.lblStatusRoom.AutoSize = true;
-            this.lblStatusRoom.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatusRoom.Location = new System.Drawing.Point(4, 82);
-            this.lblStatusRoom.Name = "lblStatusRoom";
-            this.lblStatusRoom.Size = new System.Drawing.Size(237, 33);
-            this.lblStatusRoom.TabIndex = 8;
-            this.lblStatusRoom.Text = "Tình trạng phòng";
-            this.lblStatusRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panUcHeader
             // 
@@ -603,6 +463,83 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
+            // colMaPHG
+            // 
+            this.colMaPHG.DataPropertyName = "MaPHG";
+            this.colMaPHG.HeaderText = "Mã phòng";
+            this.colMaPHG.MinimumWidth = 6;
+            this.colMaPHG.Name = "colMaPHG";
+            this.colMaPHG.ReadOnly = true;
+            this.colMaPHG.Width = 146;
+            // 
+            // colMaLoai
+            // 
+            this.colMaLoai.DataPropertyName = "MaLoai";
+            this.colMaLoai.HeaderText = "Mã loại";
+            this.colMaLoai.MinimumWidth = 6;
+            this.colMaLoai.Name = "colMaLoai";
+            this.colMaLoai.ReadOnly = true;
+            this.colMaLoai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMaLoai.Width = 112;
+            // 
+            // colMaTinhTrangPhong
+            // 
+            this.colMaTinhTrangPhong.DataPropertyName = "MaTinhTrangPhong";
+            this.colMaTinhTrangPhong.HeaderText = "Mã tình trạng phòng";
+            this.colMaTinhTrangPhong.MinimumWidth = 6;
+            this.colMaTinhTrangPhong.Name = "colMaTinhTrangPhong";
+            this.colMaTinhTrangPhong.ReadOnly = true;
+            this.colMaTinhTrangPhong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMaTinhTrangPhong.Width = 229;
+            // 
+            // colHinhAnh
+            // 
+            this.colHinhAnh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colHinhAnh.DataPropertyName = "HinhAnh";
+            this.colHinhAnh.HeaderText = "Hình ảnh";
+            this.colHinhAnh.MinimumWidth = 6;
+            this.colHinhAnh.Name = "colHinhAnh";
+            this.colHinhAnh.ReadOnly = true;
+            this.colHinhAnh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colHinhAnh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colHinhAnh.Width = 124;
+            // 
+            // colMoTa
+            // 
+            this.colMoTa.DataPropertyName = "MoTa";
+            this.colMoTa.HeaderText = "Mô tả";
+            this.colMoTa.MinimumWidth = 6;
+            this.colMoTa.Name = "colMoTa";
+            this.colMoTa.ReadOnly = true;
+            this.colMoTa.Width = 73;
+            // 
+            // colGiaPhong
+            // 
+            this.colGiaPhong.DataPropertyName = "GiaPhong";
+            this.colGiaPhong.HeaderText = "Giá";
+            this.colGiaPhong.MinimumWidth = 6;
+            this.colGiaPhong.Name = "colGiaPhong";
+            this.colGiaPhong.ReadOnly = true;
+            this.colGiaPhong.Width = 73;
+            // 
+            // colSucChuaToiDa
+            // 
+            this.colSucChuaToiDa.DataPropertyName = "SucChuaToiDa";
+            this.colSucChuaToiDa.HeaderText = "Sức chứa";
+            this.colSucChuaToiDa.MinimumWidth = 6;
+            this.colSucChuaToiDa.Name = "colSucChuaToiDa";
+            this.colSucChuaToiDa.ReadOnly = true;
+            this.colSucChuaToiDa.Width = 123;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.MinimumWidth = 6;
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Width = 131;
+            // 
             // ucRoom
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -622,8 +559,6 @@
             this.spcQuery.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortPrice)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboRoomStatus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboSortRoomType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortRoomID)).EndInit();
             this.panUcHeader.ResumeLayout(false);
             this.spcHeader.Panel1.ResumeLayout(false);
@@ -646,7 +581,6 @@
         private Syncfusion.WinForms.ListView.SfComboBox cboStateRoom;
         private System.Windows.Forms.SplitContainer spcQuery;
         private System.Windows.Forms.TableLayoutPanel tlpController;
-        private System.Windows.Forms.Label lblStatusRoom;
         private System.Windows.Forms.Label lblStateRoom;
         private System.Windows.Forms.Label lblSortMaPHG;
         private Syncfusion.WinForms.Controls.SfButton btnCheckIn;
@@ -655,17 +589,14 @@
         private System.Windows.Forms.Label lblQuickControl;
         private System.Windows.Forms.Panel panUcHeader;
         private System.Windows.Forms.SplitContainer spcHeader;
-        private Syncfusion.WinForms.ListView.SfComboBox cboSortRoomType;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortRoomID;
-        private System.Windows.Forms.Label lblSortTheoLoaiPhong;
-        private Syncfusion.WinForms.ListView.SfComboBox cboRoomStatus;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortPrice;
         private System.Windows.Forms.Label lblSortPrice;
         private System.Windows.Forms.DataGridView dgvRoom;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaPHG;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaLoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaTinhTrangPhong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHinhAnh;
+        private System.Windows.Forms.DataGridViewImageColumn colHinhAnh;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMoTa;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGiaPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSucChuaToiDa;
