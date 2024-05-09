@@ -66,6 +66,11 @@ namespace BLL
             }
         }
 
+        public List<KhachHangDTO> LoadIDvaNameKH()
+        {
+            return khachHangDAL.LoadIDvaNameKH();
+        }
+
         public List<KhachHangDTO> TraCuuNhanVien(List<KhachHangDTO> khachHangDTOs, string searchKeyword)
         {
             List<KhachHangDTO> searchResults = khachHangDTOs.Where(item =>

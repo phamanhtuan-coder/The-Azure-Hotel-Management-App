@@ -59,9 +59,9 @@
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.colMaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaThue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaKH = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colMaNV = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colMaThue = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.colNgayLapHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTongHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTienNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -568,26 +568,35 @@
             // colMaKH
             // 
             this.colMaKH.DataPropertyName = "MaKH";
-            this.colMaKH.HeaderText = "Mã khách hàng";
+            this.colMaKH.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colMaKH.HeaderText = "Tên khách hàng";
             this.colMaKH.Name = "colMaKH";
             this.colMaKH.ReadOnly = true;
-            this.colMaKH.Width = 143;
+            this.colMaKH.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMaKH.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colMaKH.Width = 135;
             // 
             // colMaNV
             // 
             this.colMaNV.DataPropertyName = "MaNV";
-            this.colMaNV.HeaderText = "Mã nhân viên";
+            this.colMaNV.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colMaNV.HeaderText = "Tên nhân viên";
             this.colMaNV.Name = "colMaNV";
             this.colMaNV.ReadOnly = true;
-            this.colMaNV.Width = 128;
+            this.colMaNV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMaNV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colMaNV.Width = 122;
             // 
             // colMaThue
             // 
             this.colMaThue.DataPropertyName = "MaThue";
-            this.colMaThue.HeaderText = "Mã thuế";
+            this.colMaThue.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colMaThue.HeaderText = "Tên thuế";
             this.colMaThue.Name = "colMaThue";
             this.colMaThue.ReadOnly = true;
-            this.colMaThue.Width = 92;
+            this.colMaThue.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMaThue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colMaThue.Width = 89;
             // 
             // colNgayLapHoaDon
             // 
@@ -708,9 +717,9 @@
         private Syncfusion.WinForms.Controls.SfButton btnTraCuuDP;
         private Syncfusion.WinForms.Controls.SfButton txtXemCT;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaHD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaNV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaThue;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colMaKH;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colMaNV;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colMaThue;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayLapHoaDon;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTongHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTienNhan;

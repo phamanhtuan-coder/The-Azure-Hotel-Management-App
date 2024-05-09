@@ -98,5 +98,10 @@ namespace BLL
         {
             return nhanVienDAL.LoadIDAndNameBLLDonPhong();
         }
+
+        public List<NhanVienDTO> TruyVanNVDAG()
+        {
+            return nhanVienDAL.TruyVanNVDAG();
+        }
     }
 }

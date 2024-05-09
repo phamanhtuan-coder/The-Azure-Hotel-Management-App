@@ -37,9 +37,38 @@ namespace GUI.UserControls
 
         private void ucBill_Load(object sender, EventArgs e)
         {
-            
+            LoadDuLieuKH();
+            LoadDuLieuNV();
+            LoadDuLieuThue();
             LoadDuLieuCombobox();
             TruyVanDanhSachHoaDon();
+        }
+
+        private void LoadDuLieuThue()
+        {
+            ThueBLL thueBLL = new ThueBLL();
+            List<ThueDTO> list = thueBLL.TruyVanTenVaMaThue();
+            colMaThue.DataSource = list;
+            colMaThue.ValueMember = "MaThue";
+            colMaThue.DisplayMember = "TenThue";
+        }
+
+        private void LoadDuLieuNV()
+        {
+            NhanVienBLL nhanVienBLL = new NhanVienBLL();
+            List<NhanVienDTO> list = nhanVienBLL.TruyVanNVDAG();
+            colMaNV.DataSource = list;
+            colMaNV.DisplayMember = "HoTenNV";
+            colMaNV.ValueMember = "MaNV";
+        }
+
+        private void LoadDuLieuKH()
+        {
+            KhachHangBLL khachHangBLL = new KhachHangBLL();
+            List<KhachHangDTO> list = khachHangBLL.LoadIDvaNameKH();
+            colMaKH.DataSource = list;
+            colMaKH.DisplayMember = "HoTenKH";
+            colMaKH.ValueMember = "MaKH";
         }
 
         private void TruyVanDanhSachHoaDon()

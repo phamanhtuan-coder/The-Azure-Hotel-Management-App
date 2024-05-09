@@ -32,8 +32,18 @@ namespace GUI.UserControls
 
         private void ucBillDetails_Load(object sender, EventArgs e)
         {
+            LoadDuLieKM();
             LoadDuLieuCombobox();
             LoadDSChiTietHoaDon();
+        }
+
+        private void LoadDuLieKM()
+        {
+            KhuyenMaiBLL khuyenMaiBLL = new KhuyenMaiBLL();
+            List<KhuyenMaiDTO> list = khuyenMaiBLL.LoadDSKhuyenMai();
+            colMaKM.DataSource = list;
+            colMaKM.DisplayMember = "TenKM";
+            colMaKM.ValueMember = "MaKM";
         }
 
         private void LoadDSChiTietHoaDon()

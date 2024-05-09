@@ -40,11 +40,6 @@
             this.cboStateDiscount = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvDiscount = new System.Windows.Forms.DataGridView();
-            this.colMaKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMucKhuyenMai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHangTV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblLocTheoHangTV = new System.Windows.Forms.Label();
             this.cboLocHangTV = new Syncfusion.WinForms.ListView.SfComboBox();
             this.cboSortDiscountID = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -54,6 +49,11 @@
             this.lblStateDiscount = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.colMaKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMucKhuyenMai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHangTV = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateDiscount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -282,42 +282,6 @@
             this.dgvDiscount.Size = new System.Drawing.Size(973, 746);
             this.dgvDiscount.TabIndex = 0;
             // 
-            // colMaKM
-            // 
-            this.colMaKM.DataPropertyName = "MaKM";
-            this.colMaKM.HeaderText = "Mã khuyến mãi";
-            this.colMaKM.Name = "colMaKM";
-            this.colMaKM.ReadOnly = true;
-            // 
-            // colTenKM
-            // 
-            this.colTenKM.DataPropertyName = "TenKM";
-            this.colTenKM.HeaderText = "Tên khuyến mãi";
-            this.colTenKM.Name = "colTenKM";
-            this.colTenKM.ReadOnly = true;
-            // 
-            // colMucKhuyenMai
-            // 
-            this.colMucKhuyenMai.DataPropertyName = "KhuyenMai";
-            this.colMucKhuyenMai.HeaderText = "Mức khuyến mãi";
-            this.colMucKhuyenMai.Name = "colMucKhuyenMai";
-            this.colMucKhuyenMai.ReadOnly = true;
-            // 
-            // colHangTV
-            // 
-            this.colHangTV.DataPropertyName = "MaLoaiHangThanhVien";
-            this.colHangTV.HeaderText = "Hạng thành viên";
-            this.colHangTV.Name = "colHangTV";
-            this.colHangTV.ReadOnly = true;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "TrangThai";
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Visible = false;
-            // 
             // lblLocTheoHangTV
             // 
             this.lblLocTheoHangTV.AutoSize = true;
@@ -445,6 +409,45 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
+            // colMaKM
+            // 
+            this.colMaKM.DataPropertyName = "MaKM";
+            this.colMaKM.HeaderText = "Mã khuyến mãi";
+            this.colMaKM.Name = "colMaKM";
+            this.colMaKM.ReadOnly = true;
+            // 
+            // colTenKM
+            // 
+            this.colTenKM.DataPropertyName = "TenKM";
+            this.colTenKM.HeaderText = "Tên khuyến mãi";
+            this.colTenKM.Name = "colTenKM";
+            this.colTenKM.ReadOnly = true;
+            // 
+            // colMucKhuyenMai
+            // 
+            this.colMucKhuyenMai.DataPropertyName = "KhuyenMai";
+            this.colMucKhuyenMai.HeaderText = "Mức khuyến mãi";
+            this.colMucKhuyenMai.Name = "colMucKhuyenMai";
+            this.colMucKhuyenMai.ReadOnly = true;
+            // 
+            // colHangTV
+            // 
+            this.colHangTV.DataPropertyName = "MaLoaiHangThanhVien";
+            this.colHangTV.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colHangTV.HeaderText = "Hạng thành viên";
+            this.colHangTV.Name = "colHangTV";
+            this.colHangTV.ReadOnly = true;
+            this.colHangTV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colHangTV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Visible = false;
+            // 
             // ucDiscount
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -500,7 +503,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaKM;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenKM;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMucKhuyenMai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHangTV;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colHangTV;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
     }
 }

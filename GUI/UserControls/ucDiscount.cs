@@ -33,8 +33,18 @@ namespace GUI.UserControls
 
         private void ucDiscount_Load(object sender, EventArgs e)
         {
+            LoadDuLieuHNV();
             LoadDuLieuCombobox();
             LoadDSKhuyenMai();
+        }
+
+        private void LoadDuLieuHNV()
+        {
+            HangThanhVienBLL hangThanhVienBLL = new HangThanhVienBLL();
+            List<HangThanhVienDTO> list = hangThanhVienBLL.dgvHNV();
+            colHangTV.DataSource = list;
+            colHangTV.ValueMember = "MaLoaiHangThanhVien";
+            colHangTV.DisplayMember = "TenHang";
         }
 
         private void LoadDSKhuyenMai()

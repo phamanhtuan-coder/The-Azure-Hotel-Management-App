@@ -50,7 +50,7 @@
             this.colMaCTHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaKM = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.colThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
@@ -404,10 +404,13 @@
             // colMaKM
             // 
             this.colMaKM.DataPropertyName = "MaKhuyenMai";
-            this.colMaKM.HeaderText = "Mã khuyến mãi";
+            this.colMaKM.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colMaKM.HeaderText = "Tên khuyến mãi";
             this.colMaKM.Name = "colMaKM";
             this.colMaKM.ReadOnly = true;
-            this.colMaKM.Width = 145;
+            this.colMaKM.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMaKM.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colMaKM.Width = 150;
             // 
             // colThanhTien
             // 
@@ -477,7 +480,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaCTHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaDP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaKM;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colMaKM;
         private System.Windows.Forms.DataGridViewTextBoxColumn colThanhTien;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
     }
