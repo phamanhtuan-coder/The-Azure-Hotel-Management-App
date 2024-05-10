@@ -91,12 +91,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChiTietHoaDonDAL.cs" />
+    <Compile Include="BaoTriDAL.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="DonPhongDAL.cs" />
     <Compile Include="HangThanhVienDAL.cs" />
+    <Compile Include="DatDichVuDAL.cs" />
     <Compile Include="DatPhongDAL.cs" />
     <Compile Include="HoaDonDAL.cs" />
     <Compile Include="KhuyenMaiDAL.cs" />
+    <Compile Include="DichVuDAL.cs" />
     <Compile Include="LoaiPhongDAL.cs" />
     <Compile Include="KhachHangDAL.cs" />
     <Compile Include="NhanVienDAL.cs" />
@@ -104,6 +107,7 @@
     <Compile Include="PhongDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThueDAL.cs" />
+    <Compile Include="ThietBiDAL.cs" />
     <Compile Include="TinhTrangPhongDAL.cs" />
     <Compile Include="TTThietBiDAL.cs" />
     <Compile Include="RoleDAL.cs" />

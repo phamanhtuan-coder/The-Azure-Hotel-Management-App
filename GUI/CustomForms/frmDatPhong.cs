@@ -38,8 +38,6 @@ namespace GUI.customForm
                 cboMaPHG.DisplayMember = "MaPHG";
                 cboMaPHG.ValueMember = "MaPHG";
                 dtpNgayDat.Value = DateTime.Now;
-                dtpNgayNhanPhong.Value = DateTime.Now;
-                dtpNgayTraPhong.Value= DateTime.Now;
                 nudSoLuongKhach.Value = 1;
             }
             else
@@ -50,10 +48,8 @@ namespace GUI.customForm
                 cboMaPHG.DataSource = PhongDTOs;
                 cboMaPHG.DisplayMember = "MaPHG";
                 cboMaPHG.ValueMember = "MaPHG";
-                cboMaPHG.SelectedIndex = DatPhongDTO.MaPHG;
+                cboMaPHG.SelectedItem = DatPhongDTO.MaPHG;
                 dtpNgayDat.Value = DatPhongDTO.NgayDatPhong;
-                dtpNgayNhanPhong.Value = DatPhongDTO.NgayNhanPhong;
-                dtpNgayTraPhong.Value = DatPhongDTO.NgayTraPhong;
                 nudSoLuongKhach.Value = DatPhongDTO.SoLuongKH;
             }
 
@@ -64,12 +60,12 @@ namespace GUI.customForm
         private void laydltuform(DatPhongDTO p)
         {
             
-            p.MaPHG = cboMaPHG.SelectedIndex + 1;
+            p.MaPHG = int.Parse(cboMaPHG.Text);
             p.MaKH =int.Parse(txtMaKH.Text);
             p.NgayDatPhong = dtpNgayDat.Value;
-            p.NgayNhanPhong = dtpNgayNhanPhong.Value;
-            p.NgayTraPhong = dtpNgayTraPhong.Value;
             p.SoLuongKH =(int)nudSoLuongKhach.Value;
+            p.NgayNhanPhong =DateTime.Parse( DateTime.Now.ToString("dd/MM/yyyy"));
+            p.NgayTraPhong =DateTime.Parse( DateTime.Now.ToString("dd/MM/yyyy"));
 
         }
 
@@ -84,7 +80,15 @@ namespace GUI.customForm
             {
                 // Nếu đúng là form Thêm thì chạy lệnh insert
                 check = DatPhongBLL.them(DatPhongDTO);
-                thongBao = new customMessageBox("Đã thêm thành công dữ liệu đặt phòng mới!");
+                if (check)
+                {
+                    thongBao = new customMessageBox("Đã thêm thành công dữ liệu đặt phòng mới!");
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Đã thêm thất bại dữ liệu đặt phòng mới!");
+                }
+
                 thongBao.ShowDialog();
 
             }
@@ -92,7 +96,15 @@ namespace GUI.customForm
             {
                 // nếu không thì chạy lệnh update
                 check = DatPhongBLL.sua(DatPhongDTO);
-                thongBao = new customMessageBox("Sửa thành công thông tin đặt phòng đã chọn!");
+                if(check)
+                {
+                    thongBao = new customMessageBox("Sửa thành công thông tin đặt phòng đã chọn!");
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Sửa thất bại thông tin đặt phòng đã chọn!");
+                }
+
                 thongBao.ShowDialog();
             }
             this.Close();

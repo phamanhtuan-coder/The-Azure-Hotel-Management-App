@@ -1,10 +1,12 @@
 ﻿using BLL;
 using DTO;
+using Syncfusion.XlsIO.Implementation.XmlSerialization;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,6 +60,11 @@ namespace GUI.customForm
                 cboLoaiPhong.SelectedIndex = PhongDTO.MaLoai;
                 cboTinhTrangPhong.SelectedIndex = PhongDTO.MaTinhTrangPhong;
                 rtxtMoTa.Text = PhongDTO.MoTa;
+                if (PhongDTO.HinhAnh != null)
+                {
+                    picHinhPhong.Image = ByteArrayToImage(PhongDTO.HinhAnh);
+                }
+
             }
 
 
@@ -73,7 +80,7 @@ namespace GUI.customForm
             p.GiaPhong = nudGiaPhong.Value;
             p.SucChuaToiDa = (int)nudSucChuaToiDa.Value;
             p.MoTa= rtxtMoTa.Text ;
-            
+            p.HinhAnh = ImageToByteArray(picHinhPhong.Image);
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -106,6 +113,28 @@ namespace GUI.customForm
             this.Close();
         }
 
-       
+        private void btnChonHinh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files|*.jpg;*.jpeg;*.png|All files (*.*)|*.*";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                picHinhPhong.Image = Image.FromFile(open.FileName);
+            }
+        }
+        private static byte[] ImageToByteArray(Image img)
+        {
+            MemoryStream m = new MemoryStream();
+            img.Save(m, System.Drawing.Imaging.ImageFormat.Png);
+            return m.ToArray();
+        }
+
+        Image ByteArrayToImage(byte[] hinh)
+        {
+            using (MemoryStream m = new MemoryStream(hinh))
+            {
+                return Image.FromStream(m);
+            }
+        }
     }
 }

@@ -31,10 +31,22 @@ namespace BLL
         {
             return DatPhongDAL.kpd(madatphong);
         }
+        public bool checkout(int madatphong, DatPhongDTO datPhongDTO)
+        {
+            return DatPhongDAL.checkout(madatphong,datPhongDTO);
+        }
+        public bool checkin(int madatphong, DatPhongDTO datPhongDTO)
+        {
+            return DatPhongDAL.checkin(madatphong, datPhongDTO);
+        }
 
         public List<DatPhongDTO> laydsp()
         {
             return DatPhongDAL.layds();
+        }
+        public List<DatPhongDTO> laydsp2()
+        {
+            return DatPhongDAL.layds2();
         }
 
         public bool sua(DatPhongDTO datPhongDTO)
