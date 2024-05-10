@@ -268,8 +268,7 @@ namespace GUI.UserControls
         }
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
-            if (KT)
-            {
+            
                 if (dgvBooking.SelectedRows.Count > 0)
                 {
                     foreach (DataGridViewRow item in dgvBooking.SelectedRows)
@@ -311,12 +310,8 @@ namespace GUI.UserControls
                     thongBao = new customMessageBox("Bạn vui lòng chọn đặt phòng để check-out!");
                     thongBao.ShowDialog();
                 }
-            }
-            else
-            {
-                thongBao = new customMessageBox("Bạn vui lòng tìm thông tin khách hàng!");
-                thongBao.ShowDialog();
-            }
+            
+           
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {

@@ -90,7 +90,7 @@ namespace DAL
         public List<PhongBanDTO> LayDanhSachPhongBan()
         {
             List<PhongBanDTO> dsPhongBan = new List<PhongBanDTO>();
-            string lenhLayDanhSachPhongBan = "SELECT * FROM PhongBan";
+            string lenhLayDanhSachPhongBan = "SELECT * FROM PhongBan Where TrangThai=1";
             SqlConnection conn = DataProvider.KetNoiDuLieu();
             conn.Open();
             SqlDataReader reader = DataProvider.ThucHienTruyVan(lenhLayDanhSachPhongBan, conn);

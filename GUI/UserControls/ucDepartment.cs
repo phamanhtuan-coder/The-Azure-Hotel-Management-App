@@ -51,6 +51,7 @@ namespace GUI.UserControls
         //Lấy danh sách phòng ban và hiển thị lên DataGridView
         private void LayDanhSachPhongBan()
         {
+            phongBanBLL = new PhongBanBLL();
             dsPhongBan = phongBanBLL.LayDanhSachPhongBan();
             dgvDepartment.DataSource = dsPhongBan;
         }

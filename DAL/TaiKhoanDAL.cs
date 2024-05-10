@@ -197,6 +197,7 @@ namespace DAL
         {
             try
             {
+                TaiKhoanDTO tai =null;
                 SqlConnection conn = DataProvider.KetNoiDuLieu();
                 conn.Open();
 
@@ -206,17 +207,25 @@ namespace DAL
                 com.Parameters.AddWithValue("@MatKhau", taiKhoanDTO.MatKhau);
 
                 SqlDataReader reader= com.ExecuteReader();
-                TaiKhoanDTO tai = new TaiKhoanDTO();
-                while (reader.Read())
+               
+                if (reader.Read())
                 {
+                    tai  = new TaiKhoanDTO();
                     tai.MaTaiKhoan = (int) reader["MaTaiKhoan"];
                     tai.TenDangNhap = reader["TenDangNhap"].ToString();
                     tai.MaPQ = reader["MaPQ"].ToString();
                 }
                 reader.Close();
                 conn.Close();
-
-                return tai;
+                if (tai != null)
+                {
+                    return tai;
+                }
+                else
+                {
+                    return new TaiKhoanDTO();
+                }
+               
             }
             catch (Exception)
             {

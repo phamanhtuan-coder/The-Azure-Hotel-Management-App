@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -13,6 +14,7 @@ using System.Windows.Forms;
 using DTO;
 using GUI.customForm;
 using GUI.UserControls;
+using Microsoft.Reporting.Map.WebForms.BingMaps;
 using Syncfusion.WinForms.Controls;
 
 namespace GUI
@@ -787,12 +789,83 @@ namespace GUI
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            LoadHinhAnhUser();
+            LoadTenUser();
+
             menuActivated(btnBooking);
             ucBooking Home = new ucBooking();
             openForm(Home);
         }
 
-      
+        private void LoadTenUser()
+        {
+            if (this.user != null)
+            {
+                if (user.HoTenNV != null)
+                {
+                    lblHiUser.Text = $"Xin chào {user.HoTenNV},\r\nChúc bạn một ngày làm việc vui vẻ!\r\n";
+                }
+                else
+                {
+                    lblHiUser.Text = $"Xin chào bạn,\r\nChúc bạn một ngày làm việc vui vẻ!\r\n";
+                }
+            }
+            else
+            {
+                if (userKH.HoTenKH != null)
+                {
+
+                    lblHiUser.Text = $"Xin chào {userKH.HoTenKH},\r\nChúc bạn một ngày làm việc vui vẻ!\r\n";
+                }
+                else
+                {
+                    lblHiUser.Text = $"Xin chào bạn,\r\nChúc bạn một ngày làm việc vui vẻ!\r\n";
+                }
+
+            }
+        }
+
+        private void LoadHinhAnhUser()
+        {
+            if (this.user != null)
+            {
+                if (user.HinhAnh != null)
+                {
+                    byte[] hinh = (byte[])user.HinhAnh;
+                    cpicProfile.Image = ByteArrayToImage(hinh);
+                }
+                else
+                {
+                    Image profile = Properties.Resources.Profile.ToBitmap();
+                    cpicProfile.Image = profile;
+                }
+            }
+            else
+            {
+                if (userKH.HinhAnh != null)
+                {
+
+                    byte[] hinh = (byte[])userKH.HinhAnh;
+                    cpicProfile.Image = ByteArrayToImage(hinh);
+                }
+                else
+                {
+                    Image profile = Properties.Resources.Profile.ToBitmap();
+                    cpicProfile.Image = profile;
+                }
+
+            }
+        }
+
+        Image ByteArrayToImage(byte[] hinh)
+        {
+            using (MemoryStream m = new MemoryStream(hinh))
+            {
+                return Image.FromStream(m);
+            }
+        }
+
+
 
 
 

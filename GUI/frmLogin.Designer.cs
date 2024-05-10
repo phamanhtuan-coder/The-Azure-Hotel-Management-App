@@ -32,9 +32,9 @@ namespace GUI
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            Syncfusion.Windows.Forms.Tools.ActiveStateCollection activeStateCollection2 = new Syncfusion.Windows.Forms.Tools.ActiveStateCollection();
-            Syncfusion.Windows.Forms.Tools.InactiveStateCollection inactiveStateCollection2 = new Syncfusion.Windows.Forms.Tools.InactiveStateCollection();
-            Syncfusion.Windows.Forms.Tools.SliderCollection sliderCollection2 = new Syncfusion.Windows.Forms.Tools.SliderCollection();
+            Syncfusion.Windows.Forms.Tools.ActiveStateCollection activeStateCollection1 = new Syncfusion.Windows.Forms.Tools.ActiveStateCollection();
+            Syncfusion.Windows.Forms.Tools.InactiveStateCollection inactiveStateCollection1 = new Syncfusion.Windows.Forms.Tools.InactiveStateCollection();
+            Syncfusion.Windows.Forms.Tools.SliderCollection sliderCollection1 = new Syncfusion.Windows.Forms.Tools.SliderCollection();
             this.btnClose = new Syncfusion.WinForms.Controls.SfButton();
             this.picLoginBG = new System.Windows.Forms.PictureBox();
             this.tmrTransistion = new System.Windows.Forms.Timer(this.components);
@@ -149,17 +149,17 @@ namespace GUI
             // 
             // tbtnRemember
             // 
-            activeStateCollection2.Text = "Không ghi nhớ";
-            this.tbtnRemember.ActiveState = activeStateCollection2;
+            activeStateCollection1.Text = "Không ghi nhớ";
+            this.tbtnRemember.ActiveState = activeStateCollection1;
             this.tbtnRemember.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbtnRemember.ForeColor = System.Drawing.Color.Black;
-            inactiveStateCollection2.Text = "Ghi nhớ mật khẩu";
-            this.tbtnRemember.InactiveState = inactiveStateCollection2;
+            inactiveStateCollection1.Text = "Ghi nhớ mật khẩu";
+            this.tbtnRemember.InactiveState = inactiveStateCollection1;
             this.tbtnRemember.Location = new System.Drawing.Point(160, 309);
             this.tbtnRemember.MinimumSize = new System.Drawing.Size(52, 20);
             this.tbtnRemember.Name = "tbtnRemember";
             this.tbtnRemember.Size = new System.Drawing.Size(180, 40);
-            this.tbtnRemember.Slider = sliderCollection2;
+            this.tbtnRemember.Slider = sliderCollection1;
             this.tbtnRemember.TabIndex = 9;
             this.tbtnRemember.ThemeStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
@@ -250,6 +250,7 @@ namespace GUI
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(241, 22);
             this.txtUsername.TabIndex = 3;
+            this.txtUsername.Text = "tuanpa123";
             this.txtUsername.ThemeStyle.CornerRadius = 10;
             this.txtUsername.WordWrap = false;
             // 
@@ -293,6 +294,7 @@ namespace GUI
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(238, 22);
             this.txtPassword.TabIndex = 5;
+            this.txtPassword.Text = "@Dmin1234";
             this.txtPassword.ThemeStyle.CornerRadius = 0;
             this.txtPassword.WordWrap = false;
             // 

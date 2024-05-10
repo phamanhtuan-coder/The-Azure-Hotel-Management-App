@@ -1725,7 +1725,6 @@
             this.lblHiUser.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.lblHiUser.Size = new System.Drawing.Size(337, 50);
             this.lblHiUser.TabIndex = 1;
-            this.lblHiUser.Text = "Xin chào User,\r\nChúc bạn một ngày làm việc vui vẻ!\r\n";
             this.lblHiUser.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // cpicProfile
@@ -1783,7 +1782,7 @@
             this.realTimeClock.ClockShape = Syncfusion.Windows.Forms.Tools.ClockShapes.RoundedRectangle;
             this.realTimeClock.ClockType = Syncfusion.Windows.Forms.Tools.ClockTypes.Digital;
             this.realTimeClock.CurrentDateTime = new System.DateTime(2024, 3, 9, 23, 55, 38, 42);
-            this.realTimeClock.CustomTime = new System.DateTime(2024, 4, 14, 16, 54, 5, 425);
+            this.realTimeClock.CustomTime = new System.DateTime(2024, 5, 10, 21, 54, 4, 921);
             this.realTimeClock.DigitalRenderer = digitalClockRenderer1;
             this.realTimeClock.DisplayDates = false;
             this.realTimeClock.Location = new System.Drawing.Point(1347, 0);

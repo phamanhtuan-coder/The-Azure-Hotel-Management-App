@@ -232,11 +232,13 @@ namespace GUI
                 {
                     loginKH.TenDangNhap = taiKhoanDTO.TenDangNhap;
                     loginKH = khachHangBLL.TimKH(taiKhoanDTO.MaTaiKhoan);
+                    login = null;
                 }
                 else
                 {
                     login.TenTaiKhoan = taiKhoanDTO.TenDangNhap;
                     login = nhanVienBLL.TimNV(taiKhoanDTO.MaTaiKhoan);
+                    loginKH = null;
                 }
                 return true;
             }
@@ -246,7 +248,15 @@ namespace GUI
         private void btnShowHidePassword_Click(object sender, EventArgs e)
         {
 
-
+            if (txtPassword.PasswordChar == '\0')
+            {
+                txtPassword.PasswordChar = '*';
+            }
+            else
+            {
+                
+                txtPassword.PasswordChar = '\0'; 
+            }
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
