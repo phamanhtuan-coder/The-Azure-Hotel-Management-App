@@ -191,5 +191,10 @@ namespace BLL
             }
             return false;
         }
+
+        public List<KhuyenMaiDTO> TruyVanIDAndTenKhuyenMai()
+        {
+            return khuyenMaiDAL.TruyVanIDAndTenKhuyenMai();
+        }
     }
 }

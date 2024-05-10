@@ -26,6 +26,9 @@ namespace GUI.customForm
         ThueBLL thueBLL = new ThueBLL();
         List<ThueDTO> thueDTOs = new List<ThueDTO>();
 
+        KhuyenMaiBLL khuyenMaiBLL = new KhuyenMaiBLL();
+        List<KhuyenMaiDTO> khuyenMaiDTOs = new List<KhuyenMaiDTO>();
+
         public frmHoaDon()
         {
             InitializeComponent();
@@ -34,9 +37,11 @@ namespace GUI.customForm
         private void frmHoaDon_Load(object sender, EventArgs e)
         {
             // gán giá trị mặc định bằng các biến trên, néu là edit có giá trị truyền vào thì kiểm tra và chọn giá trị
-            LoadDuLieuCombobox();
+            LoadDuLieuCombobox();         
             if (!isAdd)
             {
+                label2.Visible = false;
+                cboMaKM.Visible = false;
                 txtMaKH.Text = hoaDonDTO.MaKH.ToString();
                 foreach (var item in cboMaNV.DataSource as List<NhanVienDTO>)
                 {
@@ -52,20 +57,28 @@ namespace GUI.customForm
                         cboMaThue.SelectedItem = item;
                     }
                 }
-                dtpNgayDat.Value = hoaDonDTO.NgayLapHoaDon;
-                nudTienNhan.Value = hoaDonDTO.TienNhan;
-                nudTienThua.Value = hoaDonDTO.TienThoi;
-                nudTongTien.Value = hoaDonDTO.TongHoaDon;
+                //nudTienNhan.Value = hoaDonDTO.TienNhan;
+                //nudTienThua.Value = hoaDonDTO.TienThoi;
+                //nudTongTien.Value = hoaDonDTO.TongHoaDon;
             }
             else
             {
-                txtMaKH.Text = "";
+                label2.Visible = true;
+                cboMaKM.Visible = true;
+
+                if (hoaDonDTO.MaKH > 0)
+                {
+                    txtMaKH.Text = hoaDonDTO.MaKH.ToString();
+                }
+                else
+                {
+                    txtMaKH.Text = "";
+                }
                 cboMaNV.SelectedIndex = 0;
                 cboMaThue.SelectedIndex = 0;
-                dtpNgayDat.Value = DateTime.Now;
-                nudTienNhan.Value = 0;
-                nudTienThua.Value = 0;
-                nudTongTien.Value = 0;
+                //nudTienNhan.Value = 0;
+                //nudTienThua.Value = 0;
+                //nudTongTien.Value = 0;
             }
         }
 
@@ -73,6 +86,23 @@ namespace GUI.customForm
         {
             LoadTenVaMaNhanVien();
             LoadTenVaMaThue();
+            LoadTenVaMaKhuyenMai();
+        }
+
+        private void LoadTenVaMaKhuyenMai()
+        {
+            KhuyenMaiDTO khong = new KhuyenMaiDTO();
+            khong.TenKM = "None";
+            khong.MaKM = -1;
+            khuyenMaiDTOs.Add(khong);
+            foreach (KhuyenMaiDTO item in khuyenMaiBLL.TruyVanIDAndTenKhuyenMai())
+            {
+                khuyenMaiDTOs.Add(item);
+            }
+            cboMaKM.DataSource = khuyenMaiDTOs;
+            cboMaKM.DisplayMember = "TenKM";
+            cboMaKM.ValueMember = "MaKM";
+            cboMaKM.SelectedIndex = 0;
         }
 
         private void LoadTenVaMaThue()
@@ -151,19 +181,21 @@ namespace GUI.customForm
 
         private bool AddHoaDon()
         {
-            CapNhatGiaTri();          
-            return hoaDonBLL.AddHoaDon(hoaDonDTO);
+            CapNhatGiaTri();
+            BienTam.KTThemHoaDon = hoaDonBLL.AddHoaDon(hoaDonDTO);           
+            if(BienTam.KTThemHoaDon > 0)
+            {
+                BienTam.MaKM = (int) cboMaKM.SelectedValue;
+                return true;
+            }
+            return false;
         }
 
         private void CapNhatGiaTri()
         {
-            hoaDonDTO.NgayLapHoaDon = DateTime.Parse(dtpNgayDat.Value.ToString("MM/dd/yyyy"));
             hoaDonDTO.MaKH = int.Parse(txtMaKH.Text);
             hoaDonDTO.MaNV = (int)cboMaNV.SelectedValue;
             hoaDonDTO.MaThue = (int)cboMaThue.SelectedValue;
-            hoaDonDTO.TongHoaDon = (decimal)nudTongTien.Value;
-            hoaDonDTO.TienNhan = (decimal)nudTienNhan.Value;
-            hoaDonDTO.TienThoi = (decimal)nudTienThua.Value;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -171,28 +203,28 @@ namespace GUI.customForm
             this.Close();
         }
 
-        private void nudTongTien_ValueChanged(object sender, EventArgs e)
-        {
-            if (nudTienNhan.Value > nudTongTien.Value)
-            {
-                nudTienThua.Value = nudTienNhan.Value - nudTongTien.Value;
-            }
-            else
-            {
-                nudTienThua.Value = 0;
-            }
-        }
+        //private void nudTongTien_ValueChanged(object sender, EventArgs e)
+        //{
+        //    if (nudTienNhan.Value > nudTongTien.Value)
+        //    {
+        //        nudTienThua.Value = nudTienNhan.Value - nudTongTien.Value;
+        //    }
+        //    else
+        //    {
+        //        nudTienThua.Value = 0;
+        //    }
+        //}
 
-        private void nudTienNhan_ValueChanged(object sender, EventArgs e)
-        {
-            if (nudTienNhan.Value > nudTongTien.Value)
-            {
-                nudTienThua.Value = nudTienNhan.Value - nudTongTien.Value;
-            }
-            else
-            {
-                nudTienThua.Value = 0;
-            }
-        }
+        //private void nudTienNhan_ValueChanged(object sender, EventArgs e)
+        //{
+        //    if (nudTienNhan.Value > nudTongTien.Value)
+        //    {
+        //        nudTienThua.Value = nudTienNhan.Value - nudTongTien.Value;
+        //    }
+        //    else
+        //    {
+        //        nudTienThua.Value = 0;
+        //    }
+        //}
     }
 }

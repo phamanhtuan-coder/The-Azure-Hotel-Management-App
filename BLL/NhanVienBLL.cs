@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Utilities;
 
 namespace BLL
 {
@@ -18,6 +19,7 @@ namespace BLL
         {
             if (!string.IsNullOrEmpty(nhanvien.HoTenNV.Trim()) && !string.IsNullOrEmpty(nhanvien.CCCD.Trim()) && !string.IsNullOrEmpty(nhanvien.TenTaiKhoan.Trim()) && nhanvien.Luong>0 && !string.IsNullOrEmpty(nhanvien.DiaChi.Trim()) && !string.IsNullOrEmpty(nhanvien.GioiTinh.Trim())&& !string.IsNullOrEmpty(nhanvien.SDT.Trim()))
             {
+                nhanvien.HoTenNV = KiemTraInput.ChuanHoaHoTen(nhanvien.HoTenNV);
                 return nhanVienDAL.AddNhanVienDAL(nhanvien);
             }
             else
@@ -31,6 +33,7 @@ namespace BLL
         {
             if (!string.IsNullOrEmpty(nhanvien.HoTenNV.Trim()) && !string.IsNullOrEmpty(nhanvien.CCCD.Trim()) && !string.IsNullOrEmpty(nhanvien.TenTaiKhoan.Trim()) && nhanvien.Luong > 0 && !string.IsNullOrEmpty(nhanvien.DiaChi.Trim()) && !string.IsNullOrEmpty(nhanvien.GioiTinh.Trim()) && !string.IsNullOrEmpty(nhanvien.SDT.Trim()))
             {
+                nhanvien.HoTenNV = KiemTraInput.ChuanHoaHoTen(nhanvien.HoTenNV);
                 return nhanVienDAL.EditNhanVienDAL(nhanvien);
             }
             else
@@ -94,6 +97,11 @@ namespace BLL
         public List<NhanVienDTO> LoadIDAndNameBLLDonPhong()
         {
             return nhanVienDAL.LoadIDAndNameBLLDonPhong();
+        }
+
+        public List<NhanVienDTO> TruyVanNVDAG()
+        {
+            return nhanVienDAL.TruyVanNVDAG();
         }
     }
 }

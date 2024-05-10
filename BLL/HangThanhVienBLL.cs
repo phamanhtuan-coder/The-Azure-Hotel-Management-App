@@ -60,5 +60,15 @@ namespace BLL
         {
             return hangThanhVienDAL.LoadIDAndNameBLL();
         }
+
+        public double LayKM(int maKH)
+        {
+            return hangThanhVienDAL.LayKM(maKH);
+        }
+
+        public List<HangThanhVienDTO> dgvHNV()
+        {
+            return hangThanhVienDAL.dgvHNV();
+        }
     }
 }

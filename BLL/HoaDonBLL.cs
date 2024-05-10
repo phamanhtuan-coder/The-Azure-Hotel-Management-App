@@ -12,13 +12,13 @@ namespace BLL
     {
         HoaDonDAL hoaDonDAL = new HoaDonDAL();
 
-        public bool AddHoaDon(HoaDonDTO hoaDonDTO)
+        public int AddHoaDon(HoaDonDTO hoaDonDTO)
         {
             if(hoaDonDTO.MaKH>0 && hoaDonDTO.MaNV>0 && hoaDonDTO.MaThue > 0)
             {
                 return hoaDonDAL.AddHoaDon(hoaDonDTO);
             }
-            return false;
+            return -1;
         }
 
         public bool EditHoaDon(HoaDonDTO hoaDonDTO)
@@ -30,13 +30,38 @@ namespace BLL
             return false;
         }
 
-        public bool KhoiPhucHoaDon(int maHoaDon)
+        public List<HoaDonDTO> Filter(string text1, string text2, DateTime ng)
         {
-            if (maHoaDon > 0)
+            text1 = text1.Trim();
+            text2 = text2.Trim();
+            if (text1.Length > 0)
             {
-                return hoaDonDAL.XoaHoaDon(maHoaDon, 1);
+                List<HoaDonDTO> searchResults = TruyVanDanhSachHoaDon().Where(item =>
+                item.CCCD.ToString().Contains(text1) && item.NgayLapHoaDon.Date.ToString("dd/MM/yyyy") == ng.Date.ToString("dd/MM/yyyy") && item.TrangThai == true
+                ).ToList();
+                return searchResults;
+            }
+            else
+            {
+                List<HoaDonDTO> searchResults = TruyVanDanhSachHoaDon().Where(item =>
+                item.TenTaiKhoan.ToString().Contains(text2) && item.NgayLapHoaDon.Date.ToString("dd/MM/yyyy") == ng.Date.ToString("dd/MM/yyyy") && item.TrangThai == true
+                ).ToList();
+                return searchResults;
+            }
+        }
+
+        public bool KhoiPhucHoaDon(HoaDonDTO hoaDonDTO)
+        {
+            if (hoaDonDTO.MaHoaDon > 0)
+            {
+                return hoaDonDAL.XoaHoaDon(hoaDonDTO, 1);
             }
             return false;
+        }
+
+        public bool ThanhToan(HoaDonDTO hoaDonDTO)
+        {
+            return hoaDonDAL.ThanhToan(hoaDonDTO);
         }
 
         public List<HoaDonDTO> TraCuuHoaDon(List<HoaDonDTO> hoaDonDTOs, string searchKeyword)
@@ -107,11 +132,11 @@ namespace BLL
             return hoaDonDAL.TruyVanDanhSachHoaDon();
         }
 
-        public bool XoaHoaDon(int maHoaDon)
+        public bool XoaHoaDon(HoaDonDTO hoaDonDTO)
         {
-            if (maHoaDon > 0)
+            if (hoaDonDTO.MaHoaDon > 0)
             {
-                return hoaDonDAL.XoaHoaDon(maHoaDon, 0);
+                return hoaDonDAL.XoaHoaDon(hoaDonDTO, 0);
             }
             return false;
         }

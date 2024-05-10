@@ -348,5 +348,35 @@ namespace DAL
                 return new List<NhanVienDTO>();
             }
         }
+
+        public List<NhanVienDTO> TruyVanNVDAG()
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spTruyVanNVdgv", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                SqlDataReader reader = com.ExecuteReader();
+                list = new List<NhanVienDTO>();
+                while (reader.Read())
+                {
+                    NhanVienDTO nhanVien = new NhanVienDTO();
+
+                    nhanVien.MaNV = (int)reader["MaNV"];
+                    nhanVien.HoTenNV = reader["HoTenNV"].ToString();
+
+                    list.Add(nhanVien);
+                }
+
+                conn.Close();
+                return list;
+            }
+            catch (Exception)
+            {
+                return new List<NhanVienDTO>();
+            }
+        }
     }
 }

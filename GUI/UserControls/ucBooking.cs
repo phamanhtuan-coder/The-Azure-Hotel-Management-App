@@ -11,18 +11,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using DTO;
+using System.Net.NetworkInformation;
 namespace GUI.UserControls
 {
     public partial class ucBooking : UserControl
     {
         public customMessageBox thongBao;
         public frmDatPhong frm = new frmDatPhong();
+
         DatPhongBLL DatPhongBLL=new DatPhongBLL();
+        List<DatPhongDTO> list = new List<DatPhongDTO>();
         List<DatPhongDTO> datPhongDTOs = new List<DatPhongDTO>();
         List<DatPhongDTO> datPhongDTOstk = new List<DatPhongDTO>();
+
         List<PhongDTO> PhongDTOs = new List<PhongDTO>();
         PhongBLL PhongBLL = new PhongBLL();
-
+        bool KT = false;
         public ucBooking()
         {
             InitializeComponent();
@@ -63,8 +67,8 @@ namespace GUI.UserControls
             frm.DatPhongDTO.MaPHG = (int)dgvBooking.SelectedRows[0].Cells["colMaPHG"].Value;
             frm.DatPhongDTO.MaKH = (int)dgvBooking.SelectedRows[0].Cells["colMaKH"].Value;
             frm.DatPhongDTO.NgayDatPhong = (DateTime)dgvBooking.SelectedRows[0].Cells["colNgayDatPhong"].Value;
-            frm.DatPhongDTO.NgayNhanPhong = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy"));
-            frm.DatPhongDTO.NgayTraPhong = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy"));
+            frm.DatPhongDTO.NgayNhanPhong = (DateTime)dgvBooking.SelectedRows[0].Cells["colNgayNhanPhong"].Value;
+            frm.DatPhongDTO.NgayTraPhong = (DateTime)dgvBooking.SelectedRows[0].Cells["colNgayTraPhong"].Value;
             frm.DatPhongDTO.SoLuongKH =(int)dgvBooking.SelectedRows[0].Cells["colSoLuongKH"].Value;
             frm.DatPhongDTO.TrangThai = Convert.ToBoolean(dgvBooking.SelectedRows[0].Cells["colTrangThai"].Value);
         }
@@ -217,39 +221,129 @@ namespace GUI.UserControls
                 layds();
             }
         }
-
-        private void btncheckin_Click(object sender, EventArgs e)
+        private void btnCheckIn_Click(object sender, EventArgs e)
         {
-            DatPhongDTO datPhongDTO = new DatPhongDTO();
-            datPhongDTO.MaDatPhong = (int)dgvBooking.SelectedRows[0].Cells["colMaDatPhong"].Value;
-            datPhongDTO.MaPHG = (int)dgvBooking.SelectedRows[0].Cells["colMaPHG"].Value;
-            datPhongDTO.MaKH = (int)dgvBooking.SelectedRows[0].Cells["colMaKH"].Value;
-            datPhongDTO.NgayDatPhong = (DateTime)dgvBooking.SelectedRows[0].Cells["colNgayDatPhong"].Value;
-            datPhongDTO.NgayNhanPhong = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy"));
-            datPhongDTO.NgayTraPhong = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy"));
-            datPhongDTO.SoLuongKH = (int)dgvBooking.SelectedRows[0].Cells["colSoLuongKH"].Value;
-            datPhongDTO.TrangThai = Convert.ToBoolean(dgvBooking.SelectedRows[0].Cells["colTrangThai"].Value);
+            if (dgvBooking.SelectedRows.Count > 0)
+            {
+                foreach (DataGridViewRow item in dgvBooking.SelectedRows)
+                {
+                    DatPhongDTO datPhongDTO = item.DataBoundItem as DatPhongDTO;
+                    if (datPhongDTO.NgayNhanPhong.ToString().Length == 0)
+                    {
+                        if(datPhongDTO.NgayDatPhong.ToString("dd/MM/yyyy").Equals(DateTime.Now.ToString("dd/MM/yyyy")))
+                        {
+                            list.Add(datPhongDTO);
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox("Thông tin ngày đặt phòng của mã " + datPhongDTO.MaDatPhong + " không khớp, vui lòng kiểm tra lại!");
+                            thongBao.ShowDialog();
+                        }       
+                    }
+                    else
+                    {
+                        thongBao = new customMessageBox("Đặt phòng với mã " + datPhongDTO.MaDatPhong + " đã được check-in, bạn không thể check-in nữa!");
+                        thongBao.ShowDialog();
+                    }
+                }
 
-            int madatphong = (int)dgvBooking.SelectedRows[0].Cells["colMaDatPhong"].Value;
-            DatPhongBLL.checkin(madatphong, datPhongDTO);
+                if (list.Count > 0)
+                {
+                    if (DatPhongBLL.Check_in(list))
+                    {
+                        layds();
+                    }
+                    else
+                    {
+                        thongBao = new customMessageBox("Bạn đã Check-in thất bại!");
+                        thongBao.ShowDialog();
+                    }
+                }              
+            }
+            else
+            {
+                thongBao = new customMessageBox("Bạn vui lòng chọn đặt phòng để check-in!");
+                thongBao.ShowDialog();
+            }
+        }
+        private void btnCheckOut_Click(object sender, EventArgs e)
+        {
+            if (KT)
+            {
+                if (dgvBooking.SelectedRows.Count > 0)
+                {
+                    foreach (DataGridViewRow item in dgvBooking.SelectedRows)
+                    {
+                        DatPhongDTO datPhongDTO = item.DataBoundItem as DatPhongDTO;
+                        if (datPhongDTO.NgayTraPhong.ToString().Length == 0)
+                        {
+                            list.Add(datPhongDTO);
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox("Đặt phòng với mã " + datPhongDTO.MaDatPhong + " đã được check-out, bạn không thể check-out nữa!");
+                            thongBao.ShowDialog();
+                        }
+                    }
+
+                    if (list.Count > 0)
+                    {
+                        frmHoaDon frmHoaDon = new frmHoaDon();
+                        frmHoaDon.isAdd = true;
+                        frmHoaDon.hoaDonDTO.MaKH = (int) dgvBooking.SelectedRows[0].Cells["colMaKH"].Value;
+                        frmHoaDon.ShowDialog();
+                        if (BienTam.KTThemHoaDon != -1) 
+                        {
+                            if (DatPhongBLL.Check_out(BienTam.MaKM, BienTam.KTThemHoaDon, list))
+                            {
+                                layds();
+                            }
+                            else
+                            {
+                                thongBao = new customMessageBox("Bạn đã Check-out thất bại!");
+                                thongBao.ShowDialog();
+                            } 
+                        }
+                    }
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Bạn vui lòng chọn đặt phòng để check-out!");
+                    thongBao.ShowDialog();
+                }
+            }
+            else
+            {
+                thongBao = new customMessageBox("Bạn vui lòng tìm thông tin khách hàng!");
+                thongBao.ShowDialog();
+            }
+        }
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            KT = false;
             layds();
+            txtCCCD.Text = "";
+            txtTraCuuUser.Text = "";
+            dtpNgayDat.Value = DateTime.Now;
         }
 
-        private void btncheckout_Click(object sender, EventArgs e)
+        private void btnTraCuuDP_Click(object sender, EventArgs e)
         {
-            DatPhongDTO datPhongDTO = new DatPhongDTO();
-            datPhongDTO.MaDatPhong = (int)dgvBooking.SelectedRows[0].Cells["colMaDatPhong"].Value;
-            datPhongDTO.MaPHG = (int)dgvBooking.SelectedRows[0].Cells["colMaPHG"].Value;
-            datPhongDTO.MaKH = (int)dgvBooking.SelectedRows[0].Cells["colMaKH"].Value;
-            datPhongDTO.NgayDatPhong = (DateTime)dgvBooking.SelectedRows[0].Cells["colNgayDatPhong"].Value;
-            datPhongDTO.NgayNhanPhong = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy"));
-            datPhongDTO.NgayTraPhong = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy"));
-            datPhongDTO.SoLuongKH = (int)dgvBooking.SelectedRows[0].Cells["colSoLuongKH"].Value;
-            datPhongDTO.TrangThai = Convert.ToBoolean(dgvBooking.SelectedRows[0].Cells["colTrangThai"].Value);
+            object ngayNhanPhongObject = dtpNgayDat.Value;
+            DateTime ng;
+            if (ngayNhanPhongObject != DBNull.Value)
+            {
+                ng = DateTime.Parse(ngayNhanPhongObject.ToString());
+            }
+            else
+            {
+                ng = DateTime.Now;
+            }
+            datPhongDTOs = DatPhongBLL.Filter(txtCCCD.Text,txtTraCuuUser.Text, ng);
+            dgvBooking.ClearSelection();
+            dgvBooking.DataSource = datPhongDTOs;
 
-            int madatphong = (int)dgvBooking.SelectedRows[0].Cells["colMaDatPhong"].Value;
-            DatPhongBLL.checkout(madatphong, datPhongDTO);
-            layds();
+            KT = true;
         }
     }
 }

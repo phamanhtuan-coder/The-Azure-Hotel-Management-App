@@ -322,5 +322,31 @@ namespace DAL
             }
         }
 
+        public List<RoleDTO> LoadMaPhanQuyenNV()
+        {
+            List<RoleDTO> ls = new List<RoleDTO>();
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+                SqlCommand com = new SqlCommand("sp_MaPhanQuyenCuaNV", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    RoleDTO role = new RoleDTO();
+                    role.MaPhanQuyen = reader["MaPhanQuyen"].ToString();
+                    ls.Add(role);
+                }
+                reader.Close();
+                conn.Close();
+                return ls;
+            }
+            catch (Exception)
+            {
+                return new List<RoleDTO>();
+            }
+        }
     }
 }

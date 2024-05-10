@@ -49,44 +49,51 @@ namespace GUI.customForm
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            roleDTO.MaVaiTro = (int)cboVaiTro.SelectedValue;
+            roleDTO.MaPhongBan = cboTenPhongBan.SelectedValue.ToString();
             customMessageBox thongBao;
-            // Kiểm tra if tiến hành xử lý sự kiện thêm/sửa phòng ban
-            if (isAdd)
+            if ((roleDTO.MaVaiTro == 1 && roleDTO.MaPhongBan == "KH") || (roleDTO.MaVaiTro != 1 && roleDTO.MaPhongBan != "KH"))
             {
-                roleDTO.MaVaiTro = (int)cboVaiTro.SelectedValue;
-                roleDTO.MaPhongBan = cboTenPhongBan.SelectedValue.ToString();
-                roleDTO.MaPhanQuyen = roleDTO.MaPhongBan.ToString()+"-"+roleDTO.MaVaiTro.ToString("0#");
+                // Kiểm tra if tiến hành xử lý sự kiện thêm/sửa phòng ban
+                if (isAdd)
+                {             
+                    roleDTO.MaPhanQuyen = roleDTO.MaPhongBan.ToString() + "-" + roleDTO.MaVaiTro.ToString("0#");
 
-                if (roleBLL.AddRoleBLL(roleDTO))
-                {
-                    thongBao = new customMessageBox("Đã thêm thành công dữ liệu phân quyền mới!");
-                    thongBao.ShowDialog();
+                    if (roleBLL.AddRoleBLL(roleDTO))
+                    {
+                        thongBao = new customMessageBox("Đã thêm thành công dữ liệu phân quyền mới!");
+                        thongBao.ShowDialog();
+                    }
+                    else
+                    {
+                        thongBao = new customMessageBox("Đã thêm thất bại dữ liệu phân quyền mới!");
+                        thongBao.ShowDialog();
+                    }
                 }
                 else
                 {
-                    thongBao = new customMessageBox("Đã thêm thất bại dữ liệu phân quyền mới!");
-                    thongBao.ShowDialog();
+                    roleDTO.MaPhanQuyen = MaPhanQuyen;
+                    roleDTO.MaVaiTro = (int)cboVaiTro.SelectedValue;
+                    roleDTO.MaPhongBan = cboTenPhongBan.SelectedValue.ToString();
+                    if (roleBLL.EditRoleBLL(roleDTO))
+                    {
+                        thongBao = new customMessageBox("Sửa thành công thông tin phân quyền đã chọn!");
+                        thongBao.ShowDialog();
+                    }
+                    else
+                    {
+                        thongBao = new customMessageBox("Sửa thất bại thông tin phân quyền đã chọn!");
+                        thongBao.ShowDialog();
+                    }
+
                 }
+                this.Close();
             }
             else
             {
-                roleDTO.MaPhanQuyen = MaPhanQuyen;
-                roleDTO.MaVaiTro = (int)cboVaiTro.SelectedValue;
-                roleDTO.MaPhongBan = cboTenPhongBan.SelectedValue.ToString();
-                if (roleBLL.EditRoleBLL(roleDTO))
-                {
-                    thongBao = new customMessageBox("Sửa thành công thông tin phân quyền đã chọn!");
-                    thongBao.ShowDialog();
-                }
-                else
-                {
-                    thongBao = new customMessageBox("Sửa thất bại thông tin phân quyền đã chọn!");
-                    thongBao.ShowDialog();
-                }
-                
+                thongBao = new customMessageBox("Bạn vui lòng chọn lại KH chỉ có mã vai trò là 1!");
+                thongBao.ShowDialog();
             }
-            this.Close();
-            
         }
 
         //private string maPB(string v)

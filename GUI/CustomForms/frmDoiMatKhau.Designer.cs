@@ -36,6 +36,8 @@
             this.txtNewPassword = new System.Windows.Forms.TextBox();
             this.lblRePW = new System.Windows.Forms.Label();
             this.txtRePassword = new System.Windows.Forms.TextBox();
+            this.lblLoiPassword = new System.Windows.Forms.Label();
+            this.lblLoiRePassword = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtUsername
@@ -96,6 +98,7 @@
             this.txtNewPassword.PasswordChar = '*';
             this.txtNewPassword.Size = new System.Drawing.Size(278, 27);
             this.txtNewPassword.TabIndex = 7;
+            this.txtNewPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // lblRePW
             // 
@@ -115,12 +118,35 @@
             this.txtRePassword.PasswordChar = '*';
             this.txtRePassword.Size = new System.Drawing.Size(278, 27);
             this.txtRePassword.TabIndex = 9;
+            this.txtRePassword.Leave += new System.EventHandler(this.txtRePw_Leave);
+            // 
+            // lblLoiPassword
+            // 
+            this.lblLoiPassword.AutoSize = true;
+            this.lblLoiPassword.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold);
+            this.lblLoiPassword.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiPassword.Location = new System.Drawing.Point(296, 140);
+            this.lblLoiPassword.Name = "lblLoiPassword";
+            this.lblLoiPassword.Size = new System.Drawing.Size(0, 16);
+            this.lblLoiPassword.TabIndex = 24;
+            // 
+            // lblLoiRePassword
+            // 
+            this.lblLoiRePassword.AutoSize = true;
+            this.lblLoiRePassword.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold);
+            this.lblLoiRePassword.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiRePassword.Location = new System.Drawing.Point(296, 203);
+            this.lblLoiRePassword.Name = "lblLoiRePassword";
+            this.lblLoiRePassword.Size = new System.Drawing.Size(0, 16);
+            this.lblLoiRePassword.TabIndex = 25;
             // 
             // frmDoiMatKhau
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(600, 311);
+            this.Controls.Add(this.lblLoiRePassword);
+            this.Controls.Add(this.lblLoiPassword);
             this.Controls.Add(this.lblRePW);
             this.Controls.Add(this.txtRePassword);
             this.Controls.Add(this.lblPW);
@@ -150,5 +176,7 @@
         private System.Windows.Forms.TextBox txtNewPassword;
         private System.Windows.Forms.Label lblRePW;
         private System.Windows.Forms.TextBox txtRePassword;
+        private System.Windows.Forms.Label lblLoiPassword;
+        private System.Windows.Forms.Label lblLoiRePassword;
     }
 }

@@ -196,5 +196,56 @@ namespace DAL
                 return new List<HangThanhVienDTO>();
             }
         }
+
+        public double LayKM(int maKH)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spLayKhuyenMai", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaKH",maKH);
+                double km = (double) com.ExecuteScalar();
+
+                conn.Close();
+                return km;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
+
+        public List<HangThanhVienDTO> dgvHNV()
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spTruyVanHNV", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                SqlDataReader reader = com.ExecuteReader();
+                list = new List<HangThanhVienDTO>();
+                while (reader.Read())
+                {
+                    HangThanhVienDTO hangThanhVienDTO = new HangThanhVienDTO();
+
+                    hangThanhVienDTO.MaLoaiHangThanhVien = (int)reader["MaLoaiHangThanhVien"];
+                    hangThanhVienDTO.TenHang = reader["TenHang"].ToString();
+
+                    list.Add(hangThanhVienDTO);
+                }
+
+                conn.Close();
+                return list;
+            }
+            catch (Exception)
+            {
+                return new List<HangThanhVienDTO>();
+            }
+        }
     }
 }

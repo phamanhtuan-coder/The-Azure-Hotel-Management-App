@@ -159,5 +159,33 @@ namespace DAL
                 return false;
             }
         }
+
+        public List<KhuyenMaiDTO> TruyVanIDAndTenKhuyenMai()
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+                SqlCommand com = new SqlCommand("spMaVaTenKM", conn);
+
+                SqlDataReader reader = com.ExecuteReader();
+                list = new List<KhuyenMaiDTO>();
+                while (reader.Read())
+                {
+                    KhuyenMaiDTO khuyenMaiDTO = new KhuyenMaiDTO();
+
+                    khuyenMaiDTO.MaKM = (int) reader["MaKM"];
+                    khuyenMaiDTO.TenKM = reader["TenKM"].ToString();
+
+                    list.Add(khuyenMaiDTO);
+                }
+                conn.Close();
+                return list;
+            }
+            catch (Exception)
+            {
+                return new List<KhuyenMaiDTO>();
+            }
+        }
     }
 }

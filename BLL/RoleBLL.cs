@@ -88,13 +88,11 @@ namespace BLL
             return false;
         }
 
-       
+        public List<RoleDTO> LoadMaPhanQuyenNV()
+        {
+            return roleDAL.LoadMaPhanQuyenNV();
+        }
 
-
-        //public string maPBBLL(string v)
-        //{
-        //    return RoleDAL.maPBDAL(v);
-        //}
     }
 }
   

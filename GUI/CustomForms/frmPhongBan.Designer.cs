@@ -154,6 +154,7 @@
             this.txtMaPhongBan.Size = new System.Drawing.Size(306, 27);
             this.txtMaPhongBan.TabIndex = 12;
             this.txtMaPhongBan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaPhongBan_KeyPress);
+            this.txtMaPhongBan.Leave += new System.EventHandler(this.txtMaPhongBan_Leave);
             // 
             // frmPhongBan
             // 

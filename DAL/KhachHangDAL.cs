@@ -198,6 +198,37 @@ namespace DAL
             }
         }
 
+        public List<KhachHangDTO> LoadIDvaNameKH()
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spTruyVanIDVaTenKH", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+               
+                SqlDataReader reader = com.ExecuteReader();
+                list = new List<KhachHangDTO>();
+                while (reader.Read())
+                {
+                    KhachHangDTO khachHang = new KhachHangDTO();
+
+                    khachHang.MaKH = (int)reader["MaKH"];
+                    khachHang.HoTenKH = reader["HoTenKH"].ToString();
+
+                    list.Add(khachHang);
+                }
+
+                conn.Close();
+                return list;
+            }
+            catch (Exception)
+            {
+                return new List<KhachHangDTO>();
+            }
+        }
+
         public TaiKhoanDTO XacThuc(KhachHangDTO khachHangDTO)
         {
             TaiKhoanDTO taiKhoanDTO = new TaiKhoanDTO();

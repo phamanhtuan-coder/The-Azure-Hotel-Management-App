@@ -12,7 +12,7 @@ namespace DAL
     {
         List<HoaDonDTO> hoaDonDTOs = new List<HoaDonDTO>();
 
-        public bool AddHoaDon(HoaDonDTO hoaDonDTO)
+        public int AddHoaDon(HoaDonDTO hoaDonDTO)
         {
             try
             {
@@ -24,10 +24,40 @@ namespace DAL
                 com.Parameters.AddWithValue("@MaKH", hoaDonDTO.MaKH);
                 com.Parameters.AddWithValue("@MaNV", hoaDonDTO.MaNV);
                 com.Parameters.AddWithValue("@MaThue", hoaDonDTO.MaThue);
-                com.Parameters.AddWithValue("@NgayLapHoaDon", hoaDonDTO.NgayLapHoaDon);
-                com.Parameters.AddWithValue("@TongHoaDon", hoaDonDTO.TongHoaDon);
-                com.Parameters.AddWithValue("@TienNhan", hoaDonDTO.TienNhan);
-                com.Parameters.AddWithValue("@TienThoi", hoaDonDTO.TienThoi);
+
+                object result = com.ExecuteScalar();
+
+                if (result != null && int.TryParse(result.ToString(), out int MaHoaDon))
+                {
+                    conn.Close();
+                    return MaHoaDon;
+                }
+                else
+                {
+                    conn.Close();
+                    return -1;
+                }
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
+        }
+
+
+        public bool EditHoaDon(HoaDonDTO hoaDonDTO)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("CapNhatHoaDon", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaHoaDon", hoaDonDTO.MaHoaDon);
+                com.Parameters.AddWithValue("@MaKH", hoaDonDTO.MaKH);
+                com.Parameters.AddWithValue("@MaNV", hoaDonDTO.MaNV);
+                com.Parameters.AddWithValue("@MaThue", hoaDonDTO.MaThue);
 
                 int count = com.ExecuteNonQuery();
                 conn.Close();
@@ -43,20 +73,16 @@ namespace DAL
             }
         }
 
-        public bool EditHoaDon(HoaDonDTO hoaDonDTO)
+        public bool ThanhToan(HoaDonDTO hoaDonDTO)
         {
             try
             {
                 SqlConnection conn = DataProvider.KetNoiDuLieu();
                 conn.Open();
 
-                SqlCommand com = new SqlCommand("CapNhatHoaDon", conn);
+                SqlCommand com = new SqlCommand("ThanhToan", conn);
                 com.CommandType = System.Data.CommandType.StoredProcedure;
                 com.Parameters.AddWithValue("@MaHoaDon", hoaDonDTO.MaHoaDon);
-                com.Parameters.AddWithValue("@MaKH", hoaDonDTO.MaKH);
-                com.Parameters.AddWithValue("@MaNV", hoaDonDTO.MaNV);
-                com.Parameters.AddWithValue("@MaThue", hoaDonDTO.MaThue);
-                com.Parameters.AddWithValue("@NgayLapHoaDon", hoaDonDTO.NgayLapHoaDon);
                 com.Parameters.AddWithValue("@TongHoaDon", hoaDonDTO.TongHoaDon);
                 com.Parameters.AddWithValue("@TienNhan", hoaDonDTO.TienNhan);
                 com.Parameters.AddWithValue("@TienThoi", hoaDonDTO.TienThoi);
@@ -99,6 +125,8 @@ namespace DAL
                     hoaDonDTO.TienThoi = (decimal) reader["TienThoi"];
                     byte[] trangThaiBytes = (byte[])reader["TrangThai"];
                     hoaDonDTO.TrangThai = BitConverter.ToBoolean(trangThaiBytes, 0);
+                    hoaDonDTO.CCCD = reader["CCCD"].ToString();
+                    hoaDonDTO.TenTaiKhoan = reader["TenDangNhap"].ToString();
                     hoaDonDTOs.Add(hoaDonDTO);
                 }
 
@@ -111,7 +139,7 @@ namespace DAL
             }
         }
 
-        public bool XoaHoaDon(int maHoaDon, int tt)
+        public bool XoaHoaDon(HoaDonDTO hoaDonDTO, int tt)
         {
             try
             {
@@ -120,13 +148,18 @@ namespace DAL
 
                 SqlCommand com = new SqlCommand("ThayDoiTrangThaiHoaDon", conn);
                 com.CommandType = System.Data.CommandType.StoredProcedure;
-                com.Parameters.AddWithValue("@MaHoaDon", maHoaDon);
+                com.Parameters.AddWithValue("@MaHoaDon", hoaDonDTO.MaHoaDon);
                 com.Parameters.AddWithValue("@TrangThai", tt);
 
                 int count = com.ExecuteNonQuery();
                 conn.Close();
                 if (count > 0)
                 {
+                    ChiTietHoaDonDAL chiTietHoaDonDAL = new ChiTietHoaDonDAL();
+                    foreach (ChiTietHoaDonDTO item in hoaDonDTO.chiTietHoaDonDTOs)
+                    {
+                        chiTietHoaDonDAL.ThayDoiTrangThai(item.MaCTHD, tt);
+                    }
                     return true;
                 }
                 return false;

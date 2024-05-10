@@ -99,5 +99,10 @@ namespace BLL
          ).ToList();
             return searchResults;
         }
+
+        public double LayKM(int maThue)
+        {
+            return thueDAL.LayKM(maThue);
+        }
     }
 }

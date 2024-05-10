@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Utilities;
 
 namespace GUI.customForm
 {
@@ -29,24 +30,31 @@ namespace GUI.customForm
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             customMessageBox thongBao;
-
-            if (DoiMatKhau())
+            if (!(lblLoiPassword.Text.Length > 0 || lblLoiRePassword.Text.Length > 0))
             {
+                if (DoiMatKhau())
+                {
 
-                //thongBao = new customMessageBox("Đổi mật khẩu thành công!");
-                //thongBao.ShowDialog();
-                frmLogin login = new frmLogin();
-                this.Hide();
-                login.Show();
+                    //thongBao = new customMessageBox("Đổi mật khẩu thành công!");
+                    //thongBao.ShowDialog();
+                    frmLogin login = new frmLogin();
+                    this.Hide();
+                    login.Show();
+                    this.Close();
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Đổi mật khẩu thất bại!");
+                    thongBao.ShowDialog();
+                }
+
                 this.Close();
             }
             else
             {
-                thongBao = new customMessageBox("Đổi mật khẩu thất bại!");
+                thongBao = new customMessageBox("Vui lòng nhập đủ thông tin!");
                 thongBao.ShowDialog();
-            }
-
-            this.Close();         
+            }      
         }
 
         private bool DoiMatKhau()
@@ -64,6 +72,30 @@ namespace GUI.customForm
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtPassword_Leave(object sender, EventArgs e)
+        {
+            if (KiemTraInput.IsStrongPassword(txtNewPassword.Text))
+            {
+                lblLoiPassword.Text = "";
+            }
+            else
+            {
+                lblLoiPassword.Text = "Độ dài tối thiểu 8 ký tự, có một chữ số\nchữ hoa, thường và ký tự đặc biệt";
+            }
+        }
+
+        private void txtRePw_Leave(object sender, EventArgs e)
+        {
+            if (txtNewPassword.Text.Equals(txtRePassword.Text))
+            {
+                lblLoiRePassword.Text = "";
+            }
+            else
+            {
+                lblLoiRePassword.Text = "Nhập lại mật khẩu không đúng!";
+            }
         }
     }
 }

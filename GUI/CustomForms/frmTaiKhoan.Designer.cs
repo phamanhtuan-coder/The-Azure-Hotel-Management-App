@@ -38,6 +38,9 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtRePw = new System.Windows.Forms.TextBox();
+            this.lblLoiUsername = new System.Windows.Forms.Label();
+            this.lblLoiPassword = new System.Windows.Forms.Label();
+            this.lblLoiRePassword = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSubmit
@@ -87,6 +90,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(252, 27);
             this.txtUsername.TabIndex = 8;
+            this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
             // 
             // txtPassword
             // 
@@ -96,6 +100,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(252, 27);
             this.txtPassword.TabIndex = 9;
+            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // label1
             // 
@@ -135,12 +140,46 @@
             this.txtRePw.PasswordChar = '*';
             this.txtRePw.Size = new System.Drawing.Size(252, 27);
             this.txtRePw.TabIndex = 13;
+            this.txtRePw.Leave += new System.EventHandler(this.txtRePw_Leave);
+            // 
+            // lblLoiUsername
+            // 
+            this.lblLoiUsername.AutoSize = true;
+            this.lblLoiUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoiUsername.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiUsername.Location = new System.Drawing.Point(278, 60);
+            this.lblLoiUsername.Name = "lblLoiUsername";
+            this.lblLoiUsername.Size = new System.Drawing.Size(0, 15);
+            this.lblLoiUsername.TabIndex = 14;
+            // 
+            // lblLoiPassword
+            // 
+            this.lblLoiPassword.AutoSize = true;
+            this.lblLoiPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoiPassword.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiPassword.Location = new System.Drawing.Point(278, 119);
+            this.lblLoiPassword.Name = "lblLoiPassword";
+            this.lblLoiPassword.Size = new System.Drawing.Size(0, 15);
+            this.lblLoiPassword.TabIndex = 15;
+            // 
+            // lblLoiRePassword
+            // 
+            this.lblLoiRePassword.AutoSize = true;
+            this.lblLoiRePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoiRePassword.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiRePassword.Location = new System.Drawing.Point(278, 178);
+            this.lblLoiRePassword.Name = "lblLoiRePassword";
+            this.lblLoiRePassword.Size = new System.Drawing.Size(0, 15);
+            this.lblLoiRePassword.TabIndex = 16;
             // 
             // frmTaiKhoan
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(600, 351);
+            this.Controls.Add(this.lblLoiRePassword);
+            this.Controls.Add(this.lblLoiPassword);
+            this.Controls.Add(this.lblLoiUsername);
             this.Controls.Add(this.txtRePw);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblUsername);
@@ -173,5 +212,8 @@
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtRePw;
+        private System.Windows.Forms.Label lblLoiUsername;
+        private System.Windows.Forms.Label lblLoiPassword;
+        private System.Windows.Forms.Label lblLoiRePassword;
     }
 }

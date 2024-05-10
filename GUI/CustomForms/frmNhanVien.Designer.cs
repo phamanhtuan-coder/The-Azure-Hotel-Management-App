@@ -55,6 +55,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.nupLuong = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblLoiEmail = new System.Windows.Forms.Label();
+            this.lblLoiSDT = new System.Windows.Forms.Label();
+            this.lblLoiCCCD = new System.Windows.Forms.Label();
+            this.lblLoiNS = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblLoiLuong = new System.Windows.Forms.Label();
+            this.lblLoiHoTen = new System.Windows.Forms.Label();
+            this.lblLoiUsername = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupLuong)).BeginInit();
             this.SuspendLayout();
@@ -86,6 +94,7 @@
             this.txtHoTenNV.Name = "txtHoTenNV";
             this.txtHoTenNV.Size = new System.Drawing.Size(194, 27);
             this.txtHoTenNV.TabIndex = 6;
+            this.txtHoTenNV.Leave += new System.EventHandler(this.txtHoTenNV_Leave);
             // 
             // txtTenTaiKhoan
             // 
@@ -94,6 +103,7 @@
             this.txtTenTaiKhoan.Name = "txtTenTaiKhoan";
             this.txtTenTaiKhoan.Size = new System.Drawing.Size(175, 27);
             this.txtTenTaiKhoan.TabIndex = 7;
+            this.txtTenTaiKhoan.Leave += new System.EventHandler(this.txtTenTaiKhoan_Leave);
             // 
             // txtCCCD
             // 
@@ -102,6 +112,8 @@
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.Size = new System.Drawing.Size(194, 27);
             this.txtCCCD.TabIndex = 8;
+            this.txtCCCD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCCCD_KeyPress);
+            this.txtCCCD.Leave += new System.EventHandler(this.txtCCCD_Leave);
             // 
             // txtEmail
             // 
@@ -110,6 +122,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(194, 27);
             this.txtEmail.TabIndex = 9;
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // txtSDT
             // 
@@ -118,6 +131,7 @@
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(194, 27);
             this.txtSDT.TabIndex = 10;
+            this.txtSDT.Leave += new System.EventHandler(this.txtSDT_Leave);
             // 
             // txtDiaChi
             // 
@@ -136,6 +150,7 @@
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(194, 27);
             this.dtpNgaySinh.TabIndex = 12;
+            this.dtpNgaySinh.ValueChanged += new System.EventHandler(this.dtpNgaySinh_ValueChanged);
             // 
             // radNam
             // 
@@ -195,7 +210,7 @@
             // 
             this.lblMaTaiKhoan.AutoSize = true;
             this.lblMaTaiKhoan.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.lblMaTaiKhoan.Location = new System.Drawing.Point(12, 249);
+            this.lblMaTaiKhoan.Location = new System.Drawing.Point(12, 248);
             this.lblMaTaiKhoan.Name = "lblMaTaiKhoan";
             this.lblMaTaiKhoan.Size = new System.Drawing.Size(96, 22);
             this.lblMaTaiKhoan.TabIndex = 18;
@@ -245,7 +260,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.lblEmail.Location = new System.Drawing.Point(381, 222);
+            this.lblEmail.Location = new System.Drawing.Point(383, 224);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(58, 22);
             this.lblEmail.TabIndex = 23;
@@ -275,7 +290,7 @@
             // 
             this.cboMaNQL.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboMaNQL.FormattingEnabled = true;
-            this.cboMaNQL.Location = new System.Drawing.Point(193, 303);
+            this.cboMaNQL.Location = new System.Drawing.Point(193, 316);
             this.cboMaNQL.Name = "cboMaNQL";
             this.cboMaNQL.Size = new System.Drawing.Size(169, 30);
             this.cboMaNQL.TabIndex = 26;
@@ -284,7 +299,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(12, 308);
+            this.label2.Location = new System.Drawing.Point(12, 321);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(156, 22);
             this.label2.TabIndex = 28;
@@ -293,7 +308,12 @@
             // nupLuong
             // 
             this.nupLuong.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.nupLuong.Location = new System.Drawing.Point(193, 337);
+            this.nupLuong.Increment = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nupLuong.Location = new System.Drawing.Point(193, 350);
             this.nupLuong.Maximum = new decimal(new int[] {
             1569325055,
             23283064,
@@ -302,22 +322,111 @@
             this.nupLuong.Name = "nupLuong";
             this.nupLuong.Size = new System.Drawing.Size(169, 27);
             this.nupLuong.TabIndex = 29;
+            this.nupLuong.ValueChanged += new System.EventHandler(this.nupLuong_ValueChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(12, 343);
+            this.label1.Location = new System.Drawing.Point(12, 356);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 22);
             this.label1.TabIndex = 30;
             this.label1.Text = "Lương";
+            // 
+            // lblLoiEmail
+            // 
+            this.lblLoiEmail.AutoSize = true;
+            this.lblLoiEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoiEmail.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiEmail.Location = new System.Drawing.Point(540, 246);
+            this.lblLoiEmail.Name = "lblLoiEmail";
+            this.lblLoiEmail.Size = new System.Drawing.Size(0, 15);
+            this.lblLoiEmail.TabIndex = 31;
+            // 
+            // lblLoiSDT
+            // 
+            this.lblLoiSDT.AutoSize = true;
+            this.lblLoiSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoiSDT.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiSDT.Location = new System.Drawing.Point(540, 301);
+            this.lblLoiSDT.Name = "lblLoiSDT";
+            this.lblLoiSDT.Size = new System.Drawing.Size(0, 15);
+            this.lblLoiSDT.TabIndex = 33;
+            // 
+            // lblLoiCCCD
+            // 
+            this.lblLoiCCCD.AutoSize = true;
+            this.lblLoiCCCD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoiCCCD.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiCCCD.Location = new System.Drawing.Point(538, 90);
+            this.lblLoiCCCD.Name = "lblLoiCCCD";
+            this.lblLoiCCCD.Size = new System.Drawing.Size(0, 15);
+            this.lblLoiCCCD.TabIndex = 34;
+            // 
+            // lblLoiNS
+            // 
+            this.lblLoiNS.AutoSize = true;
+            this.lblLoiNS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoiNS.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiNS.Location = new System.Drawing.Point(540, 196);
+            this.lblLoiNS.Name = "lblLoiNS";
+            this.lblLoiNS.Size = new System.Drawing.Size(0, 15);
+            this.lblLoiNS.TabIndex = 35;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.IndianRed;
+            this.label3.Location = new System.Drawing.Point(400, 229);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 15);
+            this.label3.TabIndex = 36;
+            // 
+            // lblLoiLuong
+            // 
+            this.lblLoiLuong.AutoSize = true;
+            this.lblLoiLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoiLuong.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiLuong.Location = new System.Drawing.Point(193, 371);
+            this.lblLoiLuong.Name = "lblLoiLuong";
+            this.lblLoiLuong.Size = new System.Drawing.Size(0, 15);
+            this.lblLoiLuong.TabIndex = 37;
+            // 
+            // lblLoiHoTen
+            // 
+            this.lblLoiHoTen.AutoSize = true;
+            this.lblLoiHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoiHoTen.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiHoTen.Location = new System.Drawing.Point(539, 42);
+            this.lblLoiHoTen.Name = "lblLoiHoTen";
+            this.lblLoiHoTen.Size = new System.Drawing.Size(0, 15);
+            this.lblLoiHoTen.TabIndex = 38;
+            // 
+            // lblLoiUsername
+            // 
+            this.lblLoiUsername.AutoSize = true;
+            this.lblLoiUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoiUsername.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiUsername.Location = new System.Drawing.Point(12, 300);
+            this.lblLoiUsername.Name = "lblLoiUsername";
+            this.lblLoiUsername.Size = new System.Drawing.Size(0, 15);
+            this.lblLoiUsername.TabIndex = 39;
             // 
             // frmNhanVien
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(800, 473);
+            this.Controls.Add(this.lblLoiUsername);
+            this.Controls.Add(this.lblLoiHoTen);
+            this.Controls.Add(this.lblLoiLuong);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblLoiNS);
+            this.Controls.Add(this.lblLoiCCCD);
+            this.Controls.Add(this.lblLoiSDT);
+            this.Controls.Add(this.lblLoiEmail);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nupLuong);
             this.Controls.Add(this.label2);
@@ -384,5 +493,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown nupLuong;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblLoiEmail;
+        private System.Windows.Forms.Label lblLoiSDT;
+        private System.Windows.Forms.Label lblLoiCCCD;
+        private System.Windows.Forms.Label lblLoiNS;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblLoiLuong;
+        private System.Windows.Forms.Label lblLoiHoTen;
+        private System.Windows.Forms.Label lblLoiUsername;
     }
 }

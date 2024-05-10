@@ -28,7 +28,8 @@ namespace GUI.customForm
 
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
-            // gán giá trị mặc định bằng các biến trên
+            dtpNgaySinh.Value = DateTime.Today.AddYears(-18);
+            radNam.Checked = true;
             loadNQL();
             if (!isAdd)
             {
@@ -93,35 +94,42 @@ namespace GUI.customForm
         {
             customMessageBox thongBao;
             // Kiểm tra if tiến hành xử lý sự kiện thêm/sửa phòng ban
-            if (isAdd)
+            if (!(lblLoiEmail.Text.Length>0 || lblLoiSDT.Text.Length>0 || lblLoiCCCD.Text.Length>0 || lblLoiNS.Text.Length > 0 ||lblLoiHoTen.Text.Length>0 || lblLoiLuong.Text.Length>0 || lblLoiUsername.Text.Length>0))
             {
-                if (AddTaiKhoan())
+                if (isAdd)
                 {
-                    thongBao = new customMessageBox("Đã thêm thành công dữ liệu nhân viên mới!");
-                    thongBao.ShowDialog();    
+                    if (AddTaiKhoan())
+                    {
+                        thongBao = new customMessageBox("Đã thêm thành công dữ liệu nhân viên mới!");
+                        thongBao.ShowDialog();
+                    }
+                    else
+                    {
+                        thongBao = new customMessageBox("Đã thêm thất bại dữ liệu nhân viên mới!");
+                        thongBao.ShowDialog();
+                    }
                 }
                 else
                 {
-                    thongBao = new customMessageBox("Đã thêm thất bại dữ liệu nhân viên mới!");
-                    thongBao.ShowDialog();
+                    // nếu không thì chạy lệnh update
+                    if (EditNhanVien())
+                    {
+                        thongBao = new customMessageBox("Sửa thành công thông tin nhân viên đã chọn!");
+                        thongBao.ShowDialog();
+                    }
+                    else
+                    {
+                        thongBao = new customMessageBox("Sửa thất bại thông tin nhân viên đã chọn!");
+                        thongBao.ShowDialog();
+                    }
                 }
+                this.Close();
             }
             else
             {
-                // nếu không thì chạy lệnh update
-                if (EditNhanVien())
-                {
-                    thongBao = new customMessageBox("Sửa thành công thông tin nhân viên đã chọn!");
-                    thongBao.ShowDialog();
-                }
-                else
-                {
-                    thongBao = new customMessageBox("Sửa thất bại thông tin nhân viên đã chọn!");
-                    thongBao.ShowDialog();
-                }
-            }
-            this.Close();
-            
+                thongBao = new customMessageBox("Vui lòng nhập đúng thông tin!");
+                thongBao.ShowDialog();
+            }       
         } 
 
         private bool AddTaiKhoan()
@@ -203,6 +211,101 @@ namespace GUI.customForm
             using (MemoryStream m = new MemoryStream(hinh))
             {
                 return Image.FromStream(m);
+            }
+        }
+
+        private void txtEmail_Leave(object sender, EventArgs e)
+        {
+            if (!KiemTraInput.IsValidEmail(txtEmail.Text))
+            {
+                lblLoiEmail.Text = "Email không hợp lệ!";
+            }
+            else
+            {
+                lblLoiEmail.Text = "";
+            }
+        }
+
+        private void txtSDT_Leave(object sender, EventArgs e)
+        {
+            if (!KiemTraInput.IsValidPhoneNumber(txtSDT.Text))
+            {
+                lblLoiSDT.Text = "SDT Không hợp lệ!";
+            }
+            else
+            {
+                lblLoiSDT.Text = "";
+            }
+        }
+
+        private void txtHoTenNV_Leave(object sender, EventArgs e)
+        {
+            if (KiemTraInput.KiemTraHoTen(txtHoTenNV.Text))
+            {
+                lblLoiHoTen.Text = "";
+                txtHoTenNV.Text = KiemTraInput.ChuanHoaHoTen(txtHoTenNV.Text);
+            }
+            else
+            {
+                lblLoiHoTen.Text = "Họ tên không hợp lệ!";
+            }
+        }
+
+        private void txtCCCD_Leave(object sender, EventArgs e)
+        {
+            if (!KiemTraInput.IsValuesCCCD(txtCCCD.Text))
+            {
+                lblLoiCCCD.Text = "CCCD Không hợp lệ!";
+            }
+            else
+            {
+                lblLoiCCCD.Text = "";
+            }
+        }
+
+        private void dtpNgaySinh_ValueChanged(object sender, EventArgs e)
+        {
+            if (!KiemTraInput.KiemTraNgaySinh(dtpNgaySinh.Value))
+            {
+                lblLoiNS.Text = "Ngày sinh Không hợp lệ, phải đủ 18 tuổi!";
+            }
+            else
+            {
+                lblLoiNS.Text = "";
+            }
+        }
+
+        private void txtCCCD_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void nupLuong_ValueChanged(object sender, EventArgs e)
+        {
+            decimal luong = nupLuong.Value;
+
+            if (luong <= 0)
+            {
+                lblLoiLuong.Text = "Lương không hợp lệ!";
+            }
+            else
+            {
+                lblLoiLuong.Text = "";
+            }
+        }
+
+        private void txtTenTaiKhoan_Leave(object sender, EventArgs e)
+        {
+            if (!KiemTraInput.IsValidUsername(txtTenTaiKhoan.Text))
+            {
+                lblLoiUsername.Text = "Username Không hợp lệ!";
+            }
+            else
+            {
+                lblLoiUsername.Text = "";
             }
         }
     }

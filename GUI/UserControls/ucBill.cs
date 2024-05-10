@@ -20,12 +20,16 @@ namespace GUI.UserControls
         public string ngaytao { get; set; } = "";
         public string TT { get; set; } = "";
 
+        ChiTietHoaDonBLL chiTietHoaDonBLL = new ChiTietHoaDonBLL();
+
         HoaDonBLL hoaDonBLL= new HoaDonBLL();
         List<HoaDonDTO> hoaDonDTOs = new List<HoaDonDTO>();
         List<HoaDonDTO> dsSearch = new List<HoaDonDTO>();
 
         frmHoaDon frm = new frmHoaDon();
         customMessageBox thongBao;
+
+        bool KT = false;
         public ucBill()
         {
             InitializeComponent();
@@ -33,9 +37,38 @@ namespace GUI.UserControls
 
         private void ucBill_Load(object sender, EventArgs e)
         {
-            
+            LoadDuLieuKH();
+            LoadDuLieuNV();
+            LoadDuLieuThue();
             LoadDuLieuCombobox();
             TruyVanDanhSachHoaDon();
+        }
+
+        private void LoadDuLieuThue()
+        {
+            ThueBLL thueBLL = new ThueBLL();
+            List<ThueDTO> list = thueBLL.TruyVanTenVaMaThue();
+            colMaThue.DataSource = list;
+            colMaThue.ValueMember = "MaThue";
+            colMaThue.DisplayMember = "TenThue";
+        }
+
+        private void LoadDuLieuNV()
+        {
+            NhanVienBLL nhanVienBLL = new NhanVienBLL();
+            List<NhanVienDTO> list = nhanVienBLL.TruyVanNVDAG();
+            colMaNV.DataSource = list;
+            colMaNV.DisplayMember = "HoTenNV";
+            colMaNV.ValueMember = "MaNV";
+        }
+
+        private void LoadDuLieuKH()
+        {
+            KhachHangBLL khachHangBLL = new KhachHangBLL();
+            List<KhachHangDTO> list = khachHangBLL.LoadIDvaNameKH();
+            colMaKH.DataSource = list;
+            colMaKH.DisplayMember = "HoTenKH";
+            colMaKH.ValueMember = "MaKH";
         }
 
         private void TruyVanDanhSachHoaDon()
@@ -96,7 +129,7 @@ namespace GUI.UserControls
         private void btnDeleteBill_Click(object sender, EventArgs e)
         {
             if (dgvBill.SelectedRows.Count > 0)
-            {
+            {               
                 customMessageBox thongBao;
                 int TrangThai = dgvBill.Columns["colTrangThai"].Index;
                 if ((bool)dgvBill.SelectedRows[0].Cells[TrangThai].Value)
@@ -105,6 +138,8 @@ namespace GUI.UserControls
                     DialogResult dr = thongBao.ShowDialog();
                     if (dr != DialogResult.Cancel)
                     {
+                        HoaDonDTO hoaDonDTO = new HoaDonDTO();
+                        LoadDuLieuCuaHoaDon(ref hoaDonDTO);
                         if (XoaHoaDon())
                         {
                             Filter();
@@ -129,15 +164,7 @@ namespace GUI.UserControls
                 thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn xóa!");
                 thongBao.ShowDialog();
             }
-        }
-
-        private bool XoaHoaDon()
-        {
-            int indexMaTaiKhoan = dgvBill.Columns["colMaHD"].Index;
-            int MaHoaDon = (int)dgvBill.SelectedRows[0].Cells[indexMaTaiKhoan].Value;
-            return hoaDonBLL.XoaHoaDon(MaHoaDon);
-        }
-
+        }      
         private void btnRecoverBill_Click(object sender, EventArgs e)
         {
             if (dgvBill.SelectedRows.Count > 0)
@@ -175,14 +202,18 @@ namespace GUI.UserControls
                 thongBao.ShowDialog();
             }
         }
-
+        private bool XoaHoaDon()
+        {
+            HoaDonDTO hoaDonDTO = new HoaDonDTO();
+            LoadDuLieuCuaHoaDon(ref hoaDonDTO);
+            return hoaDonBLL.XoaHoaDon(hoaDonDTO);
+        }
         private bool KhoiPhucHoaDon()
         {
-            int indexMaTaiKhoan = dgvBill.Columns["colMaHD"].Index;
-            int MaHoaDon = (int)dgvBill.SelectedRows[0].Cells[indexMaTaiKhoan].Value;
-            return hoaDonBLL.KhoiPhucHoaDon(MaHoaDon);
+            HoaDonDTO hoaDonDTO = new HoaDonDTO();
+            LoadDuLieuCuaHoaDonDaXoa(ref hoaDonDTO);
+            return hoaDonBLL.KhoiPhucHoaDon(hoaDonDTO);
         }
-
         private void cboSortBillID_SelectedIndexChanged(object sender, EventArgs e)
         {
             string sortOption = cboSortBillID.SelectedItem.ToString();
@@ -239,18 +270,126 @@ namespace GUI.UserControls
             }
         }
 
-        private void btnTraCuuBill_Click(object sender, EventArgs e)
-        {
-            string searchKeyword = txtSearchBill.Text.Trim().ToLower();
-            if (searchKeyword.Count() > 0)
-            {
-                dsSearch = hoaDonBLL.TraCuuHoaDon(hoaDonDTOs, searchKeyword);
-                dgvBill.DataSource = dsSearch;
+        //private void btnTraCuuBill_Click(object sender, EventArgs e)
+        //{
+        //    string searchKeyword = txtSearchBill.Text.Trim().ToLower();
+        //    if (searchKeyword.Count() > 0)
+        //    {
+        //        dsSearch = hoaDonBLL.TraCuuHoaDon(hoaDonDTOs, searchKeyword);
+        //        dgvBill.DataSource = dsSearch;
 
+        //    }
+        //    else
+        //    {
+        //        TruyVanDanhSachHoaDon();
+        //    }
+        //}
+
+        private void btnTraCuuDP_Click(object sender, EventArgs e)
+        {
+            object ngayNhanPhongObject = dtpNgayDat.Value;
+            DateTime ng;
+            if (ngayNhanPhongObject != DBNull.Value)
+            {
+                ng = DateTime.Parse(ngayNhanPhongObject.ToString());
             }
             else
             {
-                TruyVanDanhSachHoaDon();
+                ng = DateTime.Now;
+            }
+            hoaDonDTOs = hoaDonBLL.Filter(txtCCCD.Text, txtTraCuuUser.Text, ng);
+            dgvBill.ClearSelection();
+            dgvBill.DataSource = hoaDonDTOs;
+
+            KT = true;
+        }
+
+        private void sfButton1_Click(object sender, EventArgs e)
+        {
+            if (dgvBill.SelectedRows.Count > 0)
+            {
+                HoaDonDTO hoaDonDTO = new HoaDonDTO();
+                LoadDuLieuCuaHoaDon(ref hoaDonDTO);
+                if (!(hoaDonDTO.TongHoaDon>0 && hoaDonDTO.TienNhan > 0))
+                {               
+                    Decimal TongTien = 0;
+                    foreach (ChiTietHoaDonDTO item in hoaDonDTO.chiTietHoaDonDTOs)
+                    {
+                        TongTien += item.ThanhTien;
+                    }
+
+                    ThueBLL thueBLL = new ThueBLL();
+                    double thue = (100 + thueBLL.LayKM(hoaDonDTO.MaThue)) / 100;
+
+                    HangThanhVienBLL hangThanhVien = new HangThanhVienBLL();
+                    double khuyenMai =(100 - hangThanhVien.LayKM(hoaDonDTO.MaKH)) / 100;
+
+                    hoaDonDTO.TongHoaDon = (TongTien* (decimal) khuyenMai) * (decimal)thue;
+
+                    frmThanhToan frm = new frmThanhToan();
+                    frm.hoaDonDTO = hoaDonDTO;
+                    frm.ShowDialog();
+                    Filter();
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Hóa đơn đã thanh toán!");
+                    thongBao.ShowDialog();
+                }
+            }
+            else
+            {
+                thongBao = new customMessageBox("Vui lòng chọn hóa đơn!");
+                thongBao.ShowDialog();
+            }
+        }
+
+        private void LoadDuLieuCuaHoaDon(ref HoaDonDTO hoaDonDTO)
+        {
+            hoaDonDTO = dgvBill.SelectedRows[0].DataBoundItem as HoaDonDTO;
+
+            if (hoaDonDTO.MaHoaDon > 0)
+            {
+                hoaDonDTO.chiTietHoaDonDTOs = new List<ChiTietHoaDonDTO>();
+                hoaDonDTO.chiTietHoaDonDTOs = chiTietHoaDonBLL.TruyVanChiTiet(hoaDonDTO.MaHoaDon);    
+            }
+            else
+            {
+                thongBao = new customMessageBox("Không tìm thấy hóa đơn!");
+                thongBao.ShowDialog();
+            }
+        }
+        private void LoadDuLieuCuaHoaDonDaXoa(ref HoaDonDTO hoaDonDTO)
+        {
+            hoaDonDTO = dgvBill.SelectedRows[0].DataBoundItem as HoaDonDTO;
+            hoaDonDTO.TongHoaDon = 0;
+
+            if (hoaDonDTO.MaHoaDon > 0)
+            {
+                hoaDonDTO.chiTietHoaDonDTOs = new List<ChiTietHoaDonDTO>();
+                hoaDonDTO.chiTietHoaDonDTOs = chiTietHoaDonBLL.TruyVanChiTietDaXoa(hoaDonDTO.MaHoaDon);
+            }
+            else
+            {
+                thongBao = new customMessageBox("Không tìm thấy hóa đơn!");
+                thongBao.ShowDialog();
+            }
+        }
+        private void txtXemCT_Click(object sender, EventArgs e)
+        {
+            if (dgvBill.SelectedRows.Count > 0)
+            {
+                HoaDonDTO hoaDonDTO = new HoaDonDTO();
+                LoadDuLieuCuaHoaDon(ref hoaDonDTO);
+
+                frmHienCTHD frm = new frmHienCTHD();
+                frm.hs = hoaDonDTO.chiTietHoaDonDTOs;
+                frm.ShowDialog();             
+            }
+            else
+            {
+                thongBao = new customMessageBox("Vui lòng chọn hóa đơn!");
+                thongBao.ShowDialog();
             }
         }
     }
