@@ -64,7 +64,7 @@ namespace GUI.customForm
                     khachHangDTO.CCCD = txtCCCD.Text;
                     khachHangDTO.Email = txtEmail.Text;
                     khachHangDTO.GioiTinh = radNam.Checked ? "Nam" : "Nữ";
-                    khachHangDTO.NgaySinh = DateTime.Parse(dtpNgaySinh.Value.ToString("MM/dd/yyyy"));
+                    khachHangDTO.NgaySinh = DateTime.Parse(dtpNgaySinh.Value.ToString());
                     khachHangDTO.DiaChi = txtDiaChi.Text;
 
                     if (AddKhachHang(taiKhoanDTO, khachHangDTO))

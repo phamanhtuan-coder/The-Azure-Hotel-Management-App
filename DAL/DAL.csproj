@@ -90,37 +90,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaoTriDAL.cs" />
+  <Compile Include="BaoTriDAL.cs" />
     <Compile Include="ChiTietHoaDonDAL.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="DatDichVuDAL.cs" />
     <Compile Include="DatPhongDAL.cs" />
     <Compile Include="DichVuDAL.cs" />
-=========
-    <Compile Include="ChiTietHoaDonDAL.cs" />
-    <Compile Include="DataProvider.cs" />
     <Compile Include="DonPhongDAL.cs" />
     <Compile Include="HangThanhVienDAL.cs" />
-    <Compile Include="DatPhongDAL.cs" />
-    <Compile Include="DichVuDAL.cs" />
     <Compile Include="HoaDonDAL.cs" />
     <Compile Include="KhuyenMaiDAL.cs" />
->>>>>>>>> Temporary merge branch 2
     <Compile Include="LoaiPhongDAL.cs" />
     <Compile Include="NhanVienDAL.cs" />
-    <Compile Include="ThueDAL.cs" />
     <Compile Include="PhongDAL.cs" />
+	    <Compile Include="PhongBanDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<<<< Temporary merge branch 1
     <Compile Include="ThietBiDAL.cs" />
-=========
-    <Compile Include="ThueDAL.cs" />
->>>>>>>>> Temporary merge branch 2
     <Compile Include="TinhTrangPhongDAL.cs" />
     <Compile Include="TTThietBiDAL.cs" />
     <Compile Include="RoleDAL.cs" />
     <Compile Include="TaiKhoanDAL.cs" />
     <Compile Include="VaiTroDAL.cs" />
+	<Compile Include="ThueDAL.cs" />
+	<Compile Include="KhachHangDAL.cs" />
+
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

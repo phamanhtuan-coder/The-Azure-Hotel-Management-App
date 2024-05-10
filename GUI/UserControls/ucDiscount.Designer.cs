@@ -43,7 +43,8 @@
             this.colMaKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMucKhuyenMai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHangTV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.colHangTV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHangTV = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblLocTheoHangTV = new System.Windows.Forms.Label();
             this.cboLocHangTV = new Syncfusion.WinForms.ListView.SfComboBox();
