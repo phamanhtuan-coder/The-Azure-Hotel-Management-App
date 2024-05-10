@@ -13,7 +13,7 @@ namespace DAL
     public class PhongBanDAL
     {
         //Hàm khôi phục 
-        public static bool KhoiPhucPhongBan(string maPhongBan)
+        public bool KhoiPhucPhongBan(string maPhongBan)
         {
             string lenhXoaPhongBan =
                 "UPDATE PhongBan SET TrangThai = 1 WHERE MaPhongBan = @MaPhongBan";
@@ -25,7 +25,7 @@ namespace DAL
             return kq > 0;
         }
         //Hàm xóa
-        public static bool XoaPhongBan(string maPhongBan)
+        public bool XoaPhongBan(string maPhongBan)
         {
             SqlConnection conn = DataProvider.KetNoiDuLieu();
             conn.Open();

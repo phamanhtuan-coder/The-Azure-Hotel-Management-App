@@ -21,7 +21,6 @@ namespace GUI
         {
             base.OnPaint(e);
 
-
             GraphicsPath path = new GraphicsPath();
             int radius = 20;
             int diameter = radius * 2;
@@ -38,18 +37,18 @@ namespace GUI
             path.AddArc(arc, 90, 90);
             path.CloseFigure();
 
-
-            Color semiTransparentColor = Color.FromArgb(128, this.BackColor);
-
+          
+            int alphaValue = 70;
+            Color semiTransparentColor = Color.FromArgb(alphaValue, this.BackColor);
 
             using (SolidBrush brush = new SolidBrush(semiTransparentColor))
             {
                 e.Graphics.FillPath(brush, path);
             }
 
-
             path.Dispose();
         }
+
 
         protected override void OnSizeChanged(EventArgs e)
         {

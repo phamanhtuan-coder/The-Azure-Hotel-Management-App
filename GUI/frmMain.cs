@@ -22,6 +22,10 @@ namespace GUI
         /*-------------------------------------------------------------------------------------------------------------------
                                          BẮT ĐẦU KHAI BÁO CÁC BIẾN TOÀN CỤC
        --------------------------------------------------------------------------------------------------------------------*/
+        //Biến xác định User đang login
+        public string phanQuyen { get; set; }
+        public string hoTen { get; set; } 
+        public Image hinhAnh { get; set; }
 
         public NhanVienDTO user=new NhanVienDTO();
 
@@ -250,6 +254,18 @@ namespace GUI
             frm.BringToFront();
             frm.Show();
         }
+
+        //Thay đổi User Control khi bấm button trong User Control
+        public void SwitchUserControl(UserControl newControl)
+        {
+            panDesktop.Controls.Clear();
+            newControl.Dock = DockStyle.Fill;
+            panDesktop.Controls.Add(newControl);
+            panDesktop.Tag = newControl;
+            newControl.BringToFront();
+            newControl.Show();
+        }
+
 
         /// <summary>
         /// Hàm xử lý sự kiện khi nút Loai TK được bấm
@@ -534,6 +550,12 @@ namespace GUI
             openForm(personal);
         }
 
+        private void btnRoomBooking_Click(object sender, EventArgs e)
+        {
+            ucRoomBooking datPhong = new ucRoomBooking();
+            openForm(datPhong);
+        }
+
         /*-------------------------------------------------------------------------------------------------------------------
                                                   KẾT THÚC ĐOẠN XỬ LÝ MỞ MENU
         --------------------------------------------------------------------------------------------------------------------*/
@@ -770,7 +792,9 @@ namespace GUI
             openForm(Home);
         }
 
-        
+      
+
+
 
         /*-------------------------------------------------------------------------------------------------------------------
                                     KẾT THÚC  HÀM MAIN VÀ HÀM KHỞI TẠO

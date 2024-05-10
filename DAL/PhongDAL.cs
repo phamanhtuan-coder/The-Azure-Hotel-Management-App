@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
+using DTO;
 
 namespace DAL
 {
@@ -15,7 +16,7 @@ namespace DAL
         public List<PhongDTO> FilterTrangThai(bool v)
         {
             List<PhongDTO> dsPhong = new List<PhongDTO>();
-
+                
             string lenhLayDanhSachPhong = "SELECT * FROM Phong WHERE TrangThai = @TrangThai";
 
             SqlConnection conn = DataProvider.KetNoiDuLieu();
@@ -24,7 +25,7 @@ namespace DAL
 
             SqlDataReader reader = DataProvider.ThucHienTruyVan(lenhLayDanhSachPhong, conn, "@TrangThai", SqlDbType.Binary, v ? (object)1 : (object)0);
             while (reader.Read())
-            {
+            {   
                 PhongDTO PhongDTO = new PhongDTO();
                 PhongDTO.MaPHG = (int)reader[0];
                 PhongDTO.MaLoai = (int)reader[1];
@@ -37,9 +38,9 @@ namespace DAL
 
                 dsPhong.Add(PhongDTO);
             }
-
+         
             return dsPhong;
-        }
+    }
 
         public bool kqphong(int maphong)
         {
@@ -54,14 +55,14 @@ namespace DAL
         }
 
         public List<PhongDTO> laydsphong()
-        {
-            List<PhongDTO> dsp = new List<PhongDTO>();
-            SqlConnection conn = DataProvider.KetNoiDuLieu();
-            string strlaydanhsach = "select * from Phong";
-            conn.Open();
-            SqlDataReader reader = DataProvider.ThucHienTruyVan(strlaydanhsach, conn);
-            while (reader.Read())
             {
+            List<PhongDTO> dsp = new List<PhongDTO>();
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+            string strlaydanhsach = "select * from Phong";
+                conn.Open();
+            SqlDataReader reader = DataProvider.ThucHienTruyVan(strlaydanhsach, conn);
+                while (reader.Read())
+                {
                 PhongDTO phong = new PhongDTO();
                 phong.MaPHG = (int)reader[0];
                 phong.MaLoai =(int) reader[1];
@@ -78,14 +79,14 @@ namespace DAL
             reader.Close();
             conn.Close();
             return dsp;
-        }
+                    }
 
         public bool suaphong(PhongDTO phongDTO)
-        {
+                    {
             string lenhCapNhatphong =
                 "UPDATE Phong SET MaLoai = @MaLoai, MaTinhTrangPhong = @MaTinhTrangPhong,MoTa=@MoTa,GiaPhong=@GiaPhong,SucChuaToiDa=@SucChuaToiDa,HinhAnh=@HinhAnh WHERE MaPHG = @MaPHG";
             SqlParameter[] pars = new SqlParameter[7];
-
+                        
             pars[0] = new SqlParameter("MaPHG", phongDTO.MaPHG);
             pars[1] = new SqlParameter("MaTinhTrangPhong", phongDTO.MaTinhTrangPhong);
             pars[2] = new SqlParameter("MaLoai", phongDTO.MaLoai);
@@ -94,16 +95,18 @@ namespace DAL
             pars[5] = new SqlParameter("SucChuaToiDa", phongDTO.SucChuaToiDa);
             pars[6] = new SqlParameter("HinhAnh", phongDTO.HinhAnh);
 
+                    rooms.Add(room);
+                }
 
             SqlConnection conn = DataProvider.KetNoiDuLieu();
             conn.Open();
             int kq = DataProvider.ThucHienCauLenh(lenhCapNhatphong, conn, pars);
-            conn.Close();
+                conn.Close();
             return kq > 0;
-        }
+            }
 
         public bool themphong(PhongDTO phongDTO)
-        {
+            {
             string lenhThemphong =
                 "INSERT INTO Phong (MaLoai, MaTinhTrangPhong,HinhAnh,MoTa,GiaPhong,SucChuaToiDa,TrangThai) VALUES (@MaLoai, @MaTinhTrangPhong,@HinhAnh,@MoTa,@GiaPhong,@SucChuaToiDa, 1)";
 
@@ -119,7 +122,7 @@ namespace DAL
             int kq = DataProvider.ThucHienCauLenh(lenhThemphong, conn, pars);
             conn.Close();
             return kq > 0;
-        }
+            }
 
         public bool xoaphong(int maphong)
         {
@@ -132,5 +135,6 @@ namespace DAL
             conn.Close();
             return kq > 0;
         }
+
     }
 }

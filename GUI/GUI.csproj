@@ -50,6 +50,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="Syncfusion.BulletGraph.Windows, Version=25.1462.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Calculate.Base, Version=25.1462.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Calculate.Windows, Version=25.1462.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
@@ -198,6 +216,12 @@
     <Compile Include="CustomForms\frmBaoTri.Designer.cs">
       <DependentUpon>frmBaoTri.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomForms\frmHoaDonReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomForms\frmHoaDonReview.Designer.cs">
+      <DependentUpon>frmHoaDonReview.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomForms\frmKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -319,6 +343,25 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="UserControls\ucBillHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucBillHistory.Designer.cs">
+      <DependentUpon>ucBillHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucBookingHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucBookingHistory.Designer.cs">
+      <DependentUpon>ucBookingHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucRatingHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucRatingHistory.Designer.cs">
+      <DependentUpon>ucRatingHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ucRoomBooking.cs">
       <SubType>UserControl</SubType>
@@ -503,6 +546,9 @@
     <EmbeddedResource Include="CustomForms\frmBaoTri.resx">
       <DependentUpon>frmBaoTri.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomForms\frmHoaDonReview.resx">
+      <DependentUpon>frmHoaDonReview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomForms\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -564,6 +610,16 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptCTHoaDon.rdlc" />
+    <EmbeddedResource Include="UserControls\ucBillHistory.resx">
+      <DependentUpon>ucBillHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucBookingHistory.resx">
+      <DependentUpon>ucBookingHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucRatingHistory.resx">
+      <DependentUpon>ucRatingHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucRoomBooking.resx">
       <DependentUpon>ucRoomBooking.cs</DependentUpon>
@@ -863,6 +919,34 @@
   <ItemGroup>
     <None Include="Resources\building.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroundLoginPanel_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroundLoginPanel_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no-pictures.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\SearchIcon.png" />
   </ItemGroup>

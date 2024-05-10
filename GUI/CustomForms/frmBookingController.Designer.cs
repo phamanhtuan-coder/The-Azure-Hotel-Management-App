@@ -28,107 +28,165 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.nudSoLuongKhach = new System.Windows.Forms.NumericUpDown();
+            this.dtpNgayDat = new System.Windows.Forms.DateTimePicker();
+            this.txtMaKH = new System.Windows.Forms.TextBox();
+            this.lblSoLuong = new System.Windows.Forms.Label();
+            this.lblNgayDat = new System.Windows.Forms.Label();
+            this.lblMaPHG = new System.Windows.Forms.Label();
+            this.lblMaKH = new System.Windows.Forms.Label();
+            this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnSubmit = new Syncfusion.WinForms.Controls.SfButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtMaPHG = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSoLuongKhach)).BeginInit();
             this.SuspendLayout();
+            // 
+            // nudSoLuongKhach
+            // 
+            this.nudSoLuongKhach.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudSoLuongKhach.Location = new System.Drawing.Point(228, 223);
+            this.nudSoLuongKhach.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.nudSoLuongKhach.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudSoLuongKhach.Name = "nudSoLuongKhach";
+            this.nudSoLuongKhach.Size = new System.Drawing.Size(180, 27);
+            this.nudSoLuongKhach.TabIndex = 34;
+            this.nudSoLuongKhach.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudSoLuongKhach.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // dtpNgayDat
+            // 
+            this.dtpNgayDat.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayDat.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtpNgayDat.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayDat.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayDat.Location = new System.Drawing.Point(228, 179);
+            this.dtpNgayDat.Name = "dtpNgayDat";
+            this.dtpNgayDat.Size = new System.Drawing.Size(180, 27);
+            this.dtpNgayDat.TabIndex = 31;
+            // 
+            // txtMaKH
+            // 
+            this.txtMaKH.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaKH.Location = new System.Drawing.Point(228, 93);
+            this.txtMaKH.Name = "txtMaKH";
+            this.txtMaKH.Size = new System.Drawing.Size(180, 27);
+            this.txtMaKH.TabIndex = 29;
+            // 
+            // lblSoLuong
+            // 
+            this.lblSoLuong.AutoSize = true;
+            this.lblSoLuong.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoLuong.Location = new System.Drawing.Point(36, 228);
+            this.lblSoLuong.Name = "lblSoLuong";
+            this.lblSoLuong.Size = new System.Drawing.Size(140, 22);
+            this.lblSoLuong.TabIndex = 27;
+            this.lblSoLuong.Text = "Số lượng khách";
+            // 
+            // lblNgayDat
+            // 
+            this.lblNgayDat.AutoSize = true;
+            this.lblNgayDat.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNgayDat.Location = new System.Drawing.Point(35, 184);
+            this.lblNgayDat.Name = "lblNgayDat";
+            this.lblNgayDat.Size = new System.Drawing.Size(87, 22);
+            this.lblNgayDat.TabIndex = 24;
+            this.lblNgayDat.Text = "Ngày đặt";
+            // 
+            // lblMaPHG
+            // 
+            this.lblMaPHG.AutoSize = true;
+            this.lblMaPHG.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaPHG.Location = new System.Drawing.Point(36, 141);
+            this.lblMaPHG.Name = "lblMaPHG";
+            this.lblMaPHG.Size = new System.Drawing.Size(94, 22);
+            this.lblMaPHG.TabIndex = 23;
+            this.lblMaPHG.Text = "Mã phòng";
+            // 
+            // lblMaKH
+            // 
+            this.lblMaKH.AutoSize = true;
+            this.lblMaKH.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaKH.Location = new System.Drawing.Point(36, 99);
+            this.lblMaKH.Name = "lblMaKH";
+            this.lblMaKH.Size = new System.Drawing.Size(96, 22);
+            this.lblMaKH.TabIndex = 22;
+            this.lblMaKH.Text = "Username";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(46, 287);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(150, 50);
+            this.btnCancel.TabIndex = 21;
+            this.btnCancel.Text = "Quay lại";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Location = new System.Drawing.Point(238, 287);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(150, 50);
+            this.btnSubmit.TabIndex = 20;
+            this.btnSubmit.Text = "Xác nhận";
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(128, 82);
+            this.label1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(31, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 26);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã KH";
+            this.label1.Size = new System.Drawing.Size(377, 44);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Hãy kiểm tra các thông tin bên dưới!\r\nNếu đúng hãy bấm xác nhận để đặt phòng!";
             // 
-            // textBox1
+            // txtMaPHG
             // 
-            this.textBox1.Location = new System.Drawing.Point(319, 79);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 31);
-            this.textBox1.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(126, 143);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 26);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Tên KH";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(128, 204);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 26);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "label3";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(126, 267);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 26);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "label4";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(319, 138);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 31);
-            this.textBox2.TabIndex = 5;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(319, 201);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 31);
-            this.textBox3.TabIndex = 6;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(319, 264);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 31);
-            this.textBox4.TabIndex = 7;
+            this.txtMaPHG.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaPHG.Location = new System.Drawing.Point(228, 136);
+            this.txtMaPHG.Name = "txtMaPHG";
+            this.txtMaPHG.Size = new System.Drawing.Size(180, 27);
+            this.txtMaPHG.TabIndex = 36;
             // 
             // frmBookingController
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(800, 800);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(436, 360);
+            this.Controls.Add(this.txtMaPHG);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.nudSoLuongKhach);
+            this.Controls.Add(this.dtpNgayDat);
+            this.Controls.Add(this.txtMaKH);
+            this.Controls.Add(this.lblSoLuong);
+            this.Controls.Add(this.lblNgayDat);
+            this.Controls.Add(this.lblMaPHG);
+            this.Controls.Add(this.lblMaKH);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSubmit);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBookingController";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmBookingController";
+            this.Load += new System.EventHandler(this.frmBookingController_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.nudSoLuongKhach)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,13 +194,16 @@
 
         #endregion
 
+        private System.Windows.Forms.NumericUpDown nudSoLuongKhach;
+        private System.Windows.Forms.DateTimePicker dtpNgayDat;
+        private System.Windows.Forms.TextBox txtMaKH;
+        private System.Windows.Forms.Label lblSoLuong;
+        private System.Windows.Forms.Label lblNgayDat;
+        private System.Windows.Forms.Label lblMaPHG;
+        private System.Windows.Forms.Label lblMaKH;
+        private Syncfusion.WinForms.Controls.SfButton btnCancel;
+        private Syncfusion.WinForms.Controls.SfButton btnSubmit;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtMaPHG;
     }
 }

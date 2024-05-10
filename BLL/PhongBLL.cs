@@ -1,4 +1,5 @@
-﻿using DTO;
+﻿using DAL;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +32,7 @@ namespace BLL
         {
             return PhongDAL.kqphong(maphong);
         }
-
+           
         public List<PhongDTO> laydsp()
         {
             return PhongDAL.laydsphong();
@@ -48,28 +49,28 @@ namespace BLL
         }
 
         public List<PhongDTO> TraCuuPhong(List<PhongDTO> phongDTOs, string searchKeyword)
-        {
+            {
             List<PhongDTO> searchResults = phongDTOs.Where(item =>
              item.MaPHG.ToString().Contains(searchKeyword)
          ).ToList();
             return searchResults;
-        }
+            }
 
         public List<PhongDTO> trloaiphong(List<PhongDTO> phongDTOs, string searchKeyword)
-        {
+            {
             List<PhongDTO> searchResults = phongDTOs.Where(item =>
              item.MaTinhTrangPhong.ToString().Contains(searchKeyword)
          ).ToList();
             return searchResults;
         }
-
+             
         public List<PhongDTO> trttphong(List<PhongDTO> phongDTOs, string searchKeyword)
         {
             List<PhongDTO> searchResults = phongDTOs.Where(item =>
              item.MaPHG.ToString().Contains(searchKeyword)
          ).ToList();
             return searchResults;
-        }
+            }
 
         public bool Xoap(int maphong)
         {

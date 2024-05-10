@@ -75,6 +75,8 @@ namespace GUI
 
             if (viTriX == 520)
             {
+                Image backgroundImage = (Image)Properties.Resources.ResourceManager.GetObject("backgroundLoginPanel_2");
+                panLogin.BackgroundImage = backgroundImage;
                 lblLOGO.Text = "XÁC THỰC \r\nTÀI KHOẢN";
                 Icon icon1 = new Icon(Resources.Email, 48, 48);
                 Bitmap bitmap1 = icon1.ToBitmap();
@@ -95,6 +97,8 @@ namespace GUI
             }
             else if (viTriX == 60)
             {
+                Image backgroundImage = (Image)Properties.Resources.ResourceManager.GetObject("backgroundLoginPanel");
+                panLogin.BackgroundImage = backgroundImage;
                 lblLOGO.Text = "THE AZURE HOTEL\r\nMANAGEMENT APP";
                 Icon icon1 = new Icon(Resources.UserName, 48, 48);
                 Bitmap bitmap1 = icon1.ToBitmap();
@@ -142,7 +146,7 @@ namespace GUI
         --------------------------------------------------------------------------------------------------------------------*/
         private void btnClose_Click(object sender, EventArgs e)
         {
-            using (customMessageBox messageBox = new customMessageBox("Bạn có muốn thoát chương trình không?"))
+            using (customMessageBox messageBox = new customMessageBox("Bạn có chắc chắn muốn thoát chương trình không?"))
             {
                 DialogResult dr = messageBox.ShowDialog();
                 if (dr == DialogResult.Cancel)

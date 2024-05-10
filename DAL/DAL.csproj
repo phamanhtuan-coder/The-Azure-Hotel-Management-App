@@ -90,9 +90,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DanhGiaDAL.cs" />
   <Compile Include="BaoTriDAL.cs" />
     <Compile Include="ChiTietHoaDonDAL.cs" />
     <Compile Include="DataProvider.cs" />
+    <Compile Include="PhongBanDAL.cs" />
+    <Compile Include="PhongDAL.cs" />
     <Compile Include="DatDichVuDAL.cs" />
     <Compile Include="DatPhongDAL.cs" />
     <Compile Include="DichVuDAL.cs" />
