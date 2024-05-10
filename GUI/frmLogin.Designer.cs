@@ -149,8 +149,8 @@ namespace GUI
             // 
             // tbtnRemember
             // 
-            activeStateCollection1.Text = "Không ghi nhớ";
-            this.tbtnRemember.ActiveState = activeStateCollection1;
+            activeStateCollection2.Text = "Không ghi nhớ";
+            this.tbtnRemember.ActiveState = activeStateCollection2;
             this.tbtnRemember.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbtnRemember.ForeColor = System.Drawing.Color.Black;
             inactiveStateCollection2.Text = "Ghi nhớ mật khẩu";
@@ -159,7 +159,7 @@ namespace GUI
             this.tbtnRemember.MinimumSize = new System.Drawing.Size(52, 20);
             this.tbtnRemember.Name = "tbtnRemember";
             this.tbtnRemember.Size = new System.Drawing.Size(180, 40);
-            this.tbtnRemember.Slider = sliderCollection1;
+            this.tbtnRemember.Slider = sliderCollection2;
             this.tbtnRemember.TabIndex = 9;
             this.tbtnRemember.ThemeStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 

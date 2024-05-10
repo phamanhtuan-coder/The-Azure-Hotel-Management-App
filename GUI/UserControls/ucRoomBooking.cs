@@ -24,7 +24,7 @@ namespace GUI.UserControls
         {
             InitializeComponent();
             this.DoubleBuffered = true;
-            
+
         }
 
         private void ucRoomBooking_Load(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace GUI.UserControls
                 {
                     Panel roomPanel = TaoPanelPhong(room);
                     roomPanel.Dock = DockStyle.Top;
-                    if (i ==0)
+                    if (i == 0)
                     {
                         roomPanel.Margin = new Padding(5, 5, 0, 0);
 
@@ -104,7 +104,7 @@ namespace GUI.UserControls
             thongTinLabel.Location = new Point(10, 10);
             thongTinLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             thongTinLabel.Padding = new Padding(10, 5, 10, 5);
-            string giaPhong= string.Format("{0:000,0}", phong.GiaPhong);
+            string giaPhong = string.Format("{0:000,0}", phong.GiaPhong);
             thongTinLabel.Text = $"Phòng: {phong.MoTa}\nGiá: {giaPhong} VNĐ \nMô tả: {phong.MoTa}";
             chiaPanel.Panel2.Controls.Add(thongTinLabel);
 
@@ -121,11 +121,11 @@ namespace GUI.UserControls
 
             btnDatPhong.Click += (sender, e) =>
             {
-                string username="abc";
+                string username = "abc";
                 int maPhong = phong.MaPHG;
                 string ngayDat = dtpCheckInDate.Value.ToString();
                 int soKhach = (int)nudSucChua.Value;
-                frmBookingController bookingController = new frmBookingController(username,maPhong,ngayDat,soKhach);
+                frmBookingController bookingController = new frmBookingController(username, maPhong, ngayDat, soKhach);
                 bookingController.ShowDialog();
             };
 
@@ -135,10 +135,10 @@ namespace GUI.UserControls
             chiaPanel.SizeChanged += (sender, e) =>
             {
                 chiaPanel.SplitterDistance = chiaPanel.ClientSize.Width / 3;
-                thongTinLabel.Location = new Point((int)Math.Floor(chiaPanel.Panel2.ClientSize.Width * 0.055)-10  , 10);
+                thongTinLabel.Location = new Point((int)Math.Floor(chiaPanel.Panel2.ClientSize.Width * 0.055) - 10, 10);
                 thongTinLabel.TextAlign = ContentAlignment.TopLeft;
                 btnDatPhong.Location = new Point(chiaPanel.Panel2.ClientSize.Width - btnDatPhong.Width - 10, thongTinLabel.Bottom + 50);
-               
+
             };
 
             if (phong.HinhAnh != null && phong.HinhAnh.Length > 0)
@@ -167,7 +167,7 @@ namespace GUI.UserControls
         private Image ByteArrayToImage(byte[] byteArray)
         {
             if (byteArray == null)
-            { 
+            {
                 throw new ArgumentNullException(nameof(byteArray), "Byte array cannot be null.");
             }
             else
@@ -235,7 +235,7 @@ namespace GUI.UserControls
         }
 
 
-
+    
     }
 }
 

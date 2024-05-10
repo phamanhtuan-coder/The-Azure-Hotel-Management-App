@@ -16,7 +16,7 @@ namespace DTO
             public string MoTa { get; set; }
             public decimal GiaPhong { get; set; }
             public int SucChuaToiDa { get; set; }
-        public bool TrangThai { get; set; }
+            public bool TrangThai { get; set; }
         }
     
 }
