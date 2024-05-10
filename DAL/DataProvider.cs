@@ -12,8 +12,6 @@ namespace DAL
     {
         private static string server = ".";
         private static string database = "UngDungQuanLyKhachSan";
-        //private static string uid = "trumServer";
-        //private static string password = "@dminVisual2022";
         private static string connectionString =
             $"Data Source={server};Initial Catalog={database};Integrated Security=true;";
 
