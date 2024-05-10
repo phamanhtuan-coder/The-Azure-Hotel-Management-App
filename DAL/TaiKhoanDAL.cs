@@ -193,7 +193,7 @@ namespace DAL
             }
         }
 
-        public NhanVienDTO XacThuc(TaiKhoanDTO taiKhoanDTO)
+        public TaiKhoanDTO XacThuc(TaiKhoanDTO taiKhoanDTO)
         {
             try
             {
@@ -206,28 +206,21 @@ namespace DAL
                 com.Parameters.AddWithValue("@MatKhau", taiKhoanDTO.MatKhau);
 
                 SqlDataReader reader= com.ExecuteReader();
-                NhanVienDTO nhanVienDTO = new NhanVienDTO();
+                TaiKhoanDTO tai = new TaiKhoanDTO();
                 while (reader.Read())
                 {
-                    nhanVienDTO.TenTaiKhoan = reader["TenDangNhap"].ToString();
-                    nhanVienDTO.HoTenNV = reader["TenDangNhap"].ToString();
-                    nhanVienDTO.HinhAnh = reader["HinhAnh"] as byte[];
-                    nhanVienDTO.SDT = reader["SDT"].ToString();
-                    nhanVienDTO.Email = reader["Email"].ToString();
-                    nhanVienDTO.CCCD = reader["CCCD"].ToString();
-                    nhanVienDTO.NgaySinh = (DateTime) reader["NgaySinh"];
-                    nhanVienDTO.DiaChi = reader["DiaChi"].ToString();
-                    nhanVienDTO.Luong = (decimal) reader["Luong"];
-                    nhanVienDTO.GioiTinh = reader["GioiTinh"].ToString();
+                    tai.MaTaiKhoan = (int) reader["MaTaiKhoan"];
+                    tai.TenDangNhap = reader["TenDangNhap"].ToString();
+                    tai.MaPQ = reader["MaPQ"].ToString();
                 }
                 reader.Close();
                 conn.Close();
 
-                return nhanVienDTO;
+                return tai;
             }
             catch (Exception)
             {
-                return new NhanVienDTO();
+                return new TaiKhoanDTO();
             }
         }
 
