@@ -55,7 +55,7 @@ namespace DAL
                     chiTiet.MaHD = (int)reader["MaHD"];
                     chiTiet.MaDatPhong = (int)reader["MaDatPhong"];
                     chiTiet.MaKhuyenMai = (int)reader["MaKhuyenMai"];
-                    chiTiet.ThanhTien = (decimal)reader["ThanhTien"];
+                    chiTiet.ThanhTien = reader["ThanhTien"] as decimal?;
                     chiTiet.TrangThai = true;
                     list.Add(chiTiet);
                 }
@@ -89,7 +89,7 @@ namespace DAL
                     chiTiet.MaHD = (int)reader["MaHD"];
                     chiTiet.MaDatPhong = (int)reader["MaDatPhong"];
                     chiTiet.MaKhuyenMai = (int)reader["MaKhuyenMai"];
-                    chiTiet.ThanhTien = (decimal)reader["ThanhTien"];
+                    chiTiet.ThanhTien = reader["ThanhTien"] as decimal?;
                     chiTiet.TrangThai = true;
                     list.Add(chiTiet);
                 }
@@ -122,7 +122,7 @@ namespace DAL
                     chiTiet.MaHD = (int)reader["MaHD"];
                     chiTiet.MaDatPhong = (int)reader["MaDatPhong"];
                     chiTiet.MaKhuyenMai = (int)reader["MaKhuyenMai"];
-                    chiTiet.ThanhTien = (decimal)reader["ThanhTien"];
+                    chiTiet.ThanhTien = reader["ThanhTien"] as decimal?;
                     byte[] trangThaiBytes = (byte[])reader["TrangThai"];
                     chiTiet.TrangThai = BitConverter.ToBoolean(trangThaiBytes, 0);
                     list.Add(chiTiet);

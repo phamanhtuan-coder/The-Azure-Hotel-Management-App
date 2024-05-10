@@ -315,7 +315,11 @@ namespace GUI.UserControls
                     Decimal TongTien = 0;
                     foreach (ChiTietHoaDonDTO item in hoaDonDTO.chiTietHoaDonDTOs)
                     {
-                        TongTien += item.ThanhTien;
+                        if (item.ThanhTien != null)
+                        {
+                            TongTien += (decimal)item.ThanhTien;
+                        }
+                        
                     }
 
                     ThueBLL thueBLL = new ThueBLL();
