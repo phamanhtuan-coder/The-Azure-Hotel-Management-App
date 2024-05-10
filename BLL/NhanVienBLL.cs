@@ -103,5 +103,14 @@ namespace BLL
         {
             return nhanVienDAL.TruyVanNVDAG();
         }
+
+        public NhanVienDTO TimNV(int maTaiKhoan)
+        {
+            if (maTaiKhoan > 0)
+            {
+                return nhanVienDAL.TimNV(maTaiKhoan);
+            }
+            return new NhanVienDTO();
+        }
     }
 }

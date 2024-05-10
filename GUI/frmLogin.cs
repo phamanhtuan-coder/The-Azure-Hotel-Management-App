@@ -24,6 +24,8 @@ namespace GUI
                                 BẮT ĐẦU ĐOẠN KHAI BÁO CÁC BIẾN TOÀN CỤC
        --------------------------------------------------------------------------------------------------------------------*/
         public NhanVienDTO login = new NhanVienDTO();
+        NhanVienBLL nhanVienBLL = new NhanVienBLL();
+        public KhachHangDTO loginKH = new KhachHangDTO();
 
         private Timer timerLoop;
         private int gifDuration = 18000;
@@ -187,11 +189,12 @@ namespace GUI
             {
                 taiKhoanDTO.TenDangNhap = txtUsername.Text;
                 taiKhoanDTO.MatKhau = Utilities.HashMatKhau.HashPassword(txtPassword.Text);
-                if (DangNhap(ref login))
+                if (DangNhap(ref login, ref loginKH))
                 {
                     frmMain mainForm = new frmMain();
                     this.Hide();
                     mainForm.user = login;
+                    mainForm.userKH = loginKH;
                     mainForm.Show();
                     this.Close();
                 }
@@ -217,9 +220,23 @@ namespace GUI
             }
         }
 
-        private bool DangNhap(ref NhanVienDTO login)
-        {          
-            return taiKhoanBLL.XacThuc(taiKhoanDTO, ref login);            
+        private bool DangNhap(ref NhanVienDTO login, ref KhachHangDTO loginKH)
+        {
+            if (taiKhoanBLL.XacThuc(ref taiKhoanDTO))
+            {
+                if(taiKhoanDTO.MaPQ == "KH-01")
+                {
+                    loginKH.TenDangNhap = taiKhoanDTO.TenDangNhap;
+                    loginKH = khachHangBLL.TimKH(taiKhoanDTO.MaTaiKhoan);
+                }
+                else
+                {
+                    login.TenTaiKhoan = taiKhoanDTO.TenDangNhap;
+                    login = nhanVienBLL.TimNV(taiKhoanDTO.MaTaiKhoan);
+                }
+                return true;
+            }
+            else return false;
         }
 
         private void btnShowHidePassword_Click(object sender, EventArgs e)

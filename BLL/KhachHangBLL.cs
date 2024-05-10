@@ -71,6 +71,15 @@ namespace BLL
             return khachHangDAL.LoadIDvaNameKH();
         }
 
+        public KhachHangDTO TimKH(int maTaiKhoan)
+        {
+            if (maTaiKhoan > 0)
+            {
+                return khachHangDAL.TimKH(maTaiKhoan);
+            }
+            return new KhachHangDTO();
+        }
+
         public List<KhachHangDTO> TraCuuNhanVien(List<KhachHangDTO> khachHangDTOs, string searchKeyword)
         {
             List<KhachHangDTO> searchResults = khachHangDTOs.Where(item =>

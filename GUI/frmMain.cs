@@ -24,7 +24,7 @@ namespace GUI
        --------------------------------------------------------------------------------------------------------------------*/
 
         public NhanVienDTO user=new NhanVienDTO();
-
+        public KhachHangDTO userKH = new KhachHangDTO();
 
         //Biến xác định menu đang mở
         private SfButton currentButton;

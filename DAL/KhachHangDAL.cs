@@ -229,6 +229,45 @@ namespace DAL
             }
         }
 
+        public KhachHangDTO TimKH(int maTaiKhoan)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spTimKH", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+              
+                com.Parameters.AddWithValue("@MaTaiKhoan", maTaiKhoan);            
+                SqlDataReader reader = com.ExecuteReader();
+                KhachHangDTO khachHang = new KhachHangDTO();
+                while (reader.Read())
+                {
+                    khachHang.MaKH = (int)reader["MaKH"];
+                    khachHang.MaTaiKhoan = (int)reader["MaTaiKhoan"];
+                    khachHang.MaLoaiHangThanhVien = (int)reader["MaLoaiHangThanhVien"];
+                    khachHang.HinhAnh = reader["HinhAnh"] as byte[];
+                    khachHang.HoTenKH = reader["HoTenKH"].ToString();
+                    khachHang.Email = reader["Email"].ToString();
+                    khachHang.CCCD = reader["CCCD"].ToString();
+                    khachHang.NgaySinh = (DateTime)reader["NgaySinh"];
+                    khachHang.DiaChi = reader["DiaChi"].ToString();
+                    khachHang.SDT = reader["SDT"].ToString();
+                    byte[] trangThaiBytes = (byte[])reader["TrangThai"];
+                    khachHang.TrangThai = BitConverter.ToBoolean(trangThaiBytes, 0);
+                    khachHang.GioiTinh = reader["GioiTinh"].ToString();
+                }
+
+                conn.Close();
+                return khachHang;
+            }
+            catch (Exception)
+            {
+                return new KhachHangDTO();
+            }
+        }
+
         public TaiKhoanDTO XacThuc(KhachHangDTO khachHangDTO)
         {
             TaiKhoanDTO taiKhoanDTO = new TaiKhoanDTO();

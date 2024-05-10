@@ -378,5 +378,44 @@ namespace DAL
                 return new List<NhanVienDTO>();
             }
         }
+
+        public NhanVienDTO TimNV(int maTaiKhoan)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spTimNV", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaTaiKhoan", maTaiKhoan);
+                SqlDataReader reader = com.ExecuteReader();
+                NhanVienDTO nhanVien = new NhanVienDTO();
+                while (reader.Read())
+                {
+                    nhanVien.MaNV = (int)(reader["MaNV"]);
+                    nhanVien.MaNQL = reader["MaNQL"] as int?;
+                    nhanVien.MaTaiKhoan = (int)(reader["MaTaiKhoan"]);
+                    nhanVien.HinhAnh = reader["HinhAnh"] as byte[];
+                    nhanVien.HoTenNV = reader["HoTenNV"] as string;
+                    nhanVien.SDT = reader["SDT"] as string;
+                    nhanVien.Email = reader["Email"] as string;
+                    nhanVien.CCCD = reader["CCCD"] as string;
+                    nhanVien.NgaySinh = (DateTime)reader["NgaySinh"];
+                    nhanVien.DiaChi = reader["DiaChi"] as string;
+                    nhanVien.Luong = (decimal)reader["Luong"];
+                    byte[] trangThaiBytes = (byte[])reader["TrangThai"];
+                    nhanVien.TrangThai = BitConverter.ToBoolean(trangThaiBytes, 0);
+                    nhanVien.GioiTinh = reader["GioiTinh"].ToString();
+                }
+
+                conn.Close();
+                return nhanVien;
+            }
+            catch (Exception)
+            {
+                return new NhanVienDTO();
+            }
+        }
     }
 }
