@@ -67,8 +67,6 @@ namespace GUI.UserControls
             frm.DatPhongDTO.MaPHG = (int)dgvBooking.SelectedRows[0].Cells["colMaPHG"].Value;
             frm.DatPhongDTO.MaKH = (int)dgvBooking.SelectedRows[0].Cells["colMaKH"].Value;
             frm.DatPhongDTO.NgayDatPhong = (DateTime)dgvBooking.SelectedRows[0].Cells["colNgayDatPhong"].Value;
-            frm.DatPhongDTO.NgayNhanPhong = (DateTime)dgvBooking.SelectedRows[0].Cells["colNgayNhanPhong"].Value;
-            frm.DatPhongDTO.NgayTraPhong = (DateTime)dgvBooking.SelectedRows[0].Cells["colNgayTraPhong"].Value;
             frm.DatPhongDTO.SoLuongKH =(int)dgvBooking.SelectedRows[0].Cells["colSoLuongKH"].Value;
             frm.DatPhongDTO.TrangThai = Convert.ToBoolean(dgvBooking.SelectedRows[0].Cells["colTrangThai"].Value);
         }

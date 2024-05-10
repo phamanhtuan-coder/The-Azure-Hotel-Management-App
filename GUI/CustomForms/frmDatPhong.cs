@@ -63,8 +63,6 @@ namespace GUI.customForm
             p.MaKH =int.Parse(txtMaKH.Text);
             p.NgayDatPhong = dtpNgayDat.Value;
             p.SoLuongKH =(int)nudSoLuongKhach.Value;
-            p.NgayNhanPhong =DateTime.Parse( DateTime.Now.ToString("dd/MM/yyyy"));
-            p.NgayTraPhong =DateTime.Parse( DateTime.Now.ToString("dd/MM/yyyy"));
 
         }
 
@@ -118,6 +116,7 @@ namespace GUI.customForm
         private void btnTaoKH_Click(object sender, EventArgs e)
         {
             frmKhachHang taoKhachHang = new frmKhachHang();
+            taoKhachHang.isAdd = true;
             taoKhachHang.ShowDialog();
         }
     }

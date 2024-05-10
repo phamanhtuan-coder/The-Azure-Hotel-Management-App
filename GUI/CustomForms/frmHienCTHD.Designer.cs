@@ -81,7 +81,7 @@
             this.colMaCTHD.HeaderText = "Mã CTHD";
             this.colMaCTHD.Name = "colMaCTHD";
             this.colMaCTHD.ReadOnly = true;
-            this.colMaCTHD.Width = 152;
+            this.colMaCTHD.Width = 104;
             // 
             // colMaHD
             // 
@@ -89,7 +89,7 @@
             this.colMaHD.HeaderText = "Mã hóa đơn";
             this.colMaHD.Name = "colMaHD";
             this.colMaHD.ReadOnly = true;
-            this.colMaHD.Width = 173;
+            this.colMaHD.Width = 122;
             // 
             // colMaDP
             // 
@@ -97,7 +97,7 @@
             this.colMaDP.HeaderText = "Mã đặt phòng";
             this.colMaDP.Name = "colMaDP";
             this.colMaDP.ReadOnly = true;
-            this.colMaDP.Width = 196;
+            this.colMaDP.Width = 139;
             // 
             // colMaKM
             // 
@@ -105,7 +105,7 @@
             this.colMaKM.HeaderText = "Mã khuyến mãi";
             this.colMaKM.Name = "colMaKM";
             this.colMaKM.ReadOnly = true;
-            this.colMaKM.Width = 213;
+            this.colMaKM.Width = 151;
             // 
             // colThanhTien
             // 
@@ -113,7 +113,7 @@
             this.colThanhTien.HeaderText = "Thành tiền";
             this.colThanhTien.Name = "colThanhTien";
             this.colThanhTien.ReadOnly = true;
-            this.colThanhTien.Width = 161;
+            this.colThanhTien.Width = 115;
             // 
             // colTrangThai
             // 
@@ -130,7 +130,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(291, 9);
+            this.label1.Location = new System.Drawing.Point(259, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(316, 46);
             this.label1.TabIndex = 7;
@@ -144,7 +144,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvBillDetails);
             this.Controls.Add(this.btnCancel);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmHienCTHD";
