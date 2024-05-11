@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSubmit = new Syncfusion.WinForms.Controls.SfButton();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.lblMaHD = new System.Windows.Forms.Label();
@@ -38,6 +39,7 @@
             this.lblMaDP = new System.Windows.Forms.Label();
             this.nudTongTien = new System.Windows.Forms.NumericUpDown();
             this.cboMaHD = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.cboMaNV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboMaKM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTongTien)).BeginInit();
@@ -50,8 +52,9 @@
             this.btnSubmit.Location = new System.Drawing.Point(294, 185);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
-            this.btnSubmit.TabIndex = 3;
+            this.btnSubmit.TabIndex = 10;
             this.btnSubmit.Text = "Submit";
+            this.toolTip1.SetToolTip(this.btnSubmit, "Gửi");
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnCancel
@@ -60,8 +63,9 @@
             this.btnCancel.Location = new System.Drawing.Point(30, 185);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Quay lại";
+            this.toolTip1.SetToolTip(this.btnCancel, "Quay lại chi tiết hóa đơn");
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // lblMaHD
@@ -70,7 +74,7 @@
             this.lblMaHD.Location = new System.Drawing.Point(13, 22);
             this.lblMaHD.Name = "lblMaHD";
             this.lblMaHD.Size = new System.Drawing.Size(108, 22);
-            this.lblMaHD.TabIndex = 8;
+            this.lblMaHD.TabIndex = 1;
             this.lblMaHD.Text = "Mã hóa đơn";
             // 
             // lblTongTien
@@ -79,7 +83,7 @@
             this.lblTongTien.Location = new System.Drawing.Point(13, 148);
             this.lblTongTien.Name = "lblTongTien";
             this.lblTongTien.Size = new System.Drawing.Size(89, 22);
-            this.lblTongTien.TabIndex = 13;
+            this.lblTongTien.TabIndex = 7;
             this.lblTongTien.Text = "Tổng tiền";
             // 
             // cboMaNV
@@ -89,8 +93,9 @@
             this.cboMaNV.Name = "cboMaNV";
             this.cboMaNV.Size = new System.Drawing.Size(180, 27);
             this.cboMaNV.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboMaNV.TabIndex = 14;
+            this.cboMaNV.TabIndex = 4;
             this.cboMaNV.TabStop = false;
+            this.toolTip1.SetToolTip(this.cboMaNV, "Chọn mã đặt phòng");
             // 
             // lblMaKM
             // 
@@ -98,7 +103,7 @@
             this.lblMaKM.Location = new System.Drawing.Point(13, 106);
             this.lblMaKM.Name = "lblMaKM";
             this.lblMaKM.Size = new System.Drawing.Size(141, 22);
-            this.lblMaKM.TabIndex = 20;
+            this.lblMaKM.TabIndex = 5;
             this.lblMaKM.Text = "Mã khuyến mãi";
             // 
             // cboMaKM
@@ -108,8 +113,9 @@
             this.cboMaKM.Name = "cboMaKM";
             this.cboMaKM.Size = new System.Drawing.Size(180, 27);
             this.cboMaKM.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboMaKM.TabIndex = 21;
+            this.cboMaKM.TabIndex = 6;
             this.cboMaKM.TabStop = false;
+            this.toolTip1.SetToolTip(this.cboMaKM, "Chọn mã khuyến mãi");
             // 
             // lblMaDP
             // 
@@ -117,7 +123,7 @@
             this.lblMaDP.Location = new System.Drawing.Point(13, 64);
             this.lblMaDP.Name = "lblMaDP";
             this.lblMaDP.Size = new System.Drawing.Size(127, 22);
-            this.lblMaDP.TabIndex = 22;
+            this.lblMaDP.TabIndex = 3;
             this.lblMaDP.Text = "Mã đặt phòng";
             // 
             // nudTongTien
@@ -135,9 +141,10 @@
             0});
             this.nudTongTien.Name = "nudTongTien";
             this.nudTongTien.Size = new System.Drawing.Size(180, 27);
-            this.nudTongTien.TabIndex = 26;
+            this.nudTongTien.TabIndex = 8;
             this.nudTongTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudTongTien.ThousandsSeparator = true;
+            this.toolTip1.SetToolTip(this.nudTongTien, "Chọn tổng tiền");
             // 
             // cboMaHD
             // 
@@ -146,8 +153,9 @@
             this.cboMaHD.Name = "cboMaHD";
             this.cboMaHD.Size = new System.Drawing.Size(180, 27);
             this.cboMaHD.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboMaHD.TabIndex = 27;
+            this.cboMaHD.TabIndex = 2;
             this.cboMaHD.TabStop = false;
+            this.toolTip1.SetToolTip(this.cboMaHD, "Chọn mã hóa đơn");
             // 
             // frmCTHD
             // 
@@ -190,5 +198,6 @@
         private System.Windows.Forms.Label lblMaDP;
         private System.Windows.Forms.NumericUpDown nudTongTien;
         private Syncfusion.WinForms.ListView.SfComboBox cboMaHD;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
