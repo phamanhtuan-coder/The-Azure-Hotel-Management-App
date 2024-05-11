@@ -1,6 +1,7 @@
 ﻿using BLL;
 using DTO;
 using GUI.customForm;
+using GUI.CustomForms;
 using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
@@ -395,6 +396,12 @@ namespace GUI.UserControls
                 thongBao = new customMessageBox("Vui lòng chọn hóa đơn!");
                 thongBao.ShowDialog();
             }
+        }
+
+        private void btnInHD_Click(object sender, EventArgs e)
+        {
+            frmHoaDonReview inHD = new frmHoaDonReview();
+            inHD.ShowDialog();
         }
     }
 }

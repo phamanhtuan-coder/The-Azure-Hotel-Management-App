@@ -140,6 +140,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dsCTHoaDon.cs">
+      <DependentUpon>dsCTHoaDon.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsCTHoaDon.Designer.cs">
+      <DependentUpon>dsCTHoaDon.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="frmTacGia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -629,7 +637,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptCTHoaDon.rdlc" />
+    <EmbeddedResource Include="rptCTHoaDon.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucBillHistory.resx">
       <DependentUpon>ucBillHistory.cs</DependentUpon>
     </EmbeddedResource>
@@ -717,8 +727,18 @@
     <EmbeddedResource Include="UserControls\ucDashboard.resx">
       <DependentUpon>ucDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="dsCTHoaDon.xsc">
+      <DependentUpon>dsCTHoaDon.xsd</DependentUpon>
+    </None>
+    <None Include="dsCTHoaDon.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCTHoaDon.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsCTHoaDon.xss">
+      <DependentUpon>dsCTHoaDon.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\DTO.ChiTietHoaDonDTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -969,7 +989,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SearchIcon.png" />
   </ItemGroup>
