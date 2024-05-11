@@ -33,11 +33,15 @@
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
             this.btnDeleteRating = new Syncfusion.WinForms.Controls.SfButton();
             this.btnRecoverRating = new Syncfusion.WinForms.Controls.SfButton();
-            this.txtSearchRating = new System.Windows.Forms.TextBox();
-            this.btnTraCuuRating = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateRating = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvRating = new System.Windows.Forms.DataGridView();
+            this.colMaDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDiemDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNhanXet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtpNgayDanhGia = new System.Windows.Forms.DateTimePicker();
             this.lblNgayDanhGia = new System.Windows.Forms.Label();
             this.cboRatingValue = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -45,12 +49,6 @@
             this.lblStateRating = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.colMaDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDiemDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNhanXet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRating)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -136,31 +134,6 @@
             this.btnRecoverRating.UseVisualStyleBackColor = false;
             this.btnRecoverRating.Click += new System.EventHandler(this.btnRecoverRating_Click);
             // 
-            // txtSearchRating
-            // 
-            this.txtSearchRating.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchRating.Location = new System.Drawing.Point(6, 16);
-            this.txtSearchRating.Name = "txtSearchRating";
-            this.txtSearchRating.Size = new System.Drawing.Size(251, 40);
-            this.txtSearchRating.TabIndex = 2;
-            // 
-            // btnTraCuuRating
-            // 
-            this.btnTraCuuRating.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTraCuuRating.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnTraCuuRating.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTraCuuRating.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTraCuuRating.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuRating.Location = new System.Drawing.Point(264, 16);
-            this.btnTraCuuRating.Name = "btnTraCuuRating";
-            this.btnTraCuuRating.Size = new System.Drawing.Size(118, 40);
-            this.btnTraCuuRating.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnTraCuuRating.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuRating.TabIndex = 0;
-            this.btnTraCuuRating.Text = "Tra cứu";
-            this.btnTraCuuRating.UseVisualStyleBackColor = false;
-            // 
             // cboStateRating
             // 
             this.cboStateRating.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -168,7 +141,7 @@
             this.cboStateRating.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboStateRating.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboStateRating.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateRating.Location = new System.Drawing.Point(225, 174);
+            this.cboStateRating.Location = new System.Drawing.Point(233, 119);
             this.cboStateRating.Name = "cboStateRating";
             this.cboStateRating.Size = new System.Drawing.Size(156, 33);
             this.cboStateRating.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -198,8 +171,6 @@
             this.spcQuery.Panel2.Controls.Add(this.cboRatingValue);
             this.spcQuery.Panel2.Controls.Add(this.lblRatingValue);
             this.spcQuery.Panel2.Controls.Add(this.lblStateRating);
-            this.spcQuery.Panel2.Controls.Add(this.txtSearchRating);
-            this.spcQuery.Panel2.Controls.Add(this.btnTraCuuRating);
             this.spcQuery.Panel2.Controls.Add(this.cboStateRating);
             this.spcQuery.Size = new System.Drawing.Size(1370, 746);
             this.spcQuery.SplitterDistance = 973;
@@ -229,96 +200,6 @@
             this.dgvRating.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRating.Size = new System.Drawing.Size(973, 746);
             this.dgvRating.TabIndex = 0;
-            // 
-            // dtpNgayDanhGia
-            // 
-            this.dtpNgayDanhGia.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgayDanhGia.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayDanhGia.Location = new System.Drawing.Point(181, 133);
-            this.dtpNgayDanhGia.Name = "dtpNgayDanhGia";
-            this.dtpNgayDanhGia.Size = new System.Drawing.Size(200, 27);
-            this.dtpNgayDanhGia.TabIndex = 31;
-            this.dtpNgayDanhGia.ValueChanged += new System.EventHandler(this.dtpNgayDanhGia_ValueChanged);
-            // 
-            // lblNgayDanhGia
-            // 
-            this.lblNgayDanhGia.AutoSize = true;
-            this.lblNgayDanhGia.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgayDanhGia.Location = new System.Drawing.Point(0, 134);
-            this.lblNgayDanhGia.Name = "lblNgayDanhGia";
-            this.lblNgayDanhGia.Size = new System.Drawing.Size(155, 26);
-            this.lblNgayDanhGia.TabIndex = 30;
-            this.lblNgayDanhGia.Text = "Ngày đánh giá";
-            this.lblNgayDanhGia.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cboRatingValue
-            // 
-            this.cboRatingValue.DelimiterChar = "";
-            this.cboRatingValue.DisplayMember = "";
-            this.cboRatingValue.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboRatingValue.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboRatingValue.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboRatingValue.Location = new System.Drawing.Point(226, 77);
-            this.cboRatingValue.Name = "cboRatingValue";
-            this.cboRatingValue.Size = new System.Drawing.Size(156, 33);
-            this.cboRatingValue.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboRatingValue.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboRatingValue.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboRatingValue.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboRatingValue.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboRatingValue.TabIndex = 23;
-            this.cboRatingValue.SelectedIndexChanged += new System.EventHandler(this.cboRatingValue_SelectedIndexChanged);
-            // 
-            // lblRatingValue
-            // 
-            this.lblRatingValue.AutoSize = true;
-            this.lblRatingValue.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRatingValue.Location = new System.Drawing.Point(1, 84);
-            this.lblRatingValue.Name = "lblRatingValue";
-            this.lblRatingValue.Size = new System.Drawing.Size(179, 26);
-            this.lblRatingValue.TabIndex = 14;
-            this.lblRatingValue.Text = "Lọc theo số điểm";
-            this.lblRatingValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblStateRating
-            // 
-            this.lblStateRating.AutoSize = true;
-            this.lblStateRating.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStateRating.Location = new System.Drawing.Point(1, 181);
-            this.lblStateRating.Name = "lblStateRating";
-            this.lblStateRating.Size = new System.Drawing.Size(186, 26);
-            this.lblStateRating.TabIndex = 9;
-            this.lblStateRating.Text = "Trạng thái dữ liệu";
-            this.lblStateRating.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panUcHeader
-            // 
-            this.panUcHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(224)))), ((int)(((byte)(155)))));
-            this.panUcHeader.Controls.Add(this.spcHeader);
-            this.panUcHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panUcHeader.Location = new System.Drawing.Point(0, 0);
-            this.panUcHeader.Name = "panUcHeader";
-            this.panUcHeader.Size = new System.Drawing.Size(1370, 94);
-            this.panUcHeader.TabIndex = 37;
-            // 
-            // spcHeader
-            // 
-            this.spcHeader.BackColor = System.Drawing.Color.Lavender;
-            this.spcHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.spcHeader.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.spcHeader.Location = new System.Drawing.Point(0, 0);
-            this.spcHeader.Name = "spcHeader";
-            // 
-            // spcHeader.Panel1
-            // 
-            this.spcHeader.Panel1.Controls.Add(this.lblRating);
-            // 
-            // spcHeader.Panel2
-            // 
-            this.spcHeader.Panel2.Controls.Add(this.tlpController);
-            this.spcHeader.Size = new System.Drawing.Size(1370, 94);
-            this.spcHeader.SplitterDistance = 972;
-            this.spcHeader.TabIndex = 0;
             // 
             // colMaDG
             // 
@@ -363,6 +244,96 @@
             this.colTrangThai.ReadOnly = true;
             this.colTrangThai.Visible = false;
             // 
+            // dtpNgayDanhGia
+            // 
+            this.dtpNgayDanhGia.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayDanhGia.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayDanhGia.Location = new System.Drawing.Point(189, 78);
+            this.dtpNgayDanhGia.Name = "dtpNgayDanhGia";
+            this.dtpNgayDanhGia.Size = new System.Drawing.Size(200, 27);
+            this.dtpNgayDanhGia.TabIndex = 31;
+            this.dtpNgayDanhGia.ValueChanged += new System.EventHandler(this.dtpNgayDanhGia_ValueChanged);
+            // 
+            // lblNgayDanhGia
+            // 
+            this.lblNgayDanhGia.AutoSize = true;
+            this.lblNgayDanhGia.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNgayDanhGia.Location = new System.Drawing.Point(8, 79);
+            this.lblNgayDanhGia.Name = "lblNgayDanhGia";
+            this.lblNgayDanhGia.Size = new System.Drawing.Size(155, 26);
+            this.lblNgayDanhGia.TabIndex = 30;
+            this.lblNgayDanhGia.Text = "Ngày đánh giá";
+            this.lblNgayDanhGia.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cboRatingValue
+            // 
+            this.cboRatingValue.DelimiterChar = "";
+            this.cboRatingValue.DisplayMember = "";
+            this.cboRatingValue.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboRatingValue.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+            this.cboRatingValue.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboRatingValue.Location = new System.Drawing.Point(234, 22);
+            this.cboRatingValue.Name = "cboRatingValue";
+            this.cboRatingValue.Size = new System.Drawing.Size(156, 33);
+            this.cboRatingValue.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.cboRatingValue.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboRatingValue.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboRatingValue.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboRatingValue.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboRatingValue.TabIndex = 23;
+            this.cboRatingValue.SelectedIndexChanged += new System.EventHandler(this.cboRatingValue_SelectedIndexChanged);
+            // 
+            // lblRatingValue
+            // 
+            this.lblRatingValue.AutoSize = true;
+            this.lblRatingValue.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRatingValue.Location = new System.Drawing.Point(9, 29);
+            this.lblRatingValue.Name = "lblRatingValue";
+            this.lblRatingValue.Size = new System.Drawing.Size(179, 26);
+            this.lblRatingValue.TabIndex = 14;
+            this.lblRatingValue.Text = "Lọc theo số điểm";
+            this.lblRatingValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblStateRating
+            // 
+            this.lblStateRating.AutoSize = true;
+            this.lblStateRating.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStateRating.Location = new System.Drawing.Point(9, 126);
+            this.lblStateRating.Name = "lblStateRating";
+            this.lblStateRating.Size = new System.Drawing.Size(186, 26);
+            this.lblStateRating.TabIndex = 9;
+            this.lblStateRating.Text = "Trạng thái dữ liệu";
+            this.lblStateRating.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panUcHeader
+            // 
+            this.panUcHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(224)))), ((int)(((byte)(155)))));
+            this.panUcHeader.Controls.Add(this.spcHeader);
+            this.panUcHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panUcHeader.Location = new System.Drawing.Point(0, 0);
+            this.panUcHeader.Name = "panUcHeader";
+            this.panUcHeader.Size = new System.Drawing.Size(1370, 94);
+            this.panUcHeader.TabIndex = 37;
+            // 
+            // spcHeader
+            // 
+            this.spcHeader.BackColor = System.Drawing.Color.Lavender;
+            this.spcHeader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.spcHeader.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.spcHeader.Location = new System.Drawing.Point(0, 0);
+            this.spcHeader.Name = "spcHeader";
+            // 
+            // spcHeader.Panel1
+            // 
+            this.spcHeader.Panel1.Controls.Add(this.lblRating);
+            // 
+            // spcHeader.Panel2
+            // 
+            this.spcHeader.Panel2.Controls.Add(this.tlpController);
+            this.spcHeader.Size = new System.Drawing.Size(1370, 94);
+            this.spcHeader.SplitterDistance = 972;
+            this.spcHeader.TabIndex = 0;
+            // 
             // ucRating
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -394,8 +365,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblRating;
-        private Syncfusion.WinForms.Controls.SfButton btnTraCuuRating;
-        private System.Windows.Forms.TextBox txtSearchRating;
         private Syncfusion.WinForms.Controls.SfButton btnDeleteRating;
         private Syncfusion.WinForms.Controls.SfButton btnRecoverRating;
         private Syncfusion.WinForms.ListView.SfComboBox cboStateRating;
