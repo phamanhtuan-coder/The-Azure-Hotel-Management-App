@@ -52,7 +52,7 @@
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
             this.btnCancel.Style.BackColor = System.Drawing.Color.Orange;
             this.btnCancel.Style.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.TabIndex = 22;
+            this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Quay lại";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);

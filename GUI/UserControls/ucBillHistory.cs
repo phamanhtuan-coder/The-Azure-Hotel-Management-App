@@ -41,5 +41,10 @@ namespace GUI.UserControls
             parentForm.SwitchUserControl(ucPersonal);
             this.Dispose();
         }
+
+        private void btnTraCuuBill_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
