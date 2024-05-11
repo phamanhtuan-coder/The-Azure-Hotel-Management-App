@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucRole));
             this.lblRole = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
@@ -56,6 +57,7 @@
             this.lblStateRole = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRole)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -81,7 +83,7 @@
             this.lblRole.Location = new System.Drawing.Point(0, 0);
             this.lblRole.Name = "lblRole";
             this.lblRole.Size = new System.Drawing.Size(972, 94);
-            this.lblRole.TabIndex = 35;
+            this.lblRole.TabIndex = 1;
             this.lblRole.Text = "PERMISSION";
             this.lblRole.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -118,9 +120,10 @@
             this.btnAddRole.Style.ForeColor = System.Drawing.Color.White;
             this.btnAddRole.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnAddRole.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddRole.TabIndex = 1;
+            this.btnAddRole.TabIndex = 2;
             this.btnAddRole.Text = "Thêm";
             this.btnAddRole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnAddRole, "Thêm phân quyền");
             this.btnAddRole.UseVisualStyleBackColor = false;
             this.btnAddRole.Click += new System.EventHandler(this.btnAddRole_Click);
             // 
@@ -139,9 +142,10 @@
             this.btnEditRole.Style.ForeColor = System.Drawing.Color.White;
             this.btnEditRole.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnEditRole.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditRole.TabIndex = 3;
+            this.btnEditRole.TabIndex = 4;
             this.btnEditRole.Text = "Sửa";
             this.btnEditRole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnEditRole, "Sửa phân quyền");
             this.btnEditRole.UseVisualStyleBackColor = false;
             this.btnEditRole.Click += new System.EventHandler(this.btnEditRole_Click);
             // 
@@ -160,9 +164,10 @@
             this.btnDeleteRole.Style.ForeColor = System.Drawing.Color.White;
             this.btnDeleteRole.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDeleteRole.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteRole.TabIndex = 4;
+            this.btnDeleteRole.TabIndex = 3;
             this.btnDeleteRole.Text = "Xóa";
             this.btnDeleteRole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnDeleteRole, "Xóa phân quyền");
             this.btnDeleteRole.UseVisualStyleBackColor = false;
             this.btnDeleteRole.Click += new System.EventHandler(this.btnDeleteRole_Click);
             // 
@@ -184,6 +189,7 @@
             this.btnRecoverRole.TabIndex = 5;
             this.btnRecoverRole.Text = "Khôi phục";
             this.btnRecoverRole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnRecoverRole, "Khôi phục phân quyền");
             this.btnRecoverRole.UseVisualStyleBackColor = false;
             this.btnRecoverRole.Click += new System.EventHandler(this.btnRecoverRole_Click);
             // 
@@ -193,7 +199,8 @@
             this.txtSearchRole.Location = new System.Drawing.Point(6, 16);
             this.txtSearchRole.Name = "txtSearchRole";
             this.txtSearchRole.Size = new System.Drawing.Size(251, 27);
-            this.txtSearchRole.TabIndex = 2;
+            this.txtSearchRole.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.txtSearchRole, "Nhập mã phân quyền");
             // 
             // btnTraCuuRole
             // 
@@ -208,8 +215,9 @@
             this.btnTraCuuRole.Size = new System.Drawing.Size(118, 40);
             this.btnTraCuuRole.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuRole.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuRole.TabIndex = 0;
+            this.btnTraCuuRole.TabIndex = 8;
             this.btnTraCuuRole.Text = "Tra cứu";
+            this.toolTip1.SetToolTip(this.btnTraCuuRole, "Tra cứu");
             this.btnTraCuuRole.UseVisualStyleBackColor = false;
             this.btnTraCuuRole.Click += new System.EventHandler(this.btnTraCuuRole_Click);
             // 
@@ -228,7 +236,8 @@
             this.cboStateRole.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateRole.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateRole.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateRole.TabIndex = 3;
+            this.cboStateRole.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.cboStateRole, "Lọc theo trạng thái");
             this.cboStateRole.SelectedIndexChanged += new System.EventHandler(this.cboStateRole_SelectedIndexChanged);
             // 
             // spcQuery
@@ -293,7 +302,7 @@
             this.dgvRole.RowHeadersVisible = false;
             this.dgvRole.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRole.Size = new System.Drawing.Size(973, 746);
-            this.dgvRole.TabIndex = 0;
+            this.dgvRole.TabIndex = 6;
             this.dgvRole.SelectionChanged += new System.EventHandler(this.dgvRole_SelectionChanged);
             // 
             // colPQ
@@ -370,7 +379,8 @@
             this.cboSortRole.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortRole.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortRole.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortRole.TabIndex = 29;
+            this.cboSortRole.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.cboSortRole, "Sắp xếp mã phần quyền");
             this.cboSortRole.SelectedIndexChanged += new System.EventHandler(this.cboSortRole_SelectedIndexChanged);
             // 
             // lblSortServiceTypeID
@@ -380,7 +390,7 @@
             this.lblSortServiceTypeID.Location = new System.Drawing.Point(3, 84);
             this.lblSortServiceTypeID.Name = "lblSortServiceTypeID";
             this.lblSortServiceTypeID.Size = new System.Drawing.Size(152, 22);
-            this.lblSortServiceTypeID.TabIndex = 28;
+            this.lblSortServiceTypeID.TabIndex = 9;
             this.lblSortServiceTypeID.Text = "Sort theo Role ID";
             this.lblSortServiceTypeID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -399,7 +409,8 @@
             this.cboSortSoLuong.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortSoLuong.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortSoLuong.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSoLuong.TabIndex = 23;
+            this.cboSortSoLuong.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.cboSortSoLuong, "Lọc theo số lượng");
             this.cboSortSoLuong.SelectedIndexChanged += new System.EventHandler(this.cboSortSoLuong_SelectedIndexChanged);
             // 
             // lblSortSoLuongRole
@@ -409,7 +420,7 @@
             this.lblSortSoLuongRole.Location = new System.Drawing.Point(3, 138);
             this.lblSortSoLuongRole.Name = "lblSortSoLuongRole";
             this.lblSortSoLuongRole.Size = new System.Drawing.Size(158, 22);
-            this.lblSortSoLuongRole.TabIndex = 14;
+            this.lblSortSoLuongRole.TabIndex = 11;
             this.lblSortSoLuongRole.Text = "Lọc theo số lượng";
             this.lblSortSoLuongRole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -420,7 +431,7 @@
             this.lblStateRole.Location = new System.Drawing.Point(3, 192);
             this.lblStateRole.Name = "lblStateRole";
             this.lblStateRole.Size = new System.Drawing.Size(159, 22);
-            this.lblStateRole.TabIndex = 9;
+            this.lblStateRole.TabIndex = 13;
             this.lblStateRole.Text = "Trạng thái dữ liệu";
             this.lblStateRole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -511,5 +522,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn maph;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaVt;
         private System.Windows.Forms.DataGridViewTextBoxColumn MoTa;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

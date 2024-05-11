@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.flpRoom = new System.Windows.Forms.FlowLayoutPanel();
             this.panController = new System.Windows.Forms.Panel();
             this.btnTraCuuRoomType = new Syncfusion.WinForms.Controls.SfButton();
@@ -39,6 +40,7 @@
             this.lblCheckInDate = new System.Windows.Forms.Label();
             this.dtpCheckInDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.panContent = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSucChua)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPriceMax)).BeginInit();
@@ -57,7 +59,7 @@
             this.flpRoom.Location = new System.Drawing.Point(0, 0);
             this.flpRoom.Name = "flpRoom";
             this.flpRoom.Size = new System.Drawing.Size(1370, 771);
-            this.flpRoom.TabIndex = 0;
+            this.flpRoom.TabIndex = 9;
             // 
             // panController
             // 
@@ -89,8 +91,9 @@
             this.btnTraCuuRoomType.Size = new System.Drawing.Size(244, 40);
             this.btnTraCuuRoomType.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuRoomType.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuRoomType.TabIndex = 38;
+            this.btnTraCuuRoomType.TabIndex = 8;
             this.btnTraCuuRoomType.Text = "Tra cứu";
+            this.toolTip1.SetToolTip(this.btnTraCuuRoomType, "Tra cứu");
             this.btnTraCuuRoomType.UseVisualStyleBackColor = false;
             this.btnTraCuuRoomType.Click += new System.EventHandler(this.btnTraCuuRoomType_Click);
             // 
@@ -109,8 +112,9 @@
             0});
             this.nudSucChua.Name = "nudSucChua";
             this.nudSucChua.Size = new System.Drawing.Size(54, 27);
-            this.nudSucChua.TabIndex = 37;
+            this.nudSucChua.TabIndex = 4;
             this.nudSucChua.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.nudSucChua, "Số người");
             this.nudSucChua.Value = new decimal(new int[] {
             1,
             0,
@@ -132,9 +136,10 @@
             0});
             this.nudPriceMax.Name = "nudPriceMax";
             this.nudPriceMax.Size = new System.Drawing.Size(118, 27);
-            this.nudPriceMax.TabIndex = 36;
+            this.nudPriceMax.TabIndex = 7;
             this.nudPriceMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudPriceMax.ThousandsSeparator = true;
+            this.toolTip1.SetToolTip(this.nudPriceMax, "Max");
             this.nudPriceMax.Value = new decimal(new int[] {
             500000,
             0,
@@ -156,9 +161,10 @@
             0});
             this.nudPriceMin.Name = "nudPriceMin";
             this.nudPriceMin.Size = new System.Drawing.Size(110, 27);
-            this.nudPriceMin.TabIndex = 35;
+            this.nudPriceMin.TabIndex = 6;
             this.nudPriceMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudPriceMin.ThousandsSeparator = true;
+            this.toolTip1.SetToolTip(this.nudPriceMin, "Min");
             // 
             // lblPriceRange
             // 
@@ -167,7 +173,7 @@
             this.lblPriceRange.Location = new System.Drawing.Point(670, 20);
             this.lblPriceRange.Name = "lblPriceRange";
             this.lblPriceRange.Size = new System.Drawing.Size(125, 26);
-            this.lblPriceRange.TabIndex = 34;
+            this.lblPriceRange.TabIndex = 5;
             this.lblPriceRange.Text = "Khoảng giá";
             this.lblPriceRange.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -178,7 +184,7 @@
             this.lblSortSucChua.Location = new System.Drawing.Point(440, 22);
             this.lblSortSucChua.Name = "lblSortSucChua";
             this.lblSortSucChua.Size = new System.Drawing.Size(103, 26);
-            this.lblSortSucChua.TabIndex = 33;
+            this.lblSortSucChua.TabIndex = 3;
             this.lblSortSucChua.Text = "Số người:";
             this.lblSortSucChua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -189,7 +195,7 @@
             this.lblCheckInDate.Location = new System.Drawing.Point(44, 23);
             this.lblCheckInDate.Name = "lblCheckInDate";
             this.lblCheckInDate.Size = new System.Drawing.Size(157, 26);
-            this.lblCheckInDate.TabIndex = 15;
+            this.lblCheckInDate.TabIndex = 1;
             this.lblCheckInDate.Text = "Ngày Check-In";
             this.lblCheckInDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -200,8 +206,8 @@
             this.dtpCheckInDate.Location = new System.Drawing.Point(207, 22);
             this.dtpCheckInDate.Name = "dtpCheckInDate";
             this.dtpCheckInDate.Size = new System.Drawing.Size(155, 27);
-            this.dtpCheckInDate.TabIndex = 14;
-            this.dtpCheckInDate.ToolTipText = "";
+            this.dtpCheckInDate.TabIndex = 2;
+            this.dtpCheckInDate.ToolTipText = "Ngày nhận phòng";
             // 
             // panContent
             // 
@@ -246,5 +252,6 @@
         private System.Windows.Forms.Label lblPriceRange;
         private System.Windows.Forms.Label lblSortSucChua;
         private Syncfusion.WinForms.Controls.SfButton btnTraCuuRoomType;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

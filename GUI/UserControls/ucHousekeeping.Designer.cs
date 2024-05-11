@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucHousekeeping));
             this.lblHousekeeping = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
@@ -40,6 +41,12 @@
             this.cboStateHousekeeping = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvHousekeeping = new System.Windows.Forms.DataGridView();
+            this.colMaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaNV = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colNgayNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayHoanThanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.dtpNgayNhan = new System.Windows.Forms.DateTimePicker();
             this.cboSortHousekeeping = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -48,12 +55,7 @@
             this.lblStateHousekeeping = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.colMaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaNV = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colNgayNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayHoanThanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateHousekeeping)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -78,7 +80,7 @@
             this.lblHousekeeping.Location = new System.Drawing.Point(0, 0);
             this.lblHousekeeping.Name = "lblHousekeeping";
             this.lblHousekeeping.Size = new System.Drawing.Size(972, 94);
-            this.lblHousekeeping.TabIndex = 35;
+            this.lblHousekeeping.TabIndex = 1;
             this.lblHousekeeping.Text = "HOUSEKEEPING";
             this.lblHousekeeping.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -115,9 +117,10 @@
             this.btnAddHousekeeping.Style.ForeColor = System.Drawing.Color.White;
             this.btnAddHousekeeping.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnAddHousekeeping.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddHousekeeping.TabIndex = 1;
+            this.btnAddHousekeeping.TabIndex = 2;
             this.btnAddHousekeeping.Text = "Thêm";
             this.btnAddHousekeeping.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnAddHousekeeping, "Thêm dọn phòng");
             this.btnAddHousekeeping.UseVisualStyleBackColor = false;
             this.btnAddHousekeeping.Click += new System.EventHandler(this.btnAddHousekeeping_Click);
             // 
@@ -136,9 +139,10 @@
             this.btnEditHousekeeping.Style.ForeColor = System.Drawing.Color.White;
             this.btnEditHousekeeping.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnEditHousekeeping.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditHousekeeping.TabIndex = 3;
+            this.btnEditHousekeeping.TabIndex = 4;
             this.btnEditHousekeeping.Text = "Sửa";
             this.btnEditHousekeeping.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnEditHousekeeping, "Sửa dọn phòng");
             this.btnEditHousekeeping.UseVisualStyleBackColor = false;
             this.btnEditHousekeeping.Click += new System.EventHandler(this.btnEditHousekeeping_Click);
             // 
@@ -157,9 +161,10 @@
             this.btnDeleteHousekeeping.Style.ForeColor = System.Drawing.Color.White;
             this.btnDeleteHousekeeping.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDeleteHousekeeping.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteHousekeeping.TabIndex = 4;
+            this.btnDeleteHousekeeping.TabIndex = 3;
             this.btnDeleteHousekeeping.Text = "Xóa";
             this.btnDeleteHousekeeping.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnDeleteHousekeeping, "Xóa dọn phòng");
             this.btnDeleteHousekeeping.UseVisualStyleBackColor = false;
             this.btnDeleteHousekeeping.Click += new System.EventHandler(this.btnDeleteHousekeeping_Click);
             // 
@@ -181,6 +186,7 @@
             this.btnRecoverHousekeeping.TabIndex = 5;
             this.btnRecoverHousekeeping.Text = "Khôi phục";
             this.btnRecoverHousekeeping.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnRecoverHousekeeping, "Khôi phục dọn phòng");
             this.btnRecoverHousekeeping.UseVisualStyleBackColor = false;
             this.btnRecoverHousekeeping.Click += new System.EventHandler(this.btnRecoverHousekeeping_Click);
             // 
@@ -190,7 +196,8 @@
             this.txtSearchHousekeeping.Location = new System.Drawing.Point(10, 16);
             this.txtSearchHousekeeping.Name = "txtSearchHousekeeping";
             this.txtSearchHousekeeping.Size = new System.Drawing.Size(248, 27);
-            this.txtSearchHousekeeping.TabIndex = 2;
+            this.txtSearchHousekeeping.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.txtSearchHousekeeping, "Nhập mã dọn phòng");
             // 
             // btnTraCuuHousekeeping
             // 
@@ -205,8 +212,9 @@
             this.btnTraCuuHousekeeping.Size = new System.Drawing.Size(118, 40);
             this.btnTraCuuHousekeeping.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuHousekeeping.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuHousekeeping.TabIndex = 0;
+            this.btnTraCuuHousekeeping.TabIndex = 8;
             this.btnTraCuuHousekeeping.Text = "Tra cứu";
+            this.toolTip1.SetToolTip(this.btnTraCuuHousekeeping, "Tra cứu");
             this.btnTraCuuHousekeeping.UseVisualStyleBackColor = false;
             this.btnTraCuuHousekeeping.Click += new System.EventHandler(this.btnTraCuuHousekeeping_Click);
             // 
@@ -225,7 +233,8 @@
             this.cboStateHousekeeping.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateHousekeeping.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateHousekeeping.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateHousekeeping.TabIndex = 3;
+            this.cboStateHousekeeping.TabIndex = 15;
+            this.toolTip1.SetToolTip(this.cboStateHousekeeping, "Lọc trạng thái");
             this.cboStateHousekeeping.SelectedIndexChanged += new System.EventHandler(this.cboStateHousekeeping_SelectedIndexChanged);
             // 
             // spcQuery
@@ -278,107 +287,7 @@
             this.dgvHousekeeping.RowHeadersVisible = false;
             this.dgvHousekeeping.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHousekeeping.Size = new System.Drawing.Size(973, 746);
-            this.dgvHousekeeping.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(354, 124);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(28, 31);
-            this.button1.TabIndex = 33;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // dtpNgayNhan
-            // 
-            this.dtpNgayNhan.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgayNhan.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayNhan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayNhan.Location = new System.Drawing.Point(226, 124);
-            this.dtpNgayNhan.Name = "dtpNgayNhan";
-            this.dtpNgayNhan.Size = new System.Drawing.Size(119, 27);
-            this.dtpNgayNhan.TabIndex = 31;
-            // 
-            // cboSortHousekeeping
-            // 
-            this.cboSortHousekeeping.DelimiterChar = "";
-            this.cboSortHousekeeping.DisplayMember = "";
-            this.cboSortHousekeeping.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboSortHousekeeping.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortHousekeeping.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortHousekeeping.Location = new System.Drawing.Point(226, 71);
-            this.cboSortHousekeeping.Name = "cboSortHousekeeping";
-            this.cboSortHousekeeping.Size = new System.Drawing.Size(156, 33);
-            this.cboSortHousekeeping.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortHousekeeping.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortHousekeeping.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortHousekeeping.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortHousekeeping.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortHousekeeping.TabIndex = 29;
-            this.cboSortHousekeeping.SelectedIndexChanged += new System.EventHandler(this.cboSortHousekeeping_SelectedIndexChanged);
-            // 
-            // lblSortHousekeepingID
-            // 
-            this.lblSortHousekeepingID.AutoSize = true;
-            this.lblSortHousekeepingID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortHousekeepingID.Location = new System.Drawing.Point(6, 80);
-            this.lblSortHousekeepingID.Name = "lblSortHousekeepingID";
-            this.lblSortHousekeepingID.Size = new System.Drawing.Size(193, 22);
-            this.lblSortHousekeepingID.TabIndex = 28;
-            this.lblSortHousekeepingID.Text = "Sort Housekeeping ID";
-            this.lblSortHousekeepingID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblLocNgayNhan
-            // 
-            this.lblLocNgayNhan.AutoSize = true;
-            this.lblLocNgayNhan.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLocNgayNhan.Location = new System.Drawing.Point(6, 126);
-            this.lblLocNgayNhan.Name = "lblLocNgayNhan";
-            this.lblLocNgayNhan.Size = new System.Drawing.Size(102, 22);
-            this.lblLocNgayNhan.TabIndex = 14;
-            this.lblLocNgayNhan.Text = "Ngày nhận";
-            this.lblLocNgayNhan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblStateHousekeeping
-            // 
-            this.lblStateHousekeeping.AutoSize = true;
-            this.lblStateHousekeeping.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStateHousekeeping.Location = new System.Drawing.Point(8, 182);
-            this.lblStateHousekeeping.Name = "lblStateHousekeeping";
-            this.lblStateHousekeeping.Size = new System.Drawing.Size(159, 22);
-            this.lblStateHousekeeping.TabIndex = 9;
-            this.lblStateHousekeeping.Text = "Trạng thái dữ liệu";
-            this.lblStateHousekeeping.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panUcHeader
-            // 
-            this.panUcHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(224)))), ((int)(((byte)(155)))));
-            this.panUcHeader.Controls.Add(this.spcHeader);
-            this.panUcHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panUcHeader.Location = new System.Drawing.Point(0, 0);
-            this.panUcHeader.Name = "panUcHeader";
-            this.panUcHeader.Size = new System.Drawing.Size(1370, 94);
-            this.panUcHeader.TabIndex = 37;
-            // 
-            // spcHeader
-            // 
-            this.spcHeader.BackColor = System.Drawing.Color.Lavender;
-            this.spcHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.spcHeader.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.spcHeader.Location = new System.Drawing.Point(0, 0);
-            this.spcHeader.Name = "spcHeader";
-            // 
-            // spcHeader.Panel1
-            // 
-            this.spcHeader.Panel1.Controls.Add(this.lblHousekeeping);
-            // 
-            // spcHeader.Panel2
-            // 
-            this.spcHeader.Panel2.Controls.Add(this.tlpController);
-            this.spcHeader.Size = new System.Drawing.Size(1370, 94);
-            this.spcHeader.SplitterDistance = 972;
-            this.spcHeader.TabIndex = 0;
+            this.dgvHousekeeping.TabIndex = 6;
             // 
             // colMaDP
             // 
@@ -425,6 +334,109 @@
             this.colTrangThai.Name = "colTrangThai";
             this.colTrangThai.ReadOnly = true;
             this.colTrangThai.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(354, 124);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(28, 31);
+            this.button1.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.button1, "Tra cứu ngày nhân");
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dtpNgayNhan
+            // 
+            this.dtpNgayNhan.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayNhan.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayNhan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayNhan.Location = new System.Drawing.Point(226, 124);
+            this.dtpNgayNhan.Name = "dtpNgayNhan";
+            this.dtpNgayNhan.Size = new System.Drawing.Size(119, 27);
+            this.dtpNgayNhan.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.dtpNgayNhan, "Ngày nhận");
+            // 
+            // cboSortHousekeeping
+            // 
+            this.cboSortHousekeeping.DelimiterChar = "";
+            this.cboSortHousekeeping.DisplayMember = "";
+            this.cboSortHousekeeping.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboSortHousekeeping.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+            this.cboSortHousekeeping.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortHousekeeping.Location = new System.Drawing.Point(226, 71);
+            this.cboSortHousekeeping.Name = "cboSortHousekeeping";
+            this.cboSortHousekeeping.Size = new System.Drawing.Size(156, 33);
+            this.cboSortHousekeeping.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.cboSortHousekeeping.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortHousekeeping.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortHousekeeping.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboSortHousekeeping.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortHousekeeping.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.cboSortHousekeeping, "Sắp xếp mã dọn phòng");
+            this.cboSortHousekeeping.SelectedIndexChanged += new System.EventHandler(this.cboSortHousekeeping_SelectedIndexChanged);
+            // 
+            // lblSortHousekeepingID
+            // 
+            this.lblSortHousekeepingID.AutoSize = true;
+            this.lblSortHousekeepingID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortHousekeepingID.Location = new System.Drawing.Point(6, 80);
+            this.lblSortHousekeepingID.Name = "lblSortHousekeepingID";
+            this.lblSortHousekeepingID.Size = new System.Drawing.Size(193, 22);
+            this.lblSortHousekeepingID.TabIndex = 9;
+            this.lblSortHousekeepingID.Text = "Sort Housekeeping ID";
+            this.lblSortHousekeepingID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblLocNgayNhan
+            // 
+            this.lblLocNgayNhan.AutoSize = true;
+            this.lblLocNgayNhan.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocNgayNhan.Location = new System.Drawing.Point(6, 126);
+            this.lblLocNgayNhan.Name = "lblLocNgayNhan";
+            this.lblLocNgayNhan.Size = new System.Drawing.Size(102, 22);
+            this.lblLocNgayNhan.TabIndex = 11;
+            this.lblLocNgayNhan.Text = "Ngày nhận";
+            this.lblLocNgayNhan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblStateHousekeeping
+            // 
+            this.lblStateHousekeeping.AutoSize = true;
+            this.lblStateHousekeeping.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStateHousekeeping.Location = new System.Drawing.Point(8, 182);
+            this.lblStateHousekeeping.Name = "lblStateHousekeeping";
+            this.lblStateHousekeeping.Size = new System.Drawing.Size(159, 22);
+            this.lblStateHousekeeping.TabIndex = 14;
+            this.lblStateHousekeeping.Text = "Trạng thái dữ liệu";
+            this.lblStateHousekeeping.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panUcHeader
+            // 
+            this.panUcHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(224)))), ((int)(((byte)(155)))));
+            this.panUcHeader.Controls.Add(this.spcHeader);
+            this.panUcHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panUcHeader.Location = new System.Drawing.Point(0, 0);
+            this.panUcHeader.Name = "panUcHeader";
+            this.panUcHeader.Size = new System.Drawing.Size(1370, 94);
+            this.panUcHeader.TabIndex = 37;
+            // 
+            // spcHeader
+            // 
+            this.spcHeader.BackColor = System.Drawing.Color.Lavender;
+            this.spcHeader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.spcHeader.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.spcHeader.Location = new System.Drawing.Point(0, 0);
+            this.spcHeader.Name = "spcHeader";
+            // 
+            // spcHeader.Panel1
+            // 
+            this.spcHeader.Panel1.Controls.Add(this.lblHousekeeping);
+            // 
+            // spcHeader.Panel2
+            // 
+            this.spcHeader.Panel2.Controls.Add(this.tlpController);
+            this.spcHeader.Size = new System.Drawing.Size(1370, 94);
+            this.spcHeader.SplitterDistance = 972;
+            this.spcHeader.TabIndex = 0;
             // 
             // ucHousekeeping
             // 
@@ -481,5 +493,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayNhan;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayHoanThanh;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

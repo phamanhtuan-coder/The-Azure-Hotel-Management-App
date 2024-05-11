@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSubmit = new Syncfusion.WinForms.Controls.SfButton();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.lblTenVaiTro = new System.Windows.Forms.Label();
             this.lblMoTa = new System.Windows.Forms.Label();
             this.rtxtMoTa = new System.Windows.Forms.RichTextBox();
             this.txtTenTrangThaiTB = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // btnSubmit
@@ -42,8 +44,9 @@
             this.btnSubmit.Location = new System.Drawing.Point(378, 258);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
-            this.btnSubmit.TabIndex = 3;
+            this.btnSubmit.TabIndex = 6;
             this.btnSubmit.Text = "Submit";
+            this.toolTip1.SetToolTip(this.btnSubmit, "Gửi");
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnCancel
@@ -61,8 +64,8 @@
             this.lblTenVaiTro.AutoSize = true;
             this.lblTenVaiTro.Location = new System.Drawing.Point(27, 29);
             this.lblTenVaiTro.Name = "lblTenVaiTro";
-            this.lblTenVaiTro.Size = new System.Drawing.Size(243, 27);
-            this.lblTenVaiTro.TabIndex = 6;
+            this.lblTenVaiTro.Size = new System.Drawing.Size(194, 22);
+            this.lblTenVaiTro.TabIndex = 1;
             this.lblTenVaiTro.Text = "Tên trạng thái thiết bị";
             // 
             // lblMoTa
@@ -70,8 +73,8 @@
             this.lblMoTa.AutoSize = true;
             this.lblMoTa.Location = new System.Drawing.Point(27, 84);
             this.lblMoTa.Name = "lblMoTa";
-            this.lblMoTa.Size = new System.Drawing.Size(71, 27);
-            this.lblMoTa.TabIndex = 10;
+            this.lblMoTa.Size = new System.Drawing.Size(57, 22);
+            this.lblMoTa.TabIndex = 3;
             this.lblMoTa.Text = "Mô tả";
             // 
             // rtxtMoTa
@@ -79,15 +82,15 @@
             this.rtxtMoTa.Location = new System.Drawing.Point(276, 84);
             this.rtxtMoTa.Name = "rtxtMoTa";
             this.rtxtMoTa.Size = new System.Drawing.Size(252, 143);
-            this.rtxtMoTa.TabIndex = 11;
+            this.rtxtMoTa.TabIndex = 4;
             this.rtxtMoTa.Text = "";
             // 
             // txtTenTrangThaiTB
             // 
             this.txtTenTrangThaiTB.Location = new System.Drawing.Point(276, 26);
             this.txtTenTrangThaiTB.Name = "txtTenTrangThaiTB";
-            this.txtTenTrangThaiTB.Size = new System.Drawing.Size(252, 32);
-            this.txtTenTrangThaiTB.TabIndex = 12;
+            this.txtTenTrangThaiTB.Size = new System.Drawing.Size(252, 27);
+            this.txtTenTrangThaiTB.TabIndex = 2;
             // 
             // frmTinhTrangTB
             // 
@@ -118,5 +121,6 @@
         private System.Windows.Forms.Label lblMoTa;
         private System.Windows.Forms.RichTextBox rtxtMoTa;
         private System.Windows.Forms.TextBox txtTenTrangThaiTB;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

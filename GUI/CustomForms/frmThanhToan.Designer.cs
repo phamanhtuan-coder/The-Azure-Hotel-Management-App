@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSubmit = new Syncfusion.WinForms.Controls.SfButton();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.lblMaKH = new System.Windows.Forms.Label();
@@ -36,6 +37,7 @@
             this.txtTongHoaDon = new System.Windows.Forms.TextBox();
             this.nupNhan = new System.Windows.Forms.NumericUpDown();
             this.nupThoi = new System.Windows.Forms.NumericUpDown();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nupNhan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupThoi)).BeginInit();
             this.SuspendLayout();
@@ -46,8 +48,9 @@
             this.btnSubmit.Location = new System.Drawing.Point(278, 156);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(127, 45);
-            this.btnSubmit.TabIndex = 3;
+            this.btnSubmit.TabIndex = 8;
             this.btnSubmit.Text = "Submit";
+            this.toolTip1.SetToolTip(this.btnSubmit, "Gửi");
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnCancel
@@ -56,7 +59,7 @@
             this.btnCancel.Location = new System.Drawing.Point(90, 156);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(127, 45);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Quay lại";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -67,7 +70,7 @@
             this.lblMaKH.Location = new System.Drawing.Point(13, 17);
             this.lblMaKH.Name = "lblMaKH";
             this.lblMaKH.Size = new System.Drawing.Size(124, 22);
-            this.lblMaKH.TabIndex = 8;
+            this.lblMaKH.TabIndex = 1;
             this.lblMaKH.Text = "Tổng hóa đơn";
             // 
             // label1
@@ -77,7 +80,7 @@
             this.label1.Location = new System.Drawing.Point(12, 110);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 22);
-            this.label1.TabIndex = 20;
+            this.label1.TabIndex = 5;
             this.label1.Text = "Số tiền thối";
             // 
             // lblMaNV
@@ -87,7 +90,7 @@
             this.lblMaNV.Location = new System.Drawing.Point(13, 64);
             this.lblMaNV.Name = "lblMaNV";
             this.lblMaNV.Size = new System.Drawing.Size(116, 22);
-            this.lblMaNV.TabIndex = 22;
+            this.lblMaNV.TabIndex = 3;
             this.lblMaNV.Text = "Số tiền nhân";
             // 
             // txtTongHoaDon
@@ -97,7 +100,7 @@
             this.txtTongHoaDon.Name = "txtTongHoaDon";
             this.txtTongHoaDon.ReadOnly = true;
             this.txtTongHoaDon.Size = new System.Drawing.Size(180, 27);
-            this.txtTongHoaDon.TabIndex = 23;
+            this.txtTongHoaDon.TabIndex = 2;
             // 
             // nupNhan
             // 
@@ -114,7 +117,7 @@
             0});
             this.nupNhan.Name = "nupNhan";
             this.nupNhan.Size = new System.Drawing.Size(180, 26);
-            this.nupNhan.TabIndex = 24;
+            this.nupNhan.TabIndex = 4;
             this.nupNhan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nupNhan.ThousandsSeparator = true;
             this.nupNhan.ValueChanged += new System.EventHandler(this.nupNhan_ValueChanged);
@@ -139,7 +142,7 @@
             -2147483648});
             this.nupThoi.Name = "nupThoi";
             this.nupThoi.Size = new System.Drawing.Size(180, 26);
-            this.nupThoi.TabIndex = 25;
+            this.nupThoi.TabIndex = 6;
             this.nupThoi.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nupThoi.ThousandsSeparator = true;
             this.nupThoi.Value = new decimal(new int[] {
@@ -183,5 +186,6 @@
         private System.Windows.Forms.TextBox txtTongHoaDon;
         private System.Windows.Forms.NumericUpDown nupNhan;
         private System.Windows.Forms.NumericUpDown nupThoi;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

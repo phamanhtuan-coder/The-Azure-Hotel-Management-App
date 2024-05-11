@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucAccountType));
             this.lblAccountType = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
@@ -49,6 +50,7 @@
             this.lblStateAccountType = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateAccountType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -73,7 +75,7 @@
             this.lblAccountType.Location = new System.Drawing.Point(0, 0);
             this.lblAccountType.Name = "lblAccountType";
             this.lblAccountType.Size = new System.Drawing.Size(972, 94);
-            this.lblAccountType.TabIndex = 35;
+            this.lblAccountType.TabIndex = 1;
             this.lblAccountType.Text = "ROLE";
             this.lblAccountType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -94,6 +96,8 @@
             this.tlpController.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpController.Size = new System.Drawing.Size(394, 94);
             this.tlpController.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.tlpController, "Sửa vai trò");
+            this.tlpController.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpController_Paint);
             // 
             // btnAddAccountType
             // 
@@ -110,9 +114,10 @@
             this.btnAddAccountType.Style.ForeColor = System.Drawing.Color.White;
             this.btnAddAccountType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnAddAccountType.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddAccountType.TabIndex = 1;
+            this.btnAddAccountType.TabIndex = 2;
             this.btnAddAccountType.Text = "Thêm";
             this.btnAddAccountType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnAddAccountType, "Thêm vai trò");
             this.btnAddAccountType.UseVisualStyleBackColor = false;
             this.btnAddAccountType.Click += new System.EventHandler(this.btnAddAccountType_Click);
             // 
@@ -131,7 +136,7 @@
             this.btnEditAccountType.Style.ForeColor = System.Drawing.Color.White;
             this.btnEditAccountType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnEditAccountType.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditAccountType.TabIndex = 3;
+            this.btnEditAccountType.TabIndex = 4;
             this.btnEditAccountType.Text = "Sửa";
             this.btnEditAccountType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditAccountType.UseVisualStyleBackColor = false;
@@ -152,9 +157,10 @@
             this.btnDeleteAccountType.Style.ForeColor = System.Drawing.Color.White;
             this.btnDeleteAccountType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDeleteAccountType.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteAccountType.TabIndex = 4;
+            this.btnDeleteAccountType.TabIndex = 3;
             this.btnDeleteAccountType.Text = "Xóa";
             this.btnDeleteAccountType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnDeleteAccountType, "Xóa vai trò");
             this.btnDeleteAccountType.UseVisualStyleBackColor = false;
             this.btnDeleteAccountType.Click += new System.EventHandler(this.btnDeleteAccountType_Click);
             // 
@@ -176,6 +182,7 @@
             this.btnRecoverAccountType.TabIndex = 5;
             this.btnRecoverAccountType.Text = "Khôi phục";
             this.btnRecoverAccountType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnRecoverAccountType, "Khôi phục vai trò");
             this.btnRecoverAccountType.UseVisualStyleBackColor = false;
             this.btnRecoverAccountType.Click += new System.EventHandler(this.btnRecoverAccountType_Click);
             // 
@@ -185,7 +192,8 @@
             this.txtSearchAccountType.Location = new System.Drawing.Point(5, 22);
             this.txtSearchAccountType.Name = "txtSearchAccountType";
             this.txtSearchAccountType.Size = new System.Drawing.Size(251, 27);
-            this.txtSearchAccountType.TabIndex = 2;
+            this.txtSearchAccountType.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.txtSearchAccountType, "Nhập tên vai trò");
             // 
             // btnTraCuuAccountType
             // 
@@ -200,8 +208,9 @@
             this.btnTraCuuAccountType.Size = new System.Drawing.Size(118, 40);
             this.btnTraCuuAccountType.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuAccountType.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuAccountType.TabIndex = 0;
+            this.btnTraCuuAccountType.TabIndex = 8;
             this.btnTraCuuAccountType.Text = "Tra cứu";
+            this.toolTip1.SetToolTip(this.btnTraCuuAccountType, "Tra cứu");
             this.btnTraCuuAccountType.UseVisualStyleBackColor = false;
             this.btnTraCuuAccountType.Click += new System.EventHandler(this.btnTraCuuAccountType_Click);
             // 
@@ -220,7 +229,8 @@
             this.cboStateAccountType.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboStateAccountType.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateAccountType.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.cboStateAccountType.TabIndex = 3;
+            this.cboStateAccountType.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.cboStateAccountType, "Lọc theo trạng thái");
             this.cboStateAccountType.SelectedIndexChanged += new System.EventHandler(this.cboStateAccountType_SelectedIndexChanged);
             // 
             // spcQuery
@@ -269,7 +279,7 @@
             this.dgvAccountType.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvAccountType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAccountType.Size = new System.Drawing.Size(973, 746);
-            this.dgvAccountType.TabIndex = 0;
+            this.dgvAccountType.TabIndex = 6;
             // 
             // ID
             // 
@@ -314,7 +324,8 @@
             this.cboSortAccountTypeID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboSortAccountTypeID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortAccountTypeID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.cboSortAccountTypeID.TabIndex = 29;
+            this.cboSortAccountTypeID.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.cboSortAccountTypeID, "Sắp xếp theo mã vai trò");
             this.cboSortAccountTypeID.SelectedIndexChanged += new System.EventHandler(this.cboSortAccountTypeID_SelectedIndexChanged);
             // 
             // lblSortAccountTypeID
@@ -418,5 +429,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenVaiTro;
         private System.Windows.Forms.DataGridViewTextBoxColumn MoTa;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

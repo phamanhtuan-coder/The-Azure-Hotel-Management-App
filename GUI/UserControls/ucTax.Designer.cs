@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucTax));
             this.lblTax = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
@@ -52,6 +53,7 @@
             this.lblStateTax = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateTax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -77,7 +79,7 @@
             this.lblTax.Location = new System.Drawing.Point(0, 0);
             this.lblTax.Name = "lblTax";
             this.lblTax.Size = new System.Drawing.Size(972, 94);
-            this.lblTax.TabIndex = 35;
+            this.lblTax.TabIndex = 1;
             this.lblTax.Text = "TAX";
             this.lblTax.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -114,9 +116,10 @@
             this.btnAddTax.Style.ForeColor = System.Drawing.Color.White;
             this.btnAddTax.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnAddTax.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddTax.TabIndex = 1;
+            this.btnAddTax.TabIndex = 2;
             this.btnAddTax.Text = "Thêm";
             this.btnAddTax.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnAddTax, "Thêm thuế");
             this.btnAddTax.UseVisualStyleBackColor = false;
             this.btnAddTax.Click += new System.EventHandler(this.btnAddTax_Click);
             // 
@@ -135,9 +138,10 @@
             this.btnEditTax.Style.ForeColor = System.Drawing.Color.White;
             this.btnEditTax.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnEditTax.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditTax.TabIndex = 3;
+            this.btnEditTax.TabIndex = 4;
             this.btnEditTax.Text = "Sửa";
             this.btnEditTax.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnEditTax, "Sửa thuế");
             this.btnEditTax.UseVisualStyleBackColor = false;
             this.btnEditTax.Click += new System.EventHandler(this.btnEditTax_Click);
             // 
@@ -156,9 +160,10 @@
             this.btnDeleteTax.Style.ForeColor = System.Drawing.Color.White;
             this.btnDeleteTax.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDeleteTax.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteTax.TabIndex = 4;
+            this.btnDeleteTax.TabIndex = 3;
             this.btnDeleteTax.Text = "Xóa";
             this.btnDeleteTax.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnDeleteTax, "Xóa thuế");
             this.btnDeleteTax.UseVisualStyleBackColor = false;
             this.btnDeleteTax.Click += new System.EventHandler(this.btnDeleteTax_Click);
             // 
@@ -180,6 +185,7 @@
             this.btnRecoverTax.TabIndex = 5;
             this.btnRecoverTax.Text = "Khôi phục";
             this.btnRecoverTax.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnRecoverTax, "Khôi phục thuế");
             this.btnRecoverTax.UseVisualStyleBackColor = false;
             this.btnRecoverTax.Click += new System.EventHandler(this.btnRecoverTax_Click);
             // 
@@ -189,7 +195,8 @@
             this.txtSearchTax.Location = new System.Drawing.Point(6, 16);
             this.txtSearchTax.Name = "txtSearchTax";
             this.txtSearchTax.Size = new System.Drawing.Size(251, 38);
-            this.txtSearchTax.TabIndex = 2;
+            this.txtSearchTax.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.txtSearchTax, "Nhập tên thuế");
             // 
             // btnTraCuuTax
             // 
@@ -204,8 +211,9 @@
             this.btnTraCuuTax.Size = new System.Drawing.Size(118, 40);
             this.btnTraCuuTax.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuTax.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuTax.TabIndex = 0;
+            this.btnTraCuuTax.TabIndex = 7;
             this.btnTraCuuTax.Text = "Tra cứu";
+            this.toolTip1.SetToolTip(this.btnTraCuuTax, "Tra cứu");
             this.btnTraCuuTax.UseVisualStyleBackColor = false;
             this.btnTraCuuTax.Click += new System.EventHandler(this.btnTraCuuTax_Click);
             // 
@@ -224,7 +232,8 @@
             this.cboStateTax.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateTax.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateTax.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateTax.TabIndex = 3;
+            this.cboStateTax.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.cboStateTax, "Lọc theo trạng thái");
             this.cboStateTax.SelectedIndexChanged += new System.EventHandler(this.cboStateTax_SelectedIndexChanged);
             // 
             // spcQuery
@@ -328,7 +337,8 @@
             this.cboSortTaxID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortTaxID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortTaxID.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortTaxID.TabIndex = 29;
+            this.cboSortTaxID.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.cboSortTaxID, "Sắp xếp theo mã loại");
             this.cboSortTaxID.SelectedIndexChanged += new System.EventHandler(this.cboSortTaxID_SelectedIndexChanged);
             // 
             // lblSortTaxID
@@ -338,7 +348,7 @@
             this.lblSortTaxID.Location = new System.Drawing.Point(2, 86);
             this.lblSortTaxID.Name = "lblSortTaxID";
             this.lblSortTaxID.Size = new System.Drawing.Size(158, 24);
-            this.lblSortTaxID.TabIndex = 28;
+            this.lblSortTaxID.TabIndex = 8;
             this.lblSortTaxID.Text = "Sort theo ID loại";
             this.lblSortTaxID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -357,7 +367,8 @@
             this.cboSortTaxValue.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortTaxValue.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortTaxValue.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortTaxValue.TabIndex = 23;
+            this.cboSortTaxValue.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.cboSortTaxValue, "Lọc theo mức thuế");
             this.cboSortTaxValue.SelectedIndexChanged += new System.EventHandler(this.cboSortTaxValue_SelectedIndexChanged);
             // 
             // lblSortTaxValue
@@ -367,7 +378,7 @@
             this.lblSortTaxValue.Location = new System.Drawing.Point(2, 143);
             this.lblSortTaxValue.Name = "lblSortTaxValue";
             this.lblSortTaxValue.Size = new System.Drawing.Size(184, 24);
-            this.lblSortTaxValue.TabIndex = 14;
+            this.lblSortTaxValue.TabIndex = 10;
             this.lblSortTaxValue.Text = "Lọc theo mức thuế";
             this.lblSortTaxValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -378,7 +389,7 @@
             this.lblStateTax.Location = new System.Drawing.Point(2, 200);
             this.lblStateTax.Name = "lblStateTax";
             this.lblStateTax.Size = new System.Drawing.Size(174, 24);
-            this.lblStateTax.TabIndex = 9;
+            this.lblStateTax.TabIndex = 12;
             this.lblStateTax.Text = "Trạng thái dữ liệu";
             this.lblStateTax.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -465,5 +476,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTiLeThue;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMoTa;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

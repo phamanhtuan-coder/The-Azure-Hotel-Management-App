@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSubmit = new Syncfusion.WinForms.Controls.SfButton();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.lblTenKM = new System.Windows.Forms.Label();
@@ -36,6 +37,7 @@
             this.txtMucKM = new System.Windows.Forms.TextBox();
             this.nudMucKM = new System.Windows.Forms.NumericUpDown();
             this.cboHangTV = new System.Windows.Forms.ComboBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nudMucKM)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,8 +47,9 @@
             this.btnSubmit.Location = new System.Drawing.Point(327, 207);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
-            this.btnSubmit.TabIndex = 3;
+            this.btnSubmit.TabIndex = 8;
             this.btnSubmit.Text = "Submit";
+            this.toolTip1.SetToolTip(this.btnSubmit, "Gửi");
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnCancel
@@ -55,7 +58,7 @@
             this.btnCancel.Location = new System.Drawing.Point(76, 207);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Quay lại";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -66,7 +69,7 @@
             this.lblTenKM.Location = new System.Drawing.Point(46, 28);
             this.lblTenKM.Name = "lblTenKM";
             this.lblTenKM.Size = new System.Drawing.Size(146, 22);
-            this.lblTenKM.TabIndex = 6;
+            this.lblTenKM.TabIndex = 1;
             this.lblTenKM.Text = "Tên khuyến mãi";
             // 
             // lblHangTV
@@ -76,7 +79,7 @@
             this.lblHangTV.Location = new System.Drawing.Point(46, 140);
             this.lblHangTV.Name = "lblHangTV";
             this.lblHangTV.Size = new System.Drawing.Size(234, 22);
-            this.lblHangTV.TabIndex = 10;
+            this.lblHangTV.TabIndex = 5;
             this.lblHangTV.Text = "Dành cho hạng thành viên";
             // 
             // lblMucKM
@@ -86,7 +89,7 @@
             this.lblMucKM.Location = new System.Drawing.Point(46, 82);
             this.lblMucKM.Name = "lblMucKM";
             this.lblMucKM.Size = new System.Drawing.Size(151, 22);
-            this.lblMucKM.TabIndex = 8;
+            this.lblMucKM.TabIndex = 3;
             this.lblMucKM.Text = "Mức khuyến mãi";
             // 
             // txtMucKM
@@ -95,7 +98,7 @@
             this.txtMucKM.Location = new System.Drawing.Point(327, 28);
             this.txtMucKM.Name = "txtMucKM";
             this.txtMucKM.Size = new System.Drawing.Size(189, 27);
-            this.txtMucKM.TabIndex = 12;
+            this.txtMucKM.TabIndex = 2;
             // 
             // nudMucKM
             // 
@@ -109,7 +112,7 @@
             0});
             this.nudMucKM.Name = "nudMucKM";
             this.nudMucKM.Size = new System.Drawing.Size(189, 27);
-            this.nudMucKM.TabIndex = 13;
+            this.nudMucKM.TabIndex = 4;
             this.nudMucKM.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cboHangTV
@@ -119,7 +122,7 @@
             this.cboHangTV.Location = new System.Drawing.Point(327, 138);
             this.cboHangTV.Name = "cboHangTV";
             this.cboHangTV.Size = new System.Drawing.Size(189, 30);
-            this.cboHangTV.TabIndex = 14;
+            this.cboHangTV.TabIndex = 6;
             // 
             // frmKhuyenMai
             // 
@@ -155,5 +158,6 @@
         private System.Windows.Forms.TextBox txtMucKM;
         private System.Windows.Forms.NumericUpDown nudMucKM;
         private System.Windows.Forms.ComboBox cboHangTV;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

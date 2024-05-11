@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtTenLP = new System.Windows.Forms.TextBox();
             this.btnSubmit = new Syncfusion.WinForms.Controls.SfButton();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.lblTenLP = new System.Windows.Forms.Label();
             this.lblMoTa = new System.Windows.Forms.Label();
             this.rtxtMoTa = new System.Windows.Forms.RichTextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // txtTenLP
@@ -41,7 +43,7 @@
             this.txtTenLP.Location = new System.Drawing.Point(266, 44);
             this.txtTenLP.Name = "txtTenLP";
             this.txtTenLP.Size = new System.Drawing.Size(306, 27);
-            this.txtTenLP.TabIndex = 0;
+            this.txtTenLP.TabIndex = 2;
             // 
             // btnSubmit
             // 
@@ -49,8 +51,9 @@
             this.btnSubmit.Location = new System.Drawing.Point(361, 271);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
-            this.btnSubmit.TabIndex = 3;
+            this.btnSubmit.TabIndex = 6;
             this.btnSubmit.Text = "Submit";
+            this.toolTip1.SetToolTip(this.btnSubmit, "Gửi");
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnCancel
@@ -69,7 +72,7 @@
             this.lblTenLP.Location = new System.Drawing.Point(52, 49);
             this.lblTenLP.Name = "lblTenLP";
             this.lblTenLP.Size = new System.Drawing.Size(134, 22);
-            this.lblTenLP.TabIndex = 6;
+            this.lblTenLP.TabIndex = 1;
             this.lblTenLP.Text = "Tên loại phòng";
             // 
             // lblMoTa
@@ -78,7 +81,7 @@
             this.lblMoTa.Location = new System.Drawing.Point(52, 117);
             this.lblMoTa.Name = "lblMoTa";
             this.lblMoTa.Size = new System.Drawing.Size(57, 22);
-            this.lblMoTa.TabIndex = 7;
+            this.lblMoTa.TabIndex = 3;
             this.lblMoTa.Text = "Mô tả";
             // 
             // rtxtMoTa
@@ -86,7 +89,7 @@
             this.rtxtMoTa.Location = new System.Drawing.Point(266, 117);
             this.rtxtMoTa.Name = "rtxtMoTa";
             this.rtxtMoTa.Size = new System.Drawing.Size(306, 96);
-            this.rtxtMoTa.TabIndex = 8;
+            this.rtxtMoTa.TabIndex = 4;
             this.rtxtMoTa.Text = "";
             // 
             // frmLoaiPhong
@@ -119,5 +122,6 @@
         private System.Windows.Forms.Label lblTenLP;
         private System.Windows.Forms.Label lblMoTa;
         private System.Windows.Forms.RichTextBox rtxtMoTa;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

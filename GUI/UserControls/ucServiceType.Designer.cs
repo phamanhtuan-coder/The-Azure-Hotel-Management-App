@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucServiceType));
             this.lblServiceType = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
@@ -40,6 +41,11 @@
             this.cboStateRoomType = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvServiceType = new System.Windows.Forms.DataGridView();
+            this.colMaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGiaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHinhAnh = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboSortServiceTypeID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortServiceTypeID = new System.Windows.Forms.Label();
             this.cboSortGiaServiceType = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -47,6 +53,7 @@
             this.lblStateRoomType = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.picDichVu = new System.Windows.Forms.PictureBox();
             this.colMaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,7 +86,7 @@
             this.lblServiceType.Location = new System.Drawing.Point(0, 0);
             this.lblServiceType.Name = "lblServiceType";
             this.lblServiceType.Size = new System.Drawing.Size(972, 94);
-            this.lblServiceType.TabIndex = 35;
+            this.lblServiceType.TabIndex = 1;
             this.lblServiceType.Text = "SERVICE TYPE";
             this.lblServiceType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -116,9 +123,10 @@
             this.btnAddServiceType.Style.ForeColor = System.Drawing.Color.White;
             this.btnAddServiceType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnAddServiceType.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddServiceType.TabIndex = 1;
+            this.btnAddServiceType.TabIndex = 2;
             this.btnAddServiceType.Text = "Thêm";
             this.btnAddServiceType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnAddServiceType, "Thêm dịch vụ");
             this.btnAddServiceType.UseVisualStyleBackColor = false;
             this.btnAddServiceType.Click += new System.EventHandler(this.btnAddServiceType_Click);
             // 
@@ -137,9 +145,10 @@
             this.btnEditServiceType.Style.ForeColor = System.Drawing.Color.White;
             this.btnEditServiceType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnEditServiceType.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditServiceType.TabIndex = 3;
+            this.btnEditServiceType.TabIndex = 4;
             this.btnEditServiceType.Text = "Sửa";
             this.btnEditServiceType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnEditServiceType, "Sửa dịch vụ");
             this.btnEditServiceType.UseVisualStyleBackColor = false;
             this.btnEditServiceType.Click += new System.EventHandler(this.btnEditServiceType_Click);
             // 
@@ -158,9 +167,10 @@
             this.btnDeleteServiceType.Style.ForeColor = System.Drawing.Color.White;
             this.btnDeleteServiceType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDeleteServiceType.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteServiceType.TabIndex = 4;
+            this.btnDeleteServiceType.TabIndex = 3;
             this.btnDeleteServiceType.Text = "Xóa";
             this.btnDeleteServiceType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnDeleteServiceType, "Xóa dịch vụ");
             this.btnDeleteServiceType.UseVisualStyleBackColor = false;
             this.btnDeleteServiceType.Click += new System.EventHandler(this.btnDeleteServiceType_Click);
             // 
@@ -182,6 +192,7 @@
             this.btnRecoverServiceType.TabIndex = 5;
             this.btnRecoverServiceType.Text = "Khôi phục";
             this.btnRecoverServiceType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnRecoverServiceType, "Khôi phục dịch vụ");
             this.btnRecoverServiceType.UseVisualStyleBackColor = false;
             this.btnRecoverServiceType.Click += new System.EventHandler(this.btnRecoverServiceType_Click);
             // 
@@ -190,6 +201,9 @@
             this.txtSearchServiceType.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchServiceType.Location = new System.Drawing.Point(14, 172);
             this.txtSearchServiceType.Name = "txtSearchServiceType";
+            this.txtSearchServiceType.Size = new System.Drawing.Size(251, 40);
+            this.txtSearchServiceType.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.txtSearchServiceType, "Nhập tên dịch vụ");
             this.txtSearchServiceType.Size = new System.Drawing.Size(251, 40);
             this.txtSearchServiceType.TabIndex = 2;
             // 
@@ -206,8 +220,9 @@
             this.btnTraCuuServiceType.Size = new System.Drawing.Size(118, 40);
             this.btnTraCuuServiceType.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuServiceType.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuServiceType.TabIndex = 0;
+            this.btnTraCuuServiceType.TabIndex = 8;
             this.btnTraCuuServiceType.Text = "Tra cứu";
+            this.toolTip1.SetToolTip(this.btnTraCuuServiceType, "Tra cứu");
             this.btnTraCuuServiceType.UseVisualStyleBackColor = false;
             this.btnTraCuuServiceType.Click += new System.EventHandler(this.btnTraCuuServiceType_Click);
             // 
@@ -226,7 +241,8 @@
             this.cboStateRoomType.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateRoomType.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateRoomType.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateRoomType.TabIndex = 3;
+            this.cboStateRoomType.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.cboStateRoomType, "Lọc theo tình trạng");
             this.cboStateRoomType.SelectedIndexChanged += new System.EventHandler(this.cboStateRoomType_SelectedIndexChanged);
             // 
             // spcQuery
@@ -279,6 +295,50 @@
             this.dgvServiceType.RowHeadersWidth = 51;
             this.dgvServiceType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvServiceType.Size = new System.Drawing.Size(973, 746);
+            this.dgvServiceType.TabIndex = 6;
+            // 
+            // colMaDV
+            // 
+            this.colMaDV.DataPropertyName = "MaDV";
+            this.colMaDV.HeaderText = "Mã dịch vụ";
+            this.colMaDV.MinimumWidth = 6;
+            this.colMaDV.Name = "colMaDV";
+            this.colMaDV.ReadOnly = true;
+            // 
+            // colTenDV
+            // 
+            this.colTenDV.DataPropertyName = "TenDV";
+            this.colTenDV.HeaderText = "Tên dịch vụ";
+            this.colTenDV.MinimumWidth = 6;
+            this.colTenDV.Name = "colTenDV";
+            this.colTenDV.ReadOnly = true;
+            // 
+            // colGiaDV
+            // 
+            this.colGiaDV.DataPropertyName = "GiaDV";
+            this.colGiaDV.HeaderText = "Giá";
+            this.colGiaDV.MinimumWidth = 6;
+            this.colGiaDV.Name = "colGiaDV";
+            this.colGiaDV.ReadOnly = true;
+            // 
+            // colHinhAnh
+            // 
+            this.colHinhAnh.DataPropertyName = "HinhAnh";
+            this.colHinhAnh.HeaderText = "Hình ảnh";
+            this.colHinhAnh.MinimumWidth = 6;
+            this.colHinhAnh.Name = "colHinhAnh";
+            this.colHinhAnh.ReadOnly = true;
+            this.colHinhAnh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colHinhAnh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.MinimumWidth = 6;
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Visible = false;
             this.dgvServiceType.TabIndex = 1;
             this.dgvServiceType.SelectionChanged += new System.EventHandler(this.dgvServiceType_SelectionChanged);
             // 
@@ -297,7 +357,8 @@
             this.cboSortServiceTypeID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortServiceTypeID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortServiceTypeID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortServiceTypeID.TabIndex = 29;
+            this.cboSortServiceTypeID.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.cboSortServiceTypeID, "Sắp xếp theo mã loại dịch vụ");
             this.cboSortServiceTypeID.SelectedIndexChanged += new System.EventHandler(this.cboSortServiceTypeID_SelectedIndexChanged);
             // 
             // lblSortServiceTypeID
@@ -306,6 +367,8 @@
             this.lblSortServiceTypeID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortServiceTypeID.Location = new System.Drawing.Point(11, 241);
             this.lblSortServiceTypeID.Name = "lblSortServiceTypeID";
+            this.lblSortServiceTypeID.Size = new System.Drawing.Size(208, 26);
+            this.lblSortServiceTypeID.TabIndex = 9;
             this.lblSortServiceTypeID.Size = new System.Drawing.Size(208, 26);
             this.lblSortServiceTypeID.TabIndex = 28;
             this.lblSortServiceTypeID.Text = "Sort Service Type ID";
@@ -326,7 +389,8 @@
             this.cboSortGiaServiceType.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortGiaServiceType.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortGiaServiceType.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortGiaServiceType.TabIndex = 23;
+            this.cboSortGiaServiceType.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.cboSortGiaServiceType, "Sắp xếp theo giá");
             this.cboSortGiaServiceType.SelectedIndexChanged += new System.EventHandler(this.cboSortGiaServiceType_SelectedIndexChanged);
             // 
             // lblSortGiaServiceTypeID
@@ -335,6 +399,8 @@
             this.lblSortGiaServiceTypeID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortGiaServiceTypeID.Location = new System.Drawing.Point(11, 296);
             this.lblSortGiaServiceTypeID.Name = "lblSortGiaServiceTypeID";
+            this.lblSortGiaServiceTypeID.Size = new System.Drawing.Size(138, 26);
+            this.lblSortGiaServiceTypeID.TabIndex = 11;
             this.lblSortGiaServiceTypeID.Size = new System.Drawing.Size(138, 26);
             this.lblSortGiaServiceTypeID.TabIndex = 14;
             this.lblSortGiaServiceTypeID.Text = "Sort theo giá";
@@ -346,6 +412,8 @@
             this.lblStateRoomType.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStateRoomType.Location = new System.Drawing.Point(10, 349);
             this.lblStateRoomType.Name = "lblStateRoomType";
+            this.lblStateRoomType.Size = new System.Drawing.Size(186, 26);
+            this.lblStateRoomType.TabIndex = 13;
             this.lblStateRoomType.Size = new System.Drawing.Size(186, 26);
             this.lblStateRoomType.TabIndex = 9;
             this.lblStateRoomType.Text = "Trạng thái dữ liệu";

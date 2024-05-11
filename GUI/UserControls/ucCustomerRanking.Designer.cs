@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucCustomerRanking));
             this.lblCustomerRanking = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
@@ -52,6 +53,7 @@
             this.lblStateCustomerRanking = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateCustomerRanking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -77,7 +79,7 @@
             this.lblCustomerRanking.Location = new System.Drawing.Point(0, 0);
             this.lblCustomerRanking.Name = "lblCustomerRanking";
             this.lblCustomerRanking.Size = new System.Drawing.Size(972, 94);
-            this.lblCustomerRanking.TabIndex = 35;
+            this.lblCustomerRanking.TabIndex = 1;
             this.lblCustomerRanking.Text = "CUSTOMER\'S RANKS";
             this.lblCustomerRanking.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -98,6 +100,7 @@
             this.tlpController.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpController.Size = new System.Drawing.Size(394, 94);
             this.tlpController.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.tlpController, "Xóa hạng nhân viên");
             // 
             // btnAddCustomerRanking
             // 
@@ -114,9 +117,10 @@
             this.btnAddCustomerRanking.Style.ForeColor = System.Drawing.Color.White;
             this.btnAddCustomerRanking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnAddCustomerRanking.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddCustomerRanking.TabIndex = 1;
+            this.btnAddCustomerRanking.TabIndex = 2;
             this.btnAddCustomerRanking.Text = "Thêm";
             this.btnAddCustomerRanking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnAddCustomerRanking, "Thêm hạng nhân viên");
             this.btnAddCustomerRanking.UseVisualStyleBackColor = false;
             this.btnAddCustomerRanking.Click += new System.EventHandler(this.btnAddCustomerRanking_Click);
             // 
@@ -135,9 +139,10 @@
             this.btnEditCustomerRanking.Style.ForeColor = System.Drawing.Color.White;
             this.btnEditCustomerRanking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnEditCustomerRanking.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditCustomerRanking.TabIndex = 3;
+            this.btnEditCustomerRanking.TabIndex = 4;
             this.btnEditCustomerRanking.Text = "Sửa";
             this.btnEditCustomerRanking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnEditCustomerRanking, "Sửa hạng nhân viên");
             this.btnEditCustomerRanking.UseVisualStyleBackColor = false;
             this.btnEditCustomerRanking.Click += new System.EventHandler(this.btnEditCustomerRanking_Click);
             // 
@@ -156,7 +161,7 @@
             this.btnDeleteCustomerRanking.Style.ForeColor = System.Drawing.Color.White;
             this.btnDeleteCustomerRanking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDeleteCustomerRanking.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteCustomerRanking.TabIndex = 4;
+            this.btnDeleteCustomerRanking.TabIndex = 3;
             this.btnDeleteCustomerRanking.Text = "Xóa";
             this.btnDeleteCustomerRanking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeleteCustomerRanking.UseVisualStyleBackColor = false;
@@ -175,11 +180,12 @@
             this.btnRecoverCustomerRanking.Size = new System.Drawing.Size(191, 41);
             this.btnRecoverCustomerRanking.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverCustomerRanking.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverCustomerRanking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnRecoverCustomerRanking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnRecoverCustomerRanking.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRecoverCustomerRanking.TabIndex = 5;
             this.btnRecoverCustomerRanking.Text = "Khôi phục";
             this.btnRecoverCustomerRanking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnRecoverCustomerRanking, "Khôi phục hạng nhân viên");
             this.btnRecoverCustomerRanking.UseVisualStyleBackColor = false;
             this.btnRecoverCustomerRanking.Click += new System.EventHandler(this.btnRecoverCustomerRanking_Click);
             // 
@@ -189,7 +195,8 @@
             this.txtSearchCustomerRanking.Location = new System.Drawing.Point(6, 16);
             this.txtSearchCustomerRanking.Name = "txtSearchCustomerRanking";
             this.txtSearchCustomerRanking.Size = new System.Drawing.Size(251, 27);
-            this.txtSearchCustomerRanking.TabIndex = 2;
+            this.txtSearchCustomerRanking.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.txtSearchCustomerRanking, "Nhập tên hạng");
             // 
             // btnTraCuuCustomerRanking
             // 
@@ -204,8 +211,9 @@
             this.btnTraCuuCustomerRanking.Size = new System.Drawing.Size(118, 40);
             this.btnTraCuuCustomerRanking.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuCustomerRanking.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuCustomerRanking.TabIndex = 0;
+            this.btnTraCuuCustomerRanking.TabIndex = 8;
             this.btnTraCuuCustomerRanking.Text = "Tra cứu";
+            this.toolTip1.SetToolTip(this.btnTraCuuCustomerRanking, "Tra cứu");
             this.btnTraCuuCustomerRanking.UseVisualStyleBackColor = false;
             this.btnTraCuuCustomerRanking.Click += new System.EventHandler(this.btnTraCuuCustomerRanking_Click);
             // 
@@ -224,7 +232,8 @@
             this.cboStateCustomerRanking.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateCustomerRanking.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateCustomerRanking.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateCustomerRanking.TabIndex = 3;
+            this.cboStateCustomerRanking.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.cboStateCustomerRanking, "Lọc theo trạng thái");
             this.cboStateCustomerRanking.SelectedIndexChanged += new System.EventHandler(this.cboStateCustomerRanking_SelectedIndexChanged);
             // 
             // spcQuery
@@ -275,7 +284,7 @@
             this.dgvCustomerRank.RowHeadersVisible = false;
             this.dgvCustomerRank.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCustomerRank.Size = new System.Drawing.Size(973, 746);
-            this.dgvCustomerRank.TabIndex = 0;
+            this.dgvCustomerRank.TabIndex = 6;
             // 
             // ID
             // 
@@ -328,7 +337,8 @@
             this.cboSortCustomerRankingID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortCustomerRankingID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortCustomerRankingID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortCustomerRankingID.TabIndex = 29;
+            this.cboSortCustomerRankingID.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.cboSortCustomerRankingID, "Sắp xếp mã loại");
             this.cboSortCustomerRankingID.SelectedIndexChanged += new System.EventHandler(this.cboSortCustomerRankingID_SelectedIndexChanged);
             // 
             // lblSortCustomerRankingID
@@ -338,7 +348,7 @@
             this.lblSortCustomerRankingID.Location = new System.Drawing.Point(2, 86);
             this.lblSortCustomerRankingID.Name = "lblSortCustomerRankingID";
             this.lblSortCustomerRankingID.Size = new System.Drawing.Size(145, 22);
-            this.lblSortCustomerRankingID.TabIndex = 28;
+            this.lblSortCustomerRankingID.TabIndex = 9;
             this.lblSortCustomerRankingID.Text = "Sort theo ID loại";
             this.lblSortCustomerRankingID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -357,7 +367,8 @@
             this.cboSortSoLuongKH.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortSoLuongKH.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortSoLuongKH.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSoLuongKH.TabIndex = 23;
+            this.cboSortSoLuongKH.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.cboSortSoLuongKH, "Sắp xếp số lượng");
             this.cboSortSoLuongKH.SelectedIndexChanged += new System.EventHandler(this.cboSortSoLuongKH_SelectedIndexChanged);
             // 
             // lblSortSoLuongKH
@@ -367,7 +378,7 @@
             this.lblSortSoLuongKH.Location = new System.Drawing.Point(2, 143);
             this.lblSortSoLuongKH.Name = "lblSortSoLuongKH";
             this.lblSortSoLuongKH.Size = new System.Drawing.Size(163, 22);
-            this.lblSortSoLuongKH.TabIndex = 14;
+            this.lblSortSoLuongKH.TabIndex = 11;
             this.lblSortSoLuongKH.Text = "Sort theo số lượng";
             this.lblSortSoLuongKH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -378,7 +389,7 @@
             this.lblStateCustomerRanking.Location = new System.Drawing.Point(2, 200);
             this.lblStateCustomerRanking.Name = "lblStateCustomerRanking";
             this.lblStateCustomerRanking.Size = new System.Drawing.Size(159, 22);
-            this.lblStateCustomerRanking.TabIndex = 9;
+            this.lblStateCustomerRanking.TabIndex = 13;
             this.lblStateCustomerRanking.Text = "Trạng thái dữ liệu";
             this.lblStateCustomerRanking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -465,5 +476,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MucGiamGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

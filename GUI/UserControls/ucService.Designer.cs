@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucService));
             this.lblService = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
@@ -47,6 +48,7 @@
             this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNgayDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sftimngay = new Syncfusion.WinForms.Controls.SfButton();
             this.cboSortServiceD = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortServiceID = new System.Windows.Forms.Label();
             this.lblServiceDate = new System.Windows.Forms.Label();
@@ -55,7 +57,7 @@
             this.cboSortBookingID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.sftimngay = new Syncfusion.WinForms.Controls.SfButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateService)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -81,7 +83,7 @@
             this.lblService.Location = new System.Drawing.Point(0, 0);
             this.lblService.Name = "lblService";
             this.lblService.Size = new System.Drawing.Size(972, 94);
-            this.lblService.TabIndex = 35;
+            this.lblService.TabIndex = 1;
             this.lblService.Text = "SERVICES";
             this.lblService.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -118,9 +120,10 @@
             this.btnAddlService.Style.ForeColor = System.Drawing.Color.White;
             this.btnAddlService.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnAddlService.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddlService.TabIndex = 1;
+            this.btnAddlService.TabIndex = 2;
             this.btnAddlService.Text = "Thêm";
             this.btnAddlService.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnAddlService, "Thêm đặt dịch vụ");
             this.btnAddlService.UseVisualStyleBackColor = false;
             this.btnAddlService.Click += new System.EventHandler(this.btnAddlService_Click);
             // 
@@ -139,9 +142,10 @@
             this.btnEditlService.Style.ForeColor = System.Drawing.Color.White;
             this.btnEditlService.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnEditlService.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditlService.TabIndex = 3;
+            this.btnEditlService.TabIndex = 4;
             this.btnEditlService.Text = "Sửa";
             this.btnEditlService.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnEditlService, "Sửa đặt dịch vụ");
             this.btnEditlService.UseVisualStyleBackColor = false;
             this.btnEditlService.Click += new System.EventHandler(this.btnEditlService_Click);
             // 
@@ -160,9 +164,10 @@
             this.btnDeletelService.Style.ForeColor = System.Drawing.Color.White;
             this.btnDeletelService.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDeletelService.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeletelService.TabIndex = 4;
+            this.btnDeletelService.TabIndex = 3;
             this.btnDeletelService.Text = "Xóa";
             this.btnDeletelService.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnDeletelService, "Xóa đặt dịch vụ");
             this.btnDeletelService.UseVisualStyleBackColor = false;
             this.btnDeletelService.Click += new System.EventHandler(this.btnDeletelService_Click);
             // 
@@ -179,11 +184,12 @@
             this.btnRecoverlService.Size = new System.Drawing.Size(191, 41);
             this.btnRecoverlService.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverlService.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverlService.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnRecoverlService.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnRecoverlService.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRecoverlService.TabIndex = 5;
             this.btnRecoverlService.Text = "Khôi phục";
             this.btnRecoverlService.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnRecoverlService, "Khôi phục đặt dịch vụ");
             this.btnRecoverlService.UseVisualStyleBackColor = false;
             this.btnRecoverlService.Click += new System.EventHandler(this.btnRecoverlService_Click);
             // 
@@ -192,8 +198,9 @@
             this.txtSearchlService.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchlService.Location = new System.Drawing.Point(6, 16);
             this.txtSearchlService.Name = "txtSearchlService";
-            this.txtSearchlService.Size = new System.Drawing.Size(251, 49);
-            this.txtSearchlService.TabIndex = 2;
+            this.txtSearchlService.Size = new System.Drawing.Size(251, 40);
+            this.txtSearchlService.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.txtSearchlService, "Nhập mã đặt dịch vụ");
             // 
             // btnTraCuulService
             // 
@@ -208,8 +215,9 @@
             this.btnTraCuulService.Size = new System.Drawing.Size(118, 40);
             this.btnTraCuulService.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuulService.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuulService.TabIndex = 0;
+            this.btnTraCuulService.TabIndex = 8;
             this.btnTraCuulService.Text = "Tra cứu";
+            this.toolTip1.SetToolTip(this.btnTraCuulService, "Tra cứu");
             this.btnTraCuulService.UseVisualStyleBackColor = false;
             this.btnTraCuulService.Click += new System.EventHandler(this.btnTraCuulService_Click);
             // 
@@ -228,7 +236,8 @@
             this.cboStateService.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateService.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateService.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateService.TabIndex = 3;
+            this.cboStateService.TabIndex = 17;
+            this.toolTip1.SetToolTip(this.cboStateService, "Lọc theo trạng thái");
             this.cboStateService.SelectedIndexChanged += new System.EventHandler(this.cboStateService_SelectedIndexChanged);
             // 
             // dtpServiceDate
@@ -240,7 +249,7 @@
             this.dtpServiceDate.Location = new System.Drawing.Point(180, 201);
             this.dtpServiceDate.Name = "dtpServiceDate";
             this.dtpServiceDate.Size = new System.Drawing.Size(156, 34);
-            this.dtpServiceDate.TabIndex = 6;
+            this.dtpServiceDate.TabIndex = 14;
             this.dtpServiceDate.ToolTipText = "";
             this.dtpServiceDate.ValueChanged += new Syncfusion.WinForms.Input.Events.DateTimeValueChangedEventHandler(this.dtpServiceDate_ValueChanged);
             // 
@@ -297,7 +306,7 @@
             this.dgvServices.RowHeadersWidth = 51;
             this.dgvServices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvServices.Size = new System.Drawing.Size(973, 746);
-            this.dgvServices.TabIndex = 0;
+            this.dgvServices.TabIndex = 6;
             // 
             // colMaDatDichVu
             // 
@@ -349,6 +358,25 @@
             this.colTrangThai.Name = "colTrangThai";
             this.colTrangThai.ReadOnly = true;
             // 
+            // sftimngay
+            // 
+            this.sftimngay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.sftimngay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.sftimngay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sftimngay.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sftimngay.ForeColor = System.Drawing.Color.White;
+            this.sftimngay.Location = new System.Drawing.Point(340, 202);
+            this.sftimngay.Name = "sftimngay";
+            this.sftimngay.Size = new System.Drawing.Size(41, 33);
+            this.sftimngay.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.sftimngay.Style.ForeColor = System.Drawing.Color.White;
+            this.sftimngay.TabIndex = 15;
+            this.sftimngay.Text = "tim";
+            this.toolTip1.SetToolTip(this.sftimngay, "Tìm kiếm");
+            this.sftimngay.UseVisualStyleBackColor = false;
+            this.sftimngay.Click += new System.EventHandler(this.sftimngay_Click);
+            // 
             // cboSortServiceD
             // 
             this.cboSortServiceD.DelimiterChar = "";
@@ -364,7 +392,8 @@
             this.cboSortServiceD.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortServiceD.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortServiceD.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortServiceD.TabIndex = 23;
+            this.cboSortServiceD.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.cboSortServiceD, "Sắp xếp theo mã đặt dịch vụ");
             this.cboSortServiceD.SelectedIndexChanged += new System.EventHandler(this.cboSortServiceD_SelectedIndexChanged);
             // 
             // lblSortServiceID
@@ -373,8 +402,8 @@
             this.lblSortServiceID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortServiceID.Location = new System.Drawing.Point(5, 140);
             this.lblSortServiceID.Name = "lblSortServiceID";
-            this.lblSortServiceID.Size = new System.Drawing.Size(263, 33);
-            this.lblSortServiceID.TabIndex = 14;
+            this.lblSortServiceID.Size = new System.Drawing.Size(206, 26);
+            this.lblSortServiceID.TabIndex = 11;
             this.lblSortServiceID.Text = "Sort theo Service ID";
             this.lblSortServiceID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -384,8 +413,8 @@
             this.lblServiceDate.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblServiceDate.Location = new System.Drawing.Point(5, 202);
             this.lblServiceDate.Name = "lblServiceDate";
-            this.lblServiceDate.Size = new System.Drawing.Size(129, 33);
-            this.lblServiceDate.TabIndex = 10;
+            this.lblServiceDate.Size = new System.Drawing.Size(101, 26);
+            this.lblServiceDate.TabIndex = 13;
             this.lblServiceDate.Text = "Ngày đặt";
             this.lblServiceDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -395,8 +424,8 @@
             this.lblStateService.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStateService.Location = new System.Drawing.Point(5, 253);
             this.lblStateService.Name = "lblStateService";
-            this.lblStateService.Size = new System.Drawing.Size(237, 33);
-            this.lblStateService.TabIndex = 9;
+            this.lblStateService.Size = new System.Drawing.Size(186, 26);
+            this.lblStateService.TabIndex = 16;
             this.lblStateService.Text = "Trạng thái dữ liệu";
             this.lblStateService.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -406,8 +435,8 @@
             this.lblSortBookingID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortBookingID.Location = new System.Drawing.Point(4, 85);
             this.lblSortBookingID.Name = "lblSortBookingID";
-            this.lblSortBookingID.Size = new System.Drawing.Size(280, 33);
-            this.lblSortBookingID.TabIndex = 8;
+            this.lblSortBookingID.Size = new System.Drawing.Size(218, 26);
+            this.lblSortBookingID.TabIndex = 9;
             this.lblSortBookingID.Text = "Sort theo Booking ID";
             this.lblSortBookingID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -426,7 +455,8 @@
             this.cboSortBookingID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortBookingID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortBookingID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortBookingID.TabIndex = 7;
+            this.cboSortBookingID.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.cboSortBookingID, "Sắp xếp theo mã đặt phòng");
             this.cboSortBookingID.SelectedIndexChanged += new System.EventHandler(this.cboSortBookingID_SelectedIndexChanged);
             // 
             // panUcHeader
@@ -457,24 +487,6 @@
             this.spcHeader.Size = new System.Drawing.Size(1370, 94);
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
-            // 
-            // sftimngay
-            // 
-            this.sftimngay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.sftimngay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.sftimngay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sftimngay.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sftimngay.ForeColor = System.Drawing.Color.White;
-            this.sftimngay.Location = new System.Drawing.Point(340, 202);
-            this.sftimngay.Name = "sftimngay";
-            this.sftimngay.Size = new System.Drawing.Size(41, 33);
-            this.sftimngay.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.sftimngay.Style.ForeColor = System.Drawing.Color.White;
-            this.sftimngay.TabIndex = 24;
-            this.sftimngay.Text = "tim";
-            this.sftimngay.UseVisualStyleBackColor = false;
-            this.sftimngay.Click += new System.EventHandler(this.sftimngay_Click);
             // 
             // ucService
             // 
@@ -534,5 +546,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayDat;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
         private Syncfusion.WinForms.Controls.SfButton sftimngay;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

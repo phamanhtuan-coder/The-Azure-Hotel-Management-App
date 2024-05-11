@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhanVien));
             this.btnSubmit = new Syncfusion.WinForms.Controls.SfButton();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
@@ -63,6 +64,7 @@
             this.lblLoiLuong = new System.Windows.Forms.Label();
             this.lblLoiHoTen = new System.Windows.Forms.Label();
             this.lblLoiUsername = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupLuong)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +77,7 @@
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
             this.btnSubmit.TabIndex = 3;
             this.btnSubmit.Text = "Submit";
+            this.toolTip1.SetToolTip(this.btnSubmit, "Gửi");
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnCancel
@@ -93,7 +96,7 @@
             this.txtHoTenNV.Location = new System.Drawing.Point(538, 12);
             this.txtHoTenNV.Name = "txtHoTenNV";
             this.txtHoTenNV.Size = new System.Drawing.Size(194, 27);
-            this.txtHoTenNV.TabIndex = 6;
+            this.txtHoTenNV.TabIndex = 2;
             this.txtHoTenNV.Leave += new System.EventHandler(this.txtHoTenNV_Leave);
             // 
             // txtTenTaiKhoan
@@ -102,7 +105,7 @@
             this.txtTenTaiKhoan.Location = new System.Drawing.Point(12, 270);
             this.txtTenTaiKhoan.Name = "txtTenTaiKhoan";
             this.txtTenTaiKhoan.Size = new System.Drawing.Size(175, 27);
-            this.txtTenTaiKhoan.TabIndex = 7;
+            this.txtTenTaiKhoan.TabIndex = 17;
             this.txtTenTaiKhoan.Leave += new System.EventHandler(this.txtTenTaiKhoan_Leave);
             // 
             // txtCCCD
@@ -111,7 +114,7 @@
             this.txtCCCD.Location = new System.Drawing.Point(538, 64);
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.Size = new System.Drawing.Size(194, 27);
-            this.txtCCCD.TabIndex = 8;
+            this.txtCCCD.TabIndex = 4;
             this.txtCCCD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCCCD_KeyPress);
             this.txtCCCD.Leave += new System.EventHandler(this.txtCCCD_Leave);
             // 
@@ -121,7 +124,7 @@
             this.txtEmail.Location = new System.Drawing.Point(538, 219);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(194, 27);
-            this.txtEmail.TabIndex = 9;
+            this.txtEmail.TabIndex = 11;
             this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // txtSDT
@@ -130,7 +133,7 @@
             this.txtSDT.Location = new System.Drawing.Point(538, 271);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(194, 27);
-            this.txtSDT.TabIndex = 10;
+            this.txtSDT.TabIndex = 13;
             this.txtSDT.Leave += new System.EventHandler(this.txtSDT_Leave);
             // 
             // txtDiaChi
@@ -139,7 +142,7 @@
             this.txtDiaChi.Location = new System.Drawing.Point(538, 323);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(194, 27);
-            this.txtDiaChi.TabIndex = 11;
+            this.txtDiaChi.TabIndex = 15;
             // 
             // dtpNgaySinh
             // 
@@ -149,7 +152,7 @@
             this.dtpNgaySinh.Location = new System.Drawing.Point(538, 167);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(194, 27);
-            this.dtpNgaySinh.TabIndex = 12;
+            this.dtpNgaySinh.TabIndex = 9;
             this.dtpNgaySinh.ValueChanged += new System.EventHandler(this.dtpNgaySinh_ValueChanged);
             // 
             // radNam
@@ -159,7 +162,7 @@
             this.radNam.Location = new System.Drawing.Point(538, 117);
             this.radNam.Name = "radNam";
             this.radNam.Size = new System.Drawing.Size(68, 26);
-            this.radNam.TabIndex = 13;
+            this.radNam.TabIndex = 6;
             this.radNam.TabStop = true;
             this.radNam.Text = "Nam";
             this.radNam.UseVisualStyleBackColor = true;
@@ -171,7 +174,7 @@
             this.radNu.Location = new System.Drawing.Point(648, 117);
             this.radNu.Name = "radNu";
             this.radNu.Size = new System.Drawing.Size(52, 26);
-            this.radNu.TabIndex = 14;
+            this.radNu.TabIndex = 7;
             this.radNu.TabStop = true;
             this.radNu.Text = "Nữ";
             this.radNu.UseVisualStyleBackColor = true;
@@ -182,8 +185,9 @@
             this.btnTaoTK.Location = new System.Drawing.Point(193, 270);
             this.btnTaoTK.Name = "btnTaoTK";
             this.btnTaoTK.Size = new System.Drawing.Size(169, 27);
-            this.btnTaoTK.TabIndex = 15;
+            this.btnTaoTK.TabIndex = 18;
             this.btnTaoTK.Text = "Tạo tài khoản";
+            this.toolTip1.SetToolTip(this.btnTaoTK, "Tạo tài khoản nhân viên");
             this.btnTaoTK.Click += new System.EventHandler(this.btnTaoTK_Click);
             // 
             // btnChonHinh
@@ -213,7 +217,7 @@
             this.lblMaTaiKhoan.Location = new System.Drawing.Point(12, 248);
             this.lblMaTaiKhoan.Name = "lblMaTaiKhoan";
             this.lblMaTaiKhoan.Size = new System.Drawing.Size(96, 22);
-            this.lblMaTaiKhoan.TabIndex = 18;
+            this.lblMaTaiKhoan.TabIndex = 16;
             this.lblMaTaiKhoan.Text = "Username";
             // 
             // lblHoTen
@@ -223,7 +227,7 @@
             this.lblHoTen.Location = new System.Drawing.Point(381, 17);
             this.lblHoTen.Name = "lblHoTen";
             this.lblHoTen.Size = new System.Drawing.Size(91, 22);
-            this.lblHoTen.TabIndex = 19;
+            this.lblHoTen.TabIndex = 1;
             this.lblHoTen.Text = "Họ và tên";
             // 
             // lblCCCD
@@ -233,7 +237,7 @@
             this.lblCCCD.Location = new System.Drawing.Point(381, 69);
             this.lblCCCD.Name = "lblCCCD";
             this.lblCCCD.Size = new System.Drawing.Size(59, 22);
-            this.lblCCCD.TabIndex = 20;
+            this.lblCCCD.TabIndex = 3;
             this.lblCCCD.Text = "CCCD";
             // 
             // lblGioiTinh
@@ -243,7 +247,7 @@
             this.lblGioiTinh.Location = new System.Drawing.Point(381, 117);
             this.lblGioiTinh.Name = "lblGioiTinh";
             this.lblGioiTinh.Size = new System.Drawing.Size(81, 22);
-            this.lblGioiTinh.TabIndex = 21;
+            this.lblGioiTinh.TabIndex = 5;
             this.lblGioiTinh.Text = "Giới tính";
             // 
             // lblNgaySinh
@@ -253,7 +257,7 @@
             this.lblNgaySinh.Location = new System.Drawing.Point(381, 172);
             this.lblNgaySinh.Name = "lblNgaySinh";
             this.lblNgaySinh.Size = new System.Drawing.Size(94, 22);
-            this.lblNgaySinh.TabIndex = 22;
+            this.lblNgaySinh.TabIndex = 8;
             this.lblNgaySinh.Text = "Ngày sinh";
             // 
             // lblEmail
@@ -263,7 +267,7 @@
             this.lblEmail.Location = new System.Drawing.Point(383, 224);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(58, 22);
-            this.lblEmail.TabIndex = 23;
+            this.lblEmail.TabIndex = 10;
             this.lblEmail.Text = "Email";
             // 
             // lblSDT
@@ -273,7 +277,7 @@
             this.lblSDT.Location = new System.Drawing.Point(381, 274);
             this.lblSDT.Name = "lblSDT";
             this.lblSDT.Size = new System.Drawing.Size(43, 22);
-            this.lblSDT.TabIndex = 24;
+            this.lblSDT.TabIndex = 12;
             this.lblSDT.Text = "SĐT";
             // 
             // lblDiaChi
@@ -283,7 +287,7 @@
             this.lblDiaChi.Location = new System.Drawing.Point(383, 328);
             this.lblDiaChi.Name = "lblDiaChi";
             this.lblDiaChi.Size = new System.Drawing.Size(68, 22);
-            this.lblDiaChi.TabIndex = 25;
+            this.lblDiaChi.TabIndex = 14;
             this.lblDiaChi.Text = "Địa chỉ";
             // 
             // cboMaNQL
@@ -293,7 +297,7 @@
             this.cboMaNQL.Location = new System.Drawing.Point(193, 316);
             this.cboMaNQL.Name = "cboMaNQL";
             this.cboMaNQL.Size = new System.Drawing.Size(169, 30);
-            this.cboMaNQL.TabIndex = 26;
+            this.cboMaNQL.TabIndex = 20;
             // 
             // label2
             // 
@@ -302,7 +306,7 @@
             this.label2.Location = new System.Drawing.Point(12, 321);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(156, 22);
-            this.label2.TabIndex = 28;
+            this.label2.TabIndex = 19;
             this.label2.Text = "Mã người quản lý";
             // 
             // nupLuong
@@ -321,7 +325,7 @@
             0});
             this.nupLuong.Name = "nupLuong";
             this.nupLuong.Size = new System.Drawing.Size(169, 27);
-            this.nupLuong.TabIndex = 29;
+            this.nupLuong.TabIndex = 22;
             this.nupLuong.ValueChanged += new System.EventHandler(this.nupLuong_ValueChanged);
             // 
             // label1
@@ -331,7 +335,7 @@
             this.label1.Location = new System.Drawing.Point(12, 356);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 22);
-            this.label1.TabIndex = 30;
+            this.label1.TabIndex = 21;
             this.label1.Text = "Lương";
             // 
             // lblLoiEmail
@@ -501,5 +505,6 @@
         private System.Windows.Forms.Label lblLoiLuong;
         private System.Windows.Forms.Label lblLoiHoTen;
         private System.Windows.Forms.Label lblLoiUsername;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

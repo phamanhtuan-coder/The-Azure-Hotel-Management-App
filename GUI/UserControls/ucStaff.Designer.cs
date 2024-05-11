@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucStaff));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblStaff = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddStaff = new Syncfusion.WinForms.Controls.SfButton();
@@ -69,6 +70,7 @@
             this.lblStateAccounts = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
             this.spcQuery.Panel1.SuspendLayout();
@@ -98,7 +100,7 @@
             this.lblStaff.Location = new System.Drawing.Point(0, 0);
             this.lblStaff.Name = "lblStaff";
             this.lblStaff.Size = new System.Drawing.Size(972, 94);
-            this.lblStaff.TabIndex = 35;
+            this.lblStaff.TabIndex = 1;
             this.lblStaff.Text = "STAFFS LIST";
             this.lblStaff.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -135,9 +137,10 @@
             this.btnAddStaff.Style.ForeColor = System.Drawing.Color.White;
             this.btnAddStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnAddStaff.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddStaff.TabIndex = 1;
+            this.btnAddStaff.TabIndex = 2;
             this.btnAddStaff.Text = "Thêm";
             this.btnAddStaff.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnAddStaff, "Thêm nhân viên");
             this.btnAddStaff.UseVisualStyleBackColor = false;
             this.btnAddStaff.Click += new System.EventHandler(this.btnAddStaff_Click);
             // 
@@ -156,9 +159,10 @@
             this.btnEditStaff.Style.ForeColor = System.Drawing.Color.White;
             this.btnEditStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnEditStaff.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditStaff.TabIndex = 3;
+            this.btnEditStaff.TabIndex = 4;
             this.btnEditStaff.Text = "Sửa";
             this.btnEditStaff.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnEditStaff, "Sửa nhân viên");
             this.btnEditStaff.UseVisualStyleBackColor = false;
             this.btnEditStaff.Click += new System.EventHandler(this.btnEditStaff_Click);
             // 
@@ -177,9 +181,10 @@
             this.btnDeleteStaff.Style.ForeColor = System.Drawing.Color.White;
             this.btnDeleteStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDeleteStaff.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteStaff.TabIndex = 4;
+            this.btnDeleteStaff.TabIndex = 3;
             this.btnDeleteStaff.Text = "Xóa";
             this.btnDeleteStaff.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnDeleteStaff, "Xóa nhân viên");
             this.btnDeleteStaff.UseVisualStyleBackColor = false;
             this.btnDeleteStaff.Click += new System.EventHandler(this.btnDeleteStaff_Click);
             // 
@@ -201,6 +206,7 @@
             this.btnRecoverStaff.TabIndex = 5;
             this.btnRecoverStaff.Text = "Khôi phục";
             this.btnRecoverStaff.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnRecoverStaff, "Khôi phục nhân viên");
             this.btnRecoverStaff.UseVisualStyleBackColor = false;
             this.btnRecoverStaff.Click += new System.EventHandler(this.btnRecoverStaff_Click);
             // 
@@ -210,7 +216,8 @@
             this.txtSearchStaff.Location = new System.Drawing.Point(7, 153);
             this.txtSearchStaff.Name = "txtSearchStaff";
             this.txtSearchStaff.Size = new System.Drawing.Size(208, 27);
-            this.txtSearchStaff.TabIndex = 2;
+            this.txtSearchStaff.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.txtSearchStaff, "Nhập tên nhân viên");
             // 
             // btnTraCuuStaff
             // 
@@ -225,8 +232,9 @@
             this.btnTraCuuStaff.Size = new System.Drawing.Size(156, 40);
             this.btnTraCuuStaff.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuStaff.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuStaff.TabIndex = 0;
+            this.btnTraCuuStaff.TabIndex = 7;
             this.btnTraCuuStaff.Text = "Tra cứu";
+            this.toolTip1.SetToolTip(this.btnTraCuuStaff, "Tra cứu");
             this.btnTraCuuStaff.UseVisualStyleBackColor = false;
             this.btnTraCuuStaff.Click += new System.EventHandler(this.btnTraCuuStaff_Click);
             // 
@@ -294,7 +302,7 @@
             this.dgvStaff.RowHeadersVisible = false;
             this.dgvStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStaff.Size = new System.Drawing.Size(973, 746);
-            this.dgvStaff.TabIndex = 0;
+            this.dgvStaff.TabIndex = 6;
             this.dgvStaff.SelectionChanged += new System.EventHandler(this.dgvStaff_SelectionChanged);
             // 
             // ID
@@ -402,9 +410,9 @@
             // Luong
             // 
             this.Luong.DataPropertyName = "Luong";
-            dataGridViewCellStyle2.Format = "#### VND";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Luong.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "#### VND";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Luong.DefaultCellStyle = dataGridViewCellStyle1;
             this.Luong.HeaderText = "Lương";
             this.Luong.Name = "Luong";
             this.Luong.ReadOnly = true;
@@ -443,7 +451,8 @@
             this.cboNguoiQuanLy.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboNguoiQuanLy.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboNguoiQuanLy.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboNguoiQuanLy.TabIndex = 38;
+            this.cboNguoiQuanLy.TabIndex = 17;
+            this.toolTip1.SetToolTip(this.cboNguoiQuanLy, "Lọc theo người quản lý");
             this.cboNguoiQuanLy.SelectedIndexChanged += new System.EventHandler(this.cboNguoiQuanLy_SelectedIndexChanged);
             // 
             // lblSortNQL
@@ -453,7 +462,7 @@
             this.lblSortNQL.Location = new System.Drawing.Point(3, 444);
             this.lblSortNQL.Name = "lblSortNQL";
             this.lblSortNQL.Size = new System.Drawing.Size(128, 22);
-            this.lblSortNQL.TabIndex = 37;
+            this.lblSortNQL.TabIndex = 16;
             this.lblSortNQL.Text = "Người quản lý";
             this.lblSortNQL.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -472,7 +481,8 @@
             this.cboGioiTinh.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboGioiTinh.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboGioiTinh.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboGioiTinh.TabIndex = 36;
+            this.cboGioiTinh.TabIndex = 15;
+            this.toolTip1.SetToolTip(this.cboGioiTinh, "lọc theo giới tính");
             this.cboGioiTinh.SelectedIndexChanged += new System.EventHandler(this.cboGioiTinh_SelectedIndexChanged);
             // 
             // lblSortGioiTinh
@@ -482,7 +492,7 @@
             this.lblSortGioiTinh.Location = new System.Drawing.Point(3, 390);
             this.lblSortGioiTinh.Name = "lblSortGioiTinh";
             this.lblSortGioiTinh.Size = new System.Drawing.Size(157, 22);
-            this.lblSortGioiTinh.TabIndex = 35;
+            this.lblSortGioiTinh.TabIndex = 14;
             this.lblSortGioiTinh.Text = "Lọc theo giới tính";
             this.lblSortGioiTinh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -501,7 +511,8 @@
             this.cboPhongBan.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPhongBan.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboPhongBan.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboPhongBan.TabIndex = 34;
+            this.cboPhongBan.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.cboPhongBan, "Lọc theo phòng");
             this.cboPhongBan.SelectedIndexChanged += new System.EventHandler(this.cboPhongBan_SelectedIndexChanged);
             // 
             // lblSorttheoPhong
@@ -511,7 +522,7 @@
             this.lblSorttheoPhong.Location = new System.Drawing.Point(3, 332);
             this.lblSorttheoPhong.Name = "lblSorttheoPhong";
             this.lblSorttheoPhong.Size = new System.Drawing.Size(142, 22);
-            this.lblSorttheoPhong.TabIndex = 33;
+            this.lblSorttheoPhong.TabIndex = 12;
             this.lblSorttheoPhong.Text = "Lọc theo Phòng";
             this.lblSorttheoPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -530,7 +541,8 @@
             this.cboPhanQuyen.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPhanQuyen.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboPhanQuyen.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboPhanQuyen.TabIndex = 31;
+            this.cboPhanQuyen.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.cboPhanQuyen, "Lọc theo vai trò");
             this.cboPhanQuyen.SelectedIndexChanged += new System.EventHandler(this.cboPhanQuyen_SelectedIndexChanged);
             // 
             // lblSortMaPQ
@@ -540,7 +552,7 @@
             this.lblSortMaPQ.Location = new System.Drawing.Point(3, 274);
             this.lblSortMaPQ.Name = "lblSortMaPQ";
             this.lblSortMaPQ.Size = new System.Drawing.Size(141, 22);
-            this.lblSortMaPQ.TabIndex = 30;
+            this.lblSortMaPQ.TabIndex = 10;
             this.lblSortMaPQ.Text = "Lọc theo vai trò";
             this.lblSortMaPQ.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -559,7 +571,8 @@
             this.cboSortStaffID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortStaffID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortStaffID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortStaffID.TabIndex = 29;
+            this.cboSortStaffID.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.cboSortStaffID, "Sắp xếp theo mã tài khoản");
             this.cboSortStaffID.SelectedIndexChanged += new System.EventHandler(this.cboSortAccountTypeID_SelectedIndexChanged);
             // 
             // lblSortStaffID
@@ -569,7 +582,7 @@
             this.lblSortStaffID.Location = new System.Drawing.Point(3, 216);
             this.lblSortStaffID.Name = "lblSortStaffID";
             this.lblSortStaffID.Size = new System.Drawing.Size(184, 22);
-            this.lblSortStaffID.TabIndex = 28;
+            this.lblSortStaffID.TabIndex = 8;
             this.lblSortStaffID.Text = "Sort theo ID Account";
             this.lblSortStaffID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -588,7 +601,8 @@
             this.cboStateAccounts.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateAccounts.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateAccounts.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateAccounts.TabIndex = 23;
+            this.cboStateAccounts.TabIndex = 19;
+            this.toolTip1.SetToolTip(this.cboStateAccounts, "Lọc theo trang thái");
             this.cboStateAccounts.SelectedIndexChanged += new System.EventHandler(this.cboStateAccounts_SelectedIndexChanged);
             // 
             // lblStateAccounts
@@ -598,7 +612,7 @@
             this.lblStateAccounts.Location = new System.Drawing.Point(3, 502);
             this.lblStateAccounts.Name = "lblStateAccounts";
             this.lblStateAccounts.Size = new System.Drawing.Size(159, 22);
-            this.lblStateAccounts.TabIndex = 9;
+            this.lblStateAccounts.TabIndex = 18;
             this.lblStateAccounts.Text = "Trạng thái dữ liệu";
             this.lblStateAccounts.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -705,5 +719,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Luong;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

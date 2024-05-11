@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucBooking));
             this.lblBooking = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
@@ -69,6 +70,7 @@
             this.lblStateBooking = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateBooking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -94,7 +96,7 @@
             this.lblBooking.Location = new System.Drawing.Point(0, 0);
             this.lblBooking.Name = "lblBooking";
             this.lblBooking.Size = new System.Drawing.Size(972, 94);
-            this.lblBooking.TabIndex = 35;
+            this.lblBooking.TabIndex = 1;
             this.lblBooking.Text = "BOOKING";
             this.lblBooking.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -115,6 +117,7 @@
             this.tlpController.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpController.Size = new System.Drawing.Size(394, 94);
             this.tlpController.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.tlpController, "Khôi phục đặt phòng");
             // 
             // btnAddBooking
             // 
@@ -131,9 +134,10 @@
             this.btnAddBooking.Style.ForeColor = System.Drawing.Color.White;
             this.btnAddBooking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnAddBooking.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddBooking.TabIndex = 1;
+            this.btnAddBooking.TabIndex = 2;
             this.btnAddBooking.Text = "Thêm";
             this.btnAddBooking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnAddBooking, "Thêm đặt phòng");
             this.btnAddBooking.UseVisualStyleBackColor = false;
             this.btnAddBooking.Click += new System.EventHandler(this.btnAddBooking_Click);
             // 
@@ -152,9 +156,10 @@
             this.btnEditBooking.Style.ForeColor = System.Drawing.Color.White;
             this.btnEditBooking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnEditBooking.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditBooking.TabIndex = 3;
+            this.btnEditBooking.TabIndex = 4;
             this.btnEditBooking.Text = "Sửa";
             this.btnEditBooking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnEditBooking, "Sửa đặt phòng");
             this.btnEditBooking.UseVisualStyleBackColor = false;
             this.btnEditBooking.Click += new System.EventHandler(this.btnEditBooking_Click);
             // 
@@ -173,9 +178,10 @@
             this.btnDeleteBooking.Style.ForeColor = System.Drawing.Color.White;
             this.btnDeleteBooking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDeleteBooking.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteBooking.TabIndex = 4;
+            this.btnDeleteBooking.TabIndex = 3;
             this.btnDeleteBooking.Text = "Xóa";
             this.btnDeleteBooking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnDeleteBooking, "Xóa đặt phòng");
             this.btnDeleteBooking.UseVisualStyleBackColor = false;
             this.btnDeleteBooking.Click += new System.EventHandler(this.btnDeleteBooking_Click);
             // 
@@ -206,7 +212,8 @@
             this.txtSearchBooking.Location = new System.Drawing.Point(6, 16);
             this.txtSearchBooking.Name = "txtSearchBooking";
             this.txtSearchBooking.Size = new System.Drawing.Size(251, 40);
-            this.txtSearchBooking.TabIndex = 2;
+            this.txtSearchBooking.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.txtSearchBooking, "Nhập mã đặt phòng");
             // 
             // btnTraCuuBooking
             // 
@@ -221,8 +228,9 @@
             this.btnTraCuuBooking.Size = new System.Drawing.Size(118, 40);
             this.btnTraCuuBooking.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuBooking.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuBooking.TabIndex = 0;
+            this.btnTraCuuBooking.TabIndex = 8;
             this.btnTraCuuBooking.Text = "Tra cứu";
+            this.toolTip1.SetToolTip(this.btnTraCuuBooking, "Tra cứu");
             this.btnTraCuuBooking.UseVisualStyleBackColor = false;
             this.btnTraCuuBooking.Click += new System.EventHandler(this.btnTraCuuBooking_Click);
             // 
@@ -241,7 +249,8 @@
             this.cboStateBooking.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateBooking.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateBooking.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateBooking.TabIndex = 3;
+            this.cboStateBooking.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.cboStateBooking, "Sắp xếp theo trạng thái");
             this.cboStateBooking.SelectedIndexChanged += new System.EventHandler(this.cboStateBooking_SelectedIndexChanged);
             // 
             // dtpNgayDat
@@ -253,7 +262,8 @@
             this.dtpNgayDat.Location = new System.Drawing.Point(141, 324);
             this.dtpNgayDat.Name = "dtpNgayDat";
             this.dtpNgayDat.Size = new System.Drawing.Size(239, 34);
-            this.dtpNgayDat.TabIndex = 6;
+            this.dtpNgayDat.TabIndex = 21;
+            this.toolTip1.SetToolTip(this.dtpNgayDat, "ngày đặt");
             this.dtpNgayDat.ToolTipText = "";
             // 
             // spcQuery
@@ -321,7 +331,7 @@
             this.dgvBooking.RowHeadersWidth = 51;
             this.dgvBooking.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBooking.Size = new System.Drawing.Size(973, 746);
-            this.dgvBooking.TabIndex = 0;
+            this.dgvBooking.TabIndex = 6;
             // 
             // colMaDatPhong
             // 
@@ -422,7 +432,7 @@
             this.label3.Location = new System.Drawing.Point(9, 292);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 26);
-            this.label3.TabIndex = 34;
+            this.label3.TabIndex = 18;
             this.label3.Text = "CCCD:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -432,7 +442,8 @@
             this.txtCCCD.Location = new System.Drawing.Point(141, 278);
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.Size = new System.Drawing.Size(240, 40);
-            this.txtCCCD.TabIndex = 33;
+            this.txtCCCD.TabIndex = 19;
+            this.toolTip1.SetToolTip(this.txtCCCD, "Căn cước công dân");
             // 
             // label2
             // 
@@ -443,7 +454,7 @@
             this.label2.Location = new System.Drawing.Point(9, 246);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 26);
-            this.label2.TabIndex = 32;
+            this.label2.TabIndex = 16;
             this.label2.Text = "Username:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -453,7 +464,8 @@
             this.txtTraCuuUser.Location = new System.Drawing.Point(141, 232);
             this.txtTraCuuUser.Name = "txtTraCuuUser";
             this.txtTraCuuUser.Size = new System.Drawing.Size(240, 40);
-            this.txtTraCuuUser.TabIndex = 31;
+            this.txtTraCuuUser.TabIndex = 17;
+            this.toolTip1.SetToolTip(this.txtTraCuuUser, "Tên đăng nhập");
             // 
             // btnTraCuuDP
             // 
@@ -468,8 +480,9 @@
             this.btnTraCuuDP.Size = new System.Drawing.Size(268, 40);
             this.btnTraCuuDP.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuDP.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuDP.TabIndex = 30;
+            this.btnTraCuuDP.TabIndex = 22;
             this.btnTraCuuDP.Text = "Tra cứu";
+            this.toolTip1.SetToolTip(this.btnTraCuuDP, "Tra cứu");
             this.btnTraCuuDP.UseVisualStyleBackColor = false;
             this.btnTraCuuDP.Click += new System.EventHandler(this.btnTraCuuDP_Click);
             // 
@@ -482,7 +495,7 @@
             this.label1.Location = new System.Drawing.Point(96, 194);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(192, 26);
-            this.label1.TabIndex = 29;
+            this.label1.TabIndex = 15;
             this.label1.Text = "Tra cứu đặt phòng";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -495,7 +508,7 @@
             this.lblQuickControl.Location = new System.Drawing.Point(64, 407);
             this.lblQuickControl.Name = "lblQuickControl";
             this.lblQuickControl.Size = new System.Drawing.Size(273, 26);
-            this.lblQuickControl.TabIndex = 28;
+            this.lblQuickControl.TabIndex = 23;
             this.lblQuickControl.Text = "Cập nhật trạng thái nhanh";
             this.lblQuickControl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -514,7 +527,7 @@
             this.btnCheckIn.Style.ForeColor = System.Drawing.Color.White;
             this.btnCheckIn.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.btnCheckIn.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnCheckIn.TabIndex = 25;
+            this.btnCheckIn.TabIndex = 24;
             this.btnCheckIn.Text = "Check-In";
             this.btnCheckIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCheckIn.UseVisualStyleBackColor = false;
@@ -535,7 +548,7 @@
             this.btnCancel.Style.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
             this.btnCancel.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnCancel.TabIndex = 27;
+            this.btnCancel.TabIndex = 26;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -556,7 +569,7 @@
             this.btnCheckOut.Style.ForeColor = System.Drawing.Color.White;
             this.btnCheckOut.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
             this.btnCheckOut.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnCheckOut.TabIndex = 26;
+            this.btnCheckOut.TabIndex = 25;
             this.btnCheckOut.Text = "Check-Out";
             this.btnCheckOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCheckOut.UseVisualStyleBackColor = false;
@@ -577,7 +590,8 @@
             this.cboSortRoomID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortRoomID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortRoomID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortRoomID.TabIndex = 24;
+            this.cboSortRoomID.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.cboSortRoomID, "Sắp xếp theo mã phòng");
             this.cboSortRoomID.SelectedIndexChanged += new System.EventHandler(this.cboSortRoomID_SelectedIndexChanged);
             // 
             // cboSortBookingID
@@ -595,7 +609,8 @@
             this.cboSortBookingID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortBookingID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortBookingID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortBookingID.TabIndex = 23;
+            this.cboSortBookingID.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.cboSortBookingID, "Sắp xếp theo mã đặt phòng");
             this.cboSortBookingID.SelectedIndexChanged += new System.EventHandler(this.cboSortBookingID_SelectedIndexChanged);
             // 
             // lblSortRoomId
@@ -605,7 +620,7 @@
             this.lblSortRoomId.Location = new System.Drawing.Point(4, 126);
             this.lblSortRoomId.Name = "lblSortRoomId";
             this.lblSortRoomId.Size = new System.Drawing.Size(192, 26);
-            this.lblSortRoomId.TabIndex = 16;
+            this.lblSortRoomId.TabIndex = 11;
             this.lblSortRoomId.Text = "Sort theo Room ID";
             this.lblSortRoomId.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -616,7 +631,7 @@
             this.lblSortBookingID.Location = new System.Drawing.Point(4, 87);
             this.lblSortBookingID.Name = "lblSortBookingID";
             this.lblSortBookingID.Size = new System.Drawing.Size(218, 26);
-            this.lblSortBookingID.TabIndex = 14;
+            this.lblSortBookingID.TabIndex = 9;
             this.lblSortBookingID.Text = "Sort theo Booking ID";
             this.lblSortBookingID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -627,7 +642,7 @@
             this.lblBookingDate.Location = new System.Drawing.Point(12, 332);
             this.lblBookingDate.Name = "lblBookingDate";
             this.lblBookingDate.Size = new System.Drawing.Size(106, 26);
-            this.lblBookingDate.TabIndex = 10;
+            this.lblBookingDate.TabIndex = 20;
             this.lblBookingDate.Text = "Ngày đặt:";
             this.lblBookingDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -638,7 +653,7 @@
             this.lblStateBooking.Location = new System.Drawing.Point(5, 165);
             this.lblStateBooking.Name = "lblStateBooking";
             this.lblStateBooking.Size = new System.Drawing.Size(186, 26);
-            this.lblStateBooking.TabIndex = 9;
+            this.lblStateBooking.TabIndex = 13;
             this.lblStateBooking.Text = "Trạng thái dữ liệu";
             this.lblStateBooking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -742,5 +757,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenTaiKhoan;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCCCD;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

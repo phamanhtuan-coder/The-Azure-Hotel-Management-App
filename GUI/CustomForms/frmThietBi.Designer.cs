@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSubmit = new Syncfusion.WinForms.Controls.SfButton();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.lblTenThietBi = new System.Windows.Forms.Label();
             this.cboTrangThai = new System.Windows.Forms.ComboBox();
             this.lblTenTrangThaiBi = new System.Windows.Forms.Label();
             this.txttenthietbi = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // btnSubmit
@@ -42,8 +44,9 @@
             this.btnSubmit.Location = new System.Drawing.Point(378, 271);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
-            this.btnSubmit.TabIndex = 3;
+            this.btnSubmit.TabIndex = 6;
             this.btnSubmit.Text = "Submit";
+            this.toolTip1.SetToolTip(this.btnSubmit, "Gửi");
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnCancel
@@ -61,8 +64,8 @@
             this.lblTenThietBi.AutoSize = true;
             this.lblTenThietBi.Location = new System.Drawing.Point(99, 80);
             this.lblTenThietBi.Name = "lblTenThietBi";
-            this.lblTenThietBi.Size = new System.Drawing.Size(133, 27);
-            this.lblTenThietBi.TabIndex = 6;
+            this.lblTenThietBi.Size = new System.Drawing.Size(106, 22);
+            this.lblTenThietBi.TabIndex = 1;
             this.lblTenThietBi.Text = "Tên thiết bị";
             // 
             // cboTrangThai
@@ -71,24 +74,24 @@
             this.cboTrangThai.FormattingEnabled = true;
             this.cboTrangThai.Location = new System.Drawing.Point(257, 129);
             this.cboTrangThai.Name = "cboTrangThai";
-            this.cboTrangThai.Size = new System.Drawing.Size(252, 35);
-            this.cboTrangThai.TabIndex = 9;
+            this.cboTrangThai.Size = new System.Drawing.Size(252, 30);
+            this.cboTrangThai.TabIndex = 4;
             // 
             // lblTenTrangThaiBi
             // 
             this.lblTenTrangThaiBi.AutoSize = true;
             this.lblTenTrangThaiBi.Location = new System.Drawing.Point(99, 141);
             this.lblTenTrangThaiBi.Name = "lblTenTrangThaiBi";
-            this.lblTenTrangThaiBi.Size = new System.Drawing.Size(119, 27);
-            this.lblTenTrangThaiBi.TabIndex = 8;
+            this.lblTenTrangThaiBi.Size = new System.Drawing.Size(96, 22);
+            this.lblTenTrangThaiBi.TabIndex = 3;
             this.lblTenTrangThaiBi.Text = "Trạng thái";
             // 
             // txttenthietbi
             // 
             this.txttenthietbi.Location = new System.Drawing.Point(257, 80);
             this.txttenthietbi.Name = "txttenthietbi";
-            this.txttenthietbi.Size = new System.Drawing.Size(252, 32);
-            this.txttenthietbi.TabIndex = 12;
+            this.txttenthietbi.Size = new System.Drawing.Size(252, 27);
+            this.txttenthietbi.TabIndex = 2;
             // 
             // frmThietBi
             // 
@@ -119,5 +122,6 @@
         private System.Windows.Forms.ComboBox cboTrangThai;
         private System.Windows.Forms.Label lblTenTrangThaiBi;
         private System.Windows.Forms.TextBox txttenthietbi;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

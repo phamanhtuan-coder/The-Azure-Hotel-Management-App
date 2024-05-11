@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucRoom));
             this.lblRoom = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
@@ -59,6 +60,7 @@
             this.lblStatusRoom = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -86,7 +88,7 @@
             this.lblRoom.Location = new System.Drawing.Point(0, 0);
             this.lblRoom.Name = "lblRoom";
             this.lblRoom.Size = new System.Drawing.Size(972, 94);
-            this.lblRoom.TabIndex = 35;
+            this.lblRoom.TabIndex = 1;
             this.lblRoom.Text = "ROOM";
             this.lblRoom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -123,9 +125,10 @@
             this.btnAddRoom.Style.ForeColor = System.Drawing.Color.White;
             this.btnAddRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnAddRoom.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddRoom.TabIndex = 1;
+            this.btnAddRoom.TabIndex = 2;
             this.btnAddRoom.Text = "Thêm";
             this.btnAddRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnAddRoom, "Thêm phòng");
             this.btnAddRoom.UseVisualStyleBackColor = false;
             this.btnAddRoom.Click += new System.EventHandler(this.btnAddRoom_Click);
             // 
@@ -144,9 +147,10 @@
             this.btnEditRoom.Style.ForeColor = System.Drawing.Color.White;
             this.btnEditRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnEditRoom.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditRoom.TabIndex = 3;
+            this.btnEditRoom.TabIndex = 4;
             this.btnEditRoom.Text = "Sửa";
             this.btnEditRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnEditRoom, "Sửa phòng");
             this.btnEditRoom.UseVisualStyleBackColor = false;
             this.btnEditRoom.Click += new System.EventHandler(this.btnEditRoom_Click);
             // 
@@ -165,9 +169,10 @@
             this.btnDeleteRoom.Style.ForeColor = System.Drawing.Color.White;
             this.btnDeleteRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDeleteRoom.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteRoom.TabIndex = 4;
+            this.btnDeleteRoom.TabIndex = 3;
             this.btnDeleteRoom.Text = "Xóa";
             this.btnDeleteRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnDeleteRoom, "Xóa phòng");
             this.btnDeleteRoom.UseVisualStyleBackColor = false;
             this.btnDeleteRoom.Click += new System.EventHandler(this.btnDeleteRoom_Click);
             // 
@@ -189,6 +194,7 @@
             this.btnRecoverRoom.TabIndex = 5;
             this.btnRecoverRoom.Text = "Khôi phục";
             this.btnRecoverRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnRecoverRoom, "Khôi phục phòng");
             this.btnRecoverRoom.UseVisualStyleBackColor = false;
             this.btnRecoverRoom.Click += new System.EventHandler(this.btnRecoverRoom_Click);
             // 
@@ -198,7 +204,8 @@
             this.txtSearchRoom.Location = new System.Drawing.Point(6, 16);
             this.txtSearchRoom.Name = "txtSearchRoom";
             this.txtSearchRoom.Size = new System.Drawing.Size(251, 40);
-            this.txtSearchRoom.TabIndex = 2;
+            this.txtSearchRoom.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.txtSearchRoom, "Nhập mã phòng ban");
             // 
             // btnTraCuuRoom
             // 
@@ -213,8 +220,9 @@
             this.btnTraCuuRoom.Size = new System.Drawing.Size(118, 40);
             this.btnTraCuuRoom.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuRoom.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuRoom.TabIndex = 0;
+            this.btnTraCuuRoom.TabIndex = 8;
             this.btnTraCuuRoom.Text = "Tra cứu";
+            this.toolTip1.SetToolTip(this.btnTraCuuRoom, "Tra cứu");
             this.btnTraCuuRoom.UseVisualStyleBackColor = false;
             this.btnTraCuuRoom.Click += new System.EventHandler(this.btnTraCuuRoom_Click);
             // 
@@ -233,7 +241,8 @@
             this.cboStateRoom.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateRoom.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateRoom.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateRoom.TabIndex = 3;
+            this.cboStateRoom.TabIndex = 18;
+            this.toolTip1.SetToolTip(this.cboStateRoom, "Lọc theo trạng thái");
             this.cboStateRoom.SelectedIndexChanged += new System.EventHandler(this.cboStateRoom_SelectedIndexChanged);
             // 
             // spcQuery
@@ -292,7 +301,7 @@
             this.dgvRoom.RowHeadersWidth = 51;
             this.dgvRoom.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRoom.Size = new System.Drawing.Size(973, 746);
-            this.dgvRoom.TabIndex = 0;
+            this.dgvRoom.TabIndex = 6;
             // 
             // colMaPHG
             // 
@@ -381,7 +390,8 @@
             this.cboSortPrice.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortPrice.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortPrice.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortPrice.TabIndex = 29;
+            this.cboSortPrice.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.cboSortPrice, "Sắp xếp theo giá");
             this.cboSortPrice.SelectedIndexChanged += new System.EventHandler(this.cboSortPrice_SelectedIndexChanged);
             // 
             // lblSortPrice
@@ -391,7 +401,7 @@
             this.lblSortPrice.Location = new System.Drawing.Point(4, 195);
             this.lblSortPrice.Name = "lblSortPrice";
             this.lblSortPrice.Size = new System.Drawing.Size(140, 26);
-            this.lblSortPrice.TabIndex = 28;
+            this.lblSortPrice.TabIndex = 13;
             this.lblSortPrice.Text = "Sort theo Giá";
             this.lblSortPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -410,7 +420,8 @@
             this.cboRoomStatus.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRoomStatus.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboRoomStatus.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboRoomStatus.TabIndex = 26;
+            this.cboRoomStatus.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.cboRoomStatus, "Tình trạng phòng");
             // 
             // lblSortTheoLoaiPhong
             // 
@@ -419,7 +430,7 @@
             this.lblSortTheoLoaiPhong.Location = new System.Drawing.Point(4, 132);
             this.lblSortTheoLoaiPhong.Name = "lblSortTheoLoaiPhong";
             this.lblSortTheoLoaiPhong.Size = new System.Drawing.Size(122, 26);
-            this.lblSortTheoLoaiPhong.TabIndex = 25;
+            this.lblSortTheoLoaiPhong.TabIndex = 11;
             this.lblSortTheoLoaiPhong.Text = "Loại phòng";
             this.lblSortTheoLoaiPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -438,7 +449,8 @@
             this.cboSortRoomType.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortRoomType.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortRoomType.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortRoomType.TabIndex = 24;
+            this.cboSortRoomType.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.cboSortRoomType, "Lọc theo loại phòng");
             // 
             // cboSortRoomID
             // 
@@ -455,7 +467,8 @@
             this.cboSortRoomID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortRoomID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortRoomID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortRoomID.TabIndex = 23;
+            this.cboSortRoomID.TabIndex = 16;
+            this.toolTip1.SetToolTip(this.cboSortRoomID, "Sắp xếp theo mã phòng");
             this.cboSortRoomID.SelectedIndexChanged += new System.EventHandler(this.cboSortRoomID_SelectedIndexChanged);
             // 
             // lblSortMaPHG
@@ -465,7 +478,7 @@
             this.lblSortMaPHG.Location = new System.Drawing.Point(4, 252);
             this.lblSortMaPHG.Name = "lblSortMaPHG";
             this.lblSortMaPHG.Size = new System.Drawing.Size(192, 26);
-            this.lblSortMaPHG.TabIndex = 14;
+            this.lblSortMaPHG.TabIndex = 15;
             this.lblSortMaPHG.Text = "Sort theo Room ID";
             this.lblSortMaPHG.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -476,7 +489,7 @@
             this.lblStateRoom.Location = new System.Drawing.Point(4, 309);
             this.lblStateRoom.Name = "lblStateRoom";
             this.lblStateRoom.Size = new System.Drawing.Size(186, 26);
-            this.lblStateRoom.TabIndex = 9;
+            this.lblStateRoom.TabIndex = 17;
             this.lblStateRoom.Text = "Trạng thái dữ liệu";
             this.lblStateRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -487,7 +500,7 @@
             this.lblStatusRoom.Location = new System.Drawing.Point(4, 82);
             this.lblStatusRoom.Name = "lblStatusRoom";
             this.lblStatusRoom.Size = new System.Drawing.Size(183, 26);
-            this.lblStatusRoom.TabIndex = 8;
+            this.lblStatusRoom.TabIndex = 9;
             this.lblStatusRoom.Text = "Tình trạng phòng";
             this.lblStatusRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -583,5 +596,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colGiaPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSucChuaToiDa;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

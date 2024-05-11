@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblBill = new System.Windows.Forms.Label();
             this.txtSearchBill = new System.Windows.Forms.TextBox();
             this.btnTraCuuBill = new Syncfusion.WinForms.Controls.SfButton();
@@ -51,6 +52,7 @@
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.btnReturn = new Syncfusion.WinForms.Controls.SfButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
             this.spcQuery.Panel1.SuspendLayout();
             this.spcQuery.Panel2.SuspendLayout();
@@ -74,7 +76,7 @@
             this.lblBill.Location = new System.Drawing.Point(0, 0);
             this.lblBill.Name = "lblBill";
             this.lblBill.Size = new System.Drawing.Size(972, 94);
-            this.lblBill.TabIndex = 35;
+            this.lblBill.TabIndex = 1;
             this.lblBill.Text = "LỊCH SỬ HÓA ĐƠN";
             this.lblBill.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -84,7 +86,7 @@
             this.txtSearchBill.Location = new System.Drawing.Point(6, 16);
             this.txtSearchBill.Name = "txtSearchBill";
             this.txtSearchBill.Size = new System.Drawing.Size(251, 40);
-            this.txtSearchBill.TabIndex = 2;
+            this.txtSearchBill.TabIndex = 4;
             // 
             // btnTraCuuBill
             // 
@@ -99,9 +101,11 @@
             this.btnTraCuuBill.Size = new System.Drawing.Size(118, 40);
             this.btnTraCuuBill.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuBill.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuBill.TabIndex = 0;
+            this.btnTraCuuBill.TabIndex = 5;
             this.btnTraCuuBill.Text = "Tra cứu";
+            this.toolTip1.SetToolTip(this.btnTraCuuBill, "Tìm kiếm");
             this.btnTraCuuBill.UseVisualStyleBackColor = false;
+            this.btnTraCuuBill.Click += new System.EventHandler(this.btnTraCuuBill_Click);
             // 
             // dtpBillDate
             // 
@@ -112,7 +116,8 @@
             this.dtpBillDate.Location = new System.Drawing.Point(225, 177);
             this.dtpBillDate.Name = "dtpBillDate";
             this.dtpBillDate.Size = new System.Drawing.Size(156, 34);
-            this.dtpBillDate.TabIndex = 6;
+            this.dtpBillDate.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.dtpBillDate, "Ngày lập hóa đơn");
             this.dtpBillDate.ToolTipText = "";
             // 
             // spcQuery
@@ -167,7 +172,7 @@
             this.dgvBill.RowHeadersVisible = false;
             this.dgvBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBill.Size = new System.Drawing.Size(973, 746);
-            this.dgvBill.TabIndex = 0;
+            this.dgvBill.TabIndex = 3;
             // 
             // colMaHD
             // 
@@ -248,7 +253,8 @@
             this.cboSortSumBill.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortSumBill.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortSumBill.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSumBill.TabIndex = 24;
+            this.cboSortSumBill.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.cboSortSumBill, "Sắp xếp theo tổng tiền");
             // 
             // cboSortBillID
             // 
@@ -265,7 +271,8 @@
             this.cboSortBillID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortBillID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortBillID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortBillID.TabIndex = 23;
+            this.cboSortBillID.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.cboSortBillID, "Sắp xếp theo mã hóa đơn");
             // 
             // lblSortSumBill
             // 
@@ -274,7 +281,7 @@
             this.lblSortSumBill.Location = new System.Drawing.Point(4, 128);
             this.lblSortSumBill.Name = "lblSortSumBill";
             this.lblSortSumBill.Size = new System.Drawing.Size(197, 26);
-            this.lblSortSumBill.TabIndex = 16;
+            this.lblSortSumBill.TabIndex = 8;
             this.lblSortSumBill.Text = "Sort theo tổng tiền";
             this.lblSortSumBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -285,7 +292,7 @@
             this.lblSortBillID.Location = new System.Drawing.Point(4, 72);
             this.lblSortBillID.Name = "lblSortBillID";
             this.lblSortBillID.Size = new System.Drawing.Size(167, 26);
-            this.lblSortBillID.TabIndex = 14;
+            this.lblSortBillID.TabIndex = 6;
             this.lblSortBillID.Text = "Sort theo Bill ID";
             this.lblSortBillID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -339,8 +346,9 @@
             this.btnReturn.Size = new System.Drawing.Size(191, 41);
             this.btnReturn.Style.BackColor = System.Drawing.Color.DarkOrange;
             this.btnReturn.Style.ForeColor = System.Drawing.Color.White;
-            this.btnReturn.TabIndex = 7;
+            this.btnReturn.TabIndex = 2;
             this.btnReturn.Text = "Quay lại";
+            this.toolTip1.SetToolTip(this.btnReturn, "Quay lại");
             this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
@@ -396,5 +404,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTienThoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
         private Syncfusion.WinForms.Controls.SfButton btnReturn;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

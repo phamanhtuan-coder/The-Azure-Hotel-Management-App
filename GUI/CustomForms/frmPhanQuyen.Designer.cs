@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSubmit = new Syncfusion.WinForms.Controls.SfButton();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.lblTenVaiTro = new System.Windows.Forms.Label();
             this.cboVaiTro = new System.Windows.Forms.ComboBox();
             this.cboTenPhongBan = new System.Windows.Forms.ComboBox();
             this.lblTenPhongBan = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // btnSubmit
@@ -42,8 +44,9 @@
             this.btnSubmit.Location = new System.Drawing.Point(365, 157);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
-            this.btnSubmit.TabIndex = 3;
+            this.btnSubmit.TabIndex = 6;
             this.btnSubmit.Text = "Submit";
+            this.toolTip1.SetToolTip(this.btnSubmit, "Gửi");
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnCancel
@@ -63,7 +66,7 @@
             this.lblTenVaiTro.Location = new System.Drawing.Point(45, 36);
             this.lblTenVaiTro.Name = "lblTenVaiTro";
             this.lblTenVaiTro.Size = new System.Drawing.Size(99, 22);
-            this.lblTenVaiTro.TabIndex = 6;
+            this.lblTenVaiTro.TabIndex = 1;
             this.lblTenVaiTro.Text = "Tên vai trò";
             // 
             // cboVaiTro
@@ -74,7 +77,7 @@
             this.cboVaiTro.Location = new System.Drawing.Point(263, 28);
             this.cboVaiTro.Name = "cboVaiTro";
             this.cboVaiTro.Size = new System.Drawing.Size(252, 30);
-            this.cboVaiTro.TabIndex = 7;
+            this.cboVaiTro.TabIndex = 2;
             // 
             // cboTenPhongBan
             // 
@@ -84,7 +87,7 @@
             this.cboTenPhongBan.Location = new System.Drawing.Point(263, 89);
             this.cboTenPhongBan.Name = "cboTenPhongBan";
             this.cboTenPhongBan.Size = new System.Drawing.Size(252, 30);
-            this.cboTenPhongBan.TabIndex = 9;
+            this.cboTenPhongBan.TabIndex = 4;
             // 
             // lblTenPhongBan
             // 
@@ -93,7 +96,7 @@
             this.lblTenPhongBan.Location = new System.Drawing.Point(45, 97);
             this.lblTenPhongBan.Name = "lblTenPhongBan";
             this.lblTenPhongBan.Size = new System.Drawing.Size(136, 22);
-            this.lblTenPhongBan.TabIndex = 8;
+            this.lblTenPhongBan.TabIndex = 3;
             this.lblTenPhongBan.Text = "Tên phòng ban";
             // 
             // frmPhanQuyen
@@ -125,5 +128,6 @@
         private System.Windows.Forms.ComboBox cboVaiTro;
         private System.Windows.Forms.ComboBox cboTenPhongBan;
         private System.Windows.Forms.Label lblTenPhongBan;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

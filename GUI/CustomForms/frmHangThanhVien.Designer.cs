@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtTenHang = new System.Windows.Forms.TextBox();
             this.btnSubmit = new Syncfusion.WinForms.Controls.SfButton();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.lblTenHang = new System.Windows.Forms.Label();
             this.lblChietKhau = new System.Windows.Forms.Label();
             this.nudChietKhau = new System.Windows.Forms.NumericUpDown();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nudChietKhau)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,7 +45,7 @@
             this.txtTenHang.Location = new System.Drawing.Point(266, 44);
             this.txtTenHang.Name = "txtTenHang";
             this.txtTenHang.Size = new System.Drawing.Size(306, 27);
-            this.txtTenHang.TabIndex = 0;
+            this.txtTenHang.TabIndex = 2;
             // 
             // btnSubmit
             // 
@@ -51,8 +53,9 @@
             this.btnSubmit.Location = new System.Drawing.Point(358, 236);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
-            this.btnSubmit.TabIndex = 3;
+            this.btnSubmit.TabIndex = 6;
             this.btnSubmit.Text = "Submit";
+            this.toolTip1.SetToolTip(this.btnSubmit, "Gửi");
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnCancel
@@ -72,7 +75,7 @@
             this.lblTenHang.Location = new System.Drawing.Point(52, 49);
             this.lblTenHang.Name = "lblTenHang";
             this.lblTenHang.Size = new System.Drawing.Size(88, 22);
-            this.lblTenHang.TabIndex = 6;
+            this.lblTenHang.TabIndex = 1;
             this.lblTenHang.Text = "Tên hạng";
             // 
             // lblChietKhau
@@ -82,7 +85,7 @@
             this.lblChietKhau.Location = new System.Drawing.Point(52, 142);
             this.lblChietKhau.Name = "lblChietKhau";
             this.lblChietKhau.Size = new System.Drawing.Size(140, 22);
-            this.lblChietKhau.TabIndex = 7;
+            this.lblChietKhau.TabIndex = 3;
             this.lblChietKhau.Text = "Mức chiết khấu";
             // 
             // nudChietKhau
@@ -97,7 +100,7 @@
             0});
             this.nudChietKhau.Name = "nudChietKhau";
             this.nudChietKhau.Size = new System.Drawing.Size(306, 27);
-            this.nudChietKhau.TabIndex = 8;
+            this.nudChietKhau.TabIndex = 4;
             // 
             // frmHangThanhVien
             // 
@@ -130,5 +133,6 @@
         private System.Windows.Forms.Label lblTenHang;
         private System.Windows.Forms.Label lblChietKhau;
         private System.Windows.Forms.NumericUpDown nudChietKhau;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

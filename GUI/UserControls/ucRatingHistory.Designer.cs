@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucRatingHistory));
             this.lblRating = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
@@ -52,6 +53,25 @@
             this.lblStateRating = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.colMaDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDiemDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNhanXet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDiemDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNhanXet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDiemDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNhanXet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRating)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -76,7 +96,7 @@
             this.lblRating.Location = new System.Drawing.Point(0, 0);
             this.lblRating.Name = "lblRating";
             this.lblRating.Size = new System.Drawing.Size(972, 94);
-            this.lblRating.TabIndex = 35;
+            this.lblRating.TabIndex = 1;
             this.lblRating.Text = "LỊCH SỬ ĐÁNH GIÁ";
             this.lblRating.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -110,8 +130,9 @@
             this.btnReturn.Size = new System.Drawing.Size(191, 41);
             this.btnReturn.Style.BackColor = System.Drawing.Color.DarkOrange;
             this.btnReturn.Style.ForeColor = System.Drawing.Color.White;
-            this.btnReturn.TabIndex = 6;
+            this.btnReturn.TabIndex = 2;
             this.btnReturn.Text = "Quay lại";
+            this.toolTip1.SetToolTip(this.btnReturn, "Quay lại");
             this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
@@ -130,9 +151,10 @@
             this.btnEditRating.Style.ForeColor = System.Drawing.Color.White;
             this.btnEditRating.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnEditRating.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditRating.TabIndex = 3;
+            this.btnEditRating.TabIndex = 4;
             this.btnEditRating.Text = "Sửa";
             this.btnEditRating.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnEditRating, "Sửa đánh giá");
             this.btnEditRating.UseVisualStyleBackColor = false;
             this.btnEditRating.Click += new System.EventHandler(this.btnEditRating_Click);
             // 
@@ -151,9 +173,10 @@
             this.btnDeleteRating.Style.ForeColor = System.Drawing.Color.White;
             this.btnDeleteRating.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnDeleteRating.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteRating.TabIndex = 4;
+            this.btnDeleteRating.TabIndex = 3;
             this.btnDeleteRating.Text = "Xóa";
             this.btnDeleteRating.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnDeleteRating, "Xóa đánh giá");
             this.btnDeleteRating.UseVisualStyleBackColor = false;
             this.btnDeleteRating.Click += new System.EventHandler(this.btnDeleteRating_Click);
             // 
@@ -175,26 +198,29 @@
             this.btnRecoverRating.TabIndex = 5;
             this.btnRecoverRating.Text = "Khôi phục";
             this.btnRecoverRating.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRecoverRating.UseVisualStyleBackColor = false;
-            this.btnRecoverRating.Click += new System.EventHandler(this.btnRecoverRating_Click);
+            this.toolTip1.SetToolTip(this.btnRecoverRating, "Khôi phụcđánh giá");
+            this.cboStateRating.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.cboStateRating, "Lọc theo trạng thái");
+            this.cboStateRating.TabIndex = 3;
+            this.cboStateRating.SelectedIndexChanged += new System.EventHandler(this.cboStateRating_SelectedIndexChanged);
             // 
             // cboStateRating
             // 
             this.cboStateRating.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboStateRating.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.cboStateRating, "Lọc theo trạng thái");
             this.cboStateRating.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboStateRating.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboStateRating.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateRating.Location = new System.Drawing.Point(234, 186);
             this.cboStateRating.Name = "cboStateRating";
-            this.cboStateRating.Size = new System.Drawing.Size(156, 33);
+            this.cboStateRating.TabIndex = 3;
             this.cboStateRating.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.cboStateRating.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateRating.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateRating.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateRating.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateRating.TabIndex = 3;
-            this.cboStateRating.SelectedIndexChanged += new System.EventHandler(this.cboStateRating_SelectedIndexChanged);
             // 
             // spcQuery
             // 
@@ -244,7 +270,7 @@
             this.dgvRating.RowHeadersVisible = false;
             this.dgvRating.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRating.Size = new System.Drawing.Size(973, 746);
-            this.dgvRating.TabIndex = 0;
+            this.dgvRating.TabIndex = 6;
             // 
             // colMaDG
             // 
@@ -302,20 +328,84 @@
             this.btnDanhGia.Size = new System.Drawing.Size(186, 56);
             this.btnDanhGia.Style.BackColor = System.Drawing.Color.SteelBlue;
             this.btnDanhGia.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDanhGia.TabIndex = 32;
+            this.btnDanhGia.TabIndex = 7;
+            this.btnDanhGia.Text = "Viết đánh giá";
+            this.toolTip1.SetToolTip(this.btnDanhGia, "Viết đánh giá");
+            this.btnDanhGia.UseVisualStyleBackColor = false;
+            this.btnDanhGia.Click += new System.EventHandler(this.btnDanhGia_Click);
+            // 
+            // colMaDG
+            // 
+            this.colMaDG.DataPropertyName = "MaDG";
+            this.colMaDG.HeaderText = "Mã đánh giá";
+            this.colMaDG.Name = "colMaDG";
+            this.colMaDG.ReadOnly = true;
+            this.colMaDG.Visible = false;
+            // 
+            // colMaDP
+            // 
+            this.colMaDP.DataPropertyName = "MaDP";
+            this.colMaDP.HeaderText = "Mã đặt phòng";
+            this.colMaDP.Name = "colMaDP";
+            this.colMaDP.ReadOnly = true;
+            // 
+            // colDiemDG
+            // 
+            this.colDiemDG.DataPropertyName = "DiemDanhGia";
+            this.colDiemDG.HeaderText = "Điểm đánh giá";
+            this.colDiemDG.Name = "colDiemDG";
+            this.colDiemDG.ReadOnly = true;
+            // 
+            // colNhanXet
+            // 
+            this.colNhanXet.DataPropertyName = "NhanXet";
+            this.colNhanXet.HeaderText = "Nhận xét";
+            this.colNhanXet.Name = "colNhanXet";
+            this.colNhanXet.ReadOnly = true;
+            // 
+            // colNgayDG
+            // 
+            this.colNgayDG.DataPropertyName = "NgayDanhGia";
+            this.colNgayDG.HeaderText = "Ngày đánh giá";
+            this.colNgayDG.Name = "colNgayDG";
+            this.colNgayDG.ReadOnly = true;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Visible = false;
+            // 
+            // btnDanhGia
+            // 
+            this.btnDanhGia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDanhGia.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnDanhGia.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayDanhGia.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.dtpNgayDanhGia, "Ngày đánh giá");
+            this.dtpNgayDanhGia.TabIndex = 31;
+            this.dtpNgayDanhGia.ValueChanged += new System.EventHandler(this.dtpNgayDanhGia_ValueChanged);
+            this.btnDanhGia.Name = "btnDanhGia";
+            this.btnDanhGia.Size = new System.Drawing.Size(186, 56);
+            this.btnDanhGia.Style.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnDanhGia.Style.ForeColor = System.Drawing.Color.White;
+            this.dtpNgayDanhGia.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.dtpNgayDanhGia, "Ngày đánh giá");
             this.btnDanhGia.Text = "Viết đánh giá";
             this.btnDanhGia.UseVisualStyleBackColor = false;
             this.btnDanhGia.Click += new System.EventHandler(this.btnDanhGia_Click);
             // 
             // dtpNgayDanhGia
-            // 
+            this.dtpNgayDanhGia.TabIndex = 31;
             this.dtpNgayDanhGia.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayDanhGia.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayDanhGia.Location = new System.Drawing.Point(190, 145);
             this.dtpNgayDanhGia.Name = "dtpNgayDanhGia";
             this.dtpNgayDanhGia.Size = new System.Drawing.Size(200, 27);
             this.dtpNgayDanhGia.TabIndex = 31;
-            this.dtpNgayDanhGia.ValueChanged += new System.EventHandler(this.dtpNgayDanhGia_ValueChanged);
             // 
             // lblNgayDanhGia
             // 
@@ -324,27 +414,29 @@
             this.lblNgayDanhGia.Location = new System.Drawing.Point(9, 146);
             this.lblNgayDanhGia.Name = "lblNgayDanhGia";
             this.lblNgayDanhGia.Size = new System.Drawing.Size(155, 26);
-            this.lblNgayDanhGia.TabIndex = 30;
-            this.lblNgayDanhGia.Text = "Ngày đánh giá";
-            this.lblNgayDanhGia.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblNgayDanhGia.TabIndex = 10;
+            this.cboRatingValue.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.cboRatingValue, "Lọc theo số điểm");
+            this.cboRatingValue.TabIndex = 23;
+            this.cboRatingValue.SelectedIndexChanged += new System.EventHandler(this.cboRatingValue_SelectedIndexChanged);
             // 
             // cboRatingValue
             // 
             this.cboRatingValue.DelimiterChar = "";
-            this.cboRatingValue.DisplayMember = "";
+            this.cboRatingValue.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.cboRatingValue, "Lọc theo số điểm");
             this.cboRatingValue.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboRatingValue.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboRatingValue.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRatingValue.Location = new System.Drawing.Point(234, 91);
             this.cboRatingValue.Name = "cboRatingValue";
-            this.cboRatingValue.Size = new System.Drawing.Size(156, 33);
+            this.cboRatingValue.TabIndex = 23;
             this.cboRatingValue.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.cboRatingValue.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRatingValue.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRatingValue.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboRatingValue.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRatingValue.TabIndex = 23;
-            this.cboRatingValue.SelectedIndexChanged += new System.EventHandler(this.cboRatingValue_SelectedIndexChanged);
             // 
             // lblRatingValue
             // 
@@ -353,7 +445,7 @@
             this.lblRatingValue.Location = new System.Drawing.Point(9, 98);
             this.lblRatingValue.Name = "lblRatingValue";
             this.lblRatingValue.Size = new System.Drawing.Size(179, 26);
-            this.lblRatingValue.TabIndex = 14;
+            this.lblRatingValue.TabIndex = 8;
             this.lblRatingValue.Text = "Lọc theo số điểm";
             this.lblRatingValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -364,7 +456,7 @@
             this.lblStateRating.Location = new System.Drawing.Point(10, 193);
             this.lblStateRating.Name = "lblStateRating";
             this.lblStateRating.Size = new System.Drawing.Size(186, 26);
-            this.lblStateRating.TabIndex = 9;
+            this.lblStateRating.TabIndex = 12;
             this.lblStateRating.Text = "Trạng thái dữ liệu";
             this.lblStateRating.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -450,5 +542,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNhanXet;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayDG;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

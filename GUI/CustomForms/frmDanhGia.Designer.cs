@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             Syncfusion.Windows.Forms.Tools.CustomImageCollection customImageCollection1 = new Syncfusion.Windows.Forms.Tools.CustomImageCollection();
             Syncfusion.Windows.Forms.Tools.ResetButton resetButton1 = new Syncfusion.Windows.Forms.Tools.ResetButton();
             this.btnSubmit = new Syncfusion.WinForms.Controls.SfButton();
@@ -40,6 +41,7 @@
             this.rcDiemDG = new Syncfusion.Windows.Forms.Tools.RatingControl();
             this.dtpNgayDG = new System.Windows.Forms.DateTimePicker();
             this.cboMaDP = new System.Windows.Forms.ComboBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // btnSubmit
@@ -48,8 +50,9 @@
             this.btnSubmit.Location = new System.Drawing.Point(362, 273);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
-            this.btnSubmit.TabIndex = 3;
+            this.btnSubmit.TabIndex = 10;
             this.btnSubmit.Text = "Submit";
+            this.toolTip1.SetToolTip(this.btnSubmit, "Gửi");
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnCancel
@@ -58,8 +61,9 @@
             this.btnCancel.Location = new System.Drawing.Point(95, 276);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Quay lại";
+            this.toolTip1.SetToolTip(this.btnCancel, "Quay lại");
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // lbMaDP
@@ -68,7 +72,7 @@
             this.lbMaDP.Location = new System.Drawing.Point(52, 17);
             this.lbMaDP.Name = "lbMaDP";
             this.lbMaDP.Size = new System.Drawing.Size(127, 22);
-            this.lbMaDP.TabIndex = 6;
+            this.lbMaDP.TabIndex = 1;
             this.lbMaDP.Text = "Mã đặt phòng";
             // 
             // lblNhanXet
@@ -87,6 +91,7 @@
             this.rtxtNhanXet.Size = new System.Drawing.Size(306, 96);
             this.rtxtNhanXet.TabIndex = 8;
             this.rtxtNhanXet.Text = "";
+            this.toolTip1.SetToolTip(this.rtxtNhanXet, "Nhận xét");
             // 
             // lblDiemDanhGia
             // 
@@ -94,7 +99,7 @@
             this.lblDiemDanhGia.Location = new System.Drawing.Point(52, 60);
             this.lblDiemDanhGia.Name = "lblDiemDanhGia";
             this.lblDiemDanhGia.Size = new System.Drawing.Size(134, 22);
-            this.lblDiemDanhGia.TabIndex = 9;
+            this.lblDiemDanhGia.TabIndex = 3;
             this.lblDiemDanhGia.Text = "Điểm đánh giá";
             // 
             // lblNgayDanhGia
@@ -103,7 +108,7 @@
             this.lblNgayDanhGia.Location = new System.Drawing.Point(52, 112);
             this.lblNgayDanhGia.Name = "lblNgayDanhGia";
             this.lblNgayDanhGia.Size = new System.Drawing.Size(133, 22);
-            this.lblNgayDanhGia.TabIndex = 10;
+            this.lblNgayDanhGia.TabIndex = 5;
             this.lblNgayDanhGia.Text = "Ngày đánh giá";
             // 
             // rcDiemDG
@@ -114,7 +119,7 @@
             this.rcDiemDG.Name = "rcDiemDG";
             this.rcDiemDG.ResetButton = resetButton1;
             this.rcDiemDG.Size = new System.Drawing.Size(151, 27);
-            this.rcDiemDG.TabIndex = 11;
+            this.rcDiemDG.TabIndex = 4;
             this.rcDiemDG.ThemeName = "Default";
             // 
             // dtpNgayDG
@@ -124,7 +129,8 @@
             this.dtpNgayDG.Location = new System.Drawing.Point(266, 108);
             this.dtpNgayDG.Name = "dtpNgayDG";
             this.dtpNgayDG.Size = new System.Drawing.Size(306, 27);
-            this.dtpNgayDG.TabIndex = 12;
+            this.dtpNgayDG.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.dtpNgayDG, "Chọn ngày đánh giá");
             // 
             // cboMaDP
             // 
@@ -133,7 +139,8 @@
             this.cboMaDP.Location = new System.Drawing.Point(266, 14);
             this.cboMaDP.Name = "cboMaDP";
             this.cboMaDP.Size = new System.Drawing.Size(306, 30);
-            this.cboMaDP.TabIndex = 13;
+            this.cboMaDP.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.cboMaDP, "Chọn mã đặt phòng");
             // 
             // frmDanhGia
             // 
@@ -172,5 +179,6 @@
         private Syncfusion.Windows.Forms.Tools.RatingControl rcDiemDG;
         private System.Windows.Forms.DateTimePicker dtpNgayDG;
         private System.Windows.Forms.ComboBox cboMaDP;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

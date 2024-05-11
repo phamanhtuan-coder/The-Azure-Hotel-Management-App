@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucDashboard));
-            Syncfusion.Windows.Forms.Chart.ChartSeries chartSeries3 = new Syncfusion.Windows.Forms.Chart.ChartSeries();
-            Syncfusion.Windows.Forms.Chart.ChartCustomShapeInfo chartCustomShapeInfo3 = new Syncfusion.Windows.Forms.Chart.ChartCustomShapeInfo();
-            Syncfusion.Windows.Forms.Chart.ChartLineInfo chartLineInfo2 = new Syncfusion.Windows.Forms.Chart.ChartLineInfo();
-            Syncfusion.Windows.Forms.Chart.ChartSeries chartSeries4 = new Syncfusion.Windows.Forms.Chart.ChartSeries();
-            Syncfusion.Windows.Forms.Chart.ChartCustomShapeInfo chartCustomShapeInfo4 = new Syncfusion.Windows.Forms.Chart.ChartCustomShapeInfo();
+            Syncfusion.Windows.Forms.Chart.ChartSeries chartSeries1 = new Syncfusion.Windows.Forms.Chart.ChartSeries();
+            Syncfusion.Windows.Forms.Chart.ChartCustomShapeInfo chartCustomShapeInfo1 = new Syncfusion.Windows.Forms.Chart.ChartCustomShapeInfo();
+            Syncfusion.Windows.Forms.Chart.ChartLineInfo chartLineInfo1 = new Syncfusion.Windows.Forms.Chart.ChartLineInfo();
+            Syncfusion.Windows.Forms.Chart.ChartSeries chartSeries2 = new Syncfusion.Windows.Forms.Chart.ChartSeries();
+            Syncfusion.Windows.Forms.Chart.ChartCustomShapeInfo chartCustomShapeInfo2 = new Syncfusion.Windows.Forms.Chart.ChartCustomShapeInfo();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panDuKienCount = new System.Windows.Forms.Panel();
             this.btnBooked = new Syncfusion.WinForms.Controls.SfButton();
@@ -52,12 +52,12 @@
             this.flpRatings = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.circularPictureBox2 = new GUI.CircularPictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -94,9 +94,9 @@
             this.panCheckInCount.SuspendLayout();
             this.flpRatings.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox2)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             this.panel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox14)).BeginInit();
@@ -213,7 +213,7 @@
             this.btnOuted.Style.ForeColor = System.Drawing.Color.Black;
             this.btnOuted.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnOuted.Style.ImageForeColor = System.Drawing.Color.DarkRed;
-            this.btnOuted.TabIndex = 3;
+            this.btnOuted.TabIndex = 4;
             this.btnOuted.Text = "Số lượng check-out";
             this.btnOuted.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnOuted.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -264,7 +264,7 @@
             this.btnCanceled.Style.ForeColor = System.Drawing.Color.Black;
             this.btnCanceled.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnCanceled.Style.ImageForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnCanceled.TabIndex = 3;
+            this.btnCanceled.TabIndex = 5;
             this.btnCanceled.Text = "Số lượng đã hủy";
             this.btnCanceled.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCanceled.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -345,7 +345,7 @@
             this.lblDashBoard.Location = new System.Drawing.Point(400, 13);
             this.lblDashBoard.Name = "lblDashBoard";
             this.lblDashBoard.Size = new System.Drawing.Size(570, 88);
-            this.lblDashBoard.TabIndex = 34;
+            this.lblDashBoard.TabIndex = 1;
             this.lblDashBoard.Text = "DASHBOARD";
             this.lblDashBoard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -389,43 +389,43 @@
             this.chtDoanhThuTuan.PrimaryYAxis.Margin = true;
             this.chtDoanhThuTuan.PrimaryYAxis.Title = "Số tiền (VND)";
             this.chtDoanhThuTuan.PrimaryYAxis.TitleColor = System.Drawing.SystemColors.ControlText;
-            chartSeries3.FancyToolTip.ResizeInsideSymbol = true;
-            chartSeries3.Name = "Tiền phòng";
-            chartSeries3.Resolution = 0D;
-            chartSeries3.StackingGroup = "Default Group";
-            chartSeries3.Style.AltTagFormat = "";
-            chartSeries3.Style.DisplayText = true;
-            chartSeries3.Style.DrawTextShape = false;
-            chartSeries3.Style.TextOrientation = Syncfusion.Windows.Forms.Chart.ChartTextOrientation.Up;
-            chartLineInfo2.Alignment = System.Drawing.Drawing2D.PenAlignment.Center;
-            chartLineInfo2.Color = System.Drawing.SystemColors.ControlText;
-            chartLineInfo2.DashPattern = null;
-            chartLineInfo2.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            chartLineInfo2.Width = 1F;
-            chartCustomShapeInfo3.Border = chartLineInfo2;
-            chartCustomShapeInfo3.Color = System.Drawing.SystemColors.HighlightText;
-            chartCustomShapeInfo3.Type = Syncfusion.Windows.Forms.Chart.ChartCustomShape.Square;
-            chartSeries3.Style.TextShape = chartCustomShapeInfo3;
-            chartSeries3.Text = "Tiền phòng";
-            chartSeries3.Type = Syncfusion.Windows.Forms.Chart.ChartSeriesType.StackingColumn;
-            chartSeries4.FancyToolTip.ResizeInsideSymbol = true;
-            chartSeries4.Name = "Tiền dịch vụ";
-            chartSeries4.Resolution = 0D;
-            chartSeries4.StackingGroup = "Default Group";
-            chartSeries4.Style.AltTagFormat = "";
-            chartSeries4.Style.DisplayText = true;
-            chartSeries4.Style.DrawTextShape = false;
-            chartSeries4.Style.TextOrientation = Syncfusion.Windows.Forms.Chart.ChartTextOrientation.Up;
-            chartCustomShapeInfo4.Border = chartLineInfo2;
-            chartCustomShapeInfo4.Color = System.Drawing.SystemColors.HighlightText;
-            chartCustomShapeInfo4.Type = Syncfusion.Windows.Forms.Chart.ChartCustomShape.Square;
-            chartSeries4.Style.TextShape = chartCustomShapeInfo4;
-            chartSeries4.Text = "Tiền dịch vụ";
-            chartSeries4.Type = Syncfusion.Windows.Forms.Chart.ChartSeriesType.StackingColumn;
-            this.chtDoanhThuTuan.Series.Add(chartSeries3);
-            this.chtDoanhThuTuan.Series.Add(chartSeries4);
+            chartSeries1.FancyToolTip.ResizeInsideSymbol = true;
+            chartSeries1.Name = "Tiền phòng";
+            chartSeries1.Resolution = 0D;
+            chartSeries1.StackingGroup = "Default Group";
+            chartSeries1.Style.AltTagFormat = "";
+            chartSeries1.Style.DisplayText = true;
+            chartSeries1.Style.DrawTextShape = false;
+            chartSeries1.Style.TextOrientation = Syncfusion.Windows.Forms.Chart.ChartTextOrientation.Up;
+            chartLineInfo1.Alignment = System.Drawing.Drawing2D.PenAlignment.Center;
+            chartLineInfo1.Color = System.Drawing.SystemColors.ControlText;
+            chartLineInfo1.DashPattern = null;
+            chartLineInfo1.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            chartLineInfo1.Width = 1F;
+            chartCustomShapeInfo1.Border = chartLineInfo1;
+            chartCustomShapeInfo1.Color = System.Drawing.SystemColors.HighlightText;
+            chartCustomShapeInfo1.Type = Syncfusion.Windows.Forms.Chart.ChartCustomShape.Square;
+            chartSeries1.Style.TextShape = chartCustomShapeInfo1;
+            chartSeries1.Text = "Tiền phòng";
+            chartSeries1.Type = Syncfusion.Windows.Forms.Chart.ChartSeriesType.StackingColumn;
+            chartSeries2.FancyToolTip.ResizeInsideSymbol = true;
+            chartSeries2.Name = "Tiền dịch vụ";
+            chartSeries2.Resolution = 0D;
+            chartSeries2.StackingGroup = "Default Group";
+            chartSeries2.Style.AltTagFormat = "";
+            chartSeries2.Style.DisplayText = true;
+            chartSeries2.Style.DrawTextShape = false;
+            chartSeries2.Style.TextOrientation = Syncfusion.Windows.Forms.Chart.ChartTextOrientation.Up;
+            chartCustomShapeInfo2.Border = chartLineInfo1;
+            chartCustomShapeInfo2.Color = System.Drawing.SystemColors.HighlightText;
+            chartCustomShapeInfo2.Type = Syncfusion.Windows.Forms.Chart.ChartCustomShape.Square;
+            chartSeries2.Style.TextShape = chartCustomShapeInfo2;
+            chartSeries2.Text = "Tiền dịch vụ";
+            chartSeries2.Type = Syncfusion.Windows.Forms.Chart.ChartSeriesType.StackingColumn;
+            this.chtDoanhThuTuan.Series.Add(chartSeries1);
+            this.chtDoanhThuTuan.Series.Add(chartSeries2);
             this.chtDoanhThuTuan.Size = new System.Drawing.Size(1023, 585);
-            this.chtDoanhThuTuan.TabIndex = 35;
+            this.chtDoanhThuTuan.TabIndex = 6;
             this.chtDoanhThuTuan.Text = "Thống kê doanh thu trong tuần";
             // 
             // 
@@ -478,19 +478,6 @@
             this.label1.Size = new System.Drawing.Size(258, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Đánh giá của khách hàng";
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.circularPictureBox1);
-            this.panel2.Location = new System.Drawing.Point(0, 150);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(334, 102);
-            this.panel2.TabIndex = 38;
             // 
             // panel3
             // 
@@ -548,6 +535,19 @@
             this.circularPictureBox2.Size = new System.Drawing.Size(50, 50);
             this.circularPictureBox2.TabIndex = 0;
             this.circularPictureBox2.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.circularPictureBox1);
+            this.panel2.Location = new System.Drawing.Point(0, 150);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(334, 102);
+            this.panel2.TabIndex = 38;
             // 
             // label4
             // 
@@ -892,11 +892,11 @@
             this.flpRatings.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox2)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
