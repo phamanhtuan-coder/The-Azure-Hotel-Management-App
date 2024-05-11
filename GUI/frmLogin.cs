@@ -92,7 +92,6 @@ namespace GUI
                 txtPassword.Clear();
                 txtPassword.PasswordChar = '\0';
                 btnShowHidePassword.Hide();
-                tbtnRemember.Hide();
                 btnAdmin.Show();
                 linkForget.Text = "Quay lại đăng nhập";
                 btnSubmit.Text = "Xác thực";
@@ -114,7 +113,6 @@ namespace GUI
                 txtPassword.Clear();
                 txtPassword.PasswordChar = '•';
                 btnShowHidePassword.Show();
-                tbtnRemember.Show();
                 btnAdmin.Hide();
                 linkForget.Text = "Quên mật khẩu?";
                 btnSubmit.Text = "LOGIN";
@@ -293,6 +291,12 @@ namespace GUI
         private void picLoginBG_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            frmTacGia frm = new frmTacGia();
+            frm.ShowDialog();
         }
     }
 }

@@ -32,15 +32,11 @@ namespace GUI
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            Syncfusion.Windows.Forms.Tools.ActiveStateCollection activeStateCollection1 = new Syncfusion.Windows.Forms.Tools.ActiveStateCollection();
-            Syncfusion.Windows.Forms.Tools.InactiveStateCollection inactiveStateCollection1 = new Syncfusion.Windows.Forms.Tools.InactiveStateCollection();
-            Syncfusion.Windows.Forms.Tools.SliderCollection sliderCollection1 = new Syncfusion.Windows.Forms.Tools.SliderCollection();
             this.btnClose = new Syncfusion.WinForms.Controls.SfButton();
             this.picLoginBG = new System.Windows.Forms.PictureBox();
             this.tmrTransistion = new System.Windows.Forms.Timer(this.components);
             this.panLogin = new GUI.SemiTransparentPanel();
             this.btnSignUp = new Syncfusion.WinForms.Controls.SfButton();
-            this.tbtnRemember = new Syncfusion.Windows.Forms.Tools.ToggleButton();
             this.btnAdmin = new Syncfusion.WinForms.Controls.SfButton();
             this.linkForget = new System.Windows.Forms.LinkLabel();
             this.lblLOGO = new System.Windows.Forms.Label();
@@ -56,7 +52,6 @@ namespace GUI
             this.lblUsername = new Syncfusion.Windows.Forms.Tools.GradientLabel();
             ((System.ComponentModel.ISupportInitialize)(this.picLoginBG)).BeginInit();
             this.panLogin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbtnRemember)).BeginInit();
             this.panUsername.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsername)).BeginInit();
             this.panPassword.SuspendLayout();
@@ -112,7 +107,6 @@ namespace GUI
             this.panLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panLogin.BackgroundImage")));
             this.panLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panLogin.Controls.Add(this.btnSignUp);
-            this.panLogin.Controls.Add(this.tbtnRemember);
             this.panLogin.Controls.Add(this.btnAdmin);
             this.panLogin.Controls.Add(this.linkForget);
             this.panLogin.Controls.Add(this.lblLOGO);
@@ -147,46 +141,39 @@ namespace GUI
             this.btnSignUp.UseVisualStyleBackColor = false;
             this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
-            // tbtnRemember
-            // 
-            activeStateCollection1.Text = "Không ghi nhớ";
-            this.tbtnRemember.ActiveState = activeStateCollection1;
-            this.tbtnRemember.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbtnRemember.ForeColor = System.Drawing.Color.Black;
-            inactiveStateCollection1.Text = "Ghi nhớ mật khẩu";
-            this.tbtnRemember.InactiveState = inactiveStateCollection1;
-            this.tbtnRemember.Location = new System.Drawing.Point(160, 309);
-            this.tbtnRemember.MinimumSize = new System.Drawing.Size(52, 20);
-            this.tbtnRemember.Name = "tbtnRemember";
-            this.tbtnRemember.Size = new System.Drawing.Size(180, 40);
-            this.tbtnRemember.Slider = sliderCollection1;
-            this.tbtnRemember.TabIndex = 9;
-            this.tbtnRemember.ThemeStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
             // btnAdmin
             // 
+            this.btnAdmin.BackColor = System.Drawing.Color.Teal;
             this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdmin.Location = new System.Drawing.Point(160, 312);
+            this.btnAdmin.ForeColor = System.Drawing.Color.White;
+            this.btnAdmin.Location = new System.Drawing.Point(184, 308);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(170, 37);
+            this.btnAdmin.Style.BackColor = System.Drawing.Color.Teal;
+            this.btnAdmin.Style.FocusedBackColor = System.Drawing.Color.Teal;
+            this.btnAdmin.Style.FocusedImageForeColor = System.Drawing.Color.Black;
+            this.btnAdmin.Style.ForeColor = System.Drawing.Color.White;
             this.btnAdmin.Style.HoverBackColor = System.Drawing.Color.Teal;
             this.btnAdmin.Style.HoverForeColor = System.Drawing.Color.White;
             this.btnAdmin.Style.HoverImageForeColor = System.Drawing.Color.White;
             this.btnAdmin.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnAdmin.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnAdmin.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnAdmin.Style.PressedForeColor = System.Drawing.Color.White;
             this.btnAdmin.Style.PressedImageForeColor = System.Drawing.Color.White;
             this.btnAdmin.TabIndex = 9;
             this.btnAdmin.Text = "Liên hệ Admin";
+            this.btnAdmin.UseVisualStyleBackColor = false;
             this.btnAdmin.Visible = false;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // linkForget
             // 
             this.linkForget.ActiveLinkColor = System.Drawing.Color.Teal;
             this.linkForget.AutoSize = true;
             this.linkForget.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkForget.LinkColor = System.Drawing.Color.RoyalBlue;
+            this.linkForget.LinkColor = System.Drawing.Color.MidnightBlue;
             this.linkForget.Location = new System.Drawing.Point(62, 279);
             this.linkForget.Name = "linkForget";
             this.linkForget.Size = new System.Drawing.Size(167, 26);
@@ -369,7 +356,6 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.picLoginBG)).EndInit();
             this.panLogin.ResumeLayout(false);
             this.panLogin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbtnRemember)).EndInit();
             this.panUsername.ResumeLayout(false);
             this.panUsername.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsername)).EndInit();
@@ -400,7 +386,6 @@ namespace GUI
         private Syncfusion.WinForms.Controls.SfButton btnShowHidePassword;
         private Timer tmrTransistion;
         private Syncfusion.WinForms.Controls.SfButton btnAdmin;
-        private Syncfusion.Windows.Forms.Tools.ToggleButton tbtnRemember;
         private Syncfusion.WinForms.Controls.SfButton btnSignUp;
     }
 }
