@@ -207,5 +207,10 @@ namespace GUI.UserControls
                 loadDSRole();
             }
         }
+
+        private void tlpController_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

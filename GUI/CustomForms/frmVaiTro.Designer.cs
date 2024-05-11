@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtTenVT = new System.Windows.Forms.TextBox();
             this.btnSubmit = new Syncfusion.WinForms.Controls.SfButton();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.lblTenVT = new System.Windows.Forms.Label();
             this.lblMoTa = new System.Windows.Forms.Label();
             this.rtxtMoTa = new System.Windows.Forms.RichTextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // txtTenVT
@@ -42,7 +44,8 @@
             this.txtTenVT.Location = new System.Drawing.Point(266, 44);
             this.txtTenVT.Name = "txtTenVT";
             this.txtTenVT.Size = new System.Drawing.Size(306, 27);
-            this.txtTenVT.TabIndex = 0;
+            this.txtTenVT.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.txtTenVT, "Nhập tên vai trò");
             // 
             // btnSubmit
             // 
@@ -50,8 +53,9 @@
             this.btnSubmit.Location = new System.Drawing.Point(361, 271);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
-            this.btnSubmit.TabIndex = 3;
+            this.btnSubmit.TabIndex = 4;
             this.btnSubmit.Text = "Submit";
+            this.toolTip1.SetToolTip(this.btnSubmit, "Gửi");
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnCancel
@@ -60,8 +64,9 @@
             this.btnCancel.Location = new System.Drawing.Point(94, 271);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Quay lại";
+            this.toolTip1.SetToolTip(this.btnCancel, "Quai lại vai trò");
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // lblTenVT
@@ -90,8 +95,9 @@
             this.rtxtMoTa.Location = new System.Drawing.Point(266, 117);
             this.rtxtMoTa.Name = "rtxtMoTa";
             this.rtxtMoTa.Size = new System.Drawing.Size(306, 96);
-            this.rtxtMoTa.TabIndex = 8;
+            this.rtxtMoTa.TabIndex = 2;
             this.rtxtMoTa.Text = "";
+            this.toolTip1.SetToolTip(this.rtxtMoTa, "Nhập mô tả");
             // 
             // frmVaiTro
             // 
@@ -123,5 +129,6 @@
         private System.Windows.Forms.Label lblTenVT;
         private System.Windows.Forms.Label lblMoTa;
         private System.Windows.Forms.RichTextBox rtxtMoTa;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
