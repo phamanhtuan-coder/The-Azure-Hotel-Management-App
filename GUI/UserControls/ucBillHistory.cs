@@ -1,4 +1,6 @@
-﻿using GUI.customForm;
+﻿using BLL;
+using DTO;
+using GUI.customForm;
 using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
@@ -16,6 +18,9 @@ namespace GUI.UserControls
     {
         private frmMain _parentForm;
         customMessageBox thongBao;
+        HoaDonBLL HoaDonBLL = new HoaDonBLL();
+        List<HoaDonDTO> dsHD = new List<HoaDonDTO>();
+        public int maKH { set; get; }
         public ucBillHistory()
         {
             InitializeComponent();

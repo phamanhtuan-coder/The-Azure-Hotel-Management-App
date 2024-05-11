@@ -138,56 +138,6 @@
             this.btnDeleteRating.Text = "Xóa";
             this.btnDeleteRating.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.btnDeleteRating, "Xóa đánh giá");
-            // txtSearchRating
-            // 
-            this.txtSearchRating.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchRating.Location = new System.Drawing.Point(6, 16);
-            this.txtSearchRating.Name = "txtSearchRating";
-            this.txtSearchRating.Size = new System.Drawing.Size(251, 40);
-            this.txtSearchRating.TabIndex = 5;
-            // 
-            // btnTraCuuRating
-            // 
-            this.btnTraCuuRating.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTraCuuRating.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnTraCuuRating.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTraCuuRating.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTraCuuRating.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuRating.Location = new System.Drawing.Point(264, 16);
-            this.btnTraCuuRating.Name = "btnTraCuuRating";
-            this.btnTraCuuRating.Size = new System.Drawing.Size(118, 40);
-            this.btnTraCuuRating.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnTraCuuRating.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuRating.TabIndex = 6;
-            this.btnTraCuuRating.Text = "Tra cứu";
-            this.btnTraCuuRating.UseVisualStyleBackColor = false;
-            this.btnTraCuuRating.Click += new System.EventHandler(this.btnTraCuuRating_Click);
-            // 
-            this.btnTraCuuRating.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuRating.TabIndex = 0;
-            this.btnTraCuuRating.Text = "Tra cứu";
-            this.btnTraCuuRating.UseVisualStyleBackColor = false;
-            // 
-            this.btnTraCuuRating.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuRating.TabIndex = 0;
-            this.btnTraCuuRating.Text = "Tra cứu";
-            this.btnTraCuuRating.UseVisualStyleBackColor = false;
-            // 
-            this.btnTraCuuRating.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuRating.TabIndex = 0;
-            this.btnTraCuuRating.Text = "Tra cứu";
-            this.btnTraCuuRating.UseVisualStyleBackColor = false;
-            // 
-            this.btnTraCuuRating.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuRating.TabIndex = 0;
-            this.btnTraCuuRating.Text = "Tra cứu";
-            this.btnTraCuuRating.UseVisualStyleBackColor = false;
-            // 
-            this.btnTraCuuRating.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuRating.TabIndex = 0;
-            this.btnTraCuuRating.Text = "Tra cứu";
-            this.btnTraCuuRating.UseVisualStyleBackColor = false;
             // 
             // cboStateRating
             // 

@@ -206,7 +206,7 @@
             // 
             // cboStateRating
             // 
-            this.cboStateRating.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cboStateRating.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)))) ;
             this.cboStateRating.TabIndex = 13;
             this.toolTip1.SetToolTip(this.cboStateRating, "Lọc theo trạng thái");
             this.cboStateRating.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;

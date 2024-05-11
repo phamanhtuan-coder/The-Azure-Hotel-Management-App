@@ -1,4 +1,6 @@
-﻿namespace GUI.UserControls
+﻿using System.Windows.Forms;
+
+namespace GUI.UserControls
 {
     partial class ucServiceType
     {
@@ -552,6 +554,7 @@
         private System.Windows.Forms.Label lblSortGiaServiceTypeID;
         private System.Windows.Forms.Panel panUcHeader;
         private System.Windows.Forms.SplitContainer spcHeader;
+        private ToolTip toolTip1;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortGiaServiceType;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortServiceTypeID;
         private System.Windows.Forms.Label lblSortServiceTypeID;

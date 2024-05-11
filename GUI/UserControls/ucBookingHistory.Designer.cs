@@ -414,8 +414,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayTraPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSoLuongKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
-        private System.Windows.Forms.Label lblBooking;
-        private Syncfusion.WinForms.Controls.SfButton btnReturn;
         private System.Windows.Forms.ToolTip toolTip1;
     }
 }
