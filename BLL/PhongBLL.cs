@@ -100,5 +100,10 @@ namespace BLL
                 throw ex;
             }
         }
+
+        public List<PhongDTO> LayDsPhongDaSanSang(DateTime ngayDat)
+        {
+            return PhongDAL.LayDsPhongDaSanSang(ngayDat);
+        }
     }
 }

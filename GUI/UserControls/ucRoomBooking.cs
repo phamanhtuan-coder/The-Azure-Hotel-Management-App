@@ -20,6 +20,7 @@ namespace GUI.UserControls
     public partial class ucRoomBooking : UserControl
     {
         private PhongBLL phongBLL = new PhongBLL();
+        public int maKH { get; set; }
         public ucRoomBooking()
         {
             InitializeComponent();
@@ -29,6 +30,7 @@ namespace GUI.UserControls
 
         private void ucRoomBooking_Load(object sender, EventArgs e)
         {
+            dtpCheckInDate.MinDateTime = DateTime.Now;
             LoadAvailableRooms();
         }
         private void LoadAvailableRooms()
@@ -122,20 +124,11 @@ namespace GUI.UserControls
             btnDatPhong.Click += (sender, e) =>
             {
                 frmMain parentForm = this.ParentForm as frmMain;
-                string username = string.Empty;
-                if (parentForm.user!=null)
-                {
-                    username = parentForm.user.TenTaiKhoan;
-                }
-                else
-                {
-                   username = parentForm.userKH.TenDangNhap;
-                }
-               
-                int maPhong = phong.MaPHG;
-                string ngayDat = dtpCheckInDate.Value.ToString();
-                int soKhach = (int)nudSucChua.Value;
-                frmBookingController bookingController = new frmBookingController(username, maPhong, ngayDat, soKhach);
+                frmBookingController bookingController = new frmBookingController();
+                bookingController.maKH = this.maKH;
+                bookingController.maPhong = phong.MaPHG;
+                bookingController.ngayDat= dtpCheckInDate.Value.ToString();
+                bookingController.soKhach= (int)nudSucChua.Value; 
                 bookingController.ShowDialog();
             };
 

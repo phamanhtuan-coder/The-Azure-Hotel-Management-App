@@ -201,6 +201,25 @@ namespace DAL
             }
         }
 
+        public string TruyVanUsername(int maKH)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+                string strTV= "Select TK.TenDangNhap from BangTaiKhoan TK join KhachHang KH on TK.MaTaiKhoan = KH.MaTaiKhoan where KH.MaKH=@MaKH and cast(TK.TrangThai as int)=1 and cast(KH.TrangThai as int)=1 ";
+                SqlCommand com = new SqlCommand(strTV, conn);
+                com.Parameters.AddWithValue("@MaKH", maKH);
+                string user = (string)com.ExecuteScalar();
+                conn.Close();
+                return user;
+            }
+            catch (Exception)
+            {
+                return string.Empty;
+            }
+        }
+
         public string TruyVanUsernameDAL()
         {
             try
@@ -216,7 +235,7 @@ namespace DAL
             }
             catch (Exception)
             {
-                return "";
+                return string.Empty;
             }
         }
 
@@ -224,7 +243,7 @@ namespace DAL
         {
             try
             {
-                TaiKhoanDTO tai =null;
+                TaiKhoanDTO tai = null;
                 SqlConnection conn = DataProvider.KetNoiDuLieu();
                 conn.Open();
 
@@ -233,17 +252,19 @@ namespace DAL
                 com.Parameters.AddWithValue("@TenDangNhap", taiKhoanDTO.TenDangNhap);
                 com.Parameters.AddWithValue("@MatKhau", taiKhoanDTO.MatKhau);
 
-                SqlDataReader reader= com.ExecuteReader();
-               
-                if (reader.Read())
+                SqlDataReader reader = com.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    tai  = new TaiKhoanDTO();
-                    tai.MaTaiKhoan = (int) reader["MaTaiKhoan"];
+                    tai = new TaiKhoanDTO();
+                    tai.MaTaiKhoan = (int)reader["MaTaiKhoan"];
                     tai.TenDangNhap = reader["TenDangNhap"].ToString();
                     tai.MaPQ = reader["MaPQ"].ToString();
                 }
+
                 reader.Close();
                 conn.Close();
+
                 if (tai != null)
                 {
                     return tai;
@@ -252,13 +273,13 @@ namespace DAL
                 {
                     return new TaiKhoanDTO();
                 }
-               
             }
             catch (Exception)
             {
                 return new TaiKhoanDTO();
             }
         }
+
 
         public bool XoaTaiKhoan(int maTK)
         {

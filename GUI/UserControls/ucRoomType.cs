@@ -43,7 +43,6 @@ namespace GUI.UserControls
         private void laycombo()
         {
             DuLieuChoComboBox.duLieuSort(cboSortRoomTypeID);
-            DuLieuChoComboBox.duLieuSort(cboSortSoLuongRoom);
             DuLieuChoComboBox.duLieuFilter(cboStateRoomType);
         }
 

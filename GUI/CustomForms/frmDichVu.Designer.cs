@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDichVu));
             this.btnSubmit = new Syncfusion.WinForms.Controls.SfButton();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.btnChonHinh = new Syncfusion.WinForms.Controls.SfButton();
@@ -76,7 +75,7 @@
             // 
             // picHinhAnh
             // 
-            this.picHinhAnh.Image = ((System.Drawing.Image)(resources.GetObject("picHinhAnh.Image")));
+            this.picHinhAnh.Image = global::GUI.Properties.Resources.no_pictures;
             this.picHinhAnh.Location = new System.Drawing.Point(42, 28);
             this.picHinhAnh.Name = "picHinhAnh";
             this.picHinhAnh.Size = new System.Drawing.Size(236, 133);

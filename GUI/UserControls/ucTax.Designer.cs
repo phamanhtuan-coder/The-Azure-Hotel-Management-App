@@ -74,7 +74,7 @@
             // 
             this.lblTax.BackColor = System.Drawing.Color.Lavender;
             this.lblTax.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblTax.Font = new System.Drawing.Font("Montserrat", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblTax.ForeColor = System.Drawing.Color.RoyalBlue;
             this.lblTax.Location = new System.Drawing.Point(0, 0);
             this.lblTax.Name = "lblTax";
@@ -106,7 +106,7 @@
             this.btnAddTax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.btnAddTax.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAddTax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddTax.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold);
             this.btnAddTax.ForeColor = System.Drawing.Color.White;
             this.btnAddTax.ImageSize = new System.Drawing.Size(32, 32);
             this.btnAddTax.Location = new System.Drawing.Point(3, 3);
@@ -128,7 +128,7 @@
             this.btnEditTax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
             this.btnEditTax.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnEditTax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditTax.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold);
             this.btnEditTax.ForeColor = System.Drawing.Color.White;
             this.btnEditTax.ImageSize = new System.Drawing.Size(32, 32);
             this.btnEditTax.Location = new System.Drawing.Point(3, 50);
@@ -150,7 +150,7 @@
             this.btnDeleteTax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnDeleteTax.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDeleteTax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteTax.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold);
             this.btnDeleteTax.ForeColor = System.Drawing.Color.White;
             this.btnDeleteTax.ImageSize = new System.Drawing.Size(32, 32);
             this.btnDeleteTax.Location = new System.Drawing.Point(200, 3);
@@ -172,7 +172,7 @@
             this.btnRecoverTax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverTax.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRecoverTax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecoverTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecoverTax.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecoverTax.ForeColor = System.Drawing.Color.White;
             this.btnRecoverTax.ImageSize = new System.Drawing.Size(32, 32);
             this.btnRecoverTax.Location = new System.Drawing.Point(200, 50);
@@ -191,10 +191,10 @@
             // 
             // txtSearchTax
             // 
-            this.txtSearchTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchTax.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchTax.Location = new System.Drawing.Point(6, 16);
             this.txtSearchTax.Name = "txtSearchTax";
-            this.txtSearchTax.Size = new System.Drawing.Size(251, 38);
+            this.txtSearchTax.Size = new System.Drawing.Size(251, 40);
             this.txtSearchTax.TabIndex = 6;
             this.toolTip1.SetToolTip(this.txtSearchTax, "Nhập tên thuế");
             // 
@@ -204,7 +204,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTraCuuTax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuTax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTraCuuTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTraCuuTax.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTraCuuTax.ForeColor = System.Drawing.Color.White;
             this.btnTraCuuTax.Location = new System.Drawing.Point(264, 16);
             this.btnTraCuuTax.Name = "btnTraCuuTax";
@@ -223,15 +223,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboStateTax.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboStateTax.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboStateTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateTax.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.cboStateTax.Location = new System.Drawing.Point(226, 193);
             this.cboStateTax.Name = "cboStateTax";
             this.cboStateTax.Size = new System.Drawing.Size(156, 33);
             this.cboStateTax.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboStateTax.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateTax.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateTax.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.cboStateTax.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.cboStateTax.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboStateTax.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateTax.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.cboStateTax.TabIndex = 13;
             this.toolTip1.SetToolTip(this.cboStateTax, "Lọc theo trạng thái");
             this.cboStateTax.SelectedIndexChanged += new System.EventHandler(this.cboStateTax_SelectedIndexChanged);
@@ -268,7 +268,7 @@
             this.dgvTax.AllowUserToDeleteRows = false;
             this.dgvTax.AllowUserToResizeColumns = false;
             this.dgvTax.AllowUserToResizeRows = false;
-            this.dgvTax.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTax.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvTax.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTax.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.coLMaThue,
@@ -292,6 +292,7 @@
             this.coLMaThue.HeaderText = "Mã thuế";
             this.coLMaThue.Name = "coLMaThue";
             this.coLMaThue.ReadOnly = true;
+            this.coLMaThue.Width = 92;
             // 
             // colTenThue
             // 
@@ -299,6 +300,7 @@
             this.colTenThue.HeaderText = "Tên thuế";
             this.colTenThue.Name = "colTenThue";
             this.colTenThue.ReadOnly = true;
+            this.colTenThue.Width = 97;
             // 
             // colTiLeThue
             // 
@@ -313,6 +315,7 @@
             this.colMoTa.HeaderText = "Mô tả";
             this.colMoTa.Name = "colMoTa";
             this.colMoTa.ReadOnly = true;
+            this.colMoTa.Width = 74;
             // 
             // colTrangThai
             // 
@@ -328,15 +331,15 @@
             this.cboSortTaxID.DisplayMember = "";
             this.cboSortTaxID.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboSortTaxID.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortTaxID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortTaxID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.cboSortTaxID.Location = new System.Drawing.Point(226, 79);
             this.cboSortTaxID.Name = "cboSortTaxID";
             this.cboSortTaxID.Size = new System.Drawing.Size(156, 33);
             this.cboSortTaxID.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortTaxID.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortTaxID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortTaxID.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.cboSortTaxID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.cboSortTaxID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortTaxID.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortTaxID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.cboSortTaxID.TabIndex = 9;
             this.toolTip1.SetToolTip(this.cboSortTaxID, "Sắp xếp theo mã loại");
             this.cboSortTaxID.SelectedIndexChanged += new System.EventHandler(this.cboSortTaxID_SelectedIndexChanged);
@@ -344,10 +347,10 @@
             // lblSortTaxID
             // 
             this.lblSortTaxID.AutoSize = true;
-            this.lblSortTaxID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortTaxID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.lblSortTaxID.Location = new System.Drawing.Point(2, 86);
             this.lblSortTaxID.Name = "lblSortTaxID";
-            this.lblSortTaxID.Size = new System.Drawing.Size(158, 24);
+            this.lblSortTaxID.Size = new System.Drawing.Size(170, 26);
             this.lblSortTaxID.TabIndex = 8;
             this.lblSortTaxID.Text = "Sort theo ID loại";
             this.lblSortTaxID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -358,15 +361,15 @@
             this.cboSortTaxValue.DisplayMember = "";
             this.cboSortTaxValue.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboSortTaxValue.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortTaxValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortTaxValue.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.cboSortTaxValue.Location = new System.Drawing.Point(227, 136);
             this.cboSortTaxValue.Name = "cboSortTaxValue";
             this.cboSortTaxValue.Size = new System.Drawing.Size(156, 33);
             this.cboSortTaxValue.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortTaxValue.Style.EditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortTaxValue.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortTaxValue.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.cboSortTaxValue.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.cboSortTaxValue.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortTaxValue.Style.TokenStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortTaxValue.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.cboSortTaxValue.TabIndex = 11;
             this.toolTip1.SetToolTip(this.cboSortTaxValue, "Lọc theo mức thuế");
             this.cboSortTaxValue.SelectedIndexChanged += new System.EventHandler(this.cboSortTaxValue_SelectedIndexChanged);
@@ -374,10 +377,10 @@
             // lblSortTaxValue
             // 
             this.lblSortTaxValue.AutoSize = true;
-            this.lblSortTaxValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortTaxValue.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.lblSortTaxValue.Location = new System.Drawing.Point(2, 143);
             this.lblSortTaxValue.Name = "lblSortTaxValue";
-            this.lblSortTaxValue.Size = new System.Drawing.Size(184, 24);
+            this.lblSortTaxValue.Size = new System.Drawing.Size(196, 26);
             this.lblSortTaxValue.TabIndex = 10;
             this.lblSortTaxValue.Text = "Lọc theo mức thuế";
             this.lblSortTaxValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -385,10 +388,10 @@
             // lblStateTax
             // 
             this.lblStateTax.AutoSize = true;
-            this.lblStateTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStateTax.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.lblStateTax.Location = new System.Drawing.Point(2, 200);
             this.lblStateTax.Name = "lblStateTax";
-            this.lblStateTax.Size = new System.Drawing.Size(174, 24);
+            this.lblStateTax.Size = new System.Drawing.Size(186, 26);
             this.lblStateTax.TabIndex = 12;
             this.lblStateTax.Text = "Trạng thái dữ liệu";
             this.lblStateTax.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

@@ -41,18 +41,16 @@
             this.cboStateRoomType = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvloaiphong = new System.Windows.Forms.DataGridView();
-            this.colmaloai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coltenloai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colmota = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coltrangthai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboSortRoomTypeID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortRoomTypeID = new System.Windows.Forms.Label();
-            this.cboSortSoLuongRoom = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.lblSortSoLuongRoom = new System.Windows.Forms.Label();
             this.lblStateRoomType = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.colmaloai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coltenloai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colmota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coltrangthai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRoomType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -61,7 +59,6 @@
             this.spcQuery.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvloaiphong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortRoomTypeID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboSortSoLuongRoom)).BeginInit();
             this.panUcHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).BeginInit();
             this.spcHeader.Panel1.SuspendLayout();
@@ -221,7 +218,7 @@
             this.cboStateRoomType.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboStateRoomType.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboStateRoomType.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateRoomType.Location = new System.Drawing.Point(226, 193);
+            this.cboStateRoomType.Location = new System.Drawing.Point(226, 134);
             this.cboStateRoomType.Name = "cboStateRoomType";
             this.cboStateRoomType.Size = new System.Drawing.Size(156, 33);
             this.cboStateRoomType.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -249,8 +246,6 @@
             this.spcQuery.Panel2.BackColor = System.Drawing.Color.Lavender;
             this.spcQuery.Panel2.Controls.Add(this.cboSortRoomTypeID);
             this.spcQuery.Panel2.Controls.Add(this.lblSortRoomTypeID);
-            this.spcQuery.Panel2.Controls.Add(this.cboSortSoLuongRoom);
-            this.spcQuery.Panel2.Controls.Add(this.lblSortSoLuongRoom);
             this.spcQuery.Panel2.Controls.Add(this.lblStateRoomType);
             this.spcQuery.Panel2.Controls.Add(this.txtSearchRoomType);
             this.spcQuery.Panel2.Controls.Add(this.btnTraCuuRoomType);
@@ -263,6 +258,7 @@
             // 
             this.dgvloaiphong.AllowUserToAddRows = false;
             this.dgvloaiphong.AllowUserToDeleteRows = false;
+            this.dgvloaiphong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvloaiphong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvloaiphong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colmaloai,
@@ -279,42 +275,6 @@
             this.dgvloaiphong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvloaiphong.Size = new System.Drawing.Size(970, 746);
             this.dgvloaiphong.TabIndex = 6;
-            // 
-            // colmaloai
-            // 
-            this.colmaloai.DataPropertyName = "MaLoai";
-            this.colmaloai.HeaderText = "Mã Loại";
-            this.colmaloai.MinimumWidth = 6;
-            this.colmaloai.Name = "colmaloai";
-            this.colmaloai.ReadOnly = true;
-            this.colmaloai.Width = 125;
-            // 
-            // coltenloai
-            // 
-            this.coltenloai.DataPropertyName = "TenLoai";
-            this.coltenloai.HeaderText = "Tên Loại";
-            this.coltenloai.MinimumWidth = 6;
-            this.coltenloai.Name = "coltenloai";
-            this.coltenloai.ReadOnly = true;
-            this.coltenloai.Width = 125;
-            // 
-            // colmota
-            // 
-            this.colmota.DataPropertyName = "Mota";
-            this.colmota.HeaderText = "Mô Tả";
-            this.colmota.MinimumWidth = 6;
-            this.colmota.Name = "colmota";
-            this.colmota.ReadOnly = true;
-            this.colmota.Width = 125;
-            // 
-            // coltrangthai
-            // 
-            this.coltrangthai.DataPropertyName = "TrangThai";
-            this.coltrangthai.HeaderText = "Trạng Thái";
-            this.coltrangthai.MinimumWidth = 6;
-            this.coltrangthai.Name = "coltrangthai";
-            this.coltrangthai.ReadOnly = true;
-            this.coltrangthai.Width = 125;
             // 
             // cboSortRoomTypeID
             // 
@@ -346,40 +306,11 @@
             this.lblSortRoomTypeID.Text = "Sort theo ID loại";
             this.lblSortRoomTypeID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // cboSortSoLuongRoom
-            // 
-            this.cboSortSoLuongRoom.DelimiterChar = "";
-            this.cboSortSoLuongRoom.DisplayMember = "";
-            this.cboSortSoLuongRoom.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboSortSoLuongRoom.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortSoLuongRoom.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSoLuongRoom.Location = new System.Drawing.Point(227, 136);
-            this.cboSortSoLuongRoom.Name = "cboSortSoLuongRoom";
-            this.cboSortSoLuongRoom.Size = new System.Drawing.Size(156, 33);
-            this.cboSortSoLuongRoom.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortSoLuongRoom.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSoLuongRoom.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSoLuongRoom.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortSoLuongRoom.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSoLuongRoom.TabIndex = 12;
-            this.toolTip1.SetToolTip(this.cboSortSoLuongRoom, "Lọc theo số lượng");
-            // 
-            // lblSortSoLuongRoom
-            // 
-            this.lblSortSoLuongRoom.AutoSize = true;
-            this.lblSortSoLuongRoom.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortSoLuongRoom.Location = new System.Drawing.Point(2, 143);
-            this.lblSortSoLuongRoom.Name = "lblSortSoLuongRoom";
-            this.lblSortSoLuongRoom.Size = new System.Drawing.Size(185, 26);
-            this.lblSortSoLuongRoom.TabIndex = 11;
-            this.lblSortSoLuongRoom.Text = "Lọc theo số lượng";
-            this.lblSortSoLuongRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // lblStateRoomType
             // 
             this.lblStateRoomType.AutoSize = true;
             this.lblStateRoomType.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStateRoomType.Location = new System.Drawing.Point(2, 200);
+            this.lblStateRoomType.Location = new System.Drawing.Point(2, 141);
             this.lblStateRoomType.Name = "lblStateRoomType";
             this.lblStateRoomType.Size = new System.Drawing.Size(186, 26);
             this.lblStateRoomType.TabIndex = 13;
@@ -415,6 +346,42 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
+            // colmaloai
+            // 
+            this.colmaloai.DataPropertyName = "MaLoai";
+            this.colmaloai.HeaderText = "Mã Loại";
+            this.colmaloai.MinimumWidth = 6;
+            this.colmaloai.Name = "colmaloai";
+            this.colmaloai.ReadOnly = true;
+            this.colmaloai.Width = 95;
+            // 
+            // coltenloai
+            // 
+            this.coltenloai.DataPropertyName = "TenLoai";
+            this.coltenloai.HeaderText = "Tên Loại";
+            this.coltenloai.MinimumWidth = 6;
+            this.coltenloai.Name = "coltenloai";
+            this.coltenloai.ReadOnly = true;
+            // 
+            // colmota
+            // 
+            this.colmota.DataPropertyName = "Mota";
+            this.colmota.HeaderText = "Mô Tả";
+            this.colmota.MinimumWidth = 6;
+            this.colmota.Name = "colmota";
+            this.colmota.ReadOnly = true;
+            this.colmota.Width = 82;
+            // 
+            // coltrangthai
+            // 
+            this.coltrangthai.DataPropertyName = "TrangThai";
+            this.coltrangthai.HeaderText = "Trạng Thái";
+            this.coltrangthai.MinimumWidth = 6;
+            this.coltrangthai.Name = "coltrangthai";
+            this.coltrangthai.ReadOnly = true;
+            this.coltrangthai.Visible = false;
+            this.coltrangthai.Width = 125;
+            // 
             // ucRoomType
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -434,7 +401,6 @@
             this.spcQuery.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvloaiphong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortRoomTypeID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboSortSoLuongRoom)).EndInit();
             this.panUcHeader.ResumeLayout(false);
             this.spcHeader.Panel1.ResumeLayout(false);
             this.spcHeader.Panel2.ResumeLayout(false);
@@ -457,17 +423,15 @@
         private System.Windows.Forms.SplitContainer spcQuery;
         private System.Windows.Forms.TableLayoutPanel tlpController;
         private System.Windows.Forms.Label lblStateRoomType;
-        private System.Windows.Forms.Label lblSortSoLuongRoom;
         private System.Windows.Forms.Panel panUcHeader;
         private System.Windows.Forms.SplitContainer spcHeader;
-        private Syncfusion.WinForms.ListView.SfComboBox cboSortSoLuongRoom;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortRoomTypeID;
         private System.Windows.Forms.Label lblSortRoomTypeID;
         private System.Windows.Forms.DataGridView dgvloaiphong;
+        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colmaloai;
         private System.Windows.Forms.DataGridViewTextBoxColumn coltenloai;
         private System.Windows.Forms.DataGridViewTextBoxColumn colmota;
         private System.Windows.Forms.DataGridViewTextBoxColumn coltrangthai;
-        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
