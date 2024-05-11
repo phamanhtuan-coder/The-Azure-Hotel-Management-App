@@ -38,6 +38,13 @@
             this.cboStateRating = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvRating = new System.Windows.Forms.DataGridView();
+            this.colMaDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDiemDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNhanXet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDanhGia = new Syncfusion.WinForms.Controls.SfButton();
             this.dtpNgayDanhGia = new System.Windows.Forms.DateTimePicker();
             this.lblNgayDanhGia = new System.Windows.Forms.Label();
             this.cboRatingValue = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -45,13 +52,6 @@
             this.lblStateRating = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.btnDanhGia = new Syncfusion.WinForms.Controls.SfButton();
-            this.colMaDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDiemDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNhanXet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRating)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -194,6 +194,7 @@
             this.cboStateRating.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateRating.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateRating.TabIndex = 3;
+            this.cboStateRating.SelectedIndexChanged += new System.EventHandler(this.cboStateRating_SelectedIndexChanged);
             // 
             // spcQuery
             // 
@@ -245,6 +246,67 @@
             this.dgvRating.Size = new System.Drawing.Size(973, 746);
             this.dgvRating.TabIndex = 0;
             // 
+            // colMaDG
+            // 
+            this.colMaDG.DataPropertyName = "MaDG";
+            this.colMaDG.HeaderText = "Mã đánh giá";
+            this.colMaDG.Name = "colMaDG";
+            this.colMaDG.ReadOnly = true;
+            this.colMaDG.Visible = false;
+            // 
+            // colMaDP
+            // 
+            this.colMaDP.DataPropertyName = "MaDP";
+            this.colMaDP.HeaderText = "Mã đặt phòng";
+            this.colMaDP.Name = "colMaDP";
+            this.colMaDP.ReadOnly = true;
+            // 
+            // colDiemDG
+            // 
+            this.colDiemDG.DataPropertyName = "DiemDanhGia";
+            this.colDiemDG.HeaderText = "Điểm đánh giá";
+            this.colDiemDG.Name = "colDiemDG";
+            this.colDiemDG.ReadOnly = true;
+            // 
+            // colNhanXet
+            // 
+            this.colNhanXet.DataPropertyName = "NhanXet";
+            this.colNhanXet.HeaderText = "Nhận xét";
+            this.colNhanXet.Name = "colNhanXet";
+            this.colNhanXet.ReadOnly = true;
+            // 
+            // colNgayDG
+            // 
+            this.colNgayDG.DataPropertyName = "NgayDanhGia";
+            this.colNgayDG.HeaderText = "Ngày đánh giá";
+            this.colNgayDG.Name = "colNgayDG";
+            this.colNgayDG.ReadOnly = true;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Visible = false;
+            // 
+            // btnDanhGia
+            // 
+            this.btnDanhGia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDanhGia.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnDanhGia.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDanhGia.ForeColor = System.Drawing.Color.White;
+            this.btnDanhGia.Location = new System.Drawing.Point(110, 18);
+            this.btnDanhGia.Name = "btnDanhGia";
+            this.btnDanhGia.Size = new System.Drawing.Size(186, 56);
+            this.btnDanhGia.Style.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnDanhGia.Style.ForeColor = System.Drawing.Color.White;
+            this.btnDanhGia.TabIndex = 32;
+            this.btnDanhGia.Text = "Viết đánh giá";
+            this.btnDanhGia.UseVisualStyleBackColor = false;
+            this.btnDanhGia.Click += new System.EventHandler(this.btnDanhGia_Click);
+            // 
             // dtpNgayDanhGia
             // 
             this.dtpNgayDanhGia.CustomFormat = "dd/MM/yyyy";
@@ -253,6 +315,7 @@
             this.dtpNgayDanhGia.Name = "dtpNgayDanhGia";
             this.dtpNgayDanhGia.Size = new System.Drawing.Size(200, 27);
             this.dtpNgayDanhGia.TabIndex = 31;
+            this.dtpNgayDanhGia.ValueChanged += new System.EventHandler(this.dtpNgayDanhGia_ValueChanged);
             // 
             // lblNgayDanhGia
             // 
@@ -281,6 +344,7 @@
             this.cboRatingValue.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboRatingValue.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRatingValue.TabIndex = 23;
+            this.cboRatingValue.SelectedIndexChanged += new System.EventHandler(this.cboRatingValue_SelectedIndexChanged);
             // 
             // lblRatingValue
             // 
@@ -332,67 +396,6 @@
             this.spcHeader.Size = new System.Drawing.Size(1370, 94);
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
-            // 
-            // btnDanhGia
-            // 
-            this.btnDanhGia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDanhGia.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnDanhGia.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDanhGia.ForeColor = System.Drawing.Color.White;
-            this.btnDanhGia.Location = new System.Drawing.Point(110, 18);
-            this.btnDanhGia.Name = "btnDanhGia";
-            this.btnDanhGia.Size = new System.Drawing.Size(186, 56);
-            this.btnDanhGia.Style.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnDanhGia.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDanhGia.TabIndex = 32;
-            this.btnDanhGia.Text = "Viết đánh giá";
-            this.btnDanhGia.UseVisualStyleBackColor = false;
-            this.btnDanhGia.Click += new System.EventHandler(this.btnDanhGia_Click);
-            // 
-            // colMaDG
-            // 
-            this.colMaDG.DataPropertyName = "MaDG";
-            this.colMaDG.HeaderText = "Mã đánh giá";
-            this.colMaDG.Name = "colMaDG";
-            this.colMaDG.ReadOnly = true;
-            this.colMaDG.Visible = false;
-            // 
-            // colMaDP
-            // 
-            this.colMaDP.DataPropertyName = "MaDP";
-            this.colMaDP.HeaderText = "Mã đặt phòng";
-            this.colMaDP.Name = "colMaDP";
-            this.colMaDP.ReadOnly = true;
-            // 
-            // colDiemDG
-            // 
-            this.colDiemDG.DataPropertyName = "DiemDanhGia";
-            this.colDiemDG.HeaderText = "Điểm đánh giá";
-            this.colDiemDG.Name = "colDiemDG";
-            this.colDiemDG.ReadOnly = true;
-            // 
-            // colNhanXet
-            // 
-            this.colNhanXet.DataPropertyName = "NhanXet";
-            this.colNhanXet.HeaderText = "Nhận xét";
-            this.colNhanXet.Name = "colNhanXet";
-            this.colNhanXet.ReadOnly = true;
-            // 
-            // colNgayDG
-            // 
-            this.colNgayDG.DataPropertyName = "NgayDanhGia";
-            this.colNgayDG.HeaderText = "Ngày đánh giá";
-            this.colNgayDG.Name = "colNgayDG";
-            this.colNgayDG.ReadOnly = true;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "TrangThai";
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Visible = false;
             // 
             // ucRatingHistory
             // 

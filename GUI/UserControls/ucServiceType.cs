@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using DTO;
+using System.IO;
 namespace GUI.UserControls
 {
     public partial class ucServiceType : UserControl
@@ -208,6 +209,39 @@ namespace GUI.UserControls
             dichVuDTOs = DichVuBLL.FilterTrangThai(cboStateRoomType.Text);
             dgvServiceType.ClearSelection();
             dgvServiceType.DataSource = dichVuDTOs;
+        }
+
+        private void dgvServiceType_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvServiceType.SelectedRows.Count > 0)
+            {
+                string columnName = "colHinhAnh";
+                int columnIndex = dgvServiceType .Columns[columnName].Index;
+                object cellValue = dgvServiceType.SelectedRows[0].Cells[columnIndex].Value;
+
+                if (cellValue != null)
+                {
+                    byte[] hinh = (byte[])cellValue;
+                    picDichVu.Image = ByteArrayToImage(hinh);
+                }
+                else
+                {
+                    picDichVu.Image = Properties.Resources.no_pictures;
+                }
+            }
+        }
+        private static byte[] ImageToByteArray(Image img)
+        {
+            MemoryStream m = new MemoryStream();
+            img.Save(m, System.Drawing.Imaging.ImageFormat.Png);
+            return m.ToArray();
+        }
+        Image ByteArrayToImage(byte[] hinh)
+        {
+            using (MemoryStream m = new MemoryStream(hinh))
+            {
+                return Image.FromStream(m);
+            }
         }
     }
 }

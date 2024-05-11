@@ -151,7 +151,15 @@ namespace GUI.UserControls
 
         private void dtpNgayDanhGia_ValueChanged(object sender, EventArgs e)
         {
-
+            List<DanhGiaDTO> dsLoc = new List<DanhGiaDTO>();
+            foreach (DanhGiaDTO dg in dsDanhGia)
+            {
+                if (dg.NgayDanhGia.Date == dtpNgayDanhGia.Value.Date)
+                {
+                    dsLoc.Add(dg);
+                }
+            }
+            dgvRating.DataSource = dsLoc;
         }
 
         private void cboStateRating_SelectedIndexChanged(object sender, EventArgs e)

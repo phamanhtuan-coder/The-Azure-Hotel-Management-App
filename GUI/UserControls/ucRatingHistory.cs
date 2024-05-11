@@ -45,8 +45,17 @@ namespace GUI.UserControls
         private void CapDuLieuChoController()
         {
             //Gọi tới hàm cấp dữ liệu chung vì dữ liệu đa số giống nhau
-            DuLieuChoComboBox.duLieuSort(cboRatingValue);
             DuLieuChoComboBox.duLieuFilter(cboStateRating);
+            List<string> rating = new List<string>();
+            rating.Add("Tất cả");
+            rating.Add("0");
+            rating.Add("1");
+            rating.Add("2");
+            rating.Add("3");
+            rating.Add("4");
+            rating.Add("5");
+            cboRatingValue.DataSource = rating;
+            cboRatingValue.SelectedIndex = 0;
         }
 
         private void btnEditRating_Click(object sender, EventArgs e)
@@ -187,6 +196,41 @@ namespace GUI.UserControls
             frm.maKH = this.maKH;
             frm.ShowDialog();
             LayDanhSachDanhGia();
+        }
+
+        private void cboRatingValue_SelectedIndexChanged(object sender, EventArgs e)
+        {
+             List<DanhGiaDTO>  dsLoc = new List<DanhGiaDTO>();
+            if (cboRatingValue.SelectedItem.ToString()!="Tất cả")
+            {
+                dsLoc = dsDanhGia.Where(x => x.DiemDanhGia == int.Parse(cboRatingValue.SelectedValue.ToString())).ToList();
+            }
+            else
+            {
+                dsLoc = dsDanhGia;
+            }
+           
+            dgvRating.DataSource = dsLoc;
+        }
+
+        private void cboStateRating_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dsDanhGia = danhGiaBLL.FilterTrangThai(cboStateRating.Text);
+            dgvRating.ClearSelection();
+            dgvRating.DataSource = dsDanhGia;
+        }
+
+        private void dtpNgayDanhGia_ValueChanged(object sender, EventArgs e)
+        {
+            List<DanhGiaDTO> dsLoc = new List<DanhGiaDTO>();
+            foreach (DanhGiaDTO dg in dsDanhGia)
+            {
+                if (dg.NgayDanhGia.Date == dtpNgayDanhGia.Value.Date)
+                {
+                    dsLoc.Add(dg);
+                }
+            }
+            dgvRating.DataSource = dsLoc;
         }
     }
 }

@@ -471,6 +471,12 @@
     <Compile Include="UserControls\ucRating.Designer.cs">
       <DependentUpon>ucRating.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\uc404.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uc404.Designer.cs">
+      <DependentUpon>uc404.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ucTax.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -674,6 +680,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucRating.resx">
       <DependentUpon>ucRating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uc404.resx">
+      <DependentUpon>uc404.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucTax.resx">
       <DependentUpon>ucTax.cs</DependentUpon>

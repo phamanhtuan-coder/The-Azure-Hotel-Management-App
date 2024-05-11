@@ -801,10 +801,140 @@ namespace GUI
         {
             LoadHinhAnhUser();
             LoadTenUser();
+            KiemTraPhanQuyen();
+            
+           
+        }
 
-            menuActivated(btnBooking);
-            ucBooking Home = new ucBooking();
-            openForm(Home);
+        private void KiemTraPhanQuyen()
+        {
+            panRoomBooking.Visible = true;
+            flpAccount.Visible = true;
+            panDashBoard.Visible = true;
+            flpBookingManagement.Visible = true;
+            flpCustomerManagement.Visible = true;
+            flpRoomManagement.Visible = true;
+            flpDeviceMangement.Visible = true;
+            flpStaffManagement.Visible = true;
+            flpFinanceManagement.Visible = true;
+            flpMaintanceManagement.Visible = true;
+            flpHousekeepingManagement.Visible = true;
+            switch (phanQuyen)
+            {
+                case "KH-01":
+                    {
+                        flpAccount.Visible = false;
+                        flpBookingManagement.Visible = false;
+                        panDashBoard.Visible = false;
+                        flpBookingManagement.Visible = false;
+                        flpCustomerManagement.Visible = false;
+                        flpDeviceMangement.Visible = false;
+                        flpStaffManagement.Visible = false; 
+                        flpFinanceManagement.Visible = false;
+                        flpMaintanceManagement.Visible = false;
+                        flpRoomManagement.Visible = false;
+                        flpHousekeepingManagement.Visible = false;
+                        menuActivated(btnRoomBooking);
+                        ucRoomBooking Home = new ucRoomBooking();
+                        openForm(Home);
+                    }
+                    break;
+                case "AD-02":
+                    {
+                        panRoomBooking.Visible = false;
+                        menuActivated(btnDashBoard);
+                        ucDashboard Home = new ucDashboard();
+                        openForm(Home);
+                    }
+                    break;
+                case "BT-03":
+                case "BT-04":
+                    {
+                        panRoomBooking.Visible = false;
+                        flpAccount.Visible = false;
+                        flpBookingManagement.Visible = false;
+                        panDashBoard.Visible = false;
+                        flpCustomerManagement.Visible = false;
+                        flpStaffManagement.Visible = false;
+                        flpFinanceManagement.Visible = false;
+                        flpRoomManagement.Visible = false;
+                        flpHousekeepingManagement.Visible = false;
+                        menuActivated(btnMaintance);
+                        ucMaintentance Home = new ucMaintentance();
+                        openForm(Home);
+                    }
+                    break;
+                case "DP-03":
+                case "DP-04":
+                    {
+                        panRoomBooking.Visible = false;
+                        flpAccount.Visible = false;
+                        flpBookingManagement.Visible = false;
+                        panDashBoard.Visible = false;
+                        flpCustomerManagement.Visible = false;
+                        flpDeviceMangement.Visible = false;
+                        flpStaffManagement.Visible = false;
+                        flpFinanceManagement.Visible = false;
+                        flpMaintanceManagement.Visible = false;
+                        menuActivated(btnHousekeeping);
+                        ucHousekeeping Home = new ucHousekeeping();
+                        openForm(Home);
+                    }
+                    break;
+                case "KT-03":
+                case "KT-04":
+                    {
+                        panRoomBooking.Visible = false;
+                        flpAccount.Visible = false;
+                        flpBookingManagement.Visible = false;
+                        flpCustomerManagement.Visible = false;
+                        flpRoomManagement.Visible = false;
+                        flpDeviceMangement.Visible = false;
+                        flpStaffManagement.Visible = false;
+                        flpMaintanceManagement.Visible = false;
+                        flpRoomManagement.Visible = false;
+                        flpHousekeepingManagement.Visible = false;
+                        menuActivated(btnDashBoard);
+                        ucDashboard Home = new ucDashboard();
+                        openForm(Home);
+                    }
+                    break;
+                case "LT-03":
+                case "LT-04":
+                    {
+                        panRoomBooking.Visible = false;
+                        flpStaffManagement.Visible = false;
+                        flpMaintanceManagement.Visible = false;
+                        flpHousekeepingManagement.Visible = false;
+                        flpAccount.Visible = false;
+                        flpFinanceManagement.Visible = false;
+                        menuActivated(btnDashBoard);
+                        ucDashboard Home = new ucDashboard();
+                        openForm(Home);
+                    }
+                    break;
+                case "MK-03":
+                case "MK-04":
+                    {
+                        flpAccount.Visible = false;
+                        flpDeviceMangement.Visible = false;
+                        flpStaffManagement.Visible = false;
+                        flpFinanceManagement.Visible = false;
+                        flpMaintanceManagement.Visible = false;
+                        flpRoomManagement.Visible = false;
+                        flpHousekeepingManagement.Visible = false;
+                        menuActivated(btnDashBoard);
+                        ucDashboard Home = new ucDashboard();
+                        openForm(Home);
+                    }
+                    break;
+                default:
+                    {
+                        uc404 error = new uc404();
+                        openForm(error);
+                    }
+                    break;
+            }
         }
 
         public void LoadTenUser()

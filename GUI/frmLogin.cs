@@ -199,6 +199,7 @@ namespace GUI
                     this.Hide();
                     mainForm.user = login;
                     mainForm.userKH = loginKH;
+                    mainForm.phanQuyen = taiKhoanDTO.MaPQ;
                     mainForm.Show();
                     this.Close();
                 }
@@ -233,6 +234,7 @@ namespace GUI
                     loginKH.TenDangNhap = taiKhoanDTO.TenDangNhap;
                     loginKH = khachHangBLL.TimKH(taiKhoanDTO.MaTaiKhoan);
                     login = null;
+                    
                 }
                 else
                 {

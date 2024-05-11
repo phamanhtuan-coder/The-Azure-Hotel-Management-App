@@ -77,7 +77,7 @@ namespace DAL
                 else
                 {
                     phongBanDTO.TruongPhong = (int)reader["TruongPhong"];
-                    phongBanDTO.NgayNhanChuc = Convert.ToDateTime(reader["NgayNhanChuc"]);
+                    phongBanDTO.NgayNhanChuc = DateTime.Parse(reader["NgayNhanChuc"].ToString());
                 }
                 phongBanDTO.TrangThai = trangThai;
 

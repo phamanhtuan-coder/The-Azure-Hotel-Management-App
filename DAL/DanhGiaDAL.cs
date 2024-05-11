@@ -34,7 +34,7 @@ namespace DAL
                     danhGiaDTO.MaDP = (int) reader["MaDP"];
                     danhGiaDTO.DiemDanhGia = (int)reader["DiemDanhGia"];
                     danhGiaDTO.NhanXet = reader["NhanXet"].ToString();
-                    danhGia.NgayDanhGia = Convert.ToDateTime(reader["NgayDanhGia"].ToString());
+                    danhGia.NgayDanhGia = DateTime.Parse(reader["NgayDanhGia"].ToString());
                     danhGiaDTO.TrangThai = trangThai;
                     dsDanhGia.Add(danhGiaDTO);
                 }

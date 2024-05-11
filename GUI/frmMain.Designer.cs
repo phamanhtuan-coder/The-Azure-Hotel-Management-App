@@ -30,20 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            Syncfusion.Windows.Forms.Tools.DigitalClockRenderer digitalClockRenderer1 = new Syncfusion.Windows.Forms.Tools.DigitalClockRenderer();
-            Syncfusion.Windows.Forms.Tools.ClockRenderer clockRenderer1 = new Syncfusion.Windows.Forms.Tools.ClockRenderer();
+            Syncfusion.Windows.Forms.Tools.DigitalClockRenderer digitalClockRenderer2 = new Syncfusion.Windows.Forms.Tools.DigitalClockRenderer();
+            Syncfusion.Windows.Forms.Tools.ClockRenderer clockRenderer2 = new Syncfusion.Windows.Forms.Tools.ClockRenderer();
             this.tmrSideBar = new System.Windows.Forms.Timer(this.components);
             this.panDesktop = new System.Windows.Forms.Panel();
             this.panRoomBooking = new System.Windows.Forms.Panel();
             this.btnRoomBooking = new Syncfusion.WinForms.Controls.SfButton();
             this.panDashBoard = new System.Windows.Forms.Panel();
             this.btnDashBoard = new Syncfusion.WinForms.Controls.SfButton();
-            this.flpMaintanceManagement = new System.Windows.Forms.FlowLayoutPanel();
-            this.panMaintanceManagement = new System.Windows.Forms.Panel();
-            this.btnMaintanceManagement = new Syncfusion.WinForms.Controls.SfButton();
-            this.panMaintance = new System.Windows.Forms.Panel();
-            this.btnMaintance = new Syncfusion.WinForms.Controls.SfButton();
-            this.panMaintanceDetails = new System.Windows.Forms.Panel();
+            this.panLogOut = new System.Windows.Forms.Panel();
+            this.btnLogOut = new Syncfusion.WinForms.Controls.SfButton();
             this.flpBookingManagement = new System.Windows.Forms.FlowLayoutPanel();
             this.panBookingManagement = new System.Windows.Forms.Panel();
             this.btnBookingManagement = new Syncfusion.WinForms.Controls.SfButton();
@@ -53,6 +49,19 @@
             this.btnServiceType = new Syncfusion.WinForms.Controls.SfButton();
             this.panService = new System.Windows.Forms.Panel();
             this.btnService = new Syncfusion.WinForms.Controls.SfButton();
+            this.flpMaintanceManagement = new System.Windows.Forms.FlowLayoutPanel();
+            this.panMaintanceManagement = new System.Windows.Forms.Panel();
+            this.btnMaintanceManagement = new Syncfusion.WinForms.Controls.SfButton();
+            this.panMaintance = new System.Windows.Forms.Panel();
+            this.btnMaintance = new Syncfusion.WinForms.Controls.SfButton();
+            this.panMaintanceDetails = new System.Windows.Forms.Panel();
+            this.flpAccount = new System.Windows.Forms.FlowLayoutPanel();
+            this.panUserManagement = new System.Windows.Forms.Panel();
+            this.btnAccountManagement = new Syncfusion.WinForms.Controls.SfButton();
+            this.panTaiKhoan = new System.Windows.Forms.Panel();
+            this.btnAccount = new Syncfusion.WinForms.Controls.SfButton();
+            this.panSetup = new System.Windows.Forms.Panel();
+            this.btnAccountType = new Syncfusion.WinForms.Controls.SfButton();
             this.flpRoomManagement = new System.Windows.Forms.FlowLayoutPanel();
             this.panRoomManagement = new System.Windows.Forms.Panel();
             this.btnRoomManagement = new Syncfusion.WinForms.Controls.SfButton();
@@ -62,21 +71,31 @@
             this.btnRoomType = new Syncfusion.WinForms.Controls.SfButton();
             this.panRoomStatus = new System.Windows.Forms.Panel();
             this.btnRoomStatus = new Syncfusion.WinForms.Controls.SfButton();
-            this.panLogOut = new System.Windows.Forms.Panel();
-            this.btnLogOut = new Syncfusion.WinForms.Controls.SfButton();
+            this.flpStaffManagement = new System.Windows.Forms.FlowLayoutPanel();
+            this.panStaffManagement = new System.Windows.Forms.Panel();
+            this.btnStaffManagement = new Syncfusion.WinForms.Controls.SfButton();
+            this.panStaff = new System.Windows.Forms.Panel();
+            this.btnStaff = new Syncfusion.WinForms.Controls.SfButton();
+            this.panDepartment = new System.Windows.Forms.Panel();
+            this.btnDepartment = new Syncfusion.WinForms.Controls.SfButton();
+            this.panRole = new System.Windows.Forms.Panel();
+            this.btnRole = new Syncfusion.WinForms.Controls.SfButton();
             this.flpFinanceManagement = new System.Windows.Forms.FlowLayoutPanel();
             this.panFinanceManagement = new System.Windows.Forms.Panel();
             this.btnFinaceManagement = new Syncfusion.WinForms.Controls.SfButton();
             this.panBill = new System.Windows.Forms.Panel();
             this.btnHoaDon = new Syncfusion.WinForms.Controls.SfButton();
-            this.panBillDetails = new System.Windows.Forms.Panel();
-            this.btnBillDetails = new Syncfusion.WinForms.Controls.SfButton();
             this.panTax = new System.Windows.Forms.Panel();
             this.btnTax = new Syncfusion.WinForms.Controls.SfButton();
             this.panDiscount = new System.Windows.Forms.Panel();
             this.btnDiscount = new Syncfusion.WinForms.Controls.SfButton();
-            this.panReportings = new System.Windows.Forms.Panel();
-            this.btnReportings = new Syncfusion.WinForms.Controls.SfButton();
+            this.flpDeviceMangement = new System.Windows.Forms.FlowLayoutPanel();
+            this.panQuanLyTietBi = new System.Windows.Forms.Panel();
+            this.btnDeviceManagement = new Syncfusion.WinForms.Controls.SfButton();
+            this.panDevices = new System.Windows.Forms.Panel();
+            this.btnThietBi = new Syncfusion.WinForms.Controls.SfButton();
+            this.panDeviceStatus = new System.Windows.Forms.Panel();
+            this.btnDeviceStatus = new Syncfusion.WinForms.Controls.SfButton();
             this.flpHousekeepingManagement = new System.Windows.Forms.FlowLayoutPanel();
             this.panHousekeeping = new System.Windows.Forms.Panel();
             this.btnHousekeepingManagement = new Syncfusion.WinForms.Controls.SfButton();
@@ -92,29 +111,6 @@
             this.btnCustomerRanking = new Syncfusion.WinForms.Controls.SfButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnRating = new Syncfusion.WinForms.Controls.SfButton();
-            this.flpDeviceMangement = new System.Windows.Forms.FlowLayoutPanel();
-            this.panQuanLyTietBi = new System.Windows.Forms.Panel();
-            this.btnDeviceManagement = new Syncfusion.WinForms.Controls.SfButton();
-            this.panDevices = new System.Windows.Forms.Panel();
-            this.btnThietBi = new Syncfusion.WinForms.Controls.SfButton();
-            this.panDeviceStatus = new System.Windows.Forms.Panel();
-            this.btnDeviceStatus = new Syncfusion.WinForms.Controls.SfButton();
-            this.flpStaffManagement = new System.Windows.Forms.FlowLayoutPanel();
-            this.panStaffManagement = new System.Windows.Forms.Panel();
-            this.btnStaffManagement = new Syncfusion.WinForms.Controls.SfButton();
-            this.panStaff = new System.Windows.Forms.Panel();
-            this.btnStaff = new Syncfusion.WinForms.Controls.SfButton();
-            this.panDepartment = new System.Windows.Forms.Panel();
-            this.btnDepartment = new Syncfusion.WinForms.Controls.SfButton();
-            this.panRole = new System.Windows.Forms.Panel();
-            this.btnRole = new Syncfusion.WinForms.Controls.SfButton();
-            this.flpAccount = new System.Windows.Forms.FlowLayoutPanel();
-            this.panUserManagement = new System.Windows.Forms.Panel();
-            this.btnAccountManagement = new Syncfusion.WinForms.Controls.SfButton();
-            this.panTaiKhoan = new System.Windows.Forms.Panel();
-            this.btnAccount = new Syncfusion.WinForms.Controls.SfButton();
-            this.panSetup = new System.Windows.Forms.Panel();
-            this.btnAccountType = new Syncfusion.WinForms.Controls.SfButton();
             this.panHeader = new System.Windows.Forms.Panel();
             this.panMenu = new System.Windows.Forms.Panel();
             this.btnMenu = new Syncfusion.WinForms.Controls.SfButton();
@@ -128,27 +124,38 @@
             this.flpanSideBar = new System.Windows.Forms.FlowLayoutPanel();
             this.panRoomBooking.SuspendLayout();
             this.panDashBoard.SuspendLayout();
-            this.flpMaintanceManagement.SuspendLayout();
-            this.panMaintanceManagement.SuspendLayout();
-            this.panMaintance.SuspendLayout();
+            this.panLogOut.SuspendLayout();
             this.flpBookingManagement.SuspendLayout();
             this.panBookingManagement.SuspendLayout();
             this.panBooking.SuspendLayout();
             this.panServiceType.SuspendLayout();
             this.panService.SuspendLayout();
+            this.flpMaintanceManagement.SuspendLayout();
+            this.panMaintanceManagement.SuspendLayout();
+            this.panMaintance.SuspendLayout();
+            this.flpAccount.SuspendLayout();
+            this.panUserManagement.SuspendLayout();
+            this.panTaiKhoan.SuspendLayout();
+            this.panSetup.SuspendLayout();
             this.flpRoomManagement.SuspendLayout();
             this.panRoomManagement.SuspendLayout();
             this.panRoom.SuspendLayout();
             this.panRoomType.SuspendLayout();
             this.panRoomStatus.SuspendLayout();
-            this.panLogOut.SuspendLayout();
+            this.flpStaffManagement.SuspendLayout();
+            this.panStaffManagement.SuspendLayout();
+            this.panStaff.SuspendLayout();
+            this.panDepartment.SuspendLayout();
+            this.panRole.SuspendLayout();
             this.flpFinanceManagement.SuspendLayout();
             this.panFinanceManagement.SuspendLayout();
             this.panBill.SuspendLayout();
-            this.panBillDetails.SuspendLayout();
             this.panTax.SuspendLayout();
             this.panDiscount.SuspendLayout();
-            this.panReportings.SuspendLayout();
+            this.flpDeviceMangement.SuspendLayout();
+            this.panQuanLyTietBi.SuspendLayout();
+            this.panDevices.SuspendLayout();
+            this.panDeviceStatus.SuspendLayout();
             this.flpHousekeepingManagement.SuspendLayout();
             this.panHousekeeping.SuspendLayout();
             this.panDonPhong.SuspendLayout();
@@ -157,19 +164,6 @@
             this.panCustomer.SuspendLayout();
             this.panCustomerRanking.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.flpDeviceMangement.SuspendLayout();
-            this.panQuanLyTietBi.SuspendLayout();
-            this.panDevices.SuspendLayout();
-            this.panDeviceStatus.SuspendLayout();
-            this.flpStaffManagement.SuspendLayout();
-            this.panStaffManagement.SuspendLayout();
-            this.panStaff.SuspendLayout();
-            this.panDepartment.SuspendLayout();
-            this.panRole.SuspendLayout();
-            this.flpAccount.SuspendLayout();
-            this.panUserManagement.SuspendLayout();
-            this.panTaiKhoan.SuspendLayout();
-            this.panSetup.SuspendLayout();
             this.panHeader.SuspendLayout();
             this.panMenu.SuspendLayout();
             this.panWelcome.SuspendLayout();
@@ -218,7 +212,7 @@
             this.btnRoomBooking.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnRoomBooking.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnRoomBooking.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnRoomBooking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnRoomBooking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
             this.btnRoomBooking.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRoomBooking.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnRoomBooking.Style.PressedForeColor = System.Drawing.Color.White;
@@ -254,7 +248,7 @@
             this.btnDashBoard.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnDashBoard.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnDashBoard.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnDashBoard.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnDashBoard.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image9")));
             this.btnDashBoard.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnDashBoard.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnDashBoard.Style.PressedForeColor = System.Drawing.Color.White;
@@ -263,101 +257,44 @@
             this.btnDashBoard.Text = "Dashboard";
             this.btnDashBoard.Click += new System.EventHandler(this.btnDashBoard_Click);
             // 
-            // flpMaintanceManagement
+            // panLogOut
             // 
-            this.flpMaintanceManagement.BackColor = System.Drawing.Color.Teal;
-            this.flpMaintanceManagement.Controls.Add(this.panMaintanceManagement);
-            this.flpMaintanceManagement.Controls.Add(this.panMaintance);
-            this.flpMaintanceManagement.Controls.Add(this.panMaintanceDetails);
-            this.flpMaintanceManagement.Location = new System.Drawing.Point(0, 500);
-            this.flpMaintanceManagement.Margin = new System.Windows.Forms.Padding(0);
-            this.flpMaintanceManagement.MaximumSize = new System.Drawing.Size(220, 100);
-            this.flpMaintanceManagement.MinimumSize = new System.Drawing.Size(220, 50);
-            this.flpMaintanceManagement.Name = "flpMaintanceManagement";
-            this.flpMaintanceManagement.Size = new System.Drawing.Size(220, 50);
-            this.flpMaintanceManagement.TabIndex = 15;
+            this.panLogOut.Controls.Add(this.btnLogOut);
+            this.panLogOut.Location = new System.Drawing.Point(0, 550);
+            this.panLogOut.Margin = new System.Windows.Forms.Padding(0);
+            this.panLogOut.MinimumSize = new System.Drawing.Size(220, 50);
+            this.panLogOut.Name = "panLogOut";
+            this.panLogOut.Size = new System.Drawing.Size(220, 50);
+            this.panLogOut.TabIndex = 11;
             // 
-            // panMaintanceManagement
+            // btnLogOut
             // 
-            this.panMaintanceManagement.Controls.Add(this.btnMaintanceManagement);
-            this.panMaintanceManagement.Location = new System.Drawing.Point(0, 0);
-            this.panMaintanceManagement.Margin = new System.Windows.Forms.Padding(0);
-            this.panMaintanceManagement.Name = "panMaintanceManagement";
-            this.panMaintanceManagement.Size = new System.Drawing.Size(220, 50);
-            this.panMaintanceManagement.TabIndex = 5;
-            // 
-            // btnMaintanceManagement
-            // 
-            this.btnMaintanceManagement.AccessibleName = "Button";
-            this.btnMaintanceManagement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnMaintanceManagement.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMaintanceManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMaintanceManagement.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnMaintanceManagement.Location = new System.Drawing.Point(0, 0);
-            this.btnMaintanceManagement.Name = "btnMaintanceManagement";
-            this.btnMaintanceManagement.Size = new System.Drawing.Size(220, 50);
-            this.btnMaintanceManagement.Style.BackColor = System.Drawing.Color.Teal;
-            this.btnMaintanceManagement.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnMaintanceManagement.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnMaintanceManagement.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnMaintanceManagement.Style.ForeColor = System.Drawing.Color.White;
-            this.btnMaintanceManagement.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnMaintanceManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
-            this.btnMaintanceManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnMaintanceManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.btnMaintanceManagement.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnMaintanceManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnMaintanceManagement.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnMaintanceManagement.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnMaintanceManagement.TabIndex = 3;
-            this.btnMaintanceManagement.Text = "Quản lý bảo trì";
-            this.btnMaintanceManagement.Click += new System.EventHandler(this.Menu_Click);
-            // 
-            // panMaintance
-            // 
-            this.panMaintance.Controls.Add(this.btnMaintance);
-            this.panMaintance.Location = new System.Drawing.Point(0, 50);
-            this.panMaintance.Margin = new System.Windows.Forms.Padding(0);
-            this.panMaintance.Name = "panMaintance";
-            this.panMaintance.Size = new System.Drawing.Size(220, 50);
-            this.panMaintance.TabIndex = 6;
-            // 
-            // btnMaintance
-            // 
-            this.btnMaintance.AccessibleName = "Button";
-            this.btnMaintance.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnMaintance.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnMaintance.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMaintance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMaintance.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnMaintance.Location = new System.Drawing.Point(0, 0);
-            this.btnMaintance.Name = "btnMaintance";
-            this.btnMaintance.Size = new System.Drawing.Size(220, 50);
-            this.btnMaintance.Style.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnMaintance.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnMaintance.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnMaintance.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnMaintance.Style.ForeColor = System.Drawing.Color.White;
-            this.btnMaintance.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnMaintance.Style.HoverForeColor = System.Drawing.Color.Teal;
-            this.btnMaintance.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnMaintance.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            this.btnMaintance.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnMaintance.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnMaintance.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnMaintance.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnMaintance.TabIndex = 3;
-            this.btnMaintance.Text = "Bảo trì";
-            this.btnMaintance.UseVisualStyleBackColor = false;
-            this.btnMaintance.Click += new System.EventHandler(this.btnMaintance_Click);
-            // 
-            // panMaintanceDetails
-            // 
-            this.panMaintanceDetails.Location = new System.Drawing.Point(0, 100);
-            this.panMaintanceDetails.Margin = new System.Windows.Forms.Padding(0);
-            this.panMaintanceDetails.Name = "panMaintanceDetails";
-            this.panMaintanceDetails.Size = new System.Drawing.Size(220, 50);
-            this.panMaintanceDetails.TabIndex = 7;
+            this.btnLogOut.AccessibleName = "Button";
+            this.btnLogOut.BackColor = System.Drawing.Color.DarkRed;
+            this.btnLogOut.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLogOut.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogOut.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnLogOut.Location = new System.Drawing.Point(0, 0);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(220, 50);
+            this.btnLogOut.Style.BackColor = System.Drawing.Color.DarkRed;
+            this.btnLogOut.Style.FocusedBackColor = System.Drawing.Color.Maroon;
+            this.btnLogOut.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnLogOut.Style.FocusedImageForeColor = System.Drawing.Color.White;
+            this.btnLogOut.Style.ForeColor = System.Drawing.Color.White;
+            this.btnLogOut.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnLogOut.Style.HoverForeColor = System.Drawing.Color.DarkRed;
+            this.btnLogOut.Style.HoverImageForeColor = System.Drawing.Color.DarkRed;
+            this.btnLogOut.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnLogOut.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnLogOut.Style.PressedBackColor = System.Drawing.Color.DarkRed;
+            this.btnLogOut.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnLogOut.Style.PressedImageForeColor = System.Drawing.Color.White;
+            this.btnLogOut.TabIndex = 10;
+            this.btnLogOut.Text = "Đăng xuất";
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // flpBookingManagement
             // 
@@ -401,7 +338,7 @@
             this.btnBookingManagement.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnBookingManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnBookingManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnBookingManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.btnBookingManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image10")));
             this.btnBookingManagement.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnBookingManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnBookingManagement.Style.PressedForeColor = System.Drawing.Color.White;
@@ -439,7 +376,7 @@
             this.btnBooking.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnBooking.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnBooking.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnBooking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            this.btnBooking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image11")));
             this.btnBooking.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnBooking.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnBooking.Style.PressedForeColor = System.Drawing.Color.White;
@@ -478,7 +415,7 @@
             this.btnServiceType.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnServiceType.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnServiceType.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnServiceType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            this.btnServiceType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image12")));
             this.btnServiceType.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnServiceType.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnServiceType.Style.PressedForeColor = System.Drawing.Color.White;
@@ -517,7 +454,7 @@
             this.btnService.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnService.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnService.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnService.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
+            this.btnService.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image13")));
             this.btnService.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnService.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnService.Style.PressedForeColor = System.Drawing.Color.White;
@@ -527,1004 +464,101 @@
             this.btnService.UseVisualStyleBackColor = false;
             this.btnService.Click += new System.EventHandler(this.btnService_Click);
             // 
-            // flpRoomManagement
-            // 
-            this.flpRoomManagement.BackColor = System.Drawing.Color.Teal;
-            this.flpRoomManagement.Controls.Add(this.panRoomManagement);
-            this.flpRoomManagement.Controls.Add(this.panRoom);
-            this.flpRoomManagement.Controls.Add(this.panRoomType);
-            this.flpRoomManagement.Controls.Add(this.panRoomStatus);
-            this.flpRoomManagement.Location = new System.Drawing.Point(0, 450);
-            this.flpRoomManagement.Margin = new System.Windows.Forms.Padding(0);
-            this.flpRoomManagement.MaximumSize = new System.Drawing.Size(220, 200);
-            this.flpRoomManagement.MinimumSize = new System.Drawing.Size(220, 50);
-            this.flpRoomManagement.Name = "flpRoomManagement";
-            this.flpRoomManagement.Size = new System.Drawing.Size(220, 50);
-            this.flpRoomManagement.TabIndex = 13;
-            // 
-            // panRoomManagement
-            // 
-            this.panRoomManagement.Controls.Add(this.btnRoomManagement);
-            this.panRoomManagement.Location = new System.Drawing.Point(0, 0);
-            this.panRoomManagement.Margin = new System.Windows.Forms.Padding(0);
-            this.panRoomManagement.Name = "panRoomManagement";
-            this.panRoomManagement.Size = new System.Drawing.Size(220, 50);
-            this.panRoomManagement.TabIndex = 5;
-            // 
-            // btnRoomManagement
-            // 
-            this.btnRoomManagement.AccessibleName = "Button";
-            this.btnRoomManagement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRoomManagement.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRoomManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRoomManagement.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnRoomManagement.Location = new System.Drawing.Point(0, 0);
-            this.btnRoomManagement.Name = "btnRoomManagement";
-            this.btnRoomManagement.Size = new System.Drawing.Size(220, 50);
-            this.btnRoomManagement.Style.BackColor = System.Drawing.Color.Teal;
-            this.btnRoomManagement.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnRoomManagement.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnRoomManagement.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnRoomManagement.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRoomManagement.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnRoomManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
-            this.btnRoomManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnRoomManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
-            this.btnRoomManagement.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRoomManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnRoomManagement.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnRoomManagement.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnRoomManagement.TabIndex = 4;
-            this.btnRoomManagement.Text = "Quản lý phòng";
-            this.btnRoomManagement.Click += new System.EventHandler(this.Menu_Click);
-            // 
-            // panRoom
-            // 
-            this.panRoom.Controls.Add(this.btnRoom);
-            this.panRoom.Location = new System.Drawing.Point(0, 50);
-            this.panRoom.Margin = new System.Windows.Forms.Padding(0);
-            this.panRoom.Name = "panRoom";
-            this.panRoom.Size = new System.Drawing.Size(220, 50);
-            this.panRoom.TabIndex = 4;
-            // 
-            // btnRoom
-            // 
-            this.btnRoom.AccessibleName = "Button";
-            this.btnRoom.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRoom.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRoom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRoom.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnRoom.Location = new System.Drawing.Point(0, 0);
-            this.btnRoom.Name = "btnRoom";
-            this.btnRoom.Size = new System.Drawing.Size(220, 50);
-            this.btnRoom.Style.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnRoom.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnRoom.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnRoom.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnRoom.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRoom.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnRoom.Style.HoverForeColor = System.Drawing.Color.Teal;
-            this.btnRoom.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image9")));
-            this.btnRoom.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRoom.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnRoom.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnRoom.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnRoom.TabIndex = 4;
-            this.btnRoom.Text = "Phòng";
-            this.btnRoom.UseVisualStyleBackColor = false;
-            this.btnRoom.Click += new System.EventHandler(this.btnRoom_Click);
-            // 
-            // panRoomType
-            // 
-            this.panRoomType.Controls.Add(this.btnRoomType);
-            this.panRoomType.Location = new System.Drawing.Point(0, 100);
-            this.panRoomType.Margin = new System.Windows.Forms.Padding(0);
-            this.panRoomType.Name = "panRoomType";
-            this.panRoomType.Size = new System.Drawing.Size(220, 50);
-            this.panRoomType.TabIndex = 3;
-            // 
-            // btnRoomType
-            // 
-            this.btnRoomType.AccessibleName = "Button";
-            this.btnRoomType.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnRoomType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRoomType.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRoomType.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRoomType.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnRoomType.Location = new System.Drawing.Point(0, 0);
-            this.btnRoomType.Name = "btnRoomType";
-            this.btnRoomType.Size = new System.Drawing.Size(220, 50);
-            this.btnRoomType.Style.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnRoomType.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnRoomType.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnRoomType.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnRoomType.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRoomType.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnRoomType.Style.HoverForeColor = System.Drawing.Color.Teal;
-            this.btnRoomType.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnRoomType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image10")));
-            this.btnRoomType.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRoomType.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnRoomType.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnRoomType.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnRoomType.TabIndex = 3;
-            this.btnRoomType.Text = "Loại phòng";
-            this.btnRoomType.UseVisualStyleBackColor = false;
-            this.btnRoomType.Click += new System.EventHandler(this.btnRoomType_Click);
-            // 
-            // panRoomStatus
-            // 
-            this.panRoomStatus.Controls.Add(this.btnRoomStatus);
-            this.panRoomStatus.Location = new System.Drawing.Point(0, 150);
-            this.panRoomStatus.Margin = new System.Windows.Forms.Padding(0);
-            this.panRoomStatus.Name = "panRoomStatus";
-            this.panRoomStatus.Size = new System.Drawing.Size(220, 50);
-            this.panRoomStatus.TabIndex = 4;
-            // 
-            // btnRoomStatus
-            // 
-            this.btnRoomStatus.AccessibleName = "Button";
-            this.btnRoomStatus.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnRoomStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRoomStatus.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRoomStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRoomStatus.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnRoomStatus.Location = new System.Drawing.Point(0, 0);
-            this.btnRoomStatus.Name = "btnRoomStatus";
-            this.btnRoomStatus.Size = new System.Drawing.Size(220, 50);
-            this.btnRoomStatus.Style.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnRoomStatus.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnRoomStatus.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnRoomStatus.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnRoomStatus.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRoomStatus.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnRoomStatus.Style.HoverForeColor = System.Drawing.Color.Teal;
-            this.btnRoomStatus.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnRoomStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image11")));
-            this.btnRoomStatus.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRoomStatus.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnRoomStatus.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnRoomStatus.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnRoomStatus.TabIndex = 3;
-            this.btnRoomStatus.Text = "Trạng thái phòng";
-            this.btnRoomStatus.UseVisualStyleBackColor = false;
-            this.btnRoomStatus.Click += new System.EventHandler(this.btnRoomStatus_Click);
-            // 
-            // panLogOut
-            // 
-            this.panLogOut.Controls.Add(this.btnLogOut);
-            this.panLogOut.Location = new System.Drawing.Point(0, 550);
-            this.panLogOut.Margin = new System.Windows.Forms.Padding(0);
-            this.panLogOut.MinimumSize = new System.Drawing.Size(220, 50);
-            this.panLogOut.Name = "panLogOut";
-            this.panLogOut.Size = new System.Drawing.Size(220, 50);
-            this.panLogOut.TabIndex = 11;
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.AccessibleName = "Button";
-            this.btnLogOut.BackColor = System.Drawing.Color.DarkRed;
-            this.btnLogOut.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnLogOut.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogOut.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnLogOut.Location = new System.Drawing.Point(0, 0);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(220, 50);
-            this.btnLogOut.Style.BackColor = System.Drawing.Color.DarkRed;
-            this.btnLogOut.Style.FocusedBackColor = System.Drawing.Color.Maroon;
-            this.btnLogOut.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnLogOut.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnLogOut.Style.ForeColor = System.Drawing.Color.White;
-            this.btnLogOut.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnLogOut.Style.HoverForeColor = System.Drawing.Color.DarkRed;
-            this.btnLogOut.Style.HoverImageForeColor = System.Drawing.Color.DarkRed;
-            this.btnLogOut.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image12")));
-            this.btnLogOut.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnLogOut.Style.PressedBackColor = System.Drawing.Color.DarkRed;
-            this.btnLogOut.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnLogOut.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnLogOut.TabIndex = 10;
-            this.btnLogOut.Text = "Đăng xuất";
-            this.btnLogOut.UseVisualStyleBackColor = false;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
-            // 
-            // flpFinanceManagement
-            // 
-            this.flpFinanceManagement.BackColor = System.Drawing.Color.Teal;
-            this.flpFinanceManagement.Controls.Add(this.panFinanceManagement);
-            this.flpFinanceManagement.Controls.Add(this.panBill);
-            this.flpFinanceManagement.Controls.Add(this.panBillDetails);
-            this.flpFinanceManagement.Controls.Add(this.panTax);
-            this.flpFinanceManagement.Controls.Add(this.panDiscount);
-            this.flpFinanceManagement.Controls.Add(this.panReportings);
-            this.flpFinanceManagement.Location = new System.Drawing.Point(0, 400);
-            this.flpFinanceManagement.Margin = new System.Windows.Forms.Padding(0);
-            this.flpFinanceManagement.MaximumSize = new System.Drawing.Size(220, 300);
-            this.flpFinanceManagement.MinimumSize = new System.Drawing.Size(220, 50);
-            this.flpFinanceManagement.Name = "flpFinanceManagement";
-            this.flpFinanceManagement.Size = new System.Drawing.Size(220, 50);
-            this.flpFinanceManagement.TabIndex = 16;
-            // 
-            // panFinanceManagement
-            // 
-            this.panFinanceManagement.Controls.Add(this.btnFinaceManagement);
-            this.panFinanceManagement.Location = new System.Drawing.Point(0, 0);
-            this.panFinanceManagement.Margin = new System.Windows.Forms.Padding(0);
-            this.panFinanceManagement.Name = "panFinanceManagement";
-            this.panFinanceManagement.Size = new System.Drawing.Size(220, 50);
-            this.panFinanceManagement.TabIndex = 10;
-            // 
-            // btnFinaceManagement
-            // 
-            this.btnFinaceManagement.AccessibleName = "Button";
-            this.btnFinaceManagement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFinaceManagement.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinaceManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFinaceManagement.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnFinaceManagement.Location = new System.Drawing.Point(0, 0);
-            this.btnFinaceManagement.Name = "btnFinaceManagement";
-            this.btnFinaceManagement.Size = new System.Drawing.Size(220, 50);
-            this.btnFinaceManagement.Style.BackColor = System.Drawing.Color.Teal;
-            this.btnFinaceManagement.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnFinaceManagement.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnFinaceManagement.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnFinaceManagement.Style.ForeColor = System.Drawing.Color.White;
-            this.btnFinaceManagement.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnFinaceManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
-            this.btnFinaceManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnFinaceManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image13")));
-            this.btnFinaceManagement.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnFinaceManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnFinaceManagement.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnFinaceManagement.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnFinaceManagement.TabIndex = 9;
-            this.btnFinaceManagement.Text = "Quản lý tài chính";
-            this.btnFinaceManagement.Click += new System.EventHandler(this.Menu_Click);
-            // 
-            // panBill
-            // 
-            this.panBill.Controls.Add(this.btnHoaDon);
-            this.panBill.Location = new System.Drawing.Point(0, 50);
-            this.panBill.Margin = new System.Windows.Forms.Padding(0);
-            this.panBill.Name = "panBill";
-            this.panBill.Size = new System.Drawing.Size(220, 50);
-            this.panBill.TabIndex = 8;
-            // 
-            // btnHoaDon
-            // 
-            this.btnHoaDon.AccessibleName = "Button";
-            this.btnHoaDon.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnHoaDon.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHoaDon.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnHoaDon.Location = new System.Drawing.Point(0, 0);
-            this.btnHoaDon.Name = "btnHoaDon";
-            this.btnHoaDon.Size = new System.Drawing.Size(220, 50);
-            this.btnHoaDon.Style.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnHoaDon.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnHoaDon.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnHoaDon.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnHoaDon.Style.ForeColor = System.Drawing.Color.White;
-            this.btnHoaDon.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnHoaDon.Style.HoverForeColor = System.Drawing.Color.Teal;
-            this.btnHoaDon.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnHoaDon.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image14")));
-            this.btnHoaDon.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnHoaDon.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnHoaDon.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnHoaDon.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnHoaDon.TabIndex = 8;
-            this.btnHoaDon.Text = "Hóa đơn";
-            this.btnHoaDon.UseVisualStyleBackColor = false;
-            this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
-            // 
-            // panBillDetails
-            // 
-            this.panBillDetails.Controls.Add(this.btnBillDetails);
-            this.panBillDetails.Location = new System.Drawing.Point(0, 100);
-            this.panBillDetails.Margin = new System.Windows.Forms.Padding(0);
-            this.panBillDetails.Name = "panBillDetails";
-            this.panBillDetails.Size = new System.Drawing.Size(220, 50);
-            this.panBillDetails.TabIndex = 9;
-            // 
-            // btnBillDetails
-            // 
-            this.btnBillDetails.AccessibleName = "Button";
-            this.btnBillDetails.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnBillDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBillDetails.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBillDetails.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBillDetails.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnBillDetails.Location = new System.Drawing.Point(0, 0);
-            this.btnBillDetails.Name = "btnBillDetails";
-            this.btnBillDetails.Size = new System.Drawing.Size(220, 50);
-            this.btnBillDetails.Style.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnBillDetails.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnBillDetails.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnBillDetails.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnBillDetails.Style.ForeColor = System.Drawing.Color.White;
-            this.btnBillDetails.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnBillDetails.Style.HoverForeColor = System.Drawing.Color.Teal;
-            this.btnBillDetails.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnBillDetails.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image15")));
-            this.btnBillDetails.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnBillDetails.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnBillDetails.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnBillDetails.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnBillDetails.TabIndex = 8;
-            this.btnBillDetails.Text = "Chi tiết hóa đơn";
-            this.btnBillDetails.UseVisualStyleBackColor = false;
-            this.btnBillDetails.Click += new System.EventHandler(this.btnBillDetails_Click);
-            // 
-            // panTax
-            // 
-            this.panTax.Controls.Add(this.btnTax);
-            this.panTax.Location = new System.Drawing.Point(0, 150);
-            this.panTax.Margin = new System.Windows.Forms.Padding(0);
-            this.panTax.Name = "panTax";
-            this.panTax.Size = new System.Drawing.Size(220, 50);
-            this.panTax.TabIndex = 17;
-            // 
-            // btnTax
-            // 
-            this.btnTax.AccessibleName = "Button";
-            this.btnTax.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnTax.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnTax.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTax.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTax.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnTax.Location = new System.Drawing.Point(0, 0);
-            this.btnTax.Name = "btnTax";
-            this.btnTax.Size = new System.Drawing.Size(220, 50);
-            this.btnTax.Style.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnTax.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnTax.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnTax.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnTax.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTax.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnTax.Style.HoverForeColor = System.Drawing.Color.Teal;
-            this.btnTax.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnTax.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image16")));
-            this.btnTax.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnTax.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnTax.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnTax.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnTax.TabIndex = 9;
-            this.btnTax.Text = "Thuế";
-            this.btnTax.UseVisualStyleBackColor = false;
-            this.btnTax.Click += new System.EventHandler(this.btnTax_Click);
-            // 
-            // panDiscount
-            // 
-            this.panDiscount.Controls.Add(this.btnDiscount);
-            this.panDiscount.Location = new System.Drawing.Point(0, 200);
-            this.panDiscount.Margin = new System.Windows.Forms.Padding(0);
-            this.panDiscount.Name = "panDiscount";
-            this.panDiscount.Size = new System.Drawing.Size(220, 50);
-            this.panDiscount.TabIndex = 18;
-            // 
-            // btnDiscount
-            // 
-            this.btnDiscount.AccessibleName = "Button";
-            this.btnDiscount.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnDiscount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDiscount.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDiscount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDiscount.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnDiscount.Location = new System.Drawing.Point(0, 0);
-            this.btnDiscount.Name = "btnDiscount";
-            this.btnDiscount.Size = new System.Drawing.Size(220, 50);
-            this.btnDiscount.Style.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnDiscount.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnDiscount.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnDiscount.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnDiscount.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDiscount.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnDiscount.Style.HoverForeColor = System.Drawing.Color.Teal;
-            this.btnDiscount.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnDiscount.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image17")));
-            this.btnDiscount.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDiscount.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnDiscount.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnDiscount.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnDiscount.TabIndex = 8;
-            this.btnDiscount.Text = "Khuyến mãi";
-            this.btnDiscount.UseVisualStyleBackColor = false;
-            this.btnDiscount.Click += new System.EventHandler(this.btnDiscount_Click);
-            // 
-            // panReportings
-            // 
-            this.panReportings.Controls.Add(this.btnReportings);
-            this.panReportings.Location = new System.Drawing.Point(0, 250);
-            this.panReportings.Margin = new System.Windows.Forms.Padding(0);
-            this.panReportings.Name = "panReportings";
-            this.panReportings.Size = new System.Drawing.Size(220, 50);
-            this.panReportings.TabIndex = 9;
-            // 
-            // btnReportings
-            // 
-            this.btnReportings.AccessibleName = "Button";
-            this.btnReportings.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnReportings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnReportings.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReportings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportings.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnReportings.Location = new System.Drawing.Point(0, 0);
-            this.btnReportings.Name = "btnReportings";
-            this.btnReportings.Size = new System.Drawing.Size(220, 50);
-            this.btnReportings.Style.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnReportings.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnReportings.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnReportings.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnReportings.Style.ForeColor = System.Drawing.Color.White;
-            this.btnReportings.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnReportings.Style.HoverForeColor = System.Drawing.Color.Teal;
-            this.btnReportings.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnReportings.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image18")));
-            this.btnReportings.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnReportings.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnReportings.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnReportings.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnReportings.TabIndex = 9;
-            this.btnReportings.Text = "Báo cáo";
-            this.btnReportings.UseVisualStyleBackColor = false;
-            // 
-            // flpHousekeepingManagement
-            // 
-            this.flpHousekeepingManagement.BackColor = System.Drawing.Color.Teal;
-            this.flpHousekeepingManagement.Controls.Add(this.panHousekeeping);
-            this.flpHousekeepingManagement.Controls.Add(this.panDonPhong);
-            this.flpHousekeepingManagement.Controls.Add(this.panDonPhongDetails);
-            this.flpHousekeepingManagement.Location = new System.Drawing.Point(0, 350);
-            this.flpHousekeepingManagement.Margin = new System.Windows.Forms.Padding(0);
-            this.flpHousekeepingManagement.MaximumSize = new System.Drawing.Size(220, 100);
-            this.flpHousekeepingManagement.MinimumSize = new System.Drawing.Size(220, 50);
-            this.flpHousekeepingManagement.Name = "flpHousekeepingManagement";
-            this.flpHousekeepingManagement.Size = new System.Drawing.Size(220, 50);
-            this.flpHousekeepingManagement.TabIndex = 14;
-            // 
-            // panHousekeeping
-            // 
-            this.panHousekeeping.Controls.Add(this.btnHousekeepingManagement);
-            this.panHousekeeping.Location = new System.Drawing.Point(0, 0);
-            this.panHousekeeping.Margin = new System.Windows.Forms.Padding(0);
-            this.panHousekeeping.Name = "panHousekeeping";
-            this.panHousekeeping.Size = new System.Drawing.Size(220, 50);
-            this.panHousekeeping.TabIndex = 5;
-            // 
-            // btnHousekeepingManagement
-            // 
-            this.btnHousekeepingManagement.AccessibleName = "Button";
-            this.btnHousekeepingManagement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnHousekeepingManagement.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHousekeepingManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHousekeepingManagement.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnHousekeepingManagement.Location = new System.Drawing.Point(0, 0);
-            this.btnHousekeepingManagement.Name = "btnHousekeepingManagement";
-            this.btnHousekeepingManagement.Size = new System.Drawing.Size(220, 50);
-            this.btnHousekeepingManagement.Style.BackColor = System.Drawing.Color.Teal;
-            this.btnHousekeepingManagement.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnHousekeepingManagement.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnHousekeepingManagement.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnHousekeepingManagement.Style.ForeColor = System.Drawing.Color.White;
-            this.btnHousekeepingManagement.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnHousekeepingManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
-            this.btnHousekeepingManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnHousekeepingManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image19")));
-            this.btnHousekeepingManagement.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnHousekeepingManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnHousekeepingManagement.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnHousekeepingManagement.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnHousekeepingManagement.TabIndex = 3;
-            this.btnHousekeepingManagement.Text = "Quản lý dọn phòng";
-            this.btnHousekeepingManagement.Click += new System.EventHandler(this.Menu_Click);
-            // 
-            // panDonPhong
-            // 
-            this.panDonPhong.Controls.Add(this.btnHousekeeping);
-            this.panDonPhong.Location = new System.Drawing.Point(0, 50);
-            this.panDonPhong.Margin = new System.Windows.Forms.Padding(0);
-            this.panDonPhong.Name = "panDonPhong";
-            this.panDonPhong.Size = new System.Drawing.Size(220, 50);
-            this.panDonPhong.TabIndex = 6;
-            // 
-            // btnHousekeeping
-            // 
-            this.btnHousekeeping.AccessibleName = "Button";
-            this.btnHousekeeping.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnHousekeeping.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnHousekeeping.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHousekeeping.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHousekeeping.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnHousekeeping.Location = new System.Drawing.Point(0, 0);
-            this.btnHousekeeping.Name = "btnHousekeeping";
-            this.btnHousekeeping.Size = new System.Drawing.Size(220, 50);
-            this.btnHousekeeping.Style.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnHousekeeping.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnHousekeeping.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnHousekeeping.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnHousekeeping.Style.ForeColor = System.Drawing.Color.White;
-            this.btnHousekeeping.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnHousekeeping.Style.HoverForeColor = System.Drawing.Color.Teal;
-            this.btnHousekeeping.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnHousekeeping.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image20")));
-            this.btnHousekeeping.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnHousekeeping.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnHousekeeping.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnHousekeeping.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnHousekeeping.TabIndex = 3;
-            this.btnHousekeeping.Text = "Dọn phòng";
-            this.btnHousekeeping.UseVisualStyleBackColor = false;
-            this.btnHousekeeping.Click += new System.EventHandler(this.btnHousekeeping_Click);
-            // 
-            // panDonPhongDetails
-            // 
-            this.panDonPhongDetails.Location = new System.Drawing.Point(0, 100);
-            this.panDonPhongDetails.Margin = new System.Windows.Forms.Padding(0);
-            this.panDonPhongDetails.Name = "panDonPhongDetails";
-            this.panDonPhongDetails.Size = new System.Drawing.Size(220, 50);
-            this.panDonPhongDetails.TabIndex = 7;
-            // 
-            // flpCustomerManagement
-            // 
-            this.flpCustomerManagement.BackColor = System.Drawing.Color.Teal;
-            this.flpCustomerManagement.Controls.Add(this.panCustomerManagement);
-            this.flpCustomerManagement.Controls.Add(this.panCustomer);
-            this.flpCustomerManagement.Controls.Add(this.panCustomerRanking);
-            this.flpCustomerManagement.Controls.Add(this.panel1);
-            this.flpCustomerManagement.Location = new System.Drawing.Point(0, 300);
-            this.flpCustomerManagement.Margin = new System.Windows.Forms.Padding(0);
-            this.flpCustomerManagement.MaximumSize = new System.Drawing.Size(220, 200);
-            this.flpCustomerManagement.MinimumSize = new System.Drawing.Size(220, 50);
-            this.flpCustomerManagement.Name = "flpCustomerManagement";
-            this.flpCustomerManagement.Size = new System.Drawing.Size(220, 50);
-            this.flpCustomerManagement.TabIndex = 16;
-            // 
-            // panCustomerManagement
-            // 
-            this.panCustomerManagement.Controls.Add(this.btnCustomerManagement);
-            this.panCustomerManagement.Location = new System.Drawing.Point(0, 0);
-            this.panCustomerManagement.Margin = new System.Windows.Forms.Padding(0);
-            this.panCustomerManagement.Name = "panCustomerManagement";
-            this.panCustomerManagement.Size = new System.Drawing.Size(220, 50);
-            this.panCustomerManagement.TabIndex = 6;
-            // 
-            // btnCustomerManagement
-            // 
-            this.btnCustomerManagement.AccessibleName = "Button";
-            this.btnCustomerManagement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCustomerManagement.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomerManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCustomerManagement.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnCustomerManagement.Location = new System.Drawing.Point(0, 0);
-            this.btnCustomerManagement.Name = "btnCustomerManagement";
-            this.btnCustomerManagement.Size = new System.Drawing.Size(220, 50);
-            this.btnCustomerManagement.Style.BackColor = System.Drawing.Color.Teal;
-            this.btnCustomerManagement.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnCustomerManagement.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnCustomerManagement.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnCustomerManagement.Style.ForeColor = System.Drawing.Color.White;
-            this.btnCustomerManagement.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnCustomerManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
-            this.btnCustomerManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnCustomerManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image21")));
-            this.btnCustomerManagement.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnCustomerManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnCustomerManagement.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnCustomerManagement.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnCustomerManagement.TabIndex = 5;
-            this.btnCustomerManagement.Text = "Quản lý khách";
-            this.btnCustomerManagement.Click += new System.EventHandler(this.Menu_Click);
-            // 
-            // panCustomer
-            // 
-            this.panCustomer.Controls.Add(this.btnCustomer);
-            this.panCustomer.Location = new System.Drawing.Point(0, 50);
-            this.panCustomer.Margin = new System.Windows.Forms.Padding(0);
-            this.panCustomer.Name = "panCustomer";
-            this.panCustomer.Size = new System.Drawing.Size(220, 50);
-            this.panCustomer.TabIndex = 5;
-            // 
-            // btnCustomer
-            // 
-            this.btnCustomer.AccessibleName = "Button";
-            this.btnCustomer.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCustomer.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCustomer.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnCustomer.Location = new System.Drawing.Point(0, 0);
-            this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Size = new System.Drawing.Size(220, 50);
-            this.btnCustomer.Style.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnCustomer.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnCustomer.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnCustomer.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnCustomer.Style.ForeColor = System.Drawing.Color.White;
-            this.btnCustomer.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnCustomer.Style.HoverForeColor = System.Drawing.Color.Teal;
-            this.btnCustomer.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnCustomer.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image22")));
-            this.btnCustomer.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnCustomer.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnCustomer.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnCustomer.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnCustomer.TabIndex = 5;
-            this.btnCustomer.Text = "Khách hàng";
-            this.btnCustomer.UseVisualStyleBackColor = false;
-            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
-            // 
-            // panCustomerRanking
-            // 
-            this.panCustomerRanking.Controls.Add(this.btnCustomerRanking);
-            this.panCustomerRanking.Location = new System.Drawing.Point(0, 100);
-            this.panCustomerRanking.Margin = new System.Windows.Forms.Padding(0);
-            this.panCustomerRanking.Name = "panCustomerRanking";
-            this.panCustomerRanking.Size = new System.Drawing.Size(220, 50);
-            this.panCustomerRanking.TabIndex = 7;
-            // 
-            // btnCustomerRanking
-            // 
-            this.btnCustomerRanking.AccessibleName = "Button";
-            this.btnCustomerRanking.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnCustomerRanking.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCustomerRanking.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomerRanking.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCustomerRanking.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnCustomerRanking.Location = new System.Drawing.Point(0, 0);
-            this.btnCustomerRanking.Name = "btnCustomerRanking";
-            this.btnCustomerRanking.Size = new System.Drawing.Size(220, 50);
-            this.btnCustomerRanking.Style.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnCustomerRanking.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnCustomerRanking.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnCustomerRanking.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnCustomerRanking.Style.ForeColor = System.Drawing.Color.White;
-            this.btnCustomerRanking.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnCustomerRanking.Style.HoverForeColor = System.Drawing.Color.Teal;
-            this.btnCustomerRanking.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnCustomerRanking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image23")));
-            this.btnCustomerRanking.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnCustomerRanking.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnCustomerRanking.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnCustomerRanking.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnCustomerRanking.TabIndex = 5;
-            this.btnCustomerRanking.Text = "Hạng khách hàng";
-            this.btnCustomerRanking.UseVisualStyleBackColor = false;
-            this.btnCustomerRanking.Click += new System.EventHandler(this.btnCustomerRanking_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnRating);
-            this.panel1.Location = new System.Drawing.Point(0, 150);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(220, 50);
-            this.panel1.TabIndex = 17;
-            // 
-            // btnRating
-            // 
-            this.btnRating.AccessibleName = "Button";
-            this.btnRating.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnRating.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRating.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRating.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRating.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnRating.Location = new System.Drawing.Point(0, 0);
-            this.btnRating.Name = "btnRating";
-            this.btnRating.Size = new System.Drawing.Size(220, 50);
-            this.btnRating.Style.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnRating.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnRating.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnRating.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnRating.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRating.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnRating.Style.HoverForeColor = System.Drawing.Color.Teal;
-            this.btnRating.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnRating.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image24")));
-            this.btnRating.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRating.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnRating.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnRating.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnRating.TabIndex = 5;
-            this.btnRating.Text = "Đánh giá";
-            this.btnRating.UseVisualStyleBackColor = false;
-            this.btnRating.Click += new System.EventHandler(this.btnRating_Click);
-            // 
-            // flpDeviceMangement
-            // 
-            this.flpDeviceMangement.BackColor = System.Drawing.Color.Teal;
-            this.flpDeviceMangement.Controls.Add(this.panQuanLyTietBi);
-            this.flpDeviceMangement.Controls.Add(this.panDevices);
-            this.flpDeviceMangement.Controls.Add(this.panDeviceStatus);
-            this.flpDeviceMangement.Location = new System.Drawing.Point(0, 250);
-            this.flpDeviceMangement.Margin = new System.Windows.Forms.Padding(0);
-            this.flpDeviceMangement.MaximumSize = new System.Drawing.Size(220, 150);
-            this.flpDeviceMangement.MinimumSize = new System.Drawing.Size(220, 50);
-            this.flpDeviceMangement.Name = "flpDeviceMangement";
-            this.flpDeviceMangement.Size = new System.Drawing.Size(220, 50);
-            this.flpDeviceMangement.TabIndex = 16;
-            // 
-            // panQuanLyTietBi
-            // 
-            this.panQuanLyTietBi.Controls.Add(this.btnDeviceManagement);
-            this.panQuanLyTietBi.Location = new System.Drawing.Point(0, 0);
-            this.panQuanLyTietBi.Margin = new System.Windows.Forms.Padding(0);
-            this.panQuanLyTietBi.Name = "panQuanLyTietBi";
-            this.panQuanLyTietBi.Size = new System.Drawing.Size(220, 50);
-            this.panQuanLyTietBi.TabIndex = 5;
-            // 
-            // btnDeviceManagement
-            // 
-            this.btnDeviceManagement.AccessibleName = "Button";
-            this.btnDeviceManagement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeviceManagement.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeviceManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeviceManagement.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnDeviceManagement.Location = new System.Drawing.Point(0, 0);
-            this.btnDeviceManagement.Name = "btnDeviceManagement";
-            this.btnDeviceManagement.Size = new System.Drawing.Size(220, 50);
-            this.btnDeviceManagement.Style.BackColor = System.Drawing.Color.Teal;
-            this.btnDeviceManagement.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnDeviceManagement.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnDeviceManagement.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnDeviceManagement.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeviceManagement.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnDeviceManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
-            this.btnDeviceManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnDeviceManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image25")));
-            this.btnDeviceManagement.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeviceManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnDeviceManagement.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnDeviceManagement.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnDeviceManagement.TabIndex = 3;
-            this.btnDeviceManagement.Text = "Quản lý thiết bị";
-            this.btnDeviceManagement.Click += new System.EventHandler(this.Menu_Click);
-            // 
-            // panDevices
-            // 
-            this.panDevices.Controls.Add(this.btnThietBi);
-            this.panDevices.Location = new System.Drawing.Point(0, 50);
-            this.panDevices.Margin = new System.Windows.Forms.Padding(0);
-            this.panDevices.Name = "panDevices";
-            this.panDevices.Size = new System.Drawing.Size(220, 50);
-            this.panDevices.TabIndex = 6;
-            // 
-            // btnThietBi
-            // 
-            this.btnThietBi.AccessibleName = "Button";
-            this.btnThietBi.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnThietBi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnThietBi.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThietBi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThietBi.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnThietBi.Location = new System.Drawing.Point(0, 0);
-            this.btnThietBi.Name = "btnThietBi";
-            this.btnThietBi.Size = new System.Drawing.Size(220, 50);
-            this.btnThietBi.Style.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnThietBi.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnThietBi.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnThietBi.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnThietBi.Style.ForeColor = System.Drawing.Color.White;
-            this.btnThietBi.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnThietBi.Style.HoverForeColor = System.Drawing.Color.Teal;
-            this.btnThietBi.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnThietBi.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image26")));
-            this.btnThietBi.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnThietBi.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnThietBi.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnThietBi.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnThietBi.TabIndex = 3;
-            this.btnThietBi.Text = "Thiết bị";
-            this.btnThietBi.UseVisualStyleBackColor = false;
-            this.btnThietBi.Click += new System.EventHandler(this.btnThietBi_Click);
-            // 
-            // panDeviceStatus
-            // 
-            this.panDeviceStatus.Controls.Add(this.btnDeviceStatus);
-            this.panDeviceStatus.Location = new System.Drawing.Point(0, 100);
-            this.panDeviceStatus.Margin = new System.Windows.Forms.Padding(0);
-            this.panDeviceStatus.Name = "panDeviceStatus";
-            this.panDeviceStatus.Size = new System.Drawing.Size(220, 50);
-            this.panDeviceStatus.TabIndex = 7;
-            // 
-            // btnDeviceStatus
-            // 
-            this.btnDeviceStatus.AccessibleName = "Button";
-            this.btnDeviceStatus.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnDeviceStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeviceStatus.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeviceStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeviceStatus.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnDeviceStatus.Location = new System.Drawing.Point(0, 0);
-            this.btnDeviceStatus.Name = "btnDeviceStatus";
-            this.btnDeviceStatus.Size = new System.Drawing.Size(220, 50);
-            this.btnDeviceStatus.Style.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnDeviceStatus.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnDeviceStatus.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnDeviceStatus.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnDeviceStatus.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeviceStatus.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnDeviceStatus.Style.HoverForeColor = System.Drawing.Color.Teal;
-            this.btnDeviceStatus.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnDeviceStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image27")));
-            this.btnDeviceStatus.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeviceStatus.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnDeviceStatus.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnDeviceStatus.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnDeviceStatus.TabIndex = 3;
-            this.btnDeviceStatus.Text = "Tình trạng thiết bị";
-            this.btnDeviceStatus.UseVisualStyleBackColor = false;
-            this.btnDeviceStatus.Click += new System.EventHandler(this.btnDeviceStatus_Click);
-            // 
-            // flpStaffManagement
-            // 
-            this.flpStaffManagement.BackColor = System.Drawing.Color.Teal;
-            this.flpStaffManagement.Controls.Add(this.panStaffManagement);
-            this.flpStaffManagement.Controls.Add(this.panStaff);
-            this.flpStaffManagement.Controls.Add(this.panDepartment);
-            this.flpStaffManagement.Controls.Add(this.panRole);
-            this.flpStaffManagement.Location = new System.Drawing.Point(0, 200);
-            this.flpStaffManagement.Margin = new System.Windows.Forms.Padding(0);
-            this.flpStaffManagement.MaximumSize = new System.Drawing.Size(220, 200);
-            this.flpStaffManagement.MinimumSize = new System.Drawing.Size(220, 50);
-            this.flpStaffManagement.Name = "flpStaffManagement";
-            this.flpStaffManagement.Size = new System.Drawing.Size(220, 50);
-            this.flpStaffManagement.TabIndex = 15;
-            this.flpStaffManagement.Click += new System.EventHandler(this.Menu_Click);
-            // 
-            // panStaffManagement
-            // 
-            this.panStaffManagement.Controls.Add(this.btnStaffManagement);
-            this.panStaffManagement.Location = new System.Drawing.Point(0, 0);
-            this.panStaffManagement.Margin = new System.Windows.Forms.Padding(0);
-            this.panStaffManagement.Name = "panStaffManagement";
-            this.panStaffManagement.Size = new System.Drawing.Size(220, 50);
-            this.panStaffManagement.TabIndex = 13;
-            // 
-            // btnStaffManagement
-            // 
-            this.btnStaffManagement.AccessibleName = "Button";
-            this.btnStaffManagement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnStaffManagement.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStaffManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStaffManagement.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnStaffManagement.Location = new System.Drawing.Point(0, 0);
-            this.btnStaffManagement.Name = "btnStaffManagement";
-            this.btnStaffManagement.Size = new System.Drawing.Size(220, 50);
-            this.btnStaffManagement.Style.BackColor = System.Drawing.Color.Teal;
-            this.btnStaffManagement.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnStaffManagement.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnStaffManagement.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnStaffManagement.Style.ForeColor = System.Drawing.Color.White;
-            this.btnStaffManagement.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnStaffManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
-            this.btnStaffManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnStaffManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image28")));
-            this.btnStaffManagement.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnStaffManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnStaffManagement.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnStaffManagement.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnStaffManagement.TabIndex = 10;
-            this.btnStaffManagement.Text = "Quản lý nhân viên";
-            this.btnStaffManagement.Click += new System.EventHandler(this.Menu_Click);
-            // 
-            // panStaff
-            // 
-            this.panStaff.Controls.Add(this.btnStaff);
-            this.panStaff.Location = new System.Drawing.Point(0, 50);
-            this.panStaff.Margin = new System.Windows.Forms.Padding(0);
-            this.panStaff.Name = "panStaff";
-            this.panStaff.Size = new System.Drawing.Size(220, 50);
-            this.panStaff.TabIndex = 10;
-            // 
-            // btnStaff
-            // 
-            this.btnStaff.AccessibleName = "Button";
-            this.btnStaff.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnStaff.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStaff.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnStaff.Location = new System.Drawing.Point(0, 0);
-            this.btnStaff.Name = "btnStaff";
-            this.btnStaff.Size = new System.Drawing.Size(220, 50);
-            this.btnStaff.Style.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnStaff.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnStaff.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnStaff.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnStaff.Style.ForeColor = System.Drawing.Color.White;
-            this.btnStaff.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnStaff.Style.HoverForeColor = System.Drawing.Color.Teal;
-            this.btnStaff.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image29")));
-            this.btnStaff.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnStaff.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnStaff.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnStaff.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnStaff.TabIndex = 10;
-            this.btnStaff.Text = "Nhân viên";
-            this.btnStaff.UseVisualStyleBackColor = false;
-            this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
-            // 
-            // panDepartment
-            // 
-            this.panDepartment.Controls.Add(this.btnDepartment);
-            this.panDepartment.Location = new System.Drawing.Point(0, 100);
-            this.panDepartment.Margin = new System.Windows.Forms.Padding(0);
-            this.panDepartment.Name = "panDepartment";
-            this.panDepartment.Size = new System.Drawing.Size(220, 50);
-            this.panDepartment.TabIndex = 11;
-            // 
-            // btnDepartment
-            // 
-            this.btnDepartment.AccessibleName = "Button";
-            this.btnDepartment.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDepartment.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDepartment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDepartment.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnDepartment.Location = new System.Drawing.Point(0, 0);
-            this.btnDepartment.Name = "btnDepartment";
-            this.btnDepartment.Size = new System.Drawing.Size(220, 50);
-            this.btnDepartment.Style.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnDepartment.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnDepartment.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnDepartment.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnDepartment.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDepartment.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnDepartment.Style.HoverForeColor = System.Drawing.Color.Teal;
-            this.btnDepartment.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image30")));
-            this.btnDepartment.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDepartment.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnDepartment.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnDepartment.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnDepartment.TabIndex = 10;
-            this.btnDepartment.Text = "Phòng ban";
-            this.btnDepartment.UseVisualStyleBackColor = false;
-            this.btnDepartment.Click += new System.EventHandler(this.btnDepartment_Click);
-            // 
-            // panRole
-            // 
-            this.panRole.Controls.Add(this.btnRole);
-            this.panRole.Location = new System.Drawing.Point(0, 150);
-            this.panRole.Margin = new System.Windows.Forms.Padding(0);
-            this.panRole.Name = "panRole";
-            this.panRole.Size = new System.Drawing.Size(220, 50);
-            this.panRole.TabIndex = 12;
-            // 
-            // btnRole
-            // 
-            this.btnRole.AccessibleName = "Button";
-            this.btnRole.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnRole.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRole.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRole.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRole.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnRole.Location = new System.Drawing.Point(0, 0);
-            this.btnRole.Name = "btnRole";
-            this.btnRole.Size = new System.Drawing.Size(220, 50);
-            this.btnRole.Style.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnRole.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnRole.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnRole.Style.FocusedImageForeColor = System.Drawing.Color.White;
-            this.btnRole.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRole.Style.HoverBackColor = System.Drawing.Color.White;
-            this.btnRole.Style.HoverForeColor = System.Drawing.Color.Teal;
-            this.btnRole.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnRole.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image31")));
-            this.btnRole.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRole.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
-            this.btnRole.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnRole.Style.PressedImageForeColor = System.Drawing.Color.White;
-            this.btnRole.TabIndex = 10;
-            this.btnRole.Text = "Vai trò";
-            this.btnRole.UseVisualStyleBackColor = false;
-            this.btnRole.Click += new System.EventHandler(this.btnRole_Click);
+            // flpMaintanceManagement
+            // 
+            this.flpMaintanceManagement.BackColor = System.Drawing.Color.Teal;
+            this.flpMaintanceManagement.Controls.Add(this.panMaintanceManagement);
+            this.flpMaintanceManagement.Controls.Add(this.panMaintance);
+            this.flpMaintanceManagement.Controls.Add(this.panMaintanceDetails);
+            this.flpMaintanceManagement.Location = new System.Drawing.Point(0, 500);
+            this.flpMaintanceManagement.Margin = new System.Windows.Forms.Padding(0);
+            this.flpMaintanceManagement.MaximumSize = new System.Drawing.Size(220, 100);
+            this.flpMaintanceManagement.MinimumSize = new System.Drawing.Size(220, 50);
+            this.flpMaintanceManagement.Name = "flpMaintanceManagement";
+            this.flpMaintanceManagement.Size = new System.Drawing.Size(220, 50);
+            this.flpMaintanceManagement.TabIndex = 15;
+            // 
+            // panMaintanceManagement
+            // 
+            this.panMaintanceManagement.Controls.Add(this.btnMaintanceManagement);
+            this.panMaintanceManagement.Location = new System.Drawing.Point(0, 0);
+            this.panMaintanceManagement.Margin = new System.Windows.Forms.Padding(0);
+            this.panMaintanceManagement.Name = "panMaintanceManagement";
+            this.panMaintanceManagement.Size = new System.Drawing.Size(220, 50);
+            this.panMaintanceManagement.TabIndex = 5;
+            // 
+            // btnMaintanceManagement
+            // 
+            this.btnMaintanceManagement.AccessibleName = "Button";
+            this.btnMaintanceManagement.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMaintanceManagement.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaintanceManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMaintanceManagement.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnMaintanceManagement.Location = new System.Drawing.Point(0, 0);
+            this.btnMaintanceManagement.Name = "btnMaintanceManagement";
+            this.btnMaintanceManagement.Size = new System.Drawing.Size(220, 50);
+            this.btnMaintanceManagement.Style.BackColor = System.Drawing.Color.Teal;
+            this.btnMaintanceManagement.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnMaintanceManagement.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnMaintanceManagement.Style.FocusedImageForeColor = System.Drawing.Color.White;
+            this.btnMaintanceManagement.Style.ForeColor = System.Drawing.Color.White;
+            this.btnMaintanceManagement.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnMaintanceManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
+            this.btnMaintanceManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
+            this.btnMaintanceManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnMaintanceManagement.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnMaintanceManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnMaintanceManagement.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnMaintanceManagement.Style.PressedImageForeColor = System.Drawing.Color.White;
+            this.btnMaintanceManagement.TabIndex = 3;
+            this.btnMaintanceManagement.Text = "Quản lý bảo trì";
+            this.btnMaintanceManagement.Click += new System.EventHandler(this.Menu_Click);
+            // 
+            // panMaintance
+            // 
+            this.panMaintance.Controls.Add(this.btnMaintance);
+            this.panMaintance.Location = new System.Drawing.Point(0, 50);
+            this.panMaintance.Margin = new System.Windows.Forms.Padding(0);
+            this.panMaintance.Name = "panMaintance";
+            this.panMaintance.Size = new System.Drawing.Size(220, 50);
+            this.panMaintance.TabIndex = 6;
+            // 
+            // btnMaintance
+            // 
+            this.btnMaintance.AccessibleName = "Button";
+            this.btnMaintance.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnMaintance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMaintance.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaintance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMaintance.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnMaintance.Location = new System.Drawing.Point(0, 0);
+            this.btnMaintance.Name = "btnMaintance";
+            this.btnMaintance.Size = new System.Drawing.Size(220, 50);
+            this.btnMaintance.Style.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnMaintance.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnMaintance.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnMaintance.Style.FocusedImageForeColor = System.Drawing.Color.White;
+            this.btnMaintance.Style.ForeColor = System.Drawing.Color.White;
+            this.btnMaintance.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnMaintance.Style.HoverForeColor = System.Drawing.Color.Teal;
+            this.btnMaintance.Style.HoverImageForeColor = System.Drawing.Color.Teal;
+            this.btnMaintance.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnMaintance.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnMaintance.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnMaintance.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnMaintance.Style.PressedImageForeColor = System.Drawing.Color.White;
+            this.btnMaintance.TabIndex = 3;
+            this.btnMaintance.Text = "Bảo trì";
+            this.btnMaintance.UseVisualStyleBackColor = false;
+            this.btnMaintance.Click += new System.EventHandler(this.btnMaintance_Click);
+            // 
+            // panMaintanceDetails
+            // 
+            this.panMaintanceDetails.Location = new System.Drawing.Point(0, 100);
+            this.panMaintanceDetails.Margin = new System.Windows.Forms.Padding(0);
+            this.panMaintanceDetails.Name = "panMaintanceDetails";
+            this.panMaintanceDetails.Size = new System.Drawing.Size(220, 50);
+            this.panMaintanceDetails.TabIndex = 7;
             // 
             // flpAccount
             // 
@@ -1532,7 +566,7 @@
             this.flpAccount.Controls.Add(this.panUserManagement);
             this.flpAccount.Controls.Add(this.panTaiKhoan);
             this.flpAccount.Controls.Add(this.panSetup);
-            this.flpAccount.Location = new System.Drawing.Point(0, 150);
+            this.flpAccount.Location = new System.Drawing.Point(0, 350);
             this.flpAccount.Margin = new System.Windows.Forms.Padding(0);
             this.flpAccount.MaximumSize = new System.Drawing.Size(220, 150);
             this.flpAccount.MinimumSize = new System.Drawing.Size(220, 50);
@@ -1567,7 +601,7 @@
             this.btnAccountManagement.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnAccountManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnAccountManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnAccountManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image32")));
+            this.btnAccountManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image14")));
             this.btnAccountManagement.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnAccountManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnAccountManagement.Style.PressedForeColor = System.Drawing.Color.White;
@@ -1604,7 +638,7 @@
             this.btnAccount.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnAccount.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnAccount.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnAccount.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image33")));
+            this.btnAccount.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image15")));
             this.btnAccount.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnAccount.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnAccount.Style.PressedForeColor = System.Drawing.Color.White;
@@ -1642,7 +676,7 @@
             this.btnAccountType.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnAccountType.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnAccountType.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnAccountType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image34")));
+            this.btnAccountType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image16")));
             this.btnAccountType.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnAccountType.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnAccountType.Style.PressedForeColor = System.Drawing.Color.White;
@@ -1651,6 +685,889 @@
             this.btnAccountType.Text = "Loại tài khoản";
             this.btnAccountType.UseVisualStyleBackColor = false;
             this.btnAccountType.Click += new System.EventHandler(this.btnAccountType_Click);
+            // 
+            // flpRoomManagement
+            // 
+            this.flpRoomManagement.BackColor = System.Drawing.Color.Teal;
+            this.flpRoomManagement.Controls.Add(this.panRoomManagement);
+            this.flpRoomManagement.Controls.Add(this.panRoom);
+            this.flpRoomManagement.Controls.Add(this.panRoomType);
+            this.flpRoomManagement.Controls.Add(this.panRoomStatus);
+            this.flpRoomManagement.Location = new System.Drawing.Point(0, 150);
+            this.flpRoomManagement.Margin = new System.Windows.Forms.Padding(0);
+            this.flpRoomManagement.MaximumSize = new System.Drawing.Size(220, 200);
+            this.flpRoomManagement.MinimumSize = new System.Drawing.Size(220, 50);
+            this.flpRoomManagement.Name = "flpRoomManagement";
+            this.flpRoomManagement.Size = new System.Drawing.Size(220, 50);
+            this.flpRoomManagement.TabIndex = 13;
+            // 
+            // panRoomManagement
+            // 
+            this.panRoomManagement.Controls.Add(this.btnRoomManagement);
+            this.panRoomManagement.Location = new System.Drawing.Point(0, 0);
+            this.panRoomManagement.Margin = new System.Windows.Forms.Padding(0);
+            this.panRoomManagement.Name = "panRoomManagement";
+            this.panRoomManagement.Size = new System.Drawing.Size(220, 50);
+            this.panRoomManagement.TabIndex = 5;
+            // 
+            // btnRoomManagement
+            // 
+            this.btnRoomManagement.AccessibleName = "Button";
+            this.btnRoomManagement.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRoomManagement.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoomManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRoomManagement.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnRoomManagement.Location = new System.Drawing.Point(0, 0);
+            this.btnRoomManagement.Name = "btnRoomManagement";
+            this.btnRoomManagement.Size = new System.Drawing.Size(220, 50);
+            this.btnRoomManagement.Style.BackColor = System.Drawing.Color.Teal;
+            this.btnRoomManagement.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnRoomManagement.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnRoomManagement.Style.FocusedImageForeColor = System.Drawing.Color.White;
+            this.btnRoomManagement.Style.ForeColor = System.Drawing.Color.White;
+            this.btnRoomManagement.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnRoomManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
+            this.btnRoomManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
+            this.btnRoomManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image17")));
+            this.btnRoomManagement.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnRoomManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnRoomManagement.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnRoomManagement.Style.PressedImageForeColor = System.Drawing.Color.White;
+            this.btnRoomManagement.TabIndex = 4;
+            this.btnRoomManagement.Text = "Quản lý phòng";
+            this.btnRoomManagement.Click += new System.EventHandler(this.Menu_Click);
+            // 
+            // panRoom
+            // 
+            this.panRoom.Controls.Add(this.btnRoom);
+            this.panRoom.Location = new System.Drawing.Point(0, 50);
+            this.panRoom.Margin = new System.Windows.Forms.Padding(0);
+            this.panRoom.Name = "panRoom";
+            this.panRoom.Size = new System.Drawing.Size(220, 50);
+            this.panRoom.TabIndex = 4;
+            // 
+            // btnRoom
+            // 
+            this.btnRoom.AccessibleName = "Button";
+            this.btnRoom.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRoom.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRoom.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnRoom.Location = new System.Drawing.Point(0, 0);
+            this.btnRoom.Name = "btnRoom";
+            this.btnRoom.Size = new System.Drawing.Size(220, 50);
+            this.btnRoom.Style.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnRoom.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnRoom.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnRoom.Style.FocusedImageForeColor = System.Drawing.Color.White;
+            this.btnRoom.Style.ForeColor = System.Drawing.Color.White;
+            this.btnRoom.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnRoom.Style.HoverForeColor = System.Drawing.Color.Teal;
+            this.btnRoom.Style.HoverImageForeColor = System.Drawing.Color.Teal;
+            this.btnRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image18")));
+            this.btnRoom.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnRoom.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnRoom.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnRoom.Style.PressedImageForeColor = System.Drawing.Color.White;
+            this.btnRoom.TabIndex = 4;
+            this.btnRoom.Text = "Phòng";
+            this.btnRoom.UseVisualStyleBackColor = false;
+            this.btnRoom.Click += new System.EventHandler(this.btnRoom_Click);
+            // 
+            // panRoomType
+            // 
+            this.panRoomType.Controls.Add(this.btnRoomType);
+            this.panRoomType.Location = new System.Drawing.Point(0, 100);
+            this.panRoomType.Margin = new System.Windows.Forms.Padding(0);
+            this.panRoomType.Name = "panRoomType";
+            this.panRoomType.Size = new System.Drawing.Size(220, 50);
+            this.panRoomType.TabIndex = 3;
+            // 
+            // btnRoomType
+            // 
+            this.btnRoomType.AccessibleName = "Button";
+            this.btnRoomType.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnRoomType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRoomType.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoomType.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRoomType.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnRoomType.Location = new System.Drawing.Point(0, 0);
+            this.btnRoomType.Name = "btnRoomType";
+            this.btnRoomType.Size = new System.Drawing.Size(220, 50);
+            this.btnRoomType.Style.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnRoomType.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnRoomType.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnRoomType.Style.FocusedImageForeColor = System.Drawing.Color.White;
+            this.btnRoomType.Style.ForeColor = System.Drawing.Color.White;
+            this.btnRoomType.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnRoomType.Style.HoverForeColor = System.Drawing.Color.Teal;
+            this.btnRoomType.Style.HoverImageForeColor = System.Drawing.Color.Teal;
+            this.btnRoomType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image19")));
+            this.btnRoomType.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnRoomType.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnRoomType.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnRoomType.Style.PressedImageForeColor = System.Drawing.Color.White;
+            this.btnRoomType.TabIndex = 3;
+            this.btnRoomType.Text = "Loại phòng";
+            this.btnRoomType.UseVisualStyleBackColor = false;
+            this.btnRoomType.Click += new System.EventHandler(this.btnRoomType_Click);
+            // 
+            // panRoomStatus
+            // 
+            this.panRoomStatus.Controls.Add(this.btnRoomStatus);
+            this.panRoomStatus.Location = new System.Drawing.Point(0, 150);
+            this.panRoomStatus.Margin = new System.Windows.Forms.Padding(0);
+            this.panRoomStatus.Name = "panRoomStatus";
+            this.panRoomStatus.Size = new System.Drawing.Size(220, 50);
+            this.panRoomStatus.TabIndex = 4;
+            // 
+            // btnRoomStatus
+            // 
+            this.btnRoomStatus.AccessibleName = "Button";
+            this.btnRoomStatus.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnRoomStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRoomStatus.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoomStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRoomStatus.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnRoomStatus.Location = new System.Drawing.Point(0, 0);
+            this.btnRoomStatus.Name = "btnRoomStatus";
+            this.btnRoomStatus.Size = new System.Drawing.Size(220, 50);
+            this.btnRoomStatus.Style.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnRoomStatus.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnRoomStatus.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnRoomStatus.Style.FocusedImageForeColor = System.Drawing.Color.White;
+            this.btnRoomStatus.Style.ForeColor = System.Drawing.Color.White;
+            this.btnRoomStatus.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnRoomStatus.Style.HoverForeColor = System.Drawing.Color.Teal;
+            this.btnRoomStatus.Style.HoverImageForeColor = System.Drawing.Color.Teal;
+            this.btnRoomStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image20")));
+            this.btnRoomStatus.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnRoomStatus.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnRoomStatus.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnRoomStatus.Style.PressedImageForeColor = System.Drawing.Color.White;
+            this.btnRoomStatus.TabIndex = 3;
+            this.btnRoomStatus.Text = "Trạng thái phòng";
+            this.btnRoomStatus.UseVisualStyleBackColor = false;
+            this.btnRoomStatus.Click += new System.EventHandler(this.btnRoomStatus_Click);
+            // 
+            // flpStaffManagement
+            // 
+            this.flpStaffManagement.BackColor = System.Drawing.Color.Teal;
+            this.flpStaffManagement.Controls.Add(this.panStaffManagement);
+            this.flpStaffManagement.Controls.Add(this.panStaff);
+            this.flpStaffManagement.Controls.Add(this.panDepartment);
+            this.flpStaffManagement.Controls.Add(this.panRole);
+            this.flpStaffManagement.Location = new System.Drawing.Point(0, 300);
+            this.flpStaffManagement.Margin = new System.Windows.Forms.Padding(0);
+            this.flpStaffManagement.MaximumSize = new System.Drawing.Size(220, 200);
+            this.flpStaffManagement.MinimumSize = new System.Drawing.Size(220, 50);
+            this.flpStaffManagement.Name = "flpStaffManagement";
+            this.flpStaffManagement.Size = new System.Drawing.Size(220, 50);
+            this.flpStaffManagement.TabIndex = 15;
+            this.flpStaffManagement.Click += new System.EventHandler(this.Menu_Click);
+            // 
+            // panStaffManagement
+            // 
+            this.panStaffManagement.Controls.Add(this.btnStaffManagement);
+            this.panStaffManagement.Location = new System.Drawing.Point(0, 0);
+            this.panStaffManagement.Margin = new System.Windows.Forms.Padding(0);
+            this.panStaffManagement.Name = "panStaffManagement";
+            this.panStaffManagement.Size = new System.Drawing.Size(220, 50);
+            this.panStaffManagement.TabIndex = 13;
+            // 
+            // btnStaffManagement
+            // 
+            this.btnStaffManagement.AccessibleName = "Button";
+            this.btnStaffManagement.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnStaffManagement.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStaffManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStaffManagement.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnStaffManagement.Location = new System.Drawing.Point(0, 0);
+            this.btnStaffManagement.Name = "btnStaffManagement";
+            this.btnStaffManagement.Size = new System.Drawing.Size(220, 50);
+            this.btnStaffManagement.Style.BackColor = System.Drawing.Color.Teal;
+            this.btnStaffManagement.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnStaffManagement.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnStaffManagement.Style.FocusedImageForeColor = System.Drawing.Color.White;
+            this.btnStaffManagement.Style.ForeColor = System.Drawing.Color.White;
+            this.btnStaffManagement.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnStaffManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
+            this.btnStaffManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
+            this.btnStaffManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image21")));
+            this.btnStaffManagement.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnStaffManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnStaffManagement.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnStaffManagement.Style.PressedImageForeColor = System.Drawing.Color.White;
+            this.btnStaffManagement.TabIndex = 10;
+            this.btnStaffManagement.Text = "Quản lý nhân viên";
+            this.btnStaffManagement.Click += new System.EventHandler(this.Menu_Click);
+            // 
+            // panStaff
+            // 
+            this.panStaff.Controls.Add(this.btnStaff);
+            this.panStaff.Location = new System.Drawing.Point(0, 50);
+            this.panStaff.Margin = new System.Windows.Forms.Padding(0);
+            this.panStaff.Name = "panStaff";
+            this.panStaff.Size = new System.Drawing.Size(220, 50);
+            this.panStaff.TabIndex = 10;
+            // 
+            // btnStaff
+            // 
+            this.btnStaff.AccessibleName = "Button";
+            this.btnStaff.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnStaff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnStaff.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStaff.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnStaff.Location = new System.Drawing.Point(0, 0);
+            this.btnStaff.Name = "btnStaff";
+            this.btnStaff.Size = new System.Drawing.Size(220, 50);
+            this.btnStaff.Style.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnStaff.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnStaff.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnStaff.Style.FocusedImageForeColor = System.Drawing.Color.White;
+            this.btnStaff.Style.ForeColor = System.Drawing.Color.White;
+            this.btnStaff.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnStaff.Style.HoverForeColor = System.Drawing.Color.Teal;
+            this.btnStaff.Style.HoverImageForeColor = System.Drawing.Color.Teal;
+            this.btnStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image22")));
+            this.btnStaff.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnStaff.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnStaff.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnStaff.Style.PressedImageForeColor = System.Drawing.Color.White;
+            this.btnStaff.TabIndex = 10;
+            this.btnStaff.Text = "Nhân viên";
+            this.btnStaff.UseVisualStyleBackColor = false;
+            this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
+            // 
+            // panDepartment
+            // 
+            this.panDepartment.Controls.Add(this.btnDepartment);
+            this.panDepartment.Location = new System.Drawing.Point(0, 100);
+            this.panDepartment.Margin = new System.Windows.Forms.Padding(0);
+            this.panDepartment.Name = "panDepartment";
+            this.panDepartment.Size = new System.Drawing.Size(220, 50);
+            this.panDepartment.TabIndex = 11;
+            // 
+            // btnDepartment
+            // 
+            this.btnDepartment.AccessibleName = "Button";
+            this.btnDepartment.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDepartment.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDepartment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDepartment.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnDepartment.Location = new System.Drawing.Point(0, 0);
+            this.btnDepartment.Name = "btnDepartment";
+            this.btnDepartment.Size = new System.Drawing.Size(220, 50);
+            this.btnDepartment.Style.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnDepartment.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnDepartment.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnDepartment.Style.FocusedImageForeColor = System.Drawing.Color.White;
+            this.btnDepartment.Style.ForeColor = System.Drawing.Color.White;
+            this.btnDepartment.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnDepartment.Style.HoverForeColor = System.Drawing.Color.Teal;
+            this.btnDepartment.Style.HoverImageForeColor = System.Drawing.Color.Teal;
+            this.btnDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image23")));
+            this.btnDepartment.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnDepartment.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnDepartment.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnDepartment.Style.PressedImageForeColor = System.Drawing.Color.White;
+            this.btnDepartment.TabIndex = 10;
+            this.btnDepartment.Text = "Phòng ban";
+            this.btnDepartment.UseVisualStyleBackColor = false;
+            this.btnDepartment.Click += new System.EventHandler(this.btnDepartment_Click);
+            // 
+            // panRole
+            // 
+            this.panRole.Controls.Add(this.btnRole);
+            this.panRole.Location = new System.Drawing.Point(0, 150);
+            this.panRole.Margin = new System.Windows.Forms.Padding(0);
+            this.panRole.Name = "panRole";
+            this.panRole.Size = new System.Drawing.Size(220, 50);
+            this.panRole.TabIndex = 12;
+            // 
+            // btnRole
+            // 
+            this.btnRole.AccessibleName = "Button";
+            this.btnRole.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnRole.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRole.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRole.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRole.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnRole.Location = new System.Drawing.Point(0, 0);
+            this.btnRole.Name = "btnRole";
+            this.btnRole.Size = new System.Drawing.Size(220, 50);
+            this.btnRole.Style.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnRole.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnRole.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnRole.Style.FocusedImageForeColor = System.Drawing.Color.White;
+            this.btnRole.Style.ForeColor = System.Drawing.Color.White;
+            this.btnRole.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnRole.Style.HoverForeColor = System.Drawing.Color.Teal;
+            this.btnRole.Style.HoverImageForeColor = System.Drawing.Color.Teal;
+            this.btnRole.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image24")));
+            this.btnRole.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnRole.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnRole.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnRole.Style.PressedImageForeColor = System.Drawing.Color.White;
+            this.btnRole.TabIndex = 10;
+            this.btnRole.Text = "Vai trò";
+            this.btnRole.UseVisualStyleBackColor = false;
+            this.btnRole.Click += new System.EventHandler(this.btnRole_Click);
+            // 
+            // flpFinanceManagement
+            // 
+            this.flpFinanceManagement.BackColor = System.Drawing.Color.Teal;
+            this.flpFinanceManagement.Controls.Add(this.panFinanceManagement);
+            this.flpFinanceManagement.Controls.Add(this.panBill);
+            this.flpFinanceManagement.Controls.Add(this.panTax);
+            this.flpFinanceManagement.Controls.Add(this.panDiscount);
+            this.flpFinanceManagement.Location = new System.Drawing.Point(0, 200);
+            this.flpFinanceManagement.Margin = new System.Windows.Forms.Padding(0);
+            this.flpFinanceManagement.MaximumSize = new System.Drawing.Size(220, 200);
+            this.flpFinanceManagement.MinimumSize = new System.Drawing.Size(220, 50);
+            this.flpFinanceManagement.Name = "flpFinanceManagement";
+            this.flpFinanceManagement.Size = new System.Drawing.Size(220, 50);
+            this.flpFinanceManagement.TabIndex = 16;
+            // 
+            // panFinanceManagement
+            // 
+            this.panFinanceManagement.Controls.Add(this.btnFinaceManagement);
+            this.panFinanceManagement.Location = new System.Drawing.Point(0, 0);
+            this.panFinanceManagement.Margin = new System.Windows.Forms.Padding(0);
+            this.panFinanceManagement.Name = "panFinanceManagement";
+            this.panFinanceManagement.Size = new System.Drawing.Size(220, 50);
+            this.panFinanceManagement.TabIndex = 10;
+            // 
+            // btnFinaceManagement
+            // 
+            this.btnFinaceManagement.AccessibleName = "Button";
+            this.btnFinaceManagement.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFinaceManagement.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinaceManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFinaceManagement.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnFinaceManagement.Location = new System.Drawing.Point(0, 0);
+            this.btnFinaceManagement.Name = "btnFinaceManagement";
+            this.btnFinaceManagement.Size = new System.Drawing.Size(220, 50);
+            this.btnFinaceManagement.Style.BackColor = System.Drawing.Color.Teal;
+            this.btnFinaceManagement.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnFinaceManagement.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnFinaceManagement.Style.FocusedImageForeColor = System.Drawing.Color.White;
+            this.btnFinaceManagement.Style.ForeColor = System.Drawing.Color.White;
+            this.btnFinaceManagement.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnFinaceManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
+            this.btnFinaceManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
+            this.btnFinaceManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image25")));
+            this.btnFinaceManagement.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnFinaceManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnFinaceManagement.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnFinaceManagement.Style.PressedImageForeColor = System.Drawing.Color.White;
+            this.btnFinaceManagement.TabIndex = 9;
+            this.btnFinaceManagement.Text = "Quản lý tài chính";
+            this.btnFinaceManagement.Click += new System.EventHandler(this.Menu_Click);
+            // 
+            // panBill
+            // 
+            this.panBill.Controls.Add(this.btnHoaDon);
+            this.panBill.Location = new System.Drawing.Point(0, 50);
+            this.panBill.Margin = new System.Windows.Forms.Padding(0);
+            this.panBill.Name = "panBill";
+            this.panBill.Size = new System.Drawing.Size(220, 50);
+            this.panBill.TabIndex = 8;
+            // 
+            // btnHoaDon
+            // 
+            this.btnHoaDon.AccessibleName = "Button";
+            this.btnHoaDon.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnHoaDon.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHoaDon.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnHoaDon.Location = new System.Drawing.Point(0, 0);
+            this.btnHoaDon.Name = "btnHoaDon";
+            this.btnHoaDon.Size = new System.Drawing.Size(220, 50);
+            this.btnHoaDon.Style.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnHoaDon.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnHoaDon.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnHoaDon.Style.FocusedImageForeColor = System.Drawing.Color.White;
+            this.btnHoaDon.Style.ForeColor = System.Drawing.Color.White;
+            this.btnHoaDon.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnHoaDon.Style.HoverForeColor = System.Drawing.Color.Teal;
+            this.btnHoaDon.Style.HoverImageForeColor = System.Drawing.Color.Teal;
+            this.btnHoaDon.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image26")));
+            this.btnHoaDon.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnHoaDon.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnHoaDon.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnHoaDon.Style.PressedImageForeColor = System.Drawing.Color.White;
+            this.btnHoaDon.TabIndex = 8;
+            this.btnHoaDon.Text = "Hóa đơn";
+            this.btnHoaDon.UseVisualStyleBackColor = false;
+            this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
+            // 
+            // panTax
+            // 
+            this.panTax.Controls.Add(this.btnTax);
+            this.panTax.Location = new System.Drawing.Point(0, 100);
+            this.panTax.Margin = new System.Windows.Forms.Padding(0);
+            this.panTax.Name = "panTax";
+            this.panTax.Size = new System.Drawing.Size(220, 50);
+            this.panTax.TabIndex = 17;
+            // 
+            // btnTax
+            // 
+            this.btnTax.AccessibleName = "Button";
+            this.btnTax.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnTax.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTax.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTax.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTax.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnTax.Location = new System.Drawing.Point(0, 0);
+            this.btnTax.Name = "btnTax";
+            this.btnTax.Size = new System.Drawing.Size(220, 50);
+            this.btnTax.Style.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnTax.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnTax.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnTax.Style.FocusedImageForeColor = System.Drawing.Color.White;
+            this.btnTax.Style.ForeColor = System.Drawing.Color.White;
+            this.btnTax.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnTax.Style.HoverForeColor = System.Drawing.Color.Teal;
+            this.btnTax.Style.HoverImageForeColor = System.Drawing.Color.Teal;
+            this.btnTax.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image27")));
+            this.btnTax.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnTax.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnTax.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnTax.Style.PressedImageForeColor = System.Drawing.Color.White;
+            this.btnTax.TabIndex = 9;
+            this.btnTax.Text = "Thuế";
+            this.btnTax.UseVisualStyleBackColor = false;
+            this.btnTax.Click += new System.EventHandler(this.btnTax_Click);
+            // 
+            // panDiscount
+            // 
+            this.panDiscount.Controls.Add(this.btnDiscount);
+            this.panDiscount.Location = new System.Drawing.Point(0, 150);
+            this.panDiscount.Margin = new System.Windows.Forms.Padding(0);
+            this.panDiscount.Name = "panDiscount";
+            this.panDiscount.Size = new System.Drawing.Size(220, 50);
+            this.panDiscount.TabIndex = 18;
+            // 
+            // btnDiscount
+            // 
+            this.btnDiscount.AccessibleName = "Button";
+            this.btnDiscount.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnDiscount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDiscount.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiscount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDiscount.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnDiscount.Location = new System.Drawing.Point(0, 0);
+            this.btnDiscount.Name = "btnDiscount";
+            this.btnDiscount.Size = new System.Drawing.Size(220, 50);
+            this.btnDiscount.Style.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnDiscount.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnDiscount.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnDiscount.Style.FocusedImageForeColor = System.Drawing.Color.White;
+            this.btnDiscount.Style.ForeColor = System.Drawing.Color.White;
+            this.btnDiscount.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnDiscount.Style.HoverForeColor = System.Drawing.Color.Teal;
+            this.btnDiscount.Style.HoverImageForeColor = System.Drawing.Color.Teal;
+            this.btnDiscount.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image28")));
+            this.btnDiscount.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnDiscount.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnDiscount.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnDiscount.Style.PressedImageForeColor = System.Drawing.Color.White;
+            this.btnDiscount.TabIndex = 8;
+            this.btnDiscount.Text = "Khuyến mãi";
+            this.btnDiscount.UseVisualStyleBackColor = false;
+            this.btnDiscount.Click += new System.EventHandler(this.btnDiscount_Click);
+            // 
+            // flpDeviceMangement
+            // 
+            this.flpDeviceMangement.BackColor = System.Drawing.Color.Teal;
+            this.flpDeviceMangement.Controls.Add(this.panQuanLyTietBi);
+            this.flpDeviceMangement.Controls.Add(this.panDevices);
+            this.flpDeviceMangement.Controls.Add(this.panDeviceStatus);
+            this.flpDeviceMangement.Location = new System.Drawing.Point(0, 400);
+            this.flpDeviceMangement.Margin = new System.Windows.Forms.Padding(0);
+            this.flpDeviceMangement.MaximumSize = new System.Drawing.Size(220, 150);
+            this.flpDeviceMangement.MinimumSize = new System.Drawing.Size(220, 50);
+            this.flpDeviceMangement.Name = "flpDeviceMangement";
+            this.flpDeviceMangement.Size = new System.Drawing.Size(220, 50);
+            this.flpDeviceMangement.TabIndex = 16;
+            // 
+            // panQuanLyTietBi
+            // 
+            this.panQuanLyTietBi.Controls.Add(this.btnDeviceManagement);
+            this.panQuanLyTietBi.Location = new System.Drawing.Point(0, 0);
+            this.panQuanLyTietBi.Margin = new System.Windows.Forms.Padding(0);
+            this.panQuanLyTietBi.Name = "panQuanLyTietBi";
+            this.panQuanLyTietBi.Size = new System.Drawing.Size(220, 50);
+            this.panQuanLyTietBi.TabIndex = 5;
+            // 
+            // btnDeviceManagement
+            // 
+            this.btnDeviceManagement.AccessibleName = "Button";
+            this.btnDeviceManagement.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDeviceManagement.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeviceManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeviceManagement.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnDeviceManagement.Location = new System.Drawing.Point(0, 0);
+            this.btnDeviceManagement.Name = "btnDeviceManagement";
+            this.btnDeviceManagement.Size = new System.Drawing.Size(220, 50);
+            this.btnDeviceManagement.Style.BackColor = System.Drawing.Color.Teal;
+            this.btnDeviceManagement.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnDeviceManagement.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnDeviceManagement.Style.FocusedImageForeColor = System.Drawing.Color.White;
+            this.btnDeviceManagement.Style.ForeColor = System.Drawing.Color.White;
+            this.btnDeviceManagement.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnDeviceManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
+            this.btnDeviceManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
+            this.btnDeviceManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnDeviceManagement.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnDeviceManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnDeviceManagement.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnDeviceManagement.Style.PressedImageForeColor = System.Drawing.Color.White;
+            this.btnDeviceManagement.TabIndex = 3;
+            this.btnDeviceManagement.Text = "Quản lý thiết bị";
+            this.btnDeviceManagement.Click += new System.EventHandler(this.Menu_Click);
+            // 
+            // panDevices
+            // 
+            this.panDevices.Controls.Add(this.btnThietBi);
+            this.panDevices.Location = new System.Drawing.Point(0, 50);
+            this.panDevices.Margin = new System.Windows.Forms.Padding(0);
+            this.panDevices.Name = "panDevices";
+            this.panDevices.Size = new System.Drawing.Size(220, 50);
+            this.panDevices.TabIndex = 6;
+            // 
+            // btnThietBi
+            // 
+            this.btnThietBi.AccessibleName = "Button";
+            this.btnThietBi.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnThietBi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnThietBi.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThietBi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThietBi.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnThietBi.Location = new System.Drawing.Point(0, 0);
+            this.btnThietBi.Name = "btnThietBi";
+            this.btnThietBi.Size = new System.Drawing.Size(220, 50);
+            this.btnThietBi.Style.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnThietBi.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnThietBi.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnThietBi.Style.FocusedImageForeColor = System.Drawing.Color.White;
+            this.btnThietBi.Style.ForeColor = System.Drawing.Color.White;
+            this.btnThietBi.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnThietBi.Style.HoverForeColor = System.Drawing.Color.Teal;
+            this.btnThietBi.Style.HoverImageForeColor = System.Drawing.Color.Teal;
+            this.btnThietBi.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.btnThietBi.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnThietBi.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnThietBi.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnThietBi.Style.PressedImageForeColor = System.Drawing.Color.White;
+            this.btnThietBi.TabIndex = 3;
+            this.btnThietBi.Text = "Thiết bị";
+            this.btnThietBi.UseVisualStyleBackColor = false;
+            this.btnThietBi.Click += new System.EventHandler(this.btnThietBi_Click);
+            // 
+            // panDeviceStatus
+            // 
+            this.panDeviceStatus.Controls.Add(this.btnDeviceStatus);
+            this.panDeviceStatus.Location = new System.Drawing.Point(0, 100);
+            this.panDeviceStatus.Margin = new System.Windows.Forms.Padding(0);
+            this.panDeviceStatus.Name = "panDeviceStatus";
+            this.panDeviceStatus.Size = new System.Drawing.Size(220, 50);
+            this.panDeviceStatus.TabIndex = 7;
+            // 
+            // btnDeviceStatus
+            // 
+            this.btnDeviceStatus.AccessibleName = "Button";
+            this.btnDeviceStatus.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnDeviceStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDeviceStatus.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeviceStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeviceStatus.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnDeviceStatus.Location = new System.Drawing.Point(0, 0);
+            this.btnDeviceStatus.Name = "btnDeviceStatus";
+            this.btnDeviceStatus.Size = new System.Drawing.Size(220, 50);
+            this.btnDeviceStatus.Style.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnDeviceStatus.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnDeviceStatus.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnDeviceStatus.Style.FocusedImageForeColor = System.Drawing.Color.White;
+            this.btnDeviceStatus.Style.ForeColor = System.Drawing.Color.White;
+            this.btnDeviceStatus.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnDeviceStatus.Style.HoverForeColor = System.Drawing.Color.Teal;
+            this.btnDeviceStatus.Style.HoverImageForeColor = System.Drawing.Color.Teal;
+            this.btnDeviceStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            this.btnDeviceStatus.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnDeviceStatus.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnDeviceStatus.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnDeviceStatus.Style.PressedImageForeColor = System.Drawing.Color.White;
+            this.btnDeviceStatus.TabIndex = 3;
+            this.btnDeviceStatus.Text = "Tình trạng thiết bị";
+            this.btnDeviceStatus.UseVisualStyleBackColor = false;
+            this.btnDeviceStatus.Click += new System.EventHandler(this.btnDeviceStatus_Click);
+            // 
+            // flpHousekeepingManagement
+            // 
+            this.flpHousekeepingManagement.BackColor = System.Drawing.Color.Teal;
+            this.flpHousekeepingManagement.Controls.Add(this.panHousekeeping);
+            this.flpHousekeepingManagement.Controls.Add(this.panDonPhong);
+            this.flpHousekeepingManagement.Controls.Add(this.panDonPhongDetails);
+            this.flpHousekeepingManagement.Location = new System.Drawing.Point(0, 450);
+            this.flpHousekeepingManagement.Margin = new System.Windows.Forms.Padding(0);
+            this.flpHousekeepingManagement.MaximumSize = new System.Drawing.Size(220, 100);
+            this.flpHousekeepingManagement.MinimumSize = new System.Drawing.Size(220, 50);
+            this.flpHousekeepingManagement.Name = "flpHousekeepingManagement";
+            this.flpHousekeepingManagement.Size = new System.Drawing.Size(220, 50);
+            this.flpHousekeepingManagement.TabIndex = 14;
+            // 
+            // panHousekeeping
+            // 
+            this.panHousekeeping.Controls.Add(this.btnHousekeepingManagement);
+            this.panHousekeeping.Location = new System.Drawing.Point(0, 0);
+            this.panHousekeeping.Margin = new System.Windows.Forms.Padding(0);
+            this.panHousekeeping.Name = "panHousekeeping";
+            this.panHousekeeping.Size = new System.Drawing.Size(220, 50);
+            this.panHousekeeping.TabIndex = 5;
+            // 
+            // btnHousekeepingManagement
+            // 
+            this.btnHousekeepingManagement.AccessibleName = "Button";
+            this.btnHousekeepingManagement.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnHousekeepingManagement.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHousekeepingManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHousekeepingManagement.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnHousekeepingManagement.Location = new System.Drawing.Point(0, 0);
+            this.btnHousekeepingManagement.Name = "btnHousekeepingManagement";
+            this.btnHousekeepingManagement.Size = new System.Drawing.Size(220, 50);
+            this.btnHousekeepingManagement.Style.BackColor = System.Drawing.Color.Teal;
+            this.btnHousekeepingManagement.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnHousekeepingManagement.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnHousekeepingManagement.Style.FocusedImageForeColor = System.Drawing.Color.White;
+            this.btnHousekeepingManagement.Style.ForeColor = System.Drawing.Color.White;
+            this.btnHousekeepingManagement.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnHousekeepingManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
+            this.btnHousekeepingManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
+            this.btnHousekeepingManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            this.btnHousekeepingManagement.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnHousekeepingManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnHousekeepingManagement.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnHousekeepingManagement.Style.PressedImageForeColor = System.Drawing.Color.White;
+            this.btnHousekeepingManagement.TabIndex = 3;
+            this.btnHousekeepingManagement.Text = "Quản lý dọn phòng";
+            this.btnHousekeepingManagement.Click += new System.EventHandler(this.Menu_Click);
+            // 
+            // panDonPhong
+            // 
+            this.panDonPhong.Controls.Add(this.btnHousekeeping);
+            this.panDonPhong.Location = new System.Drawing.Point(0, 50);
+            this.panDonPhong.Margin = new System.Windows.Forms.Padding(0);
+            this.panDonPhong.Name = "panDonPhong";
+            this.panDonPhong.Size = new System.Drawing.Size(220, 50);
+            this.panDonPhong.TabIndex = 6;
+            // 
+            // btnHousekeeping
+            // 
+            this.btnHousekeeping.AccessibleName = "Button";
+            this.btnHousekeeping.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnHousekeeping.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnHousekeeping.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHousekeeping.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHousekeeping.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnHousekeeping.Location = new System.Drawing.Point(0, 0);
+            this.btnHousekeeping.Name = "btnHousekeeping";
+            this.btnHousekeeping.Size = new System.Drawing.Size(220, 50);
+            this.btnHousekeeping.Style.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnHousekeeping.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnHousekeeping.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnHousekeeping.Style.FocusedImageForeColor = System.Drawing.Color.White;
+            this.btnHousekeeping.Style.ForeColor = System.Drawing.Color.White;
+            this.btnHousekeeping.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnHousekeeping.Style.HoverForeColor = System.Drawing.Color.Teal;
+            this.btnHousekeeping.Style.HoverImageForeColor = System.Drawing.Color.Teal;
+            this.btnHousekeeping.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
+            this.btnHousekeeping.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnHousekeeping.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnHousekeeping.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnHousekeeping.Style.PressedImageForeColor = System.Drawing.Color.White;
+            this.btnHousekeeping.TabIndex = 3;
+            this.btnHousekeeping.Text = "Dọn phòng";
+            this.btnHousekeeping.UseVisualStyleBackColor = false;
+            this.btnHousekeeping.Click += new System.EventHandler(this.btnHousekeeping_Click);
+            // 
+            // panDonPhongDetails
+            // 
+            this.panDonPhongDetails.Location = new System.Drawing.Point(0, 100);
+            this.panDonPhongDetails.Margin = new System.Windows.Forms.Padding(0);
+            this.panDonPhongDetails.Name = "panDonPhongDetails";
+            this.panDonPhongDetails.Size = new System.Drawing.Size(220, 50);
+            this.panDonPhongDetails.TabIndex = 7;
+            // 
+            // flpCustomerManagement
+            // 
+            this.flpCustomerManagement.BackColor = System.Drawing.Color.Teal;
+            this.flpCustomerManagement.Controls.Add(this.panCustomerManagement);
+            this.flpCustomerManagement.Controls.Add(this.panCustomer);
+            this.flpCustomerManagement.Controls.Add(this.panCustomerRanking);
+            this.flpCustomerManagement.Controls.Add(this.panel1);
+            this.flpCustomerManagement.Location = new System.Drawing.Point(0, 250);
+            this.flpCustomerManagement.Margin = new System.Windows.Forms.Padding(0);
+            this.flpCustomerManagement.MaximumSize = new System.Drawing.Size(220, 200);
+            this.flpCustomerManagement.MinimumSize = new System.Drawing.Size(220, 50);
+            this.flpCustomerManagement.Name = "flpCustomerManagement";
+            this.flpCustomerManagement.Size = new System.Drawing.Size(220, 50);
+            this.flpCustomerManagement.TabIndex = 16;
+            // 
+            // panCustomerManagement
+            // 
+            this.panCustomerManagement.Controls.Add(this.btnCustomerManagement);
+            this.panCustomerManagement.Location = new System.Drawing.Point(0, 0);
+            this.panCustomerManagement.Margin = new System.Windows.Forms.Padding(0);
+            this.panCustomerManagement.Name = "panCustomerManagement";
+            this.panCustomerManagement.Size = new System.Drawing.Size(220, 50);
+            this.panCustomerManagement.TabIndex = 6;
+            // 
+            // btnCustomerManagement
+            // 
+            this.btnCustomerManagement.AccessibleName = "Button";
+            this.btnCustomerManagement.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCustomerManagement.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomerManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCustomerManagement.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnCustomerManagement.Location = new System.Drawing.Point(0, 0);
+            this.btnCustomerManagement.Name = "btnCustomerManagement";
+            this.btnCustomerManagement.Size = new System.Drawing.Size(220, 50);
+            this.btnCustomerManagement.Style.BackColor = System.Drawing.Color.Teal;
+            this.btnCustomerManagement.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnCustomerManagement.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnCustomerManagement.Style.FocusedImageForeColor = System.Drawing.Color.White;
+            this.btnCustomerManagement.Style.ForeColor = System.Drawing.Color.White;
+            this.btnCustomerManagement.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnCustomerManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
+            this.btnCustomerManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
+            this.btnCustomerManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image29")));
+            this.btnCustomerManagement.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnCustomerManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnCustomerManagement.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnCustomerManagement.Style.PressedImageForeColor = System.Drawing.Color.White;
+            this.btnCustomerManagement.TabIndex = 5;
+            this.btnCustomerManagement.Text = "Quản lý khách";
+            this.btnCustomerManagement.Click += new System.EventHandler(this.Menu_Click);
+            // 
+            // panCustomer
+            // 
+            this.panCustomer.Controls.Add(this.btnCustomer);
+            this.panCustomer.Location = new System.Drawing.Point(0, 50);
+            this.panCustomer.Margin = new System.Windows.Forms.Padding(0);
+            this.panCustomer.Name = "panCustomer";
+            this.panCustomer.Size = new System.Drawing.Size(220, 50);
+            this.panCustomer.TabIndex = 5;
+            // 
+            // btnCustomer
+            // 
+            this.btnCustomer.AccessibleName = "Button";
+            this.btnCustomer.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCustomer.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCustomer.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnCustomer.Location = new System.Drawing.Point(0, 0);
+            this.btnCustomer.Name = "btnCustomer";
+            this.btnCustomer.Size = new System.Drawing.Size(220, 50);
+            this.btnCustomer.Style.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnCustomer.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnCustomer.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnCustomer.Style.FocusedImageForeColor = System.Drawing.Color.White;
+            this.btnCustomer.Style.ForeColor = System.Drawing.Color.White;
+            this.btnCustomer.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnCustomer.Style.HoverForeColor = System.Drawing.Color.Teal;
+            this.btnCustomer.Style.HoverImageForeColor = System.Drawing.Color.Teal;
+            this.btnCustomer.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image30")));
+            this.btnCustomer.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnCustomer.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnCustomer.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnCustomer.Style.PressedImageForeColor = System.Drawing.Color.White;
+            this.btnCustomer.TabIndex = 5;
+            this.btnCustomer.Text = "Khách hàng";
+            this.btnCustomer.UseVisualStyleBackColor = false;
+            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
+            // 
+            // panCustomerRanking
+            // 
+            this.panCustomerRanking.Controls.Add(this.btnCustomerRanking);
+            this.panCustomerRanking.Location = new System.Drawing.Point(0, 100);
+            this.panCustomerRanking.Margin = new System.Windows.Forms.Padding(0);
+            this.panCustomerRanking.Name = "panCustomerRanking";
+            this.panCustomerRanking.Size = new System.Drawing.Size(220, 50);
+            this.panCustomerRanking.TabIndex = 7;
+            // 
+            // btnCustomerRanking
+            // 
+            this.btnCustomerRanking.AccessibleName = "Button";
+            this.btnCustomerRanking.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnCustomerRanking.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCustomerRanking.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomerRanking.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCustomerRanking.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnCustomerRanking.Location = new System.Drawing.Point(0, 0);
+            this.btnCustomerRanking.Name = "btnCustomerRanking";
+            this.btnCustomerRanking.Size = new System.Drawing.Size(220, 50);
+            this.btnCustomerRanking.Style.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnCustomerRanking.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnCustomerRanking.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnCustomerRanking.Style.FocusedImageForeColor = System.Drawing.Color.White;
+            this.btnCustomerRanking.Style.ForeColor = System.Drawing.Color.White;
+            this.btnCustomerRanking.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnCustomerRanking.Style.HoverForeColor = System.Drawing.Color.Teal;
+            this.btnCustomerRanking.Style.HoverImageForeColor = System.Drawing.Color.Teal;
+            this.btnCustomerRanking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image31")));
+            this.btnCustomerRanking.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnCustomerRanking.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnCustomerRanking.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnCustomerRanking.Style.PressedImageForeColor = System.Drawing.Color.White;
+            this.btnCustomerRanking.TabIndex = 5;
+            this.btnCustomerRanking.Text = "Hạng khách hàng";
+            this.btnCustomerRanking.UseVisualStyleBackColor = false;
+            this.btnCustomerRanking.Click += new System.EventHandler(this.btnCustomerRanking_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnRating);
+            this.panel1.Location = new System.Drawing.Point(0, 150);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(220, 50);
+            this.panel1.TabIndex = 17;
+            // 
+            // btnRating
+            // 
+            this.btnRating.AccessibleName = "Button";
+            this.btnRating.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnRating.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRating.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRating.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRating.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnRating.Location = new System.Drawing.Point(0, 0);
+            this.btnRating.Name = "btnRating";
+            this.btnRating.Size = new System.Drawing.Size(220, 50);
+            this.btnRating.Style.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnRating.Style.FocusedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnRating.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnRating.Style.FocusedImageForeColor = System.Drawing.Color.White;
+            this.btnRating.Style.ForeColor = System.Drawing.Color.White;
+            this.btnRating.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnRating.Style.HoverForeColor = System.Drawing.Color.Teal;
+            this.btnRating.Style.HoverImageForeColor = System.Drawing.Color.Teal;
+            this.btnRating.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image32")));
+            this.btnRating.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnRating.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
+            this.btnRating.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnRating.Style.PressedImageForeColor = System.Drawing.Color.White;
+            this.btnRating.TabIndex = 5;
+            this.btnRating.Text = "Đánh giá";
+            this.btnRating.UseVisualStyleBackColor = false;
+            this.btnRating.Click += new System.EventHandler(this.btnRating_Click);
             // 
             // panHeader
             // 
@@ -1696,7 +1613,7 @@
             this.btnMenu.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnMenu.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnMenu.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnMenu.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image35")));
+            this.btnMenu.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image33")));
             this.btnMenu.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnMenu.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnMenu.Style.PressedForeColor = System.Drawing.Color.White;
@@ -1761,7 +1678,7 @@
             this.btnMinimize.Style.HoverBackColor = System.Drawing.Color.DarkCyan;
             this.btnMinimize.Style.HoverForeColor = System.Drawing.Color.Gold;
             this.btnMinimize.Style.HoverImageForeColor = System.Drawing.Color.Gold;
-            this.btnMinimize.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image36")));
+            this.btnMinimize.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image34")));
             this.btnMinimize.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnMinimize.Style.PressedBackColor = System.Drawing.Color.Gold;
             this.btnMinimize.Style.PressedForeColor = System.Drawing.Color.White;
@@ -1782,8 +1699,8 @@
             this.realTimeClock.ClockShape = Syncfusion.Windows.Forms.Tools.ClockShapes.RoundedRectangle;
             this.realTimeClock.ClockType = Syncfusion.Windows.Forms.Tools.ClockTypes.Digital;
             this.realTimeClock.CurrentDateTime = new System.DateTime(2024, 3, 9, 23, 55, 38, 42);
-            this.realTimeClock.CustomTime = new System.DateTime(2024, 5, 10, 21, 54, 4, 921);
-            this.realTimeClock.DigitalRenderer = digitalClockRenderer1;
+            this.realTimeClock.CustomTime = new System.DateTime(2024, 5, 11, 19, 25, 40, 212);
+            this.realTimeClock.DigitalRenderer = digitalClockRenderer2;
             this.realTimeClock.DisplayDates = false;
             this.realTimeClock.Location = new System.Drawing.Point(1347, 0);
             this.realTimeClock.Margin = new System.Windows.Forms.Padding(0);
@@ -1793,7 +1710,7 @@
             this.realTimeClock.Name = "realTimeClock";
             this.realTimeClock.Now = new System.DateTime(((long)(0)));
             this.realTimeClock.Remainder = new System.DateTime(2024, 3, 9, 23, 55, 38, 34);
-            this.realTimeClock.Renderer = clockRenderer1;
+            this.realTimeClock.Renderer = clockRenderer2;
             this.realTimeClock.ShowClockFrame = false;
             this.realTimeClock.ShowCustomTimeClock = true;
             this.realTimeClock.ShowHourDesignator = false;
@@ -1822,7 +1739,7 @@
             this.btnFullScreen.Style.HoverBackColor = System.Drawing.Color.DarkCyan;
             this.btnFullScreen.Style.HoverForeColor = System.Drawing.Color.LimeGreen;
             this.btnFullScreen.Style.HoverImageForeColor = System.Drawing.Color.LimeGreen;
-            this.btnFullScreen.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image37")));
+            this.btnFullScreen.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image35")));
             this.btnFullScreen.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnFullScreen.Style.PressedBackColor = System.Drawing.Color.LimeGreen;
             this.btnFullScreen.Style.PressedForeColor = System.Drawing.Color.White;
@@ -1852,7 +1769,7 @@
             this.btnClose.Style.HoverBackColor = System.Drawing.Color.DarkCyan;
             this.btnClose.Style.HoverForeColor = System.Drawing.Color.DarkRed;
             this.btnClose.Style.HoverImageForeColor = System.Drawing.Color.DarkRed;
-            this.btnClose.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image38")));
+            this.btnClose.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image36")));
             this.btnClose.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnClose.Style.PressedBackColor = System.Drawing.Color.Maroon;
             this.btnClose.Style.PressedForeColor = System.Drawing.Color.White;
@@ -1867,13 +1784,13 @@
             this.flpanSideBar.Controls.Add(this.panRoomBooking);
             this.flpanSideBar.Controls.Add(this.panDashBoard);
             this.flpanSideBar.Controls.Add(this.flpBookingManagement);
-            this.flpanSideBar.Controls.Add(this.flpAccount);
-            this.flpanSideBar.Controls.Add(this.flpStaffManagement);
-            this.flpanSideBar.Controls.Add(this.flpDeviceMangement);
-            this.flpanSideBar.Controls.Add(this.flpCustomerManagement);
-            this.flpanSideBar.Controls.Add(this.flpHousekeepingManagement);
-            this.flpanSideBar.Controls.Add(this.flpFinanceManagement);
             this.flpanSideBar.Controls.Add(this.flpRoomManagement);
+            this.flpanSideBar.Controls.Add(this.flpFinanceManagement);
+            this.flpanSideBar.Controls.Add(this.flpCustomerManagement);
+            this.flpanSideBar.Controls.Add(this.flpStaffManagement);
+            this.flpanSideBar.Controls.Add(this.flpAccount);
+            this.flpanSideBar.Controls.Add(this.flpDeviceMangement);
+            this.flpanSideBar.Controls.Add(this.flpHousekeepingManagement);
             this.flpanSideBar.Controls.Add(this.flpMaintanceManagement);
             this.flpanSideBar.Controls.Add(this.panLogOut);
             this.flpanSideBar.Dock = System.Windows.Forms.DockStyle.Left;
@@ -1906,27 +1823,38 @@
             this.Resize += new System.EventHandler(this.frmMain_Resize);
             this.panRoomBooking.ResumeLayout(false);
             this.panDashBoard.ResumeLayout(false);
-            this.flpMaintanceManagement.ResumeLayout(false);
-            this.panMaintanceManagement.ResumeLayout(false);
-            this.panMaintance.ResumeLayout(false);
+            this.panLogOut.ResumeLayout(false);
             this.flpBookingManagement.ResumeLayout(false);
             this.panBookingManagement.ResumeLayout(false);
             this.panBooking.ResumeLayout(false);
             this.panServiceType.ResumeLayout(false);
             this.panService.ResumeLayout(false);
+            this.flpMaintanceManagement.ResumeLayout(false);
+            this.panMaintanceManagement.ResumeLayout(false);
+            this.panMaintance.ResumeLayout(false);
+            this.flpAccount.ResumeLayout(false);
+            this.panUserManagement.ResumeLayout(false);
+            this.panTaiKhoan.ResumeLayout(false);
+            this.panSetup.ResumeLayout(false);
             this.flpRoomManagement.ResumeLayout(false);
             this.panRoomManagement.ResumeLayout(false);
             this.panRoom.ResumeLayout(false);
             this.panRoomType.ResumeLayout(false);
             this.panRoomStatus.ResumeLayout(false);
-            this.panLogOut.ResumeLayout(false);
+            this.flpStaffManagement.ResumeLayout(false);
+            this.panStaffManagement.ResumeLayout(false);
+            this.panStaff.ResumeLayout(false);
+            this.panDepartment.ResumeLayout(false);
+            this.panRole.ResumeLayout(false);
             this.flpFinanceManagement.ResumeLayout(false);
             this.panFinanceManagement.ResumeLayout(false);
             this.panBill.ResumeLayout(false);
-            this.panBillDetails.ResumeLayout(false);
             this.panTax.ResumeLayout(false);
             this.panDiscount.ResumeLayout(false);
-            this.panReportings.ResumeLayout(false);
+            this.flpDeviceMangement.ResumeLayout(false);
+            this.panQuanLyTietBi.ResumeLayout(false);
+            this.panDevices.ResumeLayout(false);
+            this.panDeviceStatus.ResumeLayout(false);
             this.flpHousekeepingManagement.ResumeLayout(false);
             this.panHousekeeping.ResumeLayout(false);
             this.panDonPhong.ResumeLayout(false);
@@ -1935,19 +1863,6 @@
             this.panCustomer.ResumeLayout(false);
             this.panCustomerRanking.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.flpDeviceMangement.ResumeLayout(false);
-            this.panQuanLyTietBi.ResumeLayout(false);
-            this.panDevices.ResumeLayout(false);
-            this.panDeviceStatus.ResumeLayout(false);
-            this.flpStaffManagement.ResumeLayout(false);
-            this.panStaffManagement.ResumeLayout(false);
-            this.panStaff.ResumeLayout(false);
-            this.panDepartment.ResumeLayout(false);
-            this.panRole.ResumeLayout(false);
-            this.flpAccount.ResumeLayout(false);
-            this.panUserManagement.ResumeLayout(false);
-            this.panTaiKhoan.ResumeLayout(false);
-            this.panSetup.ResumeLayout(false);
             this.panHeader.ResumeLayout(false);
             this.panMenu.ResumeLayout(false);
             this.panWelcome.ResumeLayout(false);
@@ -1987,8 +1902,6 @@
         private Syncfusion.WinForms.Controls.SfButton btnService;
         private System.Windows.Forms.Panel panBill;
         private Syncfusion.WinForms.Controls.SfButton btnHoaDon;
-        private System.Windows.Forms.Panel panReportings;
-        private Syncfusion.WinForms.Controls.SfButton btnReportings;
         private System.Windows.Forms.Panel panStaff;
         private Syncfusion.WinForms.Controls.SfButton btnStaff;
         private System.Windows.Forms.Panel panLogOut;
@@ -2011,8 +1924,6 @@
         private Syncfusion.WinForms.Controls.SfButton btnHousekeeping;
         private System.Windows.Forms.Panel panServiceType;
         private Syncfusion.WinForms.Controls.SfButton btnServiceType;
-        private System.Windows.Forms.Panel panBillDetails;
-        private Syncfusion.WinForms.Controls.SfButton btnBillDetails;
         private System.Windows.Forms.FlowLayoutPanel flpBookingManagement;
         private System.Windows.Forms.Panel panDepartment;
         private Syncfusion.WinForms.Controls.SfButton btnDepartment;
