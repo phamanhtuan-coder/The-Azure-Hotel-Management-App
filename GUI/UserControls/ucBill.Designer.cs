@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucBill));
             this.lblBill = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
@@ -39,6 +40,17 @@
             this.dtpBillDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvBill = new System.Windows.Forms.DataGridView();
+            this.colMaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaKH = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colMaNV = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colMaThue = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colNgayLapHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTongHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTienNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTienThoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtXemCT = new Syncfusion.WinForms.Controls.SfButton();
             this.btnThanhToan = new Syncfusion.WinForms.Controls.SfButton();
             this.btnTraCuuDP = new Syncfusion.WinForms.Controls.SfButton();
@@ -58,17 +70,7 @@
             this.lblStateBooking = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.colMaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaKH = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colMaNV = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colMaThue = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colNgayLapHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTongHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTienNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTienThoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateBooking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -115,6 +117,7 @@
             this.tlpController.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpController.Size = new System.Drawing.Size(394, 94);
             this.tlpController.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.tlpController, "Thêm hóa đơn");
             // 
             // btnAddBill
             // 
@@ -134,6 +137,7 @@
             this.btnAddBill.TabIndex = 1;
             this.btnAddBill.Text = "Thêm";
             this.btnAddBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnAddBill, "Thêm hóa đơn");
             this.btnAddBill.UseVisualStyleBackColor = false;
             this.btnAddBill.Click += new System.EventHandler(this.btnAddBill_Click);
             // 
@@ -155,6 +159,7 @@
             this.btnEditBill.TabIndex = 3;
             this.btnEditBill.Text = "Sửa";
             this.btnEditBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnEditBill, "Sửa hóa đơn");
             this.btnEditBill.UseVisualStyleBackColor = false;
             this.btnEditBill.Click += new System.EventHandler(this.btnEditBill_Click);
             // 
@@ -173,9 +178,10 @@
             this.btnDeleteBill.Style.ForeColor = System.Drawing.Color.White;
             this.btnDeleteBill.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDeleteBill.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteBill.TabIndex = 4;
+            this.btnDeleteBill.TabIndex = 2;
             this.btnDeleteBill.Text = "Xóa";
             this.btnDeleteBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnDeleteBill, "Xóa hóa đơn");
             this.btnDeleteBill.UseVisualStyleBackColor = false;
             this.btnDeleteBill.Click += new System.EventHandler(this.btnDeleteBill_Click);
             // 
@@ -194,9 +200,10 @@
             this.btnRecoverBill.Style.ForeColor = System.Drawing.Color.White;
             this.btnRecoverBill.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnRecoverBill.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRecoverBill.TabIndex = 5;
+            this.btnRecoverBill.TabIndex = 4;
             this.btnRecoverBill.Text = "Khôi phục";
             this.btnRecoverBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnRecoverBill, "Khôi phục hóa đơn");
             this.btnRecoverBill.UseVisualStyleBackColor = false;
             this.btnRecoverBill.Click += new System.EventHandler(this.btnRecoverBill_Click);
             // 
@@ -215,7 +222,8 @@
             this.cboStateBooking.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateBooking.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateBooking.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateBooking.TabIndex = 3;
+            this.cboStateBooking.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.cboStateBooking, "Lọc theo trạng thái");
             this.cboStateBooking.SelectedIndexChanged += new System.EventHandler(this.cboStateBooking_SelectedIndexChanged);
             // 
             // dtpBillDate
@@ -228,7 +236,8 @@
             this.dtpBillDate.Location = new System.Drawing.Point(192, 120);
             this.dtpBillDate.Name = "dtpBillDate";
             this.dtpBillDate.Size = new System.Drawing.Size(146, 30);
-            this.dtpBillDate.TabIndex = 6;
+            this.dtpBillDate.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.dtpBillDate, "Chọn ngày lập hóa đơn");
             this.dtpBillDate.ToolTipText = "";
             // 
             // spcQuery
@@ -298,272 +307,13 @@
             this.dgvBill.Size = new System.Drawing.Size(973, 746);
             this.dgvBill.TabIndex = 0;
             // 
-            // txtXemCT
-            // 
-            this.txtXemCT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtXemCT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.txtXemCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txtXemCT.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtXemCT.ForeColor = System.Drawing.Color.White;
-            this.txtXemCT.Location = new System.Drawing.Point(112, 419);
-            this.txtXemCT.Name = "txtXemCT";
-            this.txtXemCT.Size = new System.Drawing.Size(134, 40);
-            this.txtXemCT.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.txtXemCT.Style.ForeColor = System.Drawing.Color.White;
-            this.txtXemCT.TabIndex = 45;
-            this.txtXemCT.Text = "Xem chi tiết";
-            this.txtXemCT.UseVisualStyleBackColor = false;
-            this.txtXemCT.Click += new System.EventHandler(this.txtXemCT_Click);
-            // 
-            // btnThanhToan
-            // 
-            this.btnThanhToan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThanhToan.BackColor = System.Drawing.Color.Yellow;
-            this.btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThanhToan.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThanhToan.ForeColor = System.Drawing.Color.Black;
-            this.btnThanhToan.Location = new System.Drawing.Point(252, 419);
-            this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(135, 40);
-            this.btnThanhToan.Style.BackColor = System.Drawing.Color.Yellow;
-            this.btnThanhToan.Style.ForeColor = System.Drawing.Color.Black;
-            this.btnThanhToan.TabIndex = 44;
-            this.btnThanhToan.Text = "Thanh toán";
-            this.btnThanhToan.UseVisualStyleBackColor = false;
-            this.btnThanhToan.Click += new System.EventHandler(this.sfButton1_Click);
-            // 
-            // btnTraCuuDP
-            // 
-            this.btnTraCuuDP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTraCuuDP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnTraCuuDP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTraCuuDP.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTraCuuDP.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuDP.Location = new System.Drawing.Point(17, 419);
-            this.btnTraCuuDP.Name = "btnTraCuuDP";
-            this.btnTraCuuDP.Size = new System.Drawing.Size(88, 40);
-            this.btnTraCuuDP.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnTraCuuDP.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuDP.TabIndex = 43;
-            this.btnTraCuuDP.Text = "Tra cứu";
-            this.btnTraCuuDP.UseVisualStyleBackColor = false;
-            this.btnTraCuuDP.Click += new System.EventHandler(this.btnTraCuuDP_Click);
-            // 
-            // dtpNgayDat
-            // 
-            this.dtpNgayDat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpNgayDat.DateTimePattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
-            this.dtpNgayDat.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayDat.Location = new System.Drawing.Point(148, 370);
-            this.dtpNgayDat.Name = "dtpNgayDat";
-            this.dtpNgayDat.Size = new System.Drawing.Size(239, 34);
-            this.dtpNgayDat.TabIndex = 36;
-            this.dtpNgayDat.ToolTipText = "";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 329);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 26);
-            this.label3.TabIndex = 42;
-            this.label3.Text = "CCCD:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtCCCD
-            // 
-            this.txtCCCD.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCCCD.Location = new System.Drawing.Point(147, 315);
-            this.txtCCCD.Name = "txtCCCD";
-            this.txtCCCD.Size = new System.Drawing.Size(240, 40);
-            this.txtCCCD.TabIndex = 41;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 273);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 26);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Username:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtTraCuuUser
-            // 
-            this.txtTraCuuUser.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTraCuuUser.Location = new System.Drawing.Point(147, 261);
-            this.txtTraCuuUser.Name = "txtTraCuuUser";
-            this.txtTraCuuUser.Size = new System.Drawing.Size(240, 40);
-            this.txtTraCuuUser.TabIndex = 39;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(107, 221);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(231, 26);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "Tra cứu và Thanh toán";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblBookingDate
-            // 
-            this.lblBookingDate.AutoSize = true;
-            this.lblBookingDate.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBookingDate.Location = new System.Drawing.Point(12, 378);
-            this.lblBookingDate.Name = "lblBookingDate";
-            this.lblBookingDate.Size = new System.Drawing.Size(106, 26);
-            this.lblBookingDate.TabIndex = 37;
-            this.lblBookingDate.Text = "Ngày đặt:";
-            this.lblBookingDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // btnNgayTao
-            // 
-            this.btnNgayTao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNgayTao.BackColor = System.Drawing.Color.White;
-            this.btnNgayTao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNgayTao.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNgayTao.ForeColor = System.Drawing.Color.White;
-            this.btnNgayTao.Location = new System.Drawing.Point(344, 116);
-            this.btnNgayTao.Name = "btnNgayTao";
-            this.btnNgayTao.Size = new System.Drawing.Size(43, 34);
-            this.btnNgayTao.Style.BackColor = System.Drawing.Color.White;
-            this.btnNgayTao.Style.ForeColor = System.Drawing.Color.White;
-            this.btnNgayTao.Style.Image = global::GUI.Properties.Resources.SearchIcon;
-            this.btnNgayTao.TabIndex = 34;
-            this.btnNgayTao.UseVisualStyleBackColor = false;
-            this.btnNgayTao.Click += new System.EventHandler(this.btnNgayTao_Click);
-            // 
-            // cboSortSumBill
-            // 
-            this.cboSortSumBill.DelimiterChar = "";
-            this.cboSortSumBill.DisplayMember = "";
-            this.cboSortSumBill.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboSortSumBill.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortSumBill.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSumBill.Location = new System.Drawing.Point(192, 60);
-            this.cboSortSumBill.Name = "cboSortSumBill";
-            this.cboSortSumBill.Size = new System.Drawing.Size(195, 33);
-            this.cboSortSumBill.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortSumBill.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSumBill.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSumBill.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortSumBill.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSumBill.TabIndex = 24;
-            this.cboSortSumBill.SelectedIndexChanged += new System.EventHandler(this.cboSortSumBill_SelectedIndexChanged);
-            // 
-            // cboSortBillID
-            // 
-            this.cboSortBillID.DelimiterChar = "";
-            this.cboSortBillID.DisplayMember = "";
-            this.cboSortBillID.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboSortBillID.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortBillID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortBillID.Location = new System.Drawing.Point(192, 13);
-            this.cboSortBillID.Name = "cboSortBillID";
-            this.cboSortBillID.Size = new System.Drawing.Size(195, 33);
-            this.cboSortBillID.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortBillID.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortBillID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortBillID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortBillID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortBillID.TabIndex = 23;
-            this.cboSortBillID.SelectedIndexChanged += new System.EventHandler(this.cboSortBillID_SelectedIndexChanged);
-            // 
-            // lblSortSumBill
-            // 
-            this.lblSortSumBill.AutoSize = true;
-            this.lblSortSumBill.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortSumBill.Location = new System.Drawing.Point(10, 71);
-            this.lblSortSumBill.Name = "lblSortSumBill";
-            this.lblSortSumBill.Size = new System.Drawing.Size(169, 22);
-            this.lblSortSumBill.TabIndex = 16;
-            this.lblSortSumBill.Text = "Sort theo tổng tiền";
-            this.lblSortSumBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblSortBillID
-            // 
-            this.lblSortBillID.AutoSize = true;
-            this.lblSortBillID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortBillID.Location = new System.Drawing.Point(8, 24);
-            this.lblSortBillID.Name = "lblSortBillID";
-            this.lblSortBillID.Size = new System.Drawing.Size(142, 22);
-            this.lblSortBillID.TabIndex = 14;
-            this.lblSortBillID.Text = "Sort theo Bill ID";
-            this.lblSortBillID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblBillDate
-            // 
-            this.lblBillDate.AutoSize = true;
-            this.lblBillDate.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBillDate.Location = new System.Drawing.Point(10, 128);
-            this.lblBillDate.Name = "lblBillDate";
-            this.lblBillDate.Size = new System.Drawing.Size(158, 22);
-            this.lblBillDate.TabIndex = 10;
-            this.lblBillDate.Text = "Ngày lập hóa đơn";
-            this.lblBillDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblStateBooking
-            // 
-            this.lblStateBooking.AutoSize = true;
-            this.lblStateBooking.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStateBooking.Location = new System.Drawing.Point(13, 183);
-            this.lblStateBooking.Name = "lblStateBooking";
-            this.lblStateBooking.Size = new System.Drawing.Size(159, 22);
-            this.lblStateBooking.TabIndex = 9;
-            this.lblStateBooking.Text = "Trạng thái dữ liệu";
-            this.lblStateBooking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panUcHeader
-            // 
-            this.panUcHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(224)))), ((int)(((byte)(155)))));
-            this.panUcHeader.Controls.Add(this.spcHeader);
-            this.panUcHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panUcHeader.Location = new System.Drawing.Point(0, 0);
-            this.panUcHeader.Name = "panUcHeader";
-            this.panUcHeader.Size = new System.Drawing.Size(1370, 94);
-            this.panUcHeader.TabIndex = 37;
-            // 
-            // spcHeader
-            // 
-            this.spcHeader.BackColor = System.Drawing.Color.Lavender;
-            this.spcHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.spcHeader.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.spcHeader.Location = new System.Drawing.Point(0, 0);
-            this.spcHeader.Name = "spcHeader";
-            // 
-            // spcHeader.Panel1
-            // 
-            this.spcHeader.Panel1.Controls.Add(this.lblBill);
-            // 
-            // spcHeader.Panel2
-            // 
-            this.spcHeader.Panel2.Controls.Add(this.tlpController);
-            this.spcHeader.Size = new System.Drawing.Size(1370, 94);
-            this.spcHeader.SplitterDistance = 972;
-            this.spcHeader.TabIndex = 0;
-            // 
             // colMaHD
             // 
             this.colMaHD.DataPropertyName = "MaHoaDon";
             this.colMaHD.HeaderText = "Mã hóa đơn";
             this.colMaHD.Name = "colMaHD";
             this.colMaHD.ReadOnly = true;
-            this.colMaHD.Width = 118;
+            this.colMaHD.Width = 108;
             // 
             // colMaKH
             // 
@@ -656,6 +406,274 @@
             this.colTenDN.Visible = false;
             this.colTenDN.Width = 129;
             // 
+            // txtXemCT
+            // 
+            this.txtXemCT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtXemCT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.txtXemCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txtXemCT.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtXemCT.ForeColor = System.Drawing.Color.White;
+            this.txtXemCT.Location = new System.Drawing.Point(112, 419);
+            this.txtXemCT.Name = "txtXemCT";
+            this.txtXemCT.Size = new System.Drawing.Size(134, 40);
+            this.txtXemCT.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.txtXemCT.Style.ForeColor = System.Drawing.Color.White;
+            this.txtXemCT.TabIndex = 14;
+            this.txtXemCT.Text = "Xem chi tiết";
+            this.toolTip1.SetToolTip(this.txtXemCT, "Xem chi tiết");
+            this.txtXemCT.UseVisualStyleBackColor = false;
+            this.txtXemCT.Click += new System.EventHandler(this.txtXemCT_Click);
+            // 
+            // btnThanhToan
+            // 
+            this.btnThanhToan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThanhToan.BackColor = System.Drawing.Color.Yellow;
+            this.btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThanhToan.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThanhToan.ForeColor = System.Drawing.Color.Black;
+            this.btnThanhToan.Location = new System.Drawing.Point(252, 419);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.Size = new System.Drawing.Size(135, 40);
+            this.btnThanhToan.Style.BackColor = System.Drawing.Color.Yellow;
+            this.btnThanhToan.Style.ForeColor = System.Drawing.Color.Black;
+            this.btnThanhToan.TabIndex = 15;
+            this.btnThanhToan.Text = "Thanh toán";
+            this.toolTip1.SetToolTip(this.btnThanhToan, "Thanh toán");
+            this.btnThanhToan.UseVisualStyleBackColor = false;
+            this.btnThanhToan.Click += new System.EventHandler(this.sfButton1_Click);
+            // 
+            // btnTraCuuDP
+            // 
+            this.btnTraCuuDP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTraCuuDP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnTraCuuDP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTraCuuDP.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTraCuuDP.ForeColor = System.Drawing.Color.White;
+            this.btnTraCuuDP.Location = new System.Drawing.Point(17, 419);
+            this.btnTraCuuDP.Name = "btnTraCuuDP";
+            this.btnTraCuuDP.Size = new System.Drawing.Size(88, 40);
+            this.btnTraCuuDP.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnTraCuuDP.Style.ForeColor = System.Drawing.Color.White;
+            this.btnTraCuuDP.TabIndex = 13;
+            this.btnTraCuuDP.Text = "Tra cứu";
+            this.toolTip1.SetToolTip(this.btnTraCuuDP, "Tra cứu");
+            this.btnTraCuuDP.UseVisualStyleBackColor = false;
+            this.btnTraCuuDP.Click += new System.EventHandler(this.btnTraCuuDP_Click);
+            // 
+            // dtpNgayDat
+            // 
+            this.dtpNgayDat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpNgayDat.DateTimePattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
+            this.dtpNgayDat.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayDat.Location = new System.Drawing.Point(148, 370);
+            this.dtpNgayDat.Name = "dtpNgayDat";
+            this.dtpNgayDat.Size = new System.Drawing.Size(239, 34);
+            this.dtpNgayDat.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.dtpNgayDat, "Ngày đặt");
+            this.dtpNgayDat.ToolTipText = "";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 329);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 26);
+            this.label3.TabIndex = 42;
+            this.label3.Text = "CCCD:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtCCCD
+            // 
+            this.txtCCCD.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCCCD.Location = new System.Drawing.Point(147, 315);
+            this.txtCCCD.Name = "txtCCCD";
+            this.txtCCCD.Size = new System.Drawing.Size(240, 40);
+            this.txtCCCD.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.txtCCCD, "Căn cước công dân");
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 273);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(119, 26);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Username:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtTraCuuUser
+            // 
+            this.txtTraCuuUser.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTraCuuUser.Location = new System.Drawing.Point(147, 261);
+            this.txtTraCuuUser.Name = "txtTraCuuUser";
+            this.txtTraCuuUser.Size = new System.Drawing.Size(240, 40);
+            this.txtTraCuuUser.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.txtTraCuuUser, "Tên đăng nhập");
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(107, 221);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(231, 26);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "Tra cứu và Thanh toán";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblBookingDate
+            // 
+            this.lblBookingDate.AutoSize = true;
+            this.lblBookingDate.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBookingDate.Location = new System.Drawing.Point(12, 378);
+            this.lblBookingDate.Name = "lblBookingDate";
+            this.lblBookingDate.Size = new System.Drawing.Size(106, 26);
+            this.lblBookingDate.TabIndex = 37;
+            this.lblBookingDate.Text = "Ngày đặt:";
+            this.lblBookingDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btnNgayTao
+            // 
+            this.btnNgayTao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNgayTao.BackColor = System.Drawing.Color.White;
+            this.btnNgayTao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNgayTao.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNgayTao.ForeColor = System.Drawing.Color.White;
+            this.btnNgayTao.Location = new System.Drawing.Point(344, 116);
+            this.btnNgayTao.Name = "btnNgayTao";
+            this.btnNgayTao.Size = new System.Drawing.Size(43, 34);
+            this.btnNgayTao.Style.BackColor = System.Drawing.Color.White;
+            this.btnNgayTao.Style.ForeColor = System.Drawing.Color.White;
+            this.btnNgayTao.Style.Image = global::GUI.Properties.Resources.SearchIcon;
+            this.btnNgayTao.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.btnNgayTao, "Tìm kiếm");
+            this.btnNgayTao.UseVisualStyleBackColor = false;
+            this.btnNgayTao.Click += new System.EventHandler(this.btnNgayTao_Click);
+            // 
+            // cboSortSumBill
+            // 
+            this.cboSortSumBill.DelimiterChar = "";
+            this.cboSortSumBill.DisplayMember = "";
+            this.cboSortSumBill.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboSortSumBill.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+            this.cboSortSumBill.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortSumBill.Location = new System.Drawing.Point(192, 60);
+            this.cboSortSumBill.Name = "cboSortSumBill";
+            this.cboSortSumBill.Size = new System.Drawing.Size(195, 33);
+            this.cboSortSumBill.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.cboSortSumBill.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortSumBill.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortSumBill.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboSortSumBill.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortSumBill.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.cboSortSumBill, "Sắp xếp theo tổng tiền");
+            this.cboSortSumBill.SelectedIndexChanged += new System.EventHandler(this.cboSortSumBill_SelectedIndexChanged);
+            // 
+            // cboSortBillID
+            // 
+            this.cboSortBillID.DelimiterChar = "";
+            this.cboSortBillID.DisplayMember = "";
+            this.cboSortBillID.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboSortBillID.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+            this.cboSortBillID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortBillID.Location = new System.Drawing.Point(192, 13);
+            this.cboSortBillID.Name = "cboSortBillID";
+            this.cboSortBillID.Size = new System.Drawing.Size(195, 33);
+            this.cboSortBillID.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.cboSortBillID.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortBillID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortBillID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboSortBillID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortBillID.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.cboSortBillID, "Sắp xếp theo mã hóa đơn");
+            this.cboSortBillID.SelectedIndexChanged += new System.EventHandler(this.cboSortBillID_SelectedIndexChanged);
+            // 
+            // lblSortSumBill
+            // 
+            this.lblSortSumBill.AutoSize = true;
+            this.lblSortSumBill.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortSumBill.Location = new System.Drawing.Point(10, 71);
+            this.lblSortSumBill.Name = "lblSortSumBill";
+            this.lblSortSumBill.Size = new System.Drawing.Size(169, 22);
+            this.lblSortSumBill.TabIndex = 16;
+            this.lblSortSumBill.Text = "Sort theo tổng tiền";
+            this.lblSortSumBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblSortBillID
+            // 
+            this.lblSortBillID.AutoSize = true;
+            this.lblSortBillID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortBillID.Location = new System.Drawing.Point(8, 24);
+            this.lblSortBillID.Name = "lblSortBillID";
+            this.lblSortBillID.Size = new System.Drawing.Size(142, 22);
+            this.lblSortBillID.TabIndex = 14;
+            this.lblSortBillID.Text = "Sort theo Bill ID";
+            this.lblSortBillID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblBillDate
+            // 
+            this.lblBillDate.AutoSize = true;
+            this.lblBillDate.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBillDate.Location = new System.Drawing.Point(10, 128);
+            this.lblBillDate.Name = "lblBillDate";
+            this.lblBillDate.Size = new System.Drawing.Size(158, 22);
+            this.lblBillDate.TabIndex = 10;
+            this.lblBillDate.Text = "Ngày lập hóa đơn";
+            this.lblBillDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblStateBooking
+            // 
+            this.lblStateBooking.AutoSize = true;
+            this.lblStateBooking.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStateBooking.Location = new System.Drawing.Point(13, 183);
+            this.lblStateBooking.Name = "lblStateBooking";
+            this.lblStateBooking.Size = new System.Drawing.Size(159, 22);
+            this.lblStateBooking.TabIndex = 9;
+            this.lblStateBooking.Text = "Trạng thái dữ liệu";
+            this.lblStateBooking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panUcHeader
+            // 
+            this.panUcHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(224)))), ((int)(((byte)(155)))));
+            this.panUcHeader.Controls.Add(this.spcHeader);
+            this.panUcHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panUcHeader.Location = new System.Drawing.Point(0, 0);
+            this.panUcHeader.Name = "panUcHeader";
+            this.panUcHeader.Size = new System.Drawing.Size(1370, 94);
+            this.panUcHeader.TabIndex = 37;
+            // 
+            // spcHeader
+            // 
+            this.spcHeader.BackColor = System.Drawing.Color.Lavender;
+            this.spcHeader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.spcHeader.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.spcHeader.Location = new System.Drawing.Point(0, 0);
+            this.spcHeader.Name = "spcHeader";
+            // 
+            // spcHeader.Panel1
+            // 
+            this.spcHeader.Panel1.Controls.Add(this.lblBill);
+            // 
+            // spcHeader.Panel2
+            // 
+            this.spcHeader.Panel2.Controls.Add(this.tlpController);
+            this.spcHeader.Size = new System.Drawing.Size(1370, 94);
+            this.spcHeader.SplitterDistance = 972;
+            this.spcHeader.TabIndex = 0;
+            // 
             // ucBill
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -727,5 +745,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCCCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenDN;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

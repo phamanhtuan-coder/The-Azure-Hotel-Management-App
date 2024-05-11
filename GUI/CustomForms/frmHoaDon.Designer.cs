@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSubmit = new Syncfusion.WinForms.Controls.SfButton();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.lblMaKH = new System.Windows.Forms.Label();
@@ -38,6 +39,7 @@
             this.txtMaKH = new System.Windows.Forms.TextBox();
             this.cboMaKM = new Syncfusion.WinForms.ListView.SfComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.cboMaNV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboMaThue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboMaKM)).BeginInit();
@@ -49,8 +51,9 @@
             this.btnSubmit.Location = new System.Drawing.Point(252, 196);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(206, 50);
-            this.btnSubmit.TabIndex = 3;
+            this.btnSubmit.TabIndex = 6;
             this.btnSubmit.Text = "Submit";
+            this.toolTip1.SetToolTip(this.btnSubmit, "Gửi");
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnCancel
@@ -61,6 +64,7 @@
             this.btnCancel.Size = new System.Drawing.Size(206, 50);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Quay lại";
+            this.toolTip1.SetToolTip(this.btnCancel, "Quay lại hóa đơn");
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // lblMaKH
@@ -84,8 +88,9 @@
             this.cboMaNV.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboMaNV.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboMaNV.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.cboMaNV.TabIndex = 14;
+            this.cboMaNV.TabIndex = 2;
             this.cboMaNV.TabStop = false;
+            this.toolTip1.SetToolTip(this.cboMaNV, "Chọn nhân viên");
             // 
             // label1
             // 
@@ -108,8 +113,9 @@
             this.cboMaThue.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboMaThue.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboMaThue.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.cboMaThue.TabIndex = 21;
+            this.cboMaThue.TabIndex = 3;
             this.cboMaThue.TabStop = false;
+            this.toolTip1.SetToolTip(this.cboMaThue, "Chọn thuế");
             // 
             // lblMaNV
             // 
@@ -128,7 +134,8 @@
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.ReadOnly = true;
             this.txtMaKH.Size = new System.Drawing.Size(180, 27);
-            this.txtMaKH.TabIndex = 23;
+            this.txtMaKH.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.txtMaKH, "Nhập mã khách hàng");
             // 
             // cboMaKM
             // 
@@ -141,8 +148,9 @@
             this.cboMaKM.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboMaKM.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboMaKM.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.cboMaKM.TabIndex = 30;
+            this.cboMaKM.TabIndex = 4;
             this.cboMaKM.TabStop = false;
+            this.toolTip1.SetToolTip(this.cboMaKM, "Chọn khuyến mãi");
             // 
             // label2
             // 
@@ -194,5 +202,6 @@
         private System.Windows.Forms.TextBox txtMaKH;
         private Syncfusion.WinForms.ListView.SfComboBox cboMaKM;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
