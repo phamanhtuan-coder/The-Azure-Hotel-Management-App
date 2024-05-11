@@ -34,7 +34,7 @@ namespace GUI.customForm
             if (isAdd)
             {
                 
-                nhanVienDTOs = NhanVienBLL.LoadIDAndNameBLL();
+                nhanVienDTOs = NhanVienBLL.LoadIDAndNameBLLBaoTri();
                 cboNVBaoTri.DataSource = nhanVienDTOs;
                 cboNVBaoTri.DisplayMember = "HoTenNV";
                 cboNVBaoTri.ValueMember = "MaNV";
@@ -51,12 +51,24 @@ namespace GUI.customForm
                 cboNVBaoTri.DataSource = nhanVienDTOs;
                 cboNVBaoTri.DisplayMember = "HoTenNV";
                 cboNVBaoTri.ValueMember = "MaNV";
-                cboNVBaoTri.SelectedIndex = BaoTriDTO.MaNV-1;
+                foreach(var item in cboNVBaoTri.DataSource as List<NhanVienDTO>)
+                {
+                    if(item.MaNV == BaoTriDTO.MaNV)
+                    {
+                        cboNVBaoTri.SelectedItem = item;
+                    }
+                }
                 thietBiDTOs = ThietBiBLL.laydstbi();
                 cboThietBi.DataSource = thietBiDTOs;
                 cboThietBi.DisplayMember = "TenThietBi";
                 cboThietBi.ValueMember = "MaThietBi";
-                cboThietBi.SelectedIndex = BaoTriDTO.MaBaoTri-1;
+                foreach (var item in cboThietBi.DataSource as List<ThietBiDTO>)
+                {
+                    if (item.MaThietBi == BaoTriDTO.MaThietBi)
+                    {
+                        cboThietBi.SelectedItem = item;
+                    }
+                }
                 dtpNgayHuHong.Value = BaoTriDTO.NgayHuHong;
                 dtpNgayBaoTri.Value = BaoTriDTO.NgayBaoTri;
             }

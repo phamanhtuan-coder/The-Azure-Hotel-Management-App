@@ -111,7 +111,7 @@ namespace GUI.customForm
             khong.TenThue = "None";
             khong.MaThue = -1;
             thueDTOs.Add(khong);
-            foreach (ThueDTO item in thueBLL.TruyVanTenVaMaThue())
+            foreach (ThueDTO item in thueBLL.TruyVanDSThueTT1())
             {
                 thueDTOs.Add(item);
             }

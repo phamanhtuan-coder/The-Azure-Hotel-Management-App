@@ -193,5 +193,34 @@ namespace DAL
                 return 0;
             }
         }
+
+        public List<ThueDTO> TruyVanDSThueTT1()
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("SELECT TenThue, MaThue FROM Thue Where TrangThai = 1 ", conn);
+                SqlDataReader reader = com.ExecuteReader();
+                list = new List<ThueDTO>();
+                while (reader.Read())
+                {
+                    ThueDTO thueDTO = new ThueDTO();
+
+                    thueDTO.MaThue = (int)reader["MaThue"];
+                    thueDTO.TenThue = reader["TenThue"].ToString();
+
+                    list.Add(thueDTO);
+                }
+
+                conn.Close();
+                return list;
+            }
+            catch (Exception)
+            {
+                return new List<ThueDTO>();
+            }
+        }
     }
 }

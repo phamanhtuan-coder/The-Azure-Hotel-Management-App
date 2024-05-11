@@ -104,5 +104,10 @@ namespace BLL
         {
             return thueDAL.LayKM(maThue);
         }
+
+        public List<ThueDTO> TruyVanDSThueTT1()
+        {
+            return thueDAL.TruyVanDSThueTT1();
+        }
     }
 }

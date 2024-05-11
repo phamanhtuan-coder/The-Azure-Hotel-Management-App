@@ -21,6 +21,7 @@ namespace GUI.UserControls
         List<BaoTriDTO> baoTriDTOs = new List<BaoTriDTO>();
         List<BaoTriDTO> baoTriDTOstk = new List<BaoTriDTO>();
         BaoTriBLL baoTriBLL = new BaoTriBLL();
+        NhanVienBLL nhanVienBLL = new NhanVienBLL();
         public ucMaintentance()
         {
             InitializeComponent();
@@ -28,9 +29,28 @@ namespace GUI.UserControls
 
         private void ucMaintance_Load(object sender, EventArgs e)
         {
+            LoadDSNV();
+            LoadDSTB();
             Loadds();
             dgvMaintenance.AutoGenerateColumns = false;
             Loadcombo();
+        }
+
+        private void LoadDSTB()
+        {
+            ThietBiBLL thietBiBLL = new ThietBiBLL();
+            List<ThietBiDTO> thietBiDTOs = thietBiBLL.laydstbi();
+            colMaThietBi.DataSource = thietBiDTOs;
+            colMaThietBi.DisplayMember = "TenThietBi";
+            colMaThietBi.ValueMember = "MaThietBi";
+        }
+
+        private void LoadDSNV()
+        {
+            List<NhanVienDTO> list = nhanVienBLL.LoadIDAndNameBLLBaoTri();
+            colMaNV.DataSource = list;
+            colMaNV.DisplayMember = "HoTenNV";
+            colMaNV.ValueMember = "MaNV";
         }
 
         private void Loadds()

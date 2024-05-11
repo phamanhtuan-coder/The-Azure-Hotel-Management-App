@@ -122,5 +122,10 @@ namespace BLL
         {
             return nhanVienDAL.EditNhanVien(nhanVienDTO);
         }
+
+        public List<NhanVienDTO> LoadIDAndNameBLLBaoTri()
+        {
+            return nhanVienDAL.LoadIDAndNameBLLBaoTri();
+        }
     }
 }
