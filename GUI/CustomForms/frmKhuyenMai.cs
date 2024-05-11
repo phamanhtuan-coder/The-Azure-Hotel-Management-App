@@ -51,10 +51,7 @@ namespace GUI.customForm
         }
         private void LoadDuLieuHangThanhVien()
         {
-            HangThanhVienDTO TatCa = new HangThanhVienDTO();
-            TatCa.MaLoaiHangThanhVien = -1;
-            TatCa.TenHang = "Tất cả";
-            List<HangThanhVienDTO> list = new List<HangThanhVienDTO> { TatCa };
+            List<HangThanhVienDTO> list = new List<HangThanhVienDTO> ();
             HangThanhVienBLL hangThanhVienBLL = new HangThanhVienBLL();
             foreach (var item in hangThanhVienBLL.LoadIDAndNameBLL())
             {
