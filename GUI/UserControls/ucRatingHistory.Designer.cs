@@ -54,24 +54,6 @@
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.colMaDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDiemDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNhanXet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDiemDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNhanXet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDiemDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNhanXet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRating)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -199,28 +181,24 @@
             this.btnRecoverRating.Text = "Khôi phục";
             this.btnRecoverRating.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.btnRecoverRating, "Khôi phụcđánh giá");
-            this.cboStateRating.TabIndex = 13;
-            this.toolTip1.SetToolTip(this.cboStateRating, "Lọc theo trạng thái");
-            this.cboStateRating.TabIndex = 3;
-            this.cboStateRating.SelectedIndexChanged += new System.EventHandler(this.cboStateRating_SelectedIndexChanged);
+            this.btnRecoverRating.UseVisualStyleBackColor = false;
             // 
             // cboStateRating
             // 
-            this.cboStateRating.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)))) ;
-            this.cboStateRating.TabIndex = 13;
-            this.toolTip1.SetToolTip(this.cboStateRating, "Lọc theo trạng thái");
             this.cboStateRating.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboStateRating.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboStateRating.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateRating.Location = new System.Drawing.Point(234, 186);
+            this.cboStateRating.Location = new System.Drawing.Point(234, 192);
             this.cboStateRating.Name = "cboStateRating";
-            this.cboStateRating.TabIndex = 3;
+            this.cboStateRating.Size = new System.Drawing.Size(143, 33);
             this.cboStateRating.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.cboStateRating.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateRating.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateRating.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateRating.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateRating.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.cboStateRating, "Lọc theo trạng thái");
+            this.cboStateRating.SelectedIndexChanged += new System.EventHandler(this.cboStateRating_SelectedIndexChanged);
             // 
             // spcQuery
             // 
@@ -334,78 +312,16 @@
             this.btnDanhGia.UseVisualStyleBackColor = false;
             this.btnDanhGia.Click += new System.EventHandler(this.btnDanhGia_Click);
             // 
-            // colMaDG
-            // 
-            this.colMaDG.DataPropertyName = "MaDG";
-            this.colMaDG.HeaderText = "Mã đánh giá";
-            this.colMaDG.Name = "colMaDG";
-            this.colMaDG.ReadOnly = true;
-            this.colMaDG.Visible = false;
-            // 
-            // colMaDP
-            // 
-            this.colMaDP.DataPropertyName = "MaDP";
-            this.colMaDP.HeaderText = "Mã đặt phòng";
-            this.colMaDP.Name = "colMaDP";
-            this.colMaDP.ReadOnly = true;
-            // 
-            // colDiemDG
-            // 
-            this.colDiemDG.DataPropertyName = "DiemDanhGia";
-            this.colDiemDG.HeaderText = "Điểm đánh giá";
-            this.colDiemDG.Name = "colDiemDG";
-            this.colDiemDG.ReadOnly = true;
-            // 
-            // colNhanXet
-            // 
-            this.colNhanXet.DataPropertyName = "NhanXet";
-            this.colNhanXet.HeaderText = "Nhận xét";
-            this.colNhanXet.Name = "colNhanXet";
-            this.colNhanXet.ReadOnly = true;
-            // 
-            // colNgayDG
-            // 
-            this.colNgayDG.DataPropertyName = "NgayDanhGia";
-            this.colNgayDG.HeaderText = "Ngày đánh giá";
-            this.colNgayDG.Name = "colNgayDG";
-            this.colNgayDG.ReadOnly = true;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "TrangThai";
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Visible = false;
-            // 
-            // btnDanhGia
-            // 
-            this.btnDanhGia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDanhGia.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnDanhGia.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayDanhGia.TabIndex = 11;
-            this.toolTip1.SetToolTip(this.dtpNgayDanhGia, "Ngày đánh giá");
-            this.dtpNgayDanhGia.TabIndex = 31;
-            this.dtpNgayDanhGia.ValueChanged += new System.EventHandler(this.dtpNgayDanhGia_ValueChanged);
-            this.btnDanhGia.Name = "btnDanhGia";
-            this.btnDanhGia.Size = new System.Drawing.Size(186, 56);
-            this.btnDanhGia.Style.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnDanhGia.Style.ForeColor = System.Drawing.Color.White;
-            this.dtpNgayDanhGia.TabIndex = 11;
-            this.toolTip1.SetToolTip(this.dtpNgayDanhGia, "Ngày đánh giá");
-            this.btnDanhGia.Text = "Viết đánh giá";
-            this.btnDanhGia.UseVisualStyleBackColor = false;
-            this.btnDanhGia.Click += new System.EventHandler(this.btnDanhGia_Click);
-            // 
             // dtpNgayDanhGia
-            this.dtpNgayDanhGia.TabIndex = 31;
+            // 
             this.dtpNgayDanhGia.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayDanhGia.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayDanhGia.Location = new System.Drawing.Point(190, 145);
+            this.dtpNgayDanhGia.Location = new System.Drawing.Point(234, 145);
             this.dtpNgayDanhGia.Name = "dtpNgayDanhGia";
-            this.dtpNgayDanhGia.Size = new System.Drawing.Size(200, 27);
+            this.dtpNgayDanhGia.Size = new System.Drawing.Size(143, 27);
             this.dtpNgayDanhGia.TabIndex = 31;
+            this.toolTip1.SetToolTip(this.dtpNgayDanhGia, "Ngày đánh giá");
+            this.dtpNgayDanhGia.ValueChanged += new System.EventHandler(this.dtpNgayDanhGia_ValueChanged);
             // 
             // lblNgayDanhGia
             // 
@@ -415,28 +331,25 @@
             this.lblNgayDanhGia.Name = "lblNgayDanhGia";
             this.lblNgayDanhGia.Size = new System.Drawing.Size(155, 26);
             this.lblNgayDanhGia.TabIndex = 10;
-            this.cboRatingValue.TabIndex = 9;
-            this.toolTip1.SetToolTip(this.cboRatingValue, "Lọc theo số điểm");
-            this.cboRatingValue.TabIndex = 23;
-            this.cboRatingValue.SelectedIndexChanged += new System.EventHandler(this.cboRatingValue_SelectedIndexChanged);
+            this.lblNgayDanhGia.Text = "Ngày đánh giá";
             // 
             // cboRatingValue
             // 
             this.cboRatingValue.DelimiterChar = "";
-            this.cboRatingValue.TabIndex = 9;
-            this.toolTip1.SetToolTip(this.cboRatingValue, "Lọc theo số điểm");
             this.cboRatingValue.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboRatingValue.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboRatingValue.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRatingValue.Location = new System.Drawing.Point(234, 91);
             this.cboRatingValue.Name = "cboRatingValue";
-            this.cboRatingValue.TabIndex = 23;
+            this.cboRatingValue.Size = new System.Drawing.Size(143, 33);
             this.cboRatingValue.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.cboRatingValue.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRatingValue.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRatingValue.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboRatingValue.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRatingValue.TabIndex = 23;
+            this.toolTip1.SetToolTip(this.cboRatingValue, "Lọc theo số điểm");
+            this.cboRatingValue.SelectedIndexChanged += new System.EventHandler(this.cboRatingValue_SelectedIndexChanged);
             // 
             // lblRatingValue
             // 
@@ -453,7 +366,7 @@
             // 
             this.lblStateRating.AutoSize = true;
             this.lblStateRating.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStateRating.Location = new System.Drawing.Point(10, 193);
+            this.lblStateRating.Location = new System.Drawing.Point(9, 199);
             this.lblStateRating.Name = "lblStateRating";
             this.lblStateRating.Size = new System.Drawing.Size(186, 26);
             this.lblStateRating.TabIndex = 12;

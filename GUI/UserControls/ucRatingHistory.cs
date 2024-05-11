@@ -40,6 +40,7 @@ namespace GUI.UserControls
             dgvRating.AutoGenerateColumns = false;
             LayDanhSachDanhGia();
             CapDuLieuChoController();
+            dtpNgayDanhGia.MaxDate = DateTime.Now;
         }
 
         private void CapDuLieuChoController()
