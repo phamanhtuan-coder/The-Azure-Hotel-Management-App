@@ -53,6 +53,7 @@
     <Compile Include="LoaiPhongBLL.cs" />
     <Compile Include="KhachHangBLL.cs" />
     <Compile Include="NhanVienBLL.cs" />
+    <Compile Include="DanhGiaBLL.cs" />
     <Compile Include="PhongBanBLL.cs" />
     <Compile Include="PhongBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

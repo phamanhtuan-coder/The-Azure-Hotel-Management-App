@@ -38,8 +38,6 @@ namespace GUI.customForm
                 cboMaPHG.DisplayMember = "MaPHG";
                 cboMaPHG.ValueMember = "MaPHG";
                 dtpNgayDat.Value = DateTime.Now;
-                dtpNgayNhanPhong.Value = DateTime.Now;
-                dtpNgayTraPhong.Value= DateTime.Now;
                 nudSoLuongKhach.Value = 1;
             }
             else
@@ -51,9 +49,6 @@ namespace GUI.customForm
                 cboMaPHG.DisplayMember = "MaPHG";
                 cboMaPHG.ValueMember = "MaPHG";
                 cboMaPHG.SelectedItem = DatPhongDTO.MaPHG;
-                dtpNgayDat.Value = DatPhongDTO.NgayDatPhong;
-                dtpNgayNhanPhong.Value = DateTime.Now;
-                dtpNgayTraPhong.Value = DateTime.Now;
                 nudSoLuongKhach.Value = DatPhongDTO.SoLuongKH;
             }
 
@@ -67,8 +62,6 @@ namespace GUI.customForm
             p.MaPHG = int.Parse(cboMaPHG.Text);
             p.MaKH =int.Parse(txtMaKH.Text);
             p.NgayDatPhong = dtpNgayDat.Value;
-            p.NgayNhanPhong = dtpNgayNhanPhong.Value;
-            p.NgayTraPhong = dtpNgayTraPhong.Value;
             p.SoLuongKH =(int)nudSoLuongKhach.Value;
 
         }
@@ -82,7 +75,7 @@ namespace GUI.customForm
             // Kiểm tra if tiến hành xử lý sự kiện thêm/sửa phòng ban
             if (isAdd)
             {
-                // Nếu đúng là form Thêm thì chạy lệnh insert
+                
                 check = DatPhongBLL.them(DatPhongDTO);
                 if (check)
                 {
@@ -98,7 +91,7 @@ namespace GUI.customForm
             }
             else
             {
-                // nếu không thì chạy lệnh update
+                
                 check = DatPhongBLL.sua(DatPhongDTO);
                 if(check)
                 {
@@ -123,6 +116,7 @@ namespace GUI.customForm
         private void btnTaoKH_Click(object sender, EventArgs e)
         {
             frmKhachHang taoKhachHang = new frmKhachHang();
+            taoKhachHang.isAdd = true;
             taoKhachHang.ShowDialog();
         }
     }

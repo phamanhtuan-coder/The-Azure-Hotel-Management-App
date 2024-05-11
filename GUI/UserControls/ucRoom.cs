@@ -51,14 +51,6 @@ namespace GUI.UserControls
             DuLieuChoComboBox.duLieuSort(cboSortPrice);
             DuLieuChoComboBox.duLieuFilter(cboStateRoom);
 
-            tinhTrangPhongDTOs = TinhTrangPhongBLL.laydsttphong();
-            cboRoomStatus.DataSource = tinhTrangPhongDTOs;
-            cboRoomStatus.DisplayMember = "TenTinhTrang";
-            cboRoomStatus.ValueMember = "MaTinhTrangPhong";
-            loaiPhongDTOs = loaiPhongBLL.laydslphong();
-            cboSortRoomType.DataSource = loaiPhongDTOs;
-            cboSortRoomType.DisplayMember = "TenLoai";
-            cboSortRoomType.ValueMember = "MaLoai";
         }
 
         private void btnAddRoom_Click(object sender, EventArgs e)
@@ -78,6 +70,7 @@ namespace GUI.UserControls
             frm.PhongDTO.GiaPhong = (decimal)dgvRoom.SelectedRows[0].Cells["colGiaPhong"].Value;
             frm.PhongDTO.SucChuaToiDa = (int)dgvRoom.SelectedRows[0].Cells["colSucChuaToiDa"].Value;
             frm.PhongDTO.MoTa = dgvRoom.SelectedRows[0].Cells["colMoTa"].Value.ToString();
+            frm.PhongDTO.HinhAnh = (byte[])dgvRoom.SelectedRows[0].Cells["colHinhAnh"].Value;
             frm.PhongDTO.TrangThai = Convert.ToBoolean(dgvRoom.SelectedRows[0].Cells["colTrangThai"].Value);
         }
         private void btnEditRoom_Click(object sender, EventArgs e)

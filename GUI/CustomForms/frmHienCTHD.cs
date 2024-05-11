@@ -24,6 +24,9 @@ namespace GUI.customForm
         private void frmHienCTHD_Load(object sender, EventArgs e)
         {
             dgvBillDetails.DataSource = hs;
+            dgvBillDetails.DefaultCellStyle.ForeColor = Color.Black;
+            dgvBillDetails.DefaultCellStyle.SelectionBackColor = Color.Blue;
+            dgvBillDetails.DefaultCellStyle.SelectionForeColor = Color.White;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

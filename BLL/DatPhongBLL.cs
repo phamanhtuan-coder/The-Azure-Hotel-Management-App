@@ -62,6 +62,14 @@ namespace BLL
         {
             return DatPhongDAL.kpd(madatphong);
         }
+        public bool checkout(int madatphong, DatPhongDTO datPhongDTO)
+        {
+            return DatPhongDAL.checkout(madatphong,datPhongDTO);
+        }
+        public bool checkin(int madatphong, DatPhongDTO datPhongDTO)
+        {
+            return DatPhongDAL.checkin(madatphong, datPhongDTO);
+        }
 
         public List<DatPhongDTO> laydsp()
         {
@@ -93,6 +101,16 @@ namespace BLL
         public bool Xoad(int madatphong)
         {
             return DatPhongDAL.xoa(madatphong);
+        }
+
+        public List<DatPhongDTO> LayDanhSachDatPhongChuaDanhGia(int maKH)
+        {
+            return DatPhongDAL.LayDanhSachDatPhongChuaDanhGia(maKH);
+        }
+
+        public List<DatPhongDTO> LayDanhSachDatPhongDaDanhGia(int maKH)
+        {
+            return DatPhongDAL.LayDanhSachDatPhongDaDanhGia(maKH);
         }
     }
 }

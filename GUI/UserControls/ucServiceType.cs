@@ -61,6 +61,7 @@ namespace GUI.UserControls
             frm.DichVuDTO.MaDV = (int)dgvServiceType.SelectedRows[0].Cells["colMaDV"].Value;
             frm.DichVuDTO.TenDV = dgvServiceType.SelectedRows[0].Cells["colTenDV"].Value.ToString();
             frm.DichVuDTO.GiaDV = (decimal)dgvServiceType.SelectedRows[0].Cells["colGiaDV"].Value;
+            frm.DichVuDTO.HinhAnh = (byte[])dgvServiceType.SelectedRows[0].Cells["colHinhAnh"].Value;
         }
         private void btnEditServiceType_Click(object sender, EventArgs e)
         {

@@ -13,14 +13,14 @@ namespace BLL
 
         PhongBanDAL phongBanDaL = new PhongBanDAL();
 
-        public static bool KhoiPhucPhongBan(string maPhongBan)
+        public bool KhoiPhucPhongBan(string maPhongBan)
         {
-            return PhongBanDAL.KhoiPhucPhongBan(maPhongBan);
+            return phongBanDaL.KhoiPhucPhongBan(maPhongBan);
         }
 
-        public static bool XoaPhongBan(string maPhongBan)
+        public  bool XoaPhongBan(string maPhongBan)
         {
-            return PhongBanDAL.XoaPhongBan(maPhongBan);
+            return phongBanDaL.XoaPhongBan(maPhongBan);
         }
 
         //Hàm dùng để lọc

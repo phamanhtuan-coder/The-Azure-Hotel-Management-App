@@ -30,7 +30,6 @@
         {
             Syncfusion.Windows.Forms.Tools.CustomImageCollection customImageCollection1 = new Syncfusion.Windows.Forms.Tools.CustomImageCollection();
             Syncfusion.Windows.Forms.Tools.ResetButton resetButton1 = new Syncfusion.Windows.Forms.Tools.ResetButton();
-            this.txtMaDP = new System.Windows.Forms.TextBox();
             this.btnSubmit = new Syncfusion.WinForms.Controls.SfButton();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.lbMaDP = new System.Windows.Forms.Label();
@@ -40,14 +39,8 @@
             this.lblNgayDanhGia = new System.Windows.Forms.Label();
             this.rcDiemDG = new Syncfusion.Windows.Forms.Tools.RatingControl();
             this.dtpNgayDG = new System.Windows.Forms.DateTimePicker();
+            this.cboMaDP = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // txtMaDP
-            // 
-            this.txtMaDP.Location = new System.Drawing.Point(266, 12);
-            this.txtMaDP.Name = "txtMaDP";
-            this.txtMaDP.Size = new System.Drawing.Size(306, 27);
-            this.txtMaDP.TabIndex = 0;
             // 
             // btnSubmit
             // 
@@ -122,7 +115,6 @@
             this.rcDiemDG.ResetButton = resetButton1;
             this.rcDiemDG.Size = new System.Drawing.Size(151, 27);
             this.rcDiemDG.TabIndex = 11;
-            this.rcDiemDG.Text = "ratingControl1";
             this.rcDiemDG.ThemeName = "Default";
             // 
             // dtpNgayDG
@@ -134,11 +126,21 @@
             this.dtpNgayDG.Size = new System.Drawing.Size(306, 27);
             this.dtpNgayDG.TabIndex = 12;
             // 
+            // cboMaDP
+            // 
+            this.cboMaDP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMaDP.FormattingEnabled = true;
+            this.cboMaDP.Location = new System.Drawing.Point(266, 14);
+            this.cboMaDP.Name = "cboMaDP";
+            this.cboMaDP.Size = new System.Drawing.Size(306, 30);
+            this.cboMaDP.TabIndex = 13;
+            // 
             // frmDanhGia
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(600, 350);
+            this.Controls.Add(this.cboMaDP);
             this.Controls.Add(this.dtpNgayDG);
             this.Controls.Add(this.rcDiemDG);
             this.Controls.Add(this.lblNgayDanhGia);
@@ -148,7 +150,6 @@
             this.Controls.Add(this.lbMaDP);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.txtMaDP);
             this.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -161,8 +162,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtMaDP;
         private Syncfusion.WinForms.Controls.SfButton btnSubmit;
         private Syncfusion.WinForms.Controls.SfButton btnCancel;
         private System.Windows.Forms.Label lbMaDP;
@@ -172,5 +171,6 @@
         private System.Windows.Forms.Label lblNgayDanhGia;
         private Syncfusion.Windows.Forms.Tools.RatingControl rcDiemDG;
         private System.Windows.Forms.DateTimePicker dtpNgayDG;
+        private System.Windows.Forms.ComboBox cboMaDP;
     }
 }

@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using DAL;
+using System.Net.NetworkInformation;
+
 namespace BLL
 {
     public class DatDichVuBLL
@@ -31,12 +33,18 @@ namespace BLL
         {
             return datDichVuDAL.khoiphuc(MaDatDichVu);
         }
-
+        public void thanhtien(int MaDatDichVu)
+        {
+            datDichVuDAL.thanhtien(MaDatDichVu);
+        }
         public List<DatDichVuDTO> laydsddv()
         {
             return datDichVuDAL.layds();
         }
-
+        public DatDichVuDTO mamoi()
+        {
+            return datDichVuDAL.mamoi();
+        }
         public bool sua(DatDichVuDTO datDichVuDTO)
         {
             return datDichVuDAL.suaddv(datDichVuDTO);
@@ -58,6 +66,14 @@ namespace BLL
         public bool Xoaddv(int MaDatDichVu)
         {
             return datDichVuDAL.xoa(MaDatDichVu);
+        }
+
+        public List<DatDichVuDTO> TraCuungay(List<DatDichVuDTO> datDichVuDTOs, DateTime searchKeyword)
+        {
+            List<DatDichVuDTO> searchResults =
+                datDichVuDTOs.Where
+                (item =>  item.NgayDat.Date ==searchKeyword).ToList();
+            return searchResults;
         }
     }
 }

@@ -53,8 +53,9 @@
     <Compile Include="LoaiPhongDTO.cs" />
     <Compile Include="KhachHangDTO.cs" />
     <Compile Include="NhanVienDTO.cs" />
-    <Compile Include="PhongBanDTO.cs" />
+    <Compile Include="DanhGiaDTO.cs" />
     <Compile Include="PhongDTO.cs" />
+    <Compile Include="PhongBanDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThueDTO.cs" />
     <Compile Include="ThietBiDTO.cs" />

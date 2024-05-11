@@ -11,7 +11,7 @@ namespace DTO
         public int MaDV { get; set; }
         public string TenDV { get; set; }
         public decimal GiaDV { get; set; }
-        public string HinhAnh { get; set; }
+        public byte[] HinhAnh { get; set; }
         public bool TrangThai { get; set; }
     }
 }

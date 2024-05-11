@@ -65,6 +65,33 @@ namespace DAL
             }
         }
 
+        public bool DoiMatKhauMa(TaiKhoanDTO taiKhoanDTO)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                string strDoiMK= "Update TaiKhoan set MatKhau=@MatKhau where MaTaiKhoan=@MaTaiKhoan";
+                SqlCommand com = new SqlCommand(strDoiMK, conn);
+                com.Parameters.AddWithValue("@MaTaiKhoan", taiKhoanDTO.MaTaiKhoan);
+                com.Parameters.AddWithValue("@MatKhau", taiKhoanDTO.MatKhau);
+
+                int count = com.ExecuteNonQuery();
+
+                conn.Close();
+                if (count > 0)
+                {
+                    return true;
+                }
+                else return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public string EditTaiKhoanDAL(TaiKhoanDTO taiKhoanDTO)
         {
             try
@@ -197,6 +224,7 @@ namespace DAL
         {
             try
             {
+                TaiKhoanDTO tai =null;
                 SqlConnection conn = DataProvider.KetNoiDuLieu();
                 conn.Open();
 
@@ -206,17 +234,25 @@ namespace DAL
                 com.Parameters.AddWithValue("@MatKhau", taiKhoanDTO.MatKhau);
 
                 SqlDataReader reader= com.ExecuteReader();
-                TaiKhoanDTO tai = new TaiKhoanDTO();
-                while (reader.Read())
+               
+                if (reader.Read())
                 {
+                    tai  = new TaiKhoanDTO();
                     tai.MaTaiKhoan = (int) reader["MaTaiKhoan"];
                     tai.TenDangNhap = reader["TenDangNhap"].ToString();
                     tai.MaPQ = reader["MaPQ"].ToString();
                 }
                 reader.Close();
                 conn.Close();
-
-                return tai;
+                if (tai != null)
+                {
+                    return tai;
+                }
+                else
+                {
+                    return new TaiKhoanDTO();
+                }
+               
             }
             catch (Exception)
             {

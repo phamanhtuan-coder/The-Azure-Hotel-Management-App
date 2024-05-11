@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -13,6 +14,7 @@ using System.Windows.Forms;
 using DTO;
 using GUI.customForm;
 using GUI.UserControls;
+using Microsoft.Reporting.Map.WebForms.BingMaps;
 using Syncfusion.WinForms.Controls;
 
 namespace GUI
@@ -22,6 +24,10 @@ namespace GUI
         /*-------------------------------------------------------------------------------------------------------------------
                                          BẮT ĐẦU KHAI BÁO CÁC BIẾN TOÀN CỤC
        --------------------------------------------------------------------------------------------------------------------*/
+        //Biến xác định User đang login
+        public string phanQuyen { get; set; }
+        public string hoTen { get; set; } 
+        public Image hinhAnh { get; set; }
 
         public NhanVienDTO user=new NhanVienDTO();
         public KhachHangDTO userKH = new KhachHangDTO();
@@ -250,6 +256,18 @@ namespace GUI
             frm.BringToFront();
             frm.Show();
         }
+
+        //Thay đổi User Control khi bấm button trong User Control
+        public void SwitchUserControl(UserControl newControl)
+        {
+            panDesktop.Controls.Clear();
+            newControl.Dock = DockStyle.Fill;
+            panDesktop.Controls.Add(newControl);
+            panDesktop.Tag = newControl;
+            newControl.BringToFront();
+            newControl.Show();
+        }
+
 
         /// <summary>
         /// Hàm xử lý sự kiện khi nút Loai TK được bấm
@@ -531,7 +549,23 @@ namespace GUI
         private void cpicProfile_Click(object sender, EventArgs e)
         {
             ucPersonal personal = new ucPersonal();
+            if (user!=null)
+            {
+                personal.user = user;
+                personal.userKH = null;
+            }
+            else
+            {
+                personal.userKH = userKH;
+                personal.user = null;
+            }
             openForm(personal);
+        }
+
+        private void btnRoomBooking_Click(object sender, EventArgs e)
+        {
+            ucRoomBooking datPhong = new ucRoomBooking();
+            openForm(datPhong);
         }
 
         /*-------------------------------------------------------------------------------------------------------------------
@@ -763,14 +797,87 @@ namespace GUI
             this.FormBorderStyle = FormBorderStyle.Sizable;
         }
 
-        private void frmMain_Load(object sender, EventArgs e)
+        public void frmMain_Load(object sender, EventArgs e)
         {
+            LoadHinhAnhUser();
+            LoadTenUser();
+
             menuActivated(btnBooking);
             ucBooking Home = new ucBooking();
             openForm(Home);
         }
 
-        
+        public void LoadTenUser()
+        {
+            if (this.user != null)
+            {
+                if (user.HoTenNV != null)
+                {
+                    lblHiUser.Text = $"Xin chào {user.HoTenNV},\r\nChúc bạn một ngày làm việc vui vẻ!\r\n";
+                }
+                else
+                {
+                    lblHiUser.Text = $"Xin chào bạn,\r\nChúc bạn một ngày làm việc vui vẻ!\r\n";
+                }
+            }
+            else
+            {
+                if (userKH.HoTenKH != null)
+                {
+
+                    lblHiUser.Text = $"Xin chào {userKH.HoTenKH},\r\nChúc bạn một ngày làm việc vui vẻ!\r\n";
+                }
+                else
+                {
+                    lblHiUser.Text = $"Xin chào bạn,\r\nChúc bạn một ngày làm việc vui vẻ!\r\n";
+                }
+
+            }
+        }
+
+        public void LoadHinhAnhUser()
+        {
+            if (this.user != null)
+            {
+                if (user.HinhAnh != null)
+                {
+                    byte[] hinh = (byte[])user.HinhAnh;
+                    cpicProfile.Image = ByteArrayToImage(hinh);
+                }
+                else
+                {
+                    Image profile = Properties.Resources.Profile.ToBitmap();
+                    cpicProfile.Image = profile;
+                }
+            }
+            else
+            {
+                if (userKH.HinhAnh != null)
+                {
+
+                    byte[] hinh = (byte[])userKH.HinhAnh;
+                    cpicProfile.Image = ByteArrayToImage(hinh);
+                }
+                else
+                {
+                    Image profile = Properties.Resources.Profile.ToBitmap();
+                    cpicProfile.Image = profile;
+                }
+
+            }
+        }
+
+        Image ByteArrayToImage(byte[] hinh)
+        {
+            using (MemoryStream m = new MemoryStream(hinh))
+            {
+                return Image.FromStream(m);
+            }
+        }
+
+
+
+
 
         /*-------------------------------------------------------------------------------------------------------------------
                                     KẾT THÚC  HÀM MAIN VÀ HÀM KHỞI TẠO

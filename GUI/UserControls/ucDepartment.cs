@@ -19,11 +19,12 @@ namespace GUI.UserControls
     public partial class ucDepartment : UserControl
     {
         //Khai báo biến
-        PhongBanBLL phongBanBLL = new PhongBanBLL();
+        PhongBanBLL phongBanBLL;
         PhongBanDTO phongBanDTO = new PhongBanDTO();
         List<PhongBanDTO> dsPhongBan = new List<PhongBanDTO>();
         List<PhongBanDTO> dsTimKiem = new List<PhongBanDTO>();
         customMessageBox thongBao;
+
 
         public ucDepartment()
         {
@@ -50,6 +51,7 @@ namespace GUI.UserControls
         //Lấy danh sách phòng ban và hiển thị lên DataGridView
         private void LayDanhSachPhongBan()
         {
+            phongBanBLL = new PhongBanBLL();
             dsPhongBan = phongBanBLL.LayDanhSachPhongBan();
             dgvDepartment.DataSource = dsPhongBan;
         }
@@ -103,6 +105,7 @@ namespace GUI.UserControls
                 .SelectedRows[0]
                 .Cells["colTenPhong"]
                 .Value.ToString();
+
             frm.phongBanDTO.TruongPhong = (int)
                 dgvDepartment.SelectedRows[0].Cells["colTruongPhong"].Value;
             frm.phongBanDTO.NgayNhanChuc = DateTime.Parse(
@@ -126,7 +129,8 @@ namespace GUI.UserControls
                         .SelectedRows[0]
                         .Cells["colMaPhongBan"]
                         .Value.ToString();
-                    bool check = PhongBanBLL.XoaPhongBan(maPhongBan);
+                    phongBanBLL = new PhongBanBLL();
+                    bool check = phongBanBLL.XoaPhongBan(maPhongBan);
                     if (check)
                     {
                         
@@ -170,7 +174,8 @@ namespace GUI.UserControls
                         .SelectedRows[0]
                         .Cells["colMaPhongBan"]
                         .Value.ToString();
-                    bool check = PhongBanBLL.KhoiPhucPhongBan(maPhongBan);
+                    phongBanBLL = new PhongBanBLL();
+                    bool check = phongBanBLL.KhoiPhucPhongBan(maPhongBan);
                     if (check)
                     {
                         

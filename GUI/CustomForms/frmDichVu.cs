@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -37,6 +39,11 @@ namespace GUI.customForm
             }
             else
             {
+                if (DichVuDTO.HinhAnh != null)
+                {
+                    picHinhAnh.Image = ByteArrayToImage(DichVuDTO.HinhAnh);
+                }
+                
                 txttendichvu.Text = DichVuDTO.TenDV;
                 nudGia.Value = DichVuDTO.GiaDV;
             }
@@ -49,6 +56,7 @@ namespace GUI.customForm
 
         public void laydltuform(DichVuDTO dv)
         {
+            dv.HinhAnh = ImageToByteArray(picHinhAnh.Image);
             dv.TenDV = txttendichvu.Text;
             dv.GiaDV = nudGia.Value;
 
@@ -99,6 +107,28 @@ namespace GUI.customForm
             this.Close();
         }
 
-       
+        private void btnChonHinh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files|*.jpg;*.jpeg;*.png|All files (*.*)|*.*";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                picHinhAnh.Image = Image.FromFile(open.FileName);
+            }
+        }
+        private static byte[] ImageToByteArray(Image img)
+        {
+            MemoryStream m = new MemoryStream();
+            img.Save(m, System.Drawing.Imaging.ImageFormat.Png);
+            return m.ToArray();
+        }
+
+        Image ByteArrayToImage(byte[] hinh)
+        {
+            using (MemoryStream m = new MemoryStream(hinh))
+            {
+                return Image.FromStream(m);
+            }
+        }
     }
 }

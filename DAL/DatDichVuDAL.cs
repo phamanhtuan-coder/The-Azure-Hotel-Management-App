@@ -72,6 +72,65 @@ namespace DAL
             conn.Close();
             return ds;
         }
+        public DatDichVuDTO mamoi()
+        {
+            
+            DatDichVuDTO dv = new DatDichVuDTO();
+            SqlConnection conn = DataProvider.KetNoiDuLieu();
+            string strlaydanhsach = "select top 1 * from DatDichVu order by MaDatDichVu desc";
+            conn.Open();
+            SqlDataReader reader = DataProvider.ThucHienTruyVan(strlaydanhsach, conn);
+            while (reader.Read())
+            {
+                
+                dv.MaDatDichVu = (int)reader[0];
+                dv.MaDatPhong = (int)reader[1];
+                dv.MaDV = (int)reader[2];
+                dv.SoLuong = int.Parse(reader[3].ToString());
+                dv.NgayDat = DateTime.Parse(reader[5].ToString());
+                byte[] trangThaiBytes = (byte[])reader[6];
+                bool trangThai = trangThaiBytes[0] == 1;
+                dv.TrangThai = trangThai;
+                
+            }
+            reader.Close();
+            conn.Close();
+            return dv;
+        }
+        public void thanhtien(int MaDatDichVu)
+        {
+            
+            SqlConnection conn = DataProvider.KetNoiDuLieu();
+            decimal gia = 0;
+            decimal soluong = 0;
+            string strlaydanhsach = "select * from DatDichVu join DichVu on DatDichVu.MaDV = DichVu.MaDV where MaDatDichVu = @MaDatDichVu ";
+            SqlParameter[] par = new SqlParameter[1];
+            par[0] = new SqlParameter("@MaDatDichVu", MaDatDichVu);
+            conn.Open();
+            SqlDataReader reader = DataProvider.ThucHienTruyVan(strlaydanhsach, conn, par);
+            while (reader.Read())
+            {
+                DatDichVuDTO dv = new DatDichVuDTO();
+                
+                dv.SoLuong = int.Parse(reader["SoLuong"].ToString());
+                soluong = dv.SoLuong;
+                gia = (decimal)reader["GiaDV"];
+                
+            }
+            reader.Close();
+
+            conn.Close();
+            string lenhupthanhtien =
+                "UPDATE DatDichVu SET ThanhTien = @ThanhTien where MaDatDichVu = @MaDatDichVu ";
+            SqlParameter[] pars = new SqlParameter[2];
+            pars[0] = new SqlParameter("@ThanhTien", soluong*gia);
+            pars[1] = new SqlParameter("@MaDatDichVu", MaDatDichVu);
+
+            conn.Open();
+            int kq = DataProvider.ThucHienCauLenh(lenhupthanhtien, conn, pars);
+            conn.Close();
+            
+        }
 
         public bool suaddv(DatDichVuDTO datDichVuDTO)
         {
@@ -105,6 +164,7 @@ namespace DAL
             SqlConnection conn = DataProvider.KetNoiDuLieu();
             conn.Open();
             int kq = DataProvider.ThucHienCauLenh(lenhThem, conn, pars);
+
             conn.Close();
             return kq > 0;
         }

@@ -232,5 +232,29 @@ namespace GUI.UserControls
                 Loadds();
             }
         }
+
+
+        private void dtpServiceDate_ValueChanged(object sender, Syncfusion.WinForms.Input.Events.DateTimeValueChangedEventArgs e)
+        {
+            
+        }
+
+        private void sftimngay_Click(object sender, EventArgs e)
+        {
+            datDichVuDTOs = datDichVuBLL.laydsddv();
+            dgvServices.DataSource = datDichVuDTOs;
+            DateTime searchKeyword = (DateTime)dtpServiceDate.Value;
+            if (searchKeyword!=null)
+            {
+                datDichVuDTOstk = datDichVuBLL.TraCuungay(datDichVuDTOs, searchKeyword);
+
+                dgvServices.DataSource = datDichVuDTOstk;
+
+            }
+            else
+            {
+                Loadds();
+            }
+        }
     }
 }

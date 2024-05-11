@@ -236,6 +236,16 @@ namespace DAL
                     hangThanhVienDTO.MaLoaiHangThanhVien = (int)reader["MaLoaiHangThanhVien"];
                     hangThanhVienDTO.TenHang = reader["TenHang"].ToString();
 
+
+                    if (!reader.IsDBNull(reader.GetOrdinal("TrangThai")))
+                    {
+                        hangThanhVienDTO.TrangThai = BitConverter.ToBoolean((byte[])reader["TrangThai"], 0);
+                    }
+                    else
+                    {
+
+                        hangThanhVienDTO.TrangThai = false;
+                    }
                     list.Add(hangThanhVienDTO);
                 }
 
@@ -247,5 +257,8 @@ namespace DAL
                 return new List<HangThanhVienDTO>();
             }
         }
+
+
+
     }
 }

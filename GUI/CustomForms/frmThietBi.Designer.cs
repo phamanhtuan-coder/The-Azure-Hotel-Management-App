@@ -59,7 +59,7 @@
             // lblTenThietBi
             // 
             this.lblTenThietBi.AutoSize = true;
-            this.lblTenThietBi.Location = new System.Drawing.Point(58, 29);
+            this.lblTenThietBi.Location = new System.Drawing.Point(99, 80);
             this.lblTenThietBi.Name = "lblTenThietBi";
             this.lblTenThietBi.Size = new System.Drawing.Size(133, 27);
             this.lblTenThietBi.TabIndex = 6;
@@ -69,7 +69,7 @@
             // 
             this.cboTrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTrangThai.FormattingEnabled = true;
-            this.cboTrangThai.Location = new System.Drawing.Point(276, 82);
+            this.cboTrangThai.Location = new System.Drawing.Point(257, 129);
             this.cboTrangThai.Name = "cboTrangThai";
             this.cboTrangThai.Size = new System.Drawing.Size(252, 35);
             this.cboTrangThai.TabIndex = 9;
@@ -77,7 +77,7 @@
             // lblTenTrangThaiBi
             // 
             this.lblTenTrangThaiBi.AutoSize = true;
-            this.lblTenTrangThaiBi.Location = new System.Drawing.Point(58, 90);
+            this.lblTenTrangThaiBi.Location = new System.Drawing.Point(99, 141);
             this.lblTenTrangThaiBi.Name = "lblTenTrangThaiBi";
             this.lblTenTrangThaiBi.Size = new System.Drawing.Size(119, 27);
             this.lblTenTrangThaiBi.TabIndex = 8;
@@ -85,7 +85,7 @@
             // 
             // txttenthietbi
             // 
-            this.txttenthietbi.Location = new System.Drawing.Point(276, 33);
+            this.txttenthietbi.Location = new System.Drawing.Point(257, 80);
             this.txttenthietbi.Name = "txttenthietbi";
             this.txttenthietbi.Size = new System.Drawing.Size(252, 32);
             this.txttenthietbi.TabIndex = 12;
@@ -94,7 +94,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(600, 350);
+            this.ClientSize = new System.Drawing.Size(612, 350);
             this.Controls.Add(this.txttenthietbi);
             this.Controls.Add(this.cboTrangThai);
             this.Controls.Add(this.lblTenTrangThaiBi);

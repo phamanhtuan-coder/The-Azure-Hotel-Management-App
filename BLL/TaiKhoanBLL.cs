@@ -29,6 +29,13 @@ namespace BLL
             return false;
         }
 
+        public bool DoiMatKhauMa(TaiKhoanDTO taiKhoanDTO)
+        {
+            
+                return taiKhoanDAL.DoiMatKhauMa(taiKhoanDTO);
+           
+        }
+
         public string EditTaiKhoanBLL(TaiKhoanDTO taiKhoanDTO)
         {
             string a = taiKhoanDAL.EditTaiKhoanDAL(taiKhoanDTO);
