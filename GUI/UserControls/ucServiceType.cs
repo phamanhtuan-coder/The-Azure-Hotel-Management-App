@@ -30,10 +30,17 @@ namespace GUI.UserControls
 
         private void ucServiceType_Load(object sender, EventArgs e)
         {
+            LoadDuLieuccoTenDichVu();
             dgvServiceType.AutoGenerateColumns = false;
             loadds();
             loadcombo();
            
+        }
+
+        private void LoadDuLieuccoTenDichVu()
+        {
+            List<DichVuDTO> dv = DichVuBLL.laydsdvuIDandName();
+            //Thêm dữ liệu vào cbo colTenDV
         }
 
         private void loadds()

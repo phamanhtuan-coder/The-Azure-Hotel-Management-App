@@ -31,10 +31,19 @@ namespace GUI.UserControls
 
         private void ucService_Load(object sender, EventArgs e)
         {
+            LoadDULieuDV();
             dgvServices.AutoGenerateColumns = false;
             Loadds();
             Loadcombo();
            
+        }
+
+        private void LoadDULieuDV()
+        {
+            List<DichVuDTO> list = DichVuBLL.loadIdandName();
+            colMaDV.DataSource = list;
+            colMaDV.ValueMember = "MaDV";
+            colMaDV.DisplayMember = "TenDV";
         }
 
         private void Loadds()

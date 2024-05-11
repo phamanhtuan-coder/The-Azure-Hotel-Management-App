@@ -26,12 +26,19 @@ namespace BLL
                 return dichVu.layDSDVu();
             }
         }
+        public List<DichVuDTO> laydsdvuIDandName()
+        {
+            return dichVu.layDSDVu();
+        }
 
         public bool KhoiPhucdvu(int madv)
         {
             return dichVu.khoiphucdvu(madv);
         }
-
+        public List<DichVuDTO> loadIdandName()
+        {
+            return dichVu.layDSDVu();
+        }
         public List<DichVuDTO> laydsdvu()
         {
             return dichVu.layDSDVu2();

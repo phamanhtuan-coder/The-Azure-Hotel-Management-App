@@ -214,7 +214,7 @@ namespace DAL
             string strlaydanhsach = "select BangTaiKhoan.TenDangNhap, KhachHang.CCCD, DatPhong.* " +
                                     " from DatPhong join KhachHang on DatPhong.MaKH = KhachHang.MaKH " +
                                     " join BangTaiKhoan on KhachHang.MaTaiKhoan = BangTaiKhoan.MaTaiKhoan " +
-                                    " where DatPhong.TrangThai=1 and KhachHang.TrangThai=1";
+                                    " where DatPhong.TrangThai=1 and KhachHang.TrangThai=1 and NgayTraPhong is null ";
             conn.Open();
             SqlDataReader reader = DataProvider.ThucHienTruyVan(strlaydanhsach, conn);
             while (reader.Read())

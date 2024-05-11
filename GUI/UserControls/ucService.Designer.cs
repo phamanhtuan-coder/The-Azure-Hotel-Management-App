@@ -42,12 +42,6 @@
             this.dtpServiceDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvServices = new System.Windows.Forms.DataGridView();
-            this.colMaDatDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sftimngay = new Syncfusion.WinForms.Controls.SfButton();
             this.cboSortServiceD = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortServiceID = new System.Windows.Forms.Label();
@@ -58,6 +52,12 @@
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.colMaDatDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaDV = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateService)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -184,7 +184,7 @@
             this.btnRecoverlService.Size = new System.Drawing.Size(191, 41);
             this.btnRecoverlService.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverlService.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverlService.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnRecoverlService.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnRecoverlService.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRecoverlService.TabIndex = 5;
             this.btnRecoverlService.Text = "Khôi phục";
@@ -307,56 +307,6 @@
             this.dgvServices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvServices.Size = new System.Drawing.Size(973, 746);
             this.dgvServices.TabIndex = 6;
-            // 
-            // colMaDatDichVu
-            // 
-            this.colMaDatDichVu.DataPropertyName = "MaDatDichVu";
-            this.colMaDatDichVu.HeaderText = "Mã đặt dịch vụ";
-            this.colMaDatDichVu.MinimumWidth = 6;
-            this.colMaDatDichVu.Name = "colMaDatDichVu";
-            this.colMaDatDichVu.ReadOnly = true;
-            // 
-            // colMaDatPhong
-            // 
-            this.colMaDatPhong.DataPropertyName = "MaDatPhong";
-            this.colMaDatPhong.HeaderText = "Mã đặt phòng";
-            this.colMaDatPhong.MinimumWidth = 6;
-            this.colMaDatPhong.Name = "colMaDatPhong";
-            this.colMaDatPhong.ReadOnly = true;
-            this.colMaDatPhong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // colMaDV
-            // 
-            this.colMaDV.DataPropertyName = "MaDV";
-            this.colMaDV.HeaderText = "Mã dịch vụ";
-            this.colMaDV.MinimumWidth = 6;
-            this.colMaDV.Name = "colMaDV";
-            this.colMaDV.ReadOnly = true;
-            this.colMaDV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // colSoLuong
-            // 
-            this.colSoLuong.DataPropertyName = "SoLuong";
-            this.colSoLuong.HeaderText = "Số lượng";
-            this.colSoLuong.MinimumWidth = 6;
-            this.colSoLuong.Name = "colSoLuong";
-            this.colSoLuong.ReadOnly = true;
-            // 
-            // colNgayDat
-            // 
-            this.colNgayDat.DataPropertyName = "NgayDat";
-            this.colNgayDat.HeaderText = "Ngày đặt";
-            this.colNgayDat.MinimumWidth = 6;
-            this.colNgayDat.Name = "colNgayDat";
-            this.colNgayDat.ReadOnly = true;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "TrangThai";
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.MinimumWidth = 6;
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
             // 
             // sftimngay
             // 
@@ -488,6 +438,58 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
+            // colMaDatDichVu
+            // 
+            this.colMaDatDichVu.DataPropertyName = "MaDatDichVu";
+            this.colMaDatDichVu.HeaderText = "Mã đặt dịch vụ";
+            this.colMaDatDichVu.MinimumWidth = 6;
+            this.colMaDatDichVu.Name = "colMaDatDichVu";
+            this.colMaDatDichVu.ReadOnly = true;
+            // 
+            // colMaDatPhong
+            // 
+            this.colMaDatPhong.DataPropertyName = "MaDatPhong";
+            this.colMaDatPhong.HeaderText = "Mã đặt phòng";
+            this.colMaDatPhong.MinimumWidth = 6;
+            this.colMaDatPhong.Name = "colMaDatPhong";
+            this.colMaDatPhong.ReadOnly = true;
+            this.colMaDatPhong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // colMaDV
+            // 
+            this.colMaDV.DataPropertyName = "MaDV";
+            this.colMaDV.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colMaDV.HeaderText = "Tên dịch vụ";
+            this.colMaDV.MinimumWidth = 6;
+            this.colMaDV.Name = "colMaDV";
+            this.colMaDV.ReadOnly = true;
+            this.colMaDV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMaDV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colSoLuong
+            // 
+            this.colSoLuong.DataPropertyName = "SoLuong";
+            this.colSoLuong.HeaderText = "Số lượng";
+            this.colSoLuong.MinimumWidth = 6;
+            this.colSoLuong.Name = "colSoLuong";
+            this.colSoLuong.ReadOnly = true;
+            // 
+            // colNgayDat
+            // 
+            this.colNgayDat.DataPropertyName = "NgayDat";
+            this.colNgayDat.HeaderText = "Ngày đặt";
+            this.colNgayDat.MinimumWidth = 6;
+            this.colNgayDat.Name = "colNgayDat";
+            this.colNgayDat.ReadOnly = true;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.MinimumWidth = 6;
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            // 
             // ucService
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -539,13 +541,13 @@
         private System.Windows.Forms.SplitContainer spcHeader;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortServiceD;
         private System.Windows.Forms.DataGridView dgvServices;
+        private Syncfusion.WinForms.Controls.SfButton sftimngay;
+        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaDatDichVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaDatPhong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaDV;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colMaDV;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayDat;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
-        private Syncfusion.WinForms.Controls.SfButton sftimngay;
-        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

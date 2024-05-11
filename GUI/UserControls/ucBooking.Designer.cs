@@ -609,13 +609,13 @@
             // 
             this.colMaKH.DataPropertyName = "MaKH";
             this.colMaKH.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.colMaKH.HeaderText = "Mã KH";
+            this.colMaKH.HeaderText = "Tên khách hàng";
             this.colMaKH.MinimumWidth = 6;
             this.colMaKH.Name = "colMaKH";
             this.colMaKH.ReadOnly = true;
             this.colMaKH.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colMaKH.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colMaKH.Width = 87;
+            this.colMaKH.Width = 150;
             // 
             // colMaPHG
             // 
@@ -625,7 +625,7 @@
             this.colMaPHG.Name = "colMaPHG";
             this.colMaPHG.ReadOnly = true;
             this.colMaPHG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaPHG.Width = 99;
+            this.colMaPHG.Width = 91;
             // 
             // colNgayDatPhong
             // 
@@ -634,7 +634,7 @@
             this.colNgayDatPhong.MinimumWidth = 6;
             this.colNgayDatPhong.Name = "colNgayDatPhong";
             this.colNgayDatPhong.ReadOnly = true;
-            this.colNgayDatPhong.Width = 107;
+            this.colNgayDatPhong.Width = 98;
             // 
             // colNgayNhanPhong
             // 
