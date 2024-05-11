@@ -45,6 +45,7 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.Orange;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(334, 477);
@@ -59,7 +60,9 @@
             // 
             // frmHoaDonReview
             // 
+            this.AcceptButton = this.btnCancel;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(876, 538);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.reportViewer1);

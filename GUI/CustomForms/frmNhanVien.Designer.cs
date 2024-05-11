@@ -72,7 +72,7 @@
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.btnSubmit.Location = new System.Drawing.Point(582, 400);
+            this.btnSubmit.Location = new System.Drawing.Point(385, 436);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
             this.btnSubmit.TabIndex = 3;
@@ -83,7 +83,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.Location = new System.Drawing.Point(387, 400);
+            this.btnCancel.Location = new System.Drawing.Point(190, 436);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
             this.btnCancel.TabIndex = 5;
@@ -102,7 +102,7 @@
             // txtTenTaiKhoan
             // 
             this.txtTenTaiKhoan.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.txtTenTaiKhoan.Location = new System.Drawing.Point(12, 270);
+            this.txtTenTaiKhoan.Location = new System.Drawing.Point(12, 269);
             this.txtTenTaiKhoan.Name = "txtTenTaiKhoan";
             this.txtTenTaiKhoan.Size = new System.Drawing.Size(175, 27);
             this.txtTenTaiKhoan.TabIndex = 17;
@@ -182,7 +182,7 @@
             // btnTaoTK
             // 
             this.btnTaoTK.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.btnTaoTK.Location = new System.Drawing.Point(193, 270);
+            this.btnTaoTK.Location = new System.Drawing.Point(193, 269);
             this.btnTaoTK.Name = "btnTaoTK";
             this.btnTaoTK.Size = new System.Drawing.Size(169, 27);
             this.btnTaoTK.TabIndex = 18;
@@ -193,7 +193,7 @@
             // btnChonHinh
             // 
             this.btnChonHinh.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.btnChonHinh.Location = new System.Drawing.Point(90, 208);
+            this.btnChonHinh.Location = new System.Drawing.Point(96, 173);
             this.btnChonHinh.Name = "btnChonHinh";
             this.btnChonHinh.Size = new System.Drawing.Size(150, 38);
             this.btnChonHinh.TabIndex = 16;
@@ -203,9 +203,9 @@
             // picAvatar
             // 
             this.picAvatar.Image = ((System.Drawing.Image)(resources.GetObject("picAvatar.Image")));
-            this.picAvatar.Location = new System.Drawing.Point(74, 12);
+            this.picAvatar.Location = new System.Drawing.Point(81, 12);
             this.picAvatar.Name = "picAvatar";
-            this.picAvatar.Size = new System.Drawing.Size(180, 180);
+            this.picAvatar.Size = new System.Drawing.Size(176, 150);
             this.picAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAvatar.TabIndex = 17;
             this.picAvatar.TabStop = false;
@@ -214,7 +214,7 @@
             // 
             this.lblMaTaiKhoan.AutoSize = true;
             this.lblMaTaiKhoan.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.lblMaTaiKhoan.Location = new System.Drawing.Point(12, 248);
+            this.lblMaTaiKhoan.Location = new System.Drawing.Point(12, 222);
             this.lblMaTaiKhoan.Name = "lblMaTaiKhoan";
             this.lblMaTaiKhoan.Size = new System.Drawing.Size(96, 22);
             this.lblMaTaiKhoan.TabIndex = 16;
@@ -294,7 +294,7 @@
             // 
             this.cboMaNQL.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboMaNQL.FormattingEnabled = true;
-            this.cboMaNQL.Location = new System.Drawing.Point(193, 316);
+            this.cboMaNQL.Location = new System.Drawing.Point(193, 323);
             this.cboMaNQL.Name = "cboMaNQL";
             this.cboMaNQL.Size = new System.Drawing.Size(169, 30);
             this.cboMaNQL.TabIndex = 20;
@@ -303,7 +303,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(12, 321);
+            this.label2.Location = new System.Drawing.Point(12, 326);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(156, 22);
             this.label2.TabIndex = 19;
@@ -317,14 +317,14 @@
             0,
             0,
             0});
-            this.nupLuong.Location = new System.Drawing.Point(193, 350);
+            this.nupLuong.Location = new System.Drawing.Point(538, 380);
             this.nupLuong.Maximum = new decimal(new int[] {
             1569325055,
             23283064,
             0,
             0});
             this.nupLuong.Name = "nupLuong";
-            this.nupLuong.Size = new System.Drawing.Size(169, 27);
+            this.nupLuong.Size = new System.Drawing.Size(194, 27);
             this.nupLuong.TabIndex = 22;
             this.nupLuong.ValueChanged += new System.EventHandler(this.nupLuong_ValueChanged);
             // 
@@ -332,7 +332,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(12, 356);
+            this.label1.Location = new System.Drawing.Point(381, 380);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 22);
             this.label1.TabIndex = 21;
@@ -393,7 +393,7 @@
             this.lblLoiLuong.AutoSize = true;
             this.lblLoiLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoiLuong.ForeColor = System.Drawing.Color.IndianRed;
-            this.lblLoiLuong.Location = new System.Drawing.Point(193, 371);
+            this.lblLoiLuong.Location = new System.Drawing.Point(563, 378);
             this.lblLoiLuong.Name = "lblLoiLuong";
             this.lblLoiLuong.Size = new System.Drawing.Size(0, 15);
             this.lblLoiLuong.TabIndex = 37;
@@ -420,9 +420,11 @@
             // 
             // frmNhanVien
             // 
+            this.AcceptButton = this.btnSubmit;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(800, 473);
+            this.CancelButton = this.btnCancel;
+            this.ClientSize = new System.Drawing.Size(800, 516);
             this.Controls.Add(this.lblLoiUsername);
             this.Controls.Add(this.lblLoiHoTen);
             this.Controls.Add(this.lblLoiLuong);

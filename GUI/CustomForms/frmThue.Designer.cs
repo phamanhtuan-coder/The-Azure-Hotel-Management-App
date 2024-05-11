@@ -44,9 +44,9 @@
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.btnSubmit.Location = new System.Drawing.Point(378, 271);
+            this.btnSubmit.Location = new System.Drawing.Point(237, 250);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(150, 50);
+            this.btnSubmit.Size = new System.Drawing.Size(104, 43);
             this.btnSubmit.TabIndex = 8;
             this.btnSubmit.Text = "Submit";
             this.toolTip1.SetToolTip(this.btnSubmit, "Gửi");
@@ -54,10 +54,11 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.Location = new System.Drawing.Point(62, 271);
+            this.btnCancel.Location = new System.Drawing.Point(87, 250);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(150, 50);
+            this.btnCancel.Size = new System.Drawing.Size(104, 43);
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Quay lại";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -66,7 +67,7 @@
             // 
             this.lblTenThue.AutoSize = true;
             this.lblTenThue.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.lblTenThue.Location = new System.Drawing.Point(58, 29);
+            this.lblTenThue.Location = new System.Drawing.Point(16, 18);
             this.lblTenThue.Name = "lblTenThue";
             this.lblTenThue.Size = new System.Drawing.Size(84, 22);
             this.lblTenThue.TabIndex = 1;
@@ -76,7 +77,7 @@
             // 
             this.lblMoTa.AutoSize = true;
             this.lblMoTa.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.lblMoTa.Location = new System.Drawing.Point(58, 146);
+            this.lblMoTa.Location = new System.Drawing.Point(16, 127);
             this.lblMoTa.Name = "lblMoTa";
             this.lblMoTa.Size = new System.Drawing.Size(57, 22);
             this.lblMoTa.TabIndex = 5;
@@ -85,7 +86,7 @@
             // rtxtMoTa
             // 
             this.rtxtMoTa.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.rtxtMoTa.Location = new System.Drawing.Point(276, 143);
+            this.rtxtMoTa.Location = new System.Drawing.Point(159, 127);
             this.rtxtMoTa.Name = "rtxtMoTa";
             this.rtxtMoTa.Size = new System.Drawing.Size(252, 96);
             this.rtxtMoTa.TabIndex = 6;
@@ -95,7 +96,7 @@
             // 
             this.lblMucThue.AutoSize = true;
             this.lblMucThue.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.lblMucThue.Location = new System.Drawing.Point(58, 83);
+            this.lblMucThue.Location = new System.Drawing.Point(16, 73);
             this.lblMucThue.Name = "lblMucThue";
             this.lblMucThue.Size = new System.Drawing.Size(89, 22);
             this.lblMucThue.TabIndex = 3;
@@ -104,7 +105,7 @@
             // txtMucThue
             // 
             this.txtMucThue.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.txtMucThue.Location = new System.Drawing.Point(276, 29);
+            this.txtMucThue.Location = new System.Drawing.Point(159, 13);
             this.txtMucThue.Name = "txtMucThue";
             this.txtMucThue.Size = new System.Drawing.Size(252, 27);
             this.txtMucThue.TabIndex = 2;
@@ -113,7 +114,7 @@
             // 
             this.nudMucThue.DecimalPlaces = 2;
             this.nudMucThue.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.nudMucThue.Location = new System.Drawing.Point(276, 84);
+            this.nudMucThue.Location = new System.Drawing.Point(159, 68);
             this.nudMucThue.Name = "nudMucThue";
             this.nudMucThue.Size = new System.Drawing.Size(252, 27);
             this.nudMucThue.TabIndex = 4;
@@ -121,9 +122,11 @@
             // 
             // frmThue
             // 
+            this.AcceptButton = this.btnSubmit;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(600, 350);
+            this.CancelButton = this.btnCancel;
+            this.ClientSize = new System.Drawing.Size(436, 317);
             this.Controls.Add(this.nudMucThue);
             this.Controls.Add(this.txtMucThue);
             this.Controls.Add(this.rtxtMoTa);

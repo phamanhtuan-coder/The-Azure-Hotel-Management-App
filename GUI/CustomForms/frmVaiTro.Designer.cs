@@ -41,18 +41,18 @@
             // txtTenVT
             // 
             this.txtTenVT.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.txtTenVT.Location = new System.Drawing.Point(266, 44);
+            this.txtTenVT.Location = new System.Drawing.Point(142, 12);
             this.txtTenVT.Name = "txtTenVT";
-            this.txtTenVT.Size = new System.Drawing.Size(306, 27);
+            this.txtTenVT.Size = new System.Drawing.Size(246, 27);
             this.txtTenVT.TabIndex = 2;
             this.toolTip1.SetToolTip(this.txtTenVT, "Nhập tên vai trò");
             // 
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.btnSubmit.Location = new System.Drawing.Point(361, 271);
+            this.btnSubmit.Location = new System.Drawing.Point(223, 181);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(150, 50);
+            this.btnSubmit.Size = new System.Drawing.Size(116, 40);
             this.btnSubmit.TabIndex = 6;
             this.btnSubmit.Text = "Submit";
             this.toolTip1.SetToolTip(this.btnSubmit, "Gửi");
@@ -61,9 +61,9 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.Location = new System.Drawing.Point(94, 271);
+            this.btnCancel.Location = new System.Drawing.Point(32, 181);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(150, 50);
+            this.btnCancel.Size = new System.Drawing.Size(116, 40);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Quay lại";
             this.toolTip1.SetToolTip(this.btnCancel, "Quai lại vai trò");
@@ -73,7 +73,7 @@
             // 
             this.lblTenVT.AutoSize = true;
             this.lblTenVT.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.lblTenVT.Location = new System.Drawing.Point(52, 49);
+            this.lblTenVT.Location = new System.Drawing.Point(11, 20);
             this.lblTenVT.Name = "lblTenVT";
             this.lblTenVT.Size = new System.Drawing.Size(99, 22);
             this.lblTenVT.TabIndex = 1;
@@ -83,7 +83,7 @@
             // 
             this.lblMoTa.AutoSize = true;
             this.lblMoTa.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.lblMoTa.Location = new System.Drawing.Point(52, 117);
+            this.lblMoTa.Location = new System.Drawing.Point(11, 62);
             this.lblMoTa.Name = "lblMoTa";
             this.lblMoTa.Size = new System.Drawing.Size(57, 22);
             this.lblMoTa.TabIndex = 3;
@@ -92,18 +92,20 @@
             // rtxtMoTa
             // 
             this.rtxtMoTa.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.rtxtMoTa.Location = new System.Drawing.Point(266, 117);
+            this.rtxtMoTa.Location = new System.Drawing.Point(142, 59);
             this.rtxtMoTa.Name = "rtxtMoTa";
-            this.rtxtMoTa.Size = new System.Drawing.Size(306, 96);
+            this.rtxtMoTa.Size = new System.Drawing.Size(246, 96);
             this.rtxtMoTa.TabIndex = 4;
             this.rtxtMoTa.Text = "";
             this.toolTip1.SetToolTip(this.rtxtMoTa, "Nhập mô tả");
             // 
             // frmVaiTro
             // 
+            this.AcceptButton = this.btnSubmit;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(600, 350);
+            this.CancelButton = this.btnCancel;
+            this.ClientSize = new System.Drawing.Size(414, 254);
             this.Controls.Add(this.rtxtMoTa);
             this.Controls.Add(this.lblMoTa);
             this.Controls.Add(this.lblTenVT);

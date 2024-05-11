@@ -58,6 +58,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(107, 226);
             this.btnCancel.Name = "btnCancel";
@@ -165,8 +166,10 @@
             // 
             // frmDatPhong
             // 
+            this.AcceptButton = this.btnSubmit;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(600, 295);
             this.Controls.Add(this.nudSoLuongKhach);
             this.Controls.Add(this.dtpNgayDat);
