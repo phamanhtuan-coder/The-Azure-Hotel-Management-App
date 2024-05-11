@@ -1,4 +1,6 @@
-﻿using GUI.customForm;
+﻿using BLL;
+using DTO;
+using GUI.customForm;
 using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
@@ -15,14 +17,17 @@ namespace GUI.UserControls
     public partial class ucBookingHistory : UserControl
     {
         public customMessageBox thongBao;
-        public frmDatPhong frm = new frmDatPhong();
+        DatPhongBLL DatPhongBLL = new DatPhongBLL();
+        List<DatPhongDTO> dsPhong = new List<DatPhongDTO>();
+        private frmMain _parentForm;
+        public int maKH { set; get; }
 
         public ucBookingHistory()
         {
             InitializeComponent();
         }
 
-        private frmMain _parentForm;
+       
 
         public ucBookingHistory(frmMain parentForm)
         {
@@ -33,69 +38,23 @@ namespace GUI.UserControls
 
         private void ucBooking_Load(object sender, EventArgs e)
         {
+            dgvBookingHistory.AutoGenerateColumns = false;
+            LoadDsDatPhong();
+            LoadCombo();
+        }
+        private void LoadDsDatPhong()
+        {
+            dsPhong = DatPhongBLL.LayDSPhongTheoUser(maKH);
+            dgvBookingHistory.DataSource = dsPhong;
+
+        }
+
+        private void LoadCombo()
+        {
+            DuLieuChoComboBox.duLieuSort(cboSortBookingID);
            
         }
 
-        private void btnAddBooking_Click(object sender, EventArgs e)
-        {
-            frm.isAdd = true;
-            frm.ShowDialog();
-        }
-
-        private void btnEditBooking_Click(object sender, EventArgs e)
-        {
-            if (dgvBookingHistory.SelectedRows.Count > 0)
-            {
-
-                frm.isAdd = false;
-
-
-
-
-                frm.ShowDialog();
-            }
-            else
-            {
-                thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn chỉnh sửa!");
-                thongBao.ShowDialog();
-            }
-        }
-
-        private void btnDeleteBooking_Click(object sender, EventArgs e)
-        {
-            if (dgvBookingHistory.SelectedRows.Count > 0)
-            {
-                thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
-                {
-                    // Xóa 
-                }
-            }
-            else
-            {
-                thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn xóa!");
-                thongBao.ShowDialog();
-            }
-        }
-
-        private void btnRecoverBooking_Click(object sender, EventArgs e)
-        {
-            if (dgvBookingHistory.SelectedRows.Count > 0)
-            {
-                thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
-                {
-                    // Khôi phục
-                }
-            }
-            else
-            {
-                thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
-                thongBao.ShowDialog();
-            }
-        }
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
@@ -105,6 +64,19 @@ namespace GUI.UserControls
             ucPersonal.userKH = parentForm.userKH;
             parentForm.SwitchUserControl(ucPersonal);
             this.Dispose();
+        }
+
+        private void dtpBookingDate_Click(object sender, EventArgs e)
+        {
+            List<DatPhongDTO> dsLoc = new List<DatPhongDTO>();
+            foreach (DatPhongDTO dg in dsPhong)
+            {
+                if (dg.NgayDatPhong.Date == (DateTime) dtpBookingDate.Value)
+                {
+                    dsLoc.Add(dg);
+                }
+            }
+            dgvBookingHistory.DataSource = dsLoc;
         }
     }
 }

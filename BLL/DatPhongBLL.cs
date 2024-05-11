@@ -112,5 +112,10 @@ namespace BLL
         {
             return DatPhongDAL.LayDanhSachDatPhongDaDanhGia(maKH);
         }
+
+        public List<DatPhongDTO> LayDSPhongTheoUser(int maKH)
+        {
+            return DatPhongDAL.LayDSPhongTheoUser(maKH);
+        }
     }
 }

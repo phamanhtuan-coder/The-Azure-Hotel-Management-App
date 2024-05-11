@@ -34,14 +34,6 @@
             this.dtpBookingDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvBookingHistory = new System.Windows.Forms.DataGridView();
-            this.colMaDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaPHG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayNhanPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayTraPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSoLuongKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboSortBookingID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortBookingID = new System.Windows.Forms.Label();
             this.lblCheckOutDate = new System.Windows.Forms.Label();
@@ -51,6 +43,14 @@
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.lblBooking = new System.Windows.Forms.Label();
             this.btnReturn = new Syncfusion.WinForms.Controls.SfButton();
+            this.colMaDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaPHG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayNhanPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayTraPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSoLuongKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
             this.spcQuery.Panel1.SuspendLayout();
             this.spcQuery.Panel2.SuspendLayout();
@@ -116,6 +116,7 @@
             this.dtpBookingDate.Size = new System.Drawing.Size(156, 34);
             this.dtpBookingDate.TabIndex = 6;
             this.dtpBookingDate.ToolTipText = "";
+            this.dtpBookingDate.Click += new System.EventHandler(this.dtpBookingDate_Click);
             // 
             // spcQuery
             // 
@@ -170,64 +171,6 @@
             this.dgvBookingHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBookingHistory.Size = new System.Drawing.Size(973, 746);
             this.dgvBookingHistory.TabIndex = 0;
-            // 
-            // colMaDatPhong
-            // 
-            this.colMaDatPhong.HeaderText = "Mã đặt phòng";
-            this.colMaDatPhong.Name = "colMaDatPhong";
-            this.colMaDatPhong.ReadOnly = true;
-            this.colMaDatPhong.Width = 134;
-            // 
-            // colMaKH
-            // 
-            this.colMaKH.HeaderText = "Mã KH";
-            this.colMaKH.Name = "colMaKH";
-            this.colMaKH.ReadOnly = true;
-            this.colMaKH.Visible = false;
-            this.colMaKH.Width = 87;
-            // 
-            // colMaPHG
-            // 
-            this.colMaPHG.HeaderText = "Mã PHG";
-            this.colMaPHG.Name = "colMaPHG";
-            this.colMaPHG.ReadOnly = true;
-            this.colMaPHG.Width = 91;
-            // 
-            // colNgayDat
-            // 
-            this.colNgayDat.HeaderText = "Ngày đặt";
-            this.colNgayDat.Name = "colNgayDat";
-            this.colNgayDat.ReadOnly = true;
-            this.colNgayDat.Width = 98;
-            // 
-            // colNgayNhanPhong
-            // 
-            this.colNgayNhanPhong.HeaderText = "Ngày nhận phòng";
-            this.colNgayNhanPhong.Name = "colNgayNhanPhong";
-            this.colNgayNhanPhong.ReadOnly = true;
-            this.colNgayNhanPhong.Width = 165;
-            // 
-            // colNgayTraPhong
-            // 
-            this.colNgayTraPhong.HeaderText = "Ngày trả phòng";
-            this.colNgayTraPhong.Name = "colNgayTraPhong";
-            this.colNgayTraPhong.ReadOnly = true;
-            this.colNgayTraPhong.Width = 145;
-            // 
-            // colSoLuongKH
-            // 
-            this.colSoLuongKH.HeaderText = "Số lượng KH";
-            this.colSoLuongKH.Name = "colSoLuongKH";
-            this.colSoLuongKH.ReadOnly = true;
-            this.colSoLuongKH.Width = 123;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Visible = false;
-            this.colTrangThai.Width = 105;
             // 
             // cboSortBookingID
             // 
@@ -348,6 +291,72 @@
             this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
+            // colMaDatPhong
+            // 
+            this.colMaDatPhong.DataPropertyName = "MaDatPhong";
+            this.colMaDatPhong.HeaderText = "Mã đặt phòng";
+            this.colMaDatPhong.Name = "colMaDatPhong";
+            this.colMaDatPhong.ReadOnly = true;
+            this.colMaDatPhong.Width = 147;
+            // 
+            // colMaKH
+            // 
+            this.colMaKH.DataPropertyName = "MaKH";
+            this.colMaKH.HeaderText = "Mã KH";
+            this.colMaKH.Name = "colMaKH";
+            this.colMaKH.ReadOnly = true;
+            this.colMaKH.Visible = false;
+            this.colMaKH.Width = 87;
+            // 
+            // colMaPHG
+            // 
+            this.colMaPHG.DataPropertyName = "MaPHG";
+            this.colMaPHG.HeaderText = "Mã PHG";
+            this.colMaPHG.Name = "colMaPHG";
+            this.colMaPHG.ReadOnly = true;
+            this.colMaPHG.Width = 99;
+            // 
+            // colNgayDat
+            // 
+            this.colNgayDat.DataPropertyName = "NgayDatPhong";
+            this.colNgayDat.HeaderText = "Ngày đặt";
+            this.colNgayDat.Name = "colNgayDat";
+            this.colNgayDat.ReadOnly = true;
+            this.colNgayDat.Width = 107;
+            // 
+            // colNgayNhanPhong
+            // 
+            this.colNgayNhanPhong.DataPropertyName = "NgayNhanPhong";
+            this.colNgayNhanPhong.HeaderText = "Ngày nhận phòng";
+            this.colNgayNhanPhong.Name = "colNgayNhanPhong";
+            this.colNgayNhanPhong.ReadOnly = true;
+            this.colNgayNhanPhong.Width = 165;
+            // 
+            // colNgayTraPhong
+            // 
+            this.colNgayTraPhong.DataPropertyName = "NgayTraPhong";
+            this.colNgayTraPhong.HeaderText = "Ngày trả phòng";
+            this.colNgayTraPhong.Name = "colNgayTraPhong";
+            this.colNgayTraPhong.ReadOnly = true;
+            this.colNgayTraPhong.Width = 145;
+            // 
+            // colSoLuongKH
+            // 
+            this.colSoLuongKH.DataPropertyName = "SoLuongKH";
+            this.colSoLuongKH.HeaderText = "Số lượng KH";
+            this.colSoLuongKH.Name = "colSoLuongKH";
+            this.colSoLuongKH.ReadOnly = true;
+            this.colSoLuongKH.Width = 123;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Visible = false;
+            this.colTrangThai.Width = 105;
+            // 
             // ucBookingHistory
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -388,6 +397,8 @@
         private System.Windows.Forms.SplitContainer spcHeader;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortBookingID;
         private System.Windows.Forms.DataGridView dgvBookingHistory;
+        private System.Windows.Forms.Label lblBooking;
+        private Syncfusion.WinForms.Controls.SfButton btnReturn;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaDatPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaPHG;
@@ -396,7 +407,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayTraPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSoLuongKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
-        private System.Windows.Forms.Label lblBooking;
-        private Syncfusion.WinForms.Controls.SfButton btnReturn;
     }
 }

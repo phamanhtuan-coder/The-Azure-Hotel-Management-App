@@ -370,5 +370,40 @@ namespace DAL
                 return new List<DatPhongDTO>();
             }
         }
+
+        public List<DatPhongDTO> LayDSPhongTheoUser(int maKH)
+        {
+            try
+            {
+                List<DatPhongDTO> ds = new List<DatPhongDTO>();
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                string strTV = "Select * from DatPhong where MaKH = @MaKH and Cast(TrangThai  as int) = 1";
+                SqlParameter[] pars = new SqlParameter[1];
+                pars[0] = new SqlParameter("@MaKH", maKH);
+                conn.Open();
+                SqlDataReader reader = DataProvider.ThucHienTruyVan(strTV, conn, pars);
+                while (reader.Read())
+                {
+                    DatPhongDTO phong = new DatPhongDTO();
+                    phong.MaDatPhong = (int)reader["MaDatPhong"];
+                    phong.MaPHG = (int)reader["MaPHG"];
+                    phong.MaKH = maKH;
+                    phong.SoLuongKH = (int)reader["SoLuongKH"];
+                    phong.NgayDatPhong = DateTime.Parse(reader["NgayDatPhong"].ToString());
+                    phong.NgayNhanPhong = DateTime.Parse(reader["NgayNhanPhong"].ToString());
+                    phong.NgayTraPhong = DateTime.Parse(reader["NgayTraPhong"].ToString());
+                    phong.TrangThai = true;
+                    ds.Add(phong);
+                }
+                reader.Close();
+                conn.Close();
+                return ds;
+            }
+            catch (Exception)
+            {
+
+                return new List<DatPhongDTO>();
+            }
+        }
     }
 }

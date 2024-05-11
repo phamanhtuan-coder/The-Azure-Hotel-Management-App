@@ -115,6 +115,7 @@ namespace GUI.UserControls
         {
             frmMain parentForm = this.ParentForm as frmMain;
             ucBookingHistory ucBookingHistory = new ucBookingHistory(parentForm);
+            ucBookingHistory.maKH= this.userKH.MaKH;
             parentForm.SwitchUserControl(ucBookingHistory);
             this.Dispose();
         }
