@@ -34,10 +34,21 @@ namespace GUI.UserControls
 
         private void ucBooking_Load(object sender, EventArgs e)
         {
+            LoadCCOKH();
             layds();
             dgvBooking.AutoGenerateColumns = false;
             laycombo();
         }
+
+        private void LoadCCOKH()
+        {
+            KhachHangBLL khachHangBLL = new KhachHangBLL();
+            List<KhachHangDTO> list = khachHangBLL.LoadIDvaNameKH();
+            colMaKH.DataSource = list;
+            colMaKH.DisplayMember = "HoTenKH";
+            colMaKH.ValueMember = "MaKH";
+        }
+
         private void layds()
         {
             datPhongDTOs = DatPhongBLL.laydsp();
