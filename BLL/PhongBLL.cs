@@ -196,5 +196,10 @@ namespace BLL
                 throw ex;
             }
         }
+
+        public bool CapNhatTT(List<DatPhongDTO> list, int v)
+        {
+            return phongDAL.CapNhatTT(list, v);
+        }
     }
 }

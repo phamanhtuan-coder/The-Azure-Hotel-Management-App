@@ -57,7 +57,7 @@ namespace DAL
             {
             List<PhongDTO> dsp = new List<PhongDTO>();
                 SqlConnection conn = DataProvider.KetNoiDuLieu();
-            string strlaydanhsach = "select * from Phong";
+            string strlaydanhsach = "select * from Phong where MaTinhTrangPhong = 1";
                 conn.Open();
             SqlDataReader reader = DataProvider.ThucHienTruyVan(strlaydanhsach, conn);
                 while (reader.Read())
@@ -225,6 +225,32 @@ namespace DAL
             }
 
             return rooms;
+        }
+
+        public bool CapNhatTT(List<DatPhongDTO> list, int v)
+        {
+            try
+            {
+                int t = 0;
+                foreach (DatPhongDTO room in list)
+                {
+                    SqlConnection conn = DataProvider.KetNoiDuLieu();
+                    conn.Open();
+
+                    SqlCommand com = new SqlCommand("spCapNhatTTPhong", conn);
+                    com.CommandType = CommandType.StoredProcedure;
+                    com.Parameters.AddWithValue("@MaPHG",room.MaPHG);
+                    com.Parameters.AddWithValue("@MaTinhTrangPhong",v);
+
+                    t+= com.ExecuteNonQuery();
+                    conn.Close();
+                }
+                return t > 0;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

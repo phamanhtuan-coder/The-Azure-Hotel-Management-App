@@ -25,7 +25,7 @@ namespace GUI.UserControls
         List<DatPhongDTO> datPhongDTOstk = new List<DatPhongDTO>();
 
         List<PhongDTO> PhongDTOs = new List<PhongDTO>();
-        PhongBLL PhongBLL = new PhongBLL();
+        PhongBLL phongBLL = new PhongBLL();
         bool KT = false;
         public ucBooking()
         {
@@ -249,6 +249,11 @@ namespace GUI.UserControls
                 {
                     if (DatPhongBLL.Check_in(list))
                     {
+                        if(!phongBLL.CapNhatTT(list, 2))
+                        {
+                            thongBao = new customMessageBox("Cập nhật tình trạng phòng thất bại!");
+                            thongBao.ShowDialog();
+                        }
                         layds();
                     }
                     else
@@ -293,6 +298,11 @@ namespace GUI.UserControls
                         {
                             if (DatPhongBLL.Check_out(BienTam.MaKM, BienTam.KTThemHoaDon, list))
                             {
+                                if (!phongBLL.CapNhatTT(list, 4))
+                                {
+                                    thongBao = new customMessageBox("Cập nhật tình trạng phòng thất bại!");
+                                    thongBao.ShowDialog();
+                                }
                                 layds();
                             }
                             else
