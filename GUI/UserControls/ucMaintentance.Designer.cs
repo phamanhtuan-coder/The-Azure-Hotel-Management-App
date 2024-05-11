@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucMaintentance));
             this.lblMaintentance = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
@@ -40,6 +41,12 @@
             this.cboStateMaintentance = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvMaintenance = new System.Windows.Forms.DataGridView();
+            this.colMaBaoTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayHuHong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayBaoTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtpNgayBaoTri = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayHuHong = new System.Windows.Forms.DateTimePicker();
             this.lblNgayBaoTri = new System.Windows.Forms.Label();
@@ -49,12 +56,7 @@
             this.lblStateMaintance = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.colMaBaoTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayHuHong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayBaoTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateMaintentance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -79,7 +81,7 @@
             this.lblMaintentance.Location = new System.Drawing.Point(0, 0);
             this.lblMaintentance.Name = "lblMaintentance";
             this.lblMaintentance.Size = new System.Drawing.Size(972, 94);
-            this.lblMaintentance.TabIndex = 35;
+            this.lblMaintentance.TabIndex = 1;
             this.lblMaintentance.Text = "MAINTENANCE";
             this.lblMaintentance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -116,9 +118,10 @@
             this.btnAddMaintentance.Style.ForeColor = System.Drawing.Color.White;
             this.btnAddMaintentance.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnAddMaintentance.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddMaintentance.TabIndex = 1;
+            this.btnAddMaintentance.TabIndex = 2;
             this.btnAddMaintentance.Text = "Thêm";
             this.btnAddMaintentance.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnAddMaintentance, "Thêm bảo trì");
             this.btnAddMaintentance.UseVisualStyleBackColor = false;
             this.btnAddMaintentance.Click += new System.EventHandler(this.btnAddMaintentance_Click);
             // 
@@ -137,9 +140,10 @@
             this.btnEditMaintentance.Style.ForeColor = System.Drawing.Color.White;
             this.btnEditMaintentance.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnEditMaintentance.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditMaintentance.TabIndex = 3;
+            this.btnEditMaintentance.TabIndex = 4;
             this.btnEditMaintentance.Text = "Sửa";
             this.btnEditMaintentance.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnEditMaintentance, "Sửa bảo trì");
             this.btnEditMaintentance.UseVisualStyleBackColor = false;
             this.btnEditMaintentance.Click += new System.EventHandler(this.btnEditMaintentance_Click);
             // 
@@ -158,9 +162,10 @@
             this.btnDeleteMaintentance.Style.ForeColor = System.Drawing.Color.White;
             this.btnDeleteMaintentance.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDeleteMaintentance.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteMaintentance.TabIndex = 4;
+            this.btnDeleteMaintentance.TabIndex = 3;
             this.btnDeleteMaintentance.Text = "Xóa";
             this.btnDeleteMaintentance.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnDeleteMaintentance, "Xóa bảo trì");
             this.btnDeleteMaintentance.UseVisualStyleBackColor = false;
             this.btnDeleteMaintentance.Click += new System.EventHandler(this.btnDeleteMaintentance_Click);
             // 
@@ -182,6 +187,7 @@
             this.btnRecoverMaintentance.TabIndex = 5;
             this.btnRecoverMaintentance.Text = "Khôi phục";
             this.btnRecoverMaintentance.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnRecoverMaintentance, "Khôi phục bảo trì");
             this.btnRecoverMaintentance.UseVisualStyleBackColor = false;
             this.btnRecoverMaintentance.Click += new System.EventHandler(this.btnRecoverMaintentance_Click);
             // 
@@ -190,8 +196,9 @@
             this.txtSearchMaintentance.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchMaintentance.Location = new System.Drawing.Point(6, 16);
             this.txtSearchMaintentance.Name = "txtSearchMaintentance";
-            this.txtSearchMaintentance.Size = new System.Drawing.Size(251, 49);
-            this.txtSearchMaintentance.TabIndex = 2;
+            this.txtSearchMaintentance.Size = new System.Drawing.Size(251, 40);
+            this.txtSearchMaintentance.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.txtSearchMaintentance, "Nhập mã bảo trì");
             // 
             // btnTraCuuMaintentance
             // 
@@ -206,8 +213,9 @@
             this.btnTraCuuMaintentance.Size = new System.Drawing.Size(118, 40);
             this.btnTraCuuMaintentance.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuMaintentance.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuMaintentance.TabIndex = 0;
+            this.btnTraCuuMaintentance.TabIndex = 8;
             this.btnTraCuuMaintentance.Text = "Tra cứu";
+            this.toolTip1.SetToolTip(this.btnTraCuuMaintentance, "Tra cứu");
             this.btnTraCuuMaintentance.UseVisualStyleBackColor = false;
             this.btnTraCuuMaintentance.Click += new System.EventHandler(this.btnTraCuuMaintentance_Click);
             // 
@@ -226,7 +234,8 @@
             this.cboStateMaintentance.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateMaintentance.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateMaintentance.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateMaintentance.TabIndex = 3;
+            this.cboStateMaintentance.TabIndex = 16;
+            this.toolTip1.SetToolTip(this.cboStateMaintentance, "Lọc theo trạng thái");
             this.cboStateMaintentance.SelectedIndexChanged += new System.EventHandler(this.cboStateMaintentance_SelectedIndexChanged);
             // 
             // spcQuery
@@ -281,116 +290,7 @@
             this.dgvMaintenance.RowHeadersWidth = 51;
             this.dgvMaintenance.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMaintenance.Size = new System.Drawing.Size(973, 746);
-            this.dgvMaintenance.TabIndex = 0;
-            // 
-            // dtpNgayBaoTri
-            // 
-            this.dtpNgayBaoTri.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgayBaoTri.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayBaoTri.Location = new System.Drawing.Point(182, 197);
-            this.dtpNgayBaoTri.Name = "dtpNgayBaoTri";
-            this.dtpNgayBaoTri.Size = new System.Drawing.Size(200, 32);
-            this.dtpNgayBaoTri.TabIndex = 32;
-            // 
-            // dtpNgayHuHong
-            // 
-            this.dtpNgayHuHong.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgayHuHong.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayHuHong.Location = new System.Drawing.Point(182, 138);
-            this.dtpNgayHuHong.Name = "dtpNgayHuHong";
-            this.dtpNgayHuHong.Size = new System.Drawing.Size(200, 32);
-            this.dtpNgayHuHong.TabIndex = 31;
-            // 
-            // lblNgayBaoTri
-            // 
-            this.lblNgayBaoTri.AutoSize = true;
-            this.lblNgayBaoTri.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgayBaoTri.Location = new System.Drawing.Point(1, 198);
-            this.lblNgayBaoTri.Name = "lblNgayBaoTri";
-            this.lblNgayBaoTri.Size = new System.Drawing.Size(169, 33);
-            this.lblNgayBaoTri.TabIndex = 30;
-            this.lblNgayBaoTri.Text = "Ngày bảo trì";
-            this.lblNgayBaoTri.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cboSortMaintentanceD
-            // 
-            this.cboSortMaintentanceD.DelimiterChar = "";
-            this.cboSortMaintentanceD.DisplayMember = "";
-            this.cboSortMaintentanceD.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboSortMaintentanceD.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortMaintentanceD.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortMaintentanceD.Location = new System.Drawing.Point(226, 75);
-            this.cboSortMaintentanceD.Name = "cboSortMaintentanceD";
-            this.cboSortMaintentanceD.Size = new System.Drawing.Size(156, 33);
-            this.cboSortMaintentanceD.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortMaintentanceD.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortMaintentanceD.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortMaintentanceD.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortMaintentanceD.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortMaintentanceD.TabIndex = 29;
-            this.cboSortMaintentanceD.SelectedIndexChanged += new System.EventHandler(this.cboSortMaintentanceD_SelectedIndexChanged);
-            // 
-            // lblSortMaintentanceID
-            // 
-            this.lblSortMaintentanceID.AutoSize = true;
-            this.lblSortMaintentanceID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortMaintentanceID.Location = new System.Drawing.Point(-3, 82);
-            this.lblSortMaintentanceID.Name = "lblSortMaintentanceID";
-            this.lblSortMaintentanceID.Size = new System.Drawing.Size(283, 33);
-            this.lblSortMaintentanceID.TabIndex = 28;
-            this.lblSortMaintentanceID.Text = "Sort Maintentance ID";
-            this.lblSortMaintentanceID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblLocNgayHuHong
-            // 
-            this.lblLocNgayHuHong.AutoSize = true;
-            this.lblLocNgayHuHong.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLocNgayHuHong.Location = new System.Drawing.Point(3, 139);
-            this.lblLocNgayHuHong.Name = "lblLocNgayHuHong";
-            this.lblLocNgayHuHong.Size = new System.Drawing.Size(195, 33);
-            this.lblLocNgayHuHong.TabIndex = 14;
-            this.lblLocNgayHuHong.Text = "Ngày hư hỏng";
-            this.lblLocNgayHuHong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblStateMaintance
-            // 
-            this.lblStateMaintance.AutoSize = true;
-            this.lblStateMaintance.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStateMaintance.Location = new System.Drawing.Point(-3, 264);
-            this.lblStateMaintance.Name = "lblStateMaintance";
-            this.lblStateMaintance.Size = new System.Drawing.Size(237, 33);
-            this.lblStateMaintance.TabIndex = 9;
-            this.lblStateMaintance.Text = "Trạng thái dữ liệu";
-            this.lblStateMaintance.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panUcHeader
-            // 
-            this.panUcHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(224)))), ((int)(((byte)(155)))));
-            this.panUcHeader.Controls.Add(this.spcHeader);
-            this.panUcHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panUcHeader.Location = new System.Drawing.Point(0, 0);
-            this.panUcHeader.Name = "panUcHeader";
-            this.panUcHeader.Size = new System.Drawing.Size(1370, 94);
-            this.panUcHeader.TabIndex = 37;
-            // 
-            // spcHeader
-            // 
-            this.spcHeader.BackColor = System.Drawing.Color.Lavender;
-            this.spcHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.spcHeader.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.spcHeader.Location = new System.Drawing.Point(0, 0);
-            this.spcHeader.Name = "spcHeader";
-            // 
-            // spcHeader.Panel1
-            // 
-            this.spcHeader.Panel1.Controls.Add(this.lblMaintentance);
-            // 
-            // spcHeader.Panel2
-            // 
-            this.spcHeader.Panel2.Controls.Add(this.tlpController);
-            this.spcHeader.Size = new System.Drawing.Size(1370, 94);
-            this.spcHeader.SplitterDistance = 972;
-            this.spcHeader.TabIndex = 0;
+            this.dgvMaintenance.TabIndex = 6;
             // 
             // colMaBaoTri
             // 
@@ -440,6 +340,118 @@
             this.colTrangThai.Name = "colTrangThai";
             this.colTrangThai.ReadOnly = true;
             this.colTrangThai.Visible = false;
+            // 
+            // dtpNgayBaoTri
+            // 
+            this.dtpNgayBaoTri.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayBaoTri.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayBaoTri.Location = new System.Drawing.Point(182, 197);
+            this.dtpNgayBaoTri.Name = "dtpNgayBaoTri";
+            this.dtpNgayBaoTri.Size = new System.Drawing.Size(200, 27);
+            this.dtpNgayBaoTri.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.dtpNgayBaoTri, "Ngày bảo trì");
+            // 
+            // dtpNgayHuHong
+            // 
+            this.dtpNgayHuHong.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayHuHong.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayHuHong.Location = new System.Drawing.Point(182, 138);
+            this.dtpNgayHuHong.Name = "dtpNgayHuHong";
+            this.dtpNgayHuHong.Size = new System.Drawing.Size(200, 27);
+            this.dtpNgayHuHong.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.dtpNgayHuHong, "Ngày hỏng");
+            // 
+            // lblNgayBaoTri
+            // 
+            this.lblNgayBaoTri.AutoSize = true;
+            this.lblNgayBaoTri.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNgayBaoTri.Location = new System.Drawing.Point(1, 198);
+            this.lblNgayBaoTri.Name = "lblNgayBaoTri";
+            this.lblNgayBaoTri.Size = new System.Drawing.Size(132, 26);
+            this.lblNgayBaoTri.TabIndex = 13;
+            this.lblNgayBaoTri.Text = "Ngày bảo trì";
+            this.lblNgayBaoTri.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cboSortMaintentanceD
+            // 
+            this.cboSortMaintentanceD.DelimiterChar = "";
+            this.cboSortMaintentanceD.DisplayMember = "";
+            this.cboSortMaintentanceD.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboSortMaintentanceD.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+            this.cboSortMaintentanceD.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortMaintentanceD.Location = new System.Drawing.Point(226, 75);
+            this.cboSortMaintentanceD.Name = "cboSortMaintentanceD";
+            this.cboSortMaintentanceD.Size = new System.Drawing.Size(156, 33);
+            this.cboSortMaintentanceD.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.cboSortMaintentanceD.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortMaintentanceD.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortMaintentanceD.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboSortMaintentanceD.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortMaintentanceD.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.cboSortMaintentanceD, "Sắp xếp mã bảo trì");
+            this.cboSortMaintentanceD.SelectedIndexChanged += new System.EventHandler(this.cboSortMaintentanceD_SelectedIndexChanged);
+            // 
+            // lblSortMaintentanceID
+            // 
+            this.lblSortMaintentanceID.AutoSize = true;
+            this.lblSortMaintentanceID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortMaintentanceID.Location = new System.Drawing.Point(-3, 82);
+            this.lblSortMaintentanceID.Name = "lblSortMaintentanceID";
+            this.lblSortMaintentanceID.Size = new System.Drawing.Size(222, 26);
+            this.lblSortMaintentanceID.TabIndex = 9;
+            this.lblSortMaintentanceID.Text = "Sort Maintentance ID";
+            this.lblSortMaintentanceID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblLocNgayHuHong
+            // 
+            this.lblLocNgayHuHong.AutoSize = true;
+            this.lblLocNgayHuHong.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocNgayHuHong.Location = new System.Drawing.Point(3, 139);
+            this.lblLocNgayHuHong.Name = "lblLocNgayHuHong";
+            this.lblLocNgayHuHong.Size = new System.Drawing.Size(150, 26);
+            this.lblLocNgayHuHong.TabIndex = 11;
+            this.lblLocNgayHuHong.Text = "Ngày hư hỏng";
+            this.lblLocNgayHuHong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblStateMaintance
+            // 
+            this.lblStateMaintance.AutoSize = true;
+            this.lblStateMaintance.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStateMaintance.Location = new System.Drawing.Point(-3, 264);
+            this.lblStateMaintance.Name = "lblStateMaintance";
+            this.lblStateMaintance.Size = new System.Drawing.Size(186, 26);
+            this.lblStateMaintance.TabIndex = 15;
+            this.lblStateMaintance.Text = "Trạng thái dữ liệu";
+            this.lblStateMaintance.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panUcHeader
+            // 
+            this.panUcHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(224)))), ((int)(((byte)(155)))));
+            this.panUcHeader.Controls.Add(this.spcHeader);
+            this.panUcHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panUcHeader.Location = new System.Drawing.Point(0, 0);
+            this.panUcHeader.Name = "panUcHeader";
+            this.panUcHeader.Size = new System.Drawing.Size(1370, 94);
+            this.panUcHeader.TabIndex = 37;
+            // 
+            // spcHeader
+            // 
+            this.spcHeader.BackColor = System.Drawing.Color.Lavender;
+            this.spcHeader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.spcHeader.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.spcHeader.Location = new System.Drawing.Point(0, 0);
+            this.spcHeader.Name = "spcHeader";
+            // 
+            // spcHeader.Panel1
+            // 
+            this.spcHeader.Panel1.Controls.Add(this.lblMaintentance);
+            // 
+            // spcHeader.Panel2
+            // 
+            this.spcHeader.Panel2.Controls.Add(this.tlpController);
+            this.spcHeader.Size = new System.Drawing.Size(1370, 94);
+            this.spcHeader.SplitterDistance = 972;
+            this.spcHeader.TabIndex = 0;
             // 
             // ucMaintentance
             // 
@@ -497,5 +509,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayHuHong;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayBaoTri;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

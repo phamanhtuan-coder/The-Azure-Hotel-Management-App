@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucCustomer));
             this.lblCustomer = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
@@ -65,6 +66,7 @@
             this.lblStateAccounts = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
             this.spcQuery.Panel1.SuspendLayout();
@@ -91,7 +93,7 @@
             this.lblCustomer.Location = new System.Drawing.Point(0, 0);
             this.lblCustomer.Name = "lblCustomer";
             this.lblCustomer.Size = new System.Drawing.Size(972, 94);
-            this.lblCustomer.TabIndex = 35;
+            this.lblCustomer.TabIndex = 1;
             this.lblCustomer.Text = "CUSTOMERS LIST";
             this.lblCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -112,6 +114,7 @@
             this.tlpController.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpController.Size = new System.Drawing.Size(394, 94);
             this.tlpController.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.tlpController, "Thêm nhân viên");
             // 
             // btnAddCustomer
             // 
@@ -128,9 +131,10 @@
             this.btnAddCustomer.Style.ForeColor = System.Drawing.Color.White;
             this.btnAddCustomer.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnAddCustomer.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddCustomer.TabIndex = 1;
+            this.btnAddCustomer.TabIndex = 2;
             this.btnAddCustomer.Text = "Thêm";
             this.btnAddCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnAddCustomer, "Thêm khách hàng");
             this.btnAddCustomer.UseVisualStyleBackColor = false;
             this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
             // 
@@ -149,9 +153,10 @@
             this.btnEditCustomer.Style.ForeColor = System.Drawing.Color.White;
             this.btnEditCustomer.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnEditCustomer.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditCustomer.TabIndex = 3;
+            this.btnEditCustomer.TabIndex = 4;
             this.btnEditCustomer.Text = "Sửa";
             this.btnEditCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnEditCustomer, "Sửa khách hàng");
             this.btnEditCustomer.UseVisualStyleBackColor = false;
             this.btnEditCustomer.Click += new System.EventHandler(this.btnEditCustomer_Click);
             // 
@@ -170,9 +175,10 @@
             this.btnDeleteCustomer.Style.ForeColor = System.Drawing.Color.White;
             this.btnDeleteCustomer.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDeleteCustomer.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteCustomer.TabIndex = 4;
+            this.btnDeleteCustomer.TabIndex = 3;
             this.btnDeleteCustomer.Text = "Xóa";
             this.btnDeleteCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnDeleteCustomer, "Xóa khách hàng");
             this.btnDeleteCustomer.UseVisualStyleBackColor = false;
             this.btnDeleteCustomer.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
             // 
@@ -194,6 +200,7 @@
             this.btnRecoverCustomer.TabIndex = 5;
             this.btnRecoverCustomer.Text = "Khôi phục";
             this.btnRecoverCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnRecoverCustomer, "Khôi phục khách hàng");
             this.btnRecoverCustomer.UseVisualStyleBackColor = false;
             this.btnRecoverCustomer.Click += new System.EventHandler(this.btnRecoverCustomer_Click);
             // 
@@ -203,7 +210,8 @@
             this.txtSearchCustomer.Location = new System.Drawing.Point(6, 16);
             this.txtSearchCustomer.Name = "txtSearchCustomer";
             this.txtSearchCustomer.Size = new System.Drawing.Size(251, 27);
-            this.txtSearchCustomer.TabIndex = 2;
+            this.txtSearchCustomer.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.txtSearchCustomer, "Nhập họ tên khách hàng");
             // 
             // btnTraCuuCustomer
             // 
@@ -218,8 +226,9 @@
             this.btnTraCuuCustomer.Size = new System.Drawing.Size(118, 40);
             this.btnTraCuuCustomer.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuCustomer.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuCustomer.TabIndex = 0;
+            this.btnTraCuuCustomer.TabIndex = 8;
             this.btnTraCuuCustomer.Text = "Tra cứu";
+            this.toolTip1.SetToolTip(this.btnTraCuuCustomer, "Tra cứu");
             this.btnTraCuuCustomer.UseVisualStyleBackColor = false;
             this.btnTraCuuCustomer.Click += new System.EventHandler(this.btnTraCuuCustomer_Click);
             // 
@@ -283,7 +292,7 @@
             this.dgvCustomer.RowHeadersVisible = false;
             this.dgvCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCustomer.Size = new System.Drawing.Size(973, 746);
-            this.dgvCustomer.TabIndex = 0;
+            this.dgvCustomer.TabIndex = 6;
             // 
             // MaTaiKhoan
             // 
@@ -404,7 +413,8 @@
             this.cboGioiTinh.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboGioiTinh.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboGioiTinh.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboGioiTinh.TabIndex = 36;
+            this.cboGioiTinh.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.cboGioiTinh, "Lọc theo giới tính");
             this.cboGioiTinh.SelectedIndexChanged += new System.EventHandler(this.cboGioiTinh_SelectedIndexChanged);
             // 
             // lblSortGioiTinh
@@ -414,7 +424,7 @@
             this.lblSortGioiTinh.Location = new System.Drawing.Point(3, 204);
             this.lblSortGioiTinh.Name = "lblSortGioiTinh";
             this.lblSortGioiTinh.Size = new System.Drawing.Size(157, 22);
-            this.lblSortGioiTinh.TabIndex = 35;
+            this.lblSortGioiTinh.TabIndex = 13;
             this.lblSortGioiTinh.Text = "Lọc theo giới tính";
             this.lblSortGioiTinh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -426,7 +436,8 @@
             this.dtpNgaySinh.Location = new System.Drawing.Point(226, 255);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(156, 27);
-            this.dtpNgaySinh.TabIndex = 32;
+            this.dtpNgaySinh.TabIndex = 16;
+            this.toolTip1.SetToolTip(this.dtpNgaySinh, "Lọc theo ngày sinh");
             // 
             // cboHangTV
             // 
@@ -443,7 +454,8 @@
             this.cboHangTV.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboHangTV.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboHangTV.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboHangTV.TabIndex = 31;
+            this.cboHangTV.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.cboHangTV, "Lọc theo hạng");
             this.cboHangTV.SelectedIndexChanged += new System.EventHandler(this.cboHangTV_SelectedIndexChanged);
             // 
             // lblSortHangTV
@@ -453,7 +465,7 @@
             this.lblSortHangTV.Location = new System.Drawing.Point(3, 146);
             this.lblSortHangTV.Name = "lblSortHangTV";
             this.lblSortHangTV.Size = new System.Drawing.Size(130, 22);
-            this.lblSortHangTV.TabIndex = 30;
+            this.lblSortHangTV.TabIndex = 11;
             this.lblSortHangTV.Text = "Lọc theo hạng";
             this.lblSortHangTV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -472,7 +484,8 @@
             this.cboSortCustomerID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortCustomerID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortCustomerID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortCustomerID.TabIndex = 29;
+            this.cboSortCustomerID.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.cboSortCustomerID, "Sắp xếp theo mã tài khoản");
             this.cboSortCustomerID.SelectedIndexChanged += new System.EventHandler(this.cboSortCustomerID_SelectedIndexChanged);
             // 
             // lblSortCustomerID
@@ -482,7 +495,7 @@
             this.lblSortCustomerID.Location = new System.Drawing.Point(3, 88);
             this.lblSortCustomerID.Name = "lblSortCustomerID";
             this.lblSortCustomerID.Size = new System.Drawing.Size(184, 22);
-            this.lblSortCustomerID.TabIndex = 28;
+            this.lblSortCustomerID.TabIndex = 9;
             this.lblSortCustomerID.Text = "Sort theo ID Account";
             this.lblSortCustomerID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -501,7 +514,8 @@
             this.cboStateAccounts.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateAccounts.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateAccounts.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateAccounts.TabIndex = 23;
+            this.cboStateAccounts.TabIndex = 18;
+            this.toolTip1.SetToolTip(this.cboStateAccounts, "Lọc theo trạng thái");
             this.cboStateAccounts.SelectedIndexChanged += new System.EventHandler(this.cboStateAccounts_SelectedIndexChanged);
             // 
             // lblNgaySinh
@@ -511,7 +525,7 @@
             this.lblNgaySinh.Location = new System.Drawing.Point(3, 255);
             this.lblNgaySinh.Name = "lblNgaySinh";
             this.lblNgaySinh.Size = new System.Drawing.Size(94, 22);
-            this.lblNgaySinh.TabIndex = 14;
+            this.lblNgaySinh.TabIndex = 15;
             this.lblNgaySinh.Text = "Ngày sinh";
             this.lblNgaySinh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -522,7 +536,7 @@
             this.lblStateAccounts.Location = new System.Drawing.Point(3, 315);
             this.lblStateAccounts.Name = "lblStateAccounts";
             this.lblStateAccounts.Size = new System.Drawing.Size(159, 22);
-            this.lblStateAccounts.TabIndex = 9;
+            this.lblStateAccounts.TabIndex = 17;
             this.lblStateAccounts.Text = "Trạng thái dữ liệu";
             this.lblStateAccounts.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -623,5 +637,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucPersonal));
             this.spcPersonal = new System.Windows.Forms.SplitContainer();
             this.panCustomerController = new System.Windows.Forms.Panel();
@@ -65,6 +66,7 @@
             this.txtRePw = new System.Windows.Forms.TextBox();
             this.lblPWMoi = new System.Windows.Forms.Label();
             this.lblRePW = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.spcPersonal)).BeginInit();
             this.spcPersonal.Panel1.SuspendLayout();
             this.spcPersonal.Panel2.SuspendLayout();
@@ -120,7 +122,7 @@
             this.cboHangTV.Location = new System.Drawing.Point(65, 67);
             this.cboHangTV.Name = "cboHangTV";
             this.cboHangTV.Size = new System.Drawing.Size(225, 50);
-            this.cboHangTV.TabIndex = 41;
+            this.cboHangTV.TabIndex = 2;
             // 
             // btnTraCuuHD
             // 
@@ -250,7 +252,7 @@
             this.radNu.Location = new System.Drawing.Point(427, 242);
             this.radNu.Name = "radNu";
             this.radNu.Size = new System.Drawing.Size(52, 26);
-            this.radNu.TabIndex = 36;
+            this.radNu.TabIndex = 13;
             this.radNu.TabStop = true;
             this.radNu.Text = "Nữ";
             this.radNu.UseVisualStyleBackColor = true;
@@ -262,7 +264,7 @@
             this.radNam.Location = new System.Drawing.Point(319, 242);
             this.radNam.Name = "radNam";
             this.radNam.Size = new System.Drawing.Size(68, 26);
-            this.radNam.TabIndex = 35;
+            this.radNam.TabIndex = 12;
             this.radNam.TabStop = true;
             this.radNam.Text = "Nam";
             this.radNam.UseVisualStyleBackColor = true;
@@ -273,7 +275,7 @@
             this.label1.Location = new System.Drawing.Point(109, 244);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 22);
-            this.label1.TabIndex = 34;
+            this.label1.TabIndex = 11;
             this.label1.Text = "Giới tính";
             // 
             // btnResetThongTin
@@ -287,8 +289,9 @@
             this.btnResetThongTin.Size = new System.Drawing.Size(121, 40);
             this.btnResetThongTin.Style.BackColor = System.Drawing.Color.DarkOrange;
             this.btnResetThongTin.Style.ForeColor = System.Drawing.Color.White;
-            this.btnResetThongTin.TabIndex = 33;
+            this.btnResetThongTin.TabIndex = 18;
             this.btnResetThongTin.Text = "Reset";
+            this.toolTip1.SetToolTip(this.btnResetThongTin, "Trở lại ban đầu");
             this.btnResetThongTin.UseVisualStyleBackColor = false;
             this.btnResetThongTin.Click += new System.EventHandler(this.btnResetThongTin_Click);
             // 
@@ -303,8 +306,9 @@
             this.btnCapNhat.Size = new System.Drawing.Size(121, 40);
             this.btnCapNhat.Style.BackColor = System.Drawing.Color.ForestGreen;
             this.btnCapNhat.Style.ForeColor = System.Drawing.Color.White;
-            this.btnCapNhat.TabIndex = 32;
+            this.btnCapNhat.TabIndex = 19;
             this.btnCapNhat.Text = "Cập nhật";
+            this.toolTip1.SetToolTip(this.btnCapNhat, "Cập nhật");
             this.btnCapNhat.UseVisualStyleBackColor = false;
             this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
@@ -315,7 +319,7 @@
             this.rtxtDiaChi.Location = new System.Drawing.Point(319, 343);
             this.rtxtDiaChi.Name = "rtxtDiaChi";
             this.rtxtDiaChi.Size = new System.Drawing.Size(316, 70);
-            this.rtxtDiaChi.TabIndex = 31;
+            this.rtxtDiaChi.TabIndex = 17;
             this.rtxtDiaChi.Text = "";
             // 
             // txtEmail
@@ -325,7 +329,7 @@
             this.txtEmail.Location = new System.Drawing.Point(319, 290);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(316, 20);
-            this.txtEmail.TabIndex = 30;
+            this.txtEmail.TabIndex = 15;
             // 
             // txtSDT
             // 
@@ -334,7 +338,7 @@
             this.txtSDT.Location = new System.Drawing.Point(319, 194);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(316, 20);
-            this.txtSDT.TabIndex = 29;
+            this.txtSDT.TabIndex = 10;
             // 
             // dtpNgaySinh
             // 
@@ -344,7 +348,7 @@
             this.dtpNgaySinh.Location = new System.Drawing.Point(319, 139);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(316, 27);
-            this.dtpNgaySinh.TabIndex = 28;
+            this.dtpNgaySinh.TabIndex = 8;
             // 
             // txtCCCD
             // 
@@ -355,7 +359,7 @@
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.ReadOnly = true;
             this.txtCCCD.Size = new System.Drawing.Size(316, 20);
-            this.txtCCCD.TabIndex = 27;
+            this.txtCCCD.TabIndex = 6;
             // 
             // lblDiaChi
             // 
@@ -363,7 +367,7 @@
             this.lblDiaChi.Location = new System.Drawing.Point(109, 344);
             this.lblDiaChi.Name = "lblDiaChi";
             this.lblDiaChi.Size = new System.Drawing.Size(68, 22);
-            this.lblDiaChi.TabIndex = 26;
+            this.lblDiaChi.TabIndex = 16;
             this.lblDiaChi.Text = "Địa chỉ";
             // 
             // lblEmail
@@ -372,7 +376,7 @@
             this.lblEmail.Location = new System.Drawing.Point(110, 296);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(58, 22);
-            this.lblEmail.TabIndex = 25;
+            this.lblEmail.TabIndex = 14;
             this.lblEmail.Text = "Email";
             // 
             // lblSDT
@@ -381,7 +385,7 @@
             this.lblSDT.Location = new System.Drawing.Point(109, 194);
             this.lblSDT.Name = "lblSDT";
             this.lblSDT.Size = new System.Drawing.Size(120, 22);
-            this.lblSDT.TabIndex = 24;
+            this.lblSDT.TabIndex = 9;
             this.lblSDT.Text = "Số điện thoại";
             // 
             // lblNgaySinh
@@ -390,7 +394,7 @@
             this.lblNgaySinh.Location = new System.Drawing.Point(109, 143);
             this.lblNgaySinh.Name = "lblNgaySinh";
             this.lblNgaySinh.Size = new System.Drawing.Size(94, 22);
-            this.lblNgaySinh.TabIndex = 23;
+            this.lblNgaySinh.TabIndex = 7;
             this.lblNgaySinh.Text = "Ngày sinh";
             // 
             // lblCCCD
@@ -399,7 +403,7 @@
             this.lblCCCD.Location = new System.Drawing.Point(109, 91);
             this.lblCCCD.Name = "lblCCCD";
             this.lblCCCD.Size = new System.Drawing.Size(59, 22);
-            this.lblCCCD.TabIndex = 22;
+            this.lblCCCD.TabIndex = 5;
             this.lblCCCD.Text = "CCCD";
             // 
             // txtHoTen
@@ -409,7 +413,7 @@
             this.txtHoTen.Location = new System.Drawing.Point(319, 43);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(316, 20);
-            this.txtHoTen.TabIndex = 21;
+            this.txtHoTen.TabIndex = 4;
             // 
             // lblHoTen
             // 
@@ -417,7 +421,7 @@
             this.lblHoTen.Location = new System.Drawing.Point(109, 41);
             this.lblHoTen.Name = "lblHoTen";
             this.lblHoTen.Size = new System.Drawing.Size(93, 22);
-            this.lblHoTen.TabIndex = 20;
+            this.lblHoTen.TabIndex = 3;
             this.lblHoTen.Text = "Họ và Tên";
             // 
             // grpThayDoiMatKhau
@@ -474,6 +478,7 @@
             this.btnResetPW.Style.ForeColor = System.Drawing.Color.White;
             this.btnResetPW.TabIndex = 3;
             this.btnResetPW.Text = "Reset";
+            this.toolTip1.SetToolTip(this.btnResetPW, "Trở lại ban đầu");
             this.btnResetPW.UseVisualStyleBackColor = false;
             this.btnResetPW.Click += new System.EventHandler(this.btnResetPW_Click);
             // 
@@ -501,6 +506,7 @@
             this.btnLuu.Style.ForeColor = System.Drawing.Color.White;
             this.btnLuu.TabIndex = 2;
             this.btnLuu.Text = "Lưu thay đổi";
+            this.toolTip1.SetToolTip(this.btnLuu, "Lưu mật khẩu");
             this.btnLuu.UseVisualStyleBackColor = false;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
@@ -599,5 +605,6 @@
         private System.Windows.Forms.RadioButton radNu;
         private System.Windows.Forms.RadioButton radNam;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

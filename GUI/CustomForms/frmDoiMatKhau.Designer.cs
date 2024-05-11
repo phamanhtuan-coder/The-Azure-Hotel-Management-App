@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.btnSubmit = new Syncfusion.WinForms.Controls.SfButton();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
@@ -38,6 +39,7 @@
             this.txtRePassword = new System.Windows.Forms.TextBox();
             this.lblLoiPassword = new System.Windows.Forms.Label();
             this.lblLoiRePassword = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // txtUsername
@@ -48,7 +50,8 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.ReadOnly = true;
             this.txtUsername.Size = new System.Drawing.Size(278, 27);
-            this.txtUsername.TabIndex = 0;
+            this.txtUsername.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.txtUsername, "Nhập tên đăng nhập");
             // 
             // btnSubmit
             // 
@@ -56,8 +59,9 @@
             this.btnSubmit.Location = new System.Drawing.Point(358, 236);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
-            this.btnSubmit.TabIndex = 3;
+            this.btnSubmit.TabIndex = 8;
             this.btnSubmit.Text = "Submit";
+            this.toolTip1.SetToolTip(this.btnSubmit, "Gửi");
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnCancel
@@ -66,7 +70,7 @@
             this.btnCancel.Location = new System.Drawing.Point(87, 236);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Quay lại";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -77,7 +81,7 @@
             this.lblUsername.Location = new System.Drawing.Point(53, 50);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(192, 22);
-            this.lblUsername.TabIndex = 6;
+            this.lblUsername.TabIndex = 1;
             this.lblUsername.Text = "Username của bạn là:";
             // 
             // lblPW
@@ -87,7 +91,7 @@
             this.lblPW.Location = new System.Drawing.Point(52, 114);
             this.lblPW.Name = "lblPW";
             this.lblPW.Size = new System.Drawing.Size(217, 22);
-            this.lblPW.TabIndex = 8;
+            this.lblPW.TabIndex = 3;
             this.lblPW.Text = "Hãy nhập password mới:";
             // 
             // txtNewPassword
@@ -97,7 +101,8 @@
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.PasswordChar = '*';
             this.txtNewPassword.Size = new System.Drawing.Size(278, 27);
-            this.txtNewPassword.TabIndex = 7;
+            this.txtNewPassword.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.txtNewPassword, "Nhập mật khẩu mới");
             this.txtNewPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // lblRePW
@@ -107,7 +112,7 @@
             this.lblRePW.Location = new System.Drawing.Point(52, 178);
             this.lblRePW.Name = "lblRePW";
             this.lblRePW.Size = new System.Drawing.Size(205, 22);
-            this.lblRePW.TabIndex = 10;
+            this.lblRePW.TabIndex = 5;
             this.lblRePW.Text = "Hãy nhập lại password:";
             // 
             // txtRePassword
@@ -117,7 +122,8 @@
             this.txtRePassword.Name = "txtRePassword";
             this.txtRePassword.PasswordChar = '*';
             this.txtRePassword.Size = new System.Drawing.Size(278, 27);
-            this.txtRePassword.TabIndex = 9;
+            this.txtRePassword.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.txtRePassword, "Nhập lại mật khẩu mới");
             this.txtRePassword.Leave += new System.EventHandler(this.txtRePw_Leave);
             // 
             // lblLoiPassword
@@ -178,5 +184,6 @@
         private System.Windows.Forms.TextBox txtRePassword;
         private System.Windows.Forms.Label lblLoiPassword;
         private System.Windows.Forms.Label lblLoiRePassword;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

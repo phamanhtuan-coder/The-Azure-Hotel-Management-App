@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucDevice));
             this.lblDevice = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
@@ -40,6 +41,10 @@
             this.cboStateDeviceStatus = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvDevice = new System.Windows.Forms.DataGridView();
+            this.MaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaTinhTrangThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboSortDeviceID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortDeviceID = new System.Windows.Forms.Label();
             this.cboLocTheoTinhTrang = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -47,10 +52,7 @@
             this.lblStateDeviceStatus = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.MaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaTinhTrangThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateDeviceStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -76,7 +78,7 @@
             this.lblDevice.Location = new System.Drawing.Point(0, 0);
             this.lblDevice.Name = "lblDevice";
             this.lblDevice.Size = new System.Drawing.Size(972, 94);
-            this.lblDevice.TabIndex = 35;
+            this.lblDevice.TabIndex = 1;
             this.lblDevice.Text = "DEVICES";
             this.lblDevice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -113,9 +115,10 @@
             this.btnAddDevice.Style.ForeColor = System.Drawing.Color.White;
             this.btnAddDevice.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnAddDevice.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddDevice.TabIndex = 1;
+            this.btnAddDevice.TabIndex = 2;
             this.btnAddDevice.Text = "Thêm";
             this.btnAddDevice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnAddDevice, "Thêm thiết bị");
             this.btnAddDevice.UseVisualStyleBackColor = false;
             this.btnAddDevice.Click += new System.EventHandler(this.btnAddDevice_Click);
             // 
@@ -134,9 +137,10 @@
             this.btnEditDevice.Style.ForeColor = System.Drawing.Color.White;
             this.btnEditDevice.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnEditDevice.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditDevice.TabIndex = 3;
+            this.btnEditDevice.TabIndex = 4;
             this.btnEditDevice.Text = "Sửa";
             this.btnEditDevice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnEditDevice, "Sủa thiết bị");
             this.btnEditDevice.UseVisualStyleBackColor = false;
             this.btnEditDevice.Click += new System.EventHandler(this.btnEditDevice_Click);
             // 
@@ -155,9 +159,10 @@
             this.btnDeleteDevice.Style.ForeColor = System.Drawing.Color.White;
             this.btnDeleteDevice.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDeleteDevice.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteDevice.TabIndex = 4;
+            this.btnDeleteDevice.TabIndex = 3;
             this.btnDeleteDevice.Text = "Xóa";
             this.btnDeleteDevice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnDeleteDevice, "Xóa thiết bị");
             this.btnDeleteDevice.UseVisualStyleBackColor = false;
             this.btnDeleteDevice.Click += new System.EventHandler(this.btnDeleteDevice_Click);
             // 
@@ -179,6 +184,7 @@
             this.btnRecoverDevice.TabIndex = 5;
             this.btnRecoverDevice.Text = "Khôi phục";
             this.btnRecoverDevice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnRecoverDevice, "Khôi phục thiết bị");
             this.btnRecoverDevice.UseVisualStyleBackColor = false;
             this.btnRecoverDevice.Click += new System.EventHandler(this.btnRecoverDevice_Click);
             // 
@@ -187,8 +193,9 @@
             this.txtSearchDevice.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchDevice.Location = new System.Drawing.Point(6, 16);
             this.txtSearchDevice.Name = "txtSearchDevice";
-            this.txtSearchDevice.Size = new System.Drawing.Size(251, 49);
-            this.txtSearchDevice.TabIndex = 2;
+            this.txtSearchDevice.Size = new System.Drawing.Size(251, 40);
+            this.txtSearchDevice.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.txtSearchDevice, "Nhập tên thiết bị");
             // 
             // btnTraCuuDevice
             // 
@@ -203,8 +210,9 @@
             this.btnTraCuuDevice.Size = new System.Drawing.Size(118, 40);
             this.btnTraCuuDevice.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuDevice.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuDevice.TabIndex = 0;
+            this.btnTraCuuDevice.TabIndex = 8;
             this.btnTraCuuDevice.Text = "Tra cứu";
+            this.toolTip1.SetToolTip(this.btnTraCuuDevice, "Tra cứu");
             this.btnTraCuuDevice.UseVisualStyleBackColor = false;
             this.btnTraCuuDevice.Click += new System.EventHandler(this.btnTraCuuDevice_Click);
             // 
@@ -223,7 +231,8 @@
             this.cboStateDeviceStatus.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateDeviceStatus.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateDeviceStatus.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateDeviceStatus.TabIndex = 3;
+            this.cboStateDeviceStatus.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.cboStateDeviceStatus, "Lọc theo trạng thái");
             this.cboStateDeviceStatus.SelectedIndexChanged += new System.EventHandler(this.cboStateDeviceStatus_SelectedIndexChanged);
             // 
             // spcQuery
@@ -274,104 +283,7 @@
             this.dgvDevice.RowHeadersWidth = 51;
             this.dgvDevice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDevice.Size = new System.Drawing.Size(973, 746);
-            this.dgvDevice.TabIndex = 0;
-            // 
-            // cboSortDeviceID
-            // 
-            this.cboSortDeviceID.DelimiterChar = "";
-            this.cboSortDeviceID.DisplayMember = "";
-            this.cboSortDeviceID.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboSortDeviceID.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortDeviceID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortDeviceID.Location = new System.Drawing.Point(226, 79);
-            this.cboSortDeviceID.Name = "cboSortDeviceID";
-            this.cboSortDeviceID.Size = new System.Drawing.Size(156, 33);
-            this.cboSortDeviceID.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortDeviceID.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortDeviceID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortDeviceID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortDeviceID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortDeviceID.TabIndex = 29;
-            this.cboSortDeviceID.SelectedIndexChanged += new System.EventHandler(this.cboSortDeviceID_SelectedIndexChanged);
-            // 
-            // lblSortDeviceID
-            // 
-            this.lblSortDeviceID.AutoSize = true;
-            this.lblSortDeviceID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortDeviceID.Location = new System.Drawing.Point(2, 86);
-            this.lblSortDeviceID.Name = "lblSortDeviceID";
-            this.lblSortDeviceID.Size = new System.Drawing.Size(218, 33);
-            this.lblSortDeviceID.TabIndex = 28;
-            this.lblSortDeviceID.Text = "Sort theo ID loại";
-            this.lblSortDeviceID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cboLocTheoTinhTrang
-            // 
-            this.cboLocTheoTinhTrang.DelimiterChar = "";
-            this.cboLocTheoTinhTrang.DisplayMember = "";
-            this.cboLocTheoTinhTrang.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboLocTheoTinhTrang.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboLocTheoTinhTrang.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboLocTheoTinhTrang.Location = new System.Drawing.Point(227, 136);
-            this.cboLocTheoTinhTrang.Name = "cboLocTheoTinhTrang";
-            this.cboLocTheoTinhTrang.Size = new System.Drawing.Size(156, 33);
-            this.cboLocTheoTinhTrang.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboLocTheoTinhTrang.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboLocTheoTinhTrang.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboLocTheoTinhTrang.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboLocTheoTinhTrang.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboLocTheoTinhTrang.TabIndex = 23;
-            // 
-            // lblLocTheoTinhTrang
-            // 
-            this.lblLocTheoTinhTrang.AutoSize = true;
-            this.lblLocTheoTinhTrang.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLocTheoTinhTrang.Location = new System.Drawing.Point(2, 143);
-            this.lblLocTheoTinhTrang.Name = "lblLocTheoTinhTrang";
-            this.lblLocTheoTinhTrang.Size = new System.Drawing.Size(241, 33);
-            this.lblLocTheoTinhTrang.TabIndex = 14;
-            this.lblLocTheoTinhTrang.Text = "Lọc theo số lượng";
-            this.lblLocTheoTinhTrang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblStateDeviceStatus
-            // 
-            this.lblStateDeviceStatus.AutoSize = true;
-            this.lblStateDeviceStatus.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStateDeviceStatus.Location = new System.Drawing.Point(2, 200);
-            this.lblStateDeviceStatus.Name = "lblStateDeviceStatus";
-            this.lblStateDeviceStatus.Size = new System.Drawing.Size(237, 33);
-            this.lblStateDeviceStatus.TabIndex = 9;
-            this.lblStateDeviceStatus.Text = "Trạng thái dữ liệu";
-            this.lblStateDeviceStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panUcHeader
-            // 
-            this.panUcHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(224)))), ((int)(((byte)(155)))));
-            this.panUcHeader.Controls.Add(this.spcHeader);
-            this.panUcHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panUcHeader.Location = new System.Drawing.Point(0, 0);
-            this.panUcHeader.Name = "panUcHeader";
-            this.panUcHeader.Size = new System.Drawing.Size(1370, 94);
-            this.panUcHeader.TabIndex = 37;
-            // 
-            // spcHeader
-            // 
-            this.spcHeader.BackColor = System.Drawing.Color.Lavender;
-            this.spcHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.spcHeader.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.spcHeader.Location = new System.Drawing.Point(0, 0);
-            this.spcHeader.Name = "spcHeader";
-            // 
-            // spcHeader.Panel1
-            // 
-            this.spcHeader.Panel1.Controls.Add(this.lblDevice);
-            // 
-            // spcHeader.Panel2
-            // 
-            this.spcHeader.Panel2.Controls.Add(this.tlpController);
-            this.spcHeader.Size = new System.Drawing.Size(1370, 94);
-            this.spcHeader.SplitterDistance = 972;
-            this.spcHeader.TabIndex = 0;
+            this.dgvDevice.TabIndex = 6;
             // 
             // MaThietBi
             // 
@@ -405,6 +317,105 @@
             this.TrangThai.Name = "TrangThai";
             this.TrangThai.ReadOnly = true;
             this.TrangThai.Visible = false;
+            // 
+            // cboSortDeviceID
+            // 
+            this.cboSortDeviceID.DelimiterChar = "";
+            this.cboSortDeviceID.DisplayMember = "";
+            this.cboSortDeviceID.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboSortDeviceID.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+            this.cboSortDeviceID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortDeviceID.Location = new System.Drawing.Point(226, 79);
+            this.cboSortDeviceID.Name = "cboSortDeviceID";
+            this.cboSortDeviceID.Size = new System.Drawing.Size(156, 33);
+            this.cboSortDeviceID.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.cboSortDeviceID.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortDeviceID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortDeviceID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboSortDeviceID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortDeviceID.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.cboSortDeviceID, "Sắp xếp theo mã loại");
+            this.cboSortDeviceID.SelectedIndexChanged += new System.EventHandler(this.cboSortDeviceID_SelectedIndexChanged);
+            // 
+            // lblSortDeviceID
+            // 
+            this.lblSortDeviceID.AutoSize = true;
+            this.lblSortDeviceID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortDeviceID.Location = new System.Drawing.Point(2, 86);
+            this.lblSortDeviceID.Name = "lblSortDeviceID";
+            this.lblSortDeviceID.Size = new System.Drawing.Size(170, 26);
+            this.lblSortDeviceID.TabIndex = 9;
+            this.lblSortDeviceID.Text = "Sort theo ID loại";
+            this.lblSortDeviceID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cboLocTheoTinhTrang
+            // 
+            this.cboLocTheoTinhTrang.DelimiterChar = "";
+            this.cboLocTheoTinhTrang.DisplayMember = "";
+            this.cboLocTheoTinhTrang.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboLocTheoTinhTrang.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+            this.cboLocTheoTinhTrang.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboLocTheoTinhTrang.Location = new System.Drawing.Point(227, 136);
+            this.cboLocTheoTinhTrang.Name = "cboLocTheoTinhTrang";
+            this.cboLocTheoTinhTrang.Size = new System.Drawing.Size(156, 33);
+            this.cboLocTheoTinhTrang.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.cboLocTheoTinhTrang.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboLocTheoTinhTrang.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboLocTheoTinhTrang.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboLocTheoTinhTrang.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboLocTheoTinhTrang.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.cboLocTheoTinhTrang, "Lọc theo số lượng");
+            // 
+            // lblLocTheoTinhTrang
+            // 
+            this.lblLocTheoTinhTrang.AutoSize = true;
+            this.lblLocTheoTinhTrang.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocTheoTinhTrang.Location = new System.Drawing.Point(2, 143);
+            this.lblLocTheoTinhTrang.Name = "lblLocTheoTinhTrang";
+            this.lblLocTheoTinhTrang.Size = new System.Drawing.Size(185, 26);
+            this.lblLocTheoTinhTrang.TabIndex = 11;
+            this.lblLocTheoTinhTrang.Text = "Lọc theo số lượng";
+            this.lblLocTheoTinhTrang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblStateDeviceStatus
+            // 
+            this.lblStateDeviceStatus.AutoSize = true;
+            this.lblStateDeviceStatus.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStateDeviceStatus.Location = new System.Drawing.Point(2, 200);
+            this.lblStateDeviceStatus.Name = "lblStateDeviceStatus";
+            this.lblStateDeviceStatus.Size = new System.Drawing.Size(186, 26);
+            this.lblStateDeviceStatus.TabIndex = 13;
+            this.lblStateDeviceStatus.Text = "Trạng thái dữ liệu";
+            this.lblStateDeviceStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panUcHeader
+            // 
+            this.panUcHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(224)))), ((int)(((byte)(155)))));
+            this.panUcHeader.Controls.Add(this.spcHeader);
+            this.panUcHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panUcHeader.Location = new System.Drawing.Point(0, 0);
+            this.panUcHeader.Name = "panUcHeader";
+            this.panUcHeader.Size = new System.Drawing.Size(1370, 94);
+            this.panUcHeader.TabIndex = 37;
+            // 
+            // spcHeader
+            // 
+            this.spcHeader.BackColor = System.Drawing.Color.Lavender;
+            this.spcHeader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.spcHeader.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.spcHeader.Location = new System.Drawing.Point(0, 0);
+            this.spcHeader.Name = "spcHeader";
+            // 
+            // spcHeader.Panel1
+            // 
+            this.spcHeader.Panel1.Controls.Add(this.lblDevice);
+            // 
+            // spcHeader.Panel2
+            // 
+            this.spcHeader.Panel2.Controls.Add(this.tlpController);
+            this.spcHeader.Size = new System.Drawing.Size(1370, 94);
+            this.spcHeader.SplitterDistance = 972;
+            this.spcHeader.TabIndex = 0;
             // 
             // ucDevice
             // 
@@ -459,5 +470,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenThietBi;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTinhTrangThietBi;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

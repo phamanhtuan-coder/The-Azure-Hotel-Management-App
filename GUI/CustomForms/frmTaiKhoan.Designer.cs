@@ -51,7 +51,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(378, 269);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
-            this.btnSubmit.TabIndex = 6;
+            this.btnSubmit.TabIndex = 10;
             this.btnSubmit.Text = "Submit";
             this.toolTip1.SetToolTip(this.btnSubmit, "Gửi");
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -62,7 +62,7 @@
             this.btnCancel.Location = new System.Drawing.Point(62, 269);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Quay lại";
             this.toolTip1.SetToolTip(this.btnCancel, "Quay lại tài khoản");
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -74,7 +74,7 @@
             this.lblTenPhanQuyen.Location = new System.Drawing.Point(66, 215);
             this.lblTenPhanQuyen.Name = "lblTenPhanQuyen";
             this.lblTenPhanQuyen.Size = new System.Drawing.Size(146, 22);
-            this.lblTenPhanQuyen.TabIndex = 6;
+            this.lblTenPhanQuyen.TabIndex = 7;
             this.lblTenPhanQuyen.Text = "Tên phân quyền";
             // 
             // cboPhanQuyen
@@ -85,7 +85,7 @@
             this.cboPhanQuyen.Location = new System.Drawing.Point(276, 207);
             this.cboPhanQuyen.Name = "cboPhanQuyen";
             this.cboPhanQuyen.Size = new System.Drawing.Size(252, 30);
-            this.cboPhanQuyen.TabIndex = 4;
+            this.cboPhanQuyen.TabIndex = 8;
             this.toolTip1.SetToolTip(this.cboPhanQuyen, "Chọn phân quyền");
             // 
             // txtUsername
@@ -94,7 +94,7 @@
             this.txtUsername.Location = new System.Drawing.Point(276, 30);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(252, 27);
-            this.txtUsername.TabIndex = 1;
+            this.txtUsername.TabIndex = 2;
             this.toolTip1.SetToolTip(this.txtUsername, "Nhập tên đăng nhập");
             this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
             // 
@@ -105,7 +105,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(252, 27);
-            this.txtPassword.TabIndex = 2;
+            this.txtPassword.TabIndex = 4;
             this.toolTip1.SetToolTip(this.txtPassword, "Nhập mật khẩu");
             this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
@@ -116,7 +116,7 @@
             this.label1.Location = new System.Drawing.Point(66, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 22);
-            this.label1.TabIndex = 10;
+            this.label1.TabIndex = 3;
             this.label1.Text = "Password";
             // 
             // lblUsername
@@ -126,7 +126,7 @@
             this.lblUsername.Location = new System.Drawing.Point(66, 35);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(96, 22);
-            this.lblUsername.TabIndex = 11;
+            this.lblUsername.TabIndex = 1;
             this.lblUsername.Text = "Username";
             // 
             // label2
@@ -136,7 +136,7 @@
             this.label2.Location = new System.Drawing.Point(66, 153);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(165, 22);
-            this.label2.TabIndex = 12;
+            this.label2.TabIndex = 5;
             this.label2.Text = "Nhập lại password";
             // 
             // txtRePw
@@ -146,7 +146,7 @@
             this.txtRePw.Name = "txtRePw";
             this.txtRePw.PasswordChar = '*';
             this.txtRePw.Size = new System.Drawing.Size(252, 27);
-            this.txtRePw.TabIndex = 3;
+            this.txtRePw.TabIndex = 6;
             this.toolTip1.SetToolTip(this.txtRePw, "Nhập lại mật khẩu");
             this.txtRePw.Leave += new System.EventHandler(this.txtRePw_Leave);
             // 

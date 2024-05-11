@@ -51,7 +51,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(252, 196);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(206, 50);
-            this.btnSubmit.TabIndex = 6;
+            this.btnSubmit.TabIndex = 10;
             this.btnSubmit.Text = "Submit";
             this.toolTip1.SetToolTip(this.btnSubmit, "Gửi");
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -62,7 +62,7 @@
             this.btnCancel.Location = new System.Drawing.Point(17, 196);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(206, 50);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Quay lại";
             this.toolTip1.SetToolTip(this.btnCancel, "Quay lại hóa đơn");
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -74,7 +74,7 @@
             this.lblMaKH.Location = new System.Drawing.Point(13, 17);
             this.lblMaKH.Name = "lblMaKH";
             this.lblMaKH.Size = new System.Drawing.Size(140, 22);
-            this.lblMaKH.TabIndex = 8;
+            this.lblMaKH.TabIndex = 1;
             this.lblMaKH.Text = "Mã khách hàng";
             // 
             // cboMaNV
@@ -88,7 +88,7 @@
             this.cboMaNV.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboMaNV.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboMaNV.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.cboMaNV.TabIndex = 2;
+            this.cboMaNV.TabIndex = 4;
             this.cboMaNV.TabStop = false;
             this.toolTip1.SetToolTip(this.cboMaNV, "Chọn nhân viên");
             // 
@@ -99,7 +99,7 @@
             this.label1.Location = new System.Drawing.Point(13, 106);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 22);
-            this.label1.TabIndex = 20;
+            this.label1.TabIndex = 5;
             this.label1.Text = "Chọn thuế";
             // 
             // cboMaThue
@@ -113,7 +113,7 @@
             this.cboMaThue.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboMaThue.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboMaThue.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.cboMaThue.TabIndex = 3;
+            this.cboMaThue.TabIndex = 6;
             this.cboMaThue.TabStop = false;
             this.toolTip1.SetToolTip(this.cboMaThue, "Chọn thuế");
             // 
@@ -124,7 +124,7 @@
             this.lblMaNV.Location = new System.Drawing.Point(12, 59);
             this.lblMaNV.Name = "lblMaNV";
             this.lblMaNV.Size = new System.Drawing.Size(143, 22);
-            this.lblMaNV.TabIndex = 22;
+            this.lblMaNV.TabIndex = 3;
             this.lblMaNV.Text = "Chọn nhân viên";
             // 
             // txtMaKH
@@ -134,7 +134,7 @@
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.ReadOnly = true;
             this.txtMaKH.Size = new System.Drawing.Size(180, 27);
-            this.txtMaKH.TabIndex = 1;
+            this.txtMaKH.TabIndex = 2;
             this.toolTip1.SetToolTip(this.txtMaKH, "Nhập mã khách hàng");
             // 
             // cboMaKM
@@ -148,7 +148,7 @@
             this.cboMaKM.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboMaKM.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboMaKM.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.cboMaKM.TabIndex = 4;
+            this.cboMaKM.TabIndex = 8;
             this.cboMaKM.TabStop = false;
             this.toolTip1.SetToolTip(this.cboMaKM, "Chọn khuyến mãi");
             // 
@@ -159,7 +159,7 @@
             this.label2.Location = new System.Drawing.Point(13, 155);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(160, 22);
-            this.label2.TabIndex = 29;
+            this.label2.TabIndex = 7;
             this.label2.Text = "Chọn khuyễn mãi";
             // 
             // frmHoaDon

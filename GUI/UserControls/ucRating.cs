@@ -160,5 +160,10 @@ namespace GUI.UserControls
             dgvRating.ClearSelection();
             dgvRating.DataSource = dsDanhGia;
         }
+
+        private void btnTraCuuRating_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

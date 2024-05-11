@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtTenPB = new System.Windows.Forms.TextBox();
             this.txtTruongPhong = new System.Windows.Forms.TextBox();
             this.btnSubmit = new Syncfusion.WinForms.Controls.SfButton();
@@ -40,6 +41,7 @@
             this.grpThongTinTruongPhong = new System.Windows.Forms.GroupBox();
             this.lblMaPhongBan = new System.Windows.Forms.Label();
             this.txtMaPhongBan = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.grpThongTinTruongPhong.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,14 +50,14 @@
             this.txtTenPB.Location = new System.Drawing.Point(272, 55);
             this.txtTenPB.Name = "txtTenPB";
             this.txtTenPB.Size = new System.Drawing.Size(306, 27);
-            this.txtTenPB.TabIndex = 0;
+            this.txtTenPB.TabIndex = 4;
             // 
             // txtTruongPhong
             // 
             this.txtTruongPhong.Location = new System.Drawing.Point(210, 41);
             this.txtTruongPhong.Name = "txtTruongPhong";
             this.txtTruongPhong.Size = new System.Drawing.Size(318, 27);
-            this.txtTruongPhong.TabIndex = 1;
+            this.txtTruongPhong.TabIndex = 7;
             // 
             // btnSubmit
             // 
@@ -63,8 +65,9 @@
             this.btnSubmit.Location = new System.Drawing.Point(361, 271);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
-            this.btnSubmit.TabIndex = 3;
+            this.btnSubmit.TabIndex = 11;
             this.btnSubmit.Text = "Submit";
+            this.toolTip1.SetToolTip(this.btnSubmit, "Gửi");
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // dtpNgayNhanChuc
@@ -75,7 +78,7 @@
             this.dtpNgayNhanChuc.Name = "dtpNgayNhanChuc";
             this.dtpNgayNhanChuc.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtpNgayNhanChuc.Size = new System.Drawing.Size(318, 27);
-            this.dtpNgayNhanChuc.TabIndex = 4;
+            this.dtpNgayNhanChuc.TabIndex = 9;
             // 
             // btnCancel
             // 
@@ -83,7 +86,7 @@
             this.btnCancel.Location = new System.Drawing.Point(94, 271);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "Quay lại";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -93,7 +96,7 @@
             this.lblTenPB.Location = new System.Drawing.Point(58, 55);
             this.lblTenPB.Name = "lblTenPB";
             this.lblTenPB.Size = new System.Drawing.Size(136, 22);
-            this.lblTenPB.TabIndex = 6;
+            this.lblTenPB.TabIndex = 3;
             this.lblTenPB.Text = "Tên phòng ban";
             // 
             // lblTruongPhong
@@ -102,7 +105,7 @@
             this.lblTruongPhong.Location = new System.Drawing.Point(8, 46);
             this.lblTruongPhong.Name = "lblTruongPhong";
             this.lblTruongPhong.Size = new System.Drawing.Size(179, 22);
-            this.lblTruongPhong.TabIndex = 7;
+            this.lblTruongPhong.TabIndex = 6;
             this.lblTruongPhong.Text = "Mã số trưởng phòng";
             // 
             // lblNgayNhanChuc
@@ -120,7 +123,7 @@
             this.chkTruongPhong.Location = new System.Drawing.Point(272, 88);
             this.chkTruongPhong.Name = "chkTruongPhong";
             this.chkTruongPhong.Size = new System.Drawing.Size(186, 26);
-            this.chkTruongPhong.TabIndex = 9;
+            this.chkTruongPhong.TabIndex = 5;
             this.chkTruongPhong.Text = "Có trưởng phòng ?";
             this.chkTruongPhong.UseVisualStyleBackColor = true;
             this.chkTruongPhong.CheckedChanged += new System.EventHandler(this.chkTruongPhong_CheckedChanged);
@@ -144,7 +147,7 @@
             this.lblMaPhongBan.Location = new System.Drawing.Point(58, 18);
             this.lblMaPhongBan.Name = "lblMaPhongBan";
             this.lblMaPhongBan.Size = new System.Drawing.Size(131, 22);
-            this.lblMaPhongBan.TabIndex = 11;
+            this.lblMaPhongBan.TabIndex = 1;
             this.lblMaPhongBan.Text = "Mã phòng ban";
             // 
             // txtMaPhongBan
@@ -152,7 +155,7 @@
             this.txtMaPhongBan.Location = new System.Drawing.Point(272, 18);
             this.txtMaPhongBan.Name = "txtMaPhongBan";
             this.txtMaPhongBan.Size = new System.Drawing.Size(306, 27);
-            this.txtMaPhongBan.TabIndex = 12;
+            this.txtMaPhongBan.TabIndex = 2;
             this.txtMaPhongBan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaPhongBan_KeyPress);
             this.txtMaPhongBan.Leave += new System.EventHandler(this.txtMaPhongBan_Leave);
             // 
@@ -196,5 +199,6 @@
         private System.Windows.Forms.GroupBox grpThongTinTruongPhong;
         private System.Windows.Forms.Label lblMaPhongBan;
         private System.Windows.Forms.TextBox txtMaPhongBan;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

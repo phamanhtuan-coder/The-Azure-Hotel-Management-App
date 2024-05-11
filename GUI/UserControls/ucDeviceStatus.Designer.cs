@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucDeviceStatus));
             this.lblDeviceStatus = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
@@ -51,6 +52,7 @@
             this.lblStateDeviceStatus = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateDeviceStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -76,7 +78,7 @@
             this.lblDeviceStatus.Location = new System.Drawing.Point(0, 0);
             this.lblDeviceStatus.Name = "lblDeviceStatus";
             this.lblDeviceStatus.Size = new System.Drawing.Size(972, 94);
-            this.lblDeviceStatus.TabIndex = 35;
+            this.lblDeviceStatus.TabIndex = 1;
             this.lblDeviceStatus.Text = "DEVICE STATUS";
             this.lblDeviceStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -113,9 +115,10 @@
             this.btnAddDeviceStatus.Style.ForeColor = System.Drawing.Color.White;
             this.btnAddDeviceStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnAddDeviceStatus.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddDeviceStatus.TabIndex = 1;
+            this.btnAddDeviceStatus.TabIndex = 2;
             this.btnAddDeviceStatus.Text = "Thêm";
             this.btnAddDeviceStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnAddDeviceStatus, "Thêm tình trạng thiết bị");
             this.btnAddDeviceStatus.UseVisualStyleBackColor = false;
             this.btnAddDeviceStatus.Click += new System.EventHandler(this.btnAddDeviceStatus_Click);
             // 
@@ -134,9 +137,10 @@
             this.btnEditDeviceStatus.Style.ForeColor = System.Drawing.Color.White;
             this.btnEditDeviceStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnEditDeviceStatus.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditDeviceStatus.TabIndex = 3;
+            this.btnEditDeviceStatus.TabIndex = 4;
             this.btnEditDeviceStatus.Text = "Sửa";
             this.btnEditDeviceStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnEditDeviceStatus, "Sửa tình trạng thiết bị");
             this.btnEditDeviceStatus.UseVisualStyleBackColor = false;
             this.btnEditDeviceStatus.Click += new System.EventHandler(this.btnEditDeviceStatus_Click);
             // 
@@ -155,9 +159,10 @@
             this.btnDeleteDeviceStatus.Style.ForeColor = System.Drawing.Color.White;
             this.btnDeleteDeviceStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDeleteDeviceStatus.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteDeviceStatus.TabIndex = 4;
+            this.btnDeleteDeviceStatus.TabIndex = 3;
             this.btnDeleteDeviceStatus.Text = "Xóa";
             this.btnDeleteDeviceStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnDeleteDeviceStatus, "Xóa tình trạng thiết bị");
             this.btnDeleteDeviceStatus.UseVisualStyleBackColor = false;
             this.btnDeleteDeviceStatus.Click += new System.EventHandler(this.btnDeleteDeviceStatus_Click);
             // 
@@ -179,6 +184,7 @@
             this.btnRecoverDeviceStatus.TabIndex = 5;
             this.btnRecoverDeviceStatus.Text = "Khôi phục";
             this.btnRecoverDeviceStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnRecoverDeviceStatus, "Khôi phục tình trạng thiết bị");
             this.btnRecoverDeviceStatus.UseVisualStyleBackColor = false;
             this.btnRecoverDeviceStatus.Click += new System.EventHandler(this.btnRecoverDeviceStatus_Click);
             // 
@@ -187,8 +193,9 @@
             this.txtSearchDeviceStatus.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchDeviceStatus.Location = new System.Drawing.Point(6, 16);
             this.txtSearchDeviceStatus.Name = "txtSearchDeviceStatus";
-            this.txtSearchDeviceStatus.Size = new System.Drawing.Size(251, 49);
-            this.txtSearchDeviceStatus.TabIndex = 2;
+            this.txtSearchDeviceStatus.Size = new System.Drawing.Size(251, 40);
+            this.txtSearchDeviceStatus.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.txtSearchDeviceStatus, "Nhập tên tình trạng");
             // 
             // btnTraCuuDeviceStatus
             // 
@@ -203,8 +210,9 @@
             this.btnTraCuuDeviceStatus.Size = new System.Drawing.Size(118, 40);
             this.btnTraCuuDeviceStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuDeviceStatus.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuDeviceStatus.TabIndex = 0;
+            this.btnTraCuuDeviceStatus.TabIndex = 8;
             this.btnTraCuuDeviceStatus.Text = "Tra cứu";
+            this.toolTip1.SetToolTip(this.btnTraCuuDeviceStatus, "Tra cứu");
             this.btnTraCuuDeviceStatus.UseVisualStyleBackColor = false;
             this.btnTraCuuDeviceStatus.Click += new System.EventHandler(this.btnTraCuuDeviceStatus_Click);
             // 
@@ -223,7 +231,8 @@
             this.cboStateDeviceStatus.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateDeviceStatus.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateDeviceStatus.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateDeviceStatus.TabIndex = 3;
+            this.cboStateDeviceStatus.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.cboStateDeviceStatus, "Lọc theo trạng thái");
             this.cboStateDeviceStatus.SelectedIndexChanged += new System.EventHandler(this.cboStateDeviceStatus_SelectedIndexChanged);
             // 
             // spcQuery
@@ -271,7 +280,7 @@
             this.dgvDeviceStatus.RowHeadersWidth = 51;
             this.dgvDeviceStatus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDeviceStatus.Size = new System.Drawing.Size(973, 746);
-            this.dgvDeviceStatus.TabIndex = 0;
+            this.dgvDeviceStatus.TabIndex = 6;
             // 
             // colMaTinhTrangThietBi
             // 
@@ -335,7 +344,8 @@
             this.cboSortDeviceStatusID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortDeviceStatusID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortDeviceStatusID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortDeviceStatusID.TabIndex = 29;
+            this.cboSortDeviceStatusID.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.cboSortDeviceStatusID, "Sắp xếp theo mã loại");
             this.cboSortDeviceStatusID.SelectedIndexChanged += new System.EventHandler(this.cboSortDeviceStatusID_SelectedIndexChanged);
             // 
             // lblSortDeviceStatusD
@@ -344,8 +354,8 @@
             this.lblSortDeviceStatusD.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortDeviceStatusD.Location = new System.Drawing.Point(2, 86);
             this.lblSortDeviceStatusD.Name = "lblSortDeviceStatusD";
-            this.lblSortDeviceStatusD.Size = new System.Drawing.Size(218, 33);
-            this.lblSortDeviceStatusD.TabIndex = 28;
+            this.lblSortDeviceStatusD.Size = new System.Drawing.Size(170, 26);
+            this.lblSortDeviceStatusD.TabIndex = 9;
             this.lblSortDeviceStatusD.Text = "Sort theo ID loại";
             this.lblSortDeviceStatusD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -364,7 +374,8 @@
             this.cboSortSoLuongTB.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortSoLuongTB.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortSoLuongTB.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSoLuongTB.TabIndex = 23;
+            this.cboSortSoLuongTB.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.cboSortSoLuongTB, "Lọc theo số lượng");
             // 
             // lblSortSoLuongTB
             // 
@@ -372,8 +383,8 @@
             this.lblSortSoLuongTB.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortSoLuongTB.Location = new System.Drawing.Point(2, 143);
             this.lblSortSoLuongTB.Name = "lblSortSoLuongTB";
-            this.lblSortSoLuongTB.Size = new System.Drawing.Size(241, 33);
-            this.lblSortSoLuongTB.TabIndex = 14;
+            this.lblSortSoLuongTB.Size = new System.Drawing.Size(185, 26);
+            this.lblSortSoLuongTB.TabIndex = 11;
             this.lblSortSoLuongTB.Text = "Lọc theo số lượng";
             this.lblSortSoLuongTB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -383,8 +394,8 @@
             this.lblStateDeviceStatus.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStateDeviceStatus.Location = new System.Drawing.Point(2, 200);
             this.lblStateDeviceStatus.Name = "lblStateDeviceStatus";
-            this.lblStateDeviceStatus.Size = new System.Drawing.Size(237, 33);
-            this.lblStateDeviceStatus.TabIndex = 9;
+            this.lblStateDeviceStatus.Size = new System.Drawing.Size(186, 26);
+            this.lblStateDeviceStatus.TabIndex = 13;
             this.lblStateDeviceStatus.Text = "Trạng thái dữ liệu";
             this.lblStateDeviceStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -470,5 +481,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenTinhTrang;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMoTa;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

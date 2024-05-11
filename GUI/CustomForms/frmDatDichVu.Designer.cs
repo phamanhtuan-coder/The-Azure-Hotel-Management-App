@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSubmit = new Syncfusion.WinForms.Controls.SfButton();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.lblMaDP = new System.Windows.Forms.Label();
@@ -38,6 +39,7 @@
             this.nudSoLuong = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.cboMaDV = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.cboMaDP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboMaDV)).BeginInit();
@@ -49,8 +51,9 @@
             this.btnSubmit.Location = new System.Drawing.Point(223, 209);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
-            this.btnSubmit.TabIndex = 3;
+            this.btnSubmit.TabIndex = 10;
             this.btnSubmit.Text = "Submit";
+            this.toolTip1.SetToolTip(this.btnSubmit, "Gửi");
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnCancel
@@ -59,7 +62,7 @@
             this.btnCancel.Location = new System.Drawing.Point(31, 209);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Quay lại";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -69,7 +72,7 @@
             this.lblMaDP.Location = new System.Drawing.Point(13, 17);
             this.lblMaDP.Name = "lblMaDP";
             this.lblMaDP.Size = new System.Drawing.Size(127, 22);
-            this.lblMaDP.TabIndex = 8;
+            this.lblMaDP.TabIndex = 1;
             this.lblMaDP.Text = "Mã đặt phòng";
             // 
             // lblNgayDat
@@ -78,7 +81,7 @@
             this.lblNgayDat.Location = new System.Drawing.Point(13, 154);
             this.lblNgayDat.Name = "lblNgayDat";
             this.lblNgayDat.Size = new System.Drawing.Size(87, 22);
-            this.lblNgayDat.TabIndex = 10;
+            this.lblNgayDat.TabIndex = 7;
             this.lblNgayDat.Text = "Ngày đặt";
             // 
             // lblSoLuong
@@ -87,7 +90,7 @@
             this.lblSoLuong.Location = new System.Drawing.Point(13, 107);
             this.lblSoLuong.Name = "lblSoLuong";
             this.lblSoLuong.Size = new System.Drawing.Size(83, 22);
-            this.lblSoLuong.TabIndex = 13;
+            this.lblSoLuong.TabIndex = 5;
             this.lblSoLuong.Text = "Số lượng";
             // 
             // cboMaDP
@@ -97,7 +100,7 @@
             this.cboMaDP.Name = "cboMaDP";
             this.cboMaDP.Size = new System.Drawing.Size(180, 27);
             this.cboMaDP.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboMaDP.TabIndex = 14;
+            this.cboMaDP.TabIndex = 2;
             this.cboMaDP.TabStop = false;
             // 
             // dtpNgayDat
@@ -107,7 +110,7 @@
             this.dtpNgayDat.Location = new System.Drawing.Point(205, 150);
             this.dtpNgayDat.Name = "dtpNgayDat";
             this.dtpNgayDat.Size = new System.Drawing.Size(180, 27);
-            this.dtpNgayDat.TabIndex = 17;
+            this.dtpNgayDat.TabIndex = 8;
             // 
             // nudSoLuong
             // 
@@ -119,7 +122,7 @@
             0});
             this.nudSoLuong.Name = "nudSoLuong";
             this.nudSoLuong.Size = new System.Drawing.Size(180, 27);
-            this.nudSoLuong.TabIndex = 19;
+            this.nudSoLuong.TabIndex = 6;
             this.nudSoLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudSoLuong.Value = new decimal(new int[] {
             1,
@@ -133,7 +136,7 @@
             this.label1.Location = new System.Drawing.Point(13, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 22);
-            this.label1.TabIndex = 20;
+            this.label1.TabIndex = 3;
             this.label1.Text = "Mã dịch vụ";
             // 
             // cboMaDV
@@ -143,7 +146,7 @@
             this.cboMaDV.Name = "cboMaDV";
             this.cboMaDV.Size = new System.Drawing.Size(180, 27);
             this.cboMaDV.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboMaDV.TabIndex = 21;
+            this.cboMaDV.TabIndex = 4;
             this.cboMaDV.TabStop = false;
             // 
             // frmDatDichVu
@@ -186,5 +189,6 @@
         private System.Windows.Forms.NumericUpDown nudSoLuong;
         private System.Windows.Forms.Label label1;
         private Syncfusion.WinForms.ListView.SfComboBox cboMaDV;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

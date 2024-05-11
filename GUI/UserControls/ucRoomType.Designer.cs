@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucRoomType));
             this.lblRoomType = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
@@ -51,6 +52,7 @@
             this.lblStateRoomType = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRoomType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -76,7 +78,7 @@
             this.lblRoomType.Location = new System.Drawing.Point(0, 0);
             this.lblRoomType.Name = "lblRoomType";
             this.lblRoomType.Size = new System.Drawing.Size(972, 94);
-            this.lblRoomType.TabIndex = 35;
+            this.lblRoomType.TabIndex = 1;
             this.lblRoomType.Text = "ROOM TYPE";
             this.lblRoomType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -113,9 +115,10 @@
             this.btnAddRoomType.Style.ForeColor = System.Drawing.Color.White;
             this.btnAddRoomType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnAddRoomType.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddRoomType.TabIndex = 1;
+            this.btnAddRoomType.TabIndex = 2;
             this.btnAddRoomType.Text = "Thêm";
             this.btnAddRoomType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnAddRoomType, "Thêm loại phòng");
             this.btnAddRoomType.UseVisualStyleBackColor = false;
             this.btnAddRoomType.Click += new System.EventHandler(this.btnAddRoomType_Click);
             // 
@@ -134,9 +137,10 @@
             this.btnEditRoomType.Style.ForeColor = System.Drawing.Color.White;
             this.btnEditRoomType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnEditRoomType.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditRoomType.TabIndex = 3;
+            this.btnEditRoomType.TabIndex = 4;
             this.btnEditRoomType.Text = "Sửa";
             this.btnEditRoomType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnEditRoomType, "Sửa loại phòng");
             this.btnEditRoomType.UseVisualStyleBackColor = false;
             this.btnEditRoomType.Click += new System.EventHandler(this.btnEditRoomType_Click);
             // 
@@ -155,9 +159,10 @@
             this.btnDeleteRoomType.Style.ForeColor = System.Drawing.Color.White;
             this.btnDeleteRoomType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDeleteRoomType.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteRoomType.TabIndex = 4;
+            this.btnDeleteRoomType.TabIndex = 3;
             this.btnDeleteRoomType.Text = "Xóa";
             this.btnDeleteRoomType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnDeleteRoomType, "Xóa loại phòng");
             this.btnDeleteRoomType.UseVisualStyleBackColor = false;
             this.btnDeleteRoomType.Click += new System.EventHandler(this.btnDeleteRoomType_Click);
             // 
@@ -179,6 +184,7 @@
             this.btnRecoverRoomType.TabIndex = 5;
             this.btnRecoverRoomType.Text = "Khôi phục";
             this.btnRecoverRoomType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnRecoverRoomType, "Khôi phục loại phòng");
             this.btnRecoverRoomType.UseVisualStyleBackColor = false;
             this.btnRecoverRoomType.Click += new System.EventHandler(this.btnRecoverRoomType_Click);
             // 
@@ -187,8 +193,8 @@
             this.txtSearchRoomType.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchRoomType.Location = new System.Drawing.Point(6, 16);
             this.txtSearchRoomType.Name = "txtSearchRoomType";
-            this.txtSearchRoomType.Size = new System.Drawing.Size(251, 49);
-            this.txtSearchRoomType.TabIndex = 2;
+            this.txtSearchRoomType.Size = new System.Drawing.Size(251, 40);
+            this.txtSearchRoomType.TabIndex = 7;
             // 
             // btnTraCuuRoomType
             // 
@@ -203,7 +209,7 @@
             this.btnTraCuuRoomType.Size = new System.Drawing.Size(118, 40);
             this.btnTraCuuRoomType.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuRoomType.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuRoomType.TabIndex = 0;
+            this.btnTraCuuRoomType.TabIndex = 8;
             this.btnTraCuuRoomType.Text = "Tra cứu";
             this.btnTraCuuRoomType.UseVisualStyleBackColor = false;
             this.btnTraCuuRoomType.Click += new System.EventHandler(this.btnTraCuuRoomType_Click);
@@ -223,7 +229,8 @@
             this.cboStateRoomType.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateRoomType.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateRoomType.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateRoomType.TabIndex = 3;
+            this.cboStateRoomType.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.cboStateRoomType, "Lọc theo trạng thái");
             this.cboStateRoomType.SelectedIndexChanged += new System.EventHandler(this.cboStateRoomType_SelectedIndexChanged);
             // 
             // spcQuery
@@ -271,7 +278,7 @@
             this.dgvloaiphong.RowTemplate.Height = 24;
             this.dgvloaiphong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvloaiphong.Size = new System.Drawing.Size(970, 746);
-            this.dgvloaiphong.TabIndex = 0;
+            this.dgvloaiphong.TabIndex = 6;
             // 
             // colmaloai
             // 
@@ -324,7 +331,8 @@
             this.cboSortRoomTypeID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortRoomTypeID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortRoomTypeID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortRoomTypeID.TabIndex = 29;
+            this.cboSortRoomTypeID.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.cboSortRoomTypeID, "Sắp xếp theo ID");
             this.cboSortRoomTypeID.SelectedIndexChanged += new System.EventHandler(this.cboSortRoomTypeID_SelectedIndexChanged);
             // 
             // lblSortRoomTypeID
@@ -333,8 +341,8 @@
             this.lblSortRoomTypeID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortRoomTypeID.Location = new System.Drawing.Point(2, 86);
             this.lblSortRoomTypeID.Name = "lblSortRoomTypeID";
-            this.lblSortRoomTypeID.Size = new System.Drawing.Size(218, 33);
-            this.lblSortRoomTypeID.TabIndex = 28;
+            this.lblSortRoomTypeID.Size = new System.Drawing.Size(170, 26);
+            this.lblSortRoomTypeID.TabIndex = 9;
             this.lblSortRoomTypeID.Text = "Sort theo ID loại";
             this.lblSortRoomTypeID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -353,7 +361,8 @@
             this.cboSortSoLuongRoom.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortSoLuongRoom.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortSoLuongRoom.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSoLuongRoom.TabIndex = 23;
+            this.cboSortSoLuongRoom.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.cboSortSoLuongRoom, "Lọc theo số lượng");
             // 
             // lblSortSoLuongRoom
             // 
@@ -361,8 +370,8 @@
             this.lblSortSoLuongRoom.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortSoLuongRoom.Location = new System.Drawing.Point(2, 143);
             this.lblSortSoLuongRoom.Name = "lblSortSoLuongRoom";
-            this.lblSortSoLuongRoom.Size = new System.Drawing.Size(241, 33);
-            this.lblSortSoLuongRoom.TabIndex = 14;
+            this.lblSortSoLuongRoom.Size = new System.Drawing.Size(185, 26);
+            this.lblSortSoLuongRoom.TabIndex = 11;
             this.lblSortSoLuongRoom.Text = "Lọc theo số lượng";
             this.lblSortSoLuongRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -372,8 +381,8 @@
             this.lblStateRoomType.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStateRoomType.Location = new System.Drawing.Point(2, 200);
             this.lblStateRoomType.Name = "lblStateRoomType";
-            this.lblStateRoomType.Size = new System.Drawing.Size(237, 33);
-            this.lblStateRoomType.TabIndex = 9;
+            this.lblStateRoomType.Size = new System.Drawing.Size(186, 26);
+            this.lblStateRoomType.TabIndex = 13;
             this.lblStateRoomType.Text = "Trạng thái dữ liệu";
             this.lblStateRoomType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -459,5 +468,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn coltenloai;
         private System.Windows.Forms.DataGridViewTextBoxColumn colmota;
         private System.Windows.Forms.DataGridViewTextBoxColumn coltrangthai;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

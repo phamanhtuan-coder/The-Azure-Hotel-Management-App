@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucDepartment));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblDepartment = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddDepartment = new Syncfusion.WinForms.Controls.SfButton();
@@ -53,6 +54,7 @@
             this.lblStateDepartment = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateDepartment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -78,7 +80,7 @@
             this.lblDepartment.Location = new System.Drawing.Point(0, 0);
             this.lblDepartment.Name = "lblDepartment";
             this.lblDepartment.Size = new System.Drawing.Size(972, 94);
-            this.lblDepartment.TabIndex = 35;
+            this.lblDepartment.TabIndex = 1;
             this.lblDepartment.Text = "DEPARTMENT";
             this.lblDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -115,9 +117,10 @@
             this.btnAddDepartment.Style.ForeColor = System.Drawing.Color.White;
             this.btnAddDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnAddDepartment.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddDepartment.TabIndex = 1;
+            this.btnAddDepartment.TabIndex = 2;
             this.btnAddDepartment.Text = "Thêm";
             this.btnAddDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnAddDepartment, "Thêm phòng ban");
             this.btnAddDepartment.UseVisualStyleBackColor = false;
             this.btnAddDepartment.Click += new System.EventHandler(this.btnAddDepartment_Click);
             // 
@@ -136,9 +139,10 @@
             this.btnEditDepartment.Style.ForeColor = System.Drawing.Color.White;
             this.btnEditDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnEditDepartment.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditDepartment.TabIndex = 3;
+            this.btnEditDepartment.TabIndex = 4;
             this.btnEditDepartment.Text = "Sửa";
             this.btnEditDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnEditDepartment, "Sửa phòng ban");
             this.btnEditDepartment.UseVisualStyleBackColor = false;
             this.btnEditDepartment.Click += new System.EventHandler(this.btnEditDepartment_Click);
             // 
@@ -157,9 +161,10 @@
             this.btnDeleteDepartment.Style.ForeColor = System.Drawing.Color.White;
             this.btnDeleteDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDeleteDepartment.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteDepartment.TabIndex = 4;
+            this.btnDeleteDepartment.TabIndex = 3;
             this.btnDeleteDepartment.Text = "Xóa";
             this.btnDeleteDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnDeleteDepartment, "Xóa phòng ban");
             this.btnDeleteDepartment.UseVisualStyleBackColor = false;
             this.btnDeleteDepartment.Click += new System.EventHandler(this.btnDeleteDepartment_Click);
             // 
@@ -181,6 +186,7 @@
             this.btnRecoverDepartment.TabIndex = 5;
             this.btnRecoverDepartment.Text = "Khôi phục";
             this.btnRecoverDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnRecoverDepartment, "Khôi phục phòng ban");
             this.btnRecoverDepartment.UseVisualStyleBackColor = false;
             this.btnRecoverDepartment.Click += new System.EventHandler(this.btnRecoverDepartment_Click);
             // 
@@ -190,7 +196,8 @@
             this.txtSearchDepartment.Location = new System.Drawing.Point(6, 16);
             this.txtSearchDepartment.Name = "txtSearchDepartment";
             this.txtSearchDepartment.Size = new System.Drawing.Size(251, 40);
-            this.txtSearchDepartment.TabIndex = 2;
+            this.txtSearchDepartment.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.txtSearchDepartment, "Nhập mã phòng ban");
             // 
             // btnTraCuuDepartment
             // 
@@ -205,8 +212,9 @@
             this.btnTraCuuDepartment.Size = new System.Drawing.Size(118, 40);
             this.btnTraCuuDepartment.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuDepartment.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuDepartment.TabIndex = 0;
+            this.btnTraCuuDepartment.TabIndex = 8;
             this.btnTraCuuDepartment.Text = "Tra cứu";
+            this.toolTip1.SetToolTip(this.btnTraCuuDepartment, "Tra cứu");
             this.btnTraCuuDepartment.UseVisualStyleBackColor = false;
             this.btnTraCuuDepartment.Click += new System.EventHandler(this.btnTraCuuDepartment_Click);
             // 
@@ -227,7 +235,8 @@
             this.cboStateDepartment.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateDepartment.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateDepartment.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateDepartment.TabIndex = 3;
+            this.cboStateDepartment.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.cboStateDepartment, "Lọc theo trạng thái");
             this.cboStateDepartment.SelectedIndexChanged += new System.EventHandler(this.cboStateDepartment_SelectedIndexChanged);
             // 
             // spcQuery
@@ -278,7 +287,7 @@
             this.dgvDepartment.RowHeadersVisible = false;
             this.dgvDepartment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDepartment.Size = new System.Drawing.Size(973, 746);
-            this.dgvDepartment.TabIndex = 0;
+            this.dgvDepartment.TabIndex = 6;
             // 
             // colMaPhongBan
             // 
@@ -304,8 +313,8 @@
             // colNgayNhanChuc
             // 
             this.colNgayNhanChuc.DataPropertyName = "NgayNhanChuc";
-            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
-            this.colNgayNhanChuc.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
+            this.colNgayNhanChuc.DefaultCellStyle = dataGridViewCellStyle3;
             this.colNgayNhanChuc.HeaderText = "Ngày nhận chức";
             this.colNgayNhanChuc.Name = "colNgayNhanChuc";
             this.colNgayNhanChuc.ReadOnly = true;
@@ -334,7 +343,8 @@
             this.cboSortDepartment.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortDepartment.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortDepartment.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortDepartment.TabIndex = 29;
+            this.cboSortDepartment.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.cboSortDepartment, "Sắp xếp mã phòng ban");
             this.cboSortDepartment.SelectedIndexChanged += new System.EventHandler(this.cboSortDepartment_SelectedIndexChanged);
             // 
             // lblSortDepartmentID
@@ -344,7 +354,7 @@
             this.lblSortDepartmentID.Location = new System.Drawing.Point(3, 84);
             this.lblSortDepartmentID.Name = "lblSortDepartmentID";
             this.lblSortDepartmentID.Size = new System.Drawing.Size(206, 26);
-            this.lblSortDepartmentID.TabIndex = 28;
+            this.lblSortDepartmentID.TabIndex = 9;
             this.lblSortDepartmentID.Text = "Sort Department ID";
             this.lblSortDepartmentID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -365,7 +375,8 @@
             this.cboSortSoLuongNV.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortSoLuongNV.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortSoLuongNV.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSoLuongNV.TabIndex = 23;
+            this.cboSortSoLuongNV.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.cboSortSoLuongNV, "Lọc theo số lượng");
             // 
             // lblSortSoLuongNV
             // 
@@ -374,7 +385,7 @@
             this.lblSortSoLuongNV.Location = new System.Drawing.Point(3, 138);
             this.lblSortSoLuongNV.Name = "lblSortSoLuongNV";
             this.lblSortSoLuongNV.Size = new System.Drawing.Size(185, 26);
-            this.lblSortSoLuongNV.TabIndex = 14;
+            this.lblSortSoLuongNV.TabIndex = 11;
             this.lblSortSoLuongNV.Text = "Lọc theo số lượng";
             this.lblSortSoLuongNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -385,7 +396,7 @@
             this.lblStateDepartment.Location = new System.Drawing.Point(3, 192);
             this.lblStateDepartment.Name = "lblStateDepartment";
             this.lblStateDepartment.Size = new System.Drawing.Size(186, 26);
-            this.lblStateDepartment.TabIndex = 9;
+            this.lblStateDepartment.TabIndex = 13;
             this.lblStateDepartment.Text = "Trạng thái dữ liệu";
             this.lblStateDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -472,5 +483,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTruongPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayNhanChuc;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

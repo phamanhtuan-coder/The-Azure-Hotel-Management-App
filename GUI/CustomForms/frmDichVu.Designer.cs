@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDichVu));
             this.btnSubmit = new Syncfusion.WinForms.Controls.SfButton();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
@@ -37,6 +38,7 @@
             this.lblGia = new System.Windows.Forms.Label();
             this.nudGia = new System.Windows.Forms.NumericUpDown();
             this.txttendichvu = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picHinhAnh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGia)).BeginInit();
             this.SuspendLayout();
@@ -47,8 +49,9 @@
             this.btnSubmit.Location = new System.Drawing.Point(505, 161);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
-            this.btnSubmit.TabIndex = 3;
+            this.btnSubmit.TabIndex = 7;
             this.btnSubmit.Text = "Submit";
+            this.toolTip1.SetToolTip(this.btnSubmit, "Gửi");
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnCancel
@@ -57,7 +60,7 @@
             this.btnCancel.Location = new System.Drawing.Point(332, 163);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Quay lại";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -67,7 +70,7 @@
             this.btnChonHinh.Location = new System.Drawing.Point(84, 181);
             this.btnChonHinh.Name = "btnChonHinh";
             this.btnChonHinh.Size = new System.Drawing.Size(150, 38);
-            this.btnChonHinh.TabIndex = 16;
+            this.btnChonHinh.TabIndex = 5;
             this.btnChonHinh.Text = "Submit";
             this.btnChonHinh.Click += new System.EventHandler(this.btnChonHinh_Click);
             // 
@@ -86,8 +89,8 @@
             this.lblTenDV.AutoSize = true;
             this.lblTenDV.Location = new System.Drawing.Point(318, 36);
             this.lblTenDV.Name = "lblTenDV";
-            this.lblTenDV.Size = new System.Drawing.Size(134, 27);
-            this.lblTenDV.TabIndex = 19;
+            this.lblTenDV.Size = new System.Drawing.Size(107, 22);
+            this.lblTenDV.TabIndex = 1;
             this.lblTenDV.Text = "Tên dịch vụ";
             // 
             // lblGia
@@ -95,8 +98,8 @@
             this.lblGia.AutoSize = true;
             this.lblGia.Location = new System.Drawing.Point(318, 93);
             this.lblGia.Name = "lblGia";
-            this.lblGia.Size = new System.Drawing.Size(129, 27);
-            this.lblGia.TabIndex = 23;
+            this.lblGia.Size = new System.Drawing.Size(104, 22);
+            this.lblGia.TabIndex = 3;
             this.lblGia.Text = "Giá dịch vụ";
             // 
             // nudGia
@@ -113,8 +116,8 @@
             0,
             0});
             this.nudGia.Name = "nudGia";
-            this.nudGia.Size = new System.Drawing.Size(150, 32);
-            this.nudGia.TabIndex = 28;
+            this.nudGia.Size = new System.Drawing.Size(150, 27);
+            this.nudGia.TabIndex = 4;
             this.nudGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudGia.ThousandsSeparator = true;
             // 
@@ -122,8 +125,8 @@
             // 
             this.txttendichvu.Location = new System.Drawing.Point(505, 40);
             this.txttendichvu.Name = "txttendichvu";
-            this.txttendichvu.Size = new System.Drawing.Size(150, 32);
-            this.txttendichvu.TabIndex = 29;
+            this.txttendichvu.Size = new System.Drawing.Size(150, 27);
+            this.txttendichvu.TabIndex = 2;
             // 
             // frmDichVu
             // 
@@ -160,5 +163,6 @@
         private System.Windows.Forms.Label lblGia;
         private System.Windows.Forms.NumericUpDown nudGia;
         private System.Windows.Forms.TextBox txttendichvu;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

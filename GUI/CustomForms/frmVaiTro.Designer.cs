@@ -44,7 +44,7 @@
             this.txtTenVT.Location = new System.Drawing.Point(266, 44);
             this.txtTenVT.Name = "txtTenVT";
             this.txtTenVT.Size = new System.Drawing.Size(306, 27);
-            this.txtTenVT.TabIndex = 1;
+            this.txtTenVT.TabIndex = 2;
             this.toolTip1.SetToolTip(this.txtTenVT, "Nhập tên vai trò");
             // 
             // btnSubmit
@@ -53,7 +53,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(361, 271);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
-            this.btnSubmit.TabIndex = 4;
+            this.btnSubmit.TabIndex = 6;
             this.btnSubmit.Text = "Submit";
             this.toolTip1.SetToolTip(this.btnSubmit, "Gửi");
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -64,7 +64,7 @@
             this.btnCancel.Location = new System.Drawing.Point(94, 271);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
-            this.btnCancel.TabIndex = 3;
+            this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Quay lại";
             this.toolTip1.SetToolTip(this.btnCancel, "Quai lại vai trò");
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -76,7 +76,7 @@
             this.lblTenVT.Location = new System.Drawing.Point(52, 49);
             this.lblTenVT.Name = "lblTenVT";
             this.lblTenVT.Size = new System.Drawing.Size(99, 22);
-            this.lblTenVT.TabIndex = 6;
+            this.lblTenVT.TabIndex = 1;
             this.lblTenVT.Text = "Tên vai trò";
             // 
             // lblMoTa
@@ -86,7 +86,7 @@
             this.lblMoTa.Location = new System.Drawing.Point(52, 117);
             this.lblMoTa.Name = "lblMoTa";
             this.lblMoTa.Size = new System.Drawing.Size(57, 22);
-            this.lblMoTa.TabIndex = 7;
+            this.lblMoTa.TabIndex = 3;
             this.lblMoTa.Text = "Mô tả";
             // 
             // rtxtMoTa
@@ -95,7 +95,7 @@
             this.rtxtMoTa.Location = new System.Drawing.Point(266, 117);
             this.rtxtMoTa.Name = "rtxtMoTa";
             this.rtxtMoTa.Size = new System.Drawing.Size(306, 96);
-            this.rtxtMoTa.TabIndex = 2;
+            this.rtxtMoTa.TabIndex = 4;
             this.rtxtMoTa.Text = "";
             this.toolTip1.SetToolTip(this.rtxtMoTa, "Nhập mô tả");
             // 

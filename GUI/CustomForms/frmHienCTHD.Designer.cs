@@ -46,7 +46,7 @@
             this.btnCancel.Location = new System.Drawing.Point(685, 451);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(132, 50);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Quay lại";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -73,7 +73,7 @@
             this.dgvBillDetails.RowHeadersVisible = false;
             this.dgvBillDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBillDetails.Size = new System.Drawing.Size(805, 372);
-            this.dgvBillDetails.TabIndex = 6;
+            this.dgvBillDetails.TabIndex = 2;
             // 
             // colMaCTHD
             // 
@@ -133,7 +133,7 @@
             this.label1.Location = new System.Drawing.Point(259, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(316, 46);
-            this.label1.TabIndex = 7;
+            this.label1.TabIndex = 1;
             this.label1.Text = "Chi tiết hóa đơn";
             // 
             // frmHienCTHD

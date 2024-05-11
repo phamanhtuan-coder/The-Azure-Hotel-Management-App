@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSubmit = new Syncfusion.WinForms.Controls.SfButton();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.lblMaKH = new System.Windows.Forms.Label();
@@ -39,6 +40,7 @@
             this.btnTaoKH = new Syncfusion.WinForms.Controls.SfButton();
             this.dtpNgayDat = new System.Windows.Forms.DateTimePicker();
             this.nudSoLuongKhach = new System.Windows.Forms.NumericUpDown();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.cboMaPHG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoLuongKhach)).BeginInit();
             this.SuspendLayout();
@@ -49,8 +51,9 @@
             this.btnSubmit.Location = new System.Drawing.Point(427, 274);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
-            this.btnSubmit.TabIndex = 3;
+            this.btnSubmit.TabIndex = 11;
             this.btnSubmit.Text = "Submit";
+            this.toolTip1.SetToolTip(this.btnSubmit, "Gửi");
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnCancel
@@ -59,7 +62,7 @@
             this.btnCancel.Location = new System.Drawing.Point(235, 274);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "Quay lại";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -68,8 +71,8 @@
             this.lblMaKH.AutoSize = true;
             this.lblMaKH.Location = new System.Drawing.Point(13, 22);
             this.lblMaKH.Name = "lblMaKH";
-            this.lblMaKH.Size = new System.Drawing.Size(174, 27);
-            this.lblMaKH.TabIndex = 6;
+            this.lblMaKH.Size = new System.Drawing.Size(140, 22);
+            this.lblMaKH.TabIndex = 1;
             this.lblMaKH.Text = "Mã khách hàng";
             // 
             // lblMaPHG
@@ -77,8 +80,8 @@
             this.lblMaPHG.AutoSize = true;
             this.lblMaPHG.Location = new System.Drawing.Point(13, 64);
             this.lblMaPHG.Name = "lblMaPHG";
-            this.lblMaPHG.Size = new System.Drawing.Size(118, 27);
-            this.lblMaPHG.TabIndex = 8;
+            this.lblMaPHG.Size = new System.Drawing.Size(94, 22);
+            this.lblMaPHG.TabIndex = 4;
             this.lblMaPHG.Text = "Mã phòng";
             // 
             // lblNgayDat
@@ -86,8 +89,8 @@
             this.lblNgayDat.AutoSize = true;
             this.lblNgayDat.Location = new System.Drawing.Point(12, 107);
             this.lblNgayDat.Name = "lblNgayDat";
-            this.lblNgayDat.Size = new System.Drawing.Size(107, 27);
-            this.lblNgayDat.TabIndex = 10;
+            this.lblNgayDat.Size = new System.Drawing.Size(87, 22);
+            this.lblNgayDat.TabIndex = 6;
             this.lblNgayDat.Text = "Ngày đặt";
             // 
             // lblSoLuong
@@ -95,8 +98,8 @@
             this.lblSoLuong.AutoSize = true;
             this.lblSoLuong.Location = new System.Drawing.Point(11, 162);
             this.lblSoLuong.Name = "lblSoLuong";
-            this.lblSoLuong.Size = new System.Drawing.Size(176, 27);
-            this.lblSoLuong.TabIndex = 13;
+            this.lblSoLuong.Size = new System.Drawing.Size(140, 22);
+            this.lblSoLuong.TabIndex = 8;
             this.lblSoLuong.Text = "Số lượng khách";
             // 
             // cboMaPHG
@@ -106,15 +109,15 @@
             this.cboMaPHG.Name = "cboMaPHG";
             this.cboMaPHG.Size = new System.Drawing.Size(180, 27);
             this.cboMaPHG.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboMaPHG.TabIndex = 14;
+            this.cboMaPHG.TabIndex = 5;
             this.cboMaPHG.TabStop = false;
             // 
             // txtMaKH
             // 
             this.txtMaKH.Location = new System.Drawing.Point(205, 16);
             this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(180, 32);
-            this.txtMaKH.TabIndex = 15;
+            this.txtMaKH.Size = new System.Drawing.Size(180, 27);
+            this.txtMaKH.TabIndex = 2;
             // 
             // btnTaoKH
             // 
@@ -122,8 +125,9 @@
             this.btnTaoKH.Location = new System.Drawing.Point(427, 16);
             this.btnTaoKH.Name = "btnTaoKH";
             this.btnTaoKH.Size = new System.Drawing.Size(150, 28);
-            this.btnTaoKH.TabIndex = 16;
+            this.btnTaoKH.TabIndex = 3;
             this.btnTaoKH.Text = "Tạo khách hàng mới";
+            this.toolTip1.SetToolTip(this.btnTaoKH, "Tạo tài khoản khách hàng mới");
             this.btnTaoKH.Click += new System.EventHandler(this.btnTaoKH_Click);
             // 
             // dtpNgayDat
@@ -132,8 +136,8 @@
             this.dtpNgayDat.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayDat.Location = new System.Drawing.Point(205, 102);
             this.dtpNgayDat.Name = "dtpNgayDat";
-            this.dtpNgayDat.Size = new System.Drawing.Size(180, 32);
-            this.dtpNgayDat.TabIndex = 17;
+            this.dtpNgayDat.Size = new System.Drawing.Size(180, 27);
+            this.dtpNgayDat.TabIndex = 7;
             // 
             // nudSoLuongKhach
             // 
@@ -149,8 +153,8 @@
             0,
             0});
             this.nudSoLuongKhach.Name = "nudSoLuongKhach";
-            this.nudSoLuongKhach.Size = new System.Drawing.Size(180, 32);
-            this.nudSoLuongKhach.TabIndex = 19;
+            this.nudSoLuongKhach.Size = new System.Drawing.Size(180, 27);
+            this.nudSoLuongKhach.TabIndex = 9;
             this.nudSoLuongKhach.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudSoLuongKhach.Value = new decimal(new int[] {
             1,
@@ -199,5 +203,6 @@
         private Syncfusion.WinForms.Controls.SfButton btnTaoKH;
         private System.Windows.Forms.DateTimePicker dtpNgayDat;
         private System.Windows.Forms.NumericUpDown nudSoLuongKhach;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

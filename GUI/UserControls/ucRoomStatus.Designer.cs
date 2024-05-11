@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucRoomStatus));
             this.lblRoomStatus = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
@@ -40,6 +41,10 @@
             this.cboStateRoomStatus = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvRoomStatus = new System.Windows.Forms.DataGridView();
+            this.colMaTinhTrangPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenTinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboSortRoomStatusID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortRoomStatusID = new System.Windows.Forms.Label();
             this.cboSortSoLuongRoom = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -47,10 +52,7 @@
             this.lblStateRoomStatus = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.colMaTinhTrangPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenTinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRoomStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -76,7 +78,7 @@
             this.lblRoomStatus.Location = new System.Drawing.Point(0, 0);
             this.lblRoomStatus.Name = "lblRoomStatus";
             this.lblRoomStatus.Size = new System.Drawing.Size(972, 94);
-            this.lblRoomStatus.TabIndex = 35;
+            this.lblRoomStatus.TabIndex = 1;
             this.lblRoomStatus.Text = "ROOM STATUS";
             this.lblRoomStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -113,9 +115,10 @@
             this.btnAddRoomStatus.Style.ForeColor = System.Drawing.Color.White;
             this.btnAddRoomStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnAddRoomStatus.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddRoomStatus.TabIndex = 1;
+            this.btnAddRoomStatus.TabIndex = 2;
             this.btnAddRoomStatus.Text = "Thêm";
             this.btnAddRoomStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnAddRoomStatus, "Thêm tình trạng phòng");
             this.btnAddRoomStatus.UseVisualStyleBackColor = false;
             this.btnAddRoomStatus.Click += new System.EventHandler(this.btnAddRoomStatus_Click);
             // 
@@ -134,9 +137,10 @@
             this.btnEditRoomStatus.Style.ForeColor = System.Drawing.Color.White;
             this.btnEditRoomStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnEditRoomStatus.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditRoomStatus.TabIndex = 3;
+            this.btnEditRoomStatus.TabIndex = 4;
             this.btnEditRoomStatus.Text = "Sửa";
             this.btnEditRoomStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnEditRoomStatus, "Sửa tình trạng phòng");
             this.btnEditRoomStatus.UseVisualStyleBackColor = false;
             this.btnEditRoomStatus.Click += new System.EventHandler(this.btnEditRoomStatus_Click);
             // 
@@ -155,9 +159,10 @@
             this.btnDeleteRoomStatus.Style.ForeColor = System.Drawing.Color.White;
             this.btnDeleteRoomStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDeleteRoomStatus.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteRoomStatus.TabIndex = 4;
+            this.btnDeleteRoomStatus.TabIndex = 3;
             this.btnDeleteRoomStatus.Text = "Xóa";
             this.btnDeleteRoomStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnDeleteRoomStatus, "Xóa tình trạng phòng");
             this.btnDeleteRoomStatus.UseVisualStyleBackColor = false;
             this.btnDeleteRoomStatus.Click += new System.EventHandler(this.btnDeleteRoomStatus_Click);
             // 
@@ -179,6 +184,7 @@
             this.btnRecoverRoomStatus.TabIndex = 5;
             this.btnRecoverRoomStatus.Text = "Khôi phục";
             this.btnRecoverRoomStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnRecoverRoomStatus, "Khôi phục tình trạng phòng");
             this.btnRecoverRoomStatus.UseVisualStyleBackColor = false;
             this.btnRecoverRoomStatus.Click += new System.EventHandler(this.btnRecoverRoomStatus_Click);
             // 
@@ -187,8 +193,9 @@
             this.txtSearchRoomStatus.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchRoomStatus.Location = new System.Drawing.Point(6, 16);
             this.txtSearchRoomStatus.Name = "txtSearchRoomStatus";
-            this.txtSearchRoomStatus.Size = new System.Drawing.Size(251, 49);
-            this.txtSearchRoomStatus.TabIndex = 2;
+            this.txtSearchRoomStatus.Size = new System.Drawing.Size(251, 40);
+            this.txtSearchRoomStatus.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.txtSearchRoomStatus, "Nhập tên tình trạng");
             // 
             // btnTraCuuRoomStatus
             // 
@@ -203,8 +210,9 @@
             this.btnTraCuuRoomStatus.Size = new System.Drawing.Size(118, 40);
             this.btnTraCuuRoomStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuRoomStatus.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuRoomStatus.TabIndex = 0;
+            this.btnTraCuuRoomStatus.TabIndex = 8;
             this.btnTraCuuRoomStatus.Text = "Tra cứu";
+            this.toolTip1.SetToolTip(this.btnTraCuuRoomStatus, "Tra cứu");
             this.btnTraCuuRoomStatus.UseVisualStyleBackColor = false;
             this.btnTraCuuRoomStatus.Click += new System.EventHandler(this.btnTraCuuRoomStatus_Click);
             // 
@@ -223,7 +231,8 @@
             this.cboStateRoomStatus.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateRoomStatus.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateRoomStatus.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateRoomStatus.TabIndex = 3;
+            this.cboStateRoomStatus.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.cboStateRoomStatus, "Lọc theo trạng thái");
             this.cboStateRoomStatus.SelectedIndexChanged += new System.EventHandler(this.cboStateRoomStatus_SelectedIndexChanged);
             // 
             // spcQuery
@@ -274,104 +283,7 @@
             this.dgvRoomStatus.RowHeadersWidth = 51;
             this.dgvRoomStatus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRoomStatus.Size = new System.Drawing.Size(973, 746);
-            this.dgvRoomStatus.TabIndex = 0;
-            // 
-            // cboSortRoomStatusID
-            // 
-            this.cboSortRoomStatusID.DelimiterChar = "";
-            this.cboSortRoomStatusID.DisplayMember = "";
-            this.cboSortRoomStatusID.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboSortRoomStatusID.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortRoomStatusID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortRoomStatusID.Location = new System.Drawing.Point(226, 79);
-            this.cboSortRoomStatusID.Name = "cboSortRoomStatusID";
-            this.cboSortRoomStatusID.Size = new System.Drawing.Size(156, 33);
-            this.cboSortRoomStatusID.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortRoomStatusID.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortRoomStatusID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortRoomStatusID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortRoomStatusID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortRoomStatusID.TabIndex = 29;
-            this.cboSortRoomStatusID.SelectedIndexChanged += new System.EventHandler(this.cboSortRoomStatusID_SelectedIndexChanged);
-            // 
-            // lblSortRoomStatusID
-            // 
-            this.lblSortRoomStatusID.AutoSize = true;
-            this.lblSortRoomStatusID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortRoomStatusID.Location = new System.Drawing.Point(2, 86);
-            this.lblSortRoomStatusID.Name = "lblSortRoomStatusID";
-            this.lblSortRoomStatusID.Size = new System.Drawing.Size(218, 33);
-            this.lblSortRoomStatusID.TabIndex = 28;
-            this.lblSortRoomStatusID.Text = "Sort theo ID loại";
-            this.lblSortRoomStatusID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cboSortSoLuongRoom
-            // 
-            this.cboSortSoLuongRoom.DelimiterChar = "";
-            this.cboSortSoLuongRoom.DisplayMember = "";
-            this.cboSortSoLuongRoom.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboSortSoLuongRoom.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortSoLuongRoom.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSoLuongRoom.Location = new System.Drawing.Point(227, 136);
-            this.cboSortSoLuongRoom.Name = "cboSortSoLuongRoom";
-            this.cboSortSoLuongRoom.Size = new System.Drawing.Size(156, 33);
-            this.cboSortSoLuongRoom.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortSoLuongRoom.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSoLuongRoom.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSoLuongRoom.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortSoLuongRoom.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSoLuongRoom.TabIndex = 23;
-            // 
-            // lblSortSoLuongRoom
-            // 
-            this.lblSortSoLuongRoom.AutoSize = true;
-            this.lblSortSoLuongRoom.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortSoLuongRoom.Location = new System.Drawing.Point(2, 143);
-            this.lblSortSoLuongRoom.Name = "lblSortSoLuongRoom";
-            this.lblSortSoLuongRoom.Size = new System.Drawing.Size(241, 33);
-            this.lblSortSoLuongRoom.TabIndex = 14;
-            this.lblSortSoLuongRoom.Text = "Lọc theo số lượng";
-            this.lblSortSoLuongRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblStateRoomStatus
-            // 
-            this.lblStateRoomStatus.AutoSize = true;
-            this.lblStateRoomStatus.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStateRoomStatus.Location = new System.Drawing.Point(2, 200);
-            this.lblStateRoomStatus.Name = "lblStateRoomStatus";
-            this.lblStateRoomStatus.Size = new System.Drawing.Size(237, 33);
-            this.lblStateRoomStatus.TabIndex = 9;
-            this.lblStateRoomStatus.Text = "Trạng thái dữ liệu";
-            this.lblStateRoomStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panUcHeader
-            // 
-            this.panUcHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(224)))), ((int)(((byte)(155)))));
-            this.panUcHeader.Controls.Add(this.spcHeader);
-            this.panUcHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panUcHeader.Location = new System.Drawing.Point(0, 0);
-            this.panUcHeader.Name = "panUcHeader";
-            this.panUcHeader.Size = new System.Drawing.Size(1370, 94);
-            this.panUcHeader.TabIndex = 37;
-            // 
-            // spcHeader
-            // 
-            this.spcHeader.BackColor = System.Drawing.Color.Lavender;
-            this.spcHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.spcHeader.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.spcHeader.Location = new System.Drawing.Point(0, 0);
-            this.spcHeader.Name = "spcHeader";
-            // 
-            // spcHeader.Panel1
-            // 
-            this.spcHeader.Panel1.Controls.Add(this.lblRoomStatus);
-            // 
-            // spcHeader.Panel2
-            // 
-            this.spcHeader.Panel2.Controls.Add(this.tlpController);
-            this.spcHeader.Size = new System.Drawing.Size(1370, 94);
-            this.spcHeader.SplitterDistance = 972;
-            this.spcHeader.TabIndex = 0;
+            this.dgvRoomStatus.TabIndex = 6;
             // 
             // colMaTinhTrangPhong
             // 
@@ -412,6 +324,105 @@
             this.colTrangThai.Name = "colTrangThai";
             this.colTrangThai.ReadOnly = true;
             this.colTrangThai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // cboSortRoomStatusID
+            // 
+            this.cboSortRoomStatusID.DelimiterChar = "";
+            this.cboSortRoomStatusID.DisplayMember = "";
+            this.cboSortRoomStatusID.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboSortRoomStatusID.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+            this.cboSortRoomStatusID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortRoomStatusID.Location = new System.Drawing.Point(226, 79);
+            this.cboSortRoomStatusID.Name = "cboSortRoomStatusID";
+            this.cboSortRoomStatusID.Size = new System.Drawing.Size(156, 33);
+            this.cboSortRoomStatusID.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.cboSortRoomStatusID.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortRoomStatusID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortRoomStatusID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboSortRoomStatusID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortRoomStatusID.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.cboSortRoomStatusID, "Sắp xếp theo mã loại");
+            this.cboSortRoomStatusID.SelectedIndexChanged += new System.EventHandler(this.cboSortRoomStatusID_SelectedIndexChanged);
+            // 
+            // lblSortRoomStatusID
+            // 
+            this.lblSortRoomStatusID.AutoSize = true;
+            this.lblSortRoomStatusID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortRoomStatusID.Location = new System.Drawing.Point(2, 86);
+            this.lblSortRoomStatusID.Name = "lblSortRoomStatusID";
+            this.lblSortRoomStatusID.Size = new System.Drawing.Size(170, 26);
+            this.lblSortRoomStatusID.TabIndex = 9;
+            this.lblSortRoomStatusID.Text = "Sort theo ID loại";
+            this.lblSortRoomStatusID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cboSortSoLuongRoom
+            // 
+            this.cboSortSoLuongRoom.DelimiterChar = "";
+            this.cboSortSoLuongRoom.DisplayMember = "";
+            this.cboSortSoLuongRoom.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboSortSoLuongRoom.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+            this.cboSortSoLuongRoom.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortSoLuongRoom.Location = new System.Drawing.Point(227, 136);
+            this.cboSortSoLuongRoom.Name = "cboSortSoLuongRoom";
+            this.cboSortSoLuongRoom.Size = new System.Drawing.Size(156, 33);
+            this.cboSortSoLuongRoom.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.cboSortSoLuongRoom.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortSoLuongRoom.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortSoLuongRoom.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboSortSoLuongRoom.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortSoLuongRoom.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.cboSortSoLuongRoom, "Lọc theo số lượng");
+            // 
+            // lblSortSoLuongRoom
+            // 
+            this.lblSortSoLuongRoom.AutoSize = true;
+            this.lblSortSoLuongRoom.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortSoLuongRoom.Location = new System.Drawing.Point(2, 143);
+            this.lblSortSoLuongRoom.Name = "lblSortSoLuongRoom";
+            this.lblSortSoLuongRoom.Size = new System.Drawing.Size(185, 26);
+            this.lblSortSoLuongRoom.TabIndex = 11;
+            this.lblSortSoLuongRoom.Text = "Lọc theo số lượng";
+            this.lblSortSoLuongRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblStateRoomStatus
+            // 
+            this.lblStateRoomStatus.AutoSize = true;
+            this.lblStateRoomStatus.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStateRoomStatus.Location = new System.Drawing.Point(2, 200);
+            this.lblStateRoomStatus.Name = "lblStateRoomStatus";
+            this.lblStateRoomStatus.Size = new System.Drawing.Size(186, 26);
+            this.lblStateRoomStatus.TabIndex = 13;
+            this.lblStateRoomStatus.Text = "Trạng thái dữ liệu";
+            this.lblStateRoomStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panUcHeader
+            // 
+            this.panUcHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(224)))), ((int)(((byte)(155)))));
+            this.panUcHeader.Controls.Add(this.spcHeader);
+            this.panUcHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panUcHeader.Location = new System.Drawing.Point(0, 0);
+            this.panUcHeader.Name = "panUcHeader";
+            this.panUcHeader.Size = new System.Drawing.Size(1370, 94);
+            this.panUcHeader.TabIndex = 37;
+            // 
+            // spcHeader
+            // 
+            this.spcHeader.BackColor = System.Drawing.Color.Lavender;
+            this.spcHeader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.spcHeader.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.spcHeader.Location = new System.Drawing.Point(0, 0);
+            this.spcHeader.Name = "spcHeader";
+            // 
+            // spcHeader.Panel1
+            // 
+            this.spcHeader.Panel1.Controls.Add(this.lblRoomStatus);
+            // 
+            // spcHeader.Panel2
+            // 
+            this.spcHeader.Panel2.Controls.Add(this.tlpController);
+            this.spcHeader.Size = new System.Drawing.Size(1370, 94);
+            this.spcHeader.SplitterDistance = 972;
+            this.spcHeader.TabIndex = 0;
             // 
             // ucRoomStatus
             // 
@@ -466,5 +477,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenTinhTrang;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMoTa;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
