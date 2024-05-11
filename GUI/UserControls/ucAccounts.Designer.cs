@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucAccounts));
             this.lblAccounts = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
@@ -56,6 +57,7 @@
             this.lblStateAccounts = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
             this.spcQuery.Panel1.SuspendLayout();
@@ -102,6 +104,7 @@
             this.tlpController.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpController.Size = new System.Drawing.Size(394, 94);
             this.tlpController.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.tlpController, "Xóa tài khoản");
             // 
             // btnAddAccounts
             // 
@@ -121,6 +124,7 @@
             this.btnAddAccounts.TabIndex = 1;
             this.btnAddAccounts.Text = "Thêm";
             this.btnAddAccounts.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnAddAccounts, "Thêm tài khoản");
             this.btnAddAccounts.UseVisualStyleBackColor = false;
             this.btnAddAccounts.Click += new System.EventHandler(this.btnAddAccounts_Click);
             // 
@@ -142,6 +146,7 @@
             this.btnEditAccounts.TabIndex = 3;
             this.btnEditAccounts.Text = "Sửa";
             this.btnEditAccounts.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnEditAccounts, "Sửa tài khoản");
             this.btnEditAccounts.UseVisualStyleBackColor = false;
             this.btnEditAccounts.Click += new System.EventHandler(this.btnEditAccounts_Click);
             // 
@@ -160,7 +165,7 @@
             this.btnDeleteAccounts.Style.ForeColor = System.Drawing.Color.White;
             this.btnDeleteAccounts.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDeleteAccounts.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteAccounts.TabIndex = 4;
+            this.btnDeleteAccounts.TabIndex = 2;
             this.btnDeleteAccounts.Text = "Xóa";
             this.btnDeleteAccounts.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeleteAccounts.UseVisualStyleBackColor = false;
@@ -181,9 +186,10 @@
             this.btnRecoverAccounts.Style.ForeColor = System.Drawing.Color.White;
             this.btnRecoverAccounts.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnRecoverAccounts.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRecoverAccounts.TabIndex = 5;
+            this.btnRecoverAccounts.TabIndex = 4;
             this.btnRecoverAccounts.Text = "Khôi phục";
             this.btnRecoverAccounts.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnRecoverAccounts, "Khôi phục tài khoản");
             this.btnRecoverAccounts.UseVisualStyleBackColor = false;
             this.btnRecoverAccounts.Click += new System.EventHandler(this.btnRecoverAccounts_Click);
             // 
@@ -193,7 +199,8 @@
             this.txtSearchAccounts.Location = new System.Drawing.Point(6, 16);
             this.txtSearchAccounts.Name = "txtSearchAccounts";
             this.txtSearchAccounts.Size = new System.Drawing.Size(251, 27);
-            this.txtSearchAccounts.TabIndex = 2;
+            this.txtSearchAccounts.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.txtSearchAccounts, "Nhập tên đăng nhập");
             // 
             // btnTraCuuAccounts
             // 
@@ -208,8 +215,9 @@
             this.btnTraCuuAccounts.Size = new System.Drawing.Size(118, 40);
             this.btnTraCuuAccounts.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuAccounts.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuAccounts.TabIndex = 0;
+            this.btnTraCuuAccounts.TabIndex = 6;
             this.btnTraCuuAccounts.Text = "Tra cứu";
+            this.toolTip1.SetToolTip(this.btnTraCuuAccounts, "Tra cứu tài khoản");
             this.btnTraCuuAccounts.UseVisualStyleBackColor = false;
             this.btnTraCuuAccounts.Click += new System.EventHandler(this.btnTraCuuAccounts_Click);
             // 
@@ -325,7 +333,8 @@
             this.btnNgayTao.Style.BackColor = System.Drawing.Color.White;
             this.btnNgayTao.Style.ForeColor = System.Drawing.Color.White;
             this.btnNgayTao.Style.Image = global::GUI.Properties.Resources.SearchIcon;
-            this.btnNgayTao.TabIndex = 33;
+            this.btnNgayTao.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.btnNgayTao, "Tìm ngày tạo");
             this.btnNgayTao.UseVisualStyleBackColor = false;
             this.btnNgayTao.Click += new System.EventHandler(this.btnNgayTao_Click);
             // 
@@ -337,7 +346,7 @@
             this.dtpNgayTao.Location = new System.Drawing.Point(226, 194);
             this.dtpNgayTao.Name = "dtpNgayTao";
             this.dtpNgayTao.Size = new System.Drawing.Size(124, 27);
-            this.dtpNgayTao.TabIndex = 32;
+            this.dtpNgayTao.TabIndex = 9;
             // 
             // cboPhanQuyen
             // 
@@ -354,7 +363,8 @@
             this.cboPhanQuyen.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboPhanQuyen.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboPhanQuyen.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.cboPhanQuyen.TabIndex = 31;
+            this.cboPhanQuyen.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.cboPhanQuyen, "Lọc theo phân quyền");
             this.cboPhanQuyen.SelectedIndexChanged += new System.EventHandler(this.cboPhanQuyen_SelectedIndexChanged);
             // 
             // lblSortTheoPhanQuyen
@@ -383,7 +393,8 @@
             this.cboSortAccountsID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboSortAccountsID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboSortAccountsID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.cboSortAccountsID.TabIndex = 29;
+            this.cboSortAccountsID.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.cboSortAccountsID, "Sắp xếp theo mã tài khoản");
             this.cboSortAccountsID.SelectedIndexChanged += new System.EventHandler(this.cboSortAccountsID_SelectedIndexChanged);
             // 
             // lblSortAccountsID
@@ -412,7 +423,8 @@
             this.cboStateAccounts.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboStateAccounts.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateAccounts.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.cboStateAccounts.TabIndex = 23;
+            this.cboStateAccounts.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.cboStateAccounts, "Lọc theo trạng thái");
             this.cboStateAccounts.SelectedIndexChanged += new System.EventHandler(this.cboStateAccounts_SelectedIndexChanged);
             // 
             // lblNgayTao
@@ -524,5 +536,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayTao;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
         private Syncfusion.WinForms.Controls.SfButton btnNgayTao;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

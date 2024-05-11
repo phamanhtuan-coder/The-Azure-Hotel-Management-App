@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSubmit = new Syncfusion.WinForms.Controls.SfButton();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.lblTenPhanQuyen = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@
             this.lblLoiUsername = new System.Windows.Forms.Label();
             this.lblLoiPassword = new System.Windows.Forms.Label();
             this.lblLoiRePassword = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // btnSubmit
@@ -49,8 +51,9 @@
             this.btnSubmit.Location = new System.Drawing.Point(378, 269);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
-            this.btnSubmit.TabIndex = 3;
+            this.btnSubmit.TabIndex = 6;
             this.btnSubmit.Text = "Submit";
+            this.toolTip1.SetToolTip(this.btnSubmit, "Gửi");
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnCancel
@@ -61,6 +64,7 @@
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Quay lại";
+            this.toolTip1.SetToolTip(this.btnCancel, "Quay lại tài khoản");
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // lblTenPhanQuyen
@@ -81,7 +85,8 @@
             this.cboPhanQuyen.Location = new System.Drawing.Point(276, 207);
             this.cboPhanQuyen.Name = "cboPhanQuyen";
             this.cboPhanQuyen.Size = new System.Drawing.Size(252, 30);
-            this.cboPhanQuyen.TabIndex = 7;
+            this.cboPhanQuyen.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.cboPhanQuyen, "Chọn phân quyền");
             // 
             // txtUsername
             // 
@@ -89,7 +94,8 @@
             this.txtUsername.Location = new System.Drawing.Point(276, 30);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(252, 27);
-            this.txtUsername.TabIndex = 8;
+            this.txtUsername.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.txtUsername, "Nhập tên đăng nhập");
             this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
             // 
             // txtPassword
@@ -99,7 +105,8 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(252, 27);
-            this.txtPassword.TabIndex = 9;
+            this.txtPassword.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.txtPassword, "Nhập mật khẩu");
             this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // label1
@@ -139,7 +146,8 @@
             this.txtRePw.Name = "txtRePw";
             this.txtRePw.PasswordChar = '*';
             this.txtRePw.Size = new System.Drawing.Size(252, 27);
-            this.txtRePw.TabIndex = 13;
+            this.txtRePw.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.txtRePw, "Nhập lại mật khẩu");
             this.txtRePw.Leave += new System.EventHandler(this.txtRePw_Leave);
             // 
             // lblLoiUsername
@@ -215,5 +223,6 @@
         private System.Windows.Forms.Label lblLoiUsername;
         private System.Windows.Forms.Label lblLoiPassword;
         private System.Windows.Forms.Label lblLoiRePassword;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
