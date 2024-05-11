@@ -12,19 +12,115 @@ namespace BLL
     {
         PhongDAL PhongDAL = new PhongDAL();
 
-        public List<PhongDTO> FilterTrangThai(string trangthai)
+        public List<PhongDTO> FilterTrangThai(string trangthai, int tt, int loai)
         {
-            if (trangthai == "Đang hoạt động")
+            if (!trangthai.Equals("Tất cả"))
             {
-                return PhongDAL.FilterTrangThai(true);
-            }
-            else if (trangthai == "Đã xóa")
-            {
-                return PhongDAL.FilterTrangThai(false);
+                if (tt != -1)
+                {
+                    if (loai != -1)
+                    {
+                        bool TT;
+                        if (trangthai.Equals("Đang hoạt động"))
+                        {
+                            TT = true;
+                        }
+                        else
+                        {
+                            TT = false;
+                        }
+                        List<PhongDTO> searchResults =
+                                       laydsp().Where
+                                       (item => item.TrangThai == TT && item.MaLoai == loai && item.MaTinhTrangPhong == tt).ToList();
+                        return searchResults;
+                    }
+                    else
+                    {
+                        bool TT;
+                        if (trangthai.Equals("Đang hoạt động"))
+                        {
+                            TT = true;
+                        }
+                        else
+                        {
+                            TT = false;
+                        }
+                        List<PhongDTO> searchResults =
+                                       laydsp().Where
+                                       (item => item.TrangThai == TT && item.MaTinhTrangPhong == tt).ToList();
+                        return searchResults;
+                    }
+                }
+                else
+                {
+                    if (loai != -1)
+                    {
+                        bool TT;
+                        if (trangthai.Equals("Đang hoạt động"))
+                        {
+                            TT = true;
+                        }
+                        else
+                        {
+                            TT = false;
+                        }
+                        List<PhongDTO> searchResults =
+                                       laydsp().Where
+                                       (item => item.TrangThai == TT && item.MaLoai == loai).ToList();
+                        return searchResults;
+                    }
+                    else
+                    {
+                        bool TT;
+                        if (trangthai.Equals("Đang hoạt động"))
+                        {
+                            TT = true;
+                        }
+                        else
+                        {
+                            TT = false;
+                        }
+                        List<PhongDTO> searchResults =
+                                       laydsp().Where
+                                       (item => item.TrangThai == TT).ToList();
+                        return searchResults;
+                    }
+                }
             }
             else
             {
-                return PhongDAL.laydsphong();
+                if (tt != -1)
+                {
+                    if (loai != -1)
+                    {
+                        List<PhongDTO> searchResults =
+                                       laydsp().Where
+                                       (item => item.MaLoai == loai && item.MaTinhTrangPhong == tt).ToList();
+                        return searchResults;
+                    }
+                    else
+                    {
+                        List<PhongDTO> searchResults =
+                                       laydsp().Where
+                                       (item => item.MaTinhTrangPhong == tt).ToList();
+                        return searchResults;
+                    }
+                }
+                else
+                {
+                    if (loai != -1)
+                    {
+                        List<PhongDTO> searchResults =
+                                       laydsp().Where
+                                       (item => item.MaLoai == loai).ToList();
+                        return searchResults;
+                    }
+                    else
+                    {
+                        List<PhongDTO> searchResults = laydsp();
+                        return searchResults;
+                    }
+                }
             }
         }
 

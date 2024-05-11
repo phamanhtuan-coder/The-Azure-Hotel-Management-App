@@ -11,11 +11,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using DTO;
+using Syncfusion.XPS;
 
 namespace GUI.UserControls
 {
     public partial class ucRoom : UserControl
     {
+        int LoaiPhong = -1;
+        int TTPhong = -1;
+        string trangthai = "Tất cả";
         public customMessageBox thongBao;
         frmPhong frm = new frmPhong();
         PhongBLL PhongBLL=new PhongBLL();
@@ -33,10 +37,27 @@ namespace GUI.UserControls
 
         private void ucRoom_Load(object sender, EventArgs e)
         {
+            LoadTenLoai();
+            LoadTenTT();
             layds();
             dgvRoom.AutoGenerateColumns = false;
             laycombo();
+        }
 
+        private void LoadTenTT()
+        {
+            List<TinhTrangPhongDTO> tam = TinhTrangPhongBLL.laydsttphong();
+            colMaTinhTrangPhong.DataSource = tam;
+            colMaTinhTrangPhong.DisplayMember = "TenTinhTrang";
+            colMaTinhTrangPhong.ValueMember = "MaTinhTrangPhong";
+        }
+
+        private void LoadTenLoai()
+        {
+            List<LoaiPhongDTO> tam = loaiPhongBLL.laydslphong();
+            colMaLoai.DataSource = tam;
+            colMaLoai.DisplayMember = "TenLoai";
+            colMaLoai.ValueMember = "MaLoai";
         }
 
         private void layds()
@@ -46,10 +67,49 @@ namespace GUI.UserControls
         }
 
         private void laycombo()
-        {
+        {          
             DuLieuChoComboBox.duLieuSort(cboSortRoomID);
             DuLieuChoComboBox.duLieuSort(cboSortPrice);
             DuLieuChoComboBox.duLieuFilter(cboStateRoom);
+            LoadcboTTPhong();
+            LoadcboLoaiPhong();
+        }
+
+        private void LoadcboLoaiPhong()
+        {
+            List<LoaiPhongDTO> tam = loaiPhongBLL.laydslphong();
+            List<LoaiPhongDTO> list = new List<LoaiPhongDTO> ();
+            LoaiPhongDTO loai = new LoaiPhongDTO();
+            loai.MaLoai = -1;
+            loai.TenLoai = "None";
+            list.Add( loai );
+            foreach(LoaiPhongDTO item in tam)
+            {
+                list.Add (item);
+            }
+            cboSortRoomType.DataSource = list;
+            cboSortRoomType.DisplayMember = "TenLoai";
+            cboSortRoomType.ValueMember = "MaLoai";
+            cboSortRoomType.SelectedIndex = 0;    
+            
+        }
+
+        private void LoadcboTTPhong()
+        {
+            List<TinhTrangPhongDTO> tam = TinhTrangPhongBLL.laydsttphong();
+            List<TinhTrangPhongDTO> list = new List<TinhTrangPhongDTO>();
+            TinhTrangPhongDTO tinhTrang = new TinhTrangPhongDTO();
+            tinhTrang.TenTinhTrang = "None";
+            tinhTrang.MaTinhTrangPhong = -1;
+            list.Add(tinhTrang);
+            foreach(TinhTrangPhongDTO item in tam)
+            {
+                list.Add(item);
+            }
+            cboRoomStatus.DataSource = list;
+            cboRoomStatus.DisplayMember = "TenTinhTrang";
+            cboRoomStatus.ValueMember = "MaTinhTrangPhong";
+            cboRoomStatus.SelectedIndex = 0;
 
         }
 
@@ -59,7 +119,7 @@ namespace GUI.UserControls
             frm.isAdd = true;
             frm.ShowDialog();
             dgvRoom.ClearSelection();
-            layds();
+            Filter();
         }
         private void LayDuLieuTuForm(frmPhong frm)
         {
@@ -84,7 +144,7 @@ namespace GUI.UserControls
                 LayDuLieuTuForm(frm);
                 frm.ShowDialog();
                 dgvRoom.ClearSelection();
-                layds();
+                Filter();
             }
             else
             {
@@ -109,7 +169,7 @@ namespace GUI.UserControls
                     {
 
                         dgvRoom.ClearSelection();
-                        layds();
+                        Filter();
                         thongBao = new customMessageBox(
                             "Xóa thành công dữ liệu có mã là: " + maphong + "!"
                         );
@@ -151,7 +211,7 @@ namespace GUI.UserControls
                     {
 
                         dgvRoom.ClearSelection();
-                        layds();
+                        Filter();
                         thongBao = new customMessageBox(
                             "Khôi phục thành công dữ liệu có mã là: " + maphong + "!"
                         );
@@ -193,11 +253,35 @@ namespace GUI.UserControls
 
         private void cboStateRoom_SelectedIndexChanged(object sender, EventArgs e)
         {
-            phongDTOs = PhongBLL.FilterTrangThai(cboStateRoom.Text);
+            trangthai = cboStateRoom.Text;
+            if (trangthai.Length > 0)
+            {
+                Filter();
+            }         
+        }    
+        private void cboRoomStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TTPhong = (int)cboRoomStatus.SelectedValue;
+            if (TTPhong >= -1)
+            {
+                Filter();
+            }
+        }
+
+        private void cboSortRoomType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoaiPhong = (int)cboSortRoomType.SelectedValue;
+            if (LoaiPhong >= -1)
+            {
+                Filter();
+            }
+        }
+        private void Filter()
+        {
+            phongDTOs = PhongBLL.FilterTrangThai(trangthai, TTPhong, LoaiPhong);
             dgvRoom.ClearSelection();
             dgvRoom.DataSource = phongDTOs;
         }
-
         private void cboSortPrice_SelectedIndexChanged(object sender, EventArgs e)
         {
             string sortOption = cboSortPrice.SelectedItem.ToString();
@@ -229,5 +313,7 @@ namespace GUI.UserControls
 
             dgvRoom.DataSource = phongDTOs;
         }
+
+        
     }
 }
