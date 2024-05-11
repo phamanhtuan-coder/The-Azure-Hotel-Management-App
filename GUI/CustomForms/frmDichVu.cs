@@ -56,6 +56,7 @@ namespace GUI.customForm
 
         public void laydltuform(DichVuDTO dv)
         {
+            
             dv.HinhAnh = ImageToByteArray(picHinhAnh.Image);
             dv.TenDV = txttendichvu.Text;
             dv.GiaDV = nudGia.Value;

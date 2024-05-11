@@ -129,7 +129,43 @@ namespace DAL
                     hoaDonDTO.TenTaiKhoan = reader["TenDangNhap"].ToString();
                     hoaDonDTOs.Add(hoaDonDTO);
                 }
+                reader.Close();
+                conn.Close();
+                return hoaDonDTOs;
+            }
+            catch (Exception)
+            {
+                return new List<HoaDonDTO>();
+            }
+        }
 
+        public List<HoaDonDTO> TruyVanDanhSachHoaDonTheoUser(int maKH)
+        {
+            hoaDonDTOs = new List<HoaDonDTO>();
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+                string strTV="Select * from HoaDon where MaKH=@MaKH and Cast (TrangThai as int) =1";
+                SqlCommand com = new SqlCommand(strTV, conn);
+                com.Parameters.AddWithValue("@MaKH", maKH);
+                SqlDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    HoaDonDTO hoaDonDTO = new HoaDonDTO();
+                    hoaDonDTO.MaHoaDon = (int)reader["MaHoaDon"];
+                    hoaDonDTO.MaKH = (int)reader["MaKH"];
+                    hoaDonDTO.MaNV = (int)reader["MaNV"];
+                    hoaDonDTO.MaThue = (int)reader["MaThue"];
+                    hoaDonDTO.NgayLapHoaDon = (DateTime)reader["NgayLapHoaDon"];
+                    hoaDonDTO.TongHoaDon = (decimal)reader["TongHoaDon"];
+                    hoaDonDTO.TienNhan = (decimal)reader["TienNhan"];
+                    hoaDonDTO.TienThoi = (decimal)reader["TienThoi"];
+                    byte[] trangThaiBytes = (byte[])reader["TrangThai"];
+                    hoaDonDTO.TrangThai = BitConverter.ToBoolean(trangThaiBytes, 0);
+                    hoaDonDTOs.Add(hoaDonDTO);
+                }
+                reader.Close();
                 conn.Close();
                 return hoaDonDTOs;
             }

@@ -61,7 +61,7 @@ namespace DAL
                 conn.Close();
                 return kq > 0;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 return false;

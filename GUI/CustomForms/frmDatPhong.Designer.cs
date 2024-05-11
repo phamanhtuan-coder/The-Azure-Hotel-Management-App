@@ -48,9 +48,9 @@
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(427, 274);
+            this.btnSubmit.Location = new System.Drawing.Point(349, 226);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(150, 50);
+            this.btnSubmit.Size = new System.Drawing.Size(174, 50);
             this.btnSubmit.TabIndex = 11;
             this.btnSubmit.Text = "Submit";
             this.toolTip1.SetToolTip(this.btnSubmit, "Gửi");
@@ -59,9 +59,9 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(235, 274);
+            this.btnCancel.Location = new System.Drawing.Point(107, 226);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(150, 50);
+            this.btnCancel.Size = new System.Drawing.Size(174, 50);
             this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "Quay lại";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -138,6 +138,7 @@
             this.dtpNgayDat.Name = "dtpNgayDat";
             this.dtpNgayDat.Size = new System.Drawing.Size(180, 27);
             this.dtpNgayDat.TabIndex = 7;
+            this.dtpNgayDat.ValueChanged += new System.EventHandler(this.dtpNgayDat_ValueChanged);
             // 
             // nudSoLuongKhach
             // 
@@ -166,7 +167,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(600, 350);
+            this.ClientSize = new System.Drawing.Size(600, 295);
             this.Controls.Add(this.nudSoLuongKhach);
             this.Controls.Add(this.dtpNgayDat);
             this.Controls.Add(this.btnTaoKH);

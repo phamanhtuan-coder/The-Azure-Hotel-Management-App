@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhong));
             this.btnSubmit = new Syncfusion.WinForms.Controls.SfButton();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.btnChonHinh = new Syncfusion.WinForms.Controls.SfButton();
@@ -85,13 +84,14 @@
             // 
             // picHinhPhong
             // 
-            this.picHinhPhong.Image = ((System.Drawing.Image)(resources.GetObject("picHinhPhong.Image")));
+            this.picHinhPhong.Image = global::GUI.Properties.Resources.no_pictures;
             this.picHinhPhong.Location = new System.Drawing.Point(42, 28);
             this.picHinhPhong.Name = "picHinhPhong";
             this.picHinhPhong.Size = new System.Drawing.Size(248, 270);
             this.picHinhPhong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picHinhPhong.TabIndex = 17;
             this.picHinhPhong.TabStop = false;
+            this.picHinhPhong.Click += new System.EventHandler(this.picHinhPhong_Click);
             // 
             // lblMaLoai
             // 

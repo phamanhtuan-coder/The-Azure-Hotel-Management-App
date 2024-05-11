@@ -33,21 +33,14 @@ namespace GUI.customForm
             if (isAdd)
             {
                 txtMaKH.Clear();
-                PhongDTOs = PhongBLL.laydsp();
-                cboMaPHG.DataSource = PhongDTOs;
-                cboMaPHG.DisplayMember = "MaPHG";
-                cboMaPHG.ValueMember = "MaPHG";
                 dtpNgayDat.Value = DateTime.Now;
+                LoadDSPhong();
                 nudSoLuongKhach.Value = 1;
             }
             else
             {
-                
                 txtMaKH.Text =DatPhongDTO.MaKH.ToString();
-                PhongDTOs = PhongBLL.laydsp();
-                cboMaPHG.DataSource = PhongDTOs;
-                cboMaPHG.DisplayMember = "MaPHG";
-                cboMaPHG.ValueMember = "MaPHG";
+                LoadDSPhong();
                 cboMaPHG.SelectedItem = DatPhongDTO.MaPHG;
                 nudSoLuongKhach.Value = DatPhongDTO.SoLuongKH;
             }
@@ -56,7 +49,16 @@ namespace GUI.customForm
 
 
         }
-        private void laydltuform(DatPhongDTO p)
+
+        private void LoadDSPhong()
+        {
+            PhongDTOs = PhongBLL.LayDsPhongDaSanSang(dtpNgayDat.Value);
+            cboMaPHG.DataSource = PhongDTOs;
+            cboMaPHG.DisplayMember = "MaPHG";
+            cboMaPHG.ValueMember = "MaPHG";
+        }
+
+            private void laydltuform(DatPhongDTO p)
         {
             
             p.MaPHG = int.Parse(cboMaPHG.Text);
@@ -118,6 +120,11 @@ namespace GUI.customForm
             frmKhachHang taoKhachHang = new frmKhachHang();
             taoKhachHang.isAdd = true;
             taoKhachHang.ShowDialog();
+        }
+
+        private void dtpNgayDat_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -836,6 +836,7 @@ namespace GUI
                         flpHousekeepingManagement.Visible = false;
                         menuActivated(btnRoomBooking);
                         ucRoomBooking Home = new ucRoomBooking();
+                        Home.maKH = this.userKH.MaKH;
                         openForm(Home);
                     }
                     break;

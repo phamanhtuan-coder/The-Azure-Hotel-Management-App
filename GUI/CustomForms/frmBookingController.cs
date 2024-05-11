@@ -14,36 +14,38 @@ namespace GUI.customForm
 {
     public partial class frmBookingController : Form
     {
-        private string username;
-        private int maPhong;
-        private string ngayDat;
-        private int soKhach;
+        public string username { get; set; }
+        public int maPhong { get; set; }
+        public string ngayDat { get; set; }
+        public int soKhach { get; set; }
+        public int maKH { get; set; }
+        KhachHangBLL khachHangBLL = new KhachHangBLL();
 
         public frmBookingController()
         {
             InitializeComponent();
         }
 
-        public frmBookingController(string username, int maPhong, string ngayDat, int soKhach)
-        {
-            InitializeComponent();
-            this.username = username;
-            this.maPhong = maPhong;
-            this.ngayDat = ngayDat;
-            this.soKhach = soKhach;
-        }
-
+       
         private void frmBookingController_Load(object sender, EventArgs e)
         {
+            dtpNgayDat.MinDate = DateTime.Now;
             LoadDuLieu();
         }
 
         private void LoadDuLieu()
         {
             txtUsername.Enabled = false;
-            txtUsername.Text = username;
+            txtUsername.Text = khachHangBLL.TruyVanUsername(maKH);
             dtpNgayDat.Enabled = false;
-            dtpNgayDat.Text = ngayDat;
+            if (DateTime.Parse(ngayDat) < DateTime.Now)
+            {
+                dtpNgayDat.Value = DateTime.Now;
+            }
+            else
+            {
+                dtpNgayDat.Text = ngayDat;
+            }
             txtMaPHG.Enabled = false;
             txtMaPHG.Text = maPhong.ToString();
             nudSoLuongKhach.Enabled = false;
@@ -56,8 +58,7 @@ namespace GUI.customForm
             datPhong.MaPHG = int.Parse(txtMaPHG.Text) ;
             datPhong.SoLuongKH = (int) nudSoLuongKhach.Value;
             datPhong.NgayDatPhong = dtpNgayDat.Value;
-            int maKH= (new KhachHangBLL()).LayMaKH(txtUsername.Text.Trim());
-            datPhong.MaKH = maKH;
+            datPhong.MaKH = this.maKH;
             bool check = (new DatPhongBLL()).them(datPhong);
             customMessageBox thongBao;
             if (check)
