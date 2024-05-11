@@ -549,6 +549,16 @@ namespace GUI
         private void cpicProfile_Click(object sender, EventArgs e)
         {
             ucPersonal personal = new ucPersonal();
+            if (user!=null)
+            {
+                personal.user = user;
+                personal.userKH = null;
+            }
+            else
+            {
+                personal.userKH = userKH;
+                personal.user = null;
+            }
             openForm(personal);
         }
 
@@ -787,7 +797,7 @@ namespace GUI
             this.FormBorderStyle = FormBorderStyle.Sizable;
         }
 
-        private void frmMain_Load(object sender, EventArgs e)
+        public void frmMain_Load(object sender, EventArgs e)
         {
             LoadHinhAnhUser();
             LoadTenUser();
@@ -797,7 +807,7 @@ namespace GUI
             openForm(Home);
         }
 
-        private void LoadTenUser()
+        public void LoadTenUser()
         {
             if (this.user != null)
             {
@@ -825,7 +835,7 @@ namespace GUI
             }
         }
 
-        private void LoadHinhAnhUser()
+        public void LoadHinhAnhUser()
         {
             if (this.user != null)
             {

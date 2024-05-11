@@ -31,14 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucPersonal));
             this.spcPersonal = new System.Windows.Forms.SplitContainer();
             this.panCustomerController = new System.Windows.Forms.Panel();
+            this.cboHangTV = new System.Windows.Forms.ComboBox();
             this.btnTraCuuHD = new Syncfusion.WinForms.Controls.SfButton();
             this.btnTraCuuDanhGia = new Syncfusion.WinForms.Controls.SfButton();
             this.btnLichSuDP = new Syncfusion.WinForms.Controls.SfButton();
             this.lblHangTV = new System.Windows.Forms.Label();
-            this.txtHangThanhVien = new System.Windows.Forms.TextBox();
             this.btnChonHinh = new Syncfusion.WinForms.Controls.SfButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picAva = new System.Windows.Forms.PictureBox();
             this.grpThongTin = new System.Windows.Forms.GroupBox();
+            this.radNu = new System.Windows.Forms.RadioButton();
+            this.radNam = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnResetThongTin = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnCapNhat = new Syncfusion.WinForms.Controls.SfButton();
             this.rtxtDiaChi = new System.Windows.Forms.RichTextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
@@ -54,18 +59,18 @@
             this.grpThayDoiMatKhau = new System.Windows.Forms.GroupBox();
             this.txtPW = new System.Windows.Forms.TextBox();
             this.lblPWcu = new System.Windows.Forms.Label();
+            this.btnResetPW = new Syncfusion.WinForms.Controls.SfButton();
             this.txtPWNew = new System.Windows.Forms.TextBox();
+            this.btnLuu = new Syncfusion.WinForms.Controls.SfButton();
             this.txtRePw = new System.Windows.Forms.TextBox();
             this.lblPWMoi = new System.Windows.Forms.Label();
             this.lblRePW = new System.Windows.Forms.Label();
-            this.btnReset = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnLuu = new Syncfusion.WinForms.Controls.SfButton();
             ((System.ComponentModel.ISupportInitialize)(this.spcPersonal)).BeginInit();
             this.spcPersonal.Panel1.SuspendLayout();
             this.spcPersonal.Panel2.SuspendLayout();
             this.spcPersonal.SuspendLayout();
             this.panCustomerController.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAva)).BeginInit();
             this.grpThongTin.SuspendLayout();
             this.grpThayDoiMatKhau.SuspendLayout();
             this.SuspendLayout();
@@ -81,31 +86,41 @@
             this.spcPersonal.Panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.spcPersonal.Panel1.Controls.Add(this.panCustomerController);
             this.spcPersonal.Panel1.Controls.Add(this.btnChonHinh);
-            this.spcPersonal.Panel1.Controls.Add(this.pictureBox1);
+            this.spcPersonal.Panel1.Controls.Add(this.picAva);
             // 
             // spcPersonal.Panel2
             // 
             this.spcPersonal.Panel2.BackColor = System.Drawing.Color.Lavender;
             this.spcPersonal.Panel2.Controls.Add(this.grpThongTin);
             this.spcPersonal.Panel2.Controls.Add(this.grpThayDoiMatKhau);
-            this.spcPersonal.Panel2.Controls.Add(this.btnReset);
-            this.spcPersonal.Panel2.Controls.Add(this.btnLuu);
             this.spcPersonal.Size = new System.Drawing.Size(1370, 840);
             this.spcPersonal.SplitterDistance = 366;
             this.spcPersonal.TabIndex = 0;
             // 
             // panCustomerController
             // 
+            this.panCustomerController.Controls.Add(this.cboHangTV);
             this.panCustomerController.Controls.Add(this.btnTraCuuHD);
             this.panCustomerController.Controls.Add(this.btnTraCuuDanhGia);
             this.panCustomerController.Controls.Add(this.btnLichSuDP);
             this.panCustomerController.Controls.Add(this.lblHangTV);
-            this.panCustomerController.Controls.Add(this.txtHangThanhVien);
             this.panCustomerController.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panCustomerController.Location = new System.Drawing.Point(0, 370);
             this.panCustomerController.Name = "panCustomerController";
             this.panCustomerController.Size = new System.Drawing.Size(366, 470);
             this.panCustomerController.TabIndex = 36;
+            // 
+            // cboHangTV
+            // 
+            this.cboHangTV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboHangTV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cboHangTV.Enabled = false;
+            this.cboHangTV.FormattingEnabled = true;
+            this.cboHangTV.Location = new System.Drawing.Point(65, 67);
+            this.cboHangTV.Name = "cboHangTV";
+            this.cboHangTV.Size = new System.Drawing.Size(225, 50);
+            this.cboHangTV.TabIndex = 41;
             // 
             // btnTraCuuHD
             // 
@@ -169,17 +184,6 @@
             this.lblHangTV.TabIndex = 37;
             this.lblHangTV.Text = "Hạng thành viên của bạn là";
             // 
-            // txtHangThanhVien
-            // 
-            this.txtHangThanhVien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtHangThanhVien.Enabled = false;
-            this.txtHangThanhVien.Location = new System.Drawing.Point(65, 70);
-            this.txtHangThanhVien.Name = "txtHangThanhVien";
-            this.txtHangThanhVien.ReadOnly = true;
-            this.txtHangThanhVien.Size = new System.Drawing.Size(246, 27);
-            this.txtHangThanhVien.TabIndex = 36;
-            // 
             // btnChonHinh
             // 
             this.btnChonHinh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -187,31 +191,38 @@
             this.btnChonHinh.BackColor = System.Drawing.Color.SteelBlue;
             this.btnChonHinh.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChonHinh.ForeColor = System.Drawing.Color.White;
-            this.btnChonHinh.Location = new System.Drawing.Point(106, 278);
+            this.btnChonHinh.Location = new System.Drawing.Point(119, 278);
             this.btnChonHinh.Name = "btnChonHinh";
-            this.btnChonHinh.Size = new System.Drawing.Size(159, 56);
+            this.btnChonHinh.Size = new System.Drawing.Size(133, 56);
             this.btnChonHinh.Style.BackColor = System.Drawing.Color.SteelBlue;
             this.btnChonHinh.Style.ForeColor = System.Drawing.Color.White;
             this.btnChonHinh.TabIndex = 1;
             this.btnChonHinh.Text = "Thay đổi hình";
             this.btnChonHinh.UseVisualStyleBackColor = false;
+            this.btnChonHinh.Click += new System.EventHandler(this.btnChonHinh_Click);
             // 
-            // pictureBox1
+            // picAva
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.picAva.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(65, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(246, 227);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.picAva.Image = ((System.Drawing.Image)(resources.GetObject("picAva.Image")));
+            this.picAva.Location = new System.Drawing.Point(65, 24);
+            this.picAva.Name = "picAva";
+            this.picAva.Size = new System.Drawing.Size(246, 227);
+            this.picAva.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAva.TabIndex = 0;
+            this.picAva.TabStop = false;
+            this.picAva.Click += new System.EventHandler(this.picAva_Click);
             // 
             // grpThongTin
             // 
             this.grpThongTin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpThongTin.Controls.Add(this.radNu);
+            this.grpThongTin.Controls.Add(this.radNam);
+            this.grpThongTin.Controls.Add(this.label1);
+            this.grpThongTin.Controls.Add(this.btnResetThongTin);
+            this.grpThongTin.Controls.Add(this.btnCapNhat);
             this.grpThongTin.Controls.Add(this.rtxtDiaChi);
             this.grpThongTin.Controls.Add(this.txtEmail);
             this.grpThongTin.Controls.Add(this.txtSDT);
@@ -227,10 +238,75 @@
             this.grpThongTin.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpThongTin.Location = new System.Drawing.Point(165, 24);
             this.grpThongTin.Name = "grpThongTin";
-            this.grpThongTin.Size = new System.Drawing.Size(730, 480);
+            this.grpThongTin.Size = new System.Drawing.Size(730, 492);
             this.grpThongTin.TabIndex = 19;
             this.grpThongTin.TabStop = false;
             this.grpThongTin.Text = "Thay đổi thông tin cá nhân";
+            // 
+            // radNu
+            // 
+            this.radNu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radNu.AutoSize = true;
+            this.radNu.Location = new System.Drawing.Point(427, 242);
+            this.radNu.Name = "radNu";
+            this.radNu.Size = new System.Drawing.Size(52, 26);
+            this.radNu.TabIndex = 36;
+            this.radNu.TabStop = true;
+            this.radNu.Text = "Nữ";
+            this.radNu.UseVisualStyleBackColor = true;
+            // 
+            // radNam
+            // 
+            this.radNam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radNam.AutoSize = true;
+            this.radNam.Location = new System.Drawing.Point(319, 242);
+            this.radNam.Name = "radNam";
+            this.radNam.Size = new System.Drawing.Size(68, 26);
+            this.radNam.TabIndex = 35;
+            this.radNam.TabStop = true;
+            this.radNam.Text = "Nam";
+            this.radNam.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(109, 244);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 22);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Giới tính";
+            // 
+            // btnResetThongTin
+            // 
+            this.btnResetThongTin.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnResetThongTin.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnResetThongTin.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetThongTin.ForeColor = System.Drawing.Color.White;
+            this.btnResetThongTin.Location = new System.Drawing.Point(195, 442);
+            this.btnResetThongTin.Name = "btnResetThongTin";
+            this.btnResetThongTin.Size = new System.Drawing.Size(121, 40);
+            this.btnResetThongTin.Style.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnResetThongTin.Style.ForeColor = System.Drawing.Color.White;
+            this.btnResetThongTin.TabIndex = 33;
+            this.btnResetThongTin.Text = "Reset";
+            this.btnResetThongTin.UseVisualStyleBackColor = false;
+            this.btnResetThongTin.Click += new System.EventHandler(this.btnResetThongTin_Click);
+            // 
+            // btnCapNhat
+            // 
+            this.btnCapNhat.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCapNhat.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnCapNhat.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapNhat.ForeColor = System.Drawing.Color.White;
+            this.btnCapNhat.Location = new System.Drawing.Point(372, 442);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(121, 40);
+            this.btnCapNhat.Style.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnCapNhat.Style.ForeColor = System.Drawing.Color.White;
+            this.btnCapNhat.TabIndex = 32;
+            this.btnCapNhat.Text = "Cập nhật";
+            this.btnCapNhat.UseVisualStyleBackColor = false;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // rtxtDiaChi
             // 
@@ -238,7 +314,7 @@
             this.rtxtDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtxtDiaChi.Location = new System.Drawing.Point(319, 343);
             this.rtxtDiaChi.Name = "rtxtDiaChi";
-            this.rtxtDiaChi.Size = new System.Drawing.Size(316, 107);
+            this.rtxtDiaChi.Size = new System.Drawing.Size(316, 70);
             this.rtxtDiaChi.TabIndex = 31;
             this.rtxtDiaChi.Text = "";
             // 
@@ -246,7 +322,7 @@
             // 
             this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail.Location = new System.Drawing.Point(319, 283);
+            this.txtEmail.Location = new System.Drawing.Point(319, 290);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(316, 20);
             this.txtEmail.TabIndex = 30;
@@ -255,7 +331,7 @@
             // 
             this.txtSDT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSDT.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSDT.Location = new System.Drawing.Point(319, 223);
+            this.txtSDT.Location = new System.Drawing.Point(319, 194);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(316, 20);
             this.txtSDT.TabIndex = 29;
@@ -265,7 +341,7 @@
             this.dtpNgaySinh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(319, 163);
+            this.dtpNgaySinh.Location = new System.Drawing.Point(319, 139);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(316, 27);
             this.dtpNgaySinh.TabIndex = 28;
@@ -275,7 +351,7 @@
             this.txtCCCD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCCCD.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCCCD.Enabled = false;
-            this.txtCCCD.Location = new System.Drawing.Point(319, 103);
+            this.txtCCCD.Location = new System.Drawing.Point(319, 91);
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.ReadOnly = true;
             this.txtCCCD.Size = new System.Drawing.Size(316, 20);
@@ -284,7 +360,7 @@
             // lblDiaChi
             // 
             this.lblDiaChi.AutoSize = true;
-            this.lblDiaChi.Location = new System.Drawing.Point(109, 346);
+            this.lblDiaChi.Location = new System.Drawing.Point(109, 344);
             this.lblDiaChi.Name = "lblDiaChi";
             this.lblDiaChi.Size = new System.Drawing.Size(68, 22);
             this.lblDiaChi.TabIndex = 26;
@@ -293,7 +369,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(109, 288);
+            this.lblEmail.Location = new System.Drawing.Point(110, 296);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(58, 22);
             this.lblEmail.TabIndex = 25;
@@ -302,7 +378,7 @@
             // lblSDT
             // 
             this.lblSDT.AutoSize = true;
-            this.lblSDT.Location = new System.Drawing.Point(109, 228);
+            this.lblSDT.Location = new System.Drawing.Point(109, 194);
             this.lblSDT.Name = "lblSDT";
             this.lblSDT.Size = new System.Drawing.Size(120, 22);
             this.lblSDT.TabIndex = 24;
@@ -311,7 +387,7 @@
             // lblNgaySinh
             // 
             this.lblNgaySinh.AutoSize = true;
-            this.lblNgaySinh.Location = new System.Drawing.Point(109, 168);
+            this.lblNgaySinh.Location = new System.Drawing.Point(109, 143);
             this.lblNgaySinh.Name = "lblNgaySinh";
             this.lblNgaySinh.Size = new System.Drawing.Size(94, 22);
             this.lblNgaySinh.TabIndex = 23;
@@ -320,7 +396,7 @@
             // lblCCCD
             // 
             this.lblCCCD.AutoSize = true;
-            this.lblCCCD.Location = new System.Drawing.Point(109, 108);
+            this.lblCCCD.Location = new System.Drawing.Point(109, 91);
             this.lblCCCD.Name = "lblCCCD";
             this.lblCCCD.Size = new System.Drawing.Size(59, 22);
             this.lblCCCD.TabIndex = 22;
@@ -338,7 +414,7 @@
             // lblHoTen
             // 
             this.lblHoTen.AutoSize = true;
-            this.lblHoTen.Location = new System.Drawing.Point(109, 48);
+            this.lblHoTen.Location = new System.Drawing.Point(109, 41);
             this.lblHoTen.Name = "lblHoTen";
             this.lblHoTen.Size = new System.Drawing.Size(93, 22);
             this.lblHoTen.TabIndex = 20;
@@ -350,14 +426,16 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpThayDoiMatKhau.Controls.Add(this.txtPW);
             this.grpThayDoiMatKhau.Controls.Add(this.lblPWcu);
+            this.grpThayDoiMatKhau.Controls.Add(this.btnResetPW);
             this.grpThayDoiMatKhau.Controls.Add(this.txtPWNew);
+            this.grpThayDoiMatKhau.Controls.Add(this.btnLuu);
             this.grpThayDoiMatKhau.Controls.Add(this.txtRePw);
             this.grpThayDoiMatKhau.Controls.Add(this.lblPWMoi);
             this.grpThayDoiMatKhau.Controls.Add(this.lblRePW);
             this.grpThayDoiMatKhau.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpThayDoiMatKhau.Location = new System.Drawing.Point(165, 533);
             this.grpThayDoiMatKhau.Name = "grpThayDoiMatKhau";
-            this.grpThayDoiMatKhau.Size = new System.Drawing.Size(730, 211);
+            this.grpThayDoiMatKhau.Size = new System.Drawing.Size(730, 277);
             this.grpThayDoiMatKhau.TabIndex = 18;
             this.grpThayDoiMatKhau.TabStop = false;
             this.grpThayDoiMatKhau.Text = "Thay đổi mật khẩu";
@@ -384,6 +462,21 @@
             this.lblPWcu.TabIndex = 19;
             this.lblPWcu.Text = "Password hiện tại";
             // 
+            // btnResetPW
+            // 
+            this.btnResetPW.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnResetPW.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetPW.ForeColor = System.Drawing.Color.White;
+            this.btnResetPW.Location = new System.Drawing.Point(195, 221);
+            this.btnResetPW.Name = "btnResetPW";
+            this.btnResetPW.Size = new System.Drawing.Size(121, 39);
+            this.btnResetPW.Style.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnResetPW.Style.ForeColor = System.Drawing.Color.White;
+            this.btnResetPW.TabIndex = 3;
+            this.btnResetPW.Text = "Reset";
+            this.btnResetPW.UseVisualStyleBackColor = false;
+            this.btnResetPW.Click += new System.EventHandler(this.btnResetPW_Click);
+            // 
             // txtPWNew
             // 
             this.txtPWNew.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -394,6 +487,22 @@
             this.txtPWNew.PasswordChar = '*';
             this.txtPWNew.Size = new System.Drawing.Size(316, 20);
             this.txtPWNew.TabIndex = 14;
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLuu.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnLuu.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.ForeColor = System.Drawing.Color.White;
+            this.btnLuu.Location = new System.Drawing.Point(372, 221);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(121, 39);
+            this.btnLuu.Style.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnLuu.Style.ForeColor = System.Drawing.Color.White;
+            this.btnLuu.TabIndex = 2;
+            this.btnLuu.Text = "Lưu thay đổi";
+            this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // txtRePw
             // 
@@ -428,35 +537,6 @@
             this.lblRePW.TabIndex = 16;
             this.lblRePW.Text = "Nhập lại password";
             // 
-            // btnReset
-            // 
-            this.btnReset.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnReset.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(360, 761);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(159, 56);
-            this.btnReset.Style.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnReset.Style.ForeColor = System.Drawing.Color.White;
-            this.btnReset.TabIndex = 3;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = false;
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLuu.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnLuu.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(537, 761);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(159, 56);
-            this.btnLuu.Style.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnLuu.Style.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.TabIndex = 2;
-            this.btnLuu.Text = "Lưu thay đổi";
-            this.btnLuu.UseVisualStyleBackColor = false;
-            // 
             // ucPersonal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -472,7 +552,7 @@
             this.spcPersonal.ResumeLayout(false);
             this.panCustomerController.ResumeLayout(false);
             this.panCustomerController.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAva)).EndInit();
             this.grpThongTin.ResumeLayout(false);
             this.grpThongTin.PerformLayout();
             this.grpThayDoiMatKhau.ResumeLayout(false);
@@ -484,9 +564,9 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer spcPersonal;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picAva;
         private Syncfusion.WinForms.Controls.SfButton btnChonHinh;
-        private Syncfusion.WinForms.Controls.SfButton btnReset;
+        private Syncfusion.WinForms.Controls.SfButton btnResetPW;
         private Syncfusion.WinForms.Controls.SfButton btnLuu;
         private System.Windows.Forms.GroupBox grpThayDoiMatKhau;
         private System.Windows.Forms.TextBox txtPW;
@@ -513,6 +593,11 @@
         private Syncfusion.WinForms.Controls.SfButton btnTraCuuDanhGia;
         private Syncfusion.WinForms.Controls.SfButton btnLichSuDP;
         private System.Windows.Forms.Label lblHangTV;
-        private System.Windows.Forms.TextBox txtHangThanhVien;
+        private Syncfusion.WinForms.Controls.SfButton btnResetThongTin;
+        private Syncfusion.WinForms.Controls.SfButton btnCapNhat;
+        private System.Windows.Forms.ComboBox cboHangTV;
+        private System.Windows.Forms.RadioButton radNu;
+        private System.Windows.Forms.RadioButton radNam;
+        private System.Windows.Forms.Label label1;
     }
 }

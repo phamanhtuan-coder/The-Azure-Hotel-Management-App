@@ -177,6 +177,7 @@
             this.cboStateRating.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboStateRating.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStateRating.TabIndex = 3;
+            this.cboStateRating.SelectedIndexChanged += new System.EventHandler(this.cboStateRating_SelectedIndexChanged);
             // 
             // spcQuery
             // 
@@ -237,6 +238,7 @@
             this.dtpNgayDanhGia.Name = "dtpNgayDanhGia";
             this.dtpNgayDanhGia.Size = new System.Drawing.Size(200, 27);
             this.dtpNgayDanhGia.TabIndex = 31;
+            this.dtpNgayDanhGia.ValueChanged += new System.EventHandler(this.dtpNgayDanhGia_ValueChanged);
             // 
             // lblNgayDanhGia
             // 
@@ -265,6 +267,7 @@
             this.cboRatingValue.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboRatingValue.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRatingValue.TabIndex = 23;
+            this.cboRatingValue.SelectedIndexChanged += new System.EventHandler(this.cboRatingValue_SelectedIndexChanged);
             // 
             // lblRatingValue
             // 

@@ -70,5 +70,7 @@ namespace BLL
         {
             return hangThanhVienDAL.dgvHNV();
         }
+
+       
     }
 }

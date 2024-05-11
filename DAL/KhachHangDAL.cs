@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,6 +59,69 @@ namespace DAL
                 return AddKhachHangDAL(khachHangDTO);
             }
             else
+            {
+                return false;
+            }
+        }
+
+        public bool CapNhatHinhAnh(int maKH, byte[] hinhAnh)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+                string strCapNhat = "Update KhachHang set HinhAnh=@HinhAnh where MaKH=@MaKH ";
+                SqlCommand com = new SqlCommand(strCapNhat, conn);
+                com.Parameters.AddWithValue("@HinhAnh", hinhAnh);
+                com.Parameters.AddWithValue("@MaKH", maKH);
+
+
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+
+                if (count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool EditKhachHang(KhachHangDTO khachHang)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+                string strEdit = " UPDATE KhachHang SET HinhAnh = @HinhAnh, HoTenKH = @HoTenKH, SDT = @SDT, Email = @Email, NgaySinh = @NgaySinh,DiaChi = @DiaChi, GioiTinh = @GioiTinh WHERE KhachHang.MaKH=@MaKH";
+                SqlCommand com = new SqlCommand(strEdit, conn);
+
+                com.Parameters.AddWithValue("@MaKH", khachHang.MaKH);
+                com.Parameters.AddWithValue("@HinhAnh", khachHang.HinhAnh);
+                com.Parameters.AddWithValue("@HoTenKH", khachHang.HoTenKH);
+                com.Parameters.AddWithValue("@SDT", khachHang.SDT);
+                com.Parameters.AddWithValue("@Email", khachHang.Email);
+                com.Parameters.AddWithValue("@NgaySinh", khachHang.NgaySinh);
+                com.Parameters.AddWithValue("@DiaChi", khachHang.DiaChi);
+                com.Parameters.AddWithValue("@GioiTinh", khachHang.GioiTinh);
+
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+                if (count > 0)
+                {
+                    return true;
+                }
+                else return false;
+
+            }
+            catch (Exception)
             {
                 return false;
             }
@@ -195,6 +259,30 @@ namespace DAL
             catch (Exception)
             {
                 return false;
+            }
+        }
+
+        public int LayMaKH(string v)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+                string strTV= "Select MaKH from KhachHang KH join BangTaiKhoan TK on KH.MaTaiKhoan = TK.MaTaiKhoan where TenTaiKhoan=@TenTaiKhoan";
+                SqlCommand com = new SqlCommand(strTV, conn);
+                com.Parameters.AddWithValue("@TenTaiKhoan", v);
+                var kq = com.ExecuteScalar();
+                conn.Close();
+                if (kq!= null)
+                {
+                    return (int) kq;
+                }
+                return -1;
+               
+            }
+            catch (Exception)
+            {
+                return -1;
             }
         }
 

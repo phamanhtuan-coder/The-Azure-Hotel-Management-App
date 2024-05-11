@@ -56,10 +56,10 @@ namespace GUI.UserControls
                 DialogResult dr = thongBao.ShowDialog();
                 if (dr == DialogResult.OK)
                 {
-                    String maDanhGia = dgvRating
+                    int maDanhGia = (int) dgvRating
                         .SelectedRows[0]
-                        .Cells["MaDanhGia"]
-                        .Value.ToString();
+                        .Cells["colMaDG"]
+                        .Value;
                     danhGiaBLL = new DanhGiaBLL();
                     bool check = danhGiaBLL.XoaDanhGia(maDanhGia);
                     if (check)
@@ -103,10 +103,10 @@ namespace GUI.UserControls
                 DialogResult dr = thongBao.ShowDialog();
                 if (dr == DialogResult.OK)
                 {
-                    String maDanhGia = dgvRating
+                    int maDanhGia = (int) dgvRating
                         .SelectedRows[0]
-                        .Cells["MaDanhGia"]
-                        .Value.ToString();
+                        .Cells["colMaDG"]
+                        .Value;
                     danhGiaBLL = new DanhGiaBLL();
                     bool check = danhGiaBLL.KhoiPhucDanhGia(maDanhGia);
                     if (check)
@@ -131,6 +131,34 @@ namespace GUI.UserControls
                 thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
                 thongBao.ShowDialog();
             }
+        }
+
+        private void cboRatingValue_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sortOption = cboRatingValue .SelectedItem.ToString();
+            switch (sortOption)
+            {
+                case "Giảm dần":
+                    dsDanhGia =dsDanhGia.OrderByDescending(item => item.DiemDanhGia).ToList();
+                    break;
+                default:
+                    dsDanhGia = dsDanhGia.OrderBy(item => item.DiemDanhGia).ToList();
+                    break;
+            }
+
+            dgvRating. DataSource = dsDanhGia;
+        }
+
+        private void dtpNgayDanhGia_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboStateRating_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dsDanhGia = danhGiaBLL .FilterTrangThai(cboStateRating.Text);
+            dgvRating.ClearSelection();
+            dgvRating.DataSource = dsDanhGia;
         }
     }
 }

@@ -121,7 +121,17 @@ namespace GUI.UserControls
 
             btnDatPhong.Click += (sender, e) =>
             {
-                string username = "abc";
+                frmMain parentForm = this.ParentForm as frmMain;
+                string username = string.Empty;
+                if (parentForm.user!=null)
+                {
+                    username = parentForm.user.TenTaiKhoan;
+                }
+                else
+                {
+                   username = parentForm.userKH.TenDangNhap;
+                }
+               
                 int maPhong = phong.MaPHG;
                 string ngayDat = dtpCheckInDate.Value.ToString();
                 int soKhach = (int)nudSucChua.Value;
@@ -134,7 +144,20 @@ namespace GUI.UserControls
 
             chiaPanel.SizeChanged += (sender, e) =>
             {
-                chiaPanel.SplitterDistance = chiaPanel.ClientSize.Width / 3;
+                int splitterDistance = chiaPanel.ClientSize.Width / 3;
+
+                
+                if (splitterDistance < chiaPanel.Panel1MinSize)
+                {
+                    splitterDistance = chiaPanel.Panel1MinSize;
+                }
+                else if (splitterDistance > chiaPanel.ClientSize.Width - chiaPanel.Panel2MinSize)
+                {
+                    splitterDistance = chiaPanel.ClientSize.Width - chiaPanel.Panel2MinSize;
+                }
+
+                
+                chiaPanel.SplitterDistance = splitterDistance;
                 thongTinLabel.Location = new Point((int)Math.Floor(chiaPanel.Panel2.ClientSize.Width * 0.055) - 10, 10);
                 thongTinLabel.TextAlign = ContentAlignment.TopLeft;
                 btnDatPhong.Location = new Point(chiaPanel.Panel2.ClientSize.Width - btnDatPhong.Width - 10, thongTinLabel.Bottom + 50);

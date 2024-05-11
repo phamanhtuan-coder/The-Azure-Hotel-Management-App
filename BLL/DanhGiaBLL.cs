@@ -12,7 +12,23 @@ namespace BLL
     {
         public DanhGiaDAL danhGiaDAL = new DanhGiaDAL();
 
-        public bool KhoiPhucDanhGia(string maDanhGia)
+        public List<DanhGiaDTO> FilterTrangThai(string trangThai)
+        {
+            if (trangThai == "Đang hoạt động")
+            {
+                return danhGiaDAL.FilterTrangThai(true);
+            }
+            else if (trangThai == "Đã xóa")
+            {
+                return danhGiaDAL.FilterTrangThai(false);
+            }
+            else
+            {
+                return danhGiaDAL.LayDanhSachDanhGia();
+            }
+        }
+
+        public bool KhoiPhucDanhGia(int maDanhGia)
         {
             return danhGiaDAL.KhoiPhucDanhGia(maDanhGia);
         }
@@ -22,7 +38,22 @@ namespace BLL
             return danhGiaDAL.LayDanhSachDanhGia();
         }
 
-        public bool XoaDanhGia(string maDanhGia)
+        public List<DanhGiaDTO> LayDanhSachDanhGiaTheoUser(int maKH)
+        {
+            return danhGiaDAL.LayDanhSachDanhGiaTheoUser(maKH);
+        }
+
+        public bool SuaDanhGia(DanhGiaDTO danhGia)
+        {
+           return danhGiaDAL.SuaDanhGia(danhGia);
+        }
+
+        public bool ThemDanhGia(DanhGiaDTO danhGia)
+        {
+            return danhGiaDAL.ThemDanhGia(danhGia);
+        }
+
+        public bool XoaDanhGia(int maDanhGia)
         {
             return danhGiaDAL.XoaDanhGia(maDanhGia);
         }

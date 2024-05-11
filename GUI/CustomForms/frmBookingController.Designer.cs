@@ -30,7 +30,7 @@
         {
             this.nudSoLuongKhach = new System.Windows.Forms.NumericUpDown();
             this.dtpNgayDat = new System.Windows.Forms.DateTimePicker();
-            this.txtMaKH = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblSoLuong = new System.Windows.Forms.Label();
             this.lblNgayDat = new System.Windows.Forms.Label();
             this.lblMaPHG = new System.Windows.Forms.Label();
@@ -77,13 +77,13 @@
             this.dtpNgayDat.Size = new System.Drawing.Size(180, 27);
             this.dtpNgayDat.TabIndex = 31;
             // 
-            // txtMaKH
+            // txtUsername
             // 
-            this.txtMaKH.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaKH.Location = new System.Drawing.Point(228, 93);
-            this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(180, 27);
-            this.txtMaKH.TabIndex = 29;
+            this.txtUsername.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(228, 93);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(180, 27);
+            this.txtUsername.TabIndex = 29;
             // 
             // lblSoLuong
             // 
@@ -172,7 +172,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nudSoLuongKhach);
             this.Controls.Add(this.dtpNgayDat);
-            this.Controls.Add(this.txtMaKH);
+            this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.lblSoLuong);
             this.Controls.Add(this.lblNgayDat);
             this.Controls.Add(this.lblMaPHG);
@@ -196,7 +196,7 @@
 
         private System.Windows.Forms.NumericUpDown nudSoLuongKhach;
         private System.Windows.Forms.DateTimePicker dtpNgayDat;
-        private System.Windows.Forms.TextBox txtMaKH;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label lblSoLuong;
         private System.Windows.Forms.Label lblNgayDat;
         private System.Windows.Forms.Label lblMaPHG;

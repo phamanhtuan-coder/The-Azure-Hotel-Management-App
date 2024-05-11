@@ -277,21 +277,28 @@ namespace DAL
 
         public bool themd(DatPhongDTO datPhongDTO)
         {
-            string lenhThem =
-                "INSERT INTO DatPhong (MaKH, MaPHG,NgayDatPhong,SoLuongKH,TrangThai) VALUES (@MaKH, @MaPHG,@NgayDatPhong,@SoLuongKH, 1)";
+            try
+            {
+                string lenhThem =
+               "INSERT INTO DatPhong (MaKH, MaPHG,NgayDatPhong,SoLuongKH,TrangThai) VALUES (@MaKH, @MaPHG,@NgayDatPhong,@SoLuongKH, 1)";
 
-            SqlParameter[] pars = new SqlParameter[4];
-            pars[0] = new SqlParameter("MaKH", datPhongDTO.MaKH);
-            pars[1] = new SqlParameter("MaPHG", datPhongDTO.MaPHG);
-            pars[2] = new SqlParameter("NgayDatPhong", datPhongDTO.NgayDatPhong);
-            //pars[3] = new SqlParameter("NgayNhanPhong", datPhongDTO.NgayNhanPhong);
-            //pars[4] = new SqlParameter("NgayTraPhong", datPhongDTO.NgayTraPhong);
-            pars[3] = new SqlParameter("SoLuongKH", datPhongDTO.SoLuongKH);
-            SqlConnection conn = DataProvider.KetNoiDuLieu();
-            conn.Open();
-            int kq = DataProvider.ThucHienCauLenh(lenhThem, conn, pars);
-            conn.Close();
-            return kq > 0;
+                SqlParameter[] pars = new SqlParameter[4];
+                pars[0] = new SqlParameter("MaKH", datPhongDTO.MaKH);
+                pars[1] = new SqlParameter("MaPHG", datPhongDTO.MaPHG);
+                pars[2] = new SqlParameter("NgayDatPhong", datPhongDTO.NgayDatPhong);
+                pars[3] = new SqlParameter("SoLuongKH", datPhongDTO.SoLuongKH);
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+                int kq = DataProvider.ThucHienCauLenh(lenhThem, conn, pars);
+                conn.Close();
+                return kq > 0;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+           
         }
 
         public bool xoa(int madatphong)
@@ -304,6 +311,64 @@ namespace DAL
             int kq = DataProvider.ThucHienCauLenh(lenhXoa, conn, par);
             conn.Close();
             return kq > 0;
+        }
+
+        public List<DatPhongDTO> LayDanhSachDatPhongChuaDanhGia(int maKH)
+        {
+            try
+            {
+                List<DatPhongDTO> ds = new List<DatPhongDTO>();
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                string strTV = "Select MaDatPhong  from DatPhong where MaKH = @MaKH and NgayTraPhong is not null and MaDatPhong not in " +
+                    "(select MaDP from DanhGia) ";
+                SqlParameter[] pars = new SqlParameter[1];
+                pars[0]= new SqlParameter("@MaKH", maKH);
+                conn.Open();
+                SqlDataReader reader = DataProvider.ThucHienTruyVan(strTV, conn,pars);
+                while (reader.Read())
+                {
+                    DatPhongDTO phong = new DatPhongDTO();
+                    phong.MaDatPhong = (int)reader["MaDatPhong"];
+                    ds.Add(phong);
+                }
+                reader.Close();
+                conn.Close();
+                return ds;
+            }
+            catch (Exception)
+            {
+
+                return new List<DatPhongDTO>();
+            }
+        }
+
+        public List<DatPhongDTO> LayDanhSachDatPhongDaDanhGia(int maKH)
+        {
+            try
+            {
+                List<DatPhongDTO> ds = new List<DatPhongDTO>();
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                string strTV = "Select MaDatPhong  from DatPhong where MaKH = @MaKH and NgayTraPhong is not null and MaDatPhong in " +
+                    "(select MaDP from DanhGia) ";
+                SqlParameter[] pars = new SqlParameter[1];
+                pars[0] = new SqlParameter("@MaKH", maKH);
+                conn.Open();
+                SqlDataReader reader = DataProvider.ThucHienTruyVan(strTV, conn, pars);
+                while (reader.Read())
+                {
+                    DatPhongDTO phong = new DatPhongDTO();
+                    phong.MaDatPhong = (int)reader["MaDatPhong"];
+                    ds.Add(phong);
+                }
+                reader.Close();
+                conn.Close();
+                return ds;
+            }
+            catch (Exception)
+            {
+
+                return new List<DatPhongDTO>();
+            }
         }
     }
 }

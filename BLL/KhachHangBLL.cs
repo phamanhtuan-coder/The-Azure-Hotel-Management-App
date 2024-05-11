@@ -37,6 +37,17 @@ namespace BLL
             }
         }
 
+        public bool CapNhatHinhAnh(int maKH, byte[] hinhAnh)
+        {
+            return khachHangDAL.CapNhatHinhAnh(maKH, hinhAnh);
+        }
+
+        public bool EditKhachHang(KhachHangDTO khachHangDTO)
+        {
+            return khachHangDAL.EditKhachHang(khachHangDTO);
+
+        }
+
         public bool EditKhachHangBLL(KhachHangDTO khachHang)
         {
             if (khachHang.MaKH>0&&!string.IsNullOrEmpty(khachHang.HoTenKH.Trim()) && !string.IsNullOrEmpty(khachHang.CCCD.Trim()) && !string.IsNullOrEmpty(khachHang.TenDangNhap.Trim()) && !string.IsNullOrEmpty(khachHang.DiaChi.Trim()) && !string.IsNullOrEmpty(khachHang.GioiTinh.Trim()) && !string.IsNullOrEmpty(khachHang.SDT.Trim()) && khachHang.MaLoaiHangThanhVien > 0)
@@ -64,6 +75,11 @@ namespace BLL
             {
                 return false;
             }
+        }
+
+        public int LayMaKH(string v)
+        {
+            return khachHangDAL.LayMaKH(v);
         }
 
         public List<KhachHangDTO> LoadIDvaNameKH()

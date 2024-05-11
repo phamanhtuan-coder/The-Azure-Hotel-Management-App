@@ -102,5 +102,15 @@ namespace BLL
         {
             return DatPhongDAL.xoa(madatphong);
         }
+
+        public List<DatPhongDTO> LayDanhSachDatPhongChuaDanhGia(int maKH)
+        {
+            return DatPhongDAL.LayDanhSachDatPhongChuaDanhGia(maKH);
+        }
+
+        public List<DatPhongDTO> LayDanhSachDatPhongDaDanhGia(int maKH)
+        {
+            return DatPhongDAL.LayDanhSachDatPhongDaDanhGia(maKH);
+        }
     }
 }

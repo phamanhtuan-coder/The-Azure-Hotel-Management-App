@@ -112,5 +112,15 @@ namespace BLL
             }
             return new NhanVienDTO();
         }
+
+        public bool CapNhatHinhAnh(int MaNV, byte[] HinhAnh)
+        {
+            return nhanVienDAL.CapNhatHinhAnh(MaNV, HinhAnh);
+        }
+
+        public bool EditNhanVien(NhanVienDTO nhanVienDTO)
+        {
+            return nhanVienDAL.EditNhanVien(nhanVienDTO);
+        }
     }
 }

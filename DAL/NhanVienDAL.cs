@@ -417,5 +417,69 @@ namespace DAL
                 return new NhanVienDTO();
             }
         }
+
+        public bool CapNhatHinhAnh(int MaNV, byte[] HinhAnh)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+                string strCapNhat = "Update NhanVien set HinhAnh=@HinhAnh where MaNV=@MaNV";
+                SqlCommand com = new SqlCommand(strCapNhat, conn);
+                com.Parameters.AddWithValue("@HinhAnh", HinhAnh);
+                com.Parameters.AddWithValue("@MaNV", MaNV);
+
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+
+                if (count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool EditNhanVien(NhanVienDTO nhanVienDTO)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+                String strEdit = " UPDATE NhanVien SET HinhAnh = @HinhAnh, HoTenNV = @HoTenNV, SDT = @SDT, Email = @Email, NgaySinh = @NgaySinh,DiaChi = @DiaChi, GioiTinh = @GioiTinh WHERE NhanVien.MaNV=@MaNhanVien";
+                SqlCommand com = new SqlCommand(strEdit, conn);
+                com.Parameters.AddWithValue("@MaNhanVien", nhanVienDTO.MaNV);
+                com.Parameters.AddWithValue("@HinhAnh", nhanVienDTO.HinhAnh);
+                com.Parameters.AddWithValue("@HoTenNV", nhanVienDTO.HoTenNV);
+                com.Parameters.AddWithValue("@SDT", nhanVienDTO.SDT);
+                com.Parameters.AddWithValue("@Email", nhanVienDTO.Email);
+                com.Parameters.AddWithValue("@NgaySinh", nhanVienDTO.NgaySinh);
+                com.Parameters.AddWithValue("@DiaChi", nhanVienDTO.DiaChi);
+                com.Parameters.AddWithValue("@GioiTinh", nhanVienDTO.GioiTinh);
+
+                int count = com.ExecuteNonQuery();
+                conn.Close();
+
+                if (count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

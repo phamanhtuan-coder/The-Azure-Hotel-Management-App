@@ -75,7 +75,7 @@ namespace GUI.customForm
             // Kiểm tra if tiến hành xử lý sự kiện thêm/sửa phòng ban
             if (isAdd)
             {
-                // Nếu đúng là form Thêm thì chạy lệnh insert
+                
                 check = DatPhongBLL.them(DatPhongDTO);
                 if (check)
                 {
@@ -91,7 +91,7 @@ namespace GUI.customForm
             }
             else
             {
-                // nếu không thì chạy lệnh update
+                
                 check = DatPhongBLL.sua(DatPhongDTO);
                 if(check)
                 {

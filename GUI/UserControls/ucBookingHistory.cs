@@ -101,6 +101,8 @@ namespace GUI.UserControls
         {
             frmMain parentForm = this.ParentForm as frmMain;
             ucPersonal ucPersonal = new ucPersonal(parentForm);
+            ucPersonal.user = parentForm.user;
+            ucPersonal.userKH = parentForm.userKH;
             parentForm.SwitchUserControl(ucPersonal);
             this.Dispose();
         }
