@@ -70,13 +70,21 @@ namespace GUI.UserControls
         {
             if (dgvHousekeeping.SelectedRows.Count > 0)
             {
+                DonPhongDTO don = dgvHousekeeping.SelectedRows[0].DataBoundItem as DonPhongDTO;
+                if (don.NgayHoanThanh == null)
+                {
+                    frm.isAdd = false;
 
-                frm.isAdd = false;
+                    frm.donPhongDTO = don;
 
-                frm.donPhongDTO = dgvHousekeeping.SelectedRows[0].DataBoundItem as DonPhongDTO;
-
-                frm.ShowDialog();
-                Filter();
+                    frm.ShowDialog();
+                    Filter();
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Bạn không thể sửa thông tin phòng đã dọn!");
+                    thongBao.ShowDialog();
+                }
             }
             else
             {

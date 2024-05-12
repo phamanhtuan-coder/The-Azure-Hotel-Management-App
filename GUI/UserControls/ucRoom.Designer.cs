@@ -41,6 +41,7 @@
             this.cboStateRoom = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvRoom = new System.Windows.Forms.DataGridView();
+            this.picRoom = new System.Windows.Forms.PictureBox();
             this.cboSortPrice = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortPrice = new System.Windows.Forms.Label();
             this.cboRoomStatus = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -61,7 +62,6 @@
             this.colGiaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSucChuaToiDa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.picRoom = new System.Windows.Forms.PictureBox();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -69,6 +69,7 @@
             this.spcQuery.Panel2.SuspendLayout();
             this.spcQuery.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboRoomStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortRoomType)).BeginInit();
@@ -78,7 +79,6 @@
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picRoom)).BeginInit();
             this.SuspendLayout();
             // 
             // lblRoom
@@ -307,6 +307,18 @@
             this.dgvRoom.TabIndex = 6;
             this.dgvRoom.SelectionChanged += new System.EventHandler(this.dgvRoom_SelectionChanged);
             // 
+            // picRoom
+            // 
+            this.picRoom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picRoom.Image = global::GUI.Properties.Resources.no_pictures;
+            this.picRoom.Location = new System.Drawing.Point(46, 19);
+            this.picRoom.Name = "picRoom";
+            this.picRoom.Size = new System.Drawing.Size(319, 145);
+            this.picRoom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRoom.TabIndex = 41;
+            this.picRoom.TabStop = false;
+            // 
             // cboSortPrice
             // 
             this.cboSortPrice.DelimiterChar = "";
@@ -474,27 +486,29 @@
             this.colMaPHG.MinimumWidth = 6;
             this.colMaPHG.Name = "colMaPHG";
             this.colMaPHG.ReadOnly = true;
-            this.colMaPHG.Width = 107;
+            this.colMaPHG.Width = 117;
             // 
             // colMaLoai
             // 
             this.colMaLoai.DataPropertyName = "MaLoai";
+            this.colMaLoai.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.colMaLoai.HeaderText = "Mã loại";
             this.colMaLoai.MinimumWidth = 6;
             this.colMaLoai.Name = "colMaLoai";
             this.colMaLoai.ReadOnly = true;
             this.colMaLoai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaLoai.Width = 83;
+            this.colMaLoai.Width = 71;
             // 
             // colMaTinhTrangPhong
             // 
             this.colMaTinhTrangPhong.DataPropertyName = "MaTinhTrangPhong";
+            this.colMaTinhTrangPhong.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.colMaTinhTrangPhong.HeaderText = "Mã tình trạng phòng";
             this.colMaTinhTrangPhong.MinimumWidth = 6;
             this.colMaTinhTrangPhong.Name = "colMaTinhTrangPhong";
             this.colMaTinhTrangPhong.ReadOnly = true;
             this.colMaTinhTrangPhong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaTinhTrangPhong.Width = 181;
+            this.colMaTinhTrangPhong.Width = 162;
             // 
             // colHinhAnh
             // 
@@ -541,18 +555,6 @@
             this.colTrangThai.Visible = false;
             this.colTrangThai.Width = 105;
             // 
-            // picRoom
-            // 
-            this.picRoom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.picRoom.Image = global::GUI.Properties.Resources.no_pictures;
-            this.picRoom.Location = new System.Drawing.Point(46, 19);
-            this.picRoom.Name = "picRoom";
-            this.picRoom.Size = new System.Drawing.Size(319, 145);
-            this.picRoom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picRoom.TabIndex = 41;
-            this.picRoom.TabStop = false;
-            // 
             // ucRoom
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -571,6 +573,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).EndInit();
             this.spcQuery.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboRoomStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortRoomType)).EndInit();
@@ -580,7 +583,6 @@
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picRoom)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -610,6 +612,7 @@
         private System.Windows.Forms.Label lblSortPrice;
         private System.Windows.Forms.DataGridView dgvRoom;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.PictureBox picRoom;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaPHG;
         private System.Windows.Forms.DataGridViewComboBoxColumn colMaLoai;
         private System.Windows.Forms.DataGridViewComboBoxColumn colMaTinhTrangPhong;
@@ -618,6 +621,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colGiaPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSucChuaToiDa;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
-        private System.Windows.Forms.PictureBox picRoom;
     }
 }

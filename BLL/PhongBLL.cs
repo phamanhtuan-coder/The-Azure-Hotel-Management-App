@@ -128,7 +128,10 @@ namespace BLL
         {
             return PhongDAL.kqphong(maphong);
         }
-
+        public List<PhongDTO> laydspTT()
+        {
+            return PhongDAL.laydspTT();
+        }
         public List<PhongDTO> laydsp()
         {
             return PhongDAL.laydsphong();
@@ -200,6 +203,13 @@ namespace BLL
         public bool CapNhatTT(List<DatPhongDTO> list, int v)
         {
             return phongDAL.CapNhatTT(list, v);
+        }
+        public List<PhongDTO> LayDsPhongDaSanSang(DateTime ngayDat)
+
+        {
+
+            return PhongDAL.LayDsPhongDaSanSang(ngayDat);
+
         }
     }
 }

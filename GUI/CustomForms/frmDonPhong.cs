@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using Syncfusion.Windows.Forms.Maps;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,6 +36,8 @@ namespace GUI.customForm
 
             if (!isAdd)
             {
+                lblNgayBaoTri.Visible = true;
+                dtpNgayBaoTri.Visible = true;
                 foreach (PhongDTO item in cboThietBi.DataSource as List<PhongDTO>)
                 {
                     if (item.MaPHG == donPhongDTO.MaPhong)
@@ -64,6 +67,8 @@ namespace GUI.customForm
             }
             else
             {
+                lblNgayBaoTri.Visible = false;
+                dtpNgayBaoTri.Visible = false;
                 cboThietBi.SelectedIndex = 0;
                 cboNVBaoTri.SelectedIndex = 0;
                 dtpNgayBaoTri.Value = DateTime.Now;
@@ -76,7 +81,7 @@ namespace GUI.customForm
             PhongDTO TatCa = new PhongDTO();
             TatCa.MaPHG = -1;
             List<PhongDTO> list = new List<PhongDTO> { TatCa };
-            foreach (var item in phongBLL.laydsp())
+            foreach (var item in phongBLL.laydspTT())
             {
                 list.Add(item);
             }
@@ -103,16 +108,16 @@ namespace GUI.customForm
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
-        {
-            GanDuLieu();
+        {        
             customMessageBox thongBao;
             // Kiểm tra if tiến hành xử lý sự kiện thêm/sửa phòng ban
             if (isAdd)
             {
-                
+                GanDuLieu();
                 // Nếu đúng là form Thêm thì chạy lệnh insert
                 if (AddDonPhong())
                 {
+
                     thongBao = new customMessageBox("Đã thêm thành công dữ liệu dọn phòng!");
                     thongBao.ShowDialog();
                 }
@@ -124,9 +129,14 @@ namespace GUI.customForm
             }
             else
             {
+                GanDuLieu();
                 // nếu không thì chạy lệnh update
                 if (EditDonPhong())
                 {
+                    DatPhongDTO dphongDTO = new DatPhongDTO();
+                    dphongDTO.MaPHG = donPhongDTO.MaPhong;
+                    List<DatPhongDTO> ct = new List<DatPhongDTO> { dphongDTO };
+                    phongBLL.CapNhatTT(ct, 1);
                     thongBao = new customMessageBox("Sửa thành công thông tin dọn phòng!");
                     thongBao.ShowDialog();
                 }
@@ -134,8 +144,7 @@ namespace GUI.customForm
                 {
                     thongBao = new customMessageBox("Sửa thành công thông tin dọn phòng!");
                     thongBao.ShowDialog();
-                }
-                
+                }             
             }
             this.Close();
             
@@ -163,6 +172,5 @@ namespace GUI.customForm
         {
             this.Close();
         }
-
     }
 }

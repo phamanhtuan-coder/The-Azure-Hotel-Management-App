@@ -57,7 +57,7 @@ namespace DAL
             {
             List<PhongDTO> dsp = new List<PhongDTO>();
                 SqlConnection conn = DataProvider.KetNoiDuLieu();
-            string strlaydanhsach = "select * from Phong where MaTinhTrangPhong = 1";
+            string strlaydanhsach = "select * from Phong";
                 conn.Open();
             SqlDataReader reader = DataProvider.ThucHienTruyVan(strlaydanhsach, conn);
                 while (reader.Read())
@@ -250,6 +250,81 @@ namespace DAL
             catch (Exception)
             {
                 return false;
+            }
+        }
+
+        public List<PhongDTO> LayDsPhongDaSanSang(DateTime ngayDat)
+        {
+            List<PhongDTO> rooms = new List<PhongDTO>();
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+                string lenhTVPhongTrong = "SELECT * FROM Phong WHERE TrangThai = 0x01 and MaTinhTrangPhong =1 and MaPHG not in"
+
+                    + "(select MaPHG from DatPhong where NgayDatPhong = @NgayDatPhong)";
+                SqlCommand com = new SqlCommand(lenhTVPhongTrong, conn);
+                com.Parameters.AddWithValue("@NgayDatPhong", ngayDat);
+                SqlDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    PhongDTO room = new PhongDTO();
+                    room.MaPHG = Convert.ToInt32(reader["MaPHG"]);
+                    room.MoTa = reader["MoTa"].ToString();
+                    room.GiaPhong = Convert.ToDecimal(reader["GiaPhong"]);
+                    room.MoTa = reader["MoTa"].ToString();
+                    // Check for DBNull before casting to byte[]
+                    if (reader["HinhAnh"] != DBNull.Value)
+                    {
+                        room.HinhAnh = (byte[])reader["HinhAnh"];
+                    }
+                    else
+                    {
+                        room.HinhAnh = null;
+                    }
+                    rooms.Add(room);
+                }
+                reader.Close();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return rooms;
+        }
+
+        public List<PhongDTO> laydspTT()
+        {
+            try
+            {
+                List<PhongDTO> dsp = new List<PhongDTO>();
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                string strlaydanhsach = "select * from Phong where MaTinhTrangPhong = 4";
+                conn.Open();
+                SqlDataReader reader = DataProvider.ThucHienTruyVan(strlaydanhsach, conn);
+                while (reader.Read())
+                {
+                    PhongDTO phong = new PhongDTO();
+                    phong.MaPHG = (int)reader[0];
+                    phong.MaLoai = (int)reader[1];
+                    phong.MaTinhTrangPhong = (int)reader[2];
+                    phong.HinhAnh = reader["HinhAnh"] as byte[];
+                    phong.MoTa = reader[4].ToString();
+                    phong.GiaPhong = (decimal)reader[5];
+                    phong.SucChuaToiDa = (int)reader[6];
+                    byte[] trangThaiBytes = (byte[])reader[7];
+                    bool trangThai = trangThaiBytes[0] == 1;
+                    phong.TrangThai = trangThai;
+                    dsp.Add(phong);
+                }
+                reader.Close();
+                conn.Close();
+                return dsp;
+            }
+            catch (Exception)
+            {
+                return new List<PhongDTO> ();
             }
         }
     }
