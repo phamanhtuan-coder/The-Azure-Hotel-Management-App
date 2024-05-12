@@ -58,6 +58,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Location = new System.Drawing.Point(17, 196);
             this.btnCancel.Name = "btnCancel";
@@ -160,12 +161,14 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(160, 22);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Chọn khuyễn mãi";
+            this.label2.Text = "Chọn khuyến mãi";
             // 
             // frmHoaDon
             // 
+            this.AcceptButton = this.btnSubmit;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(485, 276);
             this.Controls.Add(this.cboMaKM);
             this.Controls.Add(this.label2);

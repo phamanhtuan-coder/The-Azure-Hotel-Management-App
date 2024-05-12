@@ -29,6 +29,7 @@ namespace GUI.UserControls
         List<NhanVienDTO> dsNV = new List<NhanVienDTO>();
         List<NhanVienDTO> dsSearch = new List<NhanVienDTO>();
         List<VaiTroDTO> vaiTroDTOs = new List<VaiTroDTO>();
+        public string MaPHQ { get; set; }
         public ucStaff()
         {
             InitializeComponent();
@@ -37,6 +38,34 @@ namespace GUI.UserControls
         private void ucStaff_Load(object sender, EventArgs e)
         {
             CapNhatCBBNhanVien();
+            KiemTraPQ();
+        }
+        private void KiemTraPQ()
+        {
+            if (MaPHQ.Contains("01"))
+            {
+
+                btnAddStaff.Enabled = false;
+                btnEditStaff.Enabled = false;
+                btnDeleteStaff.Enabled = false;
+                btnRecoverStaff.Enabled = false;
+            }
+            else if (MaPHQ.Contains("03"))
+            {
+                btnAddStaff.Enabled = true;
+                btnEditStaff.Enabled = true;
+                btnDeleteStaff.Enabled = false;
+                btnRecoverStaff.Enabled = false;
+            }
+            else if (MaPHQ.Contains("04") || (MaPHQ.Contains("02")))
+            {
+                btnAddStaff.Enabled = true;
+                btnEditStaff.Enabled = true;
+                btnDeleteStaff.Enabled = true;
+                btnRecoverStaff.Enabled = true;
+            }
+
+
         }
 
         private void LoadDSNhanVien()
@@ -195,12 +224,12 @@ namespace GUI.UserControls
                         {
                             loadNQL();
                             LoadDSNhanVien();
-                            thongBao = new customMessageBox("Xóa thành công!");
+                            thongBao = new customMessageBox("Xóa thành công dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                         else
                         {
-                            thongBao = new customMessageBox("Xóa thất bại!");
+                            thongBao = new customMessageBox("Xóa thất bại dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                     }
@@ -249,12 +278,12 @@ namespace GUI.UserControls
                         {
                             loadNQL();
                             LoadDSNhanVien();
-                            thongBao = new customMessageBox("Khôi phục thành công!");
+                            thongBao = new customMessageBox("Khôi phục thành công dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                         else
                         {
-                            thongBao = new customMessageBox("Khôi phục thất bại!");
+                            thongBao = new customMessageBox("Khôi phục thất bại dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                     }

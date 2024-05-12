@@ -21,7 +21,7 @@ namespace GUI.UserControls
         customMessageBox thongBao;
         List<DanhGiaDTO> dsDanhGia;
         DanhGiaBLL danhGiaBLL;
-
+        public string MaPHQ { get; set; }
         public ucRating()
         {
             InitializeComponent();
@@ -33,6 +33,25 @@ namespace GUI.UserControls
             dgvRating.AutoGenerateColumns = false;
             LayDanhSachDanhGia();
             CapDuLieuChoController();
+            KiemTraPQ();
+        }
+        private void KiemTraPQ()
+        {
+            if (MaPHQ.Contains("01") || (MaPHQ.Contains("03")))
+            {
+
+                
+                btnDeleteRating.Enabled = false;
+                btnRecoverRating.Enabled = false;
+            }
+            else if (MaPHQ.Contains("04") || (MaPHQ.Contains("02")))
+            {
+
+                btnDeleteRating.Enabled = true;
+                btnRecoverRating.Enabled = true;
+            }
+
+
         }
 
         //Cáp dữ liệu cho các combo box
@@ -70,12 +89,14 @@ namespace GUI.UserControls
                         thongBao = new customMessageBox(
                             "Xóa thành công dữ liệu có mã là: " + maDanhGia + "!"
                         );
+                        thongBao.ShowDialog();
                     }
                     else
                     {
                         thongBao = new customMessageBox(
                             "Xóa thất bại dữ liệu có mã là: " + maDanhGia + "!"
                         );
+                        thongBao.ShowDialog();
                     }
                 }
                 else
@@ -117,12 +138,14 @@ namespace GUI.UserControls
                         thongBao = new customMessageBox(
                             "Khôi phục thành công dữ liệu có mã là: " + maDanhGia + "!"
                         );
+                        thongBao.ShowDialog();
                     }
                     else
                     {
                         thongBao = new customMessageBox(
                             "Khôi phục thất bại dữ liệu có mã là: " + maDanhGia + "!"
                         );
+                        thongBao.ShowDialog();
                     }
                 }
             }

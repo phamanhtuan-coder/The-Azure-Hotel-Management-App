@@ -21,6 +21,7 @@ namespace GUI.UserControls
         List<BaoTriDTO> baoTriDTOs = new List<BaoTriDTO>();
         List<BaoTriDTO> baoTriDTOstk = new List<BaoTriDTO>();
         BaoTriBLL baoTriBLL = new BaoTriBLL();
+        public string MaPHQ { get; set; }
         NhanVienBLL nhanVienBLL = new NhanVienBLL();
         public ucMaintentance()
         {
@@ -34,6 +35,34 @@ namespace GUI.UserControls
             Loadds();
             dgvMaintenance.AutoGenerateColumns = false;
             Loadcombo();
+            KiemTraPQ();
+        }
+        private void KiemTraPQ()
+        {
+            if (MaPHQ.Contains("01"))
+            {
+
+                btnAddMaintentance.Enabled = false;
+                btnEditMaintentance.Enabled = false;
+                btnDeleteMaintentance.Enabled = false;
+                btnRecoverMaintentance.Enabled = false;
+            }
+            else if (MaPHQ.Contains("03"))
+            {
+                btnAddMaintentance.Enabled = true;
+                btnEditMaintentance.Enabled = true;
+                btnDeleteMaintentance.Enabled = false;
+                btnRecoverMaintentance.Enabled = false;
+            }
+            else if (MaPHQ.Contains("04") || (MaPHQ.Contains("02")))
+            {
+                btnAddMaintentance.Enabled = true;
+                btnEditMaintentance.Enabled = true;
+                btnDeleteMaintentance.Enabled = true;
+                btnRecoverMaintentance.Enabled = true;
+            }
+
+
         }
 
         private void LoadDSTB()
@@ -121,12 +150,14 @@ namespace GUI.UserControls
                         thongBao = new customMessageBox(
                             "Xóa thành công dữ liệu có mã là: " + mabtri + "!"
                         );
+                        thongBao.ShowDialog();
                     }
                     else
                     {
                         thongBao = new customMessageBox(
                             "Xóa thất bại dữ liệu có mã là: " + mabtri + "!"
                         );
+                        thongBao.ShowDialog();
                     }
                 }
             }
@@ -155,12 +186,14 @@ namespace GUI.UserControls
                         thongBao = new customMessageBox(
                             "Khôi phục thành công dữ liệu có mã là: " + mabtri + "!"
                         );
+                        thongBao.ShowDialog();
                     }
                     else
                     {
                         thongBao = new customMessageBox(
                             "Khôi phục thất bại dữ liệu có mã là: " + mabtri + "!"
                         );
+                        thongBao.ShowDialog();
                     }
                 }
             }

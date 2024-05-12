@@ -1,6 +1,7 @@
 ﻿using BLL;
 using DTO;
 using GUI.customForm;
+using GUI.CustomForms;
 using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace GUI.UserControls
 {
     public partial class ucBill : UserControl
     {
+        public string MaPHQ { get; set; }
         public string ngaytao { get; set; } = "";
         public string TT { get; set; } = "";
 
@@ -37,11 +39,40 @@ namespace GUI.UserControls
 
         private void ucBill_Load(object sender, EventArgs e)
         {
+            dgvBill.AutoGenerateColumns = false;
             LoadDuLieuKH();
             LoadDuLieuNV();
             LoadDuLieuThue();
             LoadDuLieuCombobox();
             TruyVanDanhSachHoaDon();
+            KiemTraPQ();
+        }
+        private void KiemTraPQ()
+        {
+            if (MaPHQ.Contains("01"))
+            {
+
+                btnAddBill.Enabled = false;
+                btnEditBill.Enabled = false;
+                btnDeleteBill.Enabled = false;
+                btnRecoverBill.Enabled = false;
+            }
+            else if (MaPHQ.Contains("03"))
+            {
+                btnAddBill.Enabled = true;
+                btnEditBill.Enabled = true;
+                btnDeleteBill.Enabled = false;
+                btnRecoverBill.Enabled = false;
+            }
+            else if (MaPHQ.Contains("04") || (MaPHQ.Contains("02")))
+            {
+                btnAddBill.Enabled = true;
+                btnEditBill.Enabled = true;
+                btnDeleteBill.Enabled = true;
+                btnRecoverBill.Enabled = true;
+            }
+
+
         }
 
         private void LoadDuLieuThue()
@@ -143,12 +174,12 @@ namespace GUI.UserControls
                         if (XoaHoaDon())
                         {
                             Filter();
-                            thongBao = new customMessageBox("Xóa thành công!");
+                            thongBao = new customMessageBox("Xóa thành công dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                         else
                         {
-                            thongBao = new customMessageBox("Xóa thất bại!");
+                            thongBao = new customMessageBox("Xóa thất bại dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                     }
@@ -180,12 +211,12 @@ namespace GUI.UserControls
                         if (KhoiPhucHoaDon())
                         {
                             Filter();
-                            thongBao = new customMessageBox("Khôi phục thành công!");
+                            thongBao = new customMessageBox("Khôi phục thành công dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                         else
                         {
-                            thongBao = new customMessageBox("Khôi phục thất bại!");
+                            thongBao = new customMessageBox("Khôi phục thất bại dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                     }
@@ -355,7 +386,7 @@ namespace GUI.UserControls
             if (hoaDonDTO.MaHoaDon > 0)
             {
                 hoaDonDTO.chiTietHoaDonDTOs = new List<ChiTietHoaDonDTO>();
-                hoaDonDTO.chiTietHoaDonDTOs = chiTietHoaDonBLL.TruyVanChiTiet(hoaDonDTO.MaHoaDon);    
+                hoaDonDTO.chiTietHoaDonDTOs = chiTietHoaDonBLL.TruyVanChiTietHD(hoaDonDTO.MaHoaDon);    
             }
             else
             {
@@ -395,6 +426,29 @@ namespace GUI.UserControls
                 thongBao = new customMessageBox("Vui lòng chọn hóa đơn!");
                 thongBao.ShowDialog();
             }
+        }
+
+        private void btnInHD_Click(object sender, EventArgs e)
+        {
+            if (dgvBill.SelectedRows.Count > 0)
+            {
+                HoaDonDTO hoaDonDTO = new HoaDonDTO();
+                LoadDuLieuCuaHoaDon (ref hoaDonDTO);
+                frmHoaDonReview inHD = new frmHoaDonReview();
+                inHD.maHD = hoaDonDTO.MaHoaDon.ToString();
+                inHD.maNV = hoaDonDTO.MaNV.ToString();
+                inHD.maKH = hoaDonDTO.MaKH.ToString();
+                inHD.ngayLap = hoaDonDTO.NgayLapHoaDon.ToString();
+                inHD.hs = hoaDonDTO.chiTietHoaDonDTOs;
+                inHD.ShowDialog();
+            }
+            else
+            {
+                thongBao = new customMessageBox("Vui lòng chọn hóa đơn bạn muốn in!");
+                thongBao.ShowDialog();
+            }
+           
+           
         }
     }
 }

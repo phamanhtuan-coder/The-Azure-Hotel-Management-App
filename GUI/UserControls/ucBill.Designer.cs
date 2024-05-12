@@ -40,6 +40,7 @@
             this.dtpBillDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvBill = new System.Windows.Forms.DataGridView();
+            this.btnInHD = new Syncfusion.WinForms.Controls.SfButton();
             this.txtXemCT = new Syncfusion.WinForms.Controls.SfButton();
             this.btnThanhToan = new Syncfusion.WinForms.Controls.SfButton();
             this.btnTraCuuDP = new Syncfusion.WinForms.Controls.SfButton();
@@ -64,6 +65,7 @@
             this.colMaKH = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.colMaNV = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.colMaThue = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colTyLeThue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNgayLapHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTongHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTienNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -254,6 +256,7 @@
             // spcQuery.Panel2
             // 
             this.spcQuery.Panel2.BackColor = System.Drawing.Color.Lavender;
+            this.spcQuery.Panel2.Controls.Add(this.btnInHD);
             this.spcQuery.Panel2.Controls.Add(this.txtXemCT);
             this.spcQuery.Panel2.Controls.Add(this.btnThanhToan);
             this.spcQuery.Panel2.Controls.Add(this.btnTraCuuDP);
@@ -290,6 +293,7 @@
             this.colMaKH,
             this.colMaNV,
             this.colMaThue,
+            this.colTyLeThue,
             this.colNgayLapHoaDon,
             this.colTongHD,
             this.colTienNhan,
@@ -306,6 +310,27 @@
             this.dgvBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBill.Size = new System.Drawing.Size(973, 746);
             this.dgvBill.TabIndex = 0;
+            // 
+            // btnInHD
+            // 
+            this.btnInHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnInHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInHD.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInHD.ForeColor = System.Drawing.Color.White;
+            this.btnInHD.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnInHD.Location = new System.Drawing.Point(91, 524);
+            this.btnInHD.Name = "btnInHD";
+            this.btnInHD.Size = new System.Drawing.Size(191, 46);
+            this.btnInHD.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnInHD.Style.ForeColor = System.Drawing.Color.White;
+            this.btnInHD.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.btnInHD.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnInHD.TabIndex = 5;
+            this.btnInHD.Text = "In hóa đơn";
+            this.btnInHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnInHD, "In hóa đơn");
+            this.btnInHD.UseVisualStyleBackColor = false;
+            this.btnInHD.Click += new System.EventHandler(this.btnInHD_Click);
             // 
             // txtXemCT
             // 
@@ -616,6 +641,14 @@
             this.colMaThue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colMaThue.Width = 89;
             // 
+            // colTyLeThue
+            // 
+            this.colTyLeThue.DataPropertyName = "TyLeThue";
+            this.colTyLeThue.HeaderText = "Mức thuế";
+            this.colTyLeThue.Name = "colTyLeThue";
+            this.colTyLeThue.ReadOnly = true;
+            this.colTyLeThue.Width = 92;
+            // 
             // colNgayLapHoaDon
             // 
             this.colNgayLapHoaDon.DataPropertyName = "NgayLapHoaDon";
@@ -736,10 +769,12 @@
         private Syncfusion.WinForms.Controls.SfButton btnTraCuuDP;
         private Syncfusion.WinForms.Controls.SfButton txtXemCT;
         private System.Windows.Forms.ToolTip toolTip1;
+        private Syncfusion.WinForms.Controls.SfButton btnInHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaHD;
         private System.Windows.Forms.DataGridViewComboBoxColumn colMaKH;
         private System.Windows.Forms.DataGridViewComboBoxColumn colMaNV;
         private System.Windows.Forms.DataGridViewComboBoxColumn colMaThue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTyLeThue;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayLapHoaDon;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTongHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTienNhan;

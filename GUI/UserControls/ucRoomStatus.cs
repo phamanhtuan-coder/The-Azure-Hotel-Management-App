@@ -20,6 +20,7 @@ namespace GUI.UserControls
         List<TinhTrangPhongDTO> tinhTrangPhongDTOs = new List<TinhTrangPhongDTO>();
         List<TinhTrangPhongDTO> tinhTrangPhongDTOstk = new List<TinhTrangPhongDTO>();
         TinhTrangPhongBLL TinhTrangPhongBLL =new TinhTrangPhongBLL();
+        public string MaPHQ { get; set; }
         public ucRoomStatus()
         {
             InitializeComponent();
@@ -30,7 +31,35 @@ namespace GUI.UserControls
             dgvRoomStatus.AutoGenerateColumns = false;
             laydsttphong();
             laycombo();
-           
+
+            KiemTraPQ();
+        }
+        private void KiemTraPQ()
+        {
+            if (MaPHQ.Contains("01"))
+            {
+
+                btnAddRoomStatus.Enabled = false;
+                btnEditRoomStatus.Enabled = false;
+                btnDeleteRoomStatus.Enabled = false;
+                btnRecoverRoomStatus.Enabled = false;
+            }
+            else if (MaPHQ.Contains("03"))
+            {
+                btnAddRoomStatus.Enabled = true;
+                btnEditRoomStatus.Enabled = true;
+                btnDeleteRoomStatus.Enabled = false;
+                btnRecoverRoomStatus.Enabled = false;
+            }
+            else if (MaPHQ.Contains("04") || (MaPHQ.Contains("02")))
+            {
+                btnAddRoomStatus.Enabled = true;
+                btnEditRoomStatus.Enabled = true;
+                btnDeleteRoomStatus.Enabled = true;
+                btnRecoverRoomStatus.Enabled = true;
+            }
+
+
         }
 
         private void laycombo()
@@ -104,25 +133,23 @@ namespace GUI.UserControls
                         thongBao = new customMessageBox(
                             "Xóa thành công dữ liệu có mã là: " + mattphong + "!"
                         );
+                        thongBao.ShowDialog();
                     }
                     else
                     {
                         thongBao = new customMessageBox(
                             "Xóa thất bại dữ liệu có mã là: " + mattphong + "!"
                         );
+                        thongBao.ShowDialog();
                     }
-                }
-                else
-                {
-                    thongBao = new customMessageBox("Hủy xóa!");
                 }
             }
             else
             {
                 thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn xóa!");
-
+                thongBao.ShowDialog();
             }
-            thongBao.ShowDialog();
+           
         }
 
         private void btnRecoverRoomStatus_Click(object sender, EventArgs e)

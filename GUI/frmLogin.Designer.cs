@@ -237,7 +237,7 @@ namespace GUI
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(241, 22);
             this.txtUsername.TabIndex = 3;
-            this.txtUsername.Text = "tuanpa123";
+            this.txtUsername.Text = "administrator";
             this.txtUsername.ThemeStyle.CornerRadius = 10;
             this.txtUsername.WordWrap = false;
             // 

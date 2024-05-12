@@ -42,6 +42,12 @@
             this.dtpServiceDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvServices = new System.Windows.Forms.DataGridView();
+            this.colMaDatDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboSortServiceD = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortServiceID = new System.Windows.Forms.Label();
             this.lblServiceDate = new System.Windows.Forms.Label();
@@ -305,6 +311,63 @@
             this.dgvServices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvServices.Size = new System.Drawing.Size(973, 746);
             this.dgvServices.TabIndex = 6;
+            // 
+            // colMaDatDichVu
+            // 
+            this.colMaDatDichVu.DataPropertyName = "MaDatDichVu";
+            this.colMaDatDichVu.HeaderText = "Mã đặt dịch vụ";
+            this.colMaDatDichVu.MinimumWidth = 6;
+            this.colMaDatDichVu.Name = "colMaDatDichVu";
+            this.colMaDatDichVu.ReadOnly = true;
+            this.colMaDatDichVu.Width = 152;
+            // 
+            // colMaDatPhong
+            // 
+            this.colMaDatPhong.DataPropertyName = "MaDatPhong";
+            this.colMaDatPhong.HeaderText = "Mã đặt phòng";
+            this.colMaDatPhong.MinimumWidth = 6;
+            this.colMaDatPhong.Name = "colMaDatPhong";
+            this.colMaDatPhong.ReadOnly = true;
+            this.colMaDatPhong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMaDatPhong.Width = 147;
+            // 
+            // colMaDV
+            // 
+            this.colMaDV.DataPropertyName = "MaDV";
+            this.colMaDV.HeaderText = "Mã dịch vụ";
+            this.colMaDV.MinimumWidth = 6;
+            this.colMaDV.Name = "colMaDV";
+            this.colMaDV.ReadOnly = true;
+            this.colMaDV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMaDV.Width = 122;
+            // 
+            // colSoLuong
+            // 
+            this.colSoLuong.DataPropertyName = "SoLuong";
+            this.colSoLuong.HeaderText = "Số lượng";
+            this.colSoLuong.MinimumWidth = 6;
+            this.colSoLuong.Name = "colSoLuong";
+            this.colSoLuong.ReadOnly = true;
+            this.colSoLuong.Width = 106;
+            // 
+            // colNgayDat
+            // 
+            this.colNgayDat.DataPropertyName = "NgayDat";
+            this.colNgayDat.HeaderText = "Ngày đặt";
+            this.colNgayDat.MinimumWidth = 6;
+            this.colNgayDat.Name = "colNgayDat";
+            this.colNgayDat.ReadOnly = true;
+            this.colNgayDat.Width = 107;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.MinimumWidth = 6;
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Visible = false;
+            this.colTrangThai.Width = 114;
             // 
             // cboSortServiceD
             // 

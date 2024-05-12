@@ -19,6 +19,7 @@ namespace GUI.UserControls
 {
     public partial class ucRoomBooking : UserControl
     {
+        
         private PhongBLL phongBLL = new PhongBLL();
         public int maKH { get; set; }
         public ucRoomBooking()
@@ -32,7 +33,9 @@ namespace GUI.UserControls
         {
             dtpCheckInDate.MinDateTime = DateTime.Now;
             LoadAvailableRooms();
+      
         }
+       
         private void LoadAvailableRooms()
         {
             try

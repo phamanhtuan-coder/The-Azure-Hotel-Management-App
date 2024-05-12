@@ -46,8 +46,9 @@ namespace GUI.UserControls
             this.colMaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGiaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHinhAnh = new System.Windows.Forms.DataGridViewImageColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHinhAnh = new System.Windows.Forms.DataGridViewImageColumn();
+            this.picDichVu = new System.Windows.Forms.PictureBox();
             this.cboSortServiceTypeID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortServiceTypeID = new System.Windows.Forms.Label();
             this.cboSortGiaServiceType = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -56,7 +57,6 @@ namespace GUI.UserControls
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.picDichVu = new System.Windows.Forms.PictureBox();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRoomType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -64,6 +64,7 @@ namespace GUI.UserControls
             this.spcQuery.Panel2.SuspendLayout();
             this.spcQuery.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServiceType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDichVu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortServiceTypeID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortGiaServiceType)).BeginInit();
             this.panUcHeader.SuspendLayout();
@@ -71,7 +72,6 @@ namespace GUI.UserControls
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picDichVu)).BeginInit();
             this.SuspendLayout();
             // 
             // lblServiceType
@@ -199,10 +199,8 @@ namespace GUI.UserControls
             this.txtSearchServiceType.Location = new System.Drawing.Point(14, 172);
             this.txtSearchServiceType.Name = "txtSearchServiceType";
             this.txtSearchServiceType.Size = new System.Drawing.Size(251, 40);
-            this.txtSearchServiceType.TabIndex = 7;
-            this.toolTip1.SetToolTip(this.txtSearchServiceType, "Nhập tên dịch vụ");
-            this.txtSearchServiceType.Size = new System.Drawing.Size(251, 40);
             this.txtSearchServiceType.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.txtSearchServiceType, "Nhập tên dịch vụ");
             // 
             // btnTraCuuServiceType
             // 
@@ -275,7 +273,7 @@ namespace GUI.UserControls
             this.dgvServiceType.AllowUserToDeleteRows = false;
             this.dgvServiceType.AllowUserToResizeColumns = false;
             this.dgvServiceType.AllowUserToResizeRows = false;
-            this.dgvServiceType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvServiceType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvServiceType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvServiceType.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaDV,
@@ -292,7 +290,8 @@ namespace GUI.UserControls
             this.dgvServiceType.RowHeadersWidth = 51;
             this.dgvServiceType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvServiceType.Size = new System.Drawing.Size(973, 746);
-            this.dgvServiceType.TabIndex = 6;
+            this.dgvServiceType.TabIndex = 1;
+            this.dgvServiceType.SelectionChanged += new System.EventHandler(this.dgvServiceType_SelectionChanged);
             // 
             // colMaDV
             // 
@@ -318,6 +317,15 @@ namespace GUI.UserControls
             this.colGiaDV.Name = "colGiaDV";
             this.colGiaDV.ReadOnly = true;
             // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.MinimumWidth = 6;
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Visible = false;
+            // 
             // colHinhAnh
             // 
             this.colHinhAnh.DataPropertyName = "HinhAnh";
@@ -327,17 +335,18 @@ namespace GUI.UserControls
             this.colHinhAnh.ReadOnly = true;
             this.colHinhAnh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colHinhAnh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colHinhAnh.Visible = false;
             // 
-            // colTrangThai
+            // picDichVu
             // 
-            this.colTrangThai.DataPropertyName = "TrangThai";
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.MinimumWidth = 6;
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Visible = false;
-            this.dgvServiceType.TabIndex = 1;
-            this.dgvServiceType.SelectionChanged += new System.EventHandler(this.dgvServiceType_SelectionChanged);
+            this.picDichVu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.picDichVu.Image = global::GUI.Properties.Resources.no_pictures;
+            this.picDichVu.Location = new System.Drawing.Point(0, 0);
+            this.picDichVu.Name = "picDichVu";
+            this.picDichVu.Size = new System.Drawing.Size(393, 166);
+            this.picDichVu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picDichVu.TabIndex = 40;
+            this.picDichVu.TabStop = false;
             // 
             // cboSortServiceTypeID
             // 
@@ -364,8 +373,6 @@ namespace GUI.UserControls
             this.lblSortServiceTypeID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSortServiceTypeID.Location = new System.Drawing.Point(11, 241);
             this.lblSortServiceTypeID.Name = "lblSortServiceTypeID";
-            this.lblSortServiceTypeID.Size = new System.Drawing.Size(208, 26);
-            this.lblSortServiceTypeID.TabIndex = 9;
             this.lblSortServiceTypeID.Size = new System.Drawing.Size(208, 26);
             this.lblSortServiceTypeID.TabIndex = 28;
             this.lblSortServiceTypeID.Text = "Sort Service Type ID";
@@ -397,8 +404,6 @@ namespace GUI.UserControls
             this.lblSortGiaServiceTypeID.Location = new System.Drawing.Point(11, 296);
             this.lblSortGiaServiceTypeID.Name = "lblSortGiaServiceTypeID";
             this.lblSortGiaServiceTypeID.Size = new System.Drawing.Size(138, 26);
-            this.lblSortGiaServiceTypeID.TabIndex = 11;
-            this.lblSortGiaServiceTypeID.Size = new System.Drawing.Size(138, 26);
             this.lblSortGiaServiceTypeID.TabIndex = 14;
             this.lblSortGiaServiceTypeID.Text = "Sort theo giá";
             this.lblSortGiaServiceTypeID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -409,8 +414,6 @@ namespace GUI.UserControls
             this.lblStateRoomType.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStateRoomType.Location = new System.Drawing.Point(10, 349);
             this.lblStateRoomType.Name = "lblStateRoomType";
-            this.lblStateRoomType.Size = new System.Drawing.Size(186, 26);
-            this.lblStateRoomType.TabIndex = 13;
             this.lblStateRoomType.Size = new System.Drawing.Size(186, 26);
             this.lblStateRoomType.TabIndex = 9;
             this.lblStateRoomType.Text = "Trạng thái dữ liệu";
@@ -445,64 +448,6 @@ namespace GUI.UserControls
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // picDichVu
-            // 
-            this.picDichVu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.picDichVu.Image = global::GUI.Properties.Resources.no_pictures;
-            this.picDichVu.Location = new System.Drawing.Point(61, 18);
-            this.picDichVu.Name = "picDichVu";
-            this.picDichVu.Size = new System.Drawing.Size(295, 131);
-            this.picDichVu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picDichVu.TabIndex = 40;
-            this.picDichVu.TabStop = false;
-            // 
-            // colMaDV
-            // 
-            this.colMaDV.DataPropertyName = "MaDV";
-            this.colMaDV.HeaderText = "Mã dịch vụ";
-            this.colMaDV.MinimumWidth = 6;
-            this.colMaDV.Name = "colMaDV";
-            this.colMaDV.ReadOnly = true;
-            this.colMaDV.Width = 122;
-            // 
-            // colTenDV
-            // 
-            this.colTenDV.DataPropertyName = "TenDV";
-            this.colTenDV.HeaderText = "Tên dịch vụ";
-            this.colTenDV.MinimumWidth = 6;
-            this.colTenDV.Name = "colTenDV";
-            this.colTenDV.ReadOnly = true;
-            this.colTenDV.Width = 127;
-            // 
-            // colGiaDV
-            // 
-            this.colGiaDV.DataPropertyName = "GiaDV";
-            this.colGiaDV.HeaderText = "Giá";
-            this.colGiaDV.MinimumWidth = 6;
-            this.colGiaDV.Name = "colGiaDV";
-            this.colGiaDV.ReadOnly = true;
-            this.colGiaDV.Width = 60;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "TrangThai";
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.MinimumWidth = 6;
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Visible = false;
-            this.colTrangThai.Width = 114;
-            // 
-            // colHinhAnh
-            // 
-            this.colHinhAnh.DataPropertyName = "HinhAnh";
-            this.colHinhAnh.HeaderText = "Hình ảnh";
-            this.colHinhAnh.Name = "colHinhAnh";
-            this.colHinhAnh.ReadOnly = true;
-            this.colHinhAnh.Visible = false;
-            this.colHinhAnh.Width = 90;
-            // 
             // ucServiceType
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -521,6 +466,7 @@ namespace GUI.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).EndInit();
             this.spcQuery.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvServiceType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDichVu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortServiceTypeID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortGiaServiceType)).EndInit();
             this.panUcHeader.ResumeLayout(false);
@@ -528,7 +474,6 @@ namespace GUI.UserControls
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picDichVu)).EndInit();
             this.ResumeLayout(false);
 
         }

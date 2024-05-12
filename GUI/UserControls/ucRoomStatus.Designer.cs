@@ -280,6 +280,47 @@
             this.dgvRoomStatus.Size = new System.Drawing.Size(973, 746);
             this.dgvRoomStatus.TabIndex = 6;
             // 
+            // colMaTinhTrangPhong
+            // 
+            this.colMaTinhTrangPhong.DataPropertyName = "MaTinhTrangPhong";
+            this.colMaTinhTrangPhong.FillWeight = 150F;
+            this.colMaTinhTrangPhong.HeaderText = "Mã tình trạng phòng";
+            this.colMaTinhTrangPhong.MinimumWidth = 6;
+            this.colMaTinhTrangPhong.Name = "colMaTinhTrangPhong";
+            this.colMaTinhTrangPhong.ReadOnly = true;
+            this.colMaTinhTrangPhong.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colTenTinhTrang
+            // 
+            this.colTenTinhTrang.DataPropertyName = "TenTinhTrang";
+            this.colTenTinhTrang.FillWeight = 150F;
+            this.colTenTinhTrang.HeaderText = "Tên tình trạng phòng";
+            this.colTenTinhTrang.MinimumWidth = 6;
+            this.colTenTinhTrang.Name = "colTenTinhTrang";
+            this.colTenTinhTrang.ReadOnly = true;
+            this.colTenTinhTrang.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colMoTa
+            // 
+            this.colMoTa.DataPropertyName = "MoTa";
+            this.colMoTa.FillWeight = 150F;
+            this.colMoTa.HeaderText = "Mô tả";
+            this.colMoTa.MinimumWidth = 6;
+            this.colMoTa.Name = "colMoTa";
+            this.colMoTa.ReadOnly = true;
+            this.colMoTa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.FillWeight = 150F;
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.MinimumWidth = 6;
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colTrangThai.Visible = false;
+            // 
             // cboSortRoomStatusID
             // 
             this.cboSortRoomStatusID.DelimiterChar = "";

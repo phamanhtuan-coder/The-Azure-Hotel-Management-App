@@ -23,6 +23,7 @@ namespace GUI.customForm
 
         private void frmHienCTHD_Load(object sender, EventArgs e)
         {
+            dgvBillDetails.AutoGenerateColumns = false;
             dgvBillDetails.DataSource = hs;
             dgvBillDetails.DefaultCellStyle.ForeColor = Color.Black;
             dgvBillDetails.DefaultCellStyle.SelectionBackColor = Color.Blue;

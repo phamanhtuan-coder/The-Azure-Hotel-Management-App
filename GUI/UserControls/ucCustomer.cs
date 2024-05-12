@@ -16,6 +16,7 @@ namespace GUI.UserControls
 {
     public partial class ucCustomer : UserControl
     {
+        public string MaPHQ { get; set; }
         public int MaHang { get; set; }
         public string GioiTinh { get; set; }
         public string TT { get; set; }
@@ -30,7 +31,36 @@ namespace GUI.UserControls
 
         private void ucCustomer_Load(object sender, EventArgs e)
         {
+            dgvCustomer.AutoGenerateColumns = false;
             CapNhatCBBNhanVien();
+            KiemTraPQ();
+        }
+        private void KiemTraPQ()
+        {
+            if (MaPHQ.Contains("01"))
+            {
+
+                btnAddCustomer.Enabled = false;
+                btnEditCustomer.Enabled = false;
+                btnDeleteCustomer.Enabled = false;
+                btnRecoverCustomer.Enabled = false;
+            }
+            else if (MaPHQ.Contains("03"))
+            {
+                btnAddCustomer.Enabled = true;
+                btnEditCustomer.Enabled = true;
+                btnDeleteCustomer.Enabled = false;
+                btnRecoverCustomer.Enabled = false;
+            }
+            else if (MaPHQ.Contains("04") || (MaPHQ.Contains("02")))
+            {
+                btnAddCustomer.Enabled = true;
+                btnEditCustomer.Enabled = true;
+                btnDeleteCustomer.Enabled = true;
+                btnRecoverCustomer.Enabled = true;
+            }
+
+
         }
         private void LoadDSKhachHang()
         {
@@ -146,12 +176,12 @@ namespace GUI.UserControls
                         if (XoaKhachHang())
                         {
                             LoadDSKhachHang();
-                            thongBao = new customMessageBox("Xóa thành công!");
+                            thongBao = new customMessageBox("Xóa thành công dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                         else
                         {
-                            thongBao = new customMessageBox("Xóa thất bại!");
+                            thongBao = new customMessageBox("Xóa thất bại dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }                        
                     }

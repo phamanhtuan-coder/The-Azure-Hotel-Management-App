@@ -16,10 +16,11 @@ namespace GUI.UserControls
 {
     public partial class ucBillHistory : UserControl
     {
+        public string MaPHQ { get; set; }
         private frmMain _parentForm;
         HoaDonBLL hoaDonBLL = new HoaDonBLL();
         List<HoaDonDTO> hoaDonDTOs = new List<HoaDonDTO>();
-        public int maKH { set; get; }
+        public int maKH { get; set; }
         public ucBillHistory()
         {
             InitializeComponent();
@@ -33,6 +34,7 @@ namespace GUI.UserControls
 
         private void ucBill_Load(object sender, EventArgs e)
         {
+            dgvBillHistory.AutoGenerateColumns = false;
             LoadDuLieuKH();
             LoadDuLieuNV();
             LoadDuLieuThue();
@@ -98,6 +100,51 @@ namespace GUI.UserControls
         private void btnTraCuuBill_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cboSortBillID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sortOption = cboSortBillID.SelectedItem.ToString();
+            switch (sortOption)
+            {
+                case "Giảm dần":
+                    hoaDonDTOs = hoaDonDTOs.OrderByDescending(item => item.MaHoaDon).ToList();
+                    break;
+                default:
+                    hoaDonDTOs = hoaDonDTOs.OrderBy(item => item.MaHoaDon).ToList();
+                    break;
+            }
+
+            dgvBillHistory.DataSource = hoaDonDTOs;
+        }
+
+        private void cboSortSumBill_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sortOption = cboSortSumBill.SelectedItem.ToString();
+            switch (sortOption)
+            {
+                case "Giảm dần":
+                    hoaDonDTOs = hoaDonDTOs.OrderByDescending(item => item.TongHoaDon).ToList();
+                    break;
+                default:
+                    hoaDonDTOs = hoaDonDTOs.OrderBy(item => item.TongHoaDon).ToList();
+                    break;
+            }
+
+            dgvBillHistory.DataSource = hoaDonDTOs;
+        }
+
+        private void dtpBillDate_ValueChanged(object sender, Syncfusion.WinForms.Input.Events.DateTimeValueChangedEventArgs e)
+        {
+            List<HoaDonDTO> dsLoc = new List<HoaDonDTO>();
+            foreach (HoaDonDTO hd in hoaDonDTOs)
+            {
+                if (hd.NgayLapHoaDon.Date == (DateTime) dtpBillDate.Value)
+                {
+                    dsLoc.Add(hd);
+                }
+            }
+            dgvBillHistory.DataSource = dsLoc;
         }
 
         private void cboSortBillID_SelectedIndexChanged(object sender, EventArgs e)

@@ -16,6 +16,7 @@ namespace GUI.UserControls
 {
     public partial class ucBooking : UserControl
     {
+        public string MaPHQ { get; set; }
         public customMessageBox thongBao;
         public frmDatPhong frm = new frmDatPhong();
 
@@ -38,6 +39,34 @@ namespace GUI.UserControls
             layds();
             dgvBooking.AutoGenerateColumns = false;
             laycombo();
+            KiemTraPQ();
+        }
+        private void KiemTraPQ()
+        {
+            if (MaPHQ.Contains("01"))
+            {
+
+                btnAddBooking.Enabled = false;
+                btnEditBooking.Enabled = false;
+                btnDeleteBooking.Enabled = false;
+                btnRecoverBooking.Enabled = false;
+            }
+            else if (MaPHQ.Contains("03"))
+            {
+                btnAddBooking.Enabled = true;
+                btnEditBooking.Enabled = true;
+                btnDeleteBooking.Enabled = false;
+                btnRecoverBooking.Enabled = false;
+            }
+            else if (MaPHQ.Contains("04") || (MaPHQ.Contains("02")))
+            {
+                btnAddBooking.Enabled = true;
+                btnEditBooking.Enabled = true;
+                btnDeleteBooking.Enabled = true;
+                btnRecoverBooking.Enabled = true;
+            }
+
+
         }
 
         private void LoadCCOKH()
@@ -117,25 +146,25 @@ namespace GUI.UserControls
                         thongBao = new customMessageBox(
                             "Xóa thành công dữ liệu có mã là: " + madatphong + "!"
                         );
+                        thongBao.ShowDialog();
                     }
                     else
                     {
                         thongBao = new customMessageBox(
                             "Xóa thất bại dữ liệu có mã là: " + madatphong + "!"
                         );
+                        thongBao.ShowDialog();
                     }
+
                 }
-                else
-                {
-                    thongBao = new customMessageBox("Hủy xóa!");
-                }
+               
             }
             else
             {
                 thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn xóa!");
-
+                thongBao.ShowDialog();
             }
-            thongBao.ShowDialog();
+            
         }
 
         private void btnRecoverBooking_Click(object sender, EventArgs e)
@@ -156,12 +185,14 @@ namespace GUI.UserControls
                         thongBao = new customMessageBox(
                             "Khôi phục thành công dữ liệu có mã là: " + madatphong + "!"
                         );
+                        thongBao.ShowDialog();
                     }
                     else
                     {
                         thongBao = new customMessageBox(
                             "Khôi phục thất bại dữ liệu có mã là: " + madatphong + "!"
                         );
+                        thongBao.ShowDialog();
                     }
                 }
             }
@@ -170,8 +201,7 @@ namespace GUI.UserControls
                 thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
                 thongBao.ShowDialog();
             }
-            thongBao.ShowDialog();
-
+           
         }
 
         private void cboSortBookingID_SelectedIndexChanged(object sender, EventArgs e)

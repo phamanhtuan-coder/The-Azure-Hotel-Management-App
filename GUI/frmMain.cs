@@ -278,6 +278,7 @@ namespace GUI
         {
             menuActivated(sender);
             ucAccountType frm = new ucAccountType();
+            frm.MaPHQ = this.phanQuyen;
             openForm(frm);
         }
 
@@ -290,6 +291,7 @@ namespace GUI
         {
             menuActivated(sender);
             ucDashboard frm = new ucDashboard();
+
             openForm(frm);
         }
 
@@ -302,6 +304,7 @@ namespace GUI
         {
             menuActivated(sender);
             ucBooking frm = new ucBooking();
+            frm.MaPHQ = this.phanQuyen;
             openForm(frm);
         }
 
@@ -314,6 +317,7 @@ namespace GUI
         {
             menuActivated(sender);
             ucRoom frm = new ucRoom();
+            frm.MaPHQ = this.phanQuyen;
             openForm(frm);
         }
 
@@ -327,6 +331,7 @@ namespace GUI
         {
             menuActivated(sender);
             ucRoomType frm = new ucRoomType();
+            frm.MaPHQ = this.phanQuyen;
             openForm(frm);
         }
 
@@ -339,6 +344,7 @@ namespace GUI
         {
             menuActivated(sender);
             ucRoomStatus frm = new ucRoomStatus();
+            frm.MaPHQ = this.phanQuyen;
             openForm(frm);
         }
 
@@ -351,6 +357,7 @@ namespace GUI
         {
             menuActivated(sender);
             ucCustomer frm = new ucCustomer();
+            frm.MaPHQ = this.phanQuyen;
             openForm(frm);
         }
 
@@ -363,6 +370,7 @@ namespace GUI
         {
             menuActivated(sender);
             ucService frm = new ucService();
+            frm.MaPHQ = this.phanQuyen;
             openForm(frm);
         }
 
@@ -375,6 +383,7 @@ namespace GUI
         {
             menuActivated(sender);
             ucBill frm = new ucBill();
+            frm.MaPHQ = this.phanQuyen;
             openForm(frm);
         }
 
@@ -387,6 +396,7 @@ namespace GUI
         {
             menuActivated(sender);
             ucStaff frm = new ucStaff();
+            frm.MaPHQ = this.phanQuyen;
             openForm(frm);
         }
 
@@ -399,6 +409,7 @@ namespace GUI
         {
             menuActivated(sender);
             ucServiceType frm = new ucServiceType();
+            frm.MaPHQ = this.phanQuyen;
             openForm(frm);
         }
 
@@ -411,6 +422,7 @@ namespace GUI
         {
             menuActivated(sender);
             ucTax frm = new ucTax();
+            frm.MaPHQ = this.phanQuyen;
             openForm(frm);
         }
 
@@ -423,6 +435,7 @@ namespace GUI
         {
             menuActivated(sender);
             ucAccounts frm = new ucAccounts();
+            frm.MaPHQ = this.phanQuyen;
             openForm(frm);
         }
 
@@ -435,6 +448,7 @@ namespace GUI
         {
             menuActivated(sender);
             ucDepartment frm = new ucDepartment();
+            frm.MaPHQ = this.phanQuyen;
             openForm(frm);
         }
 
@@ -447,6 +461,7 @@ namespace GUI
         {
             menuActivated(sender);
             ucRole frm = new ucRole();
+            frm.MaPHQ = this.phanQuyen;
             openForm(frm);
         }
 
@@ -459,6 +474,7 @@ namespace GUI
         {
             menuActivated(sender);
             ucCustomerRanking frm = new ucCustomerRanking();
+            frm.MaPHQ = this.phanQuyen;
             openForm(frm);
         }
 
@@ -471,6 +487,7 @@ namespace GUI
         {
             menuActivated(sender);
             ucDiscount frm = new ucDiscount();
+            frm.MaPHQ = this.phanQuyen;
             openForm(frm);
         }
 
@@ -495,6 +512,7 @@ namespace GUI
         {
             menuActivated(sender);
             ucDeviceStatus frm = new ucDeviceStatus();
+            frm.MaPHQ = this.phanQuyen;
             openForm(frm);
         }
 
@@ -507,6 +525,7 @@ namespace GUI
         {
             menuActivated(sender);
             ucDevice frm = new ucDevice();
+            frm.MaPHQ = this.phanQuyen;
             openForm(frm);
         }
 
@@ -519,6 +538,7 @@ namespace GUI
         {
             menuActivated(sender);
             ucHousekeeping frm = new ucHousekeeping();
+            frm.MaPHQ = this.phanQuyen;
             openForm(frm);
         }
 
@@ -531,6 +551,7 @@ namespace GUI
         {
             menuActivated(sender);
             ucMaintentance frm = new ucMaintentance();
+            frm.MaPHQ = this.phanQuyen;
             openForm(frm);
         }
 
@@ -543,6 +564,7 @@ namespace GUI
         {
             menuActivated(sender);
             ucRating frm = new ucRating();
+            frm.MaPHQ = this.phanQuyen;
             openForm(frm);
         }
 
@@ -862,6 +884,7 @@ namespace GUI
                         flpHousekeepingManagement.Visible = false;
                         menuActivated(btnMaintance);
                         ucMaintentance Home = new ucMaintentance();
+                        Home.MaPHQ = this.phanQuyen;
                         openForm(Home);
                     }
                     break;
@@ -879,6 +902,7 @@ namespace GUI
                         flpMaintanceManagement.Visible = false;
                         menuActivated(btnHousekeeping);
                         ucHousekeeping Home = new ucHousekeeping();
+                        Home.MaPHQ = this.phanQuyen;
                         openForm(Home);
                     }
                     break;
@@ -956,11 +980,11 @@ namespace GUI
                 if (userKH.HoTenKH != null)
                 {
 
-                    lblHiUser.Text = $"Xin chào {userKH.HoTenKH},\r\nChúc bạn một ngày làm việc vui vẻ!\r\n";
+                    lblHiUser.Text = $"Xin chào {userKH.HoTenKH},\r\nChúc bạn có một kỳ nghỉ tuyệt vời!\r\n";
                 }
                 else
                 {
-                    lblHiUser.Text = $"Xin chào bạn,\r\nChúc bạn một ngày làm việc vui vẻ!\r\n";
+                    lblHiUser.Text = $"Xin chào bạn,\r\nChúc bạn có một kỳ nghỉ tuyệt vời!\r\n";
                 }
 
             }

@@ -12,7 +12,13 @@ namespace DTO
       public int MaHD {get; set;}
       public int MaDatPhong {get; set;}
       public int MaKhuyenMai {get; set;}
+      public decimal KhuyenMai { get; set; }
       public decimal? ThanhTien {get; set;}
       public bool TrangThai {get; set;}
+
+      public double TyLeThue { get; set; }
+      public decimal TongHoaDon { get; set; }
+      public decimal TienNhan { get; set; }
+      public decimal TienThoi { get; set; }
     }
 }

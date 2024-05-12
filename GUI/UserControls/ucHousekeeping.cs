@@ -25,6 +25,7 @@ namespace GUI.UserControls
         DonPhongBLL donPhongBLL = new DonPhongBLL();
         List<DonPhongDTO> donPhongDTOs = new List<DonPhongDTO>();
         List<DonPhongDTO> dsSearch = new List<DonPhongDTO>();
+        public string MaPHQ { get; set; }
 
         public ucHousekeeping()
         {
@@ -33,11 +34,39 @@ namespace GUI.UserControls
 
         private void ucHousekeeping_Load(object sender, EventArgs e)
         {
+            dgvHousekeeping.AutoGenerateColumns = false;
             LoadDuLieuNhanVien();
             LoadDuLieuCombobox();
             LoadDuLieuDonPhong();
+            KiemTraPQ();
         }
+        private void KiemTraPQ()
+        {
+            if (MaPHQ.Contains("01"))
+            {
 
+                btnAddHousekeeping.Enabled = false;
+                btnEditHousekeeping.Enabled = false;
+                btnDeleteHousekeeping.Enabled = false;
+                btnRecoverHousekeeping.Enabled = false;
+            }
+            else if (MaPHQ.Contains("03"))
+            {
+                btnAddHousekeeping.Enabled = true;
+                btnEditHousekeeping.Enabled = true;
+                btnDeleteHousekeeping.Enabled = false;
+                btnRecoverHousekeeping.Enabled = false;
+            }
+            else if (MaPHQ.Contains("04") || (MaPHQ.Contains("02")))
+            {
+                btnAddHousekeeping.Enabled = true;
+                btnEditHousekeeping.Enabled = true;
+                btnDeleteHousekeeping.Enabled = true;
+                btnRecoverHousekeeping.Enabled = true;
+            }
+
+
+        }
         private void LoadDuLieuNhanVien()
         {
             NhanVienBLL nhanVienBLL = new NhanVienBLL();
@@ -110,12 +139,12 @@ namespace GUI.UserControls
                         if (XoaDonPhong(maDP))
                         {
                             Filter();
-                            thongBao = new customMessageBox("Xóa thành công!");
+                            thongBao = new customMessageBox("Xóa thành công dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                         else
                         {
-                            thongBao = new customMessageBox("Xóa thất bại!");
+                            thongBao = new customMessageBox("Xóa thất bại dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                     }
@@ -156,12 +185,12 @@ namespace GUI.UserControls
                         if (KhoiPhucDonPhong(maDP))
                         {
                             Filter();
-                            thongBao = new customMessageBox("Khôi phục thành công!");
+                            thongBao = new customMessageBox("Khôi phục thành công dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                         else
                         {
-                            thongBao = new customMessageBox("Khôi phục thất bại!");
+                            thongBao = new customMessageBox("Khôi phục thất bại dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                     }

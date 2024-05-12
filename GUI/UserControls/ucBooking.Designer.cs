@@ -62,7 +62,7 @@
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.colMaDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaKH = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaPHG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNgayDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNgayNhanPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -608,14 +608,11 @@
             // colMaKH
             // 
             this.colMaKH.DataPropertyName = "MaKH";
-            this.colMaKH.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.colMaKH.HeaderText = "Tên khách hàng";
+            this.colMaKH.HeaderText = "Mã KH";
             this.colMaKH.MinimumWidth = 6;
             this.colMaKH.Name = "colMaKH";
             this.colMaKH.ReadOnly = true;
-            this.colMaKH.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaKH.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colMaKH.Width = 150;
+            this.colMaKH.Width = 87;
             // 
             // colMaPHG
             // 
@@ -625,7 +622,7 @@
             this.colMaPHG.Name = "colMaPHG";
             this.colMaPHG.ReadOnly = true;
             this.colMaPHG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaPHG.Width = 91;
+            this.colMaPHG.Width = 99;
             // 
             // colNgayDatPhong
             // 
@@ -634,7 +631,7 @@
             this.colNgayDatPhong.MinimumWidth = 6;
             this.colNgayDatPhong.Name = "colNgayDatPhong";
             this.colNgayDatPhong.ReadOnly = true;
-            this.colNgayDatPhong.Width = 98;
+            this.colNgayDatPhong.Width = 107;
             // 
             // colNgayNhanPhong
             // 
@@ -670,6 +667,7 @@
             this.colTrangThai.MinimumWidth = 6;
             this.colTrangThai.Name = "colTrangThai";
             this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Visible = false;
             this.colTrangThai.Width = 105;
             // 
             // colTenTaiKhoan

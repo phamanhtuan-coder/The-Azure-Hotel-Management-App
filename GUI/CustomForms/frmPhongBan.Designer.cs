@@ -82,6 +82,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(94, 271);
             this.btnCancel.Name = "btnCancel";
@@ -134,7 +135,7 @@
             this.grpThongTinTruongPhong.Controls.Add(this.txtTruongPhong);
             this.grpThongTinTruongPhong.Controls.Add(this.lblNgayNhanChuc);
             this.grpThongTinTruongPhong.Controls.Add(this.dtpNgayNhanChuc);
-            this.grpThongTinTruongPhong.Location = new System.Drawing.Point(50, 120);
+            this.grpThongTinTruongPhong.Location = new System.Drawing.Point(40, 120);
             this.grpThongTinTruongPhong.Name = "grpThongTinTruongPhong";
             this.grpThongTinTruongPhong.Size = new System.Drawing.Size(538, 145);
             this.grpThongTinTruongPhong.TabIndex = 10;
@@ -161,8 +162,10 @@
             // 
             // frmPhongBan
             // 
+            this.AcceptButton = this.btnSubmit;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(600, 350);
             this.Controls.Add(this.txtMaPhongBan);
             this.Controls.Add(this.lblMaPhongBan);

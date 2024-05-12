@@ -258,7 +258,7 @@
             // 
             this.dgvloaiphong.AllowUserToAddRows = false;
             this.dgvloaiphong.AllowUserToDeleteRows = false;
-            this.dgvloaiphong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvloaiphong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvloaiphong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvloaiphong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colmaloai,
@@ -275,6 +275,39 @@
             this.dgvloaiphong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvloaiphong.Size = new System.Drawing.Size(970, 746);
             this.dgvloaiphong.TabIndex = 6;
+            // 
+            // colmaloai
+            // 
+            this.colmaloai.DataPropertyName = "MaLoai";
+            this.colmaloai.HeaderText = "Mã Loại";
+            this.colmaloai.MinimumWidth = 6;
+            this.colmaloai.Name = "colmaloai";
+            this.colmaloai.ReadOnly = true;
+            // 
+            // coltenloai
+            // 
+            this.coltenloai.DataPropertyName = "TenLoai";
+            this.coltenloai.HeaderText = "Tên Loại";
+            this.coltenloai.MinimumWidth = 6;
+            this.coltenloai.Name = "coltenloai";
+            this.coltenloai.ReadOnly = true;
+            // 
+            // colmota
+            // 
+            this.colmota.DataPropertyName = "Mota";
+            this.colmota.HeaderText = "Mô Tả";
+            this.colmota.MinimumWidth = 6;
+            this.colmota.Name = "colmota";
+            this.colmota.ReadOnly = true;
+            // 
+            // coltrangthai
+            // 
+            this.coltrangthai.DataPropertyName = "TrangThai";
+            this.coltrangthai.HeaderText = "Trạng Thái";
+            this.coltrangthai.MinimumWidth = 6;
+            this.coltrangthai.Name = "coltrangthai";
+            this.coltrangthai.ReadOnly = true;
+            this.coltrangthai.Visible = false;
             // 
             // cboSortRoomTypeID
             // 

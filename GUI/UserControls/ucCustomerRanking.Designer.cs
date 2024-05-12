@@ -180,7 +180,7 @@
             this.btnRecoverCustomerRanking.Size = new System.Drawing.Size(191, 41);
             this.btnRecoverCustomerRanking.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverCustomerRanking.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverCustomerRanking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnRecoverCustomerRanking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnRecoverCustomerRanking.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRecoverCustomerRanking.TabIndex = 5;
             this.btnRecoverCustomerRanking.Text = "Khôi phục";

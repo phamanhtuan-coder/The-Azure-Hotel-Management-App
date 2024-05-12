@@ -30,18 +30,19 @@
         {
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.dgvBillDetails = new System.Windows.Forms.DataGridView();
-            this.colMaCTHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.colMaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaCTHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBillDetails)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Location = new System.Drawing.Point(685, 451);
             this.btnCancel.Name = "btnCancel";
@@ -57,13 +58,13 @@
             this.dgvBillDetails.AllowUserToDeleteRows = false;
             this.dgvBillDetails.AllowUserToResizeColumns = false;
             this.dgvBillDetails.AllowUserToResizeRows = false;
-            this.dgvBillDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvBillDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvBillDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBillDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaCTHD,
             this.colMaHD,
+            this.colMaCTHD,
             this.colMaDP,
-            this.colMaKM,
+            this.colKM,
             this.colThanhTien,
             this.colTrangThai});
             this.dgvBillDetails.Location = new System.Drawing.Point(11, 73);
@@ -75,13 +76,17 @@
             this.dgvBillDetails.Size = new System.Drawing.Size(805, 372);
             this.dgvBillDetails.TabIndex = 2;
             // 
-            // colMaCTHD
+            // label1
             // 
-            this.colMaCTHD.DataPropertyName = "MaCTHD";
-            this.colMaCTHD.HeaderText = "Mã CTHD";
-            this.colMaCTHD.Name = "colMaCTHD";
-            this.colMaCTHD.ReadOnly = true;
-            this.colMaCTHD.Width = 104;
+            this.label1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(259, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(316, 46);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Chi tiết hóa đơn";
             // 
             // colMaHD
             // 
@@ -91,6 +96,14 @@
             this.colMaHD.ReadOnly = true;
             this.colMaHD.Width = 122;
             // 
+            // colMaCTHD
+            // 
+            this.colMaCTHD.DataPropertyName = "MaCTHD";
+            this.colMaCTHD.HeaderText = "Mã CTHD";
+            this.colMaCTHD.Name = "colMaCTHD";
+            this.colMaCTHD.ReadOnly = true;
+            this.colMaCTHD.Width = 104;
+            // 
             // colMaDP
             // 
             this.colMaDP.DataPropertyName = "MaDatPhong";
@@ -99,13 +112,13 @@
             this.colMaDP.ReadOnly = true;
             this.colMaDP.Width = 139;
             // 
-            // colMaKM
+            // colKM
             // 
-            this.colMaKM.DataPropertyName = "MaKhuyenMai";
-            this.colMaKM.HeaderText = "Mã khuyến mãi";
-            this.colMaKM.Name = "colMaKM";
-            this.colMaKM.ReadOnly = true;
-            this.colMaKM.Width = 151;
+            this.colKM.DataPropertyName = "KhuyenMai";
+            this.colKM.HeaderText = "Mức khuyến mãi";
+            this.colKM.Name = "colKM";
+            this.colKM.ReadOnly = true;
+            this.colKM.Width = 160;
             // 
             // colThanhTien
             // 
@@ -122,24 +135,14 @@
             this.colTrangThai.Name = "colTrangThai";
             this.colTrangThai.ReadOnly = true;
             this.colTrangThai.Visible = false;
-            this.colTrangThai.Width = 106;
-            // 
-            // label1
-            // 
-            this.label1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(259, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(316, 46);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Chi tiết hóa đơn";
+            this.colTrangThai.Width = 111;
             // 
             // frmHienCTHD
             // 
+            this.AcceptButton = this.btnCancel;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(829, 513);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvBillDetails);
@@ -159,12 +162,12 @@
         #endregion
         private Syncfusion.WinForms.Controls.SfButton btnCancel;
         private System.Windows.Forms.DataGridView dgvBillDetails;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaCTHD;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaHD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaCTHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaDP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaKM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colKM;
         private System.Windows.Forms.DataGridViewTextBoxColumn colThanhTien;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
-        private System.Windows.Forms.Label label1;
     }
 }

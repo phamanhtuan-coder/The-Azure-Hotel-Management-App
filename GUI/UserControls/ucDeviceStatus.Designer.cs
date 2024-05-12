@@ -265,6 +265,7 @@
             // 
             this.dgvDeviceStatus.AllowUserToAddRows = false;
             this.dgvDeviceStatus.AllowUserToDeleteRows = false;
+            this.dgvDeviceStatus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDeviceStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDeviceStatus.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaTinhTrangThietBi,
@@ -327,6 +328,7 @@
             this.colTrangThai.Name = "colTrangThai";
             this.colTrangThai.ReadOnly = true;
             this.colTrangThai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colTrangThai.Visible = false;
             this.colTrangThai.Width = 131;
             // 
             // cboSortDeviceStatusID
@@ -477,10 +479,10 @@
         private Syncfusion.WinForms.ListView.SfComboBox cboSortDeviceStatusID;
         private System.Windows.Forms.Label lblSortDeviceStatusD;
         private System.Windows.Forms.DataGridView dgvDeviceStatus;
+        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaTinhTrangThietBi;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenTinhTrang;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMoTa;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
-        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

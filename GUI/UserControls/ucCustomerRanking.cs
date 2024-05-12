@@ -17,6 +17,7 @@ namespace GUI.UserControls
 {
     public partial class ucCustomerRanking : UserControl
     {
+        public string MaPHQ { get; set; }
         public string trangthai { get; set; } = "";
         HangThanhVienBLL hangThanhVienBLL = new HangThanhVienBLL();
         HangThanhVienDTO hangThanhVienDTO = new HangThanhVienDTO();
@@ -29,7 +30,36 @@ namespace GUI.UserControls
 
         private void ucCustomerRanking_Load(object sender, EventArgs e)
         {
-            CapNhatCBBHangThanhVien();           
+            dgvCustomerRank.AutoGenerateColumns = false;
+            CapNhatCBBHangThanhVien();
+            KiemTraPQ();
+        }
+        private void KiemTraPQ()
+        {
+            if (MaPHQ.Contains("01"))
+            {
+
+                btnAddCustomerRanking.Enabled = false;
+                btnEditCustomerRanking.Enabled = false;
+                btnDeleteCustomerRanking.Enabled = false;
+                btnRecoverCustomerRanking.Enabled = false;
+            }
+            else if (MaPHQ.Contains("03"))
+            {
+                btnAddCustomerRanking.Enabled = true;
+                btnEditCustomerRanking.Enabled = true;
+                btnDeleteCustomerRanking.Enabled = false;
+                btnRecoverCustomerRanking.Enabled = false;
+            }
+            else if (MaPHQ.Contains("04") || (MaPHQ.Contains("02")))
+            {
+                btnAddCustomerRanking.Enabled = true;
+                btnEditCustomerRanking.Enabled = true;
+                btnDeleteCustomerRanking.Enabled = true;
+                btnRecoverCustomerRanking.Enabled = true;
+            }
+
+
         }
         private void LoadDSHangThanhVien()
         {
@@ -99,12 +129,12 @@ namespace GUI.UserControls
                         if (DelHangThanhVien(hangThanhVienDTO))
                         {
                             LoadDSHangThanhVien();
-                            thongBao = new customMessageBox("Bạn đã xóa thành công?");
+                            thongBao = new customMessageBox("Bạn đã xóa thành công dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                         else
                         {
-                            thongBao = new customMessageBox("Bạn đã xóa thất bại?");
+                            thongBao = new customMessageBox("Bạn đã xóa thất bại dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                     }
@@ -147,12 +177,12 @@ namespace GUI.UserControls
                         if (RecoHangThanhVien(hangThanhVienDTO))
                         {
                             LoadDSHangThanhVien();
-                            thongBao = new customMessageBox("Bạn đã khôi phục thành công?");
+                            thongBao = new customMessageBox("Bạn đã khôi phục thành công dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                         else
                         {
-                            thongBao = new customMessageBox("Bạn đã khôi phục thất bại?");
+                            thongBao = new customMessageBox("Bạn đã khôi phục thất bại dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                     }

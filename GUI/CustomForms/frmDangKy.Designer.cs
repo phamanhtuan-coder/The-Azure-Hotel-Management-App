@@ -462,8 +462,10 @@ namespace GUI.customForm
             // 
             // frmDangKy
             // 
+            this.AcceptButton = this.btnSignUp;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
+            this.CancelButton = this.btnQuayLai;
             this.ClientSize = new System.Drawing.Size(749, 574);
             this.Controls.Add(this.btnQuayLai);
             this.Controls.Add(this.btnSignUp);

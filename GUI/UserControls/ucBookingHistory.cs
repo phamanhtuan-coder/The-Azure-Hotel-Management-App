@@ -38,9 +38,10 @@ namespace GUI.UserControls
 
         private void ucBooking_Load(object sender, EventArgs e)
         {
+            LoadCombo();
             dgvBookingHistory.AutoGenerateColumns = false;
             LoadDsDatPhong();
-            LoadCombo();
+            
         }
         private void LoadDsDatPhong()
         {
@@ -66,17 +67,44 @@ namespace GUI.UserControls
             this.Dispose();
         }
 
-        private void dtpBookingDate_Click(object sender, EventArgs e)
+        private void dtpBookingDate_ValueChanged(object sender, Syncfusion.WinForms.Input.Events.DateTimeValueChangedEventArgs e)
         {
             List<DatPhongDTO> dsLoc = new List<DatPhongDTO>();
-            foreach (DatPhongDTO dg in dsPhong)
+            foreach (DatPhongDTO dp in dsPhong)
             {
-                if (dg.NgayDatPhong.Date == (DateTime) dtpBookingDate.Value)
+                if (dp.NgayDatPhong.Date == (DateTime)dtpBookingDate.Value)
                 {
-                    dsLoc.Add(dg);
+                    dsLoc.Add(dp);
                 }
             }
             dgvBookingHistory.DataSource = dsLoc;
         }
+
+        private void dtpCheckInDate_ValueChanged(object sender, Syncfusion.WinForms.Input.Events.DateTimeValueChangedEventArgs e)
+        {
+            List<DatPhongDTO> dsLoc = new List<DatPhongDTO>();
+            foreach (DatPhongDTO dp in dsPhong)
+            {
+                if (dp.NgayNhanPhong?.Date == dtpCheckInDate.Value?.Date)
+                {
+                    dsLoc.Add(dp);
+                }
+            }
+            dgvBookingHistory.DataSource = dsLoc;
+        }
+
+        private void dtpCheckOutDate_ValueChanged(object sender, Syncfusion.WinForms.Input.Events.DateTimeValueChangedEventArgs e)
+        {
+            List<DatPhongDTO> dsLoc = new List<DatPhongDTO>();
+            foreach (DatPhongDTO dp in dsPhong)
+            {
+                if (dp.NgayTraPhong?.Date == dtpCheckOutDate.Value?.Date)
+                {
+                    dsLoc.Add(dp);
+                }
+            }
+            dgvBookingHistory.DataSource = dsLoc;
+        }
+
     }
 }

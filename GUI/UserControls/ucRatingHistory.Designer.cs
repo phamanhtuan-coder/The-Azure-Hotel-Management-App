@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucRatingHistory));
             this.lblRating = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
-            this.btnReturn = new Syncfusion.WinForms.Controls.SfButton();
             this.btnEditRating = new Syncfusion.WinForms.Controls.SfButton();
             this.btnDeleteRating = new Syncfusion.WinForms.Controls.SfButton();
             this.btnRecoverRating = new Syncfusion.WinForms.Controls.SfButton();
@@ -54,6 +53,7 @@
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnReturn = new Syncfusion.WinForms.Controls.SfButton();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRating)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -87,8 +87,8 @@
             this.tlpController.ColumnCount = 2;
             this.tlpController.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpController.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpController.Controls.Add(this.btnReturn, 0, 0);
             this.tlpController.Controls.Add(this.btnEditRating, 0, 1);
+            this.tlpController.Controls.Add(this.btnDanhGia, 0, 0);
             this.tlpController.Controls.Add(this.btnDeleteRating, 1, 0);
             this.tlpController.Controls.Add(this.btnRecoverRating, 1, 1);
             this.tlpController.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -100,23 +100,6 @@
             this.tlpController.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpController.Size = new System.Drawing.Size(394, 94);
             this.tlpController.TabIndex = 6;
-            // 
-            // btnReturn
-            // 
-            this.btnReturn.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnReturn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnReturn.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold);
-            this.btnReturn.ForeColor = System.Drawing.Color.White;
-            this.btnReturn.Location = new System.Drawing.Point(3, 3);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(191, 41);
-            this.btnReturn.Style.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnReturn.Style.ForeColor = System.Drawing.Color.White;
-            this.btnReturn.TabIndex = 2;
-            this.btnReturn.Text = "Quay lại";
-            this.toolTip1.SetToolTip(this.btnReturn, "Quay lại");
-            this.btnReturn.UseVisualStyleBackColor = false;
-            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // btnEditRating
             // 
@@ -188,7 +171,7 @@
             this.cboStateRating.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboStateRating.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboStateRating.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateRating.Location = new System.Drawing.Point(234, 192);
+            this.cboStateRating.Location = new System.Drawing.Point(234, 116);
             this.cboStateRating.Name = "cboStateRating";
             this.cboStateRating.Size = new System.Drawing.Size(143, 33);
             this.cboStateRating.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -214,7 +197,7 @@
             // spcQuery.Panel2
             // 
             this.spcQuery.Panel2.BackColor = System.Drawing.Color.Lavender;
-            this.spcQuery.Panel2.Controls.Add(this.btnDanhGia);
+            this.spcQuery.Panel2.Controls.Add(this.btnReturn);
             this.spcQuery.Panel2.Controls.Add(this.dtpNgayDanhGia);
             this.spcQuery.Panel2.Controls.Add(this.lblNgayDanhGia);
             this.spcQuery.Panel2.Controls.Add(this.cboRatingValue);
@@ -231,7 +214,7 @@
             this.dgvRating.AllowUserToDeleteRows = false;
             this.dgvRating.AllowUserToResizeColumns = false;
             this.dgvRating.AllowUserToResizeRows = false;
-            this.dgvRating.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRating.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvRating.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRating.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaDG,
@@ -264,6 +247,7 @@
             this.colMaDP.HeaderText = "Mã đặt phòng";
             this.colMaDP.Name = "colMaDP";
             this.colMaDP.ReadOnly = true;
+            this.colMaDP.Width = 147;
             // 
             // colDiemDG
             // 
@@ -271,6 +255,7 @@
             this.colDiemDG.HeaderText = "Điểm đánh giá";
             this.colDiemDG.Name = "colDiemDG";
             this.colDiemDG.ReadOnly = true;
+            this.colDiemDG.Width = 153;
             // 
             // colNhanXet
             // 
@@ -278,6 +263,7 @@
             this.colNhanXet.HeaderText = "Nhận xét";
             this.colNhanXet.Name = "colNhanXet";
             this.colNhanXet.ReadOnly = true;
+            this.colNhanXet.Width = 108;
             // 
             // colNgayDG
             // 
@@ -285,6 +271,7 @@
             this.colNgayDG.HeaderText = "Ngày đánh giá";
             this.colNgayDG.Name = "colNgayDG";
             this.colNgayDG.ReadOnly = true;
+            this.colNgayDG.Width = 151;
             // 
             // colTrangThai
             // 
@@ -296,19 +283,18 @@
             // 
             // btnDanhGia
             // 
-            this.btnDanhGia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDanhGia.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnDanhGia.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDanhGia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDanhGia.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold);
             this.btnDanhGia.ForeColor = System.Drawing.Color.White;
-            this.btnDanhGia.Location = new System.Drawing.Point(110, 18);
+            this.btnDanhGia.Location = new System.Drawing.Point(3, 3);
             this.btnDanhGia.Name = "btnDanhGia";
-            this.btnDanhGia.Size = new System.Drawing.Size(186, 56);
+            this.btnDanhGia.Size = new System.Drawing.Size(191, 41);
             this.btnDanhGia.Style.BackColor = System.Drawing.Color.SteelBlue;
             this.btnDanhGia.Style.ForeColor = System.Drawing.Color.White;
             this.btnDanhGia.TabIndex = 7;
-            this.btnDanhGia.Text = "Viết đánh giá";
-            this.toolTip1.SetToolTip(this.btnDanhGia, "Viết đánh giá");
+            this.btnDanhGia.Text = "Đánh giá";
+            this.toolTip1.SetToolTip(this.btnDanhGia, "Đánh giá");
             this.btnDanhGia.UseVisualStyleBackColor = false;
             this.btnDanhGia.Click += new System.EventHandler(this.btnDanhGia_Click);
             // 
@@ -316,7 +302,7 @@
             // 
             this.dtpNgayDanhGia.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayDanhGia.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayDanhGia.Location = new System.Drawing.Point(234, 145);
+            this.dtpNgayDanhGia.Location = new System.Drawing.Point(234, 69);
             this.dtpNgayDanhGia.Name = "dtpNgayDanhGia";
             this.dtpNgayDanhGia.Size = new System.Drawing.Size(143, 27);
             this.dtpNgayDanhGia.TabIndex = 31;
@@ -327,7 +313,7 @@
             // 
             this.lblNgayDanhGia.AutoSize = true;
             this.lblNgayDanhGia.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgayDanhGia.Location = new System.Drawing.Point(9, 146);
+            this.lblNgayDanhGia.Location = new System.Drawing.Point(9, 70);
             this.lblNgayDanhGia.Name = "lblNgayDanhGia";
             this.lblNgayDanhGia.Size = new System.Drawing.Size(155, 26);
             this.lblNgayDanhGia.TabIndex = 10;
@@ -339,7 +325,7 @@
             this.cboRatingValue.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboRatingValue.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboRatingValue.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboRatingValue.Location = new System.Drawing.Point(234, 91);
+            this.cboRatingValue.Location = new System.Drawing.Point(234, 15);
             this.cboRatingValue.Name = "cboRatingValue";
             this.cboRatingValue.Size = new System.Drawing.Size(143, 33);
             this.cboRatingValue.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -355,7 +341,7 @@
             // 
             this.lblRatingValue.AutoSize = true;
             this.lblRatingValue.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRatingValue.Location = new System.Drawing.Point(9, 98);
+            this.lblRatingValue.Location = new System.Drawing.Point(9, 22);
             this.lblRatingValue.Name = "lblRatingValue";
             this.lblRatingValue.Size = new System.Drawing.Size(179, 26);
             this.lblRatingValue.TabIndex = 8;
@@ -366,7 +352,7 @@
             // 
             this.lblStateRating.AutoSize = true;
             this.lblStateRating.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStateRating.Location = new System.Drawing.Point(9, 199);
+            this.lblStateRating.Location = new System.Drawing.Point(9, 123);
             this.lblStateRating.Name = "lblStateRating";
             this.lblStateRating.Size = new System.Drawing.Size(186, 26);
             this.lblStateRating.TabIndex = 12;
@@ -401,6 +387,22 @@
             this.spcHeader.Size = new System.Drawing.Size(1370, 94);
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnReturn.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnReturn.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold);
+            this.btnReturn.ForeColor = System.Drawing.Color.White;
+            this.btnReturn.Location = new System.Drawing.Point(105, 193);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(191, 41);
+            this.btnReturn.Style.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnReturn.Style.ForeColor = System.Drawing.Color.White;
+            this.btnReturn.TabIndex = 32;
+            this.btnReturn.Text = "Quay lại";
+            this.toolTip1.SetToolTip(this.btnReturn, "Quay lại");
+            this.btnReturn.UseVisualStyleBackColor = false;
             // 
             // ucRatingHistory
             // 
@@ -447,7 +449,6 @@
         private System.Windows.Forms.DateTimePicker dtpNgayDanhGia;
         private System.Windows.Forms.Label lblNgayDanhGia;
         private System.Windows.Forms.DataGridView dgvRating;
-        private Syncfusion.WinForms.Controls.SfButton btnReturn;
         private Syncfusion.WinForms.Controls.SfButton btnDanhGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaDG;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaDP;
@@ -456,5 +457,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayDG;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
         private System.Windows.Forms.ToolTip toolTip1;
+        private Syncfusion.WinForms.Controls.SfButton btnReturn;
     }
 }

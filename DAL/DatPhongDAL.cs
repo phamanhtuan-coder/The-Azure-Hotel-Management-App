@@ -389,9 +389,9 @@ namespace DAL
                     phong.MaPHG = (int)reader["MaPHG"];
                     phong.MaKH = maKH;
                     phong.SoLuongKH = (int)reader["SoLuongKH"];
-                    phong.NgayDatPhong = DateTime.Parse(reader["NgayDatPhong"].ToString());
-                    phong.NgayNhanPhong = DateTime.Parse(reader["NgayNhanPhong"].ToString());
-                    phong.NgayTraPhong = DateTime.Parse(reader["NgayTraPhong"].ToString());
+                    phong.NgayDatPhong = reader["NgayDatPhong"] == DBNull.Value ? DateTime.MinValue : DateTime.Parse(reader["NgayDatPhong"].ToString());
+                    phong.NgayNhanPhong = reader["NgayNhanPhong"] == DBNull.Value ? DateTime.MinValue : DateTime.Parse(reader["NgayNhanPhong"].ToString());
+                    phong.NgayTraPhong = reader["NgayTraPhong"] == DBNull.Value ? DateTime.MinValue : DateTime.Parse(reader["NgayTraPhong"].ToString());
                     phong.TrangThai = true;
                     ds.Add(phong);
                 }

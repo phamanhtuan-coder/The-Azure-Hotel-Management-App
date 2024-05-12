@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucDepartment));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblDepartment = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddDepartment = new Syncfusion.WinForms.Controls.SfButton();
@@ -313,8 +313,8 @@
             // colNgayNhanChuc
             // 
             this.colNgayNhanChuc.DataPropertyName = "NgayNhanChuc";
-            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
-            this.colNgayNhanChuc.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
+            this.colNgayNhanChuc.DefaultCellStyle = dataGridViewCellStyle1;
             this.colNgayNhanChuc.HeaderText = "Ngày nhận chức";
             this.colNgayNhanChuc.Name = "colNgayNhanChuc";
             this.colNgayNhanChuc.ReadOnly = true;
@@ -325,6 +325,7 @@
             this.colTrangThai.HeaderText = "Trạng thái";
             this.colTrangThai.Name = "colTrangThai";
             this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Visible = false;
             // 
             // cboSortDepartment
             // 
@@ -478,11 +479,11 @@
         private Syncfusion.WinForms.ListView.SfComboBox cboSortDepartment;
         private System.Windows.Forms.Label lblSortDepartmentID;
         private System.Windows.Forms.DataGridView dgvDepartment;
+        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaPhongBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTruongPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayNhanChuc;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
-        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

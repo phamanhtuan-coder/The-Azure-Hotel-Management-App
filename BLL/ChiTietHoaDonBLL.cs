@@ -76,5 +76,17 @@ namespace BLL
                 return new List<ChiTietHoaDonDTO>();
             }
         }
+
+        public List<ChiTietHoaDonDTO> TruyVanChiTietHD(int maHoaDon)
+        {
+            if (maHoaDon > 0)
+            {
+                return chiTietHoaDonDAL.TruyVanChiTietHD(maHoaDon);
+            }
+            else
+            {
+                return new List<ChiTietHoaDonDTO>();
+            }
+        }
     }
 }
