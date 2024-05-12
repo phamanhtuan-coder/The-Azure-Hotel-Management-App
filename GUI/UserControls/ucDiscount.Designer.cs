@@ -264,7 +264,7 @@
             this.dgvDiscount.AllowUserToDeleteRows = false;
             this.dgvDiscount.AllowUserToResizeColumns = false;
             this.dgvDiscount.AllowUserToResizeRows = false;
-            this.dgvDiscount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvDiscount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDiscount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDiscount.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaKM,
@@ -288,7 +288,6 @@
             this.colMaKM.HeaderText = "Mã khuyến mãi";
             this.colMaKM.Name = "colMaKM";
             this.colMaKM.ReadOnly = true;
-            this.colMaKM.Width = 140;
             // 
             // colTenKM
             // 
@@ -296,7 +295,6 @@
             this.colTenKM.HeaderText = "Tên khuyến mãi";
             this.colTenKM.Name = "colTenKM";
             this.colTenKM.ReadOnly = true;
-            this.colTenKM.Width = 145;
             // 
             // colMucKhuyenMai
             // 
@@ -304,7 +302,6 @@
             this.colMucKhuyenMai.HeaderText = "Mức khuyến mãi";
             this.colMucKhuyenMai.Name = "colMucKhuyenMai";
             this.colMucKhuyenMai.ReadOnly = true;
-            this.colMucKhuyenMai.Width = 148;
             // 
             // colHangTV
             // 
@@ -315,7 +312,6 @@
             this.colHangTV.ReadOnly = true;
             this.colHangTV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colHangTV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colHangTV.Width = 150;
             // 
             // colTrangThai
             // 

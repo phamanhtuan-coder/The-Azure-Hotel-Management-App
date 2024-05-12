@@ -39,21 +39,18 @@ namespace GUI.UserControls
             {
 
                 btnAddRole.Enabled = false;
-                btnEditRole.Enabled = false;
                 btnDeleteRole.Enabled = false;
                 btnRecoverRole.Enabled = false;
             }
             else if (MaPHQ.Contains("03"))
             {
                 btnAddRole.Enabled = true;
-                btnEditRole.Enabled = true;
                 btnDeleteRole.Enabled = false;
                 btnRecoverRole.Enabled = false;
             }
             else if (MaPHQ.Contains("04") || (MaPHQ.Contains("02")))
             {
                 btnAddRole.Enabled = true;
-                btnEditRole.Enabled = true;
                 btnDeleteRole.Enabled = true;
                 btnRecoverRole.Enabled = true;
             }
@@ -64,7 +61,6 @@ namespace GUI.UserControls
         {
             //Gọi tới hàm cấp dữ liệu chung vì dữ liệu đa số giống nhau
             DuLieuChoComboBox.duLieuSort(cboSortRole);
-            DuLieuChoComboBox.duLieuSort(cboSortSoLuong);
             DuLieuChoComboBox.duLieuFilter(cboStateRole);
         }
 
@@ -217,21 +213,7 @@ namespace GUI.UserControls
             dgvRole.DataSource = dsRole;
         }
 
-        private void cboSortSoLuong_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string sortOption = cboSortSoLuong.SelectedItem.ToString();
-            switch (sortOption)
-            {
-                case "Giảm dần":
-                    dsRole = dsRole.OrderByDescending(item => item.SoLuongTK).ToList();
-                    break;
-                default:
-                    dsRole = dsRole.OrderBy(item => item.SoLuongTK).ToList();
-                    break;
-            }
-
-            dgvRole.DataSource = dsRole;
-        }
+       
 
         private void btnTraCuuRole_Click(object sender, EventArgs e)
         {

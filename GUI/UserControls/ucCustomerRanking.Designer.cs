@@ -268,7 +268,7 @@
             this.dgvCustomerRank.AllowUserToDeleteRows = false;
             this.dgvCustomerRank.AllowUserToResizeColumns = false;
             this.dgvCustomerRank.AllowUserToResizeRows = false;
-            this.dgvCustomerRank.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvCustomerRank.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCustomerRank.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCustomerRank.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -292,7 +292,6 @@
             this.ID.HeaderText = "Mã hạng thành viện";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
-            this.ID.Width = 173;
             // 
             // TenHang
             // 
@@ -300,7 +299,6 @@
             this.TenHang.HeaderText = "Tên hạng";
             this.TenHang.Name = "TenHang";
             this.TenHang.ReadOnly = true;
-            this.TenHang.Width = 101;
             // 
             // MucGiamGia
             // 
@@ -308,7 +306,6 @@
             this.MucGiamGia.HeaderText = "Mức giảm giá";
             this.MucGiamGia.Name = "MucGiamGia";
             this.MucGiamGia.ReadOnly = true;
-            this.MucGiamGia.Width = 127;
             // 
             // colSoLuong
             // 
@@ -316,7 +313,6 @@
             this.colSoLuong.HeaderText = "Số lượng";
             this.colSoLuong.Name = "colSoLuong";
             this.colSoLuong.ReadOnly = true;
-            this.colSoLuong.Width = 97;
             // 
             // TrangThai
             // 

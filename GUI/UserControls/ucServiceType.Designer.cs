@@ -273,7 +273,7 @@ namespace GUI.UserControls
             this.dgvServiceType.AllowUserToDeleteRows = false;
             this.dgvServiceType.AllowUserToResizeColumns = false;
             this.dgvServiceType.AllowUserToResizeRows = false;
-            this.dgvServiceType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvServiceType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvServiceType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvServiceType.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaDV,
@@ -300,7 +300,6 @@ namespace GUI.UserControls
             this.colMaDV.MinimumWidth = 6;
             this.colMaDV.Name = "colMaDV";
             this.colMaDV.ReadOnly = true;
-            this.colMaDV.Width = 122;
             // 
             // colTenDV
             // 
@@ -309,7 +308,6 @@ namespace GUI.UserControls
             this.colTenDV.MinimumWidth = 6;
             this.colTenDV.Name = "colTenDV";
             this.colTenDV.ReadOnly = true;
-            this.colTenDV.Width = 127;
             // 
             // colGiaDV
             // 
@@ -318,7 +316,6 @@ namespace GUI.UserControls
             this.colGiaDV.MinimumWidth = 6;
             this.colGiaDV.Name = "colGiaDV";
             this.colGiaDV.ReadOnly = true;
-            this.colGiaDV.Width = 60;
             // 
             // colTrangThai
             // 
@@ -328,7 +325,6 @@ namespace GUI.UserControls
             this.colTrangThai.Name = "colTrangThai";
             this.colTrangThai.ReadOnly = true;
             this.colTrangThai.Visible = false;
-            this.colTrangThai.Width = 114;
             // 
             // colHinhAnh
             // 
@@ -340,7 +336,6 @@ namespace GUI.UserControls
             this.colHinhAnh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colHinhAnh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colHinhAnh.Visible = false;
-            this.colHinhAnh.Width = 90;
             // 
             // picDichVu
             // 

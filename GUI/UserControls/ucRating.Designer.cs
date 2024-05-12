@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucRating));
             this.lblRating = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
+            this.btnRecoverRating = new Syncfusion.WinForms.Controls.SfButton();
             this.btnDeleteRating = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateRating = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
@@ -50,7 +51,6 @@
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnRecoverRating = new Syncfusion.WinForms.Controls.SfButton();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRating)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -93,6 +93,28 @@
             this.tlpController.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpController.Size = new System.Drawing.Size(394, 94);
             this.tlpController.TabIndex = 6;
+            // 
+            // btnRecoverRating
+            // 
+            this.btnRecoverRating.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverRating.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRecoverRating.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecoverRating.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecoverRating.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverRating.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnRecoverRating.Location = new System.Drawing.Point(200, 3);
+            this.btnRecoverRating.Name = "btnRecoverRating";
+            this.btnRecoverRating.Size = new System.Drawing.Size(191, 88);
+            this.btnRecoverRating.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverRating.Style.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverRating.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnRecoverRating.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnRecoverRating.TabIndex = 6;
+            this.btnRecoverRating.Text = "Khôi phục";
+            this.btnRecoverRating.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnRecoverRating, "Khôi phục phân quyền");
+            this.btnRecoverRating.UseVisualStyleBackColor = false;
+            this.btnRecoverRating.Click += new System.EventHandler(this.btnRecoverRating_Click);
             // 
             // btnDeleteRating
             // 
@@ -323,28 +345,6 @@
             this.spcHeader.Size = new System.Drawing.Size(1370, 94);
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
-            // 
-            // btnRecoverRating
-            // 
-            this.btnRecoverRating.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverRating.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRecoverRating.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecoverRating.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecoverRating.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverRating.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnRecoverRating.Location = new System.Drawing.Point(200, 3);
-            this.btnRecoverRating.Name = "btnRecoverRating";
-            this.btnRecoverRating.Size = new System.Drawing.Size(191, 88);
-            this.btnRecoverRating.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverRating.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverRating.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnRecoverRating.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRecoverRating.TabIndex = 6;
-            this.btnRecoverRating.Text = "Khôi phục";
-            this.btnRecoverRating.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolTip1.SetToolTip(this.btnRecoverRating, "Khôi phục phân quyền");
-            this.btnRecoverRating.UseVisualStyleBackColor = false;
-            this.btnRecoverRating.Click += new System.EventHandler(this.btnRecoverRating_Click);
             // 
             // ucRating
             // 

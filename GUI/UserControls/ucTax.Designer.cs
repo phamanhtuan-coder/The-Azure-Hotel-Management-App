@@ -268,7 +268,7 @@
             this.dgvTax.AllowUserToDeleteRows = false;
             this.dgvTax.AllowUserToResizeColumns = false;
             this.dgvTax.AllowUserToResizeRows = false;
-            this.dgvTax.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvTax.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTax.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTax.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.coLMaThue,
@@ -292,7 +292,6 @@
             this.coLMaThue.HeaderText = "Mã thuế";
             this.coLMaThue.Name = "coLMaThue";
             this.coLMaThue.ReadOnly = true;
-            this.coLMaThue.Width = 92;
             // 
             // colTenThue
             // 
@@ -300,7 +299,6 @@
             this.colTenThue.HeaderText = "Tên thuế";
             this.colTenThue.Name = "colTenThue";
             this.colTenThue.ReadOnly = true;
-            this.colTenThue.Width = 97;
             // 
             // colTiLeThue
             // 
@@ -315,7 +313,6 @@
             this.colMoTa.HeaderText = "Mô tả";
             this.colMoTa.Name = "colMoTa";
             this.colMoTa.ReadOnly = true;
-            this.colMoTa.Width = 74;
             // 
             // colTrangThai
             // 

@@ -32,23 +32,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucRole));
             this.lblRole = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
+            this.btnDeleteRole = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnRecoverRole = new Syncfusion.WinForms.Controls.SfButton();
             this.txtSearchRole = new System.Windows.Forms.TextBox();
             this.btnTraCuuRole = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateRole = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.ucDashboard1 = new GUI.UserControls.ucDashboard();
             this.dgvRole = new System.Windows.Forms.DataGridView();
+            this.btnAddRole = new Syncfusion.WinForms.Controls.SfButton();
             this.cboSortRole = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortServiceTypeID = new System.Windows.Forms.Label();
-            this.cboSortSoLuong = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.lblSortSoLuongRole = new System.Windows.Forms.Label();
             this.lblStateRole = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnAddRole = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnDeleteRole = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnRecoverRole = new Syncfusion.WinForms.Controls.SfButton();
             this.colPQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenPB = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,7 +63,6 @@
             this.spcQuery.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRole)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortRole)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboSortSoLuong)).BeginInit();
             this.panUcHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).BeginInit();
             this.spcHeader.Panel1.SuspendLayout();
@@ -101,240 +98,6 @@
             this.tlpController.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpController.Size = new System.Drawing.Size(394, 94);
             this.tlpController.TabIndex = 6;
-            // 
-            // txtSearchRole
-            // 
-            this.txtSearchRole.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchRole.Location = new System.Drawing.Point(6, 16);
-            this.txtSearchRole.Name = "txtSearchRole";
-            this.txtSearchRole.Size = new System.Drawing.Size(251, 27);
-            this.txtSearchRole.TabIndex = 7;
-            this.toolTip1.SetToolTip(this.txtSearchRole, "Nhập mã phân quyền");
-            // 
-            // btnTraCuuRole
-            // 
-            this.btnTraCuuRole.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTraCuuRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnTraCuuRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTraCuuRole.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTraCuuRole.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuRole.Location = new System.Drawing.Point(264, 16);
-            this.btnTraCuuRole.Name = "btnTraCuuRole";
-            this.btnTraCuuRole.Size = new System.Drawing.Size(118, 40);
-            this.btnTraCuuRole.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnTraCuuRole.Style.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuRole.TabIndex = 8;
-            this.btnTraCuuRole.Text = "Tra cứu";
-            this.toolTip1.SetToolTip(this.btnTraCuuRole, "Tra cứu");
-            this.btnTraCuuRole.UseVisualStyleBackColor = false;
-            this.btnTraCuuRole.Click += new System.EventHandler(this.btnTraCuuRole_Click);
-            // 
-            // cboStateRole
-            // 
-            this.cboStateRole.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboStateRole.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboStateRole.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboStateRole.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateRole.Location = new System.Drawing.Point(226, 185);
-            this.cboStateRole.Name = "cboStateRole";
-            this.cboStateRole.Size = new System.Drawing.Size(156, 33);
-            this.cboStateRole.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboStateRole.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateRole.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateRole.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboStateRole.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateRole.TabIndex = 14;
-            this.toolTip1.SetToolTip(this.cboStateRole, "Lọc theo trạng thái");
-            this.cboStateRole.SelectedIndexChanged += new System.EventHandler(this.cboStateRole_SelectedIndexChanged);
-            // 
-            // spcQuery
-            // 
-            this.spcQuery.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.spcQuery.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.spcQuery.Location = new System.Drawing.Point(0, 94);
-            this.spcQuery.Name = "spcQuery";
-            // 
-            // spcQuery.Panel1
-            // 
-            this.spcQuery.Panel1.Controls.Add(this.ucDashboard1);
-            this.spcQuery.Panel1.Controls.Add(this.dgvRole);
-            // 
-            // spcQuery.Panel2
-            // 
-            this.spcQuery.Panel2.BackColor = System.Drawing.Color.Lavender;
-            this.spcQuery.Panel2.Controls.Add(this.btnAddRole);
-            this.spcQuery.Panel2.Controls.Add(this.cboSortRole);
-            this.spcQuery.Panel2.Controls.Add(this.lblSortServiceTypeID);
-            this.spcQuery.Panel2.Controls.Add(this.cboSortSoLuong);
-            this.spcQuery.Panel2.Controls.Add(this.lblSortSoLuongRole);
-            this.spcQuery.Panel2.Controls.Add(this.lblStateRole);
-            this.spcQuery.Panel2.Controls.Add(this.txtSearchRole);
-            this.spcQuery.Panel2.Controls.Add(this.btnTraCuuRole);
-            this.spcQuery.Panel2.Controls.Add(this.cboStateRole);
-            this.spcQuery.Size = new System.Drawing.Size(1370, 746);
-            this.spcQuery.SplitterDistance = 973;
-            this.spcQuery.TabIndex = 38;
-            // 
-            // ucDashboard1
-            // 
-            this.ucDashboard1.BackColor = System.Drawing.Color.White;
-            this.ucDashboard1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ucDashboard1.Location = new System.Drawing.Point(976, 2);
-            this.ucDashboard1.Margin = new System.Windows.Forms.Padding(0);
-            this.ucDashboard1.Name = "ucDashboard1";
-            this.ucDashboard1.Size = new System.Drawing.Size(1353, 840);
-            this.ucDashboard1.TabIndex = 1;
-            // 
-            // dgvRole
-            // 
-            this.dgvRole.AllowUserToAddRows = false;
-            this.dgvRole.AllowUserToDeleteRows = false;
-            this.dgvRole.AllowUserToResizeColumns = false;
-            this.dgvRole.AllowUserToResizeRows = false;
-            this.dgvRole.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dgvRole.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRole.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colPQ,
-            this.colVT,
-            this.colTenPB,
-            this.colSLTK,
-            this.colTrangThai,
-            this.maph,
-            this.MaVt,
-            this.MoTa});
-            this.dgvRole.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvRole.Location = new System.Drawing.Point(0, 0);
-            this.dgvRole.MultiSelect = false;
-            this.dgvRole.Name = "dgvRole";
-            this.dgvRole.ReadOnly = true;
-            this.dgvRole.RowHeadersVisible = false;
-            this.dgvRole.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRole.Size = new System.Drawing.Size(973, 746);
-            this.dgvRole.TabIndex = 6;
-            this.dgvRole.SelectionChanged += new System.EventHandler(this.dgvRole_SelectionChanged);
-            // 
-            // cboSortRole
-            // 
-            this.cboSortRole.DelimiterChar = "";
-            this.cboSortRole.DisplayMember = "";
-            this.cboSortRole.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboSortRole.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortRole.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortRole.Location = new System.Drawing.Point(226, 77);
-            this.cboSortRole.Name = "cboSortRole";
-            this.cboSortRole.Size = new System.Drawing.Size(156, 33);
-            this.cboSortRole.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortRole.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortRole.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortRole.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortRole.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortRole.TabIndex = 10;
-            this.toolTip1.SetToolTip(this.cboSortRole, "Sắp xếp mã phần quyền");
-            this.cboSortRole.SelectedIndexChanged += new System.EventHandler(this.cboSortRole_SelectedIndexChanged);
-            // 
-            // lblSortServiceTypeID
-            // 
-            this.lblSortServiceTypeID.AutoSize = true;
-            this.lblSortServiceTypeID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortServiceTypeID.Location = new System.Drawing.Point(3, 84);
-            this.lblSortServiceTypeID.Name = "lblSortServiceTypeID";
-            this.lblSortServiceTypeID.Size = new System.Drawing.Size(152, 22);
-            this.lblSortServiceTypeID.TabIndex = 9;
-            this.lblSortServiceTypeID.Text = "Sort theo Role ID";
-            this.lblSortServiceTypeID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cboSortSoLuong
-            // 
-            this.cboSortSoLuong.DelimiterChar = "";
-            this.cboSortSoLuong.DisplayMember = "";
-            this.cboSortSoLuong.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboSortSoLuong.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortSoLuong.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSoLuong.Location = new System.Drawing.Point(227, 131);
-            this.cboSortSoLuong.Name = "cboSortSoLuong";
-            this.cboSortSoLuong.Size = new System.Drawing.Size(156, 33);
-            this.cboSortSoLuong.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortSoLuong.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSoLuong.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSoLuong.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortSoLuong.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSoLuong.TabIndex = 12;
-            this.toolTip1.SetToolTip(this.cboSortSoLuong, "Lọc theo số lượng");
-            this.cboSortSoLuong.SelectedIndexChanged += new System.EventHandler(this.cboSortSoLuong_SelectedIndexChanged);
-            // 
-            // lblSortSoLuongRole
-            // 
-            this.lblSortSoLuongRole.AutoSize = true;
-            this.lblSortSoLuongRole.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortSoLuongRole.Location = new System.Drawing.Point(3, 138);
-            this.lblSortSoLuongRole.Name = "lblSortSoLuongRole";
-            this.lblSortSoLuongRole.Size = new System.Drawing.Size(158, 22);
-            this.lblSortSoLuongRole.TabIndex = 11;
-            this.lblSortSoLuongRole.Text = "Lọc theo số lượng";
-            this.lblSortSoLuongRole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblStateRole
-            // 
-            this.lblStateRole.AutoSize = true;
-            this.lblStateRole.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStateRole.Location = new System.Drawing.Point(3, 192);
-            this.lblStateRole.Name = "lblStateRole";
-            this.lblStateRole.Size = new System.Drawing.Size(159, 22);
-            this.lblStateRole.TabIndex = 13;
-            this.lblStateRole.Text = "Trạng thái dữ liệu";
-            this.lblStateRole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panUcHeader
-            // 
-            this.panUcHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(224)))), ((int)(((byte)(155)))));
-            this.panUcHeader.Controls.Add(this.spcHeader);
-            this.panUcHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panUcHeader.Location = new System.Drawing.Point(0, 0);
-            this.panUcHeader.Name = "panUcHeader";
-            this.panUcHeader.Size = new System.Drawing.Size(1370, 94);
-            this.panUcHeader.TabIndex = 37;
-            // 
-            // spcHeader
-            // 
-            this.spcHeader.BackColor = System.Drawing.Color.Lavender;
-            this.spcHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.spcHeader.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.spcHeader.Location = new System.Drawing.Point(0, 0);
-            this.spcHeader.Name = "spcHeader";
-            // 
-            // spcHeader.Panel1
-            // 
-            this.spcHeader.Panel1.Controls.Add(this.lblRole);
-            // 
-            // spcHeader.Panel2
-            // 
-            this.spcHeader.Panel2.Controls.Add(this.tlpController);
-            this.spcHeader.Size = new System.Drawing.Size(1370, 94);
-            this.spcHeader.SplitterDistance = 972;
-            this.spcHeader.TabIndex = 0;
-            // 
-            // btnAddRole
-            // 
-            this.btnAddRole.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAddRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddRole.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddRole.ForeColor = System.Drawing.Color.White;
-            this.btnAddRole.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnAddRole.Location = new System.Drawing.Point(112, 247);
-            this.btnAddRole.Name = "btnAddRole";
-            this.btnAddRole.Size = new System.Drawing.Size(191, 41);
-            this.btnAddRole.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddRole.Style.ForeColor = System.Drawing.Color.White;
-            this.btnAddRole.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.btnAddRole.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddRole.TabIndex = 15;
-            this.btnAddRole.Text = "Tạo mới";
-            this.btnAddRole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolTip1.SetToolTip(this.btnAddRole, "Thêm phân quyền");
-            this.btnAddRole.UseVisualStyleBackColor = false;
             // 
             // btnDeleteRole
             // 
@@ -379,13 +142,214 @@
             this.btnRecoverRole.UseVisualStyleBackColor = false;
             this.btnRecoverRole.Click += new System.EventHandler(this.btnRecoverRole_Click);
             // 
+            // txtSearchRole
+            // 
+            this.txtSearchRole.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchRole.Location = new System.Drawing.Point(7, 25);
+            this.txtSearchRole.Name = "txtSearchRole";
+            this.txtSearchRole.Size = new System.Drawing.Size(251, 31);
+            this.txtSearchRole.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.txtSearchRole, "Nhập mã phân quyền");
+            // 
+            // btnTraCuuRole
+            // 
+            this.btnTraCuuRole.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTraCuuRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnTraCuuRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTraCuuRole.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTraCuuRole.ForeColor = System.Drawing.Color.White;
+            this.btnTraCuuRole.Location = new System.Drawing.Point(264, 16);
+            this.btnTraCuuRole.Name = "btnTraCuuRole";
+            this.btnTraCuuRole.Size = new System.Drawing.Size(118, 40);
+            this.btnTraCuuRole.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnTraCuuRole.Style.ForeColor = System.Drawing.Color.White;
+            this.btnTraCuuRole.TabIndex = 8;
+            this.btnTraCuuRole.Text = "Tra cứu";
+            this.toolTip1.SetToolTip(this.btnTraCuuRole, "Tra cứu");
+            this.btnTraCuuRole.UseVisualStyleBackColor = false;
+            this.btnTraCuuRole.Click += new System.EventHandler(this.btnTraCuuRole_Click);
+            // 
+            // cboStateRole
+            // 
+            this.cboStateRole.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboStateRole.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboStateRole.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+            this.cboStateRole.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateRole.Location = new System.Drawing.Point(226, 131);
+            this.cboStateRole.Name = "cboStateRole";
+            this.cboStateRole.Size = new System.Drawing.Size(156, 33);
+            this.cboStateRole.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.cboStateRole.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateRole.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateRole.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboStateRole.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStateRole.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.cboStateRole, "Lọc theo trạng thái");
+            this.cboStateRole.SelectedIndexChanged += new System.EventHandler(this.cboStateRole_SelectedIndexChanged);
+            // 
+            // spcQuery
+            // 
+            this.spcQuery.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.spcQuery.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.spcQuery.Location = new System.Drawing.Point(0, 94);
+            this.spcQuery.Name = "spcQuery";
+            // 
+            // spcQuery.Panel1
+            // 
+            this.spcQuery.Panel1.Controls.Add(this.ucDashboard1);
+            this.spcQuery.Panel1.Controls.Add(this.dgvRole);
+            // 
+            // spcQuery.Panel2
+            // 
+            this.spcQuery.Panel2.BackColor = System.Drawing.Color.Lavender;
+            this.spcQuery.Panel2.Controls.Add(this.btnAddRole);
+            this.spcQuery.Panel2.Controls.Add(this.cboSortRole);
+            this.spcQuery.Panel2.Controls.Add(this.lblSortServiceTypeID);
+            this.spcQuery.Panel2.Controls.Add(this.lblStateRole);
+            this.spcQuery.Panel2.Controls.Add(this.txtSearchRole);
+            this.spcQuery.Panel2.Controls.Add(this.btnTraCuuRole);
+            this.spcQuery.Panel2.Controls.Add(this.cboStateRole);
+            this.spcQuery.Size = new System.Drawing.Size(1370, 746);
+            this.spcQuery.SplitterDistance = 973;
+            this.spcQuery.TabIndex = 38;
+            // 
+            // ucDashboard1
+            // 
+            this.ucDashboard1.BackColor = System.Drawing.Color.White;
+            this.ucDashboard1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ucDashboard1.Location = new System.Drawing.Point(976, 2);
+            this.ucDashboard1.Margin = new System.Windows.Forms.Padding(0);
+            this.ucDashboard1.Name = "ucDashboard1";
+            this.ucDashboard1.Size = new System.Drawing.Size(1353, 840);
+            this.ucDashboard1.TabIndex = 1;
+            // 
+            // dgvRole
+            // 
+            this.dgvRole.AllowUserToAddRows = false;
+            this.dgvRole.AllowUserToDeleteRows = false;
+            this.dgvRole.AllowUserToResizeColumns = false;
+            this.dgvRole.AllowUserToResizeRows = false;
+            this.dgvRole.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRole.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRole.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colPQ,
+            this.colVT,
+            this.colTenPB,
+            this.colSLTK,
+            this.colTrangThai,
+            this.maph,
+            this.MaVt,
+            this.MoTa});
+            this.dgvRole.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvRole.Location = new System.Drawing.Point(0, 0);
+            this.dgvRole.MultiSelect = false;
+            this.dgvRole.Name = "dgvRole";
+            this.dgvRole.ReadOnly = true;
+            this.dgvRole.RowHeadersVisible = false;
+            this.dgvRole.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRole.Size = new System.Drawing.Size(973, 746);
+            this.dgvRole.TabIndex = 6;
+            this.dgvRole.SelectionChanged += new System.EventHandler(this.dgvRole_SelectionChanged);
+            // 
+            // btnAddRole
+            // 
+            this.btnAddRole.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAddRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddRole.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddRole.ForeColor = System.Drawing.Color.White;
+            this.btnAddRole.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnAddRole.Location = new System.Drawing.Point(112, 193);
+            this.btnAddRole.Name = "btnAddRole";
+            this.btnAddRole.Size = new System.Drawing.Size(191, 41);
+            this.btnAddRole.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddRole.Style.ForeColor = System.Drawing.Color.White;
+            this.btnAddRole.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnAddRole.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnAddRole.TabIndex = 15;
+            this.btnAddRole.Text = "Tạo mới";
+            this.btnAddRole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnAddRole, "Thêm phân quyền");
+            this.btnAddRole.UseVisualStyleBackColor = false;
+            // 
+            // cboSortRole
+            // 
+            this.cboSortRole.DelimiterChar = "";
+            this.cboSortRole.DisplayMember = "";
+            this.cboSortRole.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboSortRole.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+            this.cboSortRole.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortRole.Location = new System.Drawing.Point(226, 77);
+            this.cboSortRole.Name = "cboSortRole";
+            this.cboSortRole.Size = new System.Drawing.Size(156, 33);
+            this.cboSortRole.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.cboSortRole.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortRole.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortRole.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboSortRole.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortRole.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.cboSortRole, "Sắp xếp mã phần quyền");
+            this.cboSortRole.SelectedIndexChanged += new System.EventHandler(this.cboSortRole_SelectedIndexChanged);
+            // 
+            // lblSortServiceTypeID
+            // 
+            this.lblSortServiceTypeID.AutoSize = true;
+            this.lblSortServiceTypeID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortServiceTypeID.Location = new System.Drawing.Point(3, 84);
+            this.lblSortServiceTypeID.Name = "lblSortServiceTypeID";
+            this.lblSortServiceTypeID.Size = new System.Drawing.Size(152, 22);
+            this.lblSortServiceTypeID.TabIndex = 9;
+            this.lblSortServiceTypeID.Text = "Sort theo Role ID";
+            this.lblSortServiceTypeID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblStateRole
+            // 
+            this.lblStateRole.AutoSize = true;
+            this.lblStateRole.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStateRole.Location = new System.Drawing.Point(3, 138);
+            this.lblStateRole.Name = "lblStateRole";
+            this.lblStateRole.Size = new System.Drawing.Size(159, 22);
+            this.lblStateRole.TabIndex = 13;
+            this.lblStateRole.Text = "Trạng thái dữ liệu";
+            this.lblStateRole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panUcHeader
+            // 
+            this.panUcHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(224)))), ((int)(((byte)(155)))));
+            this.panUcHeader.Controls.Add(this.spcHeader);
+            this.panUcHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panUcHeader.Location = new System.Drawing.Point(0, 0);
+            this.panUcHeader.Name = "panUcHeader";
+            this.panUcHeader.Size = new System.Drawing.Size(1370, 94);
+            this.panUcHeader.TabIndex = 37;
+            // 
+            // spcHeader
+            // 
+            this.spcHeader.BackColor = System.Drawing.Color.Lavender;
+            this.spcHeader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.spcHeader.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.spcHeader.Location = new System.Drawing.Point(0, 0);
+            this.spcHeader.Name = "spcHeader";
+            // 
+            // spcHeader.Panel1
+            // 
+            this.spcHeader.Panel1.Controls.Add(this.lblRole);
+            // 
+            // spcHeader.Panel2
+            // 
+            this.spcHeader.Panel2.Controls.Add(this.tlpController);
+            this.spcHeader.Size = new System.Drawing.Size(1370, 94);
+            this.spcHeader.SplitterDistance = 972;
+            this.spcHeader.TabIndex = 0;
+            // 
             // colPQ
             // 
             this.colPQ.DataPropertyName = "MaPhanQuyen";
             this.colPQ.HeaderText = "Mã phân quyền";
             this.colPQ.Name = "colPQ";
             this.colPQ.ReadOnly = true;
-            this.colPQ.Width = 143;
             // 
             // colVT
             // 
@@ -393,7 +357,6 @@
             this.colVT.HeaderText = "Tên vai trò";
             this.colVT.Name = "colVT";
             this.colVT.ReadOnly = true;
-            this.colVT.Width = 107;
             // 
             // colTenPB
             // 
@@ -401,7 +364,6 @@
             this.colTenPB.HeaderText = "Tên phòng ban";
             this.colTenPB.Name = "colTenPB";
             this.colTenPB.ReadOnly = true;
-            this.colTenPB.Width = 141;
             // 
             // colSLTK
             // 
@@ -409,7 +371,7 @@
             this.colSLTK.HeaderText = "Số lượng Tải Khoản";
             this.colSLTK.Name = "colSLTK";
             this.colSLTK.ReadOnly = true;
-            this.colSLTK.Width = 172;
+            this.colSLTK.Visible = false;
             // 
             // colTrangThai
             // 
@@ -418,7 +380,6 @@
             this.colTrangThai.Name = "colTrangThai";
             this.colTrangThai.ReadOnly = true;
             this.colTrangThai.Visible = false;
-            this.colTrangThai.Width = 194;
             // 
             // maph
             // 
@@ -463,7 +424,6 @@
             this.spcQuery.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRole)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortRole)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboSortSoLuong)).EndInit();
             this.panUcHeader.ResumeLayout(false);
             this.spcHeader.Panel1.ResumeLayout(false);
             this.spcHeader.Panel2.ResumeLayout(false);
@@ -482,10 +442,8 @@
         private System.Windows.Forms.SplitContainer spcQuery;
         private System.Windows.Forms.TableLayoutPanel tlpController;
         private System.Windows.Forms.Label lblStateRole;
-        private System.Windows.Forms.Label lblSortSoLuongRole;
         private System.Windows.Forms.Panel panUcHeader;
         private System.Windows.Forms.SplitContainer spcHeader;
-        private Syncfusion.WinForms.ListView.SfComboBox cboSortSoLuong;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortRole;
         private System.Windows.Forms.Label lblSortServiceTypeID;
         private System.Windows.Forms.DataGridView dgvRole;

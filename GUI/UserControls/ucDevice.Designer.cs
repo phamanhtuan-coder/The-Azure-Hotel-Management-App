@@ -267,7 +267,7 @@
             this.dgvDevice.AllowUserToDeleteRows = false;
             this.dgvDevice.AllowUserToResizeColumns = false;
             this.dgvDevice.AllowUserToResizeRows = false;
-            this.dgvDevice.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvDevice.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDevice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDevice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaThietBi,
@@ -292,7 +292,6 @@
             this.MaThietBi.MinimumWidth = 6;
             this.MaThietBi.Name = "MaThietBi";
             this.MaThietBi.ReadOnly = true;
-            this.MaThietBi.Width = 119;
             // 
             // TenThietBi
             // 
@@ -301,7 +300,6 @@
             this.TenThietBi.MinimumWidth = 6;
             this.TenThietBi.Name = "TenThietBi";
             this.TenThietBi.ReadOnly = true;
-            this.TenThietBi.Width = 124;
             // 
             // MaTinhTrangThietBi
             // 
@@ -310,7 +308,6 @@
             this.MaTinhTrangThietBi.MinimumWidth = 6;
             this.MaTinhTrangThietBi.Name = "MaTinhTrangThietBi";
             this.MaTinhTrangThietBi.ReadOnly = true;
-            this.MaTinhTrangThietBi.Width = 176;
             // 
             // TrangThai
             // 
