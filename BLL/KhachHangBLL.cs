@@ -104,6 +104,11 @@ namespace BLL
             return searchResults;
         }
 
+        public string TruyVanUsername(int maKH)
+        {
+            return TaiKhoanDAL.TruyVanUsername(maKH);
+        }
+
         public string TruyVanUsernameBLL()
         {
             return TaiKhoanDAL.TruyVanUsernameDAL();

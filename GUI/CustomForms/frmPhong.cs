@@ -41,7 +41,7 @@ namespace GUI.customForm
                 cboLoaiPhong.DataSource=loaiPhongDTOs;
                 cboLoaiPhong.DisplayMember = "TenLoai";
                 cboLoaiPhong.ValueMember = "MaLoai";
-                tinhTrangPhongDTOs = TinhTrangPhongBLL.laydsttphong2();
+                tinhTrangPhongDTOs = TinhTrangPhongBLL.laydsttphong3();
                 cboTinhTrangPhong.DataSource = tinhTrangPhongDTOs;
                 cboTinhTrangPhong.DisplayMember = "TenTinhTrang";
                 cboTinhTrangPhong.ValueMember = "MaTinhTrangPhong";
@@ -75,8 +75,8 @@ namespace GUI.customForm
 
         private void laydltuform(PhongDTO p)
         {
-            p.MaLoai = cboLoaiPhong.SelectedIndex+1;
-            p.MaTinhTrangPhong=cboTinhTrangPhong.SelectedIndex+1 ;
+            p.MaLoai = (int) cboLoaiPhong.SelectedValue;
+            p.MaTinhTrangPhong=(int) cboTinhTrangPhong.SelectedValue;
             p.GiaPhong = nudGiaPhong.Value;
             p.SucChuaToiDa = (int)nudSucChuaToiDa.Value;
             p.MoTa= rtxtMoTa.Text ;
@@ -135,6 +135,11 @@ namespace GUI.customForm
             {
                 return Image.FromStream(m);
             }
+        }
+
+        private void picHinhPhong_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

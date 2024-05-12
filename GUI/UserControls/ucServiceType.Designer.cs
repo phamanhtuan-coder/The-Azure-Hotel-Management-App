@@ -57,11 +57,6 @@ namespace GUI.UserControls
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.picDichVu = new System.Windows.Forms.PictureBox();
-            this.colMaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGiaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHinhAnh = new System.Windows.Forms.DataGridViewImageColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRoomType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();

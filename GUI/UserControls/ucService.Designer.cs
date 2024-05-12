@@ -42,7 +42,6 @@
             this.dtpServiceDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvServices = new System.Windows.Forms.DataGridView();
-            this.sftimngay = new Syncfusion.WinForms.Controls.SfButton();
             this.cboSortServiceD = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortServiceID = new System.Windows.Forms.Label();
             this.lblServiceDate = new System.Windows.Forms.Label();
@@ -54,7 +53,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.colMaDatDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaDV = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colMaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNgayDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -228,7 +227,7 @@
             this.cboStateService.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboStateService.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboStateService.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateService.Location = new System.Drawing.Point(225, 246);
+            this.cboStateService.Location = new System.Drawing.Point(225, 257);
             this.cboStateService.Name = "cboStateService";
             this.cboStateService.Size = new System.Drawing.Size(156, 33);
             this.cboStateService.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -246,7 +245,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpServiceDate.DateTimePattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
             this.dtpServiceDate.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpServiceDate.Location = new System.Drawing.Point(180, 201);
+            this.dtpServiceDate.Location = new System.Drawing.Point(225, 194);
             this.dtpServiceDate.Name = "dtpServiceDate";
             this.dtpServiceDate.Size = new System.Drawing.Size(156, 34);
             this.dtpServiceDate.TabIndex = 14;
@@ -267,7 +266,6 @@
             // spcQuery.Panel2
             // 
             this.spcQuery.Panel2.BackColor = System.Drawing.Color.Lavender;
-            this.spcQuery.Panel2.Controls.Add(this.sftimngay);
             this.spcQuery.Panel2.Controls.Add(this.cboSortServiceD);
             this.spcQuery.Panel2.Controls.Add(this.lblSortServiceID);
             this.spcQuery.Panel2.Controls.Add(this.lblServiceDate);
@@ -288,7 +286,7 @@
             this.dgvServices.AllowUserToDeleteRows = false;
             this.dgvServices.AllowUserToResizeColumns = false;
             this.dgvServices.AllowUserToResizeRows = false;
-            this.dgvServices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvServices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvServices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvServices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaDatDichVu,
@@ -307,25 +305,6 @@
             this.dgvServices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvServices.Size = new System.Drawing.Size(973, 746);
             this.dgvServices.TabIndex = 6;
-            // 
-            // sftimngay
-            // 
-            this.sftimngay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.sftimngay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.sftimngay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sftimngay.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sftimngay.ForeColor = System.Drawing.Color.White;
-            this.sftimngay.Location = new System.Drawing.Point(340, 202);
-            this.sftimngay.Name = "sftimngay";
-            this.sftimngay.Size = new System.Drawing.Size(41, 33);
-            this.sftimngay.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.sftimngay.Style.ForeColor = System.Drawing.Color.White;
-            this.sftimngay.TabIndex = 15;
-            this.sftimngay.Text = "tim";
-            this.toolTip1.SetToolTip(this.sftimngay, "Tìm kiếm");
-            this.sftimngay.UseVisualStyleBackColor = false;
-            this.sftimngay.Click += new System.EventHandler(this.sftimngay_Click);
             // 
             // cboSortServiceD
             // 
@@ -372,7 +351,7 @@
             // 
             this.lblStateService.AutoSize = true;
             this.lblStateService.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStateService.Location = new System.Drawing.Point(5, 253);
+            this.lblStateService.Location = new System.Drawing.Point(5, 264);
             this.lblStateService.Name = "lblStateService";
             this.lblStateService.Size = new System.Drawing.Size(186, 26);
             this.lblStateService.TabIndex = 16;
@@ -445,6 +424,7 @@
             this.colMaDatDichVu.MinimumWidth = 6;
             this.colMaDatDichVu.Name = "colMaDatDichVu";
             this.colMaDatDichVu.ReadOnly = true;
+            this.colMaDatDichVu.Width = 152;
             // 
             // colMaDatPhong
             // 
@@ -454,17 +434,17 @@
             this.colMaDatPhong.Name = "colMaDatPhong";
             this.colMaDatPhong.ReadOnly = true;
             this.colMaDatPhong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMaDatPhong.Width = 147;
             // 
             // colMaDV
             // 
             this.colMaDV.DataPropertyName = "MaDV";
-            this.colMaDV.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.colMaDV.HeaderText = "Tên dịch vụ";
+            this.colMaDV.HeaderText = "Mã dịch vụ";
             this.colMaDV.MinimumWidth = 6;
             this.colMaDV.Name = "colMaDV";
             this.colMaDV.ReadOnly = true;
             this.colMaDV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaDV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colMaDV.Width = 122;
             // 
             // colSoLuong
             // 
@@ -473,6 +453,7 @@
             this.colSoLuong.MinimumWidth = 6;
             this.colSoLuong.Name = "colSoLuong";
             this.colSoLuong.ReadOnly = true;
+            this.colSoLuong.Width = 106;
             // 
             // colNgayDat
             // 
@@ -481,6 +462,7 @@
             this.colNgayDat.MinimumWidth = 6;
             this.colNgayDat.Name = "colNgayDat";
             this.colNgayDat.ReadOnly = true;
+            this.colNgayDat.Width = 107;
             // 
             // colTrangThai
             // 
@@ -489,6 +471,8 @@
             this.colTrangThai.MinimumWidth = 6;
             this.colTrangThai.Name = "colTrangThai";
             this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Visible = false;
+            this.colTrangThai.Width = 114;
             // 
             // ucService
             // 
@@ -541,7 +525,6 @@
         private System.Windows.Forms.SplitContainer spcHeader;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortServiceD;
         private System.Windows.Forms.DataGridView dgvServices;
-        private Syncfusion.WinForms.Controls.SfButton sftimngay;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaDatDichVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaDatPhong;

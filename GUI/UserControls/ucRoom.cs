@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using BLL;
 using DTO;
 using Syncfusion.XPS;
+using System.IO;
 
 namespace GUI.UserControls
 {
@@ -315,5 +316,38 @@ namespace GUI.UserControls
         }
 
         
+
+        private void dgvRoom_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvRoom.SelectedRows.Count > 0)
+            {
+                string columnName = "colHinhAnh";
+                int columnIndex = dgvRoom.Columns[columnName].Index;
+                object cellValue = dgvRoom.SelectedRows[0].Cells[columnIndex].Value;
+
+                if (cellValue != null)
+                {
+                    byte[] hinh = (byte[])cellValue;
+                    picRoom.Image = ByteArrayToImage(hinh);
+                }
+                else
+                {
+                    picRoom.Image = Properties.Resources.no_pictures;
+                }
+            }
+        }
+        private static byte[] ImageToByteArray(Image img)
+        {
+            MemoryStream m = new MemoryStream();
+            img.Save(m, System.Drawing.Imaging.ImageFormat.Png);
+            return m.ToArray();
+        }
+        Image ByteArrayToImage(byte[] hinh)
+        {
+            using (MemoryStream m = new MemoryStream(hinh))
+            {
+                return Image.FromStream(m);
+            }
+        }
     }
 }

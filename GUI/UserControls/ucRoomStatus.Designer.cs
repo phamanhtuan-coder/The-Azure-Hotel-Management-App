@@ -41,18 +41,16 @@
             this.cboStateRoomStatus = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvRoomStatus = new System.Windows.Forms.DataGridView();
-            this.colMaTinhTrangPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenTinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboSortRoomStatusID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortRoomStatusID = new System.Windows.Forms.Label();
-            this.cboSortSoLuongRoom = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.lblSortSoLuongRoom = new System.Windows.Forms.Label();
             this.lblStateRoomStatus = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.colMaTinhTrangPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenTinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRoomStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -61,7 +59,6 @@
             this.spcQuery.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortRoomStatusID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboSortSoLuongRoom)).BeginInit();
             this.panUcHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).BeginInit();
             this.spcHeader.Panel1.SuspendLayout();
@@ -223,7 +220,7 @@
             this.cboStateRoomStatus.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboStateRoomStatus.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboStateRoomStatus.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateRoomStatus.Location = new System.Drawing.Point(226, 193);
+            this.cboStateRoomStatus.Location = new System.Drawing.Point(226, 129);
             this.cboStateRoomStatus.Name = "cboStateRoomStatus";
             this.cboStateRoomStatus.Size = new System.Drawing.Size(156, 33);
             this.cboStateRoomStatus.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -251,8 +248,6 @@
             this.spcQuery.Panel2.BackColor = System.Drawing.Color.Lavender;
             this.spcQuery.Panel2.Controls.Add(this.cboSortRoomStatusID);
             this.spcQuery.Panel2.Controls.Add(this.lblSortRoomStatusID);
-            this.spcQuery.Panel2.Controls.Add(this.cboSortSoLuongRoom);
-            this.spcQuery.Panel2.Controls.Add(this.lblSortSoLuongRoom);
             this.spcQuery.Panel2.Controls.Add(this.lblStateRoomStatus);
             this.spcQuery.Panel2.Controls.Add(this.txtSearchRoomStatus);
             this.spcQuery.Panel2.Controls.Add(this.btnTraCuuRoomStatus);
@@ -267,7 +262,7 @@
             this.dgvRoomStatus.AllowUserToDeleteRows = false;
             this.dgvRoomStatus.AllowUserToResizeColumns = false;
             this.dgvRoomStatus.AllowUserToResizeRows = false;
-            this.dgvRoomStatus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRoomStatus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvRoomStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRoomStatus.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaTinhTrangPhong,
@@ -284,46 +279,6 @@
             this.dgvRoomStatus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRoomStatus.Size = new System.Drawing.Size(973, 746);
             this.dgvRoomStatus.TabIndex = 6;
-            // 
-            // colMaTinhTrangPhong
-            // 
-            this.colMaTinhTrangPhong.DataPropertyName = "MaTinhTrangPhong";
-            this.colMaTinhTrangPhong.FillWeight = 150F;
-            this.colMaTinhTrangPhong.HeaderText = "Mã tình trạng phòng";
-            this.colMaTinhTrangPhong.MinimumWidth = 6;
-            this.colMaTinhTrangPhong.Name = "colMaTinhTrangPhong";
-            this.colMaTinhTrangPhong.ReadOnly = true;
-            this.colMaTinhTrangPhong.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colTenTinhTrang
-            // 
-            this.colTenTinhTrang.DataPropertyName = "TenTinhTrang";
-            this.colTenTinhTrang.FillWeight = 150F;
-            this.colTenTinhTrang.HeaderText = "Tên tình trạng phòng";
-            this.colTenTinhTrang.MinimumWidth = 6;
-            this.colTenTinhTrang.Name = "colTenTinhTrang";
-            this.colTenTinhTrang.ReadOnly = true;
-            this.colTenTinhTrang.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colMoTa
-            // 
-            this.colMoTa.DataPropertyName = "MoTa";
-            this.colMoTa.FillWeight = 150F;
-            this.colMoTa.HeaderText = "Mô tả";
-            this.colMoTa.MinimumWidth = 6;
-            this.colMoTa.Name = "colMoTa";
-            this.colMoTa.ReadOnly = true;
-            this.colMoTa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "TrangThai";
-            this.colTrangThai.FillWeight = 150F;
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.MinimumWidth = 6;
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // cboSortRoomStatusID
             // 
@@ -355,40 +310,11 @@
             this.lblSortRoomStatusID.Text = "Sort theo ID loại";
             this.lblSortRoomStatusID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // cboSortSoLuongRoom
-            // 
-            this.cboSortSoLuongRoom.DelimiterChar = "";
-            this.cboSortSoLuongRoom.DisplayMember = "";
-            this.cboSortSoLuongRoom.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboSortSoLuongRoom.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortSoLuongRoom.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSoLuongRoom.Location = new System.Drawing.Point(227, 136);
-            this.cboSortSoLuongRoom.Name = "cboSortSoLuongRoom";
-            this.cboSortSoLuongRoom.Size = new System.Drawing.Size(156, 33);
-            this.cboSortSoLuongRoom.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortSoLuongRoom.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSoLuongRoom.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSoLuongRoom.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortSoLuongRoom.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortSoLuongRoom.TabIndex = 12;
-            this.toolTip1.SetToolTip(this.cboSortSoLuongRoom, "Lọc theo số lượng");
-            // 
-            // lblSortSoLuongRoom
-            // 
-            this.lblSortSoLuongRoom.AutoSize = true;
-            this.lblSortSoLuongRoom.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortSoLuongRoom.Location = new System.Drawing.Point(2, 143);
-            this.lblSortSoLuongRoom.Name = "lblSortSoLuongRoom";
-            this.lblSortSoLuongRoom.Size = new System.Drawing.Size(185, 26);
-            this.lblSortSoLuongRoom.TabIndex = 11;
-            this.lblSortSoLuongRoom.Text = "Lọc theo số lượng";
-            this.lblSortSoLuongRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // lblStateRoomStatus
             // 
             this.lblStateRoomStatus.AutoSize = true;
             this.lblStateRoomStatus.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStateRoomStatus.Location = new System.Drawing.Point(2, 200);
+            this.lblStateRoomStatus.Location = new System.Drawing.Point(2, 136);
             this.lblStateRoomStatus.Name = "lblStateRoomStatus";
             this.lblStateRoomStatus.Size = new System.Drawing.Size(186, 26);
             this.lblStateRoomStatus.TabIndex = 13;
@@ -424,6 +350,51 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
+            // colMaTinhTrangPhong
+            // 
+            this.colMaTinhTrangPhong.DataPropertyName = "MaTinhTrangPhong";
+            this.colMaTinhTrangPhong.FillWeight = 150F;
+            this.colMaTinhTrangPhong.HeaderText = "Mã tình trạng phòng";
+            this.colMaTinhTrangPhong.MinimumWidth = 6;
+            this.colMaTinhTrangPhong.Name = "colMaTinhTrangPhong";
+            this.colMaTinhTrangPhong.ReadOnly = true;
+            this.colMaTinhTrangPhong.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colMaTinhTrangPhong.Width = 180;
+            // 
+            // colTenTinhTrang
+            // 
+            this.colTenTinhTrang.DataPropertyName = "TenTinhTrang";
+            this.colTenTinhTrang.FillWeight = 150F;
+            this.colTenTinhTrang.HeaderText = "Tên tình trạng phòng";
+            this.colTenTinhTrang.MinimumWidth = 6;
+            this.colTenTinhTrang.Name = "colTenTinhTrang";
+            this.colTenTinhTrang.ReadOnly = true;
+            this.colTenTinhTrang.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colTenTinhTrang.Width = 185;
+            // 
+            // colMoTa
+            // 
+            this.colMoTa.DataPropertyName = "MoTa";
+            this.colMoTa.FillWeight = 150F;
+            this.colMoTa.HeaderText = "Mô tả";
+            this.colMoTa.MinimumWidth = 6;
+            this.colMoTa.Name = "colMoTa";
+            this.colMoTa.ReadOnly = true;
+            this.colMoTa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colMoTa.Width = 60;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.FillWeight = 150F;
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.MinimumWidth = 6;
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colTrangThai.Visible = false;
+            this.colTrangThai.Width = 242;
+            // 
             // ucRoomStatus
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -443,7 +414,6 @@
             this.spcQuery.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortRoomStatusID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboSortSoLuongRoom)).EndInit();
             this.panUcHeader.ResumeLayout(false);
             this.spcHeader.Panel1.ResumeLayout(false);
             this.spcHeader.Panel2.ResumeLayout(false);
@@ -466,17 +436,15 @@
         private System.Windows.Forms.SplitContainer spcQuery;
         private System.Windows.Forms.TableLayoutPanel tlpController;
         private System.Windows.Forms.Label lblStateRoomStatus;
-        private System.Windows.Forms.Label lblSortSoLuongRoom;
         private System.Windows.Forms.Panel panUcHeader;
         private System.Windows.Forms.SplitContainer spcHeader;
-        private Syncfusion.WinForms.ListView.SfComboBox cboSortSoLuongRoom;
         private Syncfusion.WinForms.ListView.SfComboBox cboSortRoomStatusID;
         private System.Windows.Forms.Label lblSortRoomStatusID;
         private System.Windows.Forms.DataGridView dgvRoomStatus;
+        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaTinhTrangPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenTinhTrang;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMoTa;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
-        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

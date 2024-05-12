@@ -132,6 +132,11 @@ namespace BLL
             return hoaDonDAL.TruyVanDanhSachHoaDon();
         }
 
+        public List<HoaDonDTO> TruyVanDanhSachHoaDonTheoUser(int maKH)
+        {
+            return hoaDonDAL.TruyVanDanhSachHoaDonTheoUser(maKH);
+        }
+
         public bool XoaHoaDon(HoaDonDTO hoaDonDTO)
         {
             if (hoaDonDTO.MaHoaDon > 0)
