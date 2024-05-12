@@ -113,16 +113,6 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap backgroundLogin_LowRes1 {
-            get {
-                object obj = ResourceManager.GetObject("backgroundLogin_LowRes1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap backgroundLoginPanel {
             get {
                 object obj = ResourceManager.GetObject("backgroundLoginPanel", resourceCulture);
@@ -151,16 +141,6 @@ namespace GUI.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap backgroundLoginPanel1 {
-            get {
-                object obj = ResourceManager.GetObject("backgroundLoginPanel1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         public static System.Drawing.Icon book {
@@ -176,6 +156,16 @@ namespace GUI.Properties {
         public static System.Drawing.Icon building {
             get {
                 object obj = ResourceManager.GetObject("building", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        public static System.Drawing.Icon cashier_machine {
+            get {
+                object obj = ResourceManager.GetObject("cashier_machine", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -586,6 +576,26 @@ namespace GUI.Properties {
         public static System.Drawing.Icon Schedule {
             get {
                 object obj = ResourceManager.GetObject("Schedule", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        public static System.Drawing.Icon search {
+            get {
+                object obj = ResourceManager.GetObject("search", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        public static System.Drawing.Icon search_file {
+            get {
+                object obj = ResourceManager.GetObject("search_file", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

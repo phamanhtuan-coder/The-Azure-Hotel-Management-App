@@ -40,13 +40,6 @@
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.ucDashboard1 = new GUI.UserControls.ucDashboard();
             this.dgvRole = new System.Windows.Forms.DataGridView();
-            this.btnAddRole = new Syncfusion.WinForms.Controls.SfButton();
-            this.cboSortRole = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.lblSortServiceTypeID = new System.Windows.Forms.Label();
-            this.lblStateRole = new System.Windows.Forms.Label();
-            this.panUcHeader = new System.Windows.Forms.Panel();
-            this.spcHeader = new System.Windows.Forms.SplitContainer();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.colPQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenPB = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +48,13 @@
             this.maph = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaVt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAddRole = new Syncfusion.WinForms.Controls.SfButton();
+            this.cboSortRole = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.lblSortServiceTypeID = new System.Windows.Forms.Label();
+            this.lblStateRole = new System.Windows.Forms.Label();
+            this.panUcHeader = new System.Windows.Forms.Panel();
+            this.spcHeader = new System.Windows.Forms.SplitContainer();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRole)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -104,7 +104,7 @@
             this.btnDeleteRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnDeleteRole.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDeleteRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteRole.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteRole.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold);
             this.btnDeleteRole.ForeColor = System.Drawing.Color.White;
             this.btnDeleteRole.ImageSize = new System.Drawing.Size(32, 32);
             this.btnDeleteRole.Location = new System.Drawing.Point(3, 3);
@@ -125,7 +125,8 @@
             this.btnRecoverRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverRole.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRecoverRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecoverRole.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecoverRole.FocusRectangleVisible = true;
+            this.btnRecoverRole.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold);
             this.btnRecoverRole.ForeColor = System.Drawing.Color.White;
             this.btnRecoverRole.ImageSize = new System.Drawing.Size(32, 32);
             this.btnRecoverRole.Location = new System.Drawing.Point(200, 3);
@@ -253,17 +254,78 @@
             this.dgvRole.TabIndex = 6;
             this.dgvRole.SelectionChanged += new System.EventHandler(this.dgvRole_SelectionChanged);
             // 
+            // colPQ
+            // 
+            this.colPQ.DataPropertyName = "MaPhanQuyen";
+            this.colPQ.HeaderText = "Mã phân quyền";
+            this.colPQ.Name = "colPQ";
+            this.colPQ.ReadOnly = true;
+            // 
+            // colVT
+            // 
+            this.colVT.DataPropertyName = "TenVaiTro";
+            this.colVT.HeaderText = "Tên vai trò";
+            this.colVT.Name = "colVT";
+            this.colVT.ReadOnly = true;
+            // 
+            // colTenPB
+            // 
+            this.colTenPB.DataPropertyName = "TenPhong";
+            this.colTenPB.HeaderText = "Tên phòng ban";
+            this.colTenPB.Name = "colTenPB";
+            this.colTenPB.ReadOnly = true;
+            // 
+            // colSLTK
+            // 
+            this.colSLTK.DataPropertyName = "SoLuongTK";
+            this.colSLTK.HeaderText = "Số lượng Tải Khoản";
+            this.colSLTK.Name = "colSLTK";
+            this.colSLTK.ReadOnly = true;
+            this.colSLTK.Visible = false;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Trang thái";
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Visible = false;
+            // 
+            // maph
+            // 
+            this.maph.DataPropertyName = "MaPhongBan";
+            this.maph.HeaderText = "MaPhong";
+            this.maph.Name = "maph";
+            this.maph.ReadOnly = true;
+            this.maph.Visible = false;
+            // 
+            // MaVt
+            // 
+            this.MaVt.DataPropertyName = "MaVaiTro";
+            this.MaVt.HeaderText = "MaVt";
+            this.MaVt.Name = "MaVt";
+            this.MaVt.ReadOnly = true;
+            this.MaVt.Visible = false;
+            // 
+            // MoTa
+            // 
+            this.MoTa.DataPropertyName = "MoTa";
+            this.MoTa.HeaderText = "MoTa";
+            this.MoTa.Name = "MoTa";
+            this.MoTa.ReadOnly = true;
+            this.MoTa.Visible = false;
+            // 
             // btnAddRole
             // 
             this.btnAddRole.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAddRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.btnAddRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddRole.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddRole.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold);
             this.btnAddRole.ForeColor = System.Drawing.Color.White;
             this.btnAddRole.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnAddRole.Location = new System.Drawing.Point(112, 193);
+            this.btnAddRole.Location = new System.Drawing.Point(115, 186);
             this.btnAddRole.Name = "btnAddRole";
-            this.btnAddRole.Size = new System.Drawing.Size(191, 41);
+            this.btnAddRole.Size = new System.Drawing.Size(191, 46);
             this.btnAddRole.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.btnAddRole.Style.ForeColor = System.Drawing.Color.White;
             this.btnAddRole.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
@@ -343,67 +405,6 @@
             this.spcHeader.Size = new System.Drawing.Size(1370, 94);
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
-            // 
-            // colPQ
-            // 
-            this.colPQ.DataPropertyName = "MaPhanQuyen";
-            this.colPQ.HeaderText = "Mã phân quyền";
-            this.colPQ.Name = "colPQ";
-            this.colPQ.ReadOnly = true;
-            // 
-            // colVT
-            // 
-            this.colVT.DataPropertyName = "TenVaiTro";
-            this.colVT.HeaderText = "Tên vai trò";
-            this.colVT.Name = "colVT";
-            this.colVT.ReadOnly = true;
-            // 
-            // colTenPB
-            // 
-            this.colTenPB.DataPropertyName = "TenPhong";
-            this.colTenPB.HeaderText = "Tên phòng ban";
-            this.colTenPB.Name = "colTenPB";
-            this.colTenPB.ReadOnly = true;
-            // 
-            // colSLTK
-            // 
-            this.colSLTK.DataPropertyName = "SoLuongTK";
-            this.colSLTK.HeaderText = "Số lượng Tải Khoản";
-            this.colSLTK.Name = "colSLTK";
-            this.colSLTK.ReadOnly = true;
-            this.colSLTK.Visible = false;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "TrangThai";
-            this.colTrangThai.HeaderText = "Trang thái";
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Visible = false;
-            // 
-            // maph
-            // 
-            this.maph.DataPropertyName = "MaPhongBan";
-            this.maph.HeaderText = "MaPhong";
-            this.maph.Name = "maph";
-            this.maph.ReadOnly = true;
-            this.maph.Visible = false;
-            // 
-            // MaVt
-            // 
-            this.MaVt.DataPropertyName = "MaVaiTro";
-            this.MaVt.HeaderText = "MaVt";
-            this.MaVt.Name = "MaVt";
-            this.MaVt.ReadOnly = true;
-            this.MaVt.Visible = false;
-            // 
-            // MoTa
-            // 
-            this.MoTa.DataPropertyName = "MoTa";
-            this.MoTa.HeaderText = "MoTa";
-            this.MoTa.Name = "MoTa";
-            this.MoTa.ReadOnly = true;
-            this.MoTa.Visible = false;
             // 
             // ucRole
             // 

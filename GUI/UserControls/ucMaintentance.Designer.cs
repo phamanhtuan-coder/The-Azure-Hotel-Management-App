@@ -41,6 +41,12 @@
             this.cboStateMaintentance = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvMaintenance = new System.Windows.Forms.DataGridView();
+            this.colMaBaoTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaThietBi = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colMaNV = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colNgayHuHong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayBaoTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtpNgayBaoTri = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayHuHong = new System.Windows.Forms.DateTimePicker();
             this.lblNgayBaoTri = new System.Windows.Forms.Label();
@@ -51,12 +57,6 @@
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.colMaBaoTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaThietBi = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colMaNV = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colNgayHuHong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayBaoTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateMaintentance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -226,7 +226,7 @@
             this.cboStateMaintentance.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboStateMaintentance.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboStateMaintentance.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStateMaintentance.Location = new System.Drawing.Point(221, 257);
+            this.cboStateMaintentance.Location = new System.Drawing.Point(226, 250);
             this.cboStateMaintentance.Name = "cboStateMaintentance";
             this.cboStateMaintentance.Size = new System.Drawing.Size(156, 33);
             this.cboStateMaintentance.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -291,6 +291,61 @@
             this.dgvMaintenance.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMaintenance.Size = new System.Drawing.Size(973, 746);
             this.dgvMaintenance.TabIndex = 6;
+            // 
+            // colMaBaoTri
+            // 
+            this.colMaBaoTri.DataPropertyName = "MaBaoTri";
+            this.colMaBaoTri.HeaderText = "Mã bảo trì";
+            this.colMaBaoTri.MinimumWidth = 6;
+            this.colMaBaoTri.Name = "colMaBaoTri";
+            this.colMaBaoTri.ReadOnly = true;
+            // 
+            // colMaThietBi
+            // 
+            this.colMaThietBi.DataPropertyName = "MaThietBi";
+            this.colMaThietBi.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colMaThietBi.HeaderText = "Tên thiết bị";
+            this.colMaThietBi.MinimumWidth = 6;
+            this.colMaThietBi.Name = "colMaThietBi";
+            this.colMaThietBi.ReadOnly = true;
+            this.colMaThietBi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMaThietBi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colMaNV
+            // 
+            this.colMaNV.DataPropertyName = "MaNV";
+            this.colMaNV.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colMaNV.HeaderText = "Nhân viên thực hiện";
+            this.colMaNV.MinimumWidth = 6;
+            this.colMaNV.Name = "colMaNV";
+            this.colMaNV.ReadOnly = true;
+            this.colMaNV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMaNV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colNgayHuHong
+            // 
+            this.colNgayHuHong.DataPropertyName = "NgayHuHong";
+            this.colNgayHuHong.HeaderText = "Ngày hư hỏng";
+            this.colNgayHuHong.MinimumWidth = 6;
+            this.colNgayHuHong.Name = "colNgayHuHong";
+            this.colNgayHuHong.ReadOnly = true;
+            // 
+            // colNgayBaoTri
+            // 
+            this.colNgayBaoTri.DataPropertyName = "NgayBaoTri";
+            this.colNgayBaoTri.HeaderText = "Ngày bảo trì";
+            this.colNgayBaoTri.MinimumWidth = 6;
+            this.colNgayBaoTri.Name = "colNgayBaoTri";
+            this.colNgayBaoTri.ReadOnly = true;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.MinimumWidth = 6;
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Visible = false;
             // 
             // dtpNgayBaoTri
             // 
@@ -368,7 +423,7 @@
             // 
             this.lblStateMaintance.AutoSize = true;
             this.lblStateMaintance.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStateMaintance.Location = new System.Drawing.Point(-3, 264);
+            this.lblStateMaintance.Location = new System.Drawing.Point(2, 257);
             this.lblStateMaintance.Name = "lblStateMaintance";
             this.lblStateMaintance.Size = new System.Drawing.Size(186, 26);
             this.lblStateMaintance.TabIndex = 15;
@@ -403,61 +458,6 @@
             this.spcHeader.Size = new System.Drawing.Size(1370, 94);
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
-            // 
-            // colMaBaoTri
-            // 
-            this.colMaBaoTri.DataPropertyName = "MaBaoTri";
-            this.colMaBaoTri.HeaderText = "Mã bảo trì";
-            this.colMaBaoTri.MinimumWidth = 6;
-            this.colMaBaoTri.Name = "colMaBaoTri";
-            this.colMaBaoTri.ReadOnly = true;
-            // 
-            // colMaThietBi
-            // 
-            this.colMaThietBi.DataPropertyName = "MaThietBi";
-            this.colMaThietBi.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.colMaThietBi.HeaderText = "Tên thiết bị";
-            this.colMaThietBi.MinimumWidth = 6;
-            this.colMaThietBi.Name = "colMaThietBi";
-            this.colMaThietBi.ReadOnly = true;
-            this.colMaThietBi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaThietBi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // colMaNV
-            // 
-            this.colMaNV.DataPropertyName = "MaNV";
-            this.colMaNV.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.colMaNV.HeaderText = "Nhân viên thực hiện";
-            this.colMaNV.MinimumWidth = 6;
-            this.colMaNV.Name = "colMaNV";
-            this.colMaNV.ReadOnly = true;
-            this.colMaNV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaNV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // colNgayHuHong
-            // 
-            this.colNgayHuHong.DataPropertyName = "NgayHuHong";
-            this.colNgayHuHong.HeaderText = "Ngày hư hỏng";
-            this.colNgayHuHong.MinimumWidth = 6;
-            this.colNgayHuHong.Name = "colNgayHuHong";
-            this.colNgayHuHong.ReadOnly = true;
-            // 
-            // colNgayBaoTri
-            // 
-            this.colNgayBaoTri.DataPropertyName = "NgayBaoTri";
-            this.colNgayBaoTri.HeaderText = "Ngày bảo trì";
-            this.colNgayBaoTri.MinimumWidth = 6;
-            this.colNgayBaoTri.Name = "colNgayBaoTri";
-            this.colNgayBaoTri.ReadOnly = true;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "TrangThai";
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.MinimumWidth = 6;
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Visible = false;
             // 
             // ucMaintentance
             // 

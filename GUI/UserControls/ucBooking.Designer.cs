@@ -42,6 +42,16 @@
             this.dtpNgayDat = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvBooking = new System.Windows.Forms.DataGridView();
+            this.colMaDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaKH = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colMaPHG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayNhanPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayTraPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSoLuongKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.txtCCCD = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,16 +71,6 @@
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.colMaDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaKH = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colMaPHG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayNhanPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayTraPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSoLuongKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateBooking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -198,7 +198,7 @@
             this.btnRecoverBooking.Size = new System.Drawing.Size(191, 41);
             this.btnRecoverBooking.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverBooking.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverBooking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnRecoverBooking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnRecoverBooking.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRecoverBooking.TabIndex = 5;
             this.btnRecoverBooking.Text = "Khôi phục";
@@ -259,7 +259,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpNgayDat.DateTimePattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.Custom;
             this.dtpNgayDat.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayDat.Location = new System.Drawing.Point(141, 324);
+            this.dtpNgayDat.Location = new System.Drawing.Point(141, 346);
             this.dtpNgayDat.Name = "dtpNgayDat";
             this.dtpNgayDat.Size = new System.Drawing.Size(239, 34);
             this.dtpNgayDat.TabIndex = 21;
@@ -333,13 +333,106 @@
             this.dgvBooking.Size = new System.Drawing.Size(973, 746);
             this.dgvBooking.TabIndex = 6;
             // 
+            // colMaDatPhong
+            // 
+            this.colMaDatPhong.DataPropertyName = "MaDatPhong";
+            this.colMaDatPhong.HeaderText = "Mã đặt phòng";
+            this.colMaDatPhong.MinimumWidth = 6;
+            this.colMaDatPhong.Name = "colMaDatPhong";
+            this.colMaDatPhong.ReadOnly = true;
+            this.colMaDatPhong.Width = 134;
+            // 
+            // colMaKH
+            // 
+            this.colMaKH.DataPropertyName = "MaKH";
+            this.colMaKH.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colMaKH.HeaderText = "Tên KH";
+            this.colMaKH.MinimumWidth = 6;
+            this.colMaKH.Name = "colMaKH";
+            this.colMaKH.ReadOnly = true;
+            this.colMaKH.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMaKH.Width = 66;
+            // 
+            // colMaPHG
+            // 
+            this.colMaPHG.DataPropertyName = "MaPHG";
+            this.colMaPHG.HeaderText = "Mã PHG";
+            this.colMaPHG.MinimumWidth = 6;
+            this.colMaPHG.Name = "colMaPHG";
+            this.colMaPHG.ReadOnly = true;
+            this.colMaPHG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMaPHG.Width = 91;
+            // 
+            // colNgayDatPhong
+            // 
+            this.colNgayDatPhong.DataPropertyName = "NgayDatPhong";
+            this.colNgayDatPhong.HeaderText = "Ngày đặt";
+            this.colNgayDatPhong.MinimumWidth = 6;
+            this.colNgayDatPhong.Name = "colNgayDatPhong";
+            this.colNgayDatPhong.ReadOnly = true;
+            this.colNgayDatPhong.Width = 98;
+            // 
+            // colNgayNhanPhong
+            // 
+            this.colNgayNhanPhong.DataPropertyName = "NgayNhanPhong";
+            this.colNgayNhanPhong.HeaderText = "Ngày nhận phòng";
+            this.colNgayNhanPhong.MinimumWidth = 6;
+            this.colNgayNhanPhong.Name = "colNgayNhanPhong";
+            this.colNgayNhanPhong.ReadOnly = true;
+            this.colNgayNhanPhong.Width = 165;
+            // 
+            // colNgayTraPhong
+            // 
+            this.colNgayTraPhong.DataPropertyName = "NgayTraPhong";
+            this.colNgayTraPhong.HeaderText = "Ngày trả phòng";
+            this.colNgayTraPhong.MinimumWidth = 6;
+            this.colNgayTraPhong.Name = "colNgayTraPhong";
+            this.colNgayTraPhong.ReadOnly = true;
+            this.colNgayTraPhong.Width = 145;
+            // 
+            // colSoLuongKH
+            // 
+            this.colSoLuongKH.DataPropertyName = "SoLuongKH";
+            this.colSoLuongKH.HeaderText = "Số lượng KH";
+            this.colSoLuongKH.MinimumWidth = 6;
+            this.colSoLuongKH.Name = "colSoLuongKH";
+            this.colSoLuongKH.ReadOnly = true;
+            this.colSoLuongKH.Width = 123;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.MinimumWidth = 6;
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Visible = false;
+            this.colTrangThai.Width = 105;
+            // 
+            // colTenTaiKhoan
+            // 
+            this.colTenTaiKhoan.DataPropertyName = "TenDangNhap";
+            this.colTenTaiKhoan.HeaderText = "Tên Tài Khoản";
+            this.colTenTaiKhoan.Name = "colTenTaiKhoan";
+            this.colTenTaiKhoan.ReadOnly = true;
+            this.colTenTaiKhoan.Visible = false;
+            this.colTenTaiKhoan.Width = 133;
+            // 
+            // colCCCD
+            // 
+            this.colCCCD.DataPropertyName = "CCCD";
+            this.colCCCD.HeaderText = "CCCD";
+            this.colCCCD.Name = "colCCCD";
+            this.colCCCD.ReadOnly = true;
+            this.colCCCD.Width = 84;
+            // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 292);
+            this.label3.Location = new System.Drawing.Point(9, 314);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 26);
             this.label3.TabIndex = 18;
@@ -349,7 +442,7 @@
             // txtCCCD
             // 
             this.txtCCCD.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCCCD.Location = new System.Drawing.Point(141, 278);
+            this.txtCCCD.Location = new System.Drawing.Point(141, 300);
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.Size = new System.Drawing.Size(240, 40);
             this.txtCCCD.TabIndex = 19;
@@ -361,7 +454,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 246);
+            this.label2.Location = new System.Drawing.Point(9, 268);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 26);
             this.label2.TabIndex = 16;
@@ -371,7 +464,7 @@
             // txtTraCuuUser
             // 
             this.txtTraCuuUser.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTraCuuUser.Location = new System.Drawing.Point(141, 232);
+            this.txtTraCuuUser.Location = new System.Drawing.Point(141, 254);
             this.txtTraCuuUser.Name = "txtTraCuuUser";
             this.txtTraCuuUser.Size = new System.Drawing.Size(240, 40);
             this.txtTraCuuUser.TabIndex = 17;
@@ -383,15 +476,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTraCuuDP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuDP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTraCuuDP.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTraCuuDP.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTraCuuDP.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuDP.Location = new System.Drawing.Point(69, 364);
+            this.btnTraCuuDP.Location = new System.Drawing.Point(236, 397);
             this.btnTraCuuDP.Name = "btnTraCuuDP";
-            this.btnTraCuuDP.Size = new System.Drawing.Size(268, 40);
+            this.btnTraCuuDP.Size = new System.Drawing.Size(145, 40);
             this.btnTraCuuDP.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuDP.Style.ForeColor = System.Drawing.Color.White;
             this.btnTraCuuDP.TabIndex = 22;
-            this.btnTraCuuDP.Text = "Tra cứu";
+            this.btnTraCuuDP.Text = "Tìm kiếm";
             this.toolTip1.SetToolTip(this.btnTraCuuDP, "Tra cứu");
             this.btnTraCuuDP.UseVisualStyleBackColor = false;
             this.btnTraCuuDP.Click += new System.EventHandler(this.btnTraCuuDP_Click);
@@ -402,7 +495,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(96, 194);
+            this.label1.Location = new System.Drawing.Point(96, 216);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(192, 26);
             this.label1.TabIndex = 15;
@@ -415,7 +508,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblQuickControl.AutoSize = true;
             this.lblQuickControl.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuickControl.Location = new System.Drawing.Point(64, 407);
+            this.lblQuickControl.Location = new System.Drawing.Point(69, 475);
             this.lblQuickControl.Name = "lblQuickControl";
             this.lblQuickControl.Size = new System.Drawing.Size(273, 26);
             this.lblQuickControl.TabIndex = 23;
@@ -430,12 +523,12 @@
             this.btnCheckIn.ForeColor = System.Drawing.Color.White;
             this.btnCheckIn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCheckIn.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnCheckIn.Location = new System.Drawing.Point(10, 436);
+            this.btnCheckIn.Location = new System.Drawing.Point(11, 522);
             this.btnCheckIn.Name = "btnCheckIn";
             this.btnCheckIn.Size = new System.Drawing.Size(108, 64);
             this.btnCheckIn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.btnCheckIn.Style.ForeColor = System.Drawing.Color.White;
-            this.btnCheckIn.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.btnCheckIn.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnCheckIn.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnCheckIn.TabIndex = 24;
             this.btnCheckIn.Text = "Check-In";
@@ -451,12 +544,12 @@
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCancel.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnCancel.Location = new System.Drawing.Point(272, 436);
+            this.btnCancel.Location = new System.Drawing.Point(273, 522);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(108, 64);
             this.btnCancel.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnCancel.Style.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            this.btnCancel.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnCancel.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnCancel.TabIndex = 26;
             this.btnCancel.Text = "Cancel";
@@ -472,12 +565,12 @@
             this.btnCheckOut.ForeColor = System.Drawing.Color.White;
             this.btnCheckOut.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCheckOut.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnCheckOut.Location = new System.Drawing.Point(141, 436);
+            this.btnCheckOut.Location = new System.Drawing.Point(142, 522);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(108, 64);
             this.btnCheckOut.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
             this.btnCheckOut.Style.ForeColor = System.Drawing.Color.White;
-            this.btnCheckOut.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            this.btnCheckOut.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnCheckOut.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnCheckOut.TabIndex = 25;
             this.btnCheckOut.Text = "Check-Out";
@@ -549,7 +642,7 @@
             // 
             this.lblBookingDate.AutoSize = true;
             this.lblBookingDate.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBookingDate.Location = new System.Drawing.Point(12, 332);
+            this.lblBookingDate.Location = new System.Drawing.Point(12, 354);
             this.lblBookingDate.Name = "lblBookingDate";
             this.lblBookingDate.Size = new System.Drawing.Size(106, 26);
             this.lblBookingDate.TabIndex = 20;
@@ -595,97 +688,6 @@
             this.spcHeader.Size = new System.Drawing.Size(1370, 94);
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
-            // 
-            // colMaDatPhong
-            // 
-            this.colMaDatPhong.DataPropertyName = "MaDatPhong";
-            this.colMaDatPhong.HeaderText = "Mã đặt phòng";
-            this.colMaDatPhong.MinimumWidth = 6;
-            this.colMaDatPhong.Name = "colMaDatPhong";
-            this.colMaDatPhong.ReadOnly = true;
-            this.colMaDatPhong.Width = 147;
-            // 
-            // colMaKH
-            // 
-            this.colMaKH.DataPropertyName = "MaKH";
-            this.colMaKH.HeaderText = "Mã KH";
-            this.colMaKH.MinimumWidth = 6;
-            this.colMaKH.Name = "colMaKH";
-            this.colMaKH.ReadOnly = true;
-            this.colMaKH.Width = 87;
-            // 
-            // colMaPHG
-            // 
-            this.colMaPHG.DataPropertyName = "MaPHG";
-            this.colMaPHG.HeaderText = "Mã PHG";
-            this.colMaPHG.MinimumWidth = 6;
-            this.colMaPHG.Name = "colMaPHG";
-            this.colMaPHG.ReadOnly = true;
-            this.colMaPHG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaPHG.Width = 99;
-            // 
-            // colNgayDatPhong
-            // 
-            this.colNgayDatPhong.DataPropertyName = "NgayDatPhong";
-            this.colNgayDatPhong.HeaderText = "Ngày đặt";
-            this.colNgayDatPhong.MinimumWidth = 6;
-            this.colNgayDatPhong.Name = "colNgayDatPhong";
-            this.colNgayDatPhong.ReadOnly = true;
-            this.colNgayDatPhong.Width = 107;
-            // 
-            // colNgayNhanPhong
-            // 
-            this.colNgayNhanPhong.DataPropertyName = "NgayNhanPhong";
-            this.colNgayNhanPhong.HeaderText = "Ngày nhận phòng";
-            this.colNgayNhanPhong.MinimumWidth = 6;
-            this.colNgayNhanPhong.Name = "colNgayNhanPhong";
-            this.colNgayNhanPhong.ReadOnly = true;
-            this.colNgayNhanPhong.Width = 165;
-            // 
-            // colNgayTraPhong
-            // 
-            this.colNgayTraPhong.DataPropertyName = "NgayTraPhong";
-            this.colNgayTraPhong.HeaderText = "Ngày trả phòng";
-            this.colNgayTraPhong.MinimumWidth = 6;
-            this.colNgayTraPhong.Name = "colNgayTraPhong";
-            this.colNgayTraPhong.ReadOnly = true;
-            this.colNgayTraPhong.Width = 145;
-            // 
-            // colSoLuongKH
-            // 
-            this.colSoLuongKH.DataPropertyName = "SoLuongKH";
-            this.colSoLuongKH.HeaderText = "Số lượng KH";
-            this.colSoLuongKH.MinimumWidth = 6;
-            this.colSoLuongKH.Name = "colSoLuongKH";
-            this.colSoLuongKH.ReadOnly = true;
-            this.colSoLuongKH.Width = 123;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "TrangThai";
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.MinimumWidth = 6;
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Visible = false;
-            this.colTrangThai.Width = 105;
-            // 
-            // colTenTaiKhoan
-            // 
-            this.colTenTaiKhoan.DataPropertyName = "TenDangNhap";
-            this.colTenTaiKhoan.HeaderText = "Tên Tài Khoản";
-            this.colTenTaiKhoan.Name = "colTenTaiKhoan";
-            this.colTenTaiKhoan.ReadOnly = true;
-            this.colTenTaiKhoan.Visible = false;
-            this.colTenTaiKhoan.Width = 133;
-            // 
-            // colCCCD
-            // 
-            this.colCCCD.DataPropertyName = "CCCD";
-            this.colCCCD.HeaderText = "CCCD";
-            this.colCCCD.Name = "colCCCD";
-            this.colCCCD.ReadOnly = true;
-            this.colCCCD.Width = 84;
             // 
             // ucBooking
             // 

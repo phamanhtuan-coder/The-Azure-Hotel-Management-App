@@ -33,6 +33,7 @@
             this.lblRating = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
             this.btnEditRating = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnDanhGia = new Syncfusion.WinForms.Controls.SfButton();
             this.btnDeleteRating = new Syncfusion.WinForms.Controls.SfButton();
             this.btnRecoverRating = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateRating = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -44,7 +45,7 @@
             this.colNhanXet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNgayDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnDanhGia = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnReturn = new Syncfusion.WinForms.Controls.SfButton();
             this.dtpNgayDanhGia = new System.Windows.Forms.DateTimePicker();
             this.lblNgayDanhGia = new System.Windows.Forms.Label();
             this.cboRatingValue = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -53,7 +54,6 @@
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnReturn = new Syncfusion.WinForms.Controls.SfButton();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRating)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -123,6 +123,26 @@
             this.btnEditRating.UseVisualStyleBackColor = false;
             this.btnEditRating.Click += new System.EventHandler(this.btnEditRating_Click);
             // 
+            // btnDanhGia
+            // 
+            this.btnDanhGia.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnDanhGia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDanhGia.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold);
+            this.btnDanhGia.ForeColor = System.Drawing.Color.White;
+            this.btnDanhGia.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnDanhGia.Location = new System.Drawing.Point(3, 3);
+            this.btnDanhGia.Name = "btnDanhGia";
+            this.btnDanhGia.Size = new System.Drawing.Size(191, 41);
+            this.btnDanhGia.Style.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnDanhGia.Style.ForeColor = System.Drawing.Color.White;
+            this.btnDanhGia.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnDanhGia.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnDanhGia.TabIndex = 7;
+            this.btnDanhGia.Text = "Đánh giá";
+            this.toolTip1.SetToolTip(this.btnDanhGia, "Đánh giá");
+            this.btnDanhGia.UseVisualStyleBackColor = false;
+            this.btnDanhGia.Click += new System.EventHandler(this.btnDanhGia_Click);
+            // 
             // btnDeleteRating
             // 
             this.btnDeleteRating.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
@@ -136,7 +156,7 @@
             this.btnDeleteRating.Size = new System.Drawing.Size(191, 41);
             this.btnDeleteRating.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnDeleteRating.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteRating.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnDeleteRating.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDeleteRating.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnDeleteRating.TabIndex = 3;
             this.btnDeleteRating.Text = "Xóa";
@@ -158,7 +178,7 @@
             this.btnRecoverRating.Size = new System.Drawing.Size(191, 41);
             this.btnRecoverRating.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverRating.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverRating.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnRecoverRating.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnRecoverRating.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRecoverRating.TabIndex = 5;
             this.btnRecoverRating.Text = "Khôi phục";
@@ -281,22 +301,21 @@
             this.colTrangThai.ReadOnly = true;
             this.colTrangThai.Visible = false;
             // 
-            // btnDanhGia
+            // btnReturn
             // 
-            this.btnDanhGia.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnDanhGia.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDanhGia.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold);
-            this.btnDanhGia.ForeColor = System.Drawing.Color.White;
-            this.btnDanhGia.Location = new System.Drawing.Point(3, 3);
-            this.btnDanhGia.Name = "btnDanhGia";
-            this.btnDanhGia.Size = new System.Drawing.Size(191, 41);
-            this.btnDanhGia.Style.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnDanhGia.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDanhGia.TabIndex = 7;
-            this.btnDanhGia.Text = "Đánh giá";
-            this.toolTip1.SetToolTip(this.btnDanhGia, "Đánh giá");
-            this.btnDanhGia.UseVisualStyleBackColor = false;
-            this.btnDanhGia.Click += new System.EventHandler(this.btnDanhGia_Click);
+            this.btnReturn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnReturn.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnReturn.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold);
+            this.btnReturn.ForeColor = System.Drawing.Color.White;
+            this.btnReturn.Location = new System.Drawing.Point(104, 180);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(191, 41);
+            this.btnReturn.Style.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnReturn.Style.ForeColor = System.Drawing.Color.White;
+            this.btnReturn.TabIndex = 32;
+            this.btnReturn.Text = "Quay lại";
+            this.toolTip1.SetToolTip(this.btnReturn, "Quay lại");
+            this.btnReturn.UseVisualStyleBackColor = false;
             // 
             // dtpNgayDanhGia
             // 
@@ -387,22 +406,6 @@
             this.spcHeader.Size = new System.Drawing.Size(1370, 94);
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
-            // 
-            // btnReturn
-            // 
-            this.btnReturn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnReturn.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnReturn.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold);
-            this.btnReturn.ForeColor = System.Drawing.Color.White;
-            this.btnReturn.Location = new System.Drawing.Point(105, 193);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(191, 41);
-            this.btnReturn.Style.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnReturn.Style.ForeColor = System.Drawing.Color.White;
-            this.btnReturn.TabIndex = 32;
-            this.btnReturn.Text = "Quay lại";
-            this.toolTip1.SetToolTip(this.btnReturn, "Quay lại");
-            this.btnReturn.UseVisualStyleBackColor = false;
             // 
             // ucRatingHistory
             // 

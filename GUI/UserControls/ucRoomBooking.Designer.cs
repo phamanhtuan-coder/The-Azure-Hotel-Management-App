@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucRoomBooking));
             this.flpRoom = new System.Windows.Forms.FlowLayoutPanel();
             this.panController = new System.Windows.Forms.Panel();
             this.btnTraCuuRoomType = new Syncfusion.WinForms.Controls.SfButton();
@@ -84,15 +85,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTraCuuRoomType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuRoomType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTraCuuRoomType.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTraCuuRoomType.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTraCuuRoomType.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuRoomType.Location = new System.Drawing.Point(1100, 13);
+            this.btnTraCuuRoomType.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnTraCuuRoomType.Location = new System.Drawing.Point(1129, 13);
             this.btnTraCuuRoomType.Name = "btnTraCuuRoomType";
-            this.btnTraCuuRoomType.Size = new System.Drawing.Size(244, 40);
+            this.btnTraCuuRoomType.Size = new System.Drawing.Size(196, 40);
             this.btnTraCuuRoomType.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuRoomType.Style.ForeColor = System.Drawing.Color.White;
+            this.btnTraCuuRoomType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnTraCuuRoomType.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnTraCuuRoomType.TabIndex = 8;
             this.btnTraCuuRoomType.Text = "Tra cứu";
+            this.btnTraCuuRoomType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.btnTraCuuRoomType, "Tra cứu");
             this.btnTraCuuRoomType.UseVisualStyleBackColor = false;
             this.btnTraCuuRoomType.Click += new System.EventHandler(this.btnTraCuuRoomType_Click);
