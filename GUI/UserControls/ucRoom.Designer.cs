@@ -62,14 +62,6 @@
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.colMaPHG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaLoai = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colMaTinhTrangPhong = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colHinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGiaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSucChuaToiDa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -292,7 +284,7 @@
             this.dgvRoom.AllowUserToDeleteRows = false;
             this.dgvRoom.AllowUserToResizeColumns = false;
             this.dgvRoom.AllowUserToResizeRows = false;
-            this.dgvRoom.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvRoom.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRoom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaPHG,
@@ -315,7 +307,7 @@
             this.dgvRoom.TabIndex = 6;
             this.dgvRoom.SelectionChanged += new System.EventHandler(this.dgvRoom_SelectionChanged);
             // 
-            // picRoom
+            // colMaPHG
             // 
             this.colMaPHG.DataPropertyName = "MaPHG";
             this.colMaPHG.HeaderText = "Mã phòng";
@@ -327,22 +319,24 @@
             // colMaLoai
             // 
             this.colMaLoai.DataPropertyName = "MaLoai";
-            this.colMaLoai.HeaderText = "Mã loại";
+            this.colMaLoai.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colMaLoai.HeaderText = "Loại phòng";
             this.colMaLoai.MinimumWidth = 6;
             this.colMaLoai.Name = "colMaLoai";
             this.colMaLoai.ReadOnly = true;
             this.colMaLoai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaLoai.Width = 83;
+            this.colMaLoai.Width = 96;
             // 
             // colMaTinhTrangPhong
             // 
             this.colMaTinhTrangPhong.DataPropertyName = "MaTinhTrangPhong";
-            this.colMaTinhTrangPhong.HeaderText = "Mã tình trạng phòng";
+            this.colMaTinhTrangPhong.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colMaTinhTrangPhong.HeaderText = "Tình trạng phòng";
             this.colMaTinhTrangPhong.MinimumWidth = 6;
             this.colMaTinhTrangPhong.Name = "colMaTinhTrangPhong";
             this.colMaTinhTrangPhong.ReadOnly = true;
             this.colMaTinhTrangPhong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaTinhTrangPhong.Width = 181;
+            this.colMaTinhTrangPhong.Width = 140;
             // 
             // colHinhAnh
             // 
@@ -560,82 +554,6 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // colMaPHG
-            // 
-            this.colMaPHG.DataPropertyName = "MaPHG";
-            this.colMaPHG.HeaderText = "Mã phòng";
-            this.colMaPHG.MinimumWidth = 6;
-            this.colMaPHG.Name = "colMaPHG";
-            this.colMaPHG.ReadOnly = true;
-            this.colMaPHG.Width = 117;
-            // 
-            // colMaLoai
-            // 
-            this.colMaLoai.DataPropertyName = "MaLoai";
-            this.colMaLoai.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.colMaLoai.HeaderText = "Mã loại";
-            this.colMaLoai.MinimumWidth = 6;
-            this.colMaLoai.Name = "colMaLoai";
-            this.colMaLoai.ReadOnly = true;
-            this.colMaLoai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaLoai.Width = 71;
-            // 
-            // colMaTinhTrangPhong
-            // 
-            this.colMaTinhTrangPhong.DataPropertyName = "MaTinhTrangPhong";
-            this.colMaTinhTrangPhong.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.colMaTinhTrangPhong.HeaderText = "Mã tình trạng phòng";
-            this.colMaTinhTrangPhong.MinimumWidth = 6;
-            this.colMaTinhTrangPhong.Name = "colMaTinhTrangPhong";
-            this.colMaTinhTrangPhong.ReadOnly = true;
-            this.colMaTinhTrangPhong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaTinhTrangPhong.Width = 162;
-            // 
-            // colHinhAnh
-            // 
-            this.colHinhAnh.DataPropertyName = "HinhAnh";
-            this.colHinhAnh.HeaderText = "Hình ảnh";
-            this.colHinhAnh.MinimumWidth = 6;
-            this.colHinhAnh.Name = "colHinhAnh";
-            this.colHinhAnh.ReadOnly = true;
-            this.colHinhAnh.Visible = false;
-            // 
-            // colMoTa
-            // 
-            this.colMoTa.DataPropertyName = "MoTa";
-            this.colMoTa.HeaderText = "Mô tả";
-            this.colMoTa.MinimumWidth = 6;
-            this.colMoTa.Name = "colMoTa";
-            this.colMoTa.ReadOnly = true;
-            this.colMoTa.Width = 60;
-            // 
-            // colGiaPhong
-            // 
-            this.colGiaPhong.DataPropertyName = "GiaPhong";
-            this.colGiaPhong.HeaderText = "Giá";
-            this.colGiaPhong.MinimumWidth = 6;
-            this.colGiaPhong.Name = "colGiaPhong";
-            this.colGiaPhong.ReadOnly = true;
-            this.colGiaPhong.Width = 60;
-            // 
-            // colSucChuaToiDa
-            // 
-            this.colSucChuaToiDa.DataPropertyName = "SucChuaToiDa";
-            this.colSucChuaToiDa.HeaderText = "Sức chứa";
-            this.colSucChuaToiDa.MinimumWidth = 6;
-            this.colSucChuaToiDa.Name = "colSucChuaToiDa";
-            this.colSucChuaToiDa.ReadOnly = true;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "TrangThai";
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.MinimumWidth = 6;
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Visible = false;
-            this.colTrangThai.Width = 105;
-            // 
             // ucRoom
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -693,6 +611,7 @@
         private System.Windows.Forms.Label lblSortPrice;
         private System.Windows.Forms.DataGridView dgvRoom;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.PictureBox picRoom;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaPHG;
         private System.Windows.Forms.DataGridViewComboBoxColumn colMaLoai;
         private System.Windows.Forms.DataGridViewComboBoxColumn colMaTinhTrangPhong;
@@ -701,6 +620,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colGiaPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSucChuaToiDa;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
-        private System.Windows.Forms.PictureBox picRoom;
     }
 }

@@ -111,7 +111,7 @@
             this.btnAddAccounts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.btnAddAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAddAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddAccounts.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAddAccounts.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold);
             this.btnAddAccounts.ForeColor = System.Drawing.Color.White;
             this.btnAddAccounts.ImageSize = new System.Drawing.Size(32, 32);
             this.btnAddAccounts.Location = new System.Drawing.Point(3, 3);
@@ -133,7 +133,7 @@
             this.btnEditAccounts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
             this.btnEditAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnEditAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditAccounts.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.btnEditAccounts.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold);
             this.btnEditAccounts.ForeColor = System.Drawing.Color.White;
             this.btnEditAccounts.ImageSize = new System.Drawing.Size(32, 32);
             this.btnEditAccounts.Location = new System.Drawing.Point(3, 50);
@@ -155,7 +155,7 @@
             this.btnDeleteAccounts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnDeleteAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDeleteAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteAccounts.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.btnDeleteAccounts.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold);
             this.btnDeleteAccounts.ForeColor = System.Drawing.Color.White;
             this.btnDeleteAccounts.ImageSize = new System.Drawing.Size(32, 32);
             this.btnDeleteAccounts.Location = new System.Drawing.Point(200, 3);
@@ -176,7 +176,7 @@
             this.btnRecoverAccounts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRecoverAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecoverAccounts.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.btnRecoverAccounts.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold);
             this.btnRecoverAccounts.ForeColor = System.Drawing.Color.White;
             this.btnRecoverAccounts.ImageSize = new System.Drawing.Size(32, 32);
             this.btnRecoverAccounts.Location = new System.Drawing.Point(200, 50);

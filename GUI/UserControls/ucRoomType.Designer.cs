@@ -41,16 +41,16 @@
             this.cboStateRoomType = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvloaiphong = new System.Windows.Forms.DataGridView();
+            this.colmaloai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coltenloai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colmota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coltrangthai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboSortRoomTypeID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortRoomTypeID = new System.Windows.Forms.Label();
             this.lblStateRoomType = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.colmaloai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coltenloai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colmota = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coltrangthai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRoomType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -258,7 +258,7 @@
             // 
             this.dgvloaiphong.AllowUserToAddRows = false;
             this.dgvloaiphong.AllowUserToDeleteRows = false;
-            this.dgvloaiphong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvloaiphong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvloaiphong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvloaiphong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colmaloai,
@@ -283,6 +283,7 @@
             this.colmaloai.MinimumWidth = 6;
             this.colmaloai.Name = "colmaloai";
             this.colmaloai.ReadOnly = true;
+            this.colmaloai.Width = 95;
             // 
             // coltenloai
             // 
@@ -299,6 +300,7 @@
             this.colmota.MinimumWidth = 6;
             this.colmota.Name = "colmota";
             this.colmota.ReadOnly = true;
+            this.colmota.Width = 82;
             // 
             // coltrangthai
             // 
@@ -308,6 +310,7 @@
             this.coltrangthai.Name = "coltrangthai";
             this.coltrangthai.ReadOnly = true;
             this.coltrangthai.Visible = false;
+            this.coltrangthai.Width = 125;
             // 
             // cboSortRoomTypeID
             // 
@@ -378,42 +381,6 @@
             this.spcHeader.Size = new System.Drawing.Size(1370, 94);
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
-            // 
-            // colmaloai
-            // 
-            this.colmaloai.DataPropertyName = "MaLoai";
-            this.colmaloai.HeaderText = "Mã Loại";
-            this.colmaloai.MinimumWidth = 6;
-            this.colmaloai.Name = "colmaloai";
-            this.colmaloai.ReadOnly = true;
-            this.colmaloai.Width = 95;
-            // 
-            // coltenloai
-            // 
-            this.coltenloai.DataPropertyName = "TenLoai";
-            this.coltenloai.HeaderText = "Tên Loại";
-            this.coltenloai.MinimumWidth = 6;
-            this.coltenloai.Name = "coltenloai";
-            this.coltenloai.ReadOnly = true;
-            // 
-            // colmota
-            // 
-            this.colmota.DataPropertyName = "Mota";
-            this.colmota.HeaderText = "Mô Tả";
-            this.colmota.MinimumWidth = 6;
-            this.colmota.Name = "colmota";
-            this.colmota.ReadOnly = true;
-            this.colmota.Width = 82;
-            // 
-            // coltrangthai
-            // 
-            this.coltrangthai.DataPropertyName = "TrangThai";
-            this.coltrangthai.HeaderText = "Trạng Thái";
-            this.coltrangthai.MinimumWidth = 6;
-            this.coltrangthai.Name = "coltrangthai";
-            this.coltrangthai.ReadOnly = true;
-            this.coltrangthai.Visible = false;
-            this.coltrangthai.Width = 125;
             // 
             // ucRoomType
             // 

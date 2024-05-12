@@ -25,7 +25,9 @@ namespace GUI.UserControls
         {
             LoadDuLieu();
             LoadChart();
+            LoadDanhGia();
         }
+
 
         private void LoadChart()
         {
@@ -65,6 +67,12 @@ namespace GUI.UserControls
                 lblCountTotal.Text = kq3.ToString();
             }
             else lblCountCheckOut.Text = "0";
+        }
+
+
+        private void LoadDanhGia()
+        {
+
         }
     }
 }
