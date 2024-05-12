@@ -34,31 +34,28 @@ namespace GUI.customForm
             {
                 txtMaKH.Clear();
                 dtpNgayDat.Value = DateTime.Now;
-                LoadDSPhong();
+                //LoadDSPhong();
                 nudSoLuongKhach.Value = 1;
             }
             else
             {
                 txtMaKH.Text =DatPhongDTO.MaKH.ToString();
-                LoadDSPhong();
+                //LoadDSPhong();
                 cboMaPHG.SelectedItem = DatPhongDTO.MaPHG;
                 nudSoLuongKhach.Value = DatPhongDTO.SoLuongKH;
             }
 
-
-
-
         }
 
-        private void LoadDSPhong()
-        {
-            PhongDTOs = PhongBLL.LayDsPhongDaSanSang(dtpNgayDat.Value);
-            cboMaPHG.DataSource = PhongDTOs;
-            cboMaPHG.DisplayMember = "MaPHG";
-            cboMaPHG.ValueMember = "MaPHG";
-        }
+        //private void LoadDSPhong()
+        //{
+        //    PhongDTOs = PhongBLL.LayDsPhongDaSanSang(dtpNgayDat.Value);
+        //    cboMaPHG.DataSource = PhongDTOs;
+        //    cboMaPHG.DisplayMember = "MaPHG";
+        //    cboMaPHG.ValueMember = "MaPHG";
+        //}
 
-            private void laydltuform(DatPhongDTO p)
+        private void laydltuform(DatPhongDTO p)
         {
             
             p.MaPHG = int.Parse(cboMaPHG.Text);

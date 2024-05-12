@@ -227,54 +227,6 @@ namespace DAL
             return rooms;
         }
 
-        public List<PhongDTO> LayDsPhongDaSanSang(DateTime ngayDat)
-        {
-            List<PhongDTO> rooms = new List<PhongDTO>();
-
-            try
-            {
-                SqlConnection conn = DataProvider.KetNoiDuLieu();
-                conn.Open();
-                string lenhTVPhongTrong = "SELECT * FROM Phong WHERE TrangThai = 0x01 and MaTinhTrangPhong =1 and MaPHG not in"
-                    + "(select MaPHG from DatPhong where NgayDatPhong = @NgayDatPhong)";
-
-                SqlCommand com = new SqlCommand(lenhTVPhongTrong, conn);
-                com.Parameters.AddWithValue("@NgayDatPhong", ngayDat);
-                SqlDataReader reader = com.ExecuteReader(); 
-
-                while (reader.Read())
-                {
-                    PhongDTO room = new PhongDTO();
-                    room.MaPHG = Convert.ToInt32(reader["MaPHG"]);
-                    room.MoTa = reader["MoTa"].ToString();
-                    room.GiaPhong = Convert.ToDecimal(reader["GiaPhong"]);
-                    room.MoTa = reader["MoTa"].ToString();
-
-                    // Check for DBNull before casting to byte[]
-                    if (reader["HinhAnh"] != DBNull.Value)
-                    {
-                        room.HinhAnh = (byte[])reader["HinhAnh"];
-                    }
-                    else
-                    {
-
-                        room.HinhAnh = null;
-                    }
-
-                    rooms.Add(room);
-                }
-
-                reader.Close();
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-            return rooms;
-        }
-
         public bool CapNhatTT(List<DatPhongDTO> list, int v)
         {
             try
