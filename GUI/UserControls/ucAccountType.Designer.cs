@@ -41,16 +41,16 @@
             this.cboStateAccountType = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvAccountType = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenVaiTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboSortAccountTypeID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortAccountTypeID = new System.Windows.Forms.Label();
             this.lblStateAccountType = new System.Windows.Forms.Label();
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenVaiTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateAccountType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -281,34 +281,6 @@
             this.dgvAccountType.Size = new System.Drawing.Size(973, 746);
             this.dgvAccountType.TabIndex = 6;
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "MaVaiTro";
-            this.ID.HeaderText = "Mã vai trò";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // TenVaiTro
-            // 
-            this.TenVaiTro.DataPropertyName = "TenVaiTro";
-            this.TenVaiTro.HeaderText = "Tên vai trò";
-            this.TenVaiTro.Name = "TenVaiTro";
-            this.TenVaiTro.ReadOnly = true;
-            // 
-            // MoTa
-            // 
-            this.MoTa.DataPropertyName = "MoTa";
-            this.MoTa.HeaderText = "Mô tả";
-            this.MoTa.Name = "MoTa";
-            this.MoTa.ReadOnly = true;
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.DataPropertyName = "TrangThai";
-            this.TrangThai.HeaderText = "Trạng thái";
-            this.TrangThai.Name = "TrangThai";
-            this.TrangThai.ReadOnly = true;
-            // 
             // cboSortAccountTypeID
             // 
             this.cboSortAccountTypeID.DelimiterChar = "";
@@ -379,6 +351,35 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "MaVaiTro";
+            this.ID.HeaderText = "Mã vai trò";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // TenVaiTro
+            // 
+            this.TenVaiTro.DataPropertyName = "TenVaiTro";
+            this.TenVaiTro.HeaderText = "Tên vai trò";
+            this.TenVaiTro.Name = "TenVaiTro";
+            this.TenVaiTro.ReadOnly = true;
+            // 
+            // MoTa
+            // 
+            this.MoTa.DataPropertyName = "MoTa";
+            this.MoTa.HeaderText = "Mô tả";
+            this.MoTa.Name = "MoTa";
+            this.MoTa.ReadOnly = true;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.DataPropertyName = "TrangThai";
+            this.TrangThai.HeaderText = "Trạng thái";
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.ReadOnly = true;
+            this.TrangThai.Visible = false;
+            // 
             // ucAccountType
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -425,10 +426,10 @@
         private Syncfusion.WinForms.ListView.SfComboBox cboSortAccountTypeID;
         private System.Windows.Forms.Label lblSortAccountTypeID;
         private System.Windows.Forms.DataGridView dgvAccountType;
+        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenVaiTro;
         private System.Windows.Forms.DataGridViewTextBoxColumn MoTa;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
-        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

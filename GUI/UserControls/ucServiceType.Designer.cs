@@ -46,8 +46,9 @@ namespace GUI.UserControls
             this.colMaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGiaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHinhAnh = new System.Windows.Forms.DataGridViewImageColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHinhAnh = new System.Windows.Forms.DataGridViewImageColumn();
+            this.picDichVu = new System.Windows.Forms.PictureBox();
             this.cboSortServiceTypeID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortServiceTypeID = new System.Windows.Forms.Label();
             this.cboSortGiaServiceType = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -56,7 +57,6 @@ namespace GUI.UserControls
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.picDichVu = new System.Windows.Forms.PictureBox();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRoomType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -64,6 +64,7 @@ namespace GUI.UserControls
             this.spcQuery.Panel2.SuspendLayout();
             this.spcQuery.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServiceType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDichVu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortServiceTypeID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortGiaServiceType)).BeginInit();
             this.panUcHeader.SuspendLayout();
@@ -71,7 +72,6 @@ namespace GUI.UserControls
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picDichVu)).BeginInit();
             this.SuspendLayout();
             // 
             // lblServiceType
@@ -199,10 +199,8 @@ namespace GUI.UserControls
             this.txtSearchServiceType.Location = new System.Drawing.Point(14, 172);
             this.txtSearchServiceType.Name = "txtSearchServiceType";
             this.txtSearchServiceType.Size = new System.Drawing.Size(251, 40);
-            this.txtSearchServiceType.TabIndex = 7;
-            this.toolTip1.SetToolTip(this.txtSearchServiceType, "Nhập tên dịch vụ");
-            this.txtSearchServiceType.Size = new System.Drawing.Size(251, 40);
             this.txtSearchServiceType.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.txtSearchServiceType, "Nhập tên dịch vụ");
             // 
             // btnTraCuuServiceType
             // 
@@ -292,170 +290,8 @@ namespace GUI.UserControls
             this.dgvServiceType.RowHeadersWidth = 51;
             this.dgvServiceType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvServiceType.Size = new System.Drawing.Size(973, 746);
-            this.dgvServiceType.TabIndex = 6;
-            // 
-            // colMaDV
-            // 
-            this.colMaDV.DataPropertyName = "MaDV";
-            this.colMaDV.HeaderText = "Mã dịch vụ";
-            this.colMaDV.MinimumWidth = 6;
-            this.colMaDV.Name = "colMaDV";
-            this.colMaDV.ReadOnly = true;
-            // 
-            // colTenDV
-            // 
-            this.colTenDV.DataPropertyName = "TenDV";
-            this.colTenDV.HeaderText = "Tên dịch vụ";
-            this.colTenDV.MinimumWidth = 6;
-            this.colTenDV.Name = "colTenDV";
-            this.colTenDV.ReadOnly = true;
-            // 
-            // colGiaDV
-            // 
-            this.colGiaDV.DataPropertyName = "GiaDV";
-            this.colGiaDV.HeaderText = "Giá";
-            this.colGiaDV.MinimumWidth = 6;
-            this.colGiaDV.Name = "colGiaDV";
-            this.colGiaDV.ReadOnly = true;
-            // 
-            // colHinhAnh
-            // 
-            this.colHinhAnh.DataPropertyName = "HinhAnh";
-            this.colHinhAnh.HeaderText = "Hình ảnh";
-            this.colHinhAnh.MinimumWidth = 6;
-            this.colHinhAnh.Name = "colHinhAnh";
-            this.colHinhAnh.ReadOnly = true;
-            this.colHinhAnh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colHinhAnh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "TrangThai";
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.MinimumWidth = 6;
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Visible = false;
             this.dgvServiceType.TabIndex = 1;
             this.dgvServiceType.SelectionChanged += new System.EventHandler(this.dgvServiceType_SelectionChanged);
-            // 
-            // cboSortServiceTypeID
-            // 
-            this.cboSortServiceTypeID.DelimiterChar = "";
-            this.cboSortServiceTypeID.DisplayMember = "";
-            this.cboSortServiceTypeID.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboSortServiceTypeID.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortServiceTypeID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortServiceTypeID.Location = new System.Drawing.Point(234, 234);
-            this.cboSortServiceTypeID.Name = "cboSortServiceTypeID";
-            this.cboSortServiceTypeID.Size = new System.Drawing.Size(156, 33);
-            this.cboSortServiceTypeID.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortServiceTypeID.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortServiceTypeID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortServiceTypeID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortServiceTypeID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortServiceTypeID.TabIndex = 10;
-            this.toolTip1.SetToolTip(this.cboSortServiceTypeID, "Sắp xếp theo mã loại dịch vụ");
-            this.cboSortServiceTypeID.SelectedIndexChanged += new System.EventHandler(this.cboSortServiceTypeID_SelectedIndexChanged);
-            // 
-            // lblSortServiceTypeID
-            // 
-            this.lblSortServiceTypeID.AutoSize = true;
-            this.lblSortServiceTypeID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortServiceTypeID.Location = new System.Drawing.Point(11, 241);
-            this.lblSortServiceTypeID.Name = "lblSortServiceTypeID";
-            this.lblSortServiceTypeID.Size = new System.Drawing.Size(208, 26);
-            this.lblSortServiceTypeID.TabIndex = 9;
-            this.lblSortServiceTypeID.Size = new System.Drawing.Size(208, 26);
-            this.lblSortServiceTypeID.TabIndex = 28;
-            this.lblSortServiceTypeID.Text = "Sort Service Type ID";
-            this.lblSortServiceTypeID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cboSortGiaServiceType
-            // 
-            this.cboSortGiaServiceType.DelimiterChar = "";
-            this.cboSortGiaServiceType.DisplayMember = "";
-            this.cboSortGiaServiceType.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboSortGiaServiceType.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortGiaServiceType.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortGiaServiceType.Location = new System.Drawing.Point(235, 289);
-            this.cboSortGiaServiceType.Name = "cboSortGiaServiceType";
-            this.cboSortGiaServiceType.Size = new System.Drawing.Size(156, 33);
-            this.cboSortGiaServiceType.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortGiaServiceType.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortGiaServiceType.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortGiaServiceType.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortGiaServiceType.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortGiaServiceType.TabIndex = 12;
-            this.toolTip1.SetToolTip(this.cboSortGiaServiceType, "Sắp xếp theo giá");
-            this.cboSortGiaServiceType.SelectedIndexChanged += new System.EventHandler(this.cboSortGiaServiceType_SelectedIndexChanged);
-            // 
-            // lblSortGiaServiceTypeID
-            // 
-            this.lblSortGiaServiceTypeID.AutoSize = true;
-            this.lblSortGiaServiceTypeID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortGiaServiceTypeID.Location = new System.Drawing.Point(11, 296);
-            this.lblSortGiaServiceTypeID.Name = "lblSortGiaServiceTypeID";
-            this.lblSortGiaServiceTypeID.Size = new System.Drawing.Size(138, 26);
-            this.lblSortGiaServiceTypeID.TabIndex = 11;
-            this.lblSortGiaServiceTypeID.Size = new System.Drawing.Size(138, 26);
-            this.lblSortGiaServiceTypeID.TabIndex = 14;
-            this.lblSortGiaServiceTypeID.Text = "Sort theo giá";
-            this.lblSortGiaServiceTypeID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblStateRoomType
-            // 
-            this.lblStateRoomType.AutoSize = true;
-            this.lblStateRoomType.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStateRoomType.Location = new System.Drawing.Point(10, 349);
-            this.lblStateRoomType.Name = "lblStateRoomType";
-            this.lblStateRoomType.Size = new System.Drawing.Size(186, 26);
-            this.lblStateRoomType.TabIndex = 13;
-            this.lblStateRoomType.Size = new System.Drawing.Size(186, 26);
-            this.lblStateRoomType.TabIndex = 9;
-            this.lblStateRoomType.Text = "Trạng thái dữ liệu";
-            this.lblStateRoomType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panUcHeader
-            // 
-            this.panUcHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(224)))), ((int)(((byte)(155)))));
-            this.panUcHeader.Controls.Add(this.spcHeader);
-            this.panUcHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panUcHeader.Location = new System.Drawing.Point(0, 0);
-            this.panUcHeader.Name = "panUcHeader";
-            this.panUcHeader.Size = new System.Drawing.Size(1370, 94);
-            this.panUcHeader.TabIndex = 37;
-            // 
-            // spcHeader
-            // 
-            this.spcHeader.BackColor = System.Drawing.Color.Lavender;
-            this.spcHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.spcHeader.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.spcHeader.Location = new System.Drawing.Point(0, 0);
-            this.spcHeader.Name = "spcHeader";
-            // 
-            // spcHeader.Panel1
-            // 
-            this.spcHeader.Panel1.Controls.Add(this.lblServiceType);
-            // 
-            // spcHeader.Panel2
-            // 
-            this.spcHeader.Panel2.Controls.Add(this.tlpController);
-            this.spcHeader.Size = new System.Drawing.Size(1370, 94);
-            this.spcHeader.SplitterDistance = 972;
-            this.spcHeader.TabIndex = 0;
-            // 
-            // picDichVu
-            // 
-            this.picDichVu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.picDichVu.Image = global::GUI.Properties.Resources.no_pictures;
-            this.picDichVu.Location = new System.Drawing.Point(61, 18);
-            this.picDichVu.Name = "picDichVu";
-            this.picDichVu.Size = new System.Drawing.Size(295, 131);
-            this.picDichVu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picDichVu.TabIndex = 40;
-            this.picDichVu.TabStop = false;
             // 
             // colMaDV
             // 
@@ -498,10 +334,124 @@ namespace GUI.UserControls
             // 
             this.colHinhAnh.DataPropertyName = "HinhAnh";
             this.colHinhAnh.HeaderText = "Hình ảnh";
+            this.colHinhAnh.MinimumWidth = 6;
             this.colHinhAnh.Name = "colHinhAnh";
             this.colHinhAnh.ReadOnly = true;
+            this.colHinhAnh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colHinhAnh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colHinhAnh.Visible = false;
             this.colHinhAnh.Width = 90;
+            // 
+            // picDichVu
+            // 
+            this.picDichVu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.picDichVu.Image = global::GUI.Properties.Resources.no_pictures;
+            this.picDichVu.Location = new System.Drawing.Point(0, 0);
+            this.picDichVu.Name = "picDichVu";
+            this.picDichVu.Size = new System.Drawing.Size(393, 166);
+            this.picDichVu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picDichVu.TabIndex = 40;
+            this.picDichVu.TabStop = false;
+            // 
+            // cboSortServiceTypeID
+            // 
+            this.cboSortServiceTypeID.DelimiterChar = "";
+            this.cboSortServiceTypeID.DisplayMember = "";
+            this.cboSortServiceTypeID.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboSortServiceTypeID.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+            this.cboSortServiceTypeID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortServiceTypeID.Location = new System.Drawing.Point(234, 234);
+            this.cboSortServiceTypeID.Name = "cboSortServiceTypeID";
+            this.cboSortServiceTypeID.Size = new System.Drawing.Size(156, 33);
+            this.cboSortServiceTypeID.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.cboSortServiceTypeID.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortServiceTypeID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortServiceTypeID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboSortServiceTypeID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortServiceTypeID.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.cboSortServiceTypeID, "Sắp xếp theo mã loại dịch vụ");
+            this.cboSortServiceTypeID.SelectedIndexChanged += new System.EventHandler(this.cboSortServiceTypeID_SelectedIndexChanged);
+            // 
+            // lblSortServiceTypeID
+            // 
+            this.lblSortServiceTypeID.AutoSize = true;
+            this.lblSortServiceTypeID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortServiceTypeID.Location = new System.Drawing.Point(11, 241);
+            this.lblSortServiceTypeID.Name = "lblSortServiceTypeID";
+            this.lblSortServiceTypeID.Size = new System.Drawing.Size(208, 26);
+            this.lblSortServiceTypeID.TabIndex = 28;
+            this.lblSortServiceTypeID.Text = "Sort Service Type ID";
+            this.lblSortServiceTypeID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cboSortGiaServiceType
+            // 
+            this.cboSortGiaServiceType.DelimiterChar = "";
+            this.cboSortGiaServiceType.DisplayMember = "";
+            this.cboSortGiaServiceType.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboSortGiaServiceType.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+            this.cboSortGiaServiceType.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortGiaServiceType.Location = new System.Drawing.Point(235, 289);
+            this.cboSortGiaServiceType.Name = "cboSortGiaServiceType";
+            this.cboSortGiaServiceType.Size = new System.Drawing.Size(156, 33);
+            this.cboSortGiaServiceType.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.cboSortGiaServiceType.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortGiaServiceType.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortGiaServiceType.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboSortGiaServiceType.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortGiaServiceType.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.cboSortGiaServiceType, "Sắp xếp theo giá");
+            this.cboSortGiaServiceType.SelectedIndexChanged += new System.EventHandler(this.cboSortGiaServiceType_SelectedIndexChanged);
+            // 
+            // lblSortGiaServiceTypeID
+            // 
+            this.lblSortGiaServiceTypeID.AutoSize = true;
+            this.lblSortGiaServiceTypeID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortGiaServiceTypeID.Location = new System.Drawing.Point(11, 296);
+            this.lblSortGiaServiceTypeID.Name = "lblSortGiaServiceTypeID";
+            this.lblSortGiaServiceTypeID.Size = new System.Drawing.Size(138, 26);
+            this.lblSortGiaServiceTypeID.TabIndex = 14;
+            this.lblSortGiaServiceTypeID.Text = "Sort theo giá";
+            this.lblSortGiaServiceTypeID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblStateRoomType
+            // 
+            this.lblStateRoomType.AutoSize = true;
+            this.lblStateRoomType.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStateRoomType.Location = new System.Drawing.Point(10, 349);
+            this.lblStateRoomType.Name = "lblStateRoomType";
+            this.lblStateRoomType.Size = new System.Drawing.Size(186, 26);
+            this.lblStateRoomType.TabIndex = 9;
+            this.lblStateRoomType.Text = "Trạng thái dữ liệu";
+            this.lblStateRoomType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panUcHeader
+            // 
+            this.panUcHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(224)))), ((int)(((byte)(155)))));
+            this.panUcHeader.Controls.Add(this.spcHeader);
+            this.panUcHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panUcHeader.Location = new System.Drawing.Point(0, 0);
+            this.panUcHeader.Name = "panUcHeader";
+            this.panUcHeader.Size = new System.Drawing.Size(1370, 94);
+            this.panUcHeader.TabIndex = 37;
+            // 
+            // spcHeader
+            // 
+            this.spcHeader.BackColor = System.Drawing.Color.Lavender;
+            this.spcHeader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.spcHeader.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.spcHeader.Location = new System.Drawing.Point(0, 0);
+            this.spcHeader.Name = "spcHeader";
+            // 
+            // spcHeader.Panel1
+            // 
+            this.spcHeader.Panel1.Controls.Add(this.lblServiceType);
+            // 
+            // spcHeader.Panel2
+            // 
+            this.spcHeader.Panel2.Controls.Add(this.tlpController);
+            this.spcHeader.Size = new System.Drawing.Size(1370, 94);
+            this.spcHeader.SplitterDistance = 972;
+            this.spcHeader.TabIndex = 0;
             // 
             // ucServiceType
             // 
@@ -521,6 +471,7 @@ namespace GUI.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).EndInit();
             this.spcQuery.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvServiceType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDichVu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortServiceTypeID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortGiaServiceType)).EndInit();
             this.panUcHeader.ResumeLayout(false);
@@ -528,7 +479,6 @@ namespace GUI.UserControls
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picDichVu)).EndInit();
             this.ResumeLayout(false);
 
         }

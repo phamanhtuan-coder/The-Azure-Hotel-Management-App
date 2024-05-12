@@ -33,6 +33,7 @@ namespace GUI.UserControls
 
         private void ucDiscount_Load(object sender, EventArgs e)
         {
+            dgvDiscount.AutoGenerateColumns = false;
             LoadDuLieuHNV();
             LoadDuLieuCombobox();
             LoadDSKhuyenMai();

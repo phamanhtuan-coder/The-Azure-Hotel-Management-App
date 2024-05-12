@@ -41,6 +41,15 @@
             this.cboStateRoom = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvRoom = new System.Windows.Forms.DataGridView();
+            this.colMaPHG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaTinhTrangPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGiaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSucChuaToiDa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.picRoom = new System.Windows.Forms.PictureBox();
             this.cboSortPrice = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortPrice = new System.Windows.Forms.Label();
             this.cboRoomStatus = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -53,15 +62,6 @@
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.colMaPHG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaTinhTrangPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGiaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSucChuaToiDa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.picRoom = new System.Windows.Forms.PictureBox();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -69,6 +69,7 @@
             this.spcQuery.Panel2.SuspendLayout();
             this.spcQuery.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboRoomStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortRoomType)).BeginInit();
@@ -78,7 +79,6 @@
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picRoom)).BeginInit();
             this.SuspendLayout();
             // 
             // lblRoom
@@ -307,6 +307,91 @@
             this.dgvRoom.TabIndex = 6;
             this.dgvRoom.SelectionChanged += new System.EventHandler(this.dgvRoom_SelectionChanged);
             // 
+            // colMaPHG
+            // 
+            this.colMaPHG.DataPropertyName = "MaPHG";
+            this.colMaPHG.HeaderText = "Mã phòng";
+            this.colMaPHG.MinimumWidth = 6;
+            this.colMaPHG.Name = "colMaPHG";
+            this.colMaPHG.ReadOnly = true;
+            this.colMaPHG.Width = 107;
+            // 
+            // colMaLoai
+            // 
+            this.colMaLoai.DataPropertyName = "MaLoai";
+            this.colMaLoai.HeaderText = "Mã loại";
+            this.colMaLoai.MinimumWidth = 6;
+            this.colMaLoai.Name = "colMaLoai";
+            this.colMaLoai.ReadOnly = true;
+            this.colMaLoai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMaLoai.Width = 83;
+            // 
+            // colMaTinhTrangPhong
+            // 
+            this.colMaTinhTrangPhong.DataPropertyName = "MaTinhTrangPhong";
+            this.colMaTinhTrangPhong.HeaderText = "Mã tình trạng phòng";
+            this.colMaTinhTrangPhong.MinimumWidth = 6;
+            this.colMaTinhTrangPhong.Name = "colMaTinhTrangPhong";
+            this.colMaTinhTrangPhong.ReadOnly = true;
+            this.colMaTinhTrangPhong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMaTinhTrangPhong.Width = 181;
+            // 
+            // colHinhAnh
+            // 
+            this.colHinhAnh.DataPropertyName = "HinhAnh";
+            this.colHinhAnh.HeaderText = "Hình ảnh";
+            this.colHinhAnh.MinimumWidth = 6;
+            this.colHinhAnh.Name = "colHinhAnh";
+            this.colHinhAnh.ReadOnly = true;
+            this.colHinhAnh.Visible = false;
+            // 
+            // colMoTa
+            // 
+            this.colMoTa.DataPropertyName = "MoTa";
+            this.colMoTa.HeaderText = "Mô tả";
+            this.colMoTa.MinimumWidth = 6;
+            this.colMoTa.Name = "colMoTa";
+            this.colMoTa.ReadOnly = true;
+            this.colMoTa.Width = 60;
+            // 
+            // colGiaPhong
+            // 
+            this.colGiaPhong.DataPropertyName = "GiaPhong";
+            this.colGiaPhong.HeaderText = "Giá";
+            this.colGiaPhong.MinimumWidth = 6;
+            this.colGiaPhong.Name = "colGiaPhong";
+            this.colGiaPhong.ReadOnly = true;
+            this.colGiaPhong.Width = 60;
+            // 
+            // colSucChuaToiDa
+            // 
+            this.colSucChuaToiDa.DataPropertyName = "SucChuaToiDa";
+            this.colSucChuaToiDa.HeaderText = "Sức chứa";
+            this.colSucChuaToiDa.MinimumWidth = 6;
+            this.colSucChuaToiDa.Name = "colSucChuaToiDa";
+            this.colSucChuaToiDa.ReadOnly = true;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.MinimumWidth = 6;
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Visible = false;
+            this.colTrangThai.Width = 105;
+            // 
+            // picRoom
+            // 
+            this.picRoom.Dock = System.Windows.Forms.DockStyle.Top;
+            this.picRoom.Image = global::GUI.Properties.Resources.no_pictures;
+            this.picRoom.Location = new System.Drawing.Point(0, 0);
+            this.picRoom.Name = "picRoom";
+            this.picRoom.Size = new System.Drawing.Size(393, 184);
+            this.picRoom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRoom.TabIndex = 41;
+            this.picRoom.TabStop = false;
+            // 
             // cboSortPrice
             // 
             this.cboSortPrice.DelimiterChar = "";
@@ -465,92 +550,6 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // colMaPHG
-            // 
-            this.colMaPHG.DataPropertyName = "MaPHG";
-            this.colMaPHG.HeaderText = "Mã phòng";
-            this.colMaPHG.MinimumWidth = 6;
-            this.colMaPHG.Name = "colMaPHG";
-            this.colMaPHG.ReadOnly = true;
-            this.colMaPHG.Width = 107;
-            // 
-            // colMaLoai
-            // 
-            this.colMaLoai.DataPropertyName = "MaLoai";
-            this.colMaLoai.HeaderText = "Mã loại";
-            this.colMaLoai.MinimumWidth = 6;
-            this.colMaLoai.Name = "colMaLoai";
-            this.colMaLoai.ReadOnly = true;
-            this.colMaLoai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaLoai.Width = 83;
-            // 
-            // colMaTinhTrangPhong
-            // 
-            this.colMaTinhTrangPhong.DataPropertyName = "MaTinhTrangPhong";
-            this.colMaTinhTrangPhong.HeaderText = "Mã tình trạng phòng";
-            this.colMaTinhTrangPhong.MinimumWidth = 6;
-            this.colMaTinhTrangPhong.Name = "colMaTinhTrangPhong";
-            this.colMaTinhTrangPhong.ReadOnly = true;
-            this.colMaTinhTrangPhong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaTinhTrangPhong.Width = 181;
-            // 
-            // colHinhAnh
-            // 
-            this.colHinhAnh.DataPropertyName = "HinhAnh";
-            this.colHinhAnh.HeaderText = "Hình ảnh";
-            this.colHinhAnh.MinimumWidth = 6;
-            this.colHinhAnh.Name = "colHinhAnh";
-            this.colHinhAnh.ReadOnly = true;
-            this.colHinhAnh.Visible = false;
-            // 
-            // colMoTa
-            // 
-            this.colMoTa.DataPropertyName = "MoTa";
-            this.colMoTa.HeaderText = "Mô tả";
-            this.colMoTa.MinimumWidth = 6;
-            this.colMoTa.Name = "colMoTa";
-            this.colMoTa.ReadOnly = true;
-            this.colMoTa.Width = 60;
-            // 
-            // colGiaPhong
-            // 
-            this.colGiaPhong.DataPropertyName = "GiaPhong";
-            this.colGiaPhong.HeaderText = "Giá";
-            this.colGiaPhong.MinimumWidth = 6;
-            this.colGiaPhong.Name = "colGiaPhong";
-            this.colGiaPhong.ReadOnly = true;
-            this.colGiaPhong.Width = 60;
-            // 
-            // colSucChuaToiDa
-            // 
-            this.colSucChuaToiDa.DataPropertyName = "SucChuaToiDa";
-            this.colSucChuaToiDa.HeaderText = "Sức chứa";
-            this.colSucChuaToiDa.MinimumWidth = 6;
-            this.colSucChuaToiDa.Name = "colSucChuaToiDa";
-            this.colSucChuaToiDa.ReadOnly = true;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "TrangThai";
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.MinimumWidth = 6;
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Visible = false;
-            this.colTrangThai.Width = 105;
-            // 
-            // picRoom
-            // 
-            this.picRoom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.picRoom.Image = global::GUI.Properties.Resources.no_pictures;
-            this.picRoom.Location = new System.Drawing.Point(46, 19);
-            this.picRoom.Name = "picRoom";
-            this.picRoom.Size = new System.Drawing.Size(319, 145);
-            this.picRoom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picRoom.TabIndex = 41;
-            this.picRoom.TabStop = false;
-            // 
             // ucRoom
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -569,6 +568,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).EndInit();
             this.spcQuery.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboRoomStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSortRoomType)).EndInit();
@@ -578,7 +578,6 @@
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picRoom)).EndInit();
             this.ResumeLayout(false);
 
         }

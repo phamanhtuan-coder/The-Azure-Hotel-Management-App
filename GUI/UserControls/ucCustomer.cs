@@ -31,6 +31,7 @@ namespace GUI.UserControls
 
         private void ucCustomer_Load(object sender, EventArgs e)
         {
+            dgvCustomer.AutoGenerateColumns = false;
             CapNhatCBBNhanVien();
             KiemTraPQ();
         }

@@ -272,7 +272,7 @@
             this.dgvMaintenance.AllowUserToDeleteRows = false;
             this.dgvMaintenance.AllowUserToResizeColumns = false;
             this.dgvMaintenance.AllowUserToResizeRows = false;
-            this.dgvMaintenance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMaintenance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvMaintenance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMaintenance.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaBaoTri,
@@ -299,6 +299,7 @@
             this.colMaBaoTri.MinimumWidth = 6;
             this.colMaBaoTri.Name = "colMaBaoTri";
             this.colMaBaoTri.ReadOnly = true;
+            this.colMaBaoTri.Width = 89;
             // 
             // colMaThietBi
             // 
@@ -307,6 +308,7 @@
             this.colMaThietBi.MinimumWidth = 6;
             this.colMaThietBi.Name = "colMaThietBi";
             this.colMaThietBi.ReadOnly = true;
+            this.colMaThietBi.Width = 96;
             // 
             // colMaNV
             // 
@@ -315,6 +317,7 @@
             this.colMaNV.MinimumWidth = 6;
             this.colMaNV.Name = "colMaNV";
             this.colMaNV.ReadOnly = true;
+            this.colMaNV.Width = 148;
             // 
             // colNgayHuHong
             // 
@@ -323,6 +326,7 @@
             this.colNgayHuHong.MinimumWidth = 6;
             this.colNgayHuHong.Name = "colNgayHuHong";
             this.colNgayHuHong.ReadOnly = true;
+            this.colNgayHuHong.Width = 137;
             // 
             // colNgayBaoTri
             // 
@@ -331,6 +335,7 @@
             this.colNgayBaoTri.MinimumWidth = 6;
             this.colNgayBaoTri.Name = "colNgayBaoTri";
             this.colNgayBaoTri.ReadOnly = true;
+            this.colNgayBaoTri.Width = 106;
             // 
             // colTrangThai
             // 

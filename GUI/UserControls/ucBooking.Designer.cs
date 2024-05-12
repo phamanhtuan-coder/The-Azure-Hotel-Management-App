@@ -42,16 +42,6 @@
             this.dtpNgayDat = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvBooking = new System.Windows.Forms.DataGridView();
-            this.colMaDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaPHG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayNhanPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayTraPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSoLuongKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.txtCCCD = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -71,6 +61,16 @@
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.colMaDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaPHG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayNhanPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayTraPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSoLuongKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateBooking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -332,96 +332,6 @@
             this.dgvBooking.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBooking.Size = new System.Drawing.Size(973, 746);
             this.dgvBooking.TabIndex = 6;
-            // 
-            // colMaDatPhong
-            // 
-            this.colMaDatPhong.DataPropertyName = "MaDatPhong";
-            this.colMaDatPhong.HeaderText = "Mã đặt phòng";
-            this.colMaDatPhong.MinimumWidth = 6;
-            this.colMaDatPhong.Name = "colMaDatPhong";
-            this.colMaDatPhong.ReadOnly = true;
-            this.colMaDatPhong.Width = 134;
-            // 
-            // colMaKH
-            // 
-            this.colMaKH.DataPropertyName = "MaKH";
-            this.colMaKH.HeaderText = "Mã KH";
-            this.colMaKH.MinimumWidth = 6;
-            this.colMaKH.Name = "colMaKH";
-            this.colMaKH.ReadOnly = true;
-            this.colMaKH.Width = 59;
-            // 
-            // colMaPHG
-            // 
-            this.colMaPHG.DataPropertyName = "MaPHG";
-            this.colMaPHG.HeaderText = "Mã PHG";
-            this.colMaPHG.MinimumWidth = 6;
-            this.colMaPHG.Name = "colMaPHG";
-            this.colMaPHG.ReadOnly = true;
-            this.colMaPHG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaPHG.Width = 91;
-            // 
-            // colNgayDatPhong
-            // 
-            this.colNgayDatPhong.DataPropertyName = "NgayDatPhong";
-            this.colNgayDatPhong.HeaderText = "Ngày đặt";
-            this.colNgayDatPhong.MinimumWidth = 6;
-            this.colNgayDatPhong.Name = "colNgayDatPhong";
-            this.colNgayDatPhong.ReadOnly = true;
-            this.colNgayDatPhong.Width = 98;
-            // 
-            // colNgayNhanPhong
-            // 
-            this.colNgayNhanPhong.DataPropertyName = "NgayNhanPhong";
-            this.colNgayNhanPhong.HeaderText = "Ngày nhận phòng";
-            this.colNgayNhanPhong.MinimumWidth = 6;
-            this.colNgayNhanPhong.Name = "colNgayNhanPhong";
-            this.colNgayNhanPhong.ReadOnly = true;
-            this.colNgayNhanPhong.Width = 165;
-            // 
-            // colNgayTraPhong
-            // 
-            this.colNgayTraPhong.DataPropertyName = "NgayTraPhong";
-            this.colNgayTraPhong.HeaderText = "Ngày trả phòng";
-            this.colNgayTraPhong.MinimumWidth = 6;
-            this.colNgayTraPhong.Name = "colNgayTraPhong";
-            this.colNgayTraPhong.ReadOnly = true;
-            this.colNgayTraPhong.Width = 145;
-            // 
-            // colSoLuongKH
-            // 
-            this.colSoLuongKH.DataPropertyName = "SoLuongKH";
-            this.colSoLuongKH.HeaderText = "Số lượng KH";
-            this.colSoLuongKH.MinimumWidth = 6;
-            this.colSoLuongKH.Name = "colSoLuongKH";
-            this.colSoLuongKH.ReadOnly = true;
-            this.colSoLuongKH.Width = 123;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "TrangThai";
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.MinimumWidth = 6;
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Width = 105;
-            // 
-            // colTenTaiKhoan
-            // 
-            this.colTenTaiKhoan.DataPropertyName = "TenDangNhap";
-            this.colTenTaiKhoan.HeaderText = "Tên Tài Khoản";
-            this.colTenTaiKhoan.Name = "colTenTaiKhoan";
-            this.colTenTaiKhoan.ReadOnly = true;
-            this.colTenTaiKhoan.Visible = false;
-            this.colTenTaiKhoan.Width = 133;
-            // 
-            // colCCCD
-            // 
-            this.colCCCD.DataPropertyName = "CCCD";
-            this.colCCCD.HeaderText = "CCCD";
-            this.colCCCD.Name = "colCCCD";
-            this.colCCCD.ReadOnly = true;
-            this.colCCCD.Width = 84;
             // 
             // label3
             // 
@@ -686,6 +596,97 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
+            // colMaDatPhong
+            // 
+            this.colMaDatPhong.DataPropertyName = "MaDatPhong";
+            this.colMaDatPhong.HeaderText = "Mã đặt phòng";
+            this.colMaDatPhong.MinimumWidth = 6;
+            this.colMaDatPhong.Name = "colMaDatPhong";
+            this.colMaDatPhong.ReadOnly = true;
+            this.colMaDatPhong.Width = 147;
+            // 
+            // colMaKH
+            // 
+            this.colMaKH.DataPropertyName = "MaKH";
+            this.colMaKH.HeaderText = "Mã KH";
+            this.colMaKH.MinimumWidth = 6;
+            this.colMaKH.Name = "colMaKH";
+            this.colMaKH.ReadOnly = true;
+            this.colMaKH.Width = 87;
+            // 
+            // colMaPHG
+            // 
+            this.colMaPHG.DataPropertyName = "MaPHG";
+            this.colMaPHG.HeaderText = "Mã PHG";
+            this.colMaPHG.MinimumWidth = 6;
+            this.colMaPHG.Name = "colMaPHG";
+            this.colMaPHG.ReadOnly = true;
+            this.colMaPHG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMaPHG.Width = 99;
+            // 
+            // colNgayDatPhong
+            // 
+            this.colNgayDatPhong.DataPropertyName = "NgayDatPhong";
+            this.colNgayDatPhong.HeaderText = "Ngày đặt";
+            this.colNgayDatPhong.MinimumWidth = 6;
+            this.colNgayDatPhong.Name = "colNgayDatPhong";
+            this.colNgayDatPhong.ReadOnly = true;
+            this.colNgayDatPhong.Width = 107;
+            // 
+            // colNgayNhanPhong
+            // 
+            this.colNgayNhanPhong.DataPropertyName = "NgayNhanPhong";
+            this.colNgayNhanPhong.HeaderText = "Ngày nhận phòng";
+            this.colNgayNhanPhong.MinimumWidth = 6;
+            this.colNgayNhanPhong.Name = "colNgayNhanPhong";
+            this.colNgayNhanPhong.ReadOnly = true;
+            this.colNgayNhanPhong.Width = 165;
+            // 
+            // colNgayTraPhong
+            // 
+            this.colNgayTraPhong.DataPropertyName = "NgayTraPhong";
+            this.colNgayTraPhong.HeaderText = "Ngày trả phòng";
+            this.colNgayTraPhong.MinimumWidth = 6;
+            this.colNgayTraPhong.Name = "colNgayTraPhong";
+            this.colNgayTraPhong.ReadOnly = true;
+            this.colNgayTraPhong.Width = 145;
+            // 
+            // colSoLuongKH
+            // 
+            this.colSoLuongKH.DataPropertyName = "SoLuongKH";
+            this.colSoLuongKH.HeaderText = "Số lượng KH";
+            this.colSoLuongKH.MinimumWidth = 6;
+            this.colSoLuongKH.Name = "colSoLuongKH";
+            this.colSoLuongKH.ReadOnly = true;
+            this.colSoLuongKH.Width = 123;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.MinimumWidth = 6;
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Visible = false;
+            this.colTrangThai.Width = 105;
+            // 
+            // colTenTaiKhoan
+            // 
+            this.colTenTaiKhoan.DataPropertyName = "TenDangNhap";
+            this.colTenTaiKhoan.HeaderText = "Tên Tài Khoản";
+            this.colTenTaiKhoan.Name = "colTenTaiKhoan";
+            this.colTenTaiKhoan.ReadOnly = true;
+            this.colTenTaiKhoan.Visible = false;
+            this.colTenTaiKhoan.Width = 133;
+            // 
+            // colCCCD
+            // 
+            this.colCCCD.DataPropertyName = "CCCD";
+            this.colCCCD.HeaderText = "CCCD";
+            this.colCCCD.Name = "colCCCD";
+            this.colCCCD.ReadOnly = true;
+            this.colCCCD.Width = 84;
+            // 
             // ucBooking
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -747,6 +748,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCCCD;
+        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaDatPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaPHG;
@@ -757,6 +759,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenTaiKhoan;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCCCD;
-        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

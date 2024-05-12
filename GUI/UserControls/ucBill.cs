@@ -39,6 +39,7 @@ namespace GUI.UserControls
 
         private void ucBill_Load(object sender, EventArgs e)
         {
+            dgvBill.AutoGenerateColumns = false;
             LoadDuLieuKH();
             LoadDuLieuNV();
             LoadDuLieuThue();

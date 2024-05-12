@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucDepartment));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblDepartment = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddDepartment = new Syncfusion.WinForms.Controls.SfButton();
@@ -42,11 +42,6 @@
             this.cboStateDepartment = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvDepartment = new System.Windows.Forms.DataGridView();
-            this.colMaPhongBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTruongPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayNhanChuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboSortDepartment = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortDepartmentID = new System.Windows.Forms.Label();
             this.cboSortSoLuongNV = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -55,6 +50,11 @@
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.colMaPhongBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTruongPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayNhanChuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateDepartment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -271,7 +271,7 @@
             this.dgvDepartment.AllowUserToDeleteRows = false;
             this.dgvDepartment.AllowUserToResizeColumns = false;
             this.dgvDepartment.AllowUserToResizeRows = false;
-            this.dgvDepartment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDepartment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDepartment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaPhongBan,
@@ -288,43 +288,6 @@
             this.dgvDepartment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDepartment.Size = new System.Drawing.Size(973, 746);
             this.dgvDepartment.TabIndex = 6;
-            // 
-            // colMaPhongBan
-            // 
-            this.colMaPhongBan.DataPropertyName = "MaPhongBan";
-            this.colMaPhongBan.HeaderText = "Mã phòng ban";
-            this.colMaPhongBan.Name = "colMaPhongBan";
-            this.colMaPhongBan.ReadOnly = true;
-            // 
-            // colTenPhong
-            // 
-            this.colTenPhong.DataPropertyName = "TenPhong";
-            this.colTenPhong.HeaderText = "Tên phòng ban";
-            this.colTenPhong.Name = "colTenPhong";
-            this.colTenPhong.ReadOnly = true;
-            // 
-            // colTruongPhong
-            // 
-            this.colTruongPhong.DataPropertyName = "TruongPhong";
-            this.colTruongPhong.HeaderText = "Trưởng phòng";
-            this.colTruongPhong.Name = "colTruongPhong";
-            this.colTruongPhong.ReadOnly = true;
-            // 
-            // colNgayNhanChuc
-            // 
-            this.colNgayNhanChuc.DataPropertyName = "NgayNhanChuc";
-            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
-            this.colNgayNhanChuc.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colNgayNhanChuc.HeaderText = "Ngày nhận chức";
-            this.colNgayNhanChuc.Name = "colNgayNhanChuc";
-            this.colNgayNhanChuc.ReadOnly = true;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "TrangThai";
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
             // 
             // cboSortDepartment
             // 
@@ -429,6 +392,49 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
+            // colMaPhongBan
+            // 
+            this.colMaPhongBan.DataPropertyName = "MaPhongBan";
+            this.colMaPhongBan.HeaderText = "Mã phòng ban";
+            this.colMaPhongBan.Name = "colMaPhongBan";
+            this.colMaPhongBan.ReadOnly = true;
+            this.colMaPhongBan.Width = 152;
+            // 
+            // colTenPhong
+            // 
+            this.colTenPhong.DataPropertyName = "TenPhong";
+            this.colTenPhong.HeaderText = "Tên phòng ban";
+            this.colTenPhong.Name = "colTenPhong";
+            this.colTenPhong.ReadOnly = true;
+            this.colTenPhong.Width = 157;
+            // 
+            // colTruongPhong
+            // 
+            this.colTruongPhong.DataPropertyName = "TruongPhong";
+            this.colTruongPhong.HeaderText = "Trưởng phòng";
+            this.colTruongPhong.Name = "colTruongPhong";
+            this.colTruongPhong.ReadOnly = true;
+            this.colTruongPhong.Width = 151;
+            // 
+            // colNgayNhanChuc
+            // 
+            this.colNgayNhanChuc.DataPropertyName = "NgayNhanChuc";
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
+            this.colNgayNhanChuc.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colNgayNhanChuc.HeaderText = "Ngày nhận chức";
+            this.colNgayNhanChuc.Name = "colNgayNhanChuc";
+            this.colNgayNhanChuc.ReadOnly = true;
+            this.colNgayNhanChuc.Width = 167;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Visible = false;
+            this.colTrangThai.Width = 194;
+            // 
             // ucDepartment
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -478,11 +484,11 @@
         private Syncfusion.WinForms.ListView.SfComboBox cboSortDepartment;
         private System.Windows.Forms.Label lblSortDepartmentID;
         private System.Windows.Forms.DataGridView dgvDepartment;
+        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaPhongBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTruongPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayNhanChuc;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
-        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

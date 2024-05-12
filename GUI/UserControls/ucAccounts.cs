@@ -34,6 +34,7 @@ namespace GUI.UserControls
 
         private void ucAccounts_Load(object sender, EventArgs e)
         {
+            dgvAccounts.AutoGenerateColumns = false;
             CapNhatDuLieuCBO();
             LoadDSTaiKhoan();
             KiemTraPQ();

@@ -34,6 +34,7 @@ namespace GUI.UserControls
 
         private void ucHousekeeping_Load(object sender, EventArgs e)
         {
+            dgvHousekeeping.AutoGenerateColumns = false;
             LoadDuLieuNhanVien();
             LoadDuLieuCombobox();
             LoadDuLieuDonPhong();

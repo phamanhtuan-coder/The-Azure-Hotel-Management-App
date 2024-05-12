@@ -270,7 +270,7 @@
             this.dgvHousekeeping.AllowUserToDeleteRows = false;
             this.dgvHousekeeping.AllowUserToResizeColumns = false;
             this.dgvHousekeeping.AllowUserToResizeRows = false;
-            this.dgvHousekeeping.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHousekeeping.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvHousekeeping.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHousekeeping.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaDP,
@@ -295,6 +295,7 @@
             this.colMaDP.HeaderText = "Mã dọn phòng";
             this.colMaDP.Name = "colMaDP";
             this.colMaDP.ReadOnly = true;
+            this.colMaDP.Width = 136;
             // 
             // colMaPhong
             // 
@@ -302,6 +303,7 @@
             this.colMaPhong.HeaderText = "Mã phòng";
             this.colMaPhong.Name = "colMaPhong";
             this.colMaPhong.ReadOnly = true;
+            this.colMaPhong.Width = 105;
             // 
             // colMaNV
             // 
@@ -312,6 +314,7 @@
             this.colMaNV.ReadOnly = true;
             this.colMaNV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colMaNV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colMaNV.Width = 104;
             // 
             // colNgayNhan
             // 
@@ -319,6 +322,7 @@
             this.colNgayNhan.HeaderText = "Ngày nhận";
             this.colNgayNhan.Name = "colNgayNhan";
             this.colNgayNhan.ReadOnly = true;
+            this.colNgayNhan.Width = 110;
             // 
             // colNgayHoanThanh
             // 
@@ -326,6 +330,7 @@
             this.colNgayHoanThanh.HeaderText = "Ngày hoàn thành";
             this.colNgayHoanThanh.Name = "colNgayHoanThanh";
             this.colNgayHoanThanh.ReadOnly = true;
+            this.colNgayHoanThanh.Width = 155;
             // 
             // colTrangThai
             // 

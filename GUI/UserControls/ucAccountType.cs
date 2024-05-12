@@ -29,6 +29,7 @@ namespace GUI.UserControls
 
         private void ucAccountType_Load(object sender, EventArgs e)
         {
+            dgvAccountType.AutoGenerateColumns = false; 
             LoadCBBVaiTro();
             KiemTraPQ();
         }

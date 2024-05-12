@@ -40,17 +40,7 @@
             this.dtpBillDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvBill = new System.Windows.Forms.DataGridView();
-            this.colMaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaKH = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colMaNV = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colMaThue = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colNgayLapHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTongHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTienNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTienThoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnInHD = new Syncfusion.WinForms.Controls.SfButton();
             this.txtXemCT = new Syncfusion.WinForms.Controls.SfButton();
             this.btnThanhToan = new Syncfusion.WinForms.Controls.SfButton();
             this.btnTraCuuDP = new Syncfusion.WinForms.Controls.SfButton();
@@ -71,7 +61,18 @@
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnInHD = new Syncfusion.WinForms.Controls.SfButton();
+            this.colMaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaKH = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colMaNV = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colMaThue = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colTyLeThue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayLapHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTongHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTienNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTienThoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateBooking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -292,6 +293,7 @@
             this.colMaKH,
             this.colMaNV,
             this.colMaThue,
+            this.colTyLeThue,
             this.colNgayLapHoaDon,
             this.colTongHD,
             this.colTienNhan,
@@ -309,105 +311,26 @@
             this.dgvBill.Size = new System.Drawing.Size(973, 746);
             this.dgvBill.TabIndex = 0;
             // 
-            // colMaHD
+            // btnInHD
             // 
-            this.colMaHD.DataPropertyName = "MaHoaDon";
-            this.colMaHD.HeaderText = "Mã hóa đơn";
-            this.colMaHD.Name = "colMaHD";
-            this.colMaHD.ReadOnly = true;
-            this.colMaHD.Width = 108;
-            // 
-            // colMaKH
-            // 
-            this.colMaKH.DataPropertyName = "MaKH";
-            this.colMaKH.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.colMaKH.HeaderText = "Tên khách hàng";
-            this.colMaKH.Name = "colMaKH";
-            this.colMaKH.ReadOnly = true;
-            this.colMaKH.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaKH.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colMaKH.Width = 135;
-            // 
-            // colMaNV
-            // 
-            this.colMaNV.DataPropertyName = "MaNV";
-            this.colMaNV.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.colMaNV.HeaderText = "Tên nhân viên";
-            this.colMaNV.Name = "colMaNV";
-            this.colMaNV.ReadOnly = true;
-            this.colMaNV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaNV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colMaNV.Width = 122;
-            // 
-            // colMaThue
-            // 
-            this.colMaThue.DataPropertyName = "MaThue";
-            this.colMaThue.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.colMaThue.HeaderText = "Tên thuế";
-            this.colMaThue.Name = "colMaThue";
-            this.colMaThue.ReadOnly = true;
-            this.colMaThue.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaThue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colMaThue.Width = 89;
-            // 
-            // colNgayLapHoaDon
-            // 
-            this.colNgayLapHoaDon.DataPropertyName = "NgayLapHoaDon";
-            this.colNgayLapHoaDon.HeaderText = "Ngày lập hóa đơn";
-            this.colNgayLapHoaDon.Name = "colNgayLapHoaDon";
-            this.colNgayLapHoaDon.ReadOnly = true;
-            this.colNgayLapHoaDon.Width = 119;
-            // 
-            // colTongHD
-            // 
-            this.colTongHD.DataPropertyName = "TongHoaDon";
-            this.colTongHD.HeaderText = "Tổng hóa đơn";
-            this.colTongHD.Name = "colTongHD";
-            this.colTongHD.ReadOnly = true;
-            this.colTongHD.Width = 97;
-            // 
-            // colTienNhan
-            // 
-            this.colTienNhan.DataPropertyName = "TienNhan";
-            this.colTienNhan.HeaderText = "Tiền nhận";
-            this.colTienNhan.Name = "colTienNhan";
-            this.colTienNhan.ReadOnly = true;
-            this.colTienNhan.Width = 96;
-            // 
-            // colTienThoi
-            // 
-            this.colTienThoi.DataPropertyName = "TienThoi";
-            this.colTienThoi.HeaderText = "Tiền thối";
-            this.colTienThoi.Name = "colTienThoi";
-            this.colTienThoi.ReadOnly = true;
-            this.colTienThoi.Width = 87;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "TrangThai";
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Visible = false;
-            this.colTrangThai.Width = 97;
-            // 
-            // colCCCD
-            // 
-            this.colCCCD.DataPropertyName = "CCCD";
-            this.colCCCD.HeaderText = "CCCD";
-            this.colCCCD.Name = "colCCCD";
-            this.colCCCD.ReadOnly = true;
-            this.colCCCD.Visible = false;
-            this.colCCCD.Width = 79;
-            // 
-            // colTenDN
-            // 
-            this.colTenDN.DataPropertyName = "TenTaiKhoan";
-            this.colTenDN.HeaderText = "Tên đăng nhập";
-            this.colTenDN.Name = "colTenDN";
-            this.colTenDN.ReadOnly = true;
-            this.colTenDN.Visible = false;
-            this.colTenDN.Width = 129;
+            this.btnInHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnInHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInHD.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInHD.ForeColor = System.Drawing.Color.White;
+            this.btnInHD.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnInHD.Location = new System.Drawing.Point(91, 524);
+            this.btnInHD.Name = "btnInHD";
+            this.btnInHD.Size = new System.Drawing.Size(191, 46);
+            this.btnInHD.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnInHD.Style.ForeColor = System.Drawing.Color.White;
+            this.btnInHD.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.btnInHD.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnInHD.TabIndex = 5;
+            this.btnInHD.Text = "In hóa đơn";
+            this.btnInHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnInHD, "In hóa đơn");
+            this.btnInHD.UseVisualStyleBackColor = false;
+            this.btnInHD.Click += new System.EventHandler(this.btnInHD_Click);
             // 
             // txtXemCT
             // 
@@ -677,26 +600,113 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // btnInHD
+            // colMaHD
             // 
-            this.btnInHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnInHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInHD.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInHD.ForeColor = System.Drawing.Color.White;
-            this.btnInHD.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnInHD.Location = new System.Drawing.Point(91, 524);
-            this.btnInHD.Name = "btnInHD";
-            this.btnInHD.Size = new System.Drawing.Size(191, 46);
-            this.btnInHD.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnInHD.Style.ForeColor = System.Drawing.Color.White;
-            this.btnInHD.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
-            this.btnInHD.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnInHD.TabIndex = 5;
-            this.btnInHD.Text = "In hóa đơn";
-            this.btnInHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolTip1.SetToolTip(this.btnInHD, "In hóa đơn");
-            this.btnInHD.UseVisualStyleBackColor = false;
-            this.btnInHD.Click += new System.EventHandler(this.btnInHD_Click);
+            this.colMaHD.DataPropertyName = "MaHoaDon";
+            this.colMaHD.HeaderText = "Mã hóa đơn";
+            this.colMaHD.Name = "colMaHD";
+            this.colMaHD.ReadOnly = true;
+            this.colMaHD.Width = 118;
+            // 
+            // colMaKH
+            // 
+            this.colMaKH.DataPropertyName = "MaKH";
+            this.colMaKH.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colMaKH.HeaderText = "Tên khách hàng";
+            this.colMaKH.Name = "colMaKH";
+            this.colMaKH.ReadOnly = true;
+            this.colMaKH.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMaKH.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colMaKH.Width = 135;
+            // 
+            // colMaNV
+            // 
+            this.colMaNV.DataPropertyName = "MaNV";
+            this.colMaNV.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colMaNV.HeaderText = "Tên nhân viên";
+            this.colMaNV.Name = "colMaNV";
+            this.colMaNV.ReadOnly = true;
+            this.colMaNV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMaNV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colMaNV.Width = 122;
+            // 
+            // colMaThue
+            // 
+            this.colMaThue.DataPropertyName = "MaThue";
+            this.colMaThue.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colMaThue.HeaderText = "Tên thuế";
+            this.colMaThue.Name = "colMaThue";
+            this.colMaThue.ReadOnly = true;
+            this.colMaThue.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMaThue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colMaThue.Width = 89;
+            // 
+            // colTyLeThue
+            // 
+            this.colTyLeThue.DataPropertyName = "TyLeThue";
+            this.colTyLeThue.HeaderText = "Mức thuế";
+            this.colTyLeThue.Name = "colTyLeThue";
+            this.colTyLeThue.ReadOnly = true;
+            this.colTyLeThue.Width = 92;
+            // 
+            // colNgayLapHoaDon
+            // 
+            this.colNgayLapHoaDon.DataPropertyName = "NgayLapHoaDon";
+            this.colNgayLapHoaDon.HeaderText = "Ngày lập hóa đơn";
+            this.colNgayLapHoaDon.Name = "colNgayLapHoaDon";
+            this.colNgayLapHoaDon.ReadOnly = true;
+            this.colNgayLapHoaDon.Width = 119;
+            // 
+            // colTongHD
+            // 
+            this.colTongHD.DataPropertyName = "TongHoaDon";
+            this.colTongHD.HeaderText = "Tổng hóa đơn";
+            this.colTongHD.Name = "colTongHD";
+            this.colTongHD.ReadOnly = true;
+            this.colTongHD.Width = 97;
+            // 
+            // colTienNhan
+            // 
+            this.colTienNhan.DataPropertyName = "TienNhan";
+            this.colTienNhan.HeaderText = "Tiền nhận";
+            this.colTienNhan.Name = "colTienNhan";
+            this.colTienNhan.ReadOnly = true;
+            this.colTienNhan.Width = 96;
+            // 
+            // colTienThoi
+            // 
+            this.colTienThoi.DataPropertyName = "TienThoi";
+            this.colTienThoi.HeaderText = "Tiền thối";
+            this.colTienThoi.Name = "colTienThoi";
+            this.colTienThoi.ReadOnly = true;
+            this.colTienThoi.Width = 87;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Visible = false;
+            this.colTrangThai.Width = 97;
+            // 
+            // colCCCD
+            // 
+            this.colCCCD.DataPropertyName = "CCCD";
+            this.colCCCD.HeaderText = "CCCD";
+            this.colCCCD.Name = "colCCCD";
+            this.colCCCD.ReadOnly = true;
+            this.colCCCD.Visible = false;
+            this.colCCCD.Width = 79;
+            // 
+            // colTenDN
+            // 
+            this.colTenDN.DataPropertyName = "TenTaiKhoan";
+            this.colTenDN.HeaderText = "Tên đăng nhập";
+            this.colTenDN.Name = "colTenDN";
+            this.colTenDN.ReadOnly = true;
+            this.colTenDN.Visible = false;
+            this.colTenDN.Width = 129;
             // 
             // ucBill
             // 
@@ -759,10 +769,12 @@
         private Syncfusion.WinForms.Controls.SfButton btnTraCuuDP;
         private Syncfusion.WinForms.Controls.SfButton txtXemCT;
         private System.Windows.Forms.ToolTip toolTip1;
+        private Syncfusion.WinForms.Controls.SfButton btnInHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaHD;
         private System.Windows.Forms.DataGridViewComboBoxColumn colMaKH;
         private System.Windows.Forms.DataGridViewComboBoxColumn colMaNV;
         private System.Windows.Forms.DataGridViewComboBoxColumn colMaThue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTyLeThue;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayLapHoaDon;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTongHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTienNhan;
@@ -770,6 +782,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCCCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenDN;
-        private Syncfusion.WinForms.Controls.SfButton btnInHD;
     }
 }

@@ -33,7 +33,6 @@
             this.lblRating = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
             this.btnDeleteRating = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnRecoverRating = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateRating = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvRating = new System.Windows.Forms.DataGridView();
@@ -51,31 +50,7 @@
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.colMaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDiemDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNhanXet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDiemDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNhanXet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDiemDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNhanXet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDiemDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNhanXet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDiemDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNhanXet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRecoverRating = new Syncfusion.WinForms.Controls.SfButton();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateRating)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -109,8 +84,8 @@
             this.tlpController.ColumnCount = 2;
             this.tlpController.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpController.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpController.Controls.Add(this.btnRecoverRating, 0, 0);
             this.tlpController.Controls.Add(this.btnDeleteRating, 0, 0);
-            this.tlpController.Controls.Add(this.btnRecoverRating, 1, 0);
             this.tlpController.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpController.Location = new System.Drawing.Point(0, 0);
             this.tlpController.Name = "tlpController";
@@ -132,12 +107,14 @@
             this.btnDeleteRating.Size = new System.Drawing.Size(191, 88);
             this.btnDeleteRating.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnDeleteRating.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteRating.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnDeleteRating.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnDeleteRating.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnDeleteRating.TabIndex = 2;
             this.btnDeleteRating.Text = "Xóa";
             this.btnDeleteRating.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.btnDeleteRating, "Xóa đánh giá");
+            this.btnDeleteRating.UseVisualStyleBackColor = false;
+            this.btnDeleteRating.Click += new System.EventHandler(this.btnDeleteRating_Click);
             // 
             // cboStateRating
             // 
@@ -188,7 +165,7 @@
             this.dgvRating.AllowUserToDeleteRows = false;
             this.dgvRating.AllowUserToResizeColumns = false;
             this.dgvRating.AllowUserToResizeRows = false;
-            this.dgvRating.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRating.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvRating.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRating.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaDG,
@@ -213,6 +190,7 @@
             this.colMaDG.HeaderText = "Mã đánh giá";
             this.colMaDG.Name = "colMaDG";
             this.colMaDG.ReadOnly = true;
+            this.colMaDG.Width = 133;
             // 
             // colMaDP
             // 
@@ -220,6 +198,7 @@
             this.colMaDP.HeaderText = "Mã đặt phòng";
             this.colMaDP.Name = "colMaDP";
             this.colMaDP.ReadOnly = true;
+            this.colMaDP.Width = 147;
             // 
             // colDiemDG
             // 
@@ -227,6 +206,7 @@
             this.colDiemDG.HeaderText = "Điểm đánh giá";
             this.colDiemDG.Name = "colDiemDG";
             this.colDiemDG.ReadOnly = true;
+            this.colDiemDG.Width = 153;
             // 
             // colNhanXet
             // 
@@ -234,6 +214,7 @@
             this.colNhanXet.HeaderText = "Nhận xét";
             this.colNhanXet.Name = "colNhanXet";
             this.colNhanXet.ReadOnly = true;
+            this.colNhanXet.Width = 108;
             // 
             // colNgayDG
             // 
@@ -241,49 +222,7 @@
             this.colNgayDG.HeaderText = "Ngày đánh giá";
             this.colNgayDG.Name = "colNgayDG";
             this.colNgayDG.ReadOnly = true;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "TrangThai";
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Visible = false;
-            // 
-            // colMaDG
-            // 
-            this.colMaDG.DataPropertyName = "MaDG";
-            this.colMaDG.HeaderText = "Mã đánh giá";
-            this.colMaDG.Name = "colMaDG";
-            this.colMaDG.ReadOnly = true;
-            // 
-            // colMaDP
-            // 
-            this.colMaDP.DataPropertyName = "MaDP";
-            this.colMaDP.HeaderText = "Mã đặt phòng";
-            this.colMaDP.Name = "colMaDP";
-            this.colMaDP.ReadOnly = true;
-            // 
-            // colDiemDG
-            // 
-            this.colDiemDG.DataPropertyName = "DiemDanhGia";
-            this.colDiemDG.HeaderText = "Điểm đánh giá";
-            this.colDiemDG.Name = "colDiemDG";
-            this.colDiemDG.ReadOnly = true;
-            // 
-            // colNhanXet
-            // 
-            this.colNhanXet.DataPropertyName = "NhanXet";
-            this.colNhanXet.HeaderText = "Nhận xét";
-            this.colNhanXet.Name = "colNhanXet";
-            this.colNhanXet.ReadOnly = true;
-            // 
-            // colNgayDG
-            // 
-            this.colNgayDG.DataPropertyName = "NgayDanhGia";
-            this.colNgayDG.HeaderText = "Ngày đánh giá";
-            this.colNgayDG.Name = "colNgayDG";
-            this.colNgayDG.ReadOnly = true;
+            this.colNgayDG.Width = 151;
             // 
             // colTrangThai
             // 
@@ -385,6 +324,28 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
+            // btnRecoverRating
+            // 
+            this.btnRecoverRating.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverRating.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRecoverRating.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecoverRating.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecoverRating.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverRating.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnRecoverRating.Location = new System.Drawing.Point(200, 3);
+            this.btnRecoverRating.Name = "btnRecoverRating";
+            this.btnRecoverRating.Size = new System.Drawing.Size(191, 88);
+            this.btnRecoverRating.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverRating.Style.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverRating.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnRecoverRating.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnRecoverRating.TabIndex = 6;
+            this.btnRecoverRating.Text = "Khôi phục";
+            this.btnRecoverRating.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnRecoverRating, "Khôi phục phân quyền");
+            this.btnRecoverRating.UseVisualStyleBackColor = false;
+            this.btnRecoverRating.Click += new System.EventHandler(this.btnRecoverRating_Click);
+            // 
             // ucRating
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -417,7 +378,6 @@
 
         private System.Windows.Forms.Label lblRating;
         private Syncfusion.WinForms.Controls.SfButton btnDeleteRating;
-        private Syncfusion.WinForms.Controls.SfButton btnRecoverRating;
         private Syncfusion.WinForms.ListView.SfComboBox cboStateRating;
         private System.Windows.Forms.SplitContainer spcQuery;
         private System.Windows.Forms.TableLayoutPanel tlpController;
@@ -436,5 +396,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayDG;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
         private System.Windows.Forms.ToolTip toolTip1;
+        private Syncfusion.WinForms.Controls.SfButton btnRecoverRating;
     }
 }
