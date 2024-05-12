@@ -26,6 +26,7 @@ namespace GUI.UserControls
         LoaiPhongBLL loaiPhongBLL = new LoaiPhongBLL();
         List<TinhTrangPhongDTO> tinhTrangPhongDTOs = new List<TinhTrangPhongDTO>();
         TinhTrangPhongBLL TinhTrangPhongBLL = new TinhTrangPhongBLL();
+        public string MaPHQ { get; set; }
 
         public ucRoom()
         {
@@ -38,8 +39,35 @@ namespace GUI.UserControls
             dgvRoom.AutoGenerateColumns = false;
             laycombo();
 
+            KiemTraPQ();
         }
+        private void KiemTraPQ()
+        {
+            if (MaPHQ.Contains("01"))
+            {
 
+                btnAddRoom.Enabled = false;
+                btnEditRoom.Enabled = false;
+                btnDeleteRoom.Enabled = false;
+                btnRecoverRoom.Enabled = false;
+            }
+            else if (MaPHQ.Contains("03"))
+            {
+                btnAddRoom.Enabled = true;
+                btnEditRoom.Enabled = true;
+                btnDeleteRoom.Enabled = false;
+                btnRecoverRoom.Enabled = false;
+            }
+            else if (MaPHQ.Contains("04") || (MaPHQ.Contains("02")))
+            {
+                btnAddRoom.Enabled = true;
+                btnEditRoom.Enabled = true;
+                btnDeleteRoom.Enabled = true;
+                btnRecoverRoom.Enabled = true;
+            }
+
+
+        }
         private void layds()
         {
             phongDTOs = PhongBLL.laydsp();
@@ -114,24 +142,22 @@ namespace GUI.UserControls
                         thongBao = new customMessageBox(
                             "Xóa thành công dữ liệu có mã là: " + maphong + "!"
                         );
+                        thongBao.ShowDialog();
                     }
                     else
                     {
                         thongBao = new customMessageBox(
                             "Xóa thất bại dữ liệu có mã là: " + maphong + "!"
                         );
+                        thongBao.ShowDialog();
                     }
                 }
-                else
-                {
-                    thongBao = new customMessageBox("Hủy xóa!");
-                }
-                thongBao.ShowDialog();
+              
             }
             else
             {
                 thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn xóa!");
-
+                thongBao.ShowDialog();
             }
             
         }
@@ -156,20 +182,22 @@ namespace GUI.UserControls
                         thongBao = new customMessageBox(
                             "Khôi phục thành công dữ liệu có mã là: " + maphong + "!"
                         );
+                        thongBao.ShowDialog();
                     }
                     else
                     {
                         thongBao = new customMessageBox(
                             "Khôi phục thất bại dữ liệu có mã là: " + maphong + "!"
                         );
+                        thongBao.ShowDialog();
                     }
                 }
-                thongBao.ShowDialog();
+               
             }        
             else
             {
                 thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn khôi phục!");
-
+                thongBao.ShowDialog();
             }
             
         }

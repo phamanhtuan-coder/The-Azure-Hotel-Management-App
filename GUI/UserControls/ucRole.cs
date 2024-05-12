@@ -20,6 +20,7 @@ namespace GUI.UserControls
         List<RoleDTO> dsSearch = new List<RoleDTO>();
         RoleBLL roleBLL = new RoleBLL ();
         customMessageBox thongBao;
+        public string MaPHQ { get; set; }
         public ucRole()
         {
             InitializeComponent();
@@ -30,8 +31,35 @@ namespace GUI.UserControls
         {
             CapDuLieuChoController();
             loadRole();
+            KiemTraPQ();
         }
-        
+        private void KiemTraPQ()
+        {
+            if (MaPHQ.Contains("01"))
+            {
+
+                btnAddRole.Enabled = false;
+                btnEditRole.Enabled = false;
+                btnDeleteRole.Enabled = false;
+                btnRecoverRole.Enabled = false;
+            }
+            else if (MaPHQ.Contains("03"))
+            {
+                btnAddRole.Enabled = true;
+                btnEditRole.Enabled = true;
+                btnDeleteRole.Enabled = false;
+                btnRecoverRole.Enabled = false;
+            }
+            else if (MaPHQ.Contains("04") || (MaPHQ.Contains("02")))
+            {
+                btnAddRole.Enabled = true;
+                btnEditRole.Enabled = true;
+                btnDeleteRole.Enabled = true;
+                btnRecoverRole.Enabled = true;
+            }
+
+
+        }
         private void CapDuLieuChoController()
         {
             //Gọi tới hàm cấp dữ liệu chung vì dữ liệu đa số giống nhau
@@ -85,13 +113,13 @@ namespace GUI.UserControls
                         string MPQ = dgvRole.SelectedCells[0].Value.ToString();
                         if (DeleteRoleGUI(MPQ))
                         {
-                            thongBao = new customMessageBox("Xóa thành công!");
+                            thongBao = new customMessageBox("Xóa thành công dòng dữ liệu đã chọn!");
                             loadRole();
                             thongBao.ShowDialog();
                         }
                         else
                         {
-                            thongBao = new customMessageBox("Xóa thất bại!");
+                            thongBao = new customMessageBox("Xóa thất bại dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                     }
@@ -127,13 +155,13 @@ namespace GUI.UserControls
                         string MPQ = dgvRole.SelectedCells[0].Value.ToString();
                         if (RestoreRoleGUI(MPQ))
                         {
-                            thongBao = new customMessageBox("Khôi phục thành công!");
+                            thongBao = new customMessageBox("Khôi phục thành công dòng dữ liệu đã chọn!");
                             loadRole();
                             thongBao.ShowDialog();
                         }
                         else
                         {
-                            thongBao = new customMessageBox("Khối phục thất bại!");
+                            thongBao = new customMessageBox("Khối phục thất bại dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                     }

@@ -16,6 +16,7 @@ namespace GUI.UserControls
 {
     public partial class ucAccountType : UserControl
     {
+        public string MaPHQ { get; set; }
         VaiTroBLL vaiTroBLL= new VaiTroBLL();
         List<VaiTroDTO> vaiTroDTOs = new List<VaiTroDTO>();
         List<VaiTroDTO> dsSearch = new List<VaiTroDTO>();
@@ -29,7 +30,36 @@ namespace GUI.UserControls
         private void ucAccountType_Load(object sender, EventArgs e)
         {
             LoadCBBVaiTro();
+            KiemTraPQ();
         }
+        private void KiemTraPQ()
+        {
+            if (MaPHQ.Contains("01"))
+            {
+
+                btnAddAccountType.Enabled = false;
+                btnEditAccountType.Enabled = false;
+                btnDeleteAccountType.Enabled = false;
+                btnRecoverAccountType.Enabled = false;
+            }
+            else if (MaPHQ.Contains("03"))
+            {
+                btnAddAccountType.Enabled = true;
+                btnEditAccountType.Enabled = true;
+                btnDeleteAccountType.Enabled = false;
+                btnRecoverAccountType.Enabled = false;
+            }
+            else if (MaPHQ.Contains("04") || (MaPHQ.Contains("02")))
+            {
+                btnAddAccountType.Enabled = true;
+                btnEditAccountType.Enabled = true;
+                btnDeleteAccountType.Enabled = true;
+                btnRecoverAccountType.Enabled = true;
+            }
+
+
+        }
+
 
         private void LoadCBBVaiTro()
         {
@@ -94,13 +124,13 @@ namespace GUI.UserControls
                         // Xóa
                         if (DelVaiTro(ID))
                         {
-                            thongBao = new customMessageBox("Xóa thành công!");
+                            thongBao = new customMessageBox("Xóa thành công dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                             loadDSRole();
                         }
                         else
                         {
-                            thongBao = new customMessageBox("Xóa thất bại!");
+                            thongBao = new customMessageBox("Xóa thất bại dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                     }
@@ -140,13 +170,13 @@ namespace GUI.UserControls
                         // Xóa
                         if (RestoreVaiTro(ID))
                         {
-                            thongBao = new customMessageBox("Khôi phục thành công!");
+                            thongBao = new customMessageBox("Khôi phục thành công dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                             loadDSRole();
                         }
                         else
                         {
-                            thongBao = new customMessageBox("Khôi phục thất bại!");
+                            thongBao = new customMessageBox("Khôi phục thất bại dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                     } 

@@ -133,7 +133,6 @@ namespace GUI.UserControls
         {
             frmMain parentForm = this.ParentForm as frmMain;
             ucBillHistory ucBillHistory = new ucBillHistory(parentForm);
-            ucBillHistory.maKH = this.userKH.MaKH;
             parentForm.SwitchUserControl(ucBillHistory);
             this.Dispose();
         }

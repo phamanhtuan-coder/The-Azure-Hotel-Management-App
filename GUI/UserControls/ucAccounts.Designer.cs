@@ -195,10 +195,10 @@
             // 
             // txtSearchAccounts
             // 
-            this.txtSearchAccounts.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.txtSearchAccounts.Location = new System.Drawing.Point(6, 16);
+            this.txtSearchAccounts.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.txtSearchAccounts.Location = new System.Drawing.Point(3, 26);
             this.txtSearchAccounts.Name = "txtSearchAccounts";
-            this.txtSearchAccounts.Size = new System.Drawing.Size(251, 27);
+            this.txtSearchAccounts.Size = new System.Drawing.Size(251, 30);
             this.txtSearchAccounts.TabIndex = 5;
             this.toolTip1.SetToolTip(this.txtSearchAccounts, "Nhập tên đăng nhập");
             // 
@@ -327,7 +327,7 @@
             this.btnNgayTao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNgayTao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNgayTao.ForeColor = System.Drawing.Color.White;
-            this.btnNgayTao.Location = new System.Drawing.Point(356, 193);
+            this.btnNgayTao.Location = new System.Drawing.Point(356, 194);
             this.btnNgayTao.Name = "btnNgayTao";
             this.btnNgayTao.Size = new System.Drawing.Size(26, 26);
             this.btnNgayTao.Style.BackColor = System.Drawing.Color.White;
@@ -341,7 +341,7 @@
             // dtpNgayTao
             // 
             this.dtpNgayTao.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgayTao.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.dtpNgayTao.Font = new System.Drawing.Font("Montserrat", 12.25F, System.Drawing.FontStyle.Bold);
             this.dtpNgayTao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayTao.Location = new System.Drawing.Point(226, 194);
             this.dtpNgayTao.Name = "dtpNgayTao";
@@ -354,15 +354,15 @@
             this.cboPhanQuyen.DisplayMember = "";
             this.cboPhanQuyen.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboPhanQuyen.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboPhanQuyen.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.cboPhanQuyen.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.cboPhanQuyen.Location = new System.Drawing.Point(226, 133);
             this.cboPhanQuyen.Name = "cboPhanQuyen";
             this.cboPhanQuyen.Size = new System.Drawing.Size(156, 33);
             this.cboPhanQuyen.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboPhanQuyen.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.cboPhanQuyen.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.cboPhanQuyen.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.cboPhanQuyen.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.cboPhanQuyen.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboPhanQuyen.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.cboPhanQuyen.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.cboPhanQuyen.TabIndex = 8;
             this.toolTip1.SetToolTip(this.cboPhanQuyen, "Lọc theo phân quyền");
             this.cboPhanQuyen.SelectedIndexChanged += new System.EventHandler(this.cboPhanQuyen_SelectedIndexChanged);
@@ -370,10 +370,10 @@
             // lblSortTheoPhanQuyen
             // 
             this.lblSortTheoPhanQuyen.AutoSize = true;
-            this.lblSortTheoPhanQuyen.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.lblSortTheoPhanQuyen.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.lblSortTheoPhanQuyen.Location = new System.Drawing.Point(3, 140);
             this.lblSortTheoPhanQuyen.Name = "lblSortTheoPhanQuyen";
-            this.lblSortTheoPhanQuyen.Size = new System.Drawing.Size(188, 22);
+            this.lblSortTheoPhanQuyen.Size = new System.Drawing.Size(219, 26);
             this.lblSortTheoPhanQuyen.TabIndex = 30;
             this.lblSortTheoPhanQuyen.Text = "Lọc theo phân quyền";
             this.lblSortTheoPhanQuyen.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -384,15 +384,15 @@
             this.cboSortAccountsID.DisplayMember = "";
             this.cboSortAccountsID.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboSortAccountsID.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboSortAccountsID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.cboSortAccountsID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.cboSortAccountsID.Location = new System.Drawing.Point(226, 78);
             this.cboSortAccountsID.Name = "cboSortAccountsID";
             this.cboSortAccountsID.Size = new System.Drawing.Size(156, 33);
             this.cboSortAccountsID.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboSortAccountsID.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.cboSortAccountsID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.cboSortAccountsID.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.cboSortAccountsID.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.cboSortAccountsID.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboSortAccountsID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.cboSortAccountsID.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.cboSortAccountsID.TabIndex = 7;
             this.toolTip1.SetToolTip(this.cboSortAccountsID, "Sắp xếp theo mã tài khoản");
             this.cboSortAccountsID.SelectedIndexChanged += new System.EventHandler(this.cboSortAccountsID_SelectedIndexChanged);
@@ -400,10 +400,10 @@
             // lblSortAccountsID
             // 
             this.lblSortAccountsID.AutoSize = true;
-            this.lblSortAccountsID.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.lblSortAccountsID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.lblSortAccountsID.Location = new System.Drawing.Point(3, 85);
             this.lblSortAccountsID.Name = "lblSortAccountsID";
-            this.lblSortAccountsID.Size = new System.Drawing.Size(184, 22);
+            this.lblSortAccountsID.Size = new System.Drawing.Size(217, 26);
             this.lblSortAccountsID.TabIndex = 28;
             this.lblSortAccountsID.Text = "Sort theo ID Account";
             this.lblSortAccountsID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -414,15 +414,15 @@
             this.cboStateAccounts.DisplayMember = "";
             this.cboStateAccounts.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboStateAccounts.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.cboStateAccounts.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.cboStateAccounts.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.cboStateAccounts.Location = new System.Drawing.Point(226, 243);
             this.cboStateAccounts.Name = "cboStateAccounts";
             this.cboStateAccounts.Size = new System.Drawing.Size(156, 33);
             this.cboStateAccounts.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cboStateAccounts.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.cboStateAccounts.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.cboStateAccounts.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.cboStateAccounts.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.cboStateAccounts.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboStateAccounts.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.cboStateAccounts.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.cboStateAccounts.TabIndex = 11;
             this.toolTip1.SetToolTip(this.cboStateAccounts, "Lọc theo trạng thái");
             this.cboStateAccounts.SelectedIndexChanged += new System.EventHandler(this.cboStateAccounts_SelectedIndexChanged);
@@ -430,10 +430,10 @@
             // lblNgayTao
             // 
             this.lblNgayTao.AutoSize = true;
-            this.lblNgayTao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNgayTao.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.lblNgayTao.Location = new System.Drawing.Point(3, 195);
             this.lblNgayTao.Name = "lblNgayTao";
-            this.lblNgayTao.Size = new System.Drawing.Size(92, 24);
+            this.lblNgayTao.Size = new System.Drawing.Size(100, 26);
             this.lblNgayTao.TabIndex = 14;
             this.lblNgayTao.Text = "Ngày tạo";
             this.lblNgayTao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -441,10 +441,10 @@
             // lblStateAccounts
             // 
             this.lblStateAccounts.AutoSize = true;
-            this.lblStateAccounts.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.lblStateAccounts.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.lblStateAccounts.Location = new System.Drawing.Point(3, 250);
             this.lblStateAccounts.Name = "lblStateAccounts";
-            this.lblStateAccounts.Size = new System.Drawing.Size(159, 22);
+            this.lblStateAccounts.Size = new System.Drawing.Size(186, 26);
             this.lblStateAccounts.TabIndex = 9;
             this.lblStateAccounts.Text = "Trạng thái dữ liệu";
             this.lblStateAccounts.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

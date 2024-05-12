@@ -16,6 +16,7 @@ namespace GUI.UserControls
 {
     public partial class ucTax : UserControl
     {
+        public string MaPHQ { get; set; }
         public string tt { get; set; }
 
         ThueBLL thueBLL = new ThueBLL();
@@ -33,6 +34,34 @@ namespace GUI.UserControls
         {
             LoadDuLieuCombobox();
             LoadDSThue();
+            KiemTraPQ();
+        }
+        private void KiemTraPQ()
+        {
+            if (MaPHQ.Contains("01"))
+            {
+
+                btnAddTax.Enabled = false;
+                btnEditTax.Enabled = false;
+                btnDeleteTax.Enabled = false;
+                btnRecoverTax.Enabled = false;
+            }
+            else if (MaPHQ.Contains("03"))
+            {
+                btnAddTax.Enabled = true;
+                btnEditTax.Enabled = true;
+                btnDeleteTax.Enabled = false;
+                btnRecoverTax.Enabled = false;
+            }
+            else if (MaPHQ.Contains("04") || (MaPHQ.Contains("02")))
+            {
+                btnAddTax.Enabled = true;
+                btnEditTax.Enabled = true;
+                btnDeleteTax.Enabled = true;
+                btnRecoverTax.Enabled = true;
+            }
+
+
         }
 
         private void LoadDuLieuCombobox()
@@ -87,12 +116,12 @@ namespace GUI.UserControls
                         if (XoaThue())
                         {
                             Filter();
-                            thongBao = new customMessageBox("Xóa thành công!");
+                            thongBao = new customMessageBox("Xóa thành công dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                         else
                         {
-                            thongBao = new customMessageBox("Xóa thất bại!");
+                            thongBao = new customMessageBox("Xóa thất bại dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                     }
@@ -124,12 +153,12 @@ namespace GUI.UserControls
                         if (KhoiPhucThue())
                         {
                             Filter();
-                            thongBao = new customMessageBox("Khôi phục thành công!");
+                            thongBao = new customMessageBox("Khôi phục thành công dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                         else
                         {
-                            thongBao = new customMessageBox("Khôi phục thất bại!");
+                            thongBao = new customMessageBox("Khôi phục thất bại dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                     }

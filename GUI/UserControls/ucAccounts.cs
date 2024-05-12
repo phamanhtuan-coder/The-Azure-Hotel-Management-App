@@ -14,8 +14,10 @@ using System.Windows.Forms;
 
 namespace GUI.UserControls
 {
+
     public partial class ucAccounts : UserControl
     {
+        public string MaPHQ { get; set; }
         public string phanquyen { get; set; } = "";
         public string ngaytao { get; set; } = "";
         public string TT { get; set; } = "";
@@ -34,7 +36,37 @@ namespace GUI.UserControls
         {
             CapNhatDuLieuCBO();
             LoadDSTaiKhoan();
+            KiemTraPQ();
         }
+
+        private void KiemTraPQ()
+        {
+            if (MaPHQ.Contains("01"))
+            {
+
+                btnAddAccounts.Enabled = false;
+                btnEditAccounts.Enabled = false;
+                btnDeleteAccounts.Enabled = false;
+                btnRecoverAccounts.Enabled = false;
+            }
+            else if (MaPHQ.Contains("03"))
+            {
+                btnAddAccounts.Enabled = true;
+                btnEditAccounts.Enabled = true;
+                btnDeleteAccounts.Enabled = false;
+                btnRecoverAccounts.Enabled = false;
+            }
+            else if (MaPHQ.Contains("04") || (MaPHQ.Contains("02")))
+            {
+                btnAddAccounts.Enabled = true;
+                btnEditAccounts.Enabled = true;
+                btnDeleteAccounts.Enabled = true;
+                btnRecoverAccounts.Enabled = true;
+            }
+           
+            
+        }
+
         private void LoadDSTaiKhoan()
         {
             taiKhoanDTOs = new List<TaiKhoanDTO>();
@@ -115,12 +147,12 @@ namespace GUI.UserControls
                         if (XoaTaiKhoan())
                         {
                             LoadDSTaiKhoan();
-                            thongBao = new customMessageBox("Xóa thành công!");
+                            thongBao = new customMessageBox("Xóa thành công dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                         else
                         {
-                            thongBao = new customMessageBox("Xóa thất bại!");
+                            thongBao = new customMessageBox("Xóa thất bại dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                     }
@@ -161,12 +193,12 @@ namespace GUI.UserControls
                         if (KhoiPhucTaiKhoan())
                         {
                             LoadDSTaiKhoan();
-                            thongBao = new customMessageBox("Khôi phục thành công!");
+                            thongBao = new customMessageBox("Khôi phục thành công dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                         else
                         {
-                            thongBao = new customMessageBox("Khôi phục thất bại!");
+                            thongBao = new customMessageBox("Khôi phục thất bại dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
                     }

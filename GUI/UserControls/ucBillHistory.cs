@@ -16,10 +16,11 @@ namespace GUI.UserControls
 {
     public partial class ucBillHistory : UserControl
     {
+        public string MaPHQ { get; set; }
         private frmMain _parentForm;
         HoaDonBLL hoaDonBLL = new HoaDonBLL();
         List<HoaDonDTO> hoaDonDTOs = new List<HoaDonDTO>();
-        public int maKH { set; get; }
+        public int maKH { get; set; }
         public ucBillHistory()
         {
             InitializeComponent();

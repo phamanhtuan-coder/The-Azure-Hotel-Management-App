@@ -20,6 +20,7 @@ namespace GUI.UserControls
         List<TTThietBiDTO> thietBiDTOs=new List<TTThietBiDTO>();
         List<TTThietBiDTO> thietBiDTOstk = new List<TTThietBiDTO>();
         TTThietBiBLL TTThietBiBLL = new TTThietBiBLL();
+        public string MaPHQ { get; set; }
 
         public ucDeviceStatus()
         {
@@ -31,7 +32,36 @@ namespace GUI.UserControls
             laydstb();
             dgvDeviceStatus.AutoGenerateColumns = false;
             lad_combo();
+            KiemTraPQ();
         }
+        private void KiemTraPQ()
+        {
+            if (MaPHQ.Contains("01"))
+            {
+
+                btnAddDeviceStatus.Enabled = false;
+                btnEditDeviceStatus.Enabled = false;
+                btnDeleteDeviceStatus.Enabled = false;
+                btnRecoverDeviceStatus.Enabled = false;
+            }
+            else if (MaPHQ.Contains("03"))
+            {
+                btnAddDeviceStatus.Enabled = true;
+                btnEditDeviceStatus.Enabled = true;
+                btnDeleteDeviceStatus.Enabled = false;
+                btnRecoverDeviceStatus.Enabled = false;
+            }
+            else if (MaPHQ.Contains("04") || (MaPHQ.Contains("02")))
+            {
+                btnAddDeviceStatus.Enabled = true;
+                btnEditDeviceStatus.Enabled = true;
+                btnDeleteDeviceStatus.Enabled = true;
+                btnRecoverDeviceStatus.Enabled = true;
+            }
+
+
+        }
+
 
         private void lad_combo()
         {
@@ -103,19 +133,17 @@ namespace GUI.UserControls
                         thongBao = new customMessageBox(
                             "Xóa thành công dữ liệu có mã là: " + maTTTBi + "!"
                         );
+                        thongBao.ShowDialog();
                     }
                     else
                     {
                         thongBao = new customMessageBox(
                             "Xóa thất bại dữ liệu có mã là: " + maTTTBi + "!"
                         );
+                        thongBao.ShowDialog();
                     }
                 }
-                else
-                {
-                    thongBao = new customMessageBox("Hủy xóa!");
-                }
-                thongBao.ShowDialog();
+                
             }
             else
             {
@@ -143,15 +171,17 @@ namespace GUI.UserControls
                         thongBao = new customMessageBox(
                             "Khôi phục thành công dữ liệu có mã là: " + maTTTBi + "!"
                         );
+                        thongBao.ShowDialog();
                     }
                     else
                     {
                         thongBao = new customMessageBox(
                             "Khôi phục thất bại dữ liệu có mã là: " + maTTTBi + "!"
                         );
+                        thongBao.ShowDialog();
                     }
                 }
-                thongBao.ShowDialog();
+                
             }
             else
             {
