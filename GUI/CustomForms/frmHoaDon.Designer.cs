@@ -161,7 +161,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(160, 22);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Chọn khuyễn mãi";
+            this.label2.Text = "Chọn khuyến mãi";
             // 
             // frmHoaDon
             // 

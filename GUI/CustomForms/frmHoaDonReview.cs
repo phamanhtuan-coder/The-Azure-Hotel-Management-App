@@ -9,15 +9,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
+using System.Net.Http.Headers;
 
 namespace GUI.CustomForms
 {
     public partial class frmHoaDonReview : Form
     {
-        private static string server = ".";
-        private static string database = "UngDungQuanLyKhachSan";
-        private static string connectionString =
-            $"Data Source={server};Initial Catalog={database};Integrated Security=true;";
+        public List<ChiTietHoaDonDTO> hs;
+        public string maHD { get; set; }
+        public string maNV { get; set; }
+        public string maKH { get; set; }
+        public string ngayLap { get; set; }
         public frmHoaDonReview()
         {
             InitializeComponent();
@@ -25,39 +28,25 @@ namespace GUI.CustomForms
 
         private void frmHoaDonReview_Load(object sender, EventArgs e)
         {
+            rpvCTHD.LocalReport.ReportEmbeddedResource = "GUI.rptCTHoaDon.rdlc";
+            rpvCTHD.LocalReport.DataSources.Add(new ReportDataSource("dsCTHD", hs));
+            
+           
 
-            LoadDuLieuChoReport();
-            this.reportViewer1.RefreshReport();
-        }
+            rpvCTHD.LocalReport.SetParameters(new ReportParameter("paMaHD", maHD));
+            rpvCTHD.LocalReport.SetParameters(new ReportParameter("paMaNV", maNV));
+            rpvCTHD.LocalReport.SetParameters(new ReportParameter("paMaKH", maKH));
+            rpvCTHD.LocalReport.SetParameters(new ReportParameter("paNgayLapHD", ngayLap));
 
-        private void LoadDuLieuChoReport()
-        {
-            DataSet dsCTHoaDon = GetDataFromDatabase(); // Instantiate the DataSet
-
-            reportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local;
-            reportViewer1.LocalReport.ReportPath = "GUI.rptCTHoaDon.rdlc";
-
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource = new Microsoft.Reporting.WinForms.ReportDataSource();
-            reportDataSource.Name = "dsCTHoaDon";
-            reportDataSource.Value = dsCTHoaDon.Tables["DatPhongDataTable"];
-            reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(reportDataSource);
-        }
-
-        private DataSet GetDataFromDatabase()
-        {
-            string maHD = "14";
-            DataSet ds = new DataSet();
-            string strFill = $"SELECT DP.MaDatPhong, DP.MaKH, DP.MaPHG, DP.NgayDatPhong, DP.NgayNhanPhong, DP.NgayTraPhong, DP.SoLuongKH, DP.TrangThai AS PhongTrangThai, P.GiaPhong, DV.* FROM DatPhong DP INNER JOIN Phong P ON DP.MaPHG = P.MaPHG LEFT JOIN DatDichVu DV ON DP.MaDatPhong = DV.MaDatPhong WHERE DP.MaDatPhong IN (SELECT MaDatPhong FROM HoaDon HD JOIN ChiTietHoaDon CT ON HD.MaHoaDon = CT.MaHD WHERE HD.MaHoaDon = {maHD});";
-            SqlDataAdapter adapter = new SqlDataAdapter(strFill, connectionString);
-            adapter.Fill(ds, "DatPhongDataTable");
-            return ds;
+            this.rpvCTHD.RefreshReport();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+
 
     }
 }

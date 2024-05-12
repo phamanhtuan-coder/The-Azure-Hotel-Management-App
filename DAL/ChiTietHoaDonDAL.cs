@@ -103,6 +103,45 @@ namespace DAL
             }
         }
 
+        public List<ChiTietHoaDonDTO> TruyVanChiTietHD(int maHoaDon)
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spTruyVanChiTietHD", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@MaHD", maHoaDon);
+                SqlDataReader reader = com.ExecuteReader();
+                list = new List<ChiTietHoaDonDTO>();
+                while (reader.Read())
+                {
+                    ChiTietHoaDonDTO chiTiet = new ChiTietHoaDonDTO();
+                    chiTiet.MaCTHD = (int)reader["MaCTHD"];
+                    chiTiet.MaHD = (int)reader["MaHD"];
+                    chiTiet.MaDatPhong = (int)reader["MaDatPhong"];
+                    chiTiet.MaKhuyenMai = (int)reader["MaKhuyenMai"];
+                    chiTiet.ThanhTien = reader["ThanhTien"] as decimal?;
+                    chiTiet.TienNhan = (decimal)reader["TienNhan"] ;
+                    chiTiet.TienThoi = (decimal)reader["TienThoi"];
+                    chiTiet.TongHoaDon= (decimal)reader["TongHoaDon"];
+                    chiTiet.TyLeThue= (double)reader["TyLeThue"];
+                    chiTiet.KhuyenMai = (decimal)reader["KhuyenMai"];
+                    chiTiet.TrangThai = true;
+                    list.Add(chiTiet);
+                }
+                reader.Close();
+                conn.Close();
+                return list;
+            }
+            catch (Exception)
+            {
+                return new List<ChiTietHoaDonDTO>();
+            }
+        }
+
         public List<ChiTietHoaDonDTO> TruyVanDSChiTiet()
         {
             try

@@ -34,7 +34,7 @@
             this.colMaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaCTHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBillDetails)).BeginInit();
@@ -58,13 +58,13 @@
             this.dgvBillDetails.AllowUserToDeleteRows = false;
             this.dgvBillDetails.AllowUserToResizeColumns = false;
             this.dgvBillDetails.AllowUserToResizeRows = false;
-            this.dgvBillDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvBillDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvBillDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBillDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaHD,
             this.colMaCTHD,
             this.colMaDP,
-            this.colMaKM,
+            this.colKM,
             this.colThanhTien,
             this.colTrangThai});
             this.dgvBillDetails.Location = new System.Drawing.Point(11, 73);
@@ -94,7 +94,7 @@
             this.colMaHD.HeaderText = "Mã hóa đơn";
             this.colMaHD.Name = "colMaHD";
             this.colMaHD.ReadOnly = true;
-            this.colMaHD.Width = 133;
+            this.colMaHD.Width = 122;
             // 
             // colMaCTHD
             // 
@@ -102,7 +102,7 @@
             this.colMaCTHD.HeaderText = "Mã CTHD";
             this.colMaCTHD.Name = "colMaCTHD";
             this.colMaCTHD.ReadOnly = true;
-            this.colMaCTHD.Width = 113;
+            this.colMaCTHD.Width = 104;
             // 
             // colMaDP
             // 
@@ -110,15 +110,15 @@
             this.colMaDP.HeaderText = "Mã đặt phòng";
             this.colMaDP.Name = "colMaDP";
             this.colMaDP.ReadOnly = true;
-            this.colMaDP.Width = 152;
+            this.colMaDP.Width = 139;
             // 
-            // colMaKM
+            // colKM
             // 
-            this.colMaKM.DataPropertyName = "MaKhuyenMai";
-            this.colMaKM.HeaderText = "Mã khuyến mãi";
-            this.colMaKM.Name = "colMaKM";
-            this.colMaKM.ReadOnly = true;
-            this.colMaKM.Width = 151;
+            this.colKM.DataPropertyName = "KhuyenMai";
+            this.colKM.HeaderText = "Mức khuyến mãi";
+            this.colKM.Name = "colKM";
+            this.colKM.ReadOnly = true;
+            this.colKM.Width = 160;
             // 
             // colThanhTien
             // 
@@ -166,7 +166,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaCTHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaDP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaKM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colKM;
         private System.Windows.Forms.DataGridViewTextBoxColumn colThanhTien;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
     }

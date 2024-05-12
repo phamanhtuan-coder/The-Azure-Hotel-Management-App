@@ -356,7 +356,7 @@ namespace GUI.UserControls
             if (hoaDonDTO.MaHoaDon > 0)
             {
                 hoaDonDTO.chiTietHoaDonDTOs = new List<ChiTietHoaDonDTO>();
-                hoaDonDTO.chiTietHoaDonDTOs = chiTietHoaDonBLL.TruyVanChiTiet(hoaDonDTO.MaHoaDon);    
+                hoaDonDTO.chiTietHoaDonDTOs = chiTietHoaDonBLL.TruyVanChiTietHD(hoaDonDTO.MaHoaDon);    
             }
             else
             {
@@ -400,8 +400,25 @@ namespace GUI.UserControls
 
         private void btnInHD_Click(object sender, EventArgs e)
         {
-            frmHoaDonReview inHD = new frmHoaDonReview();
-            inHD.ShowDialog();
+            if (dgvBill.SelectedRows.Count > 0)
+            {
+                HoaDonDTO hoaDonDTO = new HoaDonDTO();
+                LoadDuLieuCuaHoaDon (ref hoaDonDTO);
+                frmHoaDonReview inHD = new frmHoaDonReview();
+                inHD.maHD = hoaDonDTO.MaHoaDon.ToString();
+                inHD.maNV = hoaDonDTO.MaNV.ToString();
+                inHD.maKH = hoaDonDTO.MaKH.ToString();
+                inHD.ngayLap = hoaDonDTO.NgayLapHoaDon.ToString();
+                inHD.hs = hoaDonDTO.chiTietHoaDonDTOs;
+                inHD.ShowDialog();
+            }
+            else
+            {
+                thongBao = new customMessageBox("Vui lòng chọn hóa đơn bạn muốn in!");
+                thongBao.ShowDialog();
+            }
+           
+           
         }
     }
 }

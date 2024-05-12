@@ -28,20 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.rpvCTHD = new Microsoft.Reporting.WinForms.ReportViewer();
             this.btnCancel = new Syncfusion.WinForms.Controls.SfButton();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // rpvCTHD
             // 
-            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.reportViewer1.AutoScroll = true;
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(876, 469);
-            this.reportViewer1.TabIndex = 0;
+            this.rpvCTHD.AutoScroll = true;
+            this.rpvCTHD.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rpvCTHD.Location = new System.Drawing.Point(0, 0);
+            this.rpvCTHD.Name = "rpvCTHD";
+            this.rpvCTHD.ServerReport.BearerToken = null;
+            this.rpvCTHD.Size = new System.Drawing.Size(950, 613);
+            this.rpvCTHD.TabIndex = 0;
             // 
             // btnCancel
             // 
@@ -50,7 +49,7 @@
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(334, 477);
+            this.btnCancel.Location = new System.Drawing.Point(371, 638);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
             this.btnCancel.Style.BackColor = System.Drawing.Color.Orange;
@@ -65,14 +64,14 @@
             this.AcceptButton = this.btnCancel;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(876, 538);
+            this.ClientSize = new System.Drawing.Size(950, 700);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.reportViewer1);
+            this.Controls.Add(this.rpvCTHD);
             this.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frmHoaDonReview";
-            this.Text = "frmHoaDonReview";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "In Hóa Đơn";
             this.Load += new System.EventHandler(this.frmHoaDonReview_Load);
             this.ResumeLayout(false);
 
@@ -80,7 +79,7 @@
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Microsoft.Reporting.WinForms.ReportViewer rpvCTHD;
         private Syncfusion.WinForms.Controls.SfButton btnCancel;
     }
 }

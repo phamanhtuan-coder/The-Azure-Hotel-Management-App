@@ -129,6 +129,7 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -140,14 +141,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dsCTHoaDon.cs">
-      <DependentUpon>dsCTHoaDon.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="dsCTHoaDon.Designer.cs">
-      <DependentUpon>dsCTHoaDon.xsd</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="frmTacGia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -640,6 +633,9 @@
     <EmbeddedResource Include="rptCTHoaDon.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptHoaDon_err.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucBillHistory.resx">
       <DependentUpon>ucBillHistory.cs</DependentUpon>
     </EmbeddedResource>
@@ -727,17 +723,6 @@
     <EmbeddedResource Include="UserControls\ucDashboard.resx">
       <DependentUpon>ucDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="dsCTHoaDon.xsc">
-      <DependentUpon>dsCTHoaDon.xsd</DependentUpon>
-    </None>
-    <None Include="dsCTHoaDon.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsCTHoaDon.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="dsCTHoaDon.xss">
-      <DependentUpon>dsCTHoaDon.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

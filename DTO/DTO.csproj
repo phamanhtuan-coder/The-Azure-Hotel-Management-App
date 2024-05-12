@@ -65,5 +65,8 @@
     <Compile Include="TaiKhoanDTO.cs" />
     <Compile Include="VaiTroDTO.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ChiTietHoaDonDTO.datasource" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
