@@ -44,7 +44,7 @@
             this.dgvServices = new System.Windows.Forms.DataGridView();
             this.colMaDatDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaDV = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNgayDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,12 +57,6 @@
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.colMaDatDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaDV = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateService)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();

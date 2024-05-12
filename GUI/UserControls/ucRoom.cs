@@ -44,9 +44,10 @@ namespace GUI.UserControls
             layds();
             dgvRoom.AutoGenerateColumns = false;
             laycombo();
+            KiemTraPQ();
         }
 
-            KiemTraPQ();
+           
         private void LoadTenTT()
         {
             List<TinhTrangPhongDTO> tam = TinhTrangPhongBLL.laydsttphong();

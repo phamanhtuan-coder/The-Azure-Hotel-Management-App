@@ -147,49 +147,6 @@ namespace GUI.UserControls
             dgvBillHistory.DataSource = dsLoc;
         }
 
-        private void cboSortBillID_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string sortOption = cboSortBillID.SelectedItem.ToString();
-            switch (sortOption)
-            {
-                case "Giảm dần":
-                    hoaDonDTOs = hoaDonDTOs.OrderByDescending(item => item.MaHoaDon).ToList();
-                    break;
-                default:
-                    hoaDonDTOs = hoaDonDTOs.OrderBy(item => item.MaHoaDon).ToList();
-                    break;
-            }
-
-            dgvBillHistory.DataSource = hoaDonDTOs;
-        }
-
-        private void cboSortSumBill_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string sortOption = cboSortSumBill.SelectedItem.ToString();
-            switch (sortOption)
-            {
-                case "Giảm dần":
-                    hoaDonDTOs = hoaDonDTOs.OrderByDescending(item => item.TongHoaDon).ToList();
-                    break;
-                default:
-                    hoaDonDTOs = hoaDonDTOs.OrderBy(item => item.TongHoaDon).ToList();
-                    break;
-            }
-
-            dgvBillHistory.DataSource = hoaDonDTOs;
-        }
-
-        private void dtpBillDate_ValueChanged(object sender, Syncfusion.WinForms.Input.Events.DateTimeValueChangedEventArgs e)
-        {
-            List<HoaDonDTO> dsLoc = new List<HoaDonDTO>();
-            foreach (HoaDonDTO hd in hoaDonDTOs)
-            {
-                if (hd.NgayLapHoaDon.Date == (DateTime) dtpBillDate.Value)
-                {
-                    dsLoc.Add(hd);
-                }
-            }
-            dgvBillHistory.DataSource = dsLoc;
-        }
+    
     }
 }

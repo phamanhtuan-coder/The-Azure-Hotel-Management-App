@@ -62,7 +62,7 @@
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.colMaDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaKH = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.colMaPHG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNgayDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNgayNhanPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();

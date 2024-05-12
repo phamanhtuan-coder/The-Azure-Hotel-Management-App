@@ -87,7 +87,6 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.circularPictureBox8 = new GUI.CircularPictureBox();
-            this.chtDoanhThuTuan = new Syncfusion.Windows.Forms.Chart.ChartControl();
             this.tableLayoutPanel1.SuspendLayout();
             this.panDuKienCount.SuspendLayout();
             this.panCheckOutCount.SuspendLayout();
@@ -118,7 +117,7 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -176,7 +175,7 @@
             // 
             // lblDuKienCount
             // 
-            this.lblDuKienCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblDuKienCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDuKienCount.BackColor = System.Drawing.Color.LightBlue;
             this.lblDuKienCount.Font = new System.Drawing.Font("Montserrat", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -227,7 +226,7 @@
             // 
             // lblCountCheckOut
             // 
-            this.lblCountCheckOut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblCountCheckOut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCountCheckOut.BackColor = System.Drawing.Color.LightBlue;
             this.lblCountCheckOut.Font = new System.Drawing.Font("Montserrat", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -278,7 +277,7 @@
             // 
             // lblCountTotal
             // 
-            this.lblCountTotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblCountTotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCountTotal.BackColor = System.Drawing.Color.LightBlue;
             this.lblCountTotal.Font = new System.Drawing.Font("Montserrat", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -329,7 +328,7 @@
             // 
             // lblCountCheckIn
             // 
-            this.lblCountCheckIn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblCountCheckIn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCountCheckIn.BackColor = System.Drawing.Color.LightBlue;
             this.lblCountCheckIn.Font = new System.Drawing.Font("Montserrat", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -343,7 +342,7 @@
             // 
             // lblDashBoard
             // 
-            this.lblDashBoard.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblDashBoard.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDashBoard.BackColor = System.Drawing.Color.Transparent;
             this.lblDashBoard.Font = new System.Drawing.Font("Montserrat ExtraBold", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -425,8 +424,8 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -452,8 +451,8 @@
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Montserrat", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -509,8 +508,8 @@
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Montserrat", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -565,8 +564,8 @@
             // 
             // label41
             // 
-            this.label41.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.label41.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label41.BackColor = System.Drawing.Color.White;
             this.label41.Font = new System.Drawing.Font("Montserrat", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -621,8 +620,8 @@
             // 
             // label20
             // 
-            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label20.BackColor = System.Drawing.Color.White;
             this.label20.Font = new System.Drawing.Font("Montserrat", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -677,8 +676,8 @@
             // 
             // label14
             // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.BackColor = System.Drawing.Color.White;
             this.label14.Font = new System.Drawing.Font("Montserrat", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -733,8 +732,8 @@
             // 
             // label17
             // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.BackColor = System.Drawing.Color.White;
             this.label17.Font = new System.Drawing.Font("Montserrat", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -789,8 +788,8 @@
             // 
             // label23
             // 
-            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label23.BackColor = System.Drawing.Color.White;
             this.label23.Font = new System.Drawing.Font("Montserrat", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -829,91 +828,6 @@
             this.circularPictureBox8.Size = new System.Drawing.Size(50, 50);
             this.circularPictureBox8.TabIndex = 0;
             this.circularPictureBox8.TabStop = false;
-            // 
-            // chtDoanhThuTuan
-            // 
-            this.chtDoanhThuTuan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.chtDoanhThuTuan.ChartArea.BackInterior = new Syncfusion.Drawing.BrushInfo(System.Drawing.Color.Transparent);
-            this.chtDoanhThuTuan.ChartArea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.chtDoanhThuTuan.ChartArea.CursorLocation = new System.Drawing.Point(0, 0);
-            this.chtDoanhThuTuan.ChartArea.CursorReDraw = false;
-            this.chtDoanhThuTuan.ChartInterior = new Syncfusion.Drawing.BrushInfo(System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(212)))), ((int)(((byte)(235))))));
-            this.chtDoanhThuTuan.CustomPalette = new System.Drawing.Color[] {
-        System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(164)))), ((int)(((byte)(51))))),
-        System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(125)))), ((int)(((byte)(187))))),
-        System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(96)))), ((int)(((byte)(48))))),
-        System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(83)))), ((int)(((byte)(54))))),
-        System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(41)))), ((int)(((byte)(106))))),
-        System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(107)))), ((int)(((byte)(66)))))};
-            this.chtDoanhThuTuan.DataSourceName = "[none]";
-            this.chtDoanhThuTuan.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chtDoanhThuTuan.ForeColor = System.Drawing.Color.Black;
-            this.chtDoanhThuTuan.IsWindowLess = false;
-            // 
-            // 
-            // 
-            this.chtDoanhThuTuan.Legend.Border.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.chtDoanhThuTuan.Legend.Location = new System.Drawing.Point(892, 75);
-            this.chtDoanhThuTuan.Localize = null;
-            this.chtDoanhThuTuan.Location = new System.Drawing.Point(0, 252);
-            this.chtDoanhThuTuan.Name = "chtDoanhThuTuan";
-            this.chtDoanhThuTuan.PrimaryXAxis.DateTimeFormat = "ddd";
-            this.chtDoanhThuTuan.PrimaryXAxis.Format = "\"dddd\"";
-            this.chtDoanhThuTuan.PrimaryXAxis.LogLabelsDisplayMode = Syncfusion.Windows.Forms.Chart.LogLabelsDisplayMode.Default;
-            this.chtDoanhThuTuan.PrimaryXAxis.Margin = true;
-            this.chtDoanhThuTuan.PrimaryXAxis.Title = "Ngày";
-            this.chtDoanhThuTuan.PrimaryXAxis.TitleColor = System.Drawing.SystemColors.ControlText;
-            this.chtDoanhThuTuan.PrimaryXAxis.ValueType = Syncfusion.Windows.Forms.Chart.ChartValueType.DateTime;
-            this.chtDoanhThuTuan.PrimaryYAxis.LogLabelsDisplayMode = Syncfusion.Windows.Forms.Chart.LogLabelsDisplayMode.Default;
-            this.chtDoanhThuTuan.PrimaryYAxis.Margin = true;
-            this.chtDoanhThuTuan.PrimaryYAxis.Title = "Số tiền (VND)";
-            this.chtDoanhThuTuan.PrimaryYAxis.TitleColor = System.Drawing.SystemColors.ControlText;
-            chartSeries1.FancyToolTip.ResizeInsideSymbol = true;
-            chartSeries1.Name = "Tiền phòng";
-            chartSeries1.Resolution = 0D;
-            chartSeries1.StackingGroup = "Default Group";
-            chartSeries1.Style.AltTagFormat = "";
-            chartSeries1.Style.DisplayText = true;
-            chartSeries1.Style.DrawTextShape = false;
-            chartSeries1.Style.TextOrientation = Syncfusion.Windows.Forms.Chart.ChartTextOrientation.Up;
-            chartLineInfo1.Alignment = System.Drawing.Drawing2D.PenAlignment.Center;
-            chartLineInfo1.Color = System.Drawing.SystemColors.ControlText;
-            chartLineInfo1.DashPattern = null;
-            chartLineInfo1.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            chartLineInfo1.Width = 1F;
-            chartCustomShapeInfo1.Border = chartLineInfo1;
-            chartCustomShapeInfo1.Color = System.Drawing.SystemColors.HighlightText;
-            chartCustomShapeInfo1.Type = Syncfusion.Windows.Forms.Chart.ChartCustomShape.Square;
-            chartSeries1.Style.TextShape = chartCustomShapeInfo1;
-            chartSeries1.Text = "Tiền phòng";
-            chartSeries1.Type = Syncfusion.Windows.Forms.Chart.ChartSeriesType.StackingColumn;
-            chartSeries2.FancyToolTip.ResizeInsideSymbol = true;
-            chartSeries2.Name = "Tiền dịch vụ";
-            chartSeries2.Resolution = 0D;
-            chartSeries2.StackingGroup = "Default Group";
-            chartSeries2.Style.AltTagFormat = "";
-            chartSeries2.Style.DisplayText = true;
-            chartSeries2.Style.DrawTextShape = false;
-            chartSeries2.Style.TextOrientation = Syncfusion.Windows.Forms.Chart.ChartTextOrientation.Up;
-            chartCustomShapeInfo2.Border = chartLineInfo1;
-            chartCustomShapeInfo2.Color = System.Drawing.SystemColors.HighlightText;
-            chartCustomShapeInfo2.Type = Syncfusion.Windows.Forms.Chart.ChartCustomShape.Square;
-            chartSeries2.Style.TextShape = chartCustomShapeInfo2;
-            chartSeries2.Text = "Tiền dịch vụ";
-            chartSeries2.Type = Syncfusion.Windows.Forms.Chart.ChartSeriesType.StackingColumn;
-            this.chtDoanhThuTuan.Series.Add(chartSeries1);
-            this.chtDoanhThuTuan.Series.Add(chartSeries2);
-            this.chtDoanhThuTuan.Size = new System.Drawing.Size(1023, 585);
-            this.chtDoanhThuTuan.TabIndex = 6;
-            this.chtDoanhThuTuan.Text = "Thống kê doanh thu trong tuần";
-            // 
-            // 
-            // 
-            this.chtDoanhThuTuan.Title.Name = "Default";
-            this.chtDoanhThuTuan.Titles.Add(this.chtDoanhThuTuan.Title);
-            this.chtDoanhThuTuan.VisualTheme = "";
             // 
             // ucDashboard
             // 
