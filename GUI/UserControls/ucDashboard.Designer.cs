@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucDashboard));
-            Syncfusion.Windows.Forms.Chart.ChartSeries chartSeries1 = new Syncfusion.Windows.Forms.Chart.ChartSeries();
-            Syncfusion.Windows.Forms.Chart.ChartCustomShapeInfo chartCustomShapeInfo1 = new Syncfusion.Windows.Forms.Chart.ChartCustomShapeInfo();
-            Syncfusion.Windows.Forms.Chart.ChartLineInfo chartLineInfo1 = new Syncfusion.Windows.Forms.Chart.ChartLineInfo();
-            Syncfusion.Windows.Forms.Chart.ChartSeries chartSeries2 = new Syncfusion.Windows.Forms.Chart.ChartSeries();
-            Syncfusion.Windows.Forms.Chart.ChartCustomShapeInfo chartCustomShapeInfo2 = new Syncfusion.Windows.Forms.Chart.ChartCustomShapeInfo();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panDuKienCount = new System.Windows.Forms.Panel();
             this.btnBooked = new Syncfusion.WinForms.Controls.SfButton();
@@ -48,7 +47,8 @@
             this.btnChecked = new Syncfusion.WinForms.Controls.SfButton();
             this.lblCountCheckIn = new System.Windows.Forms.Label();
             this.lblDashBoard = new System.Windows.Forms.Label();
-            this.chtDoanhThuTuan = new Syncfusion.Windows.Forms.Chart.ChartControl();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.chartThongKe = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.flpRatings = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -92,6 +92,11 @@
             this.panCheckOutCount.SuspendLayout();
             this.panTotalCount.SuspendLayout();
             this.panCheckInCount.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartThongKe)).BeginInit();
             this.flpRatings.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -349,95 +354,46 @@
             this.lblDashBoard.Text = "DASHBOARD";
             this.lblDashBoard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // chtDoanhThuTuan
+            // splitContainer1
             // 
-            this.chtDoanhThuTuan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.chtDoanhThuTuan.ChartArea.BackInterior = new Syncfusion.Drawing.BrushInfo(System.Drawing.Color.Transparent);
-            this.chtDoanhThuTuan.ChartArea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.chtDoanhThuTuan.ChartArea.CursorLocation = new System.Drawing.Point(0, 0);
-            this.chtDoanhThuTuan.ChartArea.CursorReDraw = false;
-            this.chtDoanhThuTuan.ChartInterior = new Syncfusion.Drawing.BrushInfo(System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(212)))), ((int)(((byte)(235))))));
-            this.chtDoanhThuTuan.CustomPalette = new System.Drawing.Color[] {
-        System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(164)))), ((int)(((byte)(51))))),
-        System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(125)))), ((int)(((byte)(187))))),
-        System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(96)))), ((int)(((byte)(48))))),
-        System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(83)))), ((int)(((byte)(54))))),
-        System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(41)))), ((int)(((byte)(106))))),
-        System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(107)))), ((int)(((byte)(66)))))};
-            this.chtDoanhThuTuan.DataSourceName = "[none]";
-            this.chtDoanhThuTuan.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chtDoanhThuTuan.ForeColor = System.Drawing.Color.Black;
-            this.chtDoanhThuTuan.IsWindowLess = false;
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.splitContainer1.IsSplitterFixed = true;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 300);
+            this.splitContainer1.Name = "splitContainer1";
             // 
+            // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.chartThongKe);
             // 
-            this.chtDoanhThuTuan.Legend.Border.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.chtDoanhThuTuan.Legend.Location = new System.Drawing.Point(892, 75);
-            this.chtDoanhThuTuan.Localize = null;
-            this.chtDoanhThuTuan.Location = new System.Drawing.Point(0, 252);
-            this.chtDoanhThuTuan.Name = "chtDoanhThuTuan";
-            this.chtDoanhThuTuan.PrimaryXAxis.DateTimeFormat = "ddd";
-            this.chtDoanhThuTuan.PrimaryXAxis.Format = "\"dddd\"";
-            this.chtDoanhThuTuan.PrimaryXAxis.LogLabelsDisplayMode = Syncfusion.Windows.Forms.Chart.LogLabelsDisplayMode.Default;
-            this.chtDoanhThuTuan.PrimaryXAxis.Margin = true;
-            this.chtDoanhThuTuan.PrimaryXAxis.Title = "Ngày";
-            this.chtDoanhThuTuan.PrimaryXAxis.TitleColor = System.Drawing.SystemColors.ControlText;
-            this.chtDoanhThuTuan.PrimaryXAxis.ValueType = Syncfusion.Windows.Forms.Chart.ChartValueType.DateTime;
-            this.chtDoanhThuTuan.PrimaryYAxis.LogLabelsDisplayMode = Syncfusion.Windows.Forms.Chart.LogLabelsDisplayMode.Default;
-            this.chtDoanhThuTuan.PrimaryYAxis.Margin = true;
-            this.chtDoanhThuTuan.PrimaryYAxis.Title = "Số tiền (VND)";
-            this.chtDoanhThuTuan.PrimaryYAxis.TitleColor = System.Drawing.SystemColors.ControlText;
-            chartSeries1.FancyToolTip.ResizeInsideSymbol = true;
-            chartSeries1.Name = "Tiền phòng";
-            chartSeries1.Resolution = 0D;
-            chartSeries1.StackingGroup = "Default Group";
-            chartSeries1.Style.AltTagFormat = "";
-            chartSeries1.Style.DisplayText = true;
-            chartSeries1.Style.DrawTextShape = false;
-            chartSeries1.Style.TextOrientation = Syncfusion.Windows.Forms.Chart.ChartTextOrientation.Up;
-            chartLineInfo1.Alignment = System.Drawing.Drawing2D.PenAlignment.Center;
-            chartLineInfo1.Color = System.Drawing.SystemColors.ControlText;
-            chartLineInfo1.DashPattern = null;
-            chartLineInfo1.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            chartLineInfo1.Width = 1F;
-            chartCustomShapeInfo1.Border = chartLineInfo1;
-            chartCustomShapeInfo1.Color = System.Drawing.SystemColors.HighlightText;
-            chartCustomShapeInfo1.Type = Syncfusion.Windows.Forms.Chart.ChartCustomShape.Square;
-            chartSeries1.Style.TextShape = chartCustomShapeInfo1;
-            chartSeries1.Text = "Tiền phòng";
-            chartSeries1.Type = Syncfusion.Windows.Forms.Chart.ChartSeriesType.StackingColumn;
-            chartSeries2.FancyToolTip.ResizeInsideSymbol = true;
-            chartSeries2.Name = "Tiền dịch vụ";
-            chartSeries2.Resolution = 0D;
-            chartSeries2.StackingGroup = "Default Group";
-            chartSeries2.Style.AltTagFormat = "";
-            chartSeries2.Style.DisplayText = true;
-            chartSeries2.Style.DrawTextShape = false;
-            chartSeries2.Style.TextOrientation = Syncfusion.Windows.Forms.Chart.ChartTextOrientation.Up;
-            chartCustomShapeInfo2.Border = chartLineInfo1;
-            chartCustomShapeInfo2.Color = System.Drawing.SystemColors.HighlightText;
-            chartCustomShapeInfo2.Type = Syncfusion.Windows.Forms.Chart.ChartCustomShape.Square;
-            chartSeries2.Style.TextShape = chartCustomShapeInfo2;
-            chartSeries2.Text = "Tiền dịch vụ";
-            chartSeries2.Type = Syncfusion.Windows.Forms.Chart.ChartSeriesType.StackingColumn;
-            this.chtDoanhThuTuan.Series.Add(chartSeries1);
-            this.chtDoanhThuTuan.Series.Add(chartSeries2);
-            this.chtDoanhThuTuan.Size = new System.Drawing.Size(1023, 585);
-            this.chtDoanhThuTuan.TabIndex = 6;
-            this.chtDoanhThuTuan.Text = "Thống kê doanh thu trong tuần";
+            // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.flpRatings);
+            this.splitContainer1.Size = new System.Drawing.Size(1370, 540);
+            this.splitContainer1.SplitterDistance = 1022;
+            this.splitContainer1.TabIndex = 37;
             // 
+            // chartThongKe
             // 
-            this.chtDoanhThuTuan.Title.Name = "Default";
-            this.chtDoanhThuTuan.Titles.Add(this.chtDoanhThuTuan.Title);
-            this.chtDoanhThuTuan.VisualTheme = "";
+            chartArea1.Name = "ChartArea1";
+            this.chartThongKe.ChartAreas.Add(chartArea1);
+            this.chartThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.Name = "Legend1";
+            this.chartThongKe.Legends.Add(legend1);
+            this.chartThongKe.Location = new System.Drawing.Point(0, 0);
+            this.chartThongKe.Name = "chartThongKe";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Tiền đặt phòng";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Tiền đặt dịch vụ";
+            this.chartThongKe.Series.Add(series1);
+            this.chartThongKe.Series.Add(series2);
+            this.chartThongKe.Size = new System.Drawing.Size(1022, 540);
+            this.chartThongKe.TabIndex = 1;
             // 
             // flpRatings
             // 
-            this.flpRatings.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.flpRatings.AutoScroll = true;
             this.flpRatings.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flpRatings.Controls.Add(this.panel1);
@@ -448,12 +404,13 @@
             this.flpRatings.Controls.Add(this.panel7);
             this.flpRatings.Controls.Add(this.panel6);
             this.flpRatings.Controls.Add(this.panel8);
+            this.flpRatings.Dock = System.Windows.Forms.DockStyle.Right;
             this.flpRatings.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpRatings.Location = new System.Drawing.Point(1029, 252);
+            this.flpRatings.Location = new System.Drawing.Point(6, 0);
             this.flpRatings.Margin = new System.Windows.Forms.Padding(0);
             this.flpRatings.Name = "flpRatings";
-            this.flpRatings.Size = new System.Drawing.Size(338, 585);
-            this.flpRatings.TabIndex = 36;
+            this.flpRatings.Size = new System.Drawing.Size(338, 540);
+            this.flpRatings.TabIndex = 37;
             this.flpRatings.WrapContents = false;
             // 
             // panel1
@@ -876,19 +833,24 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.flpRatings);
-            this.Controls.Add(this.chtDoanhThuTuan);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lblDashBoard);
             this.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ucDashboard";
             this.Size = new System.Drawing.Size(1370, 840);
+            this.Load += new System.EventHandler(this.ucDashboard_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panDuKienCount.ResumeLayout(false);
             this.panCheckOutCount.ResumeLayout(false);
             this.panTotalCount.ResumeLayout(false);
             this.panCheckInCount.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartThongKe)).EndInit();
             this.flpRatings.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -933,44 +895,45 @@
         private Syncfusion.WinForms.Controls.SfButton btnOuted;
         private Syncfusion.WinForms.Controls.SfButton btnCanceled;
         private Syncfusion.WinForms.Controls.SfButton btnChecked;
-        private Syncfusion.Windows.Forms.Chart.ChartControl chtDoanhThuTuan;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartThongKe;
         private System.Windows.Forms.FlowLayoutPanel flpRatings;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
-        private CircularPictureBox circularPictureBox1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private CircularPictureBox circularPictureBox2;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private CircularPictureBox circularPictureBox5;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private CircularPictureBox circularPictureBox6;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private CircularPictureBox circularPictureBox7;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
-        private CircularPictureBox circularPictureBox8;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private CircularPictureBox circularPictureBox1;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label43;
         private CircularPictureBox circularPictureBox14;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private CircularPictureBox circularPictureBox7;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private CircularPictureBox circularPictureBox5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private CircularPictureBox circularPictureBox6;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private CircularPictureBox circularPictureBox8;
     }
 }

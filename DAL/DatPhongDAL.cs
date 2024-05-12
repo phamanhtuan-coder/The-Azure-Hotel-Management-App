@@ -405,5 +405,85 @@ namespace DAL
                 return new List<DatPhongDTO>();
             }
         }
+
+        public int loadDuKienCount()
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spDatPhongDuKiem", conn);
+                com.CommandType = CommandType.StoredProcedure;
+                int count = (int)com.ExecuteScalar();
+                conn.Close();
+
+                return count;
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
+        }
+
+        public int SoLuongCheckin()
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spSoLuongCheckin", conn);
+                com.CommandType = CommandType.StoredProcedure;
+                int count = (int)com.ExecuteScalar();
+                conn.Close();
+
+                return count;
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
+        }
+
+        public int SoLuongCheckOut()
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spSoLuongCheckout", conn);
+                com.CommandType = CommandType.StoredProcedure;
+                int count = (int)com.ExecuteScalar();
+                conn.Close();
+
+                return count;
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
+        }
+
+        public int SoLuongHuy()
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spSoLuongHuy", conn);
+                com.CommandType = CommandType.StoredProcedure;
+                int count = (int)com.ExecuteScalar();
+                conn.Close();
+
+                return count;
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
+        }
     }
 }

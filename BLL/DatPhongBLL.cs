@@ -117,5 +117,29 @@ namespace BLL
         {
             return DatPhongDAL.LayDSPhongTheoUser(maKH);
         }
+
+        public int loadDuKienCount()
+        {
+            int kq = DatPhongDAL.loadDuKienCount();
+            return kq;
+        }
+
+        public int SoLuongCheckin()
+        {
+            int kq = DatPhongDAL.SoLuongCheckin();
+            return kq;
+        }
+
+        public int SoLuongCheckOut()
+        {
+            int kq = DatPhongDAL.SoLuongCheckOut();
+            return kq;
+        }
+
+        public int SoLuongHuy()
+        {
+            int kq = DatPhongDAL.SoLuongHuy();
+            return kq;
+        }
     }
 }
