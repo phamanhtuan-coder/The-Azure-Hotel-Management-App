@@ -90,9 +90,20 @@ namespace GUI.customForm
         }
         private void GanDuLieu()
         {
-            thueDTO.TenThue = txtMucThue.Text;
-            thueDTO.TyLeThue = (double) nudMucThue.Value;
-            thueDTO.MoTa = rtxtMoTa.Text;
+            if (!string.IsNullOrEmpty(txtMucThue.Text))
+            {
+                thueDTO.TenThue = txtMucThue.Text;
+            }
+
+            if (nudMucThue.Value > 0)
+            {
+                thueDTO.TyLeThue = (double)nudMucThue.Value;
+            }
+
+            if (!string.IsNullOrEmpty(rtxtMoTa.Text))
+            {
+                thueDTO.MoTa = rtxtMoTa.Text;
+            }
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {

@@ -49,12 +49,20 @@ namespace BLL
 
         public bool suattphong(TinhTrangPhongDTO tinhTrang)
         {
-            return TinhTrangPhongDAL.suattp(tinhTrang);
+            if (!string.IsNullOrWhiteSpace(tinhTrang.TenTinhTrang) && tinhTrang.MaTinhTrangPhong > 0)
+            {
+                return TinhTrangPhongDAL.suattp(tinhTrang);
+            }
+            return false;
         }
 
         public bool themttphong(TinhTrangPhongDTO tinhTrang)
         {
-            return TinhTrangPhongDAL.themttp(tinhTrang);
+            if (!string.IsNullOrWhiteSpace(tinhTrang.TenTinhTrang))
+            {
+                return TinhTrangPhongDAL.themttp(tinhTrang);
+            }
+            return false;
         }
 
         public List<TinhTrangPhongDTO> TraCuuttPhong(List<TinhTrangPhongDTO> tinhTrangPhongDTOs, string searchKeyword)

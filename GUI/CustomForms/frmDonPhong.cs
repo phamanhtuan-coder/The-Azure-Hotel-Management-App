@@ -123,7 +123,7 @@ namespace GUI.customForm
                 }
                 else
                 {
-                    thongBao = new customMessageBox("Đã thêm thành công dữ liệu dọn phòng!");
+                    thongBao = new customMessageBox("Đã thêm thất bại dữ liệu dọn phòng!");
                     thongBao.ShowDialog();
                 }                
             }
@@ -142,7 +142,7 @@ namespace GUI.customForm
                 }
                 else
                 {
-                    thongBao = new customMessageBox("Sửa thành công thông tin dọn phòng!");
+                    thongBao = new customMessageBox("Sửa thất bại thông tin dọn phòng!");
                     thongBao.ShowDialog();
                 }             
             }
@@ -162,10 +162,19 @@ namespace GUI.customForm
 
         private void GanDuLieu()
         {
-            donPhongDTO.MaNV = (int) cboNVBaoTri.SelectedValue;
-            donPhongDTO.MaPhong = (int)cboThietBi.SelectedValue;
+            if (cboNVBaoTri.SelectedValue != null)
+            {
+                donPhongDTO.MaNV = (int)cboNVBaoTri.SelectedValue;
+            }
+
+            if (cboThietBi.SelectedValue != null)
+            {
+                donPhongDTO.MaPhong = (int)cboThietBi.SelectedValue;
+            }
+
             donPhongDTO.NgayNhan = dtpNgayHuHong.Value;
             donPhongDTO.NgayHoanThanh = dtpNgayBaoTri.Value;
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

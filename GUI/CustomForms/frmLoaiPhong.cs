@@ -40,11 +40,15 @@ namespace GUI.customForm
         }
         private void laydltuform(LoaiPhongDTO lp)
         {
-            lp.TenLoai = txtTenLP.Text;
-            lp.Mota=rtxtMoTa.Text;
+            if (!string.IsNullOrEmpty(txtTenLP.Text))
+            {
+                lp.TenLoai = txtTenLP.Text;
+            }
+
+            lp.Mota = rtxtMoTa.Text;
         }
 
-      
+
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {

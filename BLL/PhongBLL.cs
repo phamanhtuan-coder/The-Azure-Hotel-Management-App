@@ -139,12 +139,20 @@ namespace BLL
 
         public bool suap(PhongDTO phongDTO)
         {
-            return PhongDAL.suaphong(phongDTO);
+            if (phongDTO.MaPHG>0 && phongDTO.MaLoai>0 && phongDTO.SucChuaToiDa > 0 && phongDTO.GiaPhong > 0 && phongDTO.HinhAnh.Length > 0)
+            {
+                return PhongDAL.suaphong(phongDTO);
+            }
+            return false;
         }
 
         public bool themp(PhongDTO phongDTO)
         {
-            return PhongDAL.themphong(phongDTO);
+            if(phongDTO.SucChuaToiDa > 0 && phongDTO.GiaPhong > 0 && phongDTO.HinhAnh.Length>0 && phongDTO.MaLoai > 0)
+            {
+                return PhongDAL.themphong(phongDTO);
+            }
+            return false;
         }
 
         public List<PhongDTO> TraCuuPhong(List<PhongDTO> phongDTOs, string searchKeyword)

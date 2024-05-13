@@ -135,10 +135,17 @@ namespace GUI.customForm
 
         private void ganGiaTriChoBien()
         {
-            danhGia.MaDP = int.Parse(cboMaDP.Text);
+            danhGia.MaDP = int.TryParse(cboMaDP.Text, out int maDP) ? maDP : 0;
+
             danhGia.NgayDanhGia = dtpNgayDG.Value;
+
             danhGia.NhanXet = rtxtNhanXet.Text;
-            danhGia.DiemDanhGia = (int)rcDiemDG.Value;
+
+            if (rcDiemDG.Value > 0 && rcDiemDG.Value < 6)
+            {
+                danhGia.DiemDanhGia = (int)rcDiemDG.Value;
+            }
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

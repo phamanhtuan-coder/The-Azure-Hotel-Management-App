@@ -50,12 +50,20 @@ namespace BLL
 
         public bool SuaDanhGia(DanhGiaDTO danhGia)
         {
-           return danhGiaDAL.SuaDanhGia(danhGia);
+            if (danhGia.MaDG > 0 && danhGia.MaDP > 0 && danhGia.DiemDanhGia > 0)
+            {
+                return danhGiaDAL.SuaDanhGia(danhGia);
+            }
+            return false;
         }
 
         public bool ThemDanhGia(DanhGiaDTO danhGia)
         {
-            return danhGiaDAL.ThemDanhGia(danhGia);
+            if (danhGia.MaDP>0 && danhGia.DiemDanhGia>0)
+            {
+                return danhGiaDAL.ThemDanhGia(danhGia);
+            }
+            return false;
         }
 
         public bool XoaDanhGia(int maDanhGia)

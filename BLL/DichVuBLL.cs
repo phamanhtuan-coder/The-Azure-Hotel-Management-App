@@ -46,12 +46,20 @@ namespace BLL
 
         public bool suadvu(DichVuDTO dv)
         {
-            return dichVu.suadvu(dv);
+            if (dv.MaDV>0 && dv.HinhAnh.Length > 0 && !string.IsNullOrWhiteSpace(dv.TenDV.Trim()) && dv.GiaDV > 0)
+            {
+                return dichVu.suadvu(dv);
+            }
+            return false;
         }
 
         public bool themdvu(DichVuDTO dv)
         {
-            return dichVu.themdvu(dv);
+            if (dv.HinhAnh.Length>0 && !string.IsNullOrWhiteSpace(dv.TenDV.Trim()) && dv.GiaDV>0)
+            {
+                return dichVu.themdvu(dv);
+            }
+            return false;
         }
 
         public List<DichVuDTO> TraCuudvu(List<DichVuDTO> dv, string searchKeyword)

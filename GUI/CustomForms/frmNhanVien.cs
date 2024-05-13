@@ -153,19 +153,57 @@ namespace GUI.customForm
         private bool EditNhanVien()
         {
             NhanVienDTO nhanvien = new NhanVienDTO();
-            nhanvien.MaNV=nv.MaNV;
-            nhanvien.HinhAnh = ImageToByteArray(picAvatar.Image);
-            nhanvien.HoTenNV = txtHoTenNV.Text;
-            nhanvien.CCCD = txtCCCD.Text;
-            nhanvien.GioiTinh = radNam.Checked ? "Nam" : "Nữ";
-            string ns = dtpNgaySinh.Value.ToString("yyyy-MM-dd");
-            nhanvien.NgaySinh = DateTime.Parse(ns);
-            nhanvien.Email = txtEmail.Text;
-            nhanvien.SDT = txtSDT.Text;
-            nhanvien.DiaChi = txtDiaChi.Text;
-            nhanvien.TenTaiKhoan = txtTenTaiKhoan.Text;
-            nhanvien.MaNQL = (int)cboMaNQL.SelectedValue;
-            nhanvien.Luong = nupLuong.Value;
+            if (nv != null)
+            {
+                nhanvien.MaNV = nv.MaNV; 
+
+                if (picAvatar.Image != null)
+                {
+                    nhanvien.HinhAnh = ImageToByteArray(picAvatar.Image);
+                }
+
+                if (!string.IsNullOrEmpty(txtHoTenNV.Text)) 
+                {
+                    nhanvien.HoTenNV = txtHoTenNV.Text;
+                }
+
+                if (!string.IsNullOrEmpty(txtCCCD.Text))
+                {
+                    nhanvien.CCCD = txtCCCD.Text;
+                }
+
+                nhanvien.GioiTinh = radNam.Checked ? "Nam" : "Nữ";
+
+                string ns = dtpNgaySinh.Value.ToString("yyyy-MM-dd");
+                nhanvien.NgaySinh = DateTime.Parse(ns);
+
+                if (!string.IsNullOrEmpty(txtEmail.Text))
+                {
+                    nhanvien.Email = txtEmail.Text;
+                }
+
+                if (!string.IsNullOrEmpty(txtSDT.Text))
+                {
+                    nhanvien.SDT = txtSDT.Text;
+                }
+
+                if (!string.IsNullOrEmpty(txtDiaChi.Text))
+                {
+                    nhanvien.DiaChi = txtDiaChi.Text;
+                }
+
+                if (!string.IsNullOrEmpty(txtTenTaiKhoan.Text))
+                {
+                    nhanvien.TenTaiKhoan = txtTenTaiKhoan.Text;
+                }
+
+                if (cboMaNQL.SelectedValue != null)
+                {
+                    nhanvien.MaNQL = (int)cboMaNQL.SelectedValue;
+                }
+
+                nhanvien.Luong = nupLuong.Value;
+            }
             return nhanVienBLL.EditNhanVienBLL(nhanvien);
         }
 

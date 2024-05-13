@@ -14,7 +14,6 @@ namespace BLL
         public bool AddRoleBLL(RoleDTO role)
         {
             return roleDAL.ADDRoleDAL(role);
-
         }
 
         public bool EditRoleBLL(RoleDTO role)
