@@ -97,7 +97,7 @@
             // lblMaLoai
             // 
             this.lblMaLoai.AutoSize = true;
-            this.lblMaLoai.Location = new System.Drawing.Point(381, 20);
+            this.lblMaLoai.Location = new System.Drawing.Point(328, 24);
             this.lblMaLoai.Name = "lblMaLoai";
             this.lblMaLoai.Size = new System.Drawing.Size(104, 22);
             this.lblMaLoai.TabIndex = 2;
@@ -106,7 +106,7 @@
             // lblTinhTrangPhong
             // 
             this.lblTinhTrangPhong.AutoSize = true;
-            this.lblTinhTrangPhong.Location = new System.Drawing.Point(381, 81);
+            this.lblTinhTrangPhong.Location = new System.Drawing.Point(328, 85);
             this.lblTinhTrangPhong.Name = "lblTinhTrangPhong";
             this.lblTinhTrangPhong.Size = new System.Drawing.Size(156, 22);
             this.lblTinhTrangPhong.TabIndex = 4;
@@ -115,7 +115,7 @@
             // lblGia
             // 
             this.lblGia.AutoSize = true;
-            this.lblGia.Location = new System.Drawing.Point(381, 139);
+            this.lblGia.Location = new System.Drawing.Point(328, 143);
             this.lblGia.Name = "lblGia";
             this.lblGia.Size = new System.Drawing.Size(96, 22);
             this.lblGia.TabIndex = 6;
@@ -124,7 +124,7 @@
             // lblSucChua
             // 
             this.lblSucChua.AutoSize = true;
-            this.lblSucChua.Location = new System.Drawing.Point(381, 197);
+            this.lblSucChua.Location = new System.Drawing.Point(328, 201);
             this.lblSucChua.Name = "lblSucChua";
             this.lblSucChua.Size = new System.Drawing.Size(139, 22);
             this.lblSucChua.TabIndex = 8;
@@ -133,7 +133,7 @@
             // lblMoTa
             // 
             this.lblMoTa.AutoSize = true;
-            this.lblMoTa.Location = new System.Drawing.Point(381, 250);
+            this.lblMoTa.Location = new System.Drawing.Point(328, 254);
             this.lblMoTa.Name = "lblMoTa";
             this.lblMoTa.Size = new System.Drawing.Size(116, 22);
             this.lblMoTa.TabIndex = 10;
@@ -142,31 +142,40 @@
             // cboLoaiPhong
             // 
             this.cboLoaiPhong.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboLoaiPhong.Location = new System.Drawing.Point(568, 12);
+            this.cboLoaiPhong.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.cboLoaiPhong.Location = new System.Drawing.Point(498, 16);
             this.cboLoaiPhong.Name = "cboLoaiPhong";
-            this.cboLoaiPhong.Size = new System.Drawing.Size(150, 30);
+            this.cboLoaiPhong.Size = new System.Drawing.Size(220, 30);
+            this.cboLoaiPhong.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.cboLoaiPhong.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboLoaiPhong.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboLoaiPhong.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboLoaiPhong.TabIndex = 3;
             this.cboLoaiPhong.TabStop = false;
             // 
             // cboTinhTrangPhong
             // 
             this.cboTinhTrangPhong.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
-            this.cboTinhTrangPhong.Location = new System.Drawing.Point(568, 73);
+            this.cboTinhTrangPhong.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.cboTinhTrangPhong.Location = new System.Drawing.Point(498, 77);
             this.cboTinhTrangPhong.Name = "cboTinhTrangPhong";
-            this.cboTinhTrangPhong.Size = new System.Drawing.Size(150, 30);
+            this.cboTinhTrangPhong.Size = new System.Drawing.Size(220, 30);
+            this.cboTinhTrangPhong.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.cboTinhTrangPhong.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboTinhTrangPhong.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboTinhTrangPhong.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboTinhTrangPhong.TabIndex = 5;
             this.cboTinhTrangPhong.TabStop = false;
             // 
             // nudGiaPhong
             // 
+            this.nudGiaPhong.Font = new System.Drawing.Font("Montserrat", 12F);
             this.nudGiaPhong.Increment = new decimal(new int[] {
             50000,
             0,
             0,
             0});
-            this.nudGiaPhong.Location = new System.Drawing.Point(568, 134);
+            this.nudGiaPhong.Location = new System.Drawing.Point(498, 138);
             this.nudGiaPhong.Maximum = new decimal(new int[] {
             200000000,
             0,
@@ -178,7 +187,7 @@
             0,
             0});
             this.nudGiaPhong.Name = "nudGiaPhong";
-            this.nudGiaPhong.Size = new System.Drawing.Size(150, 27);
+            this.nudGiaPhong.Size = new System.Drawing.Size(220, 27);
             this.nudGiaPhong.TabIndex = 7;
             this.nudGiaPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudGiaPhong.ThousandsSeparator = true;
@@ -190,7 +199,8 @@
             // 
             // nudSucChuaToiDa
             // 
-            this.nudSucChuaToiDa.Location = new System.Drawing.Point(568, 192);
+            this.nudSucChuaToiDa.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.nudSucChuaToiDa.Location = new System.Drawing.Point(498, 196);
             this.nudSucChuaToiDa.Maximum = new decimal(new int[] {
             20,
             0,
@@ -202,7 +212,7 @@
             0,
             0});
             this.nudSucChuaToiDa.Name = "nudSucChuaToiDa";
-            this.nudSucChuaToiDa.Size = new System.Drawing.Size(150, 27);
+            this.nudSucChuaToiDa.Size = new System.Drawing.Size(220, 27);
             this.nudSucChuaToiDa.TabIndex = 9;
             this.nudSucChuaToiDa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudSucChuaToiDa.Value = new decimal(new int[] {
@@ -213,9 +223,10 @@
             // 
             // rtxtMoTa
             // 
-            this.rtxtMoTa.Location = new System.Drawing.Point(568, 250);
+            this.rtxtMoTa.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.rtxtMoTa.Location = new System.Drawing.Point(498, 254);
             this.rtxtMoTa.Name = "rtxtMoTa";
-            this.rtxtMoTa.Size = new System.Drawing.Size(150, 96);
+            this.rtxtMoTa.Size = new System.Drawing.Size(220, 96);
             this.rtxtMoTa.TabIndex = 11;
             this.rtxtMoTa.Text = "";
             // 
@@ -225,7 +236,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(755, 450);
             this.Controls.Add(this.rtxtMoTa);
             this.Controls.Add(this.nudSucChuaToiDa);
             this.Controls.Add(this.nudGiaPhong);

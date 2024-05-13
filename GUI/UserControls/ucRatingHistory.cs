@@ -216,7 +216,7 @@ namespace GUI.UserControls
 
         private void cboStateRating_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dsDanhGia = danhGiaBLL.FilterTrangThai(cboStateRating.Text);
+            dsDanhGia = danhGiaBLL.FilterTrangThaiTheoMaKH(cboStateRating.Text,maKH);
             dgvRating.ClearSelection();
             dgvRating.DataSource = dsDanhGia;
         }

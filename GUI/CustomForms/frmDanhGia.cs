@@ -61,7 +61,8 @@ namespace GUI.customForm
                 }
                 cboMaDP.SelectedIndex = 0;
                 cboMaDP.Enabled = true;
-                dtpNgayDG.Value = DateTime.Now;
+                
+                dtpNgayDG.Value = dtpNgayDG.MaxDate;
                 rtxtNhanXet.Clear();
                 rcDiemDG.Value = 0;
             }
@@ -70,10 +71,12 @@ namespace GUI.customForm
                 cboMaDP.SelectedValue=danhGia.MaDP;
                 cboMaDP.Enabled = false;
                 dtpNgayDG.Value = danhGia.NgayDanhGia;
+
                 rtxtNhanXet.Text = danhGia.NhanXet;
                 rcDiemDG.Value = danhGia.DiemDanhGia;
             }
-           
+            
+
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)

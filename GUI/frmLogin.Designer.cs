@@ -238,7 +238,7 @@ namespace GUI
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(241, 22);
             this.txtUsername.TabIndex = 3;
-            this.txtUsername.Text = "admin";
+            this.txtUsername.Text = "administrator";
             this.txtUsername.ThemeStyle.CornerRadius = 10;
             this.txtUsername.WordWrap = false;
             // 
@@ -282,7 +282,7 @@ namespace GUI
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(238, 22);
             this.txtPassword.TabIndex = 5;
-            this.txtPassword.Text = "S@ng1234";
+            this.txtPassword.Text = "@Dmin1234";
             this.txtPassword.ThemeStyle.CornerRadius = 0;
             this.txtPassword.WordWrap = false;
             // 

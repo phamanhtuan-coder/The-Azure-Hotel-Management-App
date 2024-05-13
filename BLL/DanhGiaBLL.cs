@@ -70,5 +70,21 @@ namespace BLL
         {
             return danhGiaDAL.XoaDanhGia(maDanhGia);
         }
+
+        public List<DanhGiaDTO> FilterTrangThaiTheoMaKH(string trangThai, int maKH)
+        {
+            if (trangThai == "Đang hoạt động")
+            {
+                return danhGiaDAL.FilterTrangThai(true,maKH);
+            }
+            else if (trangThai == "Đã xóa")
+            {
+                return danhGiaDAL.FilterTrangThai(false,maKH);
+            }
+            else
+            {
+                return danhGiaDAL.LayDanhSachDanhGiaTheoUser(maKH);
+            }
+        }
     }
 }

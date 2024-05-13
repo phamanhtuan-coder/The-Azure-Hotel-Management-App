@@ -35,9 +35,10 @@ namespace GUI.UserControls
 
         private void ucBooking_Load(object sender, EventArgs e)
         {
+            dgvBooking.AutoGenerateColumns = false;
             LoadCCOKH();
             layds();
-            dgvBooking.AutoGenerateColumns = false;
+            
             laycombo();
             KiemTraPQ();
         }

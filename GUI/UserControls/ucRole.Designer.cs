@@ -323,6 +323,7 @@
             this.btnAddRole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.btnAddRole, "Thêm phân quyền");
             this.btnAddRole.UseVisualStyleBackColor = false;
+            this.btnAddRole.Click += new System.EventHandler(this.btnAddRole_Click);
             // 
             // cboSortRole
             // 

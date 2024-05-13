@@ -45,6 +45,8 @@ namespace GUI.customForm
                 cboTinhTrangPhong.DataSource = tinhTrangPhongDTOs;
                 cboTinhTrangPhong.DisplayMember = "TenTinhTrang";
                 cboTinhTrangPhong.ValueMember = "MaTinhTrangPhong";
+                cboLoaiPhong.SelectedIndex = 0;
+                cboTinhTrangPhong.SelectedIndex = 1;
                 rtxtMoTa.Clear();
             }
             else
@@ -57,8 +59,8 @@ namespace GUI.customForm
                 cboTinhTrangPhong.DataSource = tinhTrangPhongDTOs;
                 cboTinhTrangPhong.DisplayMember = "TenTinhTrang";
                 cboTinhTrangPhong.ValueMember = "MaTinhTrangPhong";
-                cboLoaiPhong.SelectedIndex = PhongDTO.MaLoai;
-                cboTinhTrangPhong.SelectedIndex = PhongDTO.MaTinhTrangPhong;
+                cboLoaiPhong.SelectedValue = PhongDTO.MaLoai;
+                cboTinhTrangPhong.SelectedValue = PhongDTO.MaTinhTrangPhong;
                 rtxtMoTa.Text = PhongDTO.MoTa;
                 if (PhongDTO.HinhAnh != null)
                 {

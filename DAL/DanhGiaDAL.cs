@@ -48,6 +48,42 @@ namespace DAL
             }
         }
 
+        public List<DanhGiaDTO> FilterTrangThai(bool trangThai, int maKH)
+        {
+            try
+            {
+                List<DanhGiaDTO> dsDanhGia = new List<DanhGiaDTO>();
+
+                string lenhTV = "SELECT DG.* FROM DANHGIA join DatPhong DP on DG.MaDP = DP.MaDatPhong Where DG.TrangThai =@TrangThai And MaKH =@MaKH";
+
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+
+                conn.Open();
+                SqlCommand com = new SqlCommand(lenhTV, conn);
+                com.Parameters.AddWithValue("@MaKH", maKH);
+                com.Parameters.AddWithValue("@TrangThai", trangThai ? (object)1 : (object)0);
+                SqlDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    DanhGiaDTO danhGiaDTO = new DanhGiaDTO();
+                    danhGiaDTO.MaDG = (int)reader["MaDG"];
+                    danhGiaDTO.MaDP = (int)reader["MaDP"];
+                    danhGiaDTO.DiemDanhGia = (int)reader["DiemDanhGia"];
+                    danhGiaDTO.NhanXet = reader["NhanXet"].ToString();
+                    danhGia.NgayDanhGia = DateTime.Parse(reader["NgayDanhGia"].ToString());
+                    danhGiaDTO.TrangThai = trangThai;
+                    dsDanhGia.Add(danhGiaDTO);
+                }
+
+                return dsDanhGia;
+            }
+            catch (Exception)
+            {
+
+                return new List<DanhGiaDTO>();
+            }
+        }
+
         public bool KhoiPhucDanhGia(int maDanhGia)
         {
             try

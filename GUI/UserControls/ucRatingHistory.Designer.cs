@@ -316,6 +316,7 @@
             this.btnReturn.Text = "Quay lại";
             this.toolTip1.SetToolTip(this.btnReturn, "Quay lại");
             this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // dtpNgayDanhGia
             // 
