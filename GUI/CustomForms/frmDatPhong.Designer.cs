@@ -106,12 +106,16 @@
             // cboMaPHG
             // 
             this.cboMaPHG.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboMaPHG.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+            this.cboMaPHG.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboMaPHG.Location = new System.Drawing.Point(205, 59);
             this.cboMaPHG.Name = "cboMaPHG";
             this.cboMaPHG.Size = new System.Drawing.Size(180, 27);
+            this.cboMaPHG.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.cboMaPHG.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboMaPHG.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboMaPHG.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboMaPHG.TabIndex = 5;
-            this.cboMaPHG.TabStop = false;
             // 
             // txtMaKH
             // 
@@ -122,7 +126,7 @@
             // 
             // btnTaoKH
             // 
-            this.btnTaoKH.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.btnTaoKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.btnTaoKH.Location = new System.Drawing.Point(427, 16);
             this.btnTaoKH.Name = "btnTaoKH";
             this.btnTaoKH.Size = new System.Drawing.Size(150, 28);

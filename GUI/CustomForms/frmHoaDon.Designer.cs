@@ -81,6 +81,7 @@
             // cboMaNV
             // 
             this.cboMaNV.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboMaNV.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboMaNV.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboMaNV.Location = new System.Drawing.Point(278, 54);
             this.cboMaNV.Name = "cboMaNV";
@@ -90,7 +91,6 @@
             this.cboMaNV.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboMaNV.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboMaNV.TabIndex = 4;
-            this.cboMaNV.TabStop = false;
             this.toolTip1.SetToolTip(this.cboMaNV, "Chọn nhân viên");
             // 
             // label1
@@ -106,6 +106,7 @@
             // cboMaThue
             // 
             this.cboMaThue.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboMaThue.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboMaThue.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboMaThue.Location = new System.Drawing.Point(278, 101);
             this.cboMaThue.Name = "cboMaThue";
@@ -115,7 +116,6 @@
             this.cboMaThue.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboMaThue.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboMaThue.TabIndex = 6;
-            this.cboMaThue.TabStop = false;
             this.toolTip1.SetToolTip(this.cboMaThue, "Chọn thuế");
             // 
             // lblMaNV
@@ -141,6 +141,7 @@
             // cboMaKM
             // 
             this.cboMaKM.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboMaKM.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboMaKM.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboMaKM.Location = new System.Drawing.Point(278, 150);
             this.cboMaKM.Name = "cboMaKM";
@@ -150,7 +151,6 @@
             this.cboMaKM.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboMaKM.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboMaKM.TabIndex = 8;
-            this.cboMaKM.TabStop = false;
             this.toolTip1.SetToolTip(this.cboMaKM, "Chọn khuyến mãi");
             // 
             // label2

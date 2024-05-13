@@ -34,7 +34,7 @@ namespace GUI.customForm
             if (isAdd)
             {
                 txtMaKH.Clear();
-                dtpNgayDat.Value = DateTime.Now;
+                dtpNgayDat.Value = dtpNgayDat.MinDate;
                 LoadDSPhong();
                 nudSoLuongKhach.Value = 1;
             }

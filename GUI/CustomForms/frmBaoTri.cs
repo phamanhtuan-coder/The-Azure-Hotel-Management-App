@@ -30,7 +30,8 @@ namespace GUI.customForm
         private void frmBaoTri_Load(object sender, EventArgs e)
         {
             // gán giá trị mặc định bằng các biến trên, néu là edit có giá trị truyền vào thì kiểm tra và chọn giá trị
-
+            dtpNgayHuHong.MaxDate = DateTime.Now;
+            dtpNgayBaoTri.MaxDate = DateTime.Now;
             if (isAdd)
             {
                 
@@ -42,8 +43,8 @@ namespace GUI.customForm
                 cboThietBi.DataSource=thietBiDTOs;
                 cboThietBi.DisplayMember = "TenThietBi";
                 cboThietBi.ValueMember = "MaThietBi";
-                dtpNgayHuHong.Value = DateTime.Now;
-                dtpNgayBaoTri.Value = DateTime.Now;
+                dtpNgayHuHong.Value = dtpNgayHuHong.MaxDate;
+                dtpNgayBaoTri.Value = dtpNgayBaoTri.MaxDate;
             }
             else
             {

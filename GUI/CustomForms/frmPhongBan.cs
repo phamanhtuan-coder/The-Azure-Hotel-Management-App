@@ -27,6 +27,7 @@ namespace GUI.customForm
         private void frmPhongBan_Load(object sender, EventArgs e)
         {
             //Kiểm tra xem form đang được dùng cho mục đích gì? Nếu là thêm thì các trường dữ liệu phải trống
+            dtpNgayNhanChuc.MaxDate = DateTime.Now;
             if (isAdd)
             {
                 txtMaPhongBan.Clear();
@@ -34,7 +35,7 @@ namespace GUI.customForm
                 txtTenPB.Clear();
                 txtTruongPhong.Clear();
                 chkTruongPhong.Checked = false;
-                dtpNgayNhanChuc.Value = DateTime.Now;
+                dtpNgayNhanChuc.Value = dtpNgayNhanChuc.MaxDate;
             }
             else
             {

@@ -118,6 +118,7 @@
             // 
             // cboHangTV
             // 
+            this.cboHangTV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboHangTV.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboHangTV.FormattingEnabled = true;
             this.cboHangTV.Location = new System.Drawing.Point(327, 138);

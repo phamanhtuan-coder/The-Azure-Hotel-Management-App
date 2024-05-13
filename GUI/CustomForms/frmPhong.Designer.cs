@@ -142,6 +142,7 @@
             // cboLoaiPhong
             // 
             this.cboLoaiPhong.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboLoaiPhong.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboLoaiPhong.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboLoaiPhong.Location = new System.Drawing.Point(498, 16);
             this.cboLoaiPhong.Name = "cboLoaiPhong";
@@ -151,11 +152,11 @@
             this.cboLoaiPhong.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboLoaiPhong.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboLoaiPhong.TabIndex = 3;
-            this.cboLoaiPhong.TabStop = false;
             // 
             // cboTinhTrangPhong
             // 
             this.cboTinhTrangPhong.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboTinhTrangPhong.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboTinhTrangPhong.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboTinhTrangPhong.Location = new System.Drawing.Point(498, 77);
             this.cboTinhTrangPhong.Name = "cboTinhTrangPhong";
@@ -165,7 +166,6 @@
             this.cboTinhTrangPhong.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cboTinhTrangPhong.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboTinhTrangPhong.TabIndex = 5;
-            this.cboTinhTrangPhong.TabStop = false;
             // 
             // nudGiaPhong
             // 

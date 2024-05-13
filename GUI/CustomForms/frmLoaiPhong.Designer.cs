@@ -40,15 +40,15 @@
             // 
             // txtTenLP
             // 
-            this.txtTenLP.Location = new System.Drawing.Point(266, 44);
+            this.txtTenLP.Location = new System.Drawing.Point(180, 11);
             this.txtTenLP.Name = "txtTenLP";
-            this.txtTenLP.Size = new System.Drawing.Size(306, 27);
+            this.txtTenLP.Size = new System.Drawing.Size(298, 27);
             this.txtTenLP.TabIndex = 2;
             // 
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(361, 271);
+            this.btnSubmit.Location = new System.Drawing.Point(283, 186);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
             this.btnSubmit.TabIndex = 6;
@@ -60,7 +60,7 @@
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(94, 271);
+            this.btnCancel.Location = new System.Drawing.Point(73, 186);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
             this.btnCancel.TabIndex = 5;
@@ -70,7 +70,7 @@
             // lblTenLP
             // 
             this.lblTenLP.AutoSize = true;
-            this.lblTenLP.Location = new System.Drawing.Point(52, 49);
+            this.lblTenLP.Location = new System.Drawing.Point(15, 16);
             this.lblTenLP.Name = "lblTenLP";
             this.lblTenLP.Size = new System.Drawing.Size(134, 22);
             this.lblTenLP.TabIndex = 1;
@@ -79,7 +79,7 @@
             // lblMoTa
             // 
             this.lblMoTa.AutoSize = true;
-            this.lblMoTa.Location = new System.Drawing.Point(52, 117);
+            this.lblMoTa.Location = new System.Drawing.Point(15, 59);
             this.lblMoTa.Name = "lblMoTa";
             this.lblMoTa.Size = new System.Drawing.Size(57, 22);
             this.lblMoTa.TabIndex = 3;
@@ -87,9 +87,9 @@
             // 
             // rtxtMoTa
             // 
-            this.rtxtMoTa.Location = new System.Drawing.Point(266, 117);
+            this.rtxtMoTa.Location = new System.Drawing.Point(180, 59);
             this.rtxtMoTa.Name = "rtxtMoTa";
-            this.rtxtMoTa.Size = new System.Drawing.Size(306, 96);
+            this.rtxtMoTa.Size = new System.Drawing.Size(298, 96);
             this.rtxtMoTa.TabIndex = 4;
             this.rtxtMoTa.Text = "";
             // 
@@ -99,7 +99,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(600, 350);
+            this.ClientSize = new System.Drawing.Size(500, 254);
             this.Controls.Add(this.rtxtMoTa);
             this.Controls.Add(this.lblMoTa);
             this.Controls.Add(this.lblTenLP);

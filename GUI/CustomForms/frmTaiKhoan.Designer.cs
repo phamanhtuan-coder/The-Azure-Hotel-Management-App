@@ -47,8 +47,8 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.btnSubmit.Location = new System.Drawing.Point(378, 269);
+            this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.btnSubmit.Location = new System.Drawing.Point(273, 259);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
             this.btnSubmit.TabIndex = 10;
@@ -59,8 +59,8 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.Location = new System.Drawing.Point(62, 269);
+            this.btnCancel.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.Location = new System.Drawing.Point(63, 259);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
             this.btnCancel.TabIndex = 9;
@@ -72,7 +72,7 @@
             // 
             this.lblTenPhanQuyen.AutoSize = true;
             this.lblTenPhanQuyen.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.lblTenPhanQuyen.Location = new System.Drawing.Point(66, 215);
+            this.lblTenPhanQuyen.Location = new System.Drawing.Point(22, 205);
             this.lblTenPhanQuyen.Name = "lblTenPhanQuyen";
             this.lblTenPhanQuyen.Size = new System.Drawing.Size(146, 22);
             this.lblTenPhanQuyen.TabIndex = 7;
@@ -83,7 +83,7 @@
             this.cboPhanQuyen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPhanQuyen.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.cboPhanQuyen.FormattingEnabled = true;
-            this.cboPhanQuyen.Location = new System.Drawing.Point(276, 207);
+            this.cboPhanQuyen.Location = new System.Drawing.Point(232, 197);
             this.cboPhanQuyen.Name = "cboPhanQuyen";
             this.cboPhanQuyen.Size = new System.Drawing.Size(252, 30);
             this.cboPhanQuyen.TabIndex = 8;
@@ -92,7 +92,7 @@
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.txtUsername.Location = new System.Drawing.Point(276, 30);
+            this.txtUsername.Location = new System.Drawing.Point(232, 20);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(252, 27);
             this.txtUsername.TabIndex = 2;
@@ -102,7 +102,7 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.txtPassword.Location = new System.Drawing.Point(276, 89);
+            this.txtPassword.Location = new System.Drawing.Point(232, 79);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(252, 27);
@@ -114,7 +114,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(66, 94);
+            this.label1.Location = new System.Drawing.Point(22, 84);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 22);
             this.label1.TabIndex = 3;
@@ -124,7 +124,7 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.lblUsername.Location = new System.Drawing.Point(66, 35);
+            this.lblUsername.Location = new System.Drawing.Point(22, 25);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(96, 22);
             this.lblUsername.TabIndex = 1;
@@ -134,7 +134,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(66, 153);
+            this.label2.Location = new System.Drawing.Point(22, 143);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(165, 22);
             this.label2.TabIndex = 5;
@@ -143,7 +143,7 @@
             // txtRePw
             // 
             this.txtRePw.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.txtRePw.Location = new System.Drawing.Point(276, 148);
+            this.txtRePw.Location = new System.Drawing.Point(232, 138);
             this.txtRePw.Name = "txtRePw";
             this.txtRePw.PasswordChar = '*';
             this.txtRePw.Size = new System.Drawing.Size(252, 27);
@@ -156,7 +156,7 @@
             this.lblLoiUsername.AutoSize = true;
             this.lblLoiUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoiUsername.ForeColor = System.Drawing.Color.IndianRed;
-            this.lblLoiUsername.Location = new System.Drawing.Point(278, 60);
+            this.lblLoiUsername.Location = new System.Drawing.Point(234, 50);
             this.lblLoiUsername.Name = "lblLoiUsername";
             this.lblLoiUsername.Size = new System.Drawing.Size(0, 15);
             this.lblLoiUsername.TabIndex = 14;
@@ -166,7 +166,7 @@
             this.lblLoiPassword.AutoSize = true;
             this.lblLoiPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoiPassword.ForeColor = System.Drawing.Color.IndianRed;
-            this.lblLoiPassword.Location = new System.Drawing.Point(278, 119);
+            this.lblLoiPassword.Location = new System.Drawing.Point(234, 109);
             this.lblLoiPassword.Name = "lblLoiPassword";
             this.lblLoiPassword.Size = new System.Drawing.Size(0, 15);
             this.lblLoiPassword.TabIndex = 15;
@@ -176,7 +176,7 @@
             this.lblLoiRePassword.AutoSize = true;
             this.lblLoiRePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoiRePassword.ForeColor = System.Drawing.Color.IndianRed;
-            this.lblLoiRePassword.Location = new System.Drawing.Point(278, 178);
+            this.lblLoiRePassword.Location = new System.Drawing.Point(234, 168);
             this.lblLoiRePassword.Name = "lblLoiRePassword";
             this.lblLoiRePassword.Size = new System.Drawing.Size(0, 15);
             this.lblLoiRePassword.TabIndex = 16;
@@ -187,7 +187,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Teal;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(600, 351);
+            this.ClientSize = new System.Drawing.Size(511, 335);
             this.Controls.Add(this.lblLoiRePassword);
             this.Controls.Add(this.lblLoiPassword);
             this.Controls.Add(this.lblLoiUsername);

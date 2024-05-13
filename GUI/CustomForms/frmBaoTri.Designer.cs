@@ -102,12 +102,16 @@
             // cboNVBaoTri
             // 
             this.cboNVBaoTri.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboNVBaoTri.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+            this.cboNVBaoTri.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboNVBaoTri.Location = new System.Drawing.Point(205, 59);
             this.cboNVBaoTri.Name = "cboNVBaoTri";
             this.cboNVBaoTri.Size = new System.Drawing.Size(180, 27);
+            this.cboNVBaoTri.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.cboNVBaoTri.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboNVBaoTri.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboNVBaoTri.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboNVBaoTri.TabIndex = 14;
-            this.cboNVBaoTri.TabStop = false;
             // 
             // dtpNgayHuHong
             // 
@@ -130,12 +134,16 @@
             // cboThietBi
             // 
             this.cboThietBi.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboThietBi.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+            this.cboThietBi.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboThietBi.Location = new System.Drawing.Point(205, 17);
             this.cboThietBi.Name = "cboThietBi";
             this.cboThietBi.Size = new System.Drawing.Size(180, 27);
+            this.cboThietBi.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.cboThietBi.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboThietBi.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboThietBi.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboThietBi.TabIndex = 19;
-            this.cboThietBi.TabStop = false;
             // 
             // frmBaoTri
             // 

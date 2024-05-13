@@ -90,12 +90,16 @@
             // cboMaNV
             // 
             this.cboMaNV.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboMaNV.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+            this.cboMaNV.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboMaNV.Location = new System.Drawing.Point(278, 59);
             this.cboMaNV.Name = "cboMaNV";
             this.cboMaNV.Size = new System.Drawing.Size(180, 27);
+            this.cboMaNV.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.cboMaNV.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboMaNV.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboMaNV.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboMaNV.TabIndex = 4;
-            this.cboMaNV.TabStop = false;
             this.toolTip1.SetToolTip(this.cboMaNV, "Chọn mã đặt phòng");
             // 
             // lblMaKM
@@ -110,12 +114,16 @@
             // cboMaKM
             // 
             this.cboMaKM.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboMaKM.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+            this.cboMaKM.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboMaKM.Location = new System.Drawing.Point(278, 101);
             this.cboMaKM.Name = "cboMaKM";
             this.cboMaKM.Size = new System.Drawing.Size(180, 27);
+            this.cboMaKM.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.cboMaKM.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboMaKM.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboMaKM.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboMaKM.TabIndex = 6;
-            this.cboMaKM.TabStop = false;
             this.toolTip1.SetToolTip(this.cboMaKM, "Chọn mã khuyến mãi");
             // 
             // lblMaDP
@@ -129,6 +137,7 @@
             // 
             // nudTongTien
             // 
+            this.nudTongTien.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.nudTongTien.Increment = new decimal(new int[] {
             10000,
             0,
@@ -136,7 +145,7 @@
             0});
             this.nudTongTien.Location = new System.Drawing.Point(278, 143);
             this.nudTongTien.Maximum = new decimal(new int[] {
-            10000000,
+            100000000,
             0,
             0,
             0});
@@ -150,12 +159,16 @@
             // cboMaHD
             // 
             this.cboMaHD.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboMaHD.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+            this.cboMaHD.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboMaHD.Location = new System.Drawing.Point(278, 17);
             this.cboMaHD.Name = "cboMaHD";
             this.cboMaHD.Size = new System.Drawing.Size(180, 27);
+            this.cboMaHD.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.cboMaHD.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboMaHD.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboMaHD.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboMaHD.TabIndex = 2;
-            this.cboMaHD.TabStop = false;
             this.toolTip1.SetToolTip(this.cboMaHD, "Chọn mã hóa đơn");
             // 
             // frmCTHD

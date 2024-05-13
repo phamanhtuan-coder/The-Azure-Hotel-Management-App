@@ -40,7 +40,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.btnSubmit.Location = new System.Drawing.Point(309, 157);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(150, 50);
@@ -52,8 +52,8 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.Location = new System.Drawing.Point(49, 157);
+            this.btnCancel.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.Location = new System.Drawing.Point(87, 157);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
             this.btnCancel.TabIndex = 5;

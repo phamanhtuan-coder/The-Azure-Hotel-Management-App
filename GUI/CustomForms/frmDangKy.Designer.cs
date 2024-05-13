@@ -398,6 +398,7 @@ namespace GUI.customForm
             this.radNam.TabIndex = 15;
             this.radNam.TabStop = true;
             this.radNam.Text = "Nam";
+            this.toolTip1.SetToolTip(this.radNam, "Chọn giới tính");
             this.radNam.UseVisualStyleBackColor = true;
             // 
             // txtDiaChi
@@ -409,10 +410,13 @@ namespace GUI.customForm
             // 
             // dtpNgaySinh
             // 
+            this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgaySinh.Location = new System.Drawing.Point(202, 274);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(246, 27);
             this.dtpNgaySinh.TabIndex = 18;
+            this.toolTip1.SetToolTip(this.dtpNgaySinh, "Nhập ngày sinh");
             this.dtpNgaySinh.ValueChanged += new System.EventHandler(this.dtpNgaySinh_ValueChanged);
             // 
             // txtEmail
@@ -451,6 +455,7 @@ namespace GUI.customForm
             this.btnQuayLai.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnQuayLai.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnQuayLai.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.btnQuayLai.Location = new System.Drawing.Point(165, 493);
             this.btnQuayLai.Name = "btnQuayLai";

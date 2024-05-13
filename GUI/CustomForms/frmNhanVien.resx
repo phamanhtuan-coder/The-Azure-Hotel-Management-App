@@ -124,7 +124,7 @@
   <data name="picAvatar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAHAVJREFUeF7tnQeULVWZhVtyzhkkSAbJoiiK48wCFEEQUIIkkSzqAwEZXaiIyjzC
+        wAAADsABataJCQAAHAVJREFUeF7tnQeULVWZhVtyzhkkSAbJoiiK48wCFEEQUIIkkSzqAwEZXaiIyjzC
         DMkZsggIBoKC5IzoSBqQKDk8QCSDkTizv/tev+l+/Xd33XsrnKrae61vrV63K546p+qEPwxYtdRMYl6x
         uFhNbCx2EV8TR4ofil+K68Tt4kExSbwg/iL+Id4Q/zsF/uY3/sc2bMs+7MsxfiE4JsfmHJyLc3JuroFr
         4Zosy8pRM4h5xNJiA0HDO1TQGK8S94lnxIuCxvumGGzURcE5OBfn5Nxcw5XidHGY2ENsKJYTfjFYVka9
@@ -247,7 +247,4 @@
         RU5ErkJggg==
 </value>
   </data>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
 </root>

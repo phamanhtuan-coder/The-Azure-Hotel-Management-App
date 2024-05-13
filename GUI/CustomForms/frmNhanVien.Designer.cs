@@ -82,6 +82,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Location = new System.Drawing.Point(190, 436);
             this.btnCancel.Name = "btnCancel";
@@ -326,6 +327,7 @@
             this.nupLuong.Name = "nupLuong";
             this.nupLuong.Size = new System.Drawing.Size(194, 27);
             this.nupLuong.TabIndex = 22;
+            this.nupLuong.ThousandsSeparator = true;
             this.nupLuong.ValueChanged += new System.EventHandler(this.nupLuong_ValueChanged);
             // 
             // label1

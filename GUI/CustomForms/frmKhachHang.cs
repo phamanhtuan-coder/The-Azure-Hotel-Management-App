@@ -28,7 +28,8 @@ namespace GUI.customForm
 
         private void frmKhachHang_Load(object sender, EventArgs e)
         {
-            dtpNgaySinh.Value = DateTime.Today.AddYears(-18);
+            dtpNgaySinh.MaxDate= DateTime.Today.AddYears(-18);
+            dtpNgaySinh.Value = dtpNgaySinh.MaxDate;
             radNam.Checked = true;
             // gán giá trị mặc định bằng các biến trên
             LoadHangTV();

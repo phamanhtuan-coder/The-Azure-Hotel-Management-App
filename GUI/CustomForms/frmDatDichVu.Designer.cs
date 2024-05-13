@@ -97,12 +97,16 @@
             // cboMaDP
             // 
             this.cboMaDP.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboMaDP.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+            this.cboMaDP.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboMaDP.Location = new System.Drawing.Point(205, 17);
             this.cboMaDP.Name = "cboMaDP";
             this.cboMaDP.Size = new System.Drawing.Size(180, 27);
+            this.cboMaDP.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.cboMaDP.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboMaDP.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboMaDP.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboMaDP.TabIndex = 2;
-            this.cboMaDP.TabStop = false;
             // 
             // dtpNgayDat
             // 
@@ -143,12 +147,16 @@
             // cboMaDV
             // 
             this.cboMaDV.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
+            this.cboMaDV.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
+            this.cboMaDV.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboMaDV.Location = new System.Drawing.Point(205, 59);
             this.cboMaDV.Name = "cboMaDV";
             this.cboMaDV.Size = new System.Drawing.Size(180, 27);
+            this.cboMaDV.Style.EditorStyle.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.cboMaDV.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboMaDV.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboMaDV.Style.TokenStyle.Font = new System.Drawing.Font("Montserrat", 12F);
             this.cboMaDV.TabIndex = 4;
-            this.cboMaDV.TabStop = false;
             // 
             // frmDatDichVu
             // 
