@@ -32,10 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucBill));
             this.lblBill = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAddBill = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnEditBill = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnDeleteBill = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnRecoverBill = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateBooking = new Syncfusion.WinForms.ListView.SfComboBox();
             this.dtpBillDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
@@ -74,6 +70,8 @@
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnDeleteBill = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnRecoverBill = new Syncfusion.WinForms.Controls.SfButton();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateBooking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -109,107 +107,16 @@
             this.tlpController.ColumnCount = 2;
             this.tlpController.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpController.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpController.Controls.Add(this.btnAddBill, 0, 0);
-            this.tlpController.Controls.Add(this.btnEditBill, 0, 1);
-            this.tlpController.Controls.Add(this.btnDeleteBill, 1, 0);
-            this.tlpController.Controls.Add(this.btnRecoverBill, 1, 1);
+            this.tlpController.Controls.Add(this.btnRecoverBill, 0, 0);
+            this.tlpController.Controls.Add(this.btnDeleteBill, 0, 0);
             this.tlpController.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpController.Location = new System.Drawing.Point(0, 0);
             this.tlpController.Name = "tlpController";
-            this.tlpController.RowCount = 2;
-            this.tlpController.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpController.RowCount = 1;
             this.tlpController.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpController.Size = new System.Drawing.Size(394, 94);
             this.tlpController.TabIndex = 6;
             this.toolTip1.SetToolTip(this.tlpController, "Thêm hóa đơn");
-            // 
-            // btnAddBill
-            // 
-            this.btnAddBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddBill.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddBill.ForeColor = System.Drawing.Color.White;
-            this.btnAddBill.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnAddBill.Location = new System.Drawing.Point(3, 3);
-            this.btnAddBill.Name = "btnAddBill";
-            this.btnAddBill.Size = new System.Drawing.Size(191, 41);
-            this.btnAddBill.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAddBill.Style.ForeColor = System.Drawing.Color.White;
-            this.btnAddBill.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnAddBill.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnAddBill.TabIndex = 1;
-            this.btnAddBill.Text = "Thêm";
-            this.btnAddBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolTip1.SetToolTip(this.btnAddBill, "Thêm hóa đơn");
-            this.btnAddBill.UseVisualStyleBackColor = false;
-            this.btnAddBill.Click += new System.EventHandler(this.btnAddBill_Click);
-            // 
-            // btnEditBill
-            // 
-            this.btnEditBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEditBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditBill.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditBill.ForeColor = System.Drawing.Color.White;
-            this.btnEditBill.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnEditBill.Location = new System.Drawing.Point(3, 50);
-            this.btnEditBill.Name = "btnEditBill";
-            this.btnEditBill.Size = new System.Drawing.Size(191, 41);
-            this.btnEditBill.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnEditBill.Style.ForeColor = System.Drawing.Color.White;
-            this.btnEditBill.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnEditBill.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnEditBill.TabIndex = 3;
-            this.btnEditBill.Text = "Sửa";
-            this.btnEditBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolTip1.SetToolTip(this.btnEditBill, "Sửa hóa đơn");
-            this.btnEditBill.UseVisualStyleBackColor = false;
-            this.btnEditBill.Click += new System.EventHandler(this.btnEditBill_Click);
-            // 
-            // btnDeleteBill
-            // 
-            this.btnDeleteBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleteBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteBill.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteBill.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteBill.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnDeleteBill.Location = new System.Drawing.Point(200, 3);
-            this.btnDeleteBill.Name = "btnDeleteBill";
-            this.btnDeleteBill.Size = new System.Drawing.Size(191, 41);
-            this.btnDeleteBill.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteBill.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteBill.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.btnDeleteBill.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteBill.TabIndex = 2;
-            this.btnDeleteBill.Text = "Xóa";
-            this.btnDeleteBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolTip1.SetToolTip(this.btnDeleteBill, "Xóa hóa đơn");
-            this.btnDeleteBill.UseVisualStyleBackColor = false;
-            this.btnDeleteBill.Click += new System.EventHandler(this.btnDeleteBill_Click);
-            // 
-            // btnRecoverBill
-            // 
-            this.btnRecoverBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRecoverBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecoverBill.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecoverBill.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverBill.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnRecoverBill.Location = new System.Drawing.Point(200, 50);
-            this.btnRecoverBill.Name = "btnRecoverBill";
-            this.btnRecoverBill.Size = new System.Drawing.Size(191, 41);
-            this.btnRecoverBill.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverBill.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverBill.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            this.btnRecoverBill.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRecoverBill.TabIndex = 4;
-            this.btnRecoverBill.Text = "Khôi phục";
-            this.btnRecoverBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolTip1.SetToolTip(this.btnRecoverBill, "Khôi phục hóa đơn");
-            this.btnRecoverBill.UseVisualStyleBackColor = false;
-            this.btnRecoverBill.Click += new System.EventHandler(this.btnRecoverBill_Click);
             // 
             // cboStateBooking
             // 
@@ -448,7 +355,7 @@
             this.btnThanhToan.Size = new System.Drawing.Size(186, 44);
             this.btnThanhToan.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.btnThanhToan.Style.ForeColor = System.Drawing.Color.White;
-            this.btnThanhToan.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.btnThanhToan.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnThanhToan.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnThanhToan.TabIndex = 15;
             this.btnThanhToan.Text = "Thanh toán";
@@ -470,7 +377,7 @@
             this.btnInHD.Size = new System.Drawing.Size(186, 44);
             this.btnInHD.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
             this.btnInHD.Style.ForeColor = System.Drawing.Color.White;
-            this.btnInHD.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            this.btnInHD.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnInHD.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnInHD.TabIndex = 5;
             this.btnInHD.Text = "In hóa đơn";
@@ -495,7 +402,7 @@
             this.btnTraCuuDP.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnTraCuuDP.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnTraCuuDP.Style.HoverImageForeColor = System.Drawing.Color.White;
-            this.btnTraCuuDP.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            this.btnTraCuuDP.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.btnTraCuuDP.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnTraCuuDP.Style.PressedBackColor = System.Drawing.Color.White;
             this.btnTraCuuDP.Style.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
@@ -520,7 +427,7 @@
             this.txtXemCT.Size = new System.Drawing.Size(186, 44);
             this.txtXemCT.Style.BackColor = System.Drawing.Color.Tomato;
             this.txtXemCT.Style.ForeColor = System.Drawing.Color.White;
-            this.txtXemCT.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
+            this.txtXemCT.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
             this.txtXemCT.Style.ImageForeColor = System.Drawing.Color.White;
             this.txtXemCT.TabIndex = 14;
             this.txtXemCT.Text = "Xem chi tiết";
@@ -740,6 +647,50 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
+            // btnDeleteBill
+            // 
+            this.btnDeleteBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteBill.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDeleteBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteBill.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteBill.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteBill.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnDeleteBill.Location = new System.Drawing.Point(3, 3);
+            this.btnDeleteBill.Name = "btnDeleteBill";
+            this.btnDeleteBill.Size = new System.Drawing.Size(191, 88);
+            this.btnDeleteBill.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteBill.Style.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteBill.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnDeleteBill.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnDeleteBill.TabIndex = 7;
+            this.btnDeleteBill.Text = "Xóa";
+            this.btnDeleteBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnDeleteBill, "Xóa hóa đơn");
+            this.btnDeleteBill.UseVisualStyleBackColor = false;
+            this.btnDeleteBill.Click += new System.EventHandler(this.btnDeleteBill_Click);
+            // 
+            // btnRecoverBill
+            // 
+            this.btnRecoverBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverBill.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRecoverBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecoverBill.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecoverBill.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverBill.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnRecoverBill.Location = new System.Drawing.Point(200, 3);
+            this.btnRecoverBill.Name = "btnRecoverBill";
+            this.btnRecoverBill.Size = new System.Drawing.Size(191, 88);
+            this.btnRecoverBill.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverBill.Style.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverBill.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnRecoverBill.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnRecoverBill.TabIndex = 8;
+            this.btnRecoverBill.Text = "Khôi phục";
+            this.btnRecoverBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnRecoverBill, "Khôi phục hóa đơn");
+            this.btnRecoverBill.UseVisualStyleBackColor = false;
+            this.btnRecoverBill.Click += new System.EventHandler(this.btnRecoverBill_Click);
+            // 
             // ucBill
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -773,10 +724,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblBill;
-        private Syncfusion.WinForms.Controls.SfButton btnAddBill;
-        private Syncfusion.WinForms.Controls.SfButton btnDeleteBill;
-        private Syncfusion.WinForms.Controls.SfButton btnEditBill;
-        private Syncfusion.WinForms.Controls.SfButton btnRecoverBill;
         private Syncfusion.WinForms.ListView.SfComboBox cboStateBooking;
         private Syncfusion.WinForms.Input.SfDateTimeEdit dtpBillDate;
         private System.Windows.Forms.SplitContainer spcQuery;
@@ -816,5 +763,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCCCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenDN;
         private System.Windows.Forms.TableLayoutPanel tlpCTHDController;
+        private Syncfusion.WinForms.Controls.SfButton btnRecoverBill;
+        private Syncfusion.WinForms.Controls.SfButton btnDeleteBill;
     }
 }

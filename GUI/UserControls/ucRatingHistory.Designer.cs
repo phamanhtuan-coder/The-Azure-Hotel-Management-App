@@ -178,13 +178,14 @@
             this.btnRecoverRating.Size = new System.Drawing.Size(191, 41);
             this.btnRecoverRating.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverRating.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverRating.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnRecoverRating.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnRecoverRating.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRecoverRating.TabIndex = 5;
             this.btnRecoverRating.Text = "Khôi phục";
             this.btnRecoverRating.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.btnRecoverRating, "Khôi phụcđánh giá");
             this.btnRecoverRating.UseVisualStyleBackColor = false;
+            this.btnRecoverRating.Click += new System.EventHandler(this.btnRecoverRating_Click);
             // 
             // cboStateRating
             // 

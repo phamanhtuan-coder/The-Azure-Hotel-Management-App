@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -316,6 +317,39 @@ namespace GUI.UserControls
             else
             {
                 LoadDSKhachHang();
+            }
+        }
+
+        private void dgvCustomer_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvCustomer.SelectedRows.Count > 0)
+            {
+                string columnName = "HinhAnh";
+                int columnIndex = dgvCustomer.Columns[columnName].Index;
+                object cellValue = dgvCustomer.SelectedRows[0].Cells[columnIndex].Value;
+
+                if (cellValue != null)
+                {
+                    byte[] hinh = (byte[])cellValue;
+                    picAvata.Image = ByteArrayToImage(hinh);
+                }
+                else
+                {
+                    picAvata.Image = Properties.Resources.no_pictures;
+                }
+            }
+        }
+        private static byte[] ImageToByteArray(Image img)
+        {
+            MemoryStream m = new MemoryStream();
+            img.Save(m, System.Drawing.Imaging.ImageFormat.Png);
+            return m.ToArray();
+        }
+        Image ByteArrayToImage(byte[] hinh)
+        {
+            using (MemoryStream m = new MemoryStream(hinh))
+            {
+                return Image.FromStream(m);
             }
         }
     }

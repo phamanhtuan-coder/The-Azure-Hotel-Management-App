@@ -40,20 +40,6 @@
             this.btnTraCuuCustomer = new Syncfusion.WinForms.Controls.SfButton();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
-            this.MaTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaLoaiHangTV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboGioiTinh = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortGioiTinh = new System.Windows.Forms.Label();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
@@ -67,6 +53,21 @@
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.picAvata = new System.Windows.Forms.PictureBox();
+            this.MaTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLoaiHangTV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HinhAnh = new System.Windows.Forms.DataGridViewImageColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
             this.spcQuery.Panel1.SuspendLayout();
@@ -82,6 +83,7 @@
             this.spcHeader.Panel1.SuspendLayout();
             this.spcHeader.Panel2.SuspendLayout();
             this.spcHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAvata)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCustomer
@@ -207,7 +209,7 @@
             // txtSearchCustomer
             // 
             this.txtSearchCustomer.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchCustomer.Location = new System.Drawing.Point(6, 16);
+            this.txtSearchCustomer.Location = new System.Drawing.Point(5, 188);
             this.txtSearchCustomer.Name = "txtSearchCustomer";
             this.txtSearchCustomer.Size = new System.Drawing.Size(251, 27);
             this.txtSearchCustomer.TabIndex = 7;
@@ -221,7 +223,7 @@
             this.btnTraCuuCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTraCuuCustomer.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTraCuuCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuCustomer.Location = new System.Drawing.Point(264, 16);
+            this.btnTraCuuCustomer.Location = new System.Drawing.Point(263, 188);
             this.btnTraCuuCustomer.Name = "btnTraCuuCustomer";
             this.btnTraCuuCustomer.Size = new System.Drawing.Size(118, 40);
             this.btnTraCuuCustomer.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
@@ -246,6 +248,7 @@
             // spcQuery.Panel2
             // 
             this.spcQuery.Panel2.BackColor = System.Drawing.Color.Lavender;
+            this.spcQuery.Panel2.Controls.Add(this.picAvata);
             this.spcQuery.Panel2.Controls.Add(this.cboGioiTinh);
             this.spcQuery.Panel2.Controls.Add(this.lblSortGioiTinh);
             this.spcQuery.Panel2.Controls.Add(this.dtpNgaySinh);
@@ -294,119 +297,7 @@
             this.dgvCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCustomer.Size = new System.Drawing.Size(973, 746);
             this.dgvCustomer.TabIndex = 6;
-            // 
-            // MaTaiKhoan
-            // 
-            this.MaTaiKhoan.DataPropertyName = "MaTaiKhoan";
-            this.MaTaiKhoan.HeaderText = "Mã tài khoản";
-            this.MaTaiKhoan.Name = "MaTaiKhoan";
-            this.MaTaiKhoan.ReadOnly = true;
-            this.MaTaiKhoan.Visible = false;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "MaKH";
-            this.ID.HeaderText = "Mã khách hàng";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // MaLoaiHangTV
-            // 
-            this.MaLoaiHangTV.DataPropertyName = "MaLoaiHangThanhVien";
-            this.MaLoaiHangTV.HeaderText = "Hạng thành viên";
-            this.MaLoaiHangTV.Name = "MaLoaiHangTV";
-            this.MaLoaiHangTV.ReadOnly = true;
-            this.MaLoaiHangTV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.MaLoaiHangTV.Visible = false;
-            // 
-            // HinhAnh
-            // 
-            this.HinhAnh.DataPropertyName = "HinhAnh";
-            this.HinhAnh.HeaderText = "Hình ảnh";
-            this.HinhAnh.Name = "HinhAnh";
-            this.HinhAnh.ReadOnly = true;
-            this.HinhAnh.Visible = false;
-            // 
-            // HoTen
-            // 
-            this.HoTen.DataPropertyName = "HoTenKH";
-            this.HoTen.HeaderText = "Họ và tên";
-            this.HoTen.Name = "HoTen";
-            this.HoTen.ReadOnly = true;
-            this.HoTen.Width = 94;
-            // 
-            // colTenHang
-            // 
-            this.colTenHang.DataPropertyName = "TenHang";
-            this.colTenHang.HeaderText = "Tên hạng";
-            this.colTenHang.Name = "colTenHang";
-            this.colTenHang.ReadOnly = true;
-            this.colTenHang.Width = 93;
-            // 
-            // colTenTaiKhoan
-            // 
-            this.colTenTaiKhoan.DataPropertyName = "TenDangNhap";
-            this.colTenTaiKhoan.HeaderText = "Tên đăng nhập";
-            this.colTenTaiKhoan.Name = "colTenTaiKhoan";
-            this.colTenTaiKhoan.ReadOnly = true;
-            this.colTenTaiKhoan.Width = 129;
-            // 
-            // colGioiTinh
-            // 
-            this.colGioiTinh.DataPropertyName = "GioiTinh";
-            this.colGioiTinh.HeaderText = "Giới tính";
-            this.colGioiTinh.Name = "colGioiTinh";
-            this.colGioiTinh.ReadOnly = true;
-            this.colGioiTinh.Width = 85;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Width = 73;
-            // 
-            // CCCD
-            // 
-            this.CCCD.DataPropertyName = "CCCD";
-            this.CCCD.HeaderText = "CCCD";
-            this.CCCD.Name = "CCCD";
-            this.CCCD.ReadOnly = true;
-            this.CCCD.Width = 79;
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.DataPropertyName = "NgaySinh";
-            this.NgaySinh.HeaderText = "Ngày sinh";
-            this.NgaySinh.Name = "NgaySinh";
-            this.NgaySinh.ReadOnly = true;
-            this.NgaySinh.Width = 95;
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "SĐT";
-            this.SDT.Name = "SDT";
-            this.SDT.ReadOnly = true;
-            this.SDT.Width = 66;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.DataPropertyName = "DiaChi";
-            this.DiaChi.HeaderText = "Địa chỉ";
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.ReadOnly = true;
-            this.DiaChi.Width = 58;
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.DataPropertyName = "TrangThai";
-            this.TrangThai.HeaderText = "Trạng thái";
-            this.TrangThai.Name = "TrangThai";
-            this.TrangThai.ReadOnly = true;
-            this.TrangThai.Visible = false;
+            this.dgvCustomer.SelectionChanged += new System.EventHandler(this.dgvCustomer_SelectionChanged);
             // 
             // cboGioiTinh
             // 
@@ -415,7 +306,7 @@
             this.cboGioiTinh.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboGioiTinh.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboGioiTinh.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
-            this.cboGioiTinh.Location = new System.Drawing.Point(226, 197);
+            this.cboGioiTinh.Location = new System.Drawing.Point(225, 369);
             this.cboGioiTinh.Name = "cboGioiTinh";
             this.cboGioiTinh.Size = new System.Drawing.Size(156, 33);
             this.cboGioiTinh.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -431,7 +322,7 @@
             // 
             this.lblSortGioiTinh.AutoSize = true;
             this.lblSortGioiTinh.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
-            this.lblSortGioiTinh.Location = new System.Drawing.Point(3, 204);
+            this.lblSortGioiTinh.Location = new System.Drawing.Point(2, 376);
             this.lblSortGioiTinh.Name = "lblSortGioiTinh";
             this.lblSortGioiTinh.Size = new System.Drawing.Size(183, 26);
             this.lblSortGioiTinh.TabIndex = 13;
@@ -443,7 +334,7 @@
             this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
             this.dtpNgaySinh.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(226, 255);
+            this.dtpNgaySinh.Location = new System.Drawing.Point(225, 427);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(156, 30);
             this.dtpNgaySinh.TabIndex = 16;
@@ -456,7 +347,7 @@
             this.cboHangTV.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboHangTV.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboHangTV.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
-            this.cboHangTV.Location = new System.Drawing.Point(226, 139);
+            this.cboHangTV.Location = new System.Drawing.Point(225, 311);
             this.cboHangTV.Name = "cboHangTV";
             this.cboHangTV.Size = new System.Drawing.Size(156, 33);
             this.cboHangTV.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -472,7 +363,7 @@
             // 
             this.lblSortHangTV.AutoSize = true;
             this.lblSortHangTV.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
-            this.lblSortHangTV.Location = new System.Drawing.Point(3, 146);
+            this.lblSortHangTV.Location = new System.Drawing.Point(2, 318);
             this.lblSortHangTV.Name = "lblSortHangTV";
             this.lblSortHangTV.Size = new System.Drawing.Size(152, 26);
             this.lblSortHangTV.TabIndex = 11;
@@ -486,7 +377,7 @@
             this.cboSortCustomerID.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboSortCustomerID.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboSortCustomerID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
-            this.cboSortCustomerID.Location = new System.Drawing.Point(226, 81);
+            this.cboSortCustomerID.Location = new System.Drawing.Point(225, 253);
             this.cboSortCustomerID.Name = "cboSortCustomerID";
             this.cboSortCustomerID.Size = new System.Drawing.Size(156, 33);
             this.cboSortCustomerID.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -502,7 +393,7 @@
             // 
             this.lblSortCustomerID.AutoSize = true;
             this.lblSortCustomerID.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
-            this.lblSortCustomerID.Location = new System.Drawing.Point(3, 88);
+            this.lblSortCustomerID.Location = new System.Drawing.Point(2, 260);
             this.lblSortCustomerID.Name = "lblSortCustomerID";
             this.lblSortCustomerID.Size = new System.Drawing.Size(217, 26);
             this.lblSortCustomerID.TabIndex = 9;
@@ -516,7 +407,7 @@
             this.cboStateAccounts.DropDownPosition = Syncfusion.WinForms.Core.Enums.PopupRelativeAlignment.Center;
             this.cboStateAccounts.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
             this.cboStateAccounts.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
-            this.cboStateAccounts.Location = new System.Drawing.Point(226, 307);
+            this.cboStateAccounts.Location = new System.Drawing.Point(225, 479);
             this.cboStateAccounts.Name = "cboStateAccounts";
             this.cboStateAccounts.Size = new System.Drawing.Size(156, 33);
             this.cboStateAccounts.Style.DropDownStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -532,7 +423,7 @@
             // 
             this.lblNgaySinh.AutoSize = true;
             this.lblNgaySinh.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
-            this.lblNgaySinh.Location = new System.Drawing.Point(3, 259);
+            this.lblNgaySinh.Location = new System.Drawing.Point(2, 431);
             this.lblNgaySinh.Name = "lblNgaySinh";
             this.lblNgaySinh.Size = new System.Drawing.Size(110, 26);
             this.lblNgaySinh.TabIndex = 15;
@@ -543,7 +434,7 @@
             // 
             this.lblStateAccounts.AutoSize = true;
             this.lblStateAccounts.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
-            this.lblStateAccounts.Location = new System.Drawing.Point(3, 315);
+            this.lblStateAccounts.Location = new System.Drawing.Point(2, 487);
             this.lblStateAccounts.Name = "lblStateAccounts";
             this.lblStateAccounts.Size = new System.Drawing.Size(186, 26);
             this.lblStateAccounts.TabIndex = 17;
@@ -579,6 +470,137 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
+            // picAvata
+            // 
+            this.picAvata.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.picAvata.Image = ((System.Drawing.Image)(resources.GetObject("picAvata.Image")));
+            this.picAvata.Location = new System.Drawing.Point(121, 6);
+            this.picAvata.Name = "picAvata";
+            this.picAvata.Size = new System.Drawing.Size(171, 164);
+            this.picAvata.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAvata.TabIndex = 40;
+            this.picAvata.TabStop = false;
+            // 
+            // MaTaiKhoan
+            // 
+            this.MaTaiKhoan.DataPropertyName = "MaTaiKhoan";
+            this.MaTaiKhoan.HeaderText = "Mã tài khoản";
+            this.MaTaiKhoan.Name = "MaTaiKhoan";
+            this.MaTaiKhoan.ReadOnly = true;
+            this.MaTaiKhoan.Visible = false;
+            this.MaTaiKhoan.Width = 106;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "MaKH";
+            this.ID.HeaderText = "Mã khách hàng";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            this.ID.Width = 124;
+            // 
+            // MaLoaiHangTV
+            // 
+            this.MaLoaiHangTV.DataPropertyName = "MaLoaiHangThanhVien";
+            this.MaLoaiHangTV.HeaderText = "Hạng thành viên";
+            this.MaLoaiHangTV.Name = "MaLoaiHangTV";
+            this.MaLoaiHangTV.ReadOnly = true;
+            this.MaLoaiHangTV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.MaLoaiHangTV.Visible = false;
+            this.MaLoaiHangTV.Width = 131;
+            // 
+            // HinhAnh
+            // 
+            this.HinhAnh.DataPropertyName = "HinhAnh";
+            this.HinhAnh.HeaderText = "Hình ảnh";
+            this.HinhAnh.Name = "HinhAnh";
+            this.HinhAnh.ReadOnly = true;
+            this.HinhAnh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.HinhAnh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.HinhAnh.Visible = false;
+            this.HinhAnh.Width = 79;
+            // 
+            // HoTen
+            // 
+            this.HoTen.DataPropertyName = "HoTenKH";
+            this.HoTen.HeaderText = "Họ và tên";
+            this.HoTen.Name = "HoTen";
+            this.HoTen.ReadOnly = true;
+            this.HoTen.Width = 102;
+            // 
+            // colTenHang
+            // 
+            this.colTenHang.DataPropertyName = "TenHang";
+            this.colTenHang.HeaderText = "Tên hạng";
+            this.colTenHang.Name = "colTenHang";
+            this.colTenHang.ReadOnly = true;
+            this.colTenHang.Width = 101;
+            // 
+            // colTenTaiKhoan
+            // 
+            this.colTenTaiKhoan.DataPropertyName = "TenDangNhap";
+            this.colTenTaiKhoan.HeaderText = "Tên đăng nhập";
+            this.colTenTaiKhoan.Name = "colTenTaiKhoan";
+            this.colTenTaiKhoan.ReadOnly = true;
+            this.colTenTaiKhoan.Width = 141;
+            // 
+            // colGioiTinh
+            // 
+            this.colGioiTinh.DataPropertyName = "GioiTinh";
+            this.colGioiTinh.HeaderText = "Giới tính";
+            this.colGioiTinh.Name = "colGioiTinh";
+            this.colGioiTinh.ReadOnly = true;
+            this.colGioiTinh.Width = 92;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 73;
+            // 
+            // CCCD
+            // 
+            this.CCCD.DataPropertyName = "CCCD";
+            this.CCCD.HeaderText = "CCCD";
+            this.CCCD.Name = "CCCD";
+            this.CCCD.ReadOnly = true;
+            this.CCCD.Width = 79;
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.HeaderText = "Ngày sinh";
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.ReadOnly = true;
+            this.NgaySinh.Width = 103;
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "SĐT";
+            this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
+            this.SDT.Width = 66;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.ReadOnly = true;
+            this.DiaChi.Width = 82;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.DataPropertyName = "TrangThai";
+            this.TrangThai.HeaderText = "Trạng thái";
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.ReadOnly = true;
+            this.TrangThai.Visible = false;
+            this.TrangThai.Width = 105;
+            // 
             // ucCustomer
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -605,6 +627,7 @@
             this.spcHeader.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcHeader)).EndInit();
             this.spcHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picAvata)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -633,10 +656,12 @@
         private Syncfusion.WinForms.ListView.SfComboBox cboGioiTinh;
         private System.Windows.Forms.Label lblSortGioiTinh;
         private System.Windows.Forms.DataGridView dgvCustomer;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.PictureBox picAvata;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTaiKhoan;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaLoaiHangTV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HinhAnh;
+        private System.Windows.Forms.DataGridViewImageColumn HinhAnh;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenTaiKhoan;
@@ -647,6 +672,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
-        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

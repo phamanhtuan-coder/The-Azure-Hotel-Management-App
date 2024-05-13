@@ -1,6 +1,7 @@
 ﻿using BLL;
 using DTO;
 using GUI.customForm;
+using Microsoft.Reporting.Map.WebForms.BingMaps;
 using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
@@ -382,7 +383,8 @@ namespace GUI.UserControls
                 }
                 else
                 {
-                    picAvata.Image = null;
+
+                    picAvata.Image = Properties.Resources.no_pictures;
                 }
             }
         }

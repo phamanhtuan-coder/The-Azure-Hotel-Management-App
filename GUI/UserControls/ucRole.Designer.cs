@@ -118,6 +118,7 @@
             this.btnDeleteRole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.btnDeleteRole, "Xóa phân quyền");
             this.btnDeleteRole.UseVisualStyleBackColor = false;
+            this.btnDeleteRole.Click += new System.EventHandler(this.btnDeleteRole_Click);
             // 
             // btnRecoverRole
             // 

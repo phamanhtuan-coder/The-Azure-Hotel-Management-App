@@ -52,22 +52,19 @@ namespace GUI.UserControls
             if (MaPHQ.Contains("01"))
             {
 
-                btnAddBill.Enabled = false;
-                btnEditBill.Enabled = false;
+                
                 btnDeleteBill.Enabled = false;
                 btnRecoverBill.Enabled = false;
             }
             else if (MaPHQ.Contains("03"))
             {
-                btnAddBill.Enabled = true;
-                btnEditBill.Enabled = true;
+                
                 btnDeleteBill.Enabled = false;
                 btnRecoverBill.Enabled = false;
             }
             else if (MaPHQ.Contains("04") || (MaPHQ.Contains("02")))
             {
-                btnAddBill.Enabled = true;
-                btnEditBill.Enabled = true;
+                
                 btnDeleteBill.Enabled = true;
                 btnRecoverBill.Enabled = true;
             }
