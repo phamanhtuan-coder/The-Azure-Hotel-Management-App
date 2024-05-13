@@ -84,7 +84,9 @@ namespace GUI.customForm
             {
                 if ( string.IsNullOrWhiteSpace( rtxtNhanXet.Text.Trim()))
                 {
-                    
+                    thongBao = new customMessageBox("Nhận xét không được phép bỏ trống!");
+                    thongBao.ShowDialog();
+                    return; 
                 }
                 // Nếu đúng là form Thêm thì chạy lệnh insert
                 if (ThemDanhGia())

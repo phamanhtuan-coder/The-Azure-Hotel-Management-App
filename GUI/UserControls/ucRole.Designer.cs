@@ -38,7 +38,6 @@
             this.btnTraCuuRole = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateRole = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
-            this.ucDashboard1 = new GUI.UserControls.ucDashboard();
             this.dgvRole = new System.Windows.Forms.DataGridView();
             this.colPQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -199,7 +198,6 @@
             // 
             // spcQuery.Panel1
             // 
-            this.spcQuery.Panel1.Controls.Add(this.ucDashboard1);
             this.spcQuery.Panel1.Controls.Add(this.dgvRole);
             // 
             // spcQuery.Panel2
@@ -215,16 +213,6 @@
             this.spcQuery.Size = new System.Drawing.Size(1370, 746);
             this.spcQuery.SplitterDistance = 973;
             this.spcQuery.TabIndex = 38;
-            // 
-            // ucDashboard1
-            // 
-            this.ucDashboard1.BackColor = System.Drawing.Color.White;
-            this.ucDashboard1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ucDashboard1.Location = new System.Drawing.Point(976, 2);
-            this.ucDashboard1.Margin = new System.Windows.Forms.Padding(0);
-            this.ucDashboard1.Name = "ucDashboard1";
-            this.ucDashboard1.Size = new System.Drawing.Size(1353, 840);
-            this.ucDashboard1.TabIndex = 1;
             // 
             // dgvRole
             // 
@@ -448,7 +436,6 @@
         private Syncfusion.WinForms.ListView.SfComboBox cboSortRole;
         private System.Windows.Forms.Label lblSortServiceTypeID;
         private System.Windows.Forms.DataGridView dgvRole;
-        private ucDashboard ucDashboard1;
         private System.Windows.Forms.ToolTip toolTip1;
         private Syncfusion.WinForms.Controls.SfButton btnAddRole;
         private Syncfusion.WinForms.Controls.SfButton btnDeleteRole;

@@ -1593,7 +1593,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>2.4675in</Height>
+          <Height>1.7175in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1631,7 +1631,7 @@
                     <TextRun>
                       <Value>XIN CẢM ƠN QUÝ KHÁCH ĐÃ TIN DÙNG DỊCH VỤ CỦA CHÚNG TÔI!</Value>
                       <Style>
-                        <FontSize>14pt</FontSize>
+                        <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1645,7 +1645,7 @@
                     <TextRun>
                       <Value>THÂN HẸN GẶP LẠI QUÝ KHÁCH VÀO NHỮNG DỊP KHÁC!</Value>
                       <Style>
-                        <FontSize>14pt</FontSize>
+                        <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1659,35 +1659,7 @@
                     <TextRun>
                       <Value />
                       <Style>
-                        <FontSize>14pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value />
-                      <Style>
-                        <FontSize>14pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value />
-                      <Style>
-                        <FontSize>14pt</FontSize>
+                        <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1701,7 +1673,7 @@
                     <TextRun>
                       <Value>Hóa đơn GTGT chỉ xuất trong ngày</Value>
                       <Style>
-                        <FontSize>14pt</FontSize>
+                        <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1715,7 +1687,7 @@
                     <TextRun>
                       <Value>VAT Invoice request is valid within the date of purchase only!</Value>
                       <Style>
-                        <FontSize>14pt</FontSize>
+                        <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1729,7 +1701,6 @@
                     <TextRun>
                       <Value />
                       <Style>
-                        <FontFamily>montserrat</FontFamily>
                         <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
@@ -1743,7 +1714,7 @@
               <rd:DefaultName>Textbox4</rd:DefaultName>
               <Top>0.31471in</Top>
               <Left>0.50917in</Left>
-              <Height>2.03125in</Height>
+              <Height>1.29167in</Height>
               <Width>7.625in</Width>
               <ZIndex>1</ZIndex>
               <Style>
@@ -1757,7 +1728,7 @@
               </Style>
             </Textbox>
             <Line Name="Line4">
-              <Top>1.3368in</Top>
+              <Top>1.12847in</Top>
               <Left>0.50917in</Left>
               <Height>0in</Height>
               <Width>7.625in</Width>
@@ -1769,7 +1740,7 @@
               </Style>
             </Line>
             <Line Name="Line5">
-              <Top>1.40624in</Top>
+              <Top>1.01041in</Top>
               <Left>0.50917in</Left>
               <Height>0in</Height>
               <Width>7.625in</Width>

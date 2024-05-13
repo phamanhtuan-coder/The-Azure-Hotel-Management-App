@@ -149,11 +149,13 @@
             this.okButton.Size = new System.Drawing.Size(79, 21);
             this.okButton.TabIndex = 24;
             this.okButton.Text = "&OK";
+            this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // frmTacGia
             // 
             this.AcceptButton = this.okButton;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.CancelButton = this.okButton;
             this.ClientSize = new System.Drawing.Size(387, 294);
             this.Controls.Add(this.tableLayoutPanel);
             this.Font = new System.Drawing.Font("Montserrat Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

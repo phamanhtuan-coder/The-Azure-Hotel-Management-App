@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            Syncfusion.Windows.Forms.Tools.DigitalClockRenderer digitalClockRenderer2 = new Syncfusion.Windows.Forms.Tools.DigitalClockRenderer();
-            Syncfusion.Windows.Forms.Tools.ClockRenderer clockRenderer2 = new Syncfusion.Windows.Forms.Tools.ClockRenderer();
+            Syncfusion.Windows.Forms.Tools.DigitalClockRenderer digitalClockRenderer1 = new Syncfusion.Windows.Forms.Tools.DigitalClockRenderer();
+            Syncfusion.Windows.Forms.Tools.ClockRenderer clockRenderer1 = new Syncfusion.Windows.Forms.Tools.ClockRenderer();
             this.tmrSideBar = new System.Windows.Forms.Timer(this.components);
             this.panDesktop = new System.Windows.Forms.Panel();
             this.panRoomBooking = new System.Windows.Forms.Panel();
@@ -212,7 +212,7 @@
             this.btnRoomBooking.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnRoomBooking.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnRoomBooking.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnRoomBooking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
+            this.btnRoomBooking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnRoomBooking.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRoomBooking.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnRoomBooking.Style.PressedForeColor = System.Drawing.Color.White;
@@ -248,7 +248,7 @@
             this.btnDashBoard.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnDashBoard.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnDashBoard.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnDashBoard.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image9")));
+            this.btnDashBoard.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnDashBoard.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnDashBoard.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnDashBoard.Style.PressedForeColor = System.Drawing.Color.White;
@@ -271,6 +271,7 @@
             // 
             this.btnLogOut.AccessibleName = "Button";
             this.btnLogOut.BackColor = System.Drawing.Color.DarkRed;
+            this.btnLogOut.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnLogOut.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnLogOut.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -286,7 +287,7 @@
             this.btnLogOut.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnLogOut.Style.HoverForeColor = System.Drawing.Color.DarkRed;
             this.btnLogOut.Style.HoverImageForeColor = System.Drawing.Color.DarkRed;
-            this.btnLogOut.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnLogOut.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnLogOut.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnLogOut.Style.PressedBackColor = System.Drawing.Color.DarkRed;
             this.btnLogOut.Style.PressedForeColor = System.Drawing.Color.White;
@@ -338,7 +339,7 @@
             this.btnBookingManagement.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnBookingManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnBookingManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnBookingManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image10")));
+            this.btnBookingManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnBookingManagement.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnBookingManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnBookingManagement.Style.PressedForeColor = System.Drawing.Color.White;
@@ -376,7 +377,7 @@
             this.btnBooking.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnBooking.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnBooking.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnBooking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image11")));
+            this.btnBooking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.btnBooking.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnBooking.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnBooking.Style.PressedForeColor = System.Drawing.Color.White;
@@ -415,7 +416,7 @@
             this.btnServiceType.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnServiceType.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnServiceType.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnServiceType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image12")));
+            this.btnServiceType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
             this.btnServiceType.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnServiceType.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnServiceType.Style.PressedForeColor = System.Drawing.Color.White;
@@ -454,7 +455,7 @@
             this.btnService.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnService.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnService.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnService.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image13")));
+            this.btnService.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
             this.btnService.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnService.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnService.Style.PressedForeColor = System.Drawing.Color.White;
@@ -505,7 +506,7 @@
             this.btnMaintanceManagement.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnMaintanceManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnMaintanceManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnMaintanceManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnMaintanceManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
             this.btnMaintanceManagement.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnMaintanceManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnMaintanceManagement.Style.PressedForeColor = System.Drawing.Color.White;
@@ -542,7 +543,7 @@
             this.btnMaintance.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnMaintance.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnMaintance.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnMaintance.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnMaintance.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
             this.btnMaintance.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnMaintance.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnMaintance.Style.PressedForeColor = System.Drawing.Color.White;
@@ -601,7 +602,7 @@
             this.btnAccountManagement.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnAccountManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnAccountManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnAccountManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image14")));
+            this.btnAccountManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image9")));
             this.btnAccountManagement.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnAccountManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnAccountManagement.Style.PressedForeColor = System.Drawing.Color.White;
@@ -638,7 +639,7 @@
             this.btnAccount.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnAccount.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnAccount.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnAccount.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image15")));
+            this.btnAccount.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image10")));
             this.btnAccount.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnAccount.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnAccount.Style.PressedForeColor = System.Drawing.Color.White;
@@ -676,7 +677,7 @@
             this.btnAccountType.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnAccountType.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnAccountType.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnAccountType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image16")));
+            this.btnAccountType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image11")));
             this.btnAccountType.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnAccountType.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnAccountType.Style.PressedForeColor = System.Drawing.Color.White;
@@ -728,7 +729,7 @@
             this.btnRoomManagement.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnRoomManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnRoomManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnRoomManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image17")));
+            this.btnRoomManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image12")));
             this.btnRoomManagement.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRoomManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnRoomManagement.Style.PressedForeColor = System.Drawing.Color.White;
@@ -765,7 +766,7 @@
             this.btnRoom.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnRoom.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnRoom.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image18")));
+            this.btnRoom.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image13")));
             this.btnRoom.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRoom.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnRoom.Style.PressedForeColor = System.Drawing.Color.White;
@@ -803,7 +804,7 @@
             this.btnRoomType.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnRoomType.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnRoomType.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnRoomType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image19")));
+            this.btnRoomType.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image14")));
             this.btnRoomType.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRoomType.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnRoomType.Style.PressedForeColor = System.Drawing.Color.White;
@@ -841,7 +842,7 @@
             this.btnRoomStatus.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnRoomStatus.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnRoomStatus.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnRoomStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image20")));
+            this.btnRoomStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image15")));
             this.btnRoomStatus.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRoomStatus.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnRoomStatus.Style.PressedForeColor = System.Drawing.Color.White;
@@ -894,7 +895,7 @@
             this.btnStaffManagement.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnStaffManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnStaffManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnStaffManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image21")));
+            this.btnStaffManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image16")));
             this.btnStaffManagement.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnStaffManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnStaffManagement.Style.PressedForeColor = System.Drawing.Color.White;
@@ -931,7 +932,7 @@
             this.btnStaff.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnStaff.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnStaff.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image22")));
+            this.btnStaff.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image17")));
             this.btnStaff.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnStaff.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnStaff.Style.PressedForeColor = System.Drawing.Color.White;
@@ -969,7 +970,7 @@
             this.btnDepartment.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnDepartment.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnDepartment.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image23")));
+            this.btnDepartment.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image18")));
             this.btnDepartment.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnDepartment.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnDepartment.Style.PressedForeColor = System.Drawing.Color.White;
@@ -1007,7 +1008,7 @@
             this.btnRole.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnRole.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnRole.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnRole.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image24")));
+            this.btnRole.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image19")));
             this.btnRole.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRole.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnRole.Style.PressedForeColor = System.Drawing.Color.White;
@@ -1059,7 +1060,7 @@
             this.btnFinaceManagement.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnFinaceManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnFinaceManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnFinaceManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image25")));
+            this.btnFinaceManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image20")));
             this.btnFinaceManagement.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnFinaceManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnFinaceManagement.Style.PressedForeColor = System.Drawing.Color.White;
@@ -1096,7 +1097,7 @@
             this.btnHoaDon.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnHoaDon.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnHoaDon.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnHoaDon.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image26")));
+            this.btnHoaDon.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image21")));
             this.btnHoaDon.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnHoaDon.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnHoaDon.Style.PressedForeColor = System.Drawing.Color.White;
@@ -1134,7 +1135,7 @@
             this.btnTax.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnTax.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnTax.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnTax.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image27")));
+            this.btnTax.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image22")));
             this.btnTax.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnTax.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnTax.Style.PressedForeColor = System.Drawing.Color.White;
@@ -1172,7 +1173,7 @@
             this.btnDiscount.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnDiscount.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnDiscount.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnDiscount.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image28")));
+            this.btnDiscount.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image23")));
             this.btnDiscount.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnDiscount.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnDiscount.Style.PressedForeColor = System.Drawing.Color.White;
@@ -1223,7 +1224,7 @@
             this.btnDeviceManagement.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnDeviceManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnDeviceManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnDeviceManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnDeviceManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image24")));
             this.btnDeviceManagement.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnDeviceManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnDeviceManagement.Style.PressedForeColor = System.Drawing.Color.White;
@@ -1260,7 +1261,7 @@
             this.btnThietBi.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnThietBi.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnThietBi.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnThietBi.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.btnThietBi.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image25")));
             this.btnThietBi.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnThietBi.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnThietBi.Style.PressedForeColor = System.Drawing.Color.White;
@@ -1298,7 +1299,7 @@
             this.btnDeviceStatus.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnDeviceStatus.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnDeviceStatus.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnDeviceStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            this.btnDeviceStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image26")));
             this.btnDeviceStatus.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnDeviceStatus.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnDeviceStatus.Style.PressedForeColor = System.Drawing.Color.White;
@@ -1349,7 +1350,7 @@
             this.btnHousekeepingManagement.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnHousekeepingManagement.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnHousekeepingManagement.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnHousekeepingManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            this.btnHousekeepingManagement.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image27")));
             this.btnHousekeepingManagement.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnHousekeepingManagement.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnHousekeepingManagement.Style.PressedForeColor = System.Drawing.Color.White;
@@ -1386,7 +1387,7 @@
             this.btnHousekeeping.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnHousekeeping.Style.HoverForeColor = System.Drawing.Color.Teal;
             this.btnHousekeeping.Style.HoverImageForeColor = System.Drawing.Color.Teal;
-            this.btnHousekeeping.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
+            this.btnHousekeeping.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image28")));
             this.btnHousekeeping.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnHousekeeping.Style.PressedBackColor = System.Drawing.Color.DarkCyan;
             this.btnHousekeeping.Style.PressedForeColor = System.Drawing.Color.White;
@@ -1699,8 +1700,8 @@
             this.realTimeClock.ClockShape = Syncfusion.Windows.Forms.Tools.ClockShapes.RoundedRectangle;
             this.realTimeClock.ClockType = Syncfusion.Windows.Forms.Tools.ClockTypes.Digital;
             this.realTimeClock.CurrentDateTime = new System.DateTime(2024, 3, 9, 23, 55, 38, 42);
-            this.realTimeClock.CustomTime = new System.DateTime(2024, 5, 11, 19, 25, 40, 212);
-            this.realTimeClock.DigitalRenderer = digitalClockRenderer2;
+            this.realTimeClock.CustomTime = new System.DateTime(2024, 5, 13, 19, 45, 57, 999);
+            this.realTimeClock.DigitalRenderer = digitalClockRenderer1;
             this.realTimeClock.DisplayDates = false;
             this.realTimeClock.Location = new System.Drawing.Point(1347, 0);
             this.realTimeClock.Margin = new System.Windows.Forms.Padding(0);
@@ -1710,7 +1711,7 @@
             this.realTimeClock.Name = "realTimeClock";
             this.realTimeClock.Now = new System.DateTime(((long)(0)));
             this.realTimeClock.Remainder = new System.DateTime(2024, 3, 9, 23, 55, 38, 34);
-            this.realTimeClock.Renderer = clockRenderer2;
+            this.realTimeClock.Renderer = clockRenderer1;
             this.realTimeClock.ShowClockFrame = false;
             this.realTimeClock.ShowCustomTimeClock = true;
             this.realTimeClock.ShowHourDesignator = false;
@@ -1803,11 +1804,13 @@
             // 
             // frmMain
             // 
+            this.AcceptButton = this.btnMenu;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.CancelButton = this.btnLogOut;
             this.ClientSize = new System.Drawing.Size(1600, 900);
             this.Controls.Add(this.panDesktop);
             this.Controls.Add(this.flpanSideBar);

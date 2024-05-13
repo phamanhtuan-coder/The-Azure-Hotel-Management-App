@@ -68,6 +68,42 @@ namespace DAL
             }
         }
 
+        public List<DanhGiaDTO> LayDanhGiaMoiNhat()
+        {
+            try
+            {
+                dsDanhGia = new List<DanhGiaDTO>();
+                string lenhLay = "  SELECT TOP 15 DG.*,KH.HoTenKH,TK.TenDangNhap FROM DanhGia DG join DatPhong DP on DG.MaDP = DP.MaDatPhong join KhachHang KH on DP.MaKH = KH.MaKH  join BangTaiKhoan TK on KH.MaTaiKhoan = TK.MaTaiKhoan Where CAST (  DG.TrangThai AS INT)  =1 order by DG.NgayDanhGia DESC";
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+                SqlDataReader reader = DataProvider.ThucHienTruyVan(lenhLay, conn);
+                while (reader.Read())
+                {
+                    danhGia = new DanhGiaDTO();
+                    danhGia.MaDG = (int)reader["MaDG"];
+                    danhGia.MaDP = (int)reader["MaDP"];
+                    danhGia.DiemDanhGia = (int)reader["DiemDanhGia"];
+                    danhGia.NhanXet = reader["NhanXet"].ToString();
+                    danhGia.NgayDanhGia = DateTime.Parse(reader["NgayDanhGia"].ToString());
+                    danhGia.HoTenKH = reader["HoTenKH"].ToString();
+                    danhGia.TenDangNhap = reader["TenDangNhap"].ToString();
+                    byte[] trangThaiBytes = (byte[])reader["TrangThai"];
+                    bool trangThai = trangThaiBytes[0] == 1;
+                    danhGia.TrangThai = trangThai;
+
+                    dsDanhGia.Add(danhGia);
+                }
+                reader.Close();
+                conn.Close();
+                return dsDanhGia;
+            }
+            catch (Exception)
+            {
+
+                return new List<DanhGiaDTO>();
+            }
+        }
+
         public List<DanhGiaDTO> LayDanhSachDanhGia()
         {
             try

@@ -198,7 +198,7 @@
             this.btnRecoverBooking.Size = new System.Drawing.Size(191, 41);
             this.btnRecoverBooking.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
             this.btnRecoverBooking.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverBooking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnRecoverBooking.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnRecoverBooking.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnRecoverBooking.TabIndex = 5;
             this.btnRecoverBooking.Text = "Khôi phục";
@@ -528,7 +528,7 @@
             this.btnCheckIn.Size = new System.Drawing.Size(108, 64);
             this.btnCheckIn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.btnCheckIn.Style.ForeColor = System.Drawing.Color.White;
-            this.btnCheckIn.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnCheckIn.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.btnCheckIn.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnCheckIn.TabIndex = 24;
             this.btnCheckIn.Text = "Check-In";
@@ -549,7 +549,7 @@
             this.btnCancel.Size = new System.Drawing.Size(108, 64);
             this.btnCancel.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnCancel.Style.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnCancel.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
             this.btnCancel.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnCancel.TabIndex = 26;
             this.btnCancel.Text = "Cancel";
@@ -570,7 +570,7 @@
             this.btnCheckOut.Size = new System.Drawing.Size(108, 64);
             this.btnCheckOut.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
             this.btnCheckOut.Style.ForeColor = System.Drawing.Color.White;
-            this.btnCheckOut.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnCheckOut.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
             this.btnCheckOut.Style.ImageForeColor = System.Drawing.Color.White;
             this.btnCheckOut.TabIndex = 25;
             this.btnCheckOut.Text = "Check-Out";

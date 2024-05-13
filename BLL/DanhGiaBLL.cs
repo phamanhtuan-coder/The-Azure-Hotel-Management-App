@@ -12,6 +12,11 @@ namespace BLL
     {
         public DanhGiaDAL danhGiaDAL = new DanhGiaDAL();
 
+        public List <DanhGiaDTO> LayDanhGiaMoiNhat()
+        {
+            return danhGiaDAL.LayDanhGiaMoiNhat();
+        }
+
         public List<DanhGiaDTO> FilterTrangThai(string trangThai)
         {
             if (trangThai == "Đang hoạt động")

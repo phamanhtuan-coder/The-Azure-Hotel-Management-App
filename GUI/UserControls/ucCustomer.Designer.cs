@@ -268,6 +268,7 @@
             this.dgvCustomer.AllowUserToDeleteRows = false;
             this.dgvCustomer.AllowUserToResizeColumns = false;
             this.dgvCustomer.AllowUserToResizeRows = false;
+            this.dgvCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaTaiKhoan,
@@ -333,6 +334,7 @@
             this.HoTen.HeaderText = "Họ và tên";
             this.HoTen.Name = "HoTen";
             this.HoTen.ReadOnly = true;
+            this.HoTen.Width = 94;
             // 
             // colTenHang
             // 
@@ -340,6 +342,7 @@
             this.colTenHang.HeaderText = "Tên hạng";
             this.colTenHang.Name = "colTenHang";
             this.colTenHang.ReadOnly = true;
+            this.colTenHang.Width = 93;
             // 
             // colTenTaiKhoan
             // 
@@ -347,6 +350,7 @@
             this.colTenTaiKhoan.HeaderText = "Tên đăng nhập";
             this.colTenTaiKhoan.Name = "colTenTaiKhoan";
             this.colTenTaiKhoan.ReadOnly = true;
+            this.colTenTaiKhoan.Width = 129;
             // 
             // colGioiTinh
             // 
@@ -354,6 +358,7 @@
             this.colGioiTinh.HeaderText = "Giới tính";
             this.colGioiTinh.Name = "colGioiTinh";
             this.colGioiTinh.ReadOnly = true;
+            this.colGioiTinh.Width = 85;
             // 
             // Email
             // 
@@ -361,6 +366,7 @@
             this.Email.HeaderText = "Email";
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
+            this.Email.Width = 73;
             // 
             // CCCD
             // 
@@ -368,6 +374,7 @@
             this.CCCD.HeaderText = "CCCD";
             this.CCCD.Name = "CCCD";
             this.CCCD.ReadOnly = true;
+            this.CCCD.Width = 79;
             // 
             // NgaySinh
             // 
@@ -375,6 +382,7 @@
             this.NgaySinh.HeaderText = "Ngày sinh";
             this.NgaySinh.Name = "NgaySinh";
             this.NgaySinh.ReadOnly = true;
+            this.NgaySinh.Width = 95;
             // 
             // SDT
             // 
@@ -382,6 +390,7 @@
             this.SDT.HeaderText = "SĐT";
             this.SDT.Name = "SDT";
             this.SDT.ReadOnly = true;
+            this.SDT.Width = 66;
             // 
             // DiaChi
             // 
@@ -389,6 +398,7 @@
             this.DiaChi.HeaderText = "Địa chỉ";
             this.DiaChi.Name = "DiaChi";
             this.DiaChi.ReadOnly = true;
+            this.DiaChi.Width = 58;
             // 
             // TrangThai
             // 

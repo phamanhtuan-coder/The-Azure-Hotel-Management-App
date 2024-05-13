@@ -30,6 +30,7 @@ namespace GUI.customForm
             // gán giá trị mặc định bằng các biến trên, néu là edit có giá trị truyền vào thì kiểm tra và chọn giá trị
 
 
+            dtpNgayDat.MinDate = DateTime.Now;
             if (isAdd)
             {
                 txtMaKH.Clear();
@@ -74,7 +75,13 @@ namespace GUI.customForm
             // Kiểm tra if tiến hành xử lý sự kiện thêm/sửa phòng ban
             if (isAdd)
             {
-                
+                if (string.IsNullOrWhiteSpace( txtMaKH.Text.Trim() ) )
+                {
+                    thongBao = new customMessageBox("Mã Khách hàng không được bỏ trống");
+                    thongBao.ShowDialog();
+                    return;
+                }
+
                 check = DatPhongBLL.them(DatPhongDTO);
                 if (check)
                 {

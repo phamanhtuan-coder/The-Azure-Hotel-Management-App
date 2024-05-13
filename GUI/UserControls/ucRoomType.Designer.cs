@@ -258,6 +258,8 @@
             // 
             this.dgvloaiphong.AllowUserToAddRows = false;
             this.dgvloaiphong.AllowUserToDeleteRows = false;
+            this.dgvloaiphong.AllowUserToResizeColumns = false;
+            this.dgvloaiphong.AllowUserToResizeRows = false;
             this.dgvloaiphong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvloaiphong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvloaiphong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -265,7 +267,8 @@
             this.coltenloai,
             this.colmota,
             this.coltrangthai});
-            this.dgvloaiphong.Location = new System.Drawing.Point(3, 0);
+            this.dgvloaiphong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvloaiphong.Location = new System.Drawing.Point(0, 0);
             this.dgvloaiphong.MultiSelect = false;
             this.dgvloaiphong.Name = "dgvloaiphong";
             this.dgvloaiphong.ReadOnly = true;
@@ -273,7 +276,7 @@
             this.dgvloaiphong.RowHeadersWidth = 51;
             this.dgvloaiphong.RowTemplate.Height = 24;
             this.dgvloaiphong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvloaiphong.Size = new System.Drawing.Size(970, 746);
+            this.dgvloaiphong.Size = new System.Drawing.Size(973, 746);
             this.dgvloaiphong.TabIndex = 6;
             // 
             // colmaloai

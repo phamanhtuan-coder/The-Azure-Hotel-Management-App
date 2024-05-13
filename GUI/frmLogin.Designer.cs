@@ -65,6 +65,7 @@ namespace GUI
             this.btnClose.AccessibleName = "Button";
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.btnClose.Location = new System.Drawing.Point(900, 12);
@@ -343,8 +344,10 @@ namespace GUI
             // 
             // frmLogin
             // 
+            this.AcceptButton = this.btnSubmit;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(960, 540);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.panLogin);

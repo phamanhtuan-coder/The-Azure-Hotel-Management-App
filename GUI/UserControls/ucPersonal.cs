@@ -385,22 +385,26 @@ namespace GUI.UserControls
         private void btnLuu_Click(object sender, EventArgs e)
         {
             customMessageBox thongBao;
-            if ( string.IsNullOrWhiteSpace( txtPW.Text.Trim()) || string.IsNullOrWhiteSpace(txtRePw.Text.Trim()) || string.IsNullOrWhiteSpace(txtPWNew.Text.Trim())) 
+            if (string.IsNullOrWhiteSpace(txtPW.Text.Trim()) || string.IsNullOrWhiteSpace(txtRePw.Text.Trim()) || string.IsNullOrWhiteSpace(txtPWNew.Text.Trim()))
             {
                 thongBao = new customMessageBox("Không được bỏ trống các trường dữ liệu!");
+                thongBao.ShowDialog();
                 return;
             }
-            if (DoiMatKhau())
+            if (!(lblLoiPassword.Text.Length > 0 || lblLoiRePassword.Text.Length > 0))
             {
+                if (DoiMatKhau())
+                {
 
-                thongBao = new customMessageBox("Đổi mật khẩu thành công!");
-                thongBao.ShowDialog();
-                
-            }
-            else
-            {
-                thongBao = new customMessageBox("Đổi mật khẩu thất bại!");
-                thongBao.ShowDialog();
+                    thongBao = new customMessageBox("Đổi mật khẩu thành công!");
+                    thongBao.ShowDialog();
+
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Đổi mật khẩu thất bại!");
+                    thongBao.ShowDialog();
+                }
             }
         }
 
@@ -425,5 +429,28 @@ namespace GUI.UserControls
             return false;
         }
 
+        private void txtPWNew_Leave(object sender, EventArgs e)
+        {
+            if (KiemTraInput.IsStrongPassword(txtPWNew.Text))
+            {
+                lblLoiPassword.Text = "";
+            }
+            else
+            {
+                lblLoiPassword.Text = "Độ dài tối thiểu 8 ký tự, có một chữ số\nchữ hoa, thường và ký tự đặc biệt";
+            }
+        }
+
+        private void txtRePw_Leave(object sender, EventArgs e)
+        {
+            if (txtPWNew.Text.Equals(txtRePw.Text))
+            {
+                lblLoiRePassword.Text = "";
+            }
+            else
+            {
+                lblLoiRePassword.Text = "Nhập lại mật khẩu không đúng!";
+            }
+        }
     }
 }

@@ -89,10 +89,11 @@ namespace GUI.UserControls
             };
 
             panelPhong.Cursor = Cursors.Hand;
-            panelPhong.Click += (sender, e) =>
-            {
-                MessageBox.Show($"Bạn đã đặt phòng: {phong.MoTa}");
-            };
+
+            //panelPhong.Click += (sender, e) =>
+            //{
+            //    MessageBox.Show($"Bạn đã đặt phòng: {phong.MoTa}");
+            //};
 
             chiaPanel.Dock = DockStyle.Fill;
             chiaPanel.BorderStyle = BorderStyle.None;

@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucDashboard));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpThongKe = new System.Windows.Forms.TableLayoutPanel();
             this.panDuKienCount = new System.Windows.Forms.Panel();
             this.btnBooked = new Syncfusion.WinForms.Controls.SfButton();
             this.lblDuKienCount = new System.Windows.Forms.Label();
@@ -47,45 +48,46 @@
             this.btnChecked = new Syncfusion.WinForms.Controls.SfButton();
             this.lblCountCheckIn = new System.Windows.Forms.Label();
             this.lblDashBoard = new System.Windows.Forms.Label();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.spcThongKe = new System.Windows.Forms.SplitContainer();
             this.chartThongKe = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.flpRatings = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.tlpThongKe.SuspendLayout();
             this.panDuKienCount.SuspendLayout();
             this.panCheckOutCount.SuspendLayout();
             this.panTotalCount.SuspendLayout();
             this.panCheckInCount.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spcThongKe)).BeginInit();
+            this.spcThongKe.Panel1.SuspendLayout();
+            this.spcThongKe.Panel2.SuspendLayout();
+            this.spcThongKe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartThongKe)).BeginInit();
             this.flpRatings.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // tlpThongKe
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tlpThongKe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.panDuKienCount, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panCheckOutCount, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panTotalCount, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panCheckInCount, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 117);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1370, 132);
-            this.tableLayoutPanel1.TabIndex = 33;
+            this.tlpThongKe.ColumnCount = 4;
+            this.tlpThongKe.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpThongKe.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpThongKe.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpThongKe.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpThongKe.Controls.Add(this.panDuKienCount, 0, 0);
+            this.tlpThongKe.Controls.Add(this.panCheckOutCount, 2, 0);
+            this.tlpThongKe.Controls.Add(this.panTotalCount, 3, 0);
+            this.tlpThongKe.Controls.Add(this.panCheckInCount, 1, 0);
+            this.tlpThongKe.Location = new System.Drawing.Point(0, 117);
+            this.tlpThongKe.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpThongKe.Name = "tlpThongKe";
+            this.tlpThongKe.RowCount = 1;
+            this.tlpThongKe.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpThongKe.Size = new System.Drawing.Size(1370, 132);
+            this.tlpThongKe.TabIndex = 33;
             // 
             // panDuKienCount
             // 
@@ -110,7 +112,7 @@
             this.btnBooked.ImageSize = new System.Drawing.Size(64, 64);
             this.btnBooked.Location = new System.Drawing.Point(0, 0);
             this.btnBooked.Name = "btnBooked";
-            this.btnBooked.Size = new System.Drawing.Size(249, 126);
+            this.btnBooked.Size = new System.Drawing.Size(198, 126);
             this.btnBooked.Style.BackColor = System.Drawing.Color.LightBlue;
             this.btnBooked.Style.DisabledBackColor = System.Drawing.Color.LightBlue;
             this.btnBooked.Style.DisabledForeColor = System.Drawing.Color.Black;
@@ -126,17 +128,17 @@
             // 
             // lblDuKienCount
             // 
-            this.lblDuKienCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDuKienCount.BackColor = System.Drawing.Color.LightBlue;
+            this.lblDuKienCount.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblDuKienCount.Font = new System.Drawing.Font("Montserrat", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDuKienCount.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblDuKienCount.Location = new System.Drawing.Point(259, 30);
+            this.lblDuKienCount.Location = new System.Drawing.Point(204, 0);
             this.lblDuKienCount.Name = "lblDuKienCount";
-            this.lblDuKienCount.Size = new System.Drawing.Size(77, 75);
+            this.lblDuKienCount.Size = new System.Drawing.Size(132, 126);
             this.lblDuKienCount.TabIndex = 1;
             this.lblDuKienCount.Text = "15";
             this.lblDuKienCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblDuKienCount, "Số lượng đặt phòng có ngày đặt là hôm nay");
             // 
             // panCheckOutCount
             // 
@@ -161,7 +163,7 @@
             this.btnOuted.ImageSize = new System.Drawing.Size(64, 64);
             this.btnOuted.Location = new System.Drawing.Point(0, 0);
             this.btnOuted.Name = "btnOuted";
-            this.btnOuted.Size = new System.Drawing.Size(249, 126);
+            this.btnOuted.Size = new System.Drawing.Size(208, 126);
             this.btnOuted.Style.BackColor = System.Drawing.Color.LightBlue;
             this.btnOuted.Style.DisabledBackColor = System.Drawing.Color.LightBlue;
             this.btnOuted.Style.DisabledForeColor = System.Drawing.Color.Black;
@@ -177,17 +179,17 @@
             // 
             // lblCountCheckOut
             // 
-            this.lblCountCheckOut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCountCheckOut.BackColor = System.Drawing.Color.LightBlue;
+            this.lblCountCheckOut.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblCountCheckOut.Font = new System.Drawing.Font("Montserrat", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCountCheckOut.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblCountCheckOut.Location = new System.Drawing.Point(245, 34);
+            this.lblCountCheckOut.Location = new System.Drawing.Point(214, 0);
             this.lblCountCheckOut.Name = "lblCountCheckOut";
-            this.lblCountCheckOut.Size = new System.Drawing.Size(91, 66);
+            this.lblCountCheckOut.Size = new System.Drawing.Size(122, 126);
             this.lblCountCheckOut.TabIndex = 1;
             this.lblCountCheckOut.Text = "05";
             this.lblCountCheckOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblCountCheckOut, "Số lượng khách hàng đã check-out trong ngày");
             // 
             // panTotalCount
             // 
@@ -212,7 +214,7 @@
             this.btnCanceled.ImageSize = new System.Drawing.Size(64, 64);
             this.btnCanceled.Location = new System.Drawing.Point(0, 0);
             this.btnCanceled.Name = "btnCanceled";
-            this.btnCanceled.Size = new System.Drawing.Size(249, 126);
+            this.btnCanceled.Size = new System.Drawing.Size(190, 126);
             this.btnCanceled.Style.BackColor = System.Drawing.Color.LightBlue;
             this.btnCanceled.Style.DisabledBackColor = System.Drawing.Color.LightBlue;
             this.btnCanceled.Style.DisabledForeColor = System.Drawing.Color.Black;
@@ -228,17 +230,17 @@
             // 
             // lblCountTotal
             // 
-            this.lblCountTotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCountTotal.BackColor = System.Drawing.Color.LightBlue;
+            this.lblCountTotal.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblCountTotal.Font = new System.Drawing.Font("Montserrat", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCountTotal.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblCountTotal.Location = new System.Drawing.Point(248, 34);
+            this.lblCountTotal.Location = new System.Drawing.Point(196, 0);
             this.lblCountTotal.Name = "lblCountTotal";
-            this.lblCountTotal.Size = new System.Drawing.Size(90, 66);
+            this.lblCountTotal.Size = new System.Drawing.Size(142, 126);
             this.lblCountTotal.TabIndex = 1;
             this.lblCountTotal.Text = "20";
             this.lblCountTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblCountTotal, "Số lượng lịch đặt phòng đã hủy trong ngày hôm qua");
             // 
             // panCheckInCount
             // 
@@ -263,7 +265,7 @@
             this.btnChecked.ImageSize = new System.Drawing.Size(64, 64);
             this.btnChecked.Location = new System.Drawing.Point(0, 0);
             this.btnChecked.Name = "btnChecked";
-            this.btnChecked.Size = new System.Drawing.Size(249, 126);
+            this.btnChecked.Size = new System.Drawing.Size(207, 126);
             this.btnChecked.Style.BackColor = System.Drawing.Color.LightBlue;
             this.btnChecked.Style.DisabledBackColor = System.Drawing.Color.LightBlue;
             this.btnChecked.Style.DisabledForeColor = System.Drawing.Color.Black;
@@ -279,22 +281,21 @@
             // 
             // lblCountCheckIn
             // 
-            this.lblCountCheckIn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCountCheckIn.BackColor = System.Drawing.Color.LightBlue;
+            this.lblCountCheckIn.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblCountCheckIn.Font = new System.Drawing.Font("Montserrat", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCountCheckIn.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lblCountCheckIn.Location = new System.Drawing.Point(254, 34);
+            this.lblCountCheckIn.Location = new System.Drawing.Point(213, 0);
             this.lblCountCheckIn.Name = "lblCountCheckIn";
-            this.lblCountCheckIn.Size = new System.Drawing.Size(79, 66);
+            this.lblCountCheckIn.Size = new System.Drawing.Size(123, 126);
             this.lblCountCheckIn.TabIndex = 1;
             this.lblCountCheckIn.Text = "15";
             this.lblCountCheckIn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblCountCheckIn, "Số lượng khách hàng đã check-in trong ngày");
             // 
             // lblDashBoard
             // 
-            this.lblDashBoard.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDashBoard.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblDashBoard.BackColor = System.Drawing.Color.Transparent;
             this.lblDashBoard.Font = new System.Drawing.Font("Montserrat ExtraBold", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblDashBoard.ForeColor = System.Drawing.Color.RoyalBlue;
@@ -305,23 +306,25 @@
             this.lblDashBoard.Text = "DASHBOARD";
             this.lblDashBoard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // splitContainer1
+            // spcThongKe
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitContainer1.IsSplitterFixed = true;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 300);
-            this.splitContainer1.Name = "splitContainer1";
+            this.spcThongKe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.spcThongKe.IsSplitterFixed = true;
+            this.spcThongKe.Location = new System.Drawing.Point(0, 252);
+            this.spcThongKe.Name = "spcThongKe";
             // 
-            // splitContainer1.Panel1
+            // spcThongKe.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.chartThongKe);
+            this.spcThongKe.Panel1.Controls.Add(this.chartThongKe);
             // 
-            // splitContainer1.Panel2
+            // spcThongKe.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.flpRatings);
-            this.splitContainer1.Size = new System.Drawing.Size(1370, 540);
-            this.splitContainer1.SplitterDistance = 1021;
-            this.splitContainer1.TabIndex = 37;
+            this.spcThongKe.Panel2.Controls.Add(this.flpRatings);
+            this.spcThongKe.Size = new System.Drawing.Size(1370, 588);
+            this.spcThongKe.SplitterDistance = 1021;
+            this.spcThongKe.TabIndex = 37;
             // 
             // chartThongKe
             // 
@@ -340,8 +343,9 @@
             series4.Name = "Tiền đặt dịch vụ";
             this.chartThongKe.Series.Add(series3);
             this.chartThongKe.Series.Add(series4);
-            this.chartThongKe.Size = new System.Drawing.Size(1021, 540);
+            this.chartThongKe.Size = new System.Drawing.Size(1021, 588);
             this.chartThongKe.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.chartThongKe, "Thống kê thu nhập theo ngày");
             // 
             // flpRatings
             // 
@@ -353,8 +357,9 @@
             this.flpRatings.Location = new System.Drawing.Point(7, 0);
             this.flpRatings.Margin = new System.Windows.Forms.Padding(0);
             this.flpRatings.Name = "flpRatings";
-            this.flpRatings.Size = new System.Drawing.Size(338, 540);
+            this.flpRatings.Size = new System.Drawing.Size(338, 588);
             this.flpRatings.TabIndex = 37;
+            this.toolTip1.SetToolTip(this.flpRatings, "HIển thi Top 15 đánh giá mới nhất");
             this.flpRatings.WrapContents = false;
             // 
             // panel1
@@ -384,23 +389,23 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.splitContainer1);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.spcThongKe);
+            this.Controls.Add(this.tlpThongKe);
             this.Controls.Add(this.lblDashBoard);
             this.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ucDashboard";
             this.Size = new System.Drawing.Size(1370, 840);
             this.Load += new System.EventHandler(this.ucDashboard_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tlpThongKe.ResumeLayout(false);
             this.panDuKienCount.ResumeLayout(false);
             this.panCheckOutCount.ResumeLayout(false);
             this.panTotalCount.ResumeLayout(false);
             this.panCheckInCount.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.spcThongKe.Panel1.ResumeLayout(false);
+            this.spcThongKe.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.spcThongKe)).EndInit();
+            this.spcThongKe.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartThongKe)).EndInit();
             this.flpRatings.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -411,7 +416,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tlpThongKe;
         private System.Windows.Forms.Panel panDuKienCount;
         private System.Windows.Forms.Label lblDuKienCount;
         private System.Windows.Forms.Panel panCheckOutCount;
@@ -425,10 +430,11 @@
         private Syncfusion.WinForms.Controls.SfButton btnOuted;
         private Syncfusion.WinForms.Controls.SfButton btnCanceled;
         private Syncfusion.WinForms.Controls.SfButton btnChecked;
-        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.SplitContainer spcThongKe;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartThongKe;
         private System.Windows.Forms.FlowLayoutPanel flpRatings;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

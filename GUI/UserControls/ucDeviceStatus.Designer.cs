@@ -265,6 +265,8 @@
             // 
             this.dgvDeviceStatus.AllowUserToAddRows = false;
             this.dgvDeviceStatus.AllowUserToDeleteRows = false;
+            this.dgvDeviceStatus.AllowUserToResizeColumns = false;
+            this.dgvDeviceStatus.AllowUserToResizeRows = false;
             this.dgvDeviceStatus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDeviceStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDeviceStatus.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -273,6 +275,7 @@
             this.colMoTa,
             this.colTrangThai});
             this.dgvDeviceStatus.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dgvDeviceStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDeviceStatus.Location = new System.Drawing.Point(0, 0);
             this.dgvDeviceStatus.MultiSelect = false;
             this.dgvDeviceStatus.Name = "dgvDeviceStatus";
