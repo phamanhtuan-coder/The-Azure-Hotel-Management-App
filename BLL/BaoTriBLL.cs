@@ -43,12 +43,20 @@ namespace BLL
 
         public bool sua(BaoTriDTO baoTriDTO)
         {
-            return baoTriDAL.suabt(baoTriDTO);
+            if(baoTriDTO.MaBaoTri>0 && baoTriDTO.MaThietBi > 0)
+            {
+                return baoTriDAL.suabt(baoTriDTO);
+            }
+            return false;
         }
 
         public bool them(BaoTriDTO baoTriDTO)
         {
-            return baoTriDAL.thembt(baoTriDTO);
+            if (baoTriDTO.MaThietBi > 0)
+            {
+                return baoTriDAL.thembt(baoTriDTO);
+            }
+            return false;          
         }
 
         public List<BaoTriDTO> TraCuubt(List<BaoTriDTO> baoTriDTOs, string searchKeyword)

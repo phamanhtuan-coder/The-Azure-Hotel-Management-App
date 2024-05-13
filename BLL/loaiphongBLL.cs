@@ -30,12 +30,20 @@ namespace BLL
 
         public bool sualoaiphong(LoaiPhongDTO loaiphongDTO)
         {
-            return loaiphong.sualphong(loaiphongDTO);
+            if (loaiphongDTO.MaLoai > 0 && !string.IsNullOrWhiteSpace(loaiphongDTO.TenLoai.Trim()))
+            {
+                return loaiphong.sualphong(loaiphongDTO);
+            }
+            return false;
         }
 
         public bool themloaiphong(LoaiPhongDTO loaiphongDTO)
         {
-            return loaiphong.themlphong(loaiphongDTO);
+            if(!string.IsNullOrWhiteSpace(loaiphongDTO.TenLoai.Trim()))
+            {
+                return loaiphong.themlphong(loaiphongDTO);
+            }
+            return false;
         }
 
         public List<LoaiPhongDTO> TraCuuLoaiPhong(List<LoaiPhongDTO> dsloaip, string searchKeyword)

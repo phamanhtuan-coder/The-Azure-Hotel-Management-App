@@ -40,7 +40,7 @@ namespace GUI.customForm
                 cboMaDV.DisplayMember = "TenDV";
                 cboMaDV.ValueMember = "MaDV";
                 nudSoLuong.Value = nudSoLuong.Minimum;
-                dtpNgayDat.Value =DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy"));
+                dtpNgayDat.Value =DateTime.Now;
             }
             else
             {
@@ -56,19 +56,25 @@ namespace GUI.customForm
                 nudSoLuong.Value = DatDichVuDTO.SoLuong;
                 dtpNgayDat.Value = DatDichVuDTO.NgayDat;
             }
-
-
-
-
         }
         private void laydltuform(DatDichVuDTO p)
         {
+            if (!string.IsNullOrEmpty(cboMaDP.Text))
+            {
+                p.MaDatPhong = int.Parse(cboMaDP.Text);
+            }
 
-            p.MaDatPhong =int.Parse(cboMaDP.Text);
-            p.MaDV =cboMaDV.SelectedIndex + 1;
-            p.SoLuong = int.Parse(nudSoLuong.Text);
+            if (cboMaDV.SelectedIndex != -1)
+            {
+                p.MaDV = cboMaDV.SelectedIndex + 1;
+            }
+
+            if (!string.IsNullOrEmpty(nudSoLuong.Text))
+            {
+                p.SoLuong = int.Parse(nudSoLuong.Text);
+            }
+
             p.NgayDat = dtpNgayDat.Value;
-
         }
 
 

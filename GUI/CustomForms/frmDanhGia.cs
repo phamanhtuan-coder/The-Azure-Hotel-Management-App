@@ -84,20 +84,18 @@ namespace GUI.customForm
             {
                 if ( string.IsNullOrWhiteSpace( rtxtNhanXet.Text.Trim()))
                 {
-                    
-                }
-                // Nếu đúng là form Thêm thì chạy lệnh insert
-                if (ThemDanhGia())
-                {
-                    thongBao = new customMessageBox("Đã thêm thành công dữ liệu đánh giá mới!");
-                    thongBao.ShowDialog();
-                }
-                else
-                {
-                    thongBao = new customMessageBox("Thêm thất bại dữ liệu đánh giá mới!");
-                    thongBao.ShowDialog();
-                }
-
+                    // Nếu đúng là form Thêm thì chạy lệnh insert
+                    if (ThemDanhGia())
+                    {
+                        thongBao = new customMessageBox("Đã thêm thành công dữ liệu đánh giá mới!");
+                        thongBao.ShowDialog();
+                    }
+                    else
+                    {
+                        thongBao = new customMessageBox("Thêm thất bại dữ liệu đánh giá mới!");
+                        thongBao.ShowDialog();
+                    }
+                }               
             }
             else
             {
@@ -133,10 +131,17 @@ namespace GUI.customForm
 
         private void ganGiaTriChoBien()
         {
-            danhGia.MaDP = int.Parse(cboMaDP.Text);
+            danhGia.MaDP = int.TryParse(cboMaDP.Text, out int maDP) ? maDP : 0;
+
             danhGia.NgayDanhGia = dtpNgayDG.Value;
+
             danhGia.NhanXet = rtxtNhanXet.Text;
-            danhGia.DiemDanhGia = (int)rcDiemDG.Value;
+
+            if (rcDiemDG.Value > 0 && rcDiemDG.Value < 6)
+            {
+                danhGia.DiemDanhGia = (int)rcDiemDG.Value;
+            }
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

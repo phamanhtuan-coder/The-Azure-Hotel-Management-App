@@ -78,10 +78,19 @@ namespace GUI.customForm
         private void laydltuform(BaoTriDTO p)
         {
 
-            p.MaThietBi = cboThietBi.SelectedIndex+1;
-            p.MaNV = cboNVBaoTri.SelectedIndex+1;
+            if (cboThietBi.SelectedIndex >= 0)
+            {
+                p.MaThietBi = cboThietBi.SelectedIndex + 1;
+            }
+
+            if (cboNVBaoTri.SelectedIndex >= 0)
+            {
+                p.MaNV = cboNVBaoTri.SelectedIndex + 1;
+            }
+
             p.NgayHuHong = dtpNgayHuHong.Value;
             p.NgayBaoTri = dtpNgayBaoTri.Value;
+
 
         }
         private void btnSubmit_Click(object sender, EventArgs e)

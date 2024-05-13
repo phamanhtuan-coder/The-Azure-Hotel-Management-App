@@ -75,12 +75,25 @@ namespace GUI.customForm
 
         private void laydltuform(PhongDTO p)
         {
-            p.MaLoai = (int) cboLoaiPhong.SelectedValue;
-            p.MaTinhTrangPhong=(int) cboTinhTrangPhong.SelectedValue;
-            p.GiaPhong = nudGiaPhong.Value;
-            p.SucChuaToiDa = (int)nudSucChuaToiDa.Value;
-            p.MoTa= rtxtMoTa.Text ;
-            p.HinhAnh = ImageToByteArray(picHinhPhong.Image);
+            p.MaLoai = (int)cboLoaiPhong.SelectedValue;
+            p.MaTinhTrangPhong = (int)cboTinhTrangPhong.SelectedValue;
+
+            if (nudGiaPhong.Value > 0)
+            {
+                p.GiaPhong = nudGiaPhong.Value;
+            }
+
+            if (nudSucChuaToiDa.Value > 0)
+            {
+                p.SucChuaToiDa = (int)nudSucChuaToiDa.Value;
+            }
+
+            p.MoTa = rtxtMoTa.Text;
+
+            if (picHinhPhong.Image != null)
+            {
+                p.HinhAnh = ImageToByteArray(picHinhPhong.Image);
+            }
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)

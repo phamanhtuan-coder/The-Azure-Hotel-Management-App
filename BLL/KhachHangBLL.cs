@@ -45,7 +45,6 @@ namespace BLL
         public bool EditKhachHang(KhachHangDTO khachHangDTO)
         {
             return khachHangDAL.EditKhachHang(khachHangDTO);
-
         }
 
         public bool EditKhachHangBLL(KhachHangDTO khachHang)

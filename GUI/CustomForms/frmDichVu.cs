@@ -47,19 +47,25 @@ namespace GUI.customForm
                 txttendichvu.Text = DichVuDTO.TenDV;
                 nudGia.Value = DichVuDTO.GiaDV;
             }
-
-
-
-
         }
 
 
         public void laydltuform(DichVuDTO dv)
         {
-            
-            dv.HinhAnh = ImageToByteArray(picHinhAnh.Image);
-            dv.TenDV = txttendichvu.Text;
-            dv.GiaDV = nudGia.Value;
+            if (picHinhAnh.Image != null)
+            {
+                dv.HinhAnh = ImageToByteArray(picHinhAnh.Image);
+            }
+
+            if (txttendichvu.Text.Trim().Length > 0)
+            {
+                dv.TenDV = txttendichvu.Text;
+            }     
+
+            if (nudGia.Value > 0)
+            {
+                dv.GiaDV = nudGia.Value;
+            }
 
         }
         private void btnSubmit_Click(object sender, EventArgs e)

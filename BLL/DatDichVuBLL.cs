@@ -47,12 +47,20 @@ namespace BLL
         }
         public bool sua(DatDichVuDTO datDichVuDTO)
         {
-            return datDichVuDAL.suaddv(datDichVuDTO);
+            if (datDichVuDTO.MaDatDichVu > 0 && datDichVuDTO.MaDV > 0 && datDichVuDTO.SoLuong > 0)
+            {
+                return datDichVuDAL.suaddv(datDichVuDTO);
+            }
+            return false;
         }
 
         public bool them(DatDichVuDTO datDichVuDTO)
         {
-            return datDichVuDAL.themddv(datDichVuDTO);
+            if (datDichVuDTO.MaDV>0 && datDichVuDTO.SoLuong>0)
+            {
+                return datDichVuDAL.themddv(datDichVuDTO);
+            }
+            return false;
         }
 
         public List<DatDichVuDTO> TraCuudv(List<DatDichVuDTO> datDichVuDTOs, string searchKeyword)

@@ -40,10 +40,13 @@ namespace GUI.customForm
         }
         private void laydltuform(TinhTrangPhongDTO lp)
         {
-            lp.TenTinhTrang = txtTenLP.Text;
+            if (!string.IsNullOrEmpty(txtTenLP.Text))
+            {
+                lp.TenTinhTrang = txtTenLP.Text;
+            }
+
             lp.MoTa = rtxtMoTa.Text;
         }
-
         private void btnSubmit_Click(object sender, EventArgs e)
         {
 
