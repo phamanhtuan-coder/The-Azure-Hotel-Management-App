@@ -81,7 +81,10 @@ namespace DAL
         {
             List<DatPhongDTO> ds = new List<DatPhongDTO>();
 
-            string lenhLayDanhSach = "SELECT * FROM DatPhong WHERE TrangThai = @TrangThai";
+            string lenhLayDanhSach = "select BangTaiKhoan.TenDangNhap, KhachHang.CCCD, DatPhong.* " +
+                " from DatPhong join KhachHang on DatPhong.MaKH = KhachHang.MaKH " +
+                " join BangTaiKhoan on KhachHang.MaTaiKhoan = BangTaiKhoan.MaTaiKhoan "+
+                " WHERE DatPhong.TrangThai = @TrangThai";
 
             SqlConnection conn = DataProvider.KetNoiDuLieu();
 
@@ -91,10 +94,12 @@ namespace DAL
             while (reader.Read())
             {
                 DatPhongDTO phong = new DatPhongDTO();
-                phong.MaDatPhong = (int)reader[0];
-                phong.MaKH = (int)reader[1];
-                phong.MaPHG = (int)reader[2];
-                phong.NgayDatPhong = DateTime.Parse(reader[3].ToString());
+                phong.TenTaiKhoan = (string)reader["TenDangNhap"];
+                phong.CCCD = (string)reader["CCCD"];
+                phong.MaDatPhong = (int)reader["MaDatPhong"];
+                phong.MaKH = (int)reader["MaKH"];
+                phong.MaPHG = (int)reader["MaPHG"];
+                phong.NgayDatPhong = DateTime.Parse(reader["NgayDatPhong"].ToString());
                 object ngayNhanPhongObject = reader["NgayNhanPhong"];
                 if (ngayNhanPhongObject != DBNull.Value)
                 {
@@ -114,8 +119,11 @@ namespace DAL
                 {
                     phong.NgayTraPhong = null;
                 }
-                phong.SoLuongKH = (int)reader[6];
-                phong.TrangThai = v;
+
+                phong.SoLuongKH = (int)reader["SoLuongKH"];
+                byte[] trangThaiBytes = (byte[])reader["trangThai"];
+                bool trangThai = trangThaiBytes[0] == 1;
+                phong.TrangThai = trangThai;
 
                 ds.Add(phong);
             }
