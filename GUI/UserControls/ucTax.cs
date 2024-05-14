@@ -36,7 +36,7 @@ namespace GUI.UserControls
             colTiLeThue.DefaultCellStyle.Format = "#.##%";
             colTiLeThue.DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopCenter;
             LoadDuLieuCombobox();
-            LoadDSThue();
+            Filter();
             KiemTraPQ();
         }
         private void KiemTraPQ()
@@ -234,6 +234,10 @@ namespace GUI.UserControls
             if (tt.Length > 0)
             {
                 dsSearch = thueBLL.TraCuThue(thueDTOs, tt);
+                foreach(ThueDTO item in dsSearch)
+                {
+                    item.TyLeThue = item.TyLeThue / 100;
+                }
                 dgvTax.DataSource = dsSearch;
             }
         }
