@@ -54,7 +54,7 @@ namespace BLL
 
         public List<TaiKhoanDTO> TraCuuNhanVien(List<TaiKhoanDTO> taiKhoanDTOs, string MaPQ, string TrangThai, string NgayTao)
         {
-
+            taiKhoanDTOs = Filter();
             if (!MaPQ.Equals("None"))
             {
                 if (!TrangThai.Equals("Tất cả"))

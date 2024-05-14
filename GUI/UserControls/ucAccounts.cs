@@ -17,7 +17,7 @@ namespace GUI.UserControls
 
     public partial class ucAccounts : UserControl
     {
-        public string MaPHQ { get; set; }
+        public string MaPHQ { get; set; } = "None";
         public string phanquyen { get; set; } = "";
         public string ngaytao { get; set; } = "";
         public string TT { get; set; } = "";
@@ -37,7 +37,7 @@ namespace GUI.UserControls
             dgvAccounts.AutoGenerateColumns = false;
             NgayTao.DefaultCellStyle.Format= "dd/MM/yyyy";
             CapNhatDuLieuCBO();
-            LoadDSTaiKhoan();
+            Filter();
             KiemTraPQ();
         }
 
@@ -103,7 +103,7 @@ namespace GUI.UserControls
             frmTaiKhoan frm = new frmTaiKhoan();
             frm.isAdd = true;
             frm.ShowDialog();
-            LoadDSTaiKhoan();
+            Filter();
         }
 
         private void btnEditAccounts_Click(object sender, EventArgs e)
@@ -124,7 +124,7 @@ namespace GUI.UserControls
 
                 //Kết thúc sửa từ đoạn này
                 frm.ShowDialog();
-                LoadDSTaiKhoan();
+                Filter();
             }
             else
             {
@@ -148,7 +148,7 @@ namespace GUI.UserControls
                     {
                         if (XoaTaiKhoan())
                         {
-                            LoadDSTaiKhoan();
+                            Filter();
                             thongBao = new customMessageBox("Xóa thành công dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
@@ -194,7 +194,7 @@ namespace GUI.UserControls
                     {
                         if (KhoiPhucTaiKhoan())
                         {
-                            LoadDSTaiKhoan();
+                            Filter();
                             thongBao = new customMessageBox("Khôi phục thành công dòng dữ liệu đã chọn!");
                             thongBao.ShowDialog();
                         }
@@ -227,12 +227,11 @@ namespace GUI.UserControls
 
         private void cboPhanQuyen_SelectedIndexChanged(object sender, EventArgs e)
         {
-            phanquyen= cboPhanQuyen.Text;
+            phanquyen = cboPhanQuyen.Text ;
             ngaytao = "";
             if (phanquyen.Length > 0)
             {
-                dsSearch = taiKhoanBLL.TraCuuNhanVien(taiKhoanDTOs, phanquyen, TT, ngaytao);
-                dgvAccounts.DataSource = dsSearch;
+                Filter();
             }         
         }
 
@@ -240,11 +239,17 @@ namespace GUI.UserControls
         {
             TT = cboStateAccounts.Text;
             ngaytao = "";
+            
             if (TT.Length > 0)
             {
-                dsSearch = taiKhoanBLL.TraCuuNhanVien(taiKhoanDTOs, phanquyen, TT, ngaytao);
-                dgvAccounts.DataSource = dsSearch;
+                Filter();             
             }          
+        }
+
+        private void Filter()
+        {
+            dsSearch = taiKhoanBLL.TraCuuNhanVien(taiKhoanDTOs, phanquyen, TT, ngaytao);
+            dgvAccounts.DataSource = dsSearch;
         }
 
         private void cboSortAccountsID_SelectedIndexChanged(object sender, EventArgs e)
@@ -285,8 +290,7 @@ namespace GUI.UserControls
 
             if (TT.Length > 0 && phanquyen.Length > 0)
             {
-                dsSearch = taiKhoanBLL.TraCuuNhanVien(taiKhoanDTOs, phanquyen, TT, ngaytao);
-                dgvAccounts.DataSource = dsSearch;
+                Filter();
             }
         }
     }
