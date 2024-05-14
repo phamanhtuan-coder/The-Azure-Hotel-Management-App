@@ -195,6 +195,7 @@ namespace GUI.UserControls
         private void btnDanhGia_Click(object sender, EventArgs e)
         {
             frm.isAdd = true;
+            
             frm.maKH = this.maKH;
             frm.ShowDialog();
             LayDanhSachDanhGia();

@@ -30,7 +30,6 @@ namespace GUI.customForm
             
             LoadDuLieuMaDP();
             LoadDuLieuChoForm();
-            dtpNgayDG.MaxDate = DateTime.Now;
 
         }
 
@@ -39,10 +38,12 @@ namespace GUI.customForm
             DatPhongBLL timPhong= new DatPhongBLL();
             if (isAdd)
             {
+              
                 lichSuDat = timPhong.LayDanhSachDatPhongChuaDanhGia(maKH);
             }
             else
             {
+                
                 lichSuDat = timPhong.LayDanhSachDatPhongDaDanhGia(maKH);
             }
             cboMaDP.DataSource = lichSuDat;
@@ -61,8 +62,8 @@ namespace GUI.customForm
                 }
                 cboMaDP.SelectedIndex = 0;
                 cboMaDP.Enabled = true;
-                
-                dtpNgayDG.Value = dtpNgayDG.MaxDate;
+
+                dtpNgayDG.Value = DateTime.Now;
                 rtxtNhanXet.Clear();
                 rcDiemDG.Value = 0;
             }
