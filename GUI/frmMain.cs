@@ -941,6 +941,7 @@ namespace GUI
                 case "MK-03":
                 case "MK-04":
                     {
+                        panRoomBooking.Visible = false;
                         flpAccount.Visible = false;
                         flpDeviceMangement.Visible = false;
                         flpStaffManagement.Visible = false;
