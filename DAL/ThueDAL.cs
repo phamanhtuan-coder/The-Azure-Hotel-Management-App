@@ -155,7 +155,7 @@ namespace DAL
 
                     thueDTO.MaThue = (int)reader["MaThue"];
                     thueDTO.TenThue = reader["TenThue"].ToString();
-
+                    thueDTO.TyLeThue = (double) reader["TyLeThue"];
                     list.Add(thueDTO);
                 }
 

@@ -35,6 +35,7 @@ namespace GUI.UserControls
         private void ucAccounts_Load(object sender, EventArgs e)
         {
             dgvAccounts.AutoGenerateColumns = false;
+            NgayTao.DefaultCellStyle.Format= "dd/MM/yyyy";
             CapNhatDuLieuCBO();
             LoadDSTaiKhoan();
             KiemTraPQ();

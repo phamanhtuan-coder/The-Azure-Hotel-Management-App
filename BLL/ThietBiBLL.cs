@@ -37,6 +37,8 @@ namespace BLL
             return thietBi.laydstbi();
         }
 
+        
+
         public bool suatbi(ThietBiDTO thietbi)
         {
             return thietBi.suatbi(thietbi);

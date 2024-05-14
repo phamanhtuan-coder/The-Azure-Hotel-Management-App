@@ -36,6 +36,9 @@ namespace GUI.UserControls
         private void ucBooking_Load(object sender, EventArgs e)
         {
             dgvBooking.AutoGenerateColumns = false;
+            colNgayDatPhong.DefaultCellStyle.Format= "dd/MM/yyyy";
+            colNgayNhanPhong.DefaultCellStyle.Format = "dd/MM/yyyy";
+            colNgayTraPhong.DefaultCellStyle.Format = "dd/MM/yyyy";
             LoadCCOKH();
             layds();
             

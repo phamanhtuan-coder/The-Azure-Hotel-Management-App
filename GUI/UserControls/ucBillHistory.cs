@@ -35,6 +35,10 @@ namespace GUI.UserControls
         private void ucBill_Load(object sender, EventArgs e)
         {
             dgvBillHistory.AutoGenerateColumns = false;
+            colNgayLapHoaDon.DefaultCellStyle.Format = "dd/MM/yyyy";
+            colTongHD.DefaultCellStyle.Format = "#,##0";
+            colTienNhan.DefaultCellStyle.Format = "#,##0";
+            colTienThoi.DefaultCellStyle.Format = "#,##0";
             LoadDuLieuKH();
             LoadDuLieuNV();
             LoadDuLieuThue();
@@ -49,7 +53,9 @@ namespace GUI.UserControls
             List<ThueDTO> list = thueBLL.TruyVanTenVaMaThue();
             colMaThue.DataSource = list;
             colMaThue.ValueMember = "MaThue";
-            colMaThue.DisplayMember = "TenThue";
+            colMaThue.DisplayMember = "TyLeThue";
+            colMaThue.DefaultCellStyle.Format = "#.##%";
+            colMaThue.DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopCenter;
         }
 
         private void LoadDuLieuNV()

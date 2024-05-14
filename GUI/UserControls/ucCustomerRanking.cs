@@ -31,6 +31,7 @@ namespace GUI.UserControls
         private void ucCustomerRanking_Load(object sender, EventArgs e)
         {
             dgvCustomerRank.AutoGenerateColumns = false;
+            MucGiamGia.DefaultCellStyle.Format = "#.##%";
             CapNhatCBBHangThanhVien();
             KiemTraPQ();
         }

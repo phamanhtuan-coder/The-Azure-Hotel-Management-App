@@ -37,6 +37,7 @@ namespace GUI.UserControls
         {
             LayDanhSachPhongBan();
             dgvDepartment.AutoGenerateColumns = false;
+            colNgayNhanChuc.DefaultCellStyle.Format = "dd/MM/yyyy";
             CapDuLieuChoController();
             KiemTraPQ();
         }

@@ -41,10 +41,6 @@
             this.cboStateDeviceStatus = new Syncfusion.WinForms.ListView.SfComboBox();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvDevice = new System.Windows.Forms.DataGridView();
-            this.MaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaTinhTrangThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboSortDeviceID = new Syncfusion.WinForms.ListView.SfComboBox();
             this.lblSortDeviceID = new System.Windows.Forms.Label();
             this.cboLocTheoTinhTrang = new Syncfusion.WinForms.ListView.SfComboBox();
@@ -53,6 +49,10 @@
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.MaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaTinhTrangThietBi = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateDeviceStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -285,39 +285,6 @@
             this.dgvDevice.Size = new System.Drawing.Size(973, 746);
             this.dgvDevice.TabIndex = 6;
             // 
-            // MaThietBi
-            // 
-            this.MaThietBi.DataPropertyName = "MaThietBi";
-            this.MaThietBi.HeaderText = "Mã thiết bị";
-            this.MaThietBi.MinimumWidth = 6;
-            this.MaThietBi.Name = "MaThietBi";
-            this.MaThietBi.ReadOnly = true;
-            // 
-            // TenThietBi
-            // 
-            this.TenThietBi.DataPropertyName = "TenThietBi";
-            this.TenThietBi.HeaderText = "Tên thiết bị";
-            this.TenThietBi.MinimumWidth = 6;
-            this.TenThietBi.Name = "TenThietBi";
-            this.TenThietBi.ReadOnly = true;
-            // 
-            // MaTinhTrangThietBi
-            // 
-            this.MaTinhTrangThietBi.DataPropertyName = "MaTinhTrangThietBi";
-            this.MaTinhTrangThietBi.HeaderText = "Tình trạng thiết bị";
-            this.MaTinhTrangThietBi.MinimumWidth = 6;
-            this.MaTinhTrangThietBi.Name = "MaTinhTrangThietBi";
-            this.MaTinhTrangThietBi.ReadOnly = true;
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.DataPropertyName = "TrangThai";
-            this.TrangThai.HeaderText = "Trạng thái";
-            this.TrangThai.MinimumWidth = 6;
-            this.TrangThai.Name = "TrangThai";
-            this.TrangThai.ReadOnly = true;
-            this.TrangThai.Visible = false;
-            // 
             // cboSortDeviceID
             // 
             this.cboSortDeviceID.DelimiterChar = "";
@@ -417,6 +384,42 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
+            // MaThietBi
+            // 
+            this.MaThietBi.DataPropertyName = "MaThietBi";
+            this.MaThietBi.HeaderText = "Mã thiết bị";
+            this.MaThietBi.MinimumWidth = 6;
+            this.MaThietBi.Name = "MaThietBi";
+            this.MaThietBi.ReadOnly = true;
+            // 
+            // TenThietBi
+            // 
+            this.TenThietBi.DataPropertyName = "TenThietBi";
+            this.TenThietBi.HeaderText = "Tên thiết bị";
+            this.TenThietBi.MinimumWidth = 6;
+            this.TenThietBi.Name = "TenThietBi";
+            this.TenThietBi.ReadOnly = true;
+            // 
+            // MaTinhTrangThietBi
+            // 
+            this.MaTinhTrangThietBi.DataPropertyName = "MaTinhTrangThietBi";
+            this.MaTinhTrangThietBi.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.MaTinhTrangThietBi.HeaderText = "Tình trạng thiết bị";
+            this.MaTinhTrangThietBi.MinimumWidth = 6;
+            this.MaTinhTrangThietBi.Name = "MaTinhTrangThietBi";
+            this.MaTinhTrangThietBi.ReadOnly = true;
+            this.MaTinhTrangThietBi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.MaTinhTrangThietBi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.DataPropertyName = "TrangThai";
+            this.TrangThai.HeaderText = "Trạng thái";
+            this.TrangThai.MinimumWidth = 6;
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.ReadOnly = true;
+            this.TrangThai.Visible = false;
+            // 
             // ucDevice
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -466,10 +469,10 @@
         private Syncfusion.WinForms.ListView.SfComboBox cboSortDeviceID;
         private System.Windows.Forms.Label lblSortDeviceID;
         private System.Windows.Forms.DataGridView dgvDevice;
+        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaThietBi;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenThietBi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaTinhTrangThietBi;
+        private System.Windows.Forms.DataGridViewComboBoxColumn MaTinhTrangThietBi;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
-        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

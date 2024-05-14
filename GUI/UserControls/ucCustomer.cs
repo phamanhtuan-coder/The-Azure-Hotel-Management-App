@@ -33,6 +33,7 @@ namespace GUI.UserControls
         private void ucCustomer_Load(object sender, EventArgs e)
         {
             dgvCustomer.AutoGenerateColumns = false;
+            NgaySinh.DefaultCellStyle.Format= "dd/MM/yyyy";
             CapNhatCBBNhanVien();
             KiemTraPQ();
         }

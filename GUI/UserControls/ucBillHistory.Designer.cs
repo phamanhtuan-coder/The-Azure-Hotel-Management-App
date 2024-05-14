@@ -292,7 +292,7 @@
             // 
             // colMaThue
             // 
-            this.colMaThue.DataPropertyName = "MaThue";
+            this.colMaThue.DataPropertyName = "TyLeThue";
             this.colMaThue.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.colMaThue.HeaderText = "Tên thuế";
             this.colMaThue.Name = "colMaThue";

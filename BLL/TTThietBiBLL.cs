@@ -11,6 +11,11 @@ namespace BLL
     {
         TTThietBiDAL ThietBiDAL = new TTThietBiDAL();
 
+        public static List<TTThietBiDTO> LayDSTinhTrangThietBi()
+        {
+            return TTThietBiDAL.LayDSTinhTrangThietBi();
+        }
+
         public List<TTThietBiDTO> FilterTrangThai(string trangthai)
         {
             if (trangthai == "Đang hoạt động")

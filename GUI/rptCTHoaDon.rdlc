@@ -889,6 +889,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -1288,7 +1289,7 @@
             <DataSetName>dsCTHD</DataSetName>
             <Top>0.06944in</Top>
             <Left>1.00917in</Left>
-            <Height>2.95834in</Height>
+            <Height>2.95833in</Height>
             <Width>6.61in</Width>
             <Style>
               <Border>

@@ -40,6 +40,9 @@ namespace GUI.UserControls
         {
             LoadCombo();
             dgvBookingHistory.AutoGenerateColumns = false;
+            colNgayDat.DefaultCellStyle.Format = "dd/MM/yyyy";
+            colNgayNhanPhong.DefaultCellStyle.Format = "dd/MM/yyyy";
+            colNgayTraPhong.DefaultCellStyle.Format = "dd/MM/yyyy";
             LoadDsDatPhong();
             
         }

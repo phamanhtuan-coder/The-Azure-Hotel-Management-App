@@ -32,22 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucBill));
             this.lblBill = new System.Windows.Forms.Label();
             this.tlpController = new System.Windows.Forms.TableLayoutPanel();
+            this.btnRecoverBill = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnDeleteBill = new Syncfusion.WinForms.Controls.SfButton();
             this.cboStateBooking = new Syncfusion.WinForms.ListView.SfComboBox();
             this.dtpBillDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.spcQuery = new System.Windows.Forms.SplitContainer();
             this.dgvBill = new System.Windows.Forms.DataGridView();
-            this.colMaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaKH = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colMaNV = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colMaThue = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colTyLeThue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayLapHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTongHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTienNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTienThoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpCTHDController = new System.Windows.Forms.TableLayoutPanel();
             this.btnThanhToan = new Syncfusion.WinForms.Controls.SfButton();
             this.btnInHD = new Syncfusion.WinForms.Controls.SfButton();
@@ -70,8 +60,17 @@
             this.panUcHeader = new System.Windows.Forms.Panel();
             this.spcHeader = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnDeleteBill = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnRecoverBill = new Syncfusion.WinForms.Controls.SfButton();
+            this.colMaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaKH = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colMaNV = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colMaThue = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colNgayLapHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTongHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTienNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTienThoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboStateBooking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spcQuery)).BeginInit();
@@ -117,6 +116,50 @@
             this.tlpController.Size = new System.Drawing.Size(394, 94);
             this.tlpController.TabIndex = 6;
             this.toolTip1.SetToolTip(this.tlpController, "Thêm hóa đơn");
+            // 
+            // btnRecoverBill
+            // 
+            this.btnRecoverBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverBill.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRecoverBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecoverBill.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecoverBill.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverBill.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnRecoverBill.Location = new System.Drawing.Point(200, 3);
+            this.btnRecoverBill.Name = "btnRecoverBill";
+            this.btnRecoverBill.Size = new System.Drawing.Size(191, 88);
+            this.btnRecoverBill.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
+            this.btnRecoverBill.Style.ForeColor = System.Drawing.Color.White;
+            this.btnRecoverBill.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnRecoverBill.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnRecoverBill.TabIndex = 8;
+            this.btnRecoverBill.Text = "Khôi phục";
+            this.btnRecoverBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnRecoverBill, "Khôi phục hóa đơn");
+            this.btnRecoverBill.UseVisualStyleBackColor = false;
+            this.btnRecoverBill.Click += new System.EventHandler(this.btnRecoverBill_Click);
+            // 
+            // btnDeleteBill
+            // 
+            this.btnDeleteBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteBill.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDeleteBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteBill.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteBill.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteBill.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnDeleteBill.Location = new System.Drawing.Point(3, 3);
+            this.btnDeleteBill.Name = "btnDeleteBill";
+            this.btnDeleteBill.Size = new System.Drawing.Size(191, 88);
+            this.btnDeleteBill.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnDeleteBill.Style.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteBill.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnDeleteBill.Style.ImageForeColor = System.Drawing.Color.White;
+            this.btnDeleteBill.TabIndex = 7;
+            this.btnDeleteBill.Text = "Xóa";
+            this.btnDeleteBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnDeleteBill, "Xóa hóa đơn");
+            this.btnDeleteBill.UseVisualStyleBackColor = false;
+            this.btnDeleteBill.Click += new System.EventHandler(this.btnDeleteBill_Click);
             // 
             // cboStateBooking
             // 
@@ -199,7 +242,6 @@
             this.colMaKH,
             this.colMaNV,
             this.colMaThue,
-            this.colTyLeThue,
             this.colNgayLapHoaDon,
             this.colTongHD,
             this.colTienNhan,
@@ -216,114 +258,6 @@
             this.dgvBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBill.Size = new System.Drawing.Size(973, 746);
             this.dgvBill.TabIndex = 0;
-            // 
-            // colMaHD
-            // 
-            this.colMaHD.DataPropertyName = "MaHoaDon";
-            this.colMaHD.HeaderText = "Mã hóa đơn";
-            this.colMaHD.Name = "colMaHD";
-            this.colMaHD.ReadOnly = true;
-            this.colMaHD.Width = 108;
-            // 
-            // colMaKH
-            // 
-            this.colMaKH.DataPropertyName = "MaKH";
-            this.colMaKH.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.colMaKH.HeaderText = "Tên khách hàng";
-            this.colMaKH.Name = "colMaKH";
-            this.colMaKH.ReadOnly = true;
-            this.colMaKH.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaKH.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colMaKH.Width = 135;
-            // 
-            // colMaNV
-            // 
-            this.colMaNV.DataPropertyName = "MaNV";
-            this.colMaNV.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.colMaNV.HeaderText = "Tên nhân viên";
-            this.colMaNV.Name = "colMaNV";
-            this.colMaNV.ReadOnly = true;
-            this.colMaNV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaNV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colMaNV.Width = 122;
-            // 
-            // colMaThue
-            // 
-            this.colMaThue.DataPropertyName = "MaThue";
-            this.colMaThue.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.colMaThue.HeaderText = "Tên thuế";
-            this.colMaThue.Name = "colMaThue";
-            this.colMaThue.ReadOnly = true;
-            this.colMaThue.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaThue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colMaThue.Width = 89;
-            // 
-            // colTyLeThue
-            // 
-            this.colTyLeThue.DataPropertyName = "TyLeThue";
-            this.colTyLeThue.HeaderText = "Mức thuế";
-            this.colTyLeThue.Name = "colTyLeThue";
-            this.colTyLeThue.ReadOnly = true;
-            this.colTyLeThue.Width = 92;
-            // 
-            // colNgayLapHoaDon
-            // 
-            this.colNgayLapHoaDon.DataPropertyName = "NgayLapHoaDon";
-            this.colNgayLapHoaDon.HeaderText = "Ngày lập hóa đơn";
-            this.colNgayLapHoaDon.Name = "colNgayLapHoaDon";
-            this.colNgayLapHoaDon.ReadOnly = true;
-            this.colNgayLapHoaDon.Width = 119;
-            // 
-            // colTongHD
-            // 
-            this.colTongHD.DataPropertyName = "TongHoaDon";
-            this.colTongHD.HeaderText = "Tổng hóa đơn";
-            this.colTongHD.Name = "colTongHD";
-            this.colTongHD.ReadOnly = true;
-            this.colTongHD.Width = 97;
-            // 
-            // colTienNhan
-            // 
-            this.colTienNhan.DataPropertyName = "TienNhan";
-            this.colTienNhan.HeaderText = "Tiền nhận";
-            this.colTienNhan.Name = "colTienNhan";
-            this.colTienNhan.ReadOnly = true;
-            this.colTienNhan.Width = 96;
-            // 
-            // colTienThoi
-            // 
-            this.colTienThoi.DataPropertyName = "TienThoi";
-            this.colTienThoi.HeaderText = "Tiền thối";
-            this.colTienThoi.Name = "colTienThoi";
-            this.colTienThoi.ReadOnly = true;
-            this.colTienThoi.Width = 87;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "TrangThai";
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
-            this.colTrangThai.Visible = false;
-            this.colTrangThai.Width = 97;
-            // 
-            // colCCCD
-            // 
-            this.colCCCD.DataPropertyName = "CCCD";
-            this.colCCCD.HeaderText = "CCCD";
-            this.colCCCD.Name = "colCCCD";
-            this.colCCCD.ReadOnly = true;
-            this.colCCCD.Visible = false;
-            this.colCCCD.Width = 79;
-            // 
-            // colTenDN
-            // 
-            this.colTenDN.DataPropertyName = "TenTaiKhoan";
-            this.colTenDN.HeaderText = "Tên đăng nhập";
-            this.colTenDN.Name = "colTenDN";
-            this.colTenDN.ReadOnly = true;
-            this.colTenDN.Visible = false;
-            this.colTenDN.Width = 129;
             // 
             // tlpCTHDController
             // 
@@ -647,49 +581,105 @@
             this.spcHeader.SplitterDistance = 972;
             this.spcHeader.TabIndex = 0;
             // 
-            // btnDeleteBill
+            // colMaHD
             // 
-            this.btnDeleteBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleteBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteBill.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteBill.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteBill.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnDeleteBill.Location = new System.Drawing.Point(3, 3);
-            this.btnDeleteBill.Name = "btnDeleteBill";
-            this.btnDeleteBill.Size = new System.Drawing.Size(191, 88);
-            this.btnDeleteBill.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnDeleteBill.Style.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteBill.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnDeleteBill.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnDeleteBill.TabIndex = 7;
-            this.btnDeleteBill.Text = "Xóa";
-            this.btnDeleteBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolTip1.SetToolTip(this.btnDeleteBill, "Xóa hóa đơn");
-            this.btnDeleteBill.UseVisualStyleBackColor = false;
-            this.btnDeleteBill.Click += new System.EventHandler(this.btnDeleteBill_Click);
+            this.colMaHD.DataPropertyName = "MaHoaDon";
+            this.colMaHD.HeaderText = "Mã hóa đơn";
+            this.colMaHD.Name = "colMaHD";
+            this.colMaHD.ReadOnly = true;
+            this.colMaHD.Width = 118;
             // 
-            // btnRecoverBill
+            // colMaKH
             // 
-            this.btnRecoverBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRecoverBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecoverBill.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecoverBill.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverBill.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnRecoverBill.Location = new System.Drawing.Point(200, 3);
-            this.btnRecoverBill.Name = "btnRecoverBill";
-            this.btnRecoverBill.Size = new System.Drawing.Size(191, 88);
-            this.btnRecoverBill.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(142)))), ((int)(((byte)(60)))));
-            this.btnRecoverBill.Style.ForeColor = System.Drawing.Color.White;
-            this.btnRecoverBill.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnRecoverBill.Style.ImageForeColor = System.Drawing.Color.White;
-            this.btnRecoverBill.TabIndex = 8;
-            this.btnRecoverBill.Text = "Khôi phục";
-            this.btnRecoverBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolTip1.SetToolTip(this.btnRecoverBill, "Khôi phục hóa đơn");
-            this.btnRecoverBill.UseVisualStyleBackColor = false;
-            this.btnRecoverBill.Click += new System.EventHandler(this.btnRecoverBill_Click);
+            this.colMaKH.DataPropertyName = "MaKH";
+            this.colMaKH.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colMaKH.HeaderText = "Tên khách hàng";
+            this.colMaKH.Name = "colMaKH";
+            this.colMaKH.ReadOnly = true;
+            this.colMaKH.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMaKH.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colMaKH.Width = 135;
+            // 
+            // colMaNV
+            // 
+            this.colMaNV.DataPropertyName = "MaNV";
+            this.colMaNV.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colMaNV.HeaderText = "Tên nhân viên";
+            this.colMaNV.Name = "colMaNV";
+            this.colMaNV.ReadOnly = true;
+            this.colMaNV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMaNV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colMaNV.Width = 122;
+            // 
+            // colMaThue
+            // 
+            this.colMaThue.DataPropertyName = "MaThue";
+            this.colMaThue.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colMaThue.HeaderText = "Tỷ lệ thuế";
+            this.colMaThue.Name = "colMaThue";
+            this.colMaThue.ReadOnly = true;
+            this.colMaThue.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMaThue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colMaThue.Width = 94;
+            // 
+            // colNgayLapHoaDon
+            // 
+            this.colNgayLapHoaDon.DataPropertyName = "NgayLapHoaDon";
+            this.colNgayLapHoaDon.HeaderText = "Ngày lập hóa đơn";
+            this.colNgayLapHoaDon.Name = "colNgayLapHoaDon";
+            this.colNgayLapHoaDon.ReadOnly = true;
+            this.colNgayLapHoaDon.Width = 119;
+            // 
+            // colTongHD
+            // 
+            this.colTongHD.DataPropertyName = "TongHoaDon";
+            this.colTongHD.HeaderText = "Tổng hóa đơn";
+            this.colTongHD.Name = "colTongHD";
+            this.colTongHD.ReadOnly = true;
+            this.colTongHD.Width = 97;
+            // 
+            // colTienNhan
+            // 
+            this.colTienNhan.DataPropertyName = "TienNhan";
+            this.colTienNhan.HeaderText = "Tiền nhận";
+            this.colTienNhan.Name = "colTienNhan";
+            this.colTienNhan.ReadOnly = true;
+            this.colTienNhan.Width = 96;
+            // 
+            // colTienThoi
+            // 
+            this.colTienThoi.DataPropertyName = "TienThoi";
+            this.colTienThoi.HeaderText = "Tiền thối";
+            this.colTienThoi.Name = "colTienThoi";
+            this.colTienThoi.ReadOnly = true;
+            this.colTienThoi.Width = 87;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TrangThai";
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
+            this.colTrangThai.Visible = false;
+            this.colTrangThai.Width = 97;
+            // 
+            // colCCCD
+            // 
+            this.colCCCD.DataPropertyName = "CCCD";
+            this.colCCCD.HeaderText = "CCCD";
+            this.colCCCD.Name = "colCCCD";
+            this.colCCCD.ReadOnly = true;
+            this.colCCCD.Visible = false;
+            this.colCCCD.Width = 79;
+            // 
+            // colTenDN
+            // 
+            this.colTenDN.DataPropertyName = "TenTaiKhoan";
+            this.colTenDN.HeaderText = "Tên đăng nhập";
+            this.colTenDN.Name = "colTenDN";
+            this.colTenDN.ReadOnly = true;
+            this.colTenDN.Visible = false;
+            this.colTenDN.Width = 129;
             // 
             // ucBill
             // 
@@ -750,11 +740,13 @@
         private Syncfusion.WinForms.Controls.SfButton txtXemCT;
         private System.Windows.Forms.ToolTip toolTip1;
         private Syncfusion.WinForms.Controls.SfButton btnInHD;
+        private System.Windows.Forms.TableLayoutPanel tlpCTHDController;
+        private Syncfusion.WinForms.Controls.SfButton btnRecoverBill;
+        private Syncfusion.WinForms.Controls.SfButton btnDeleteBill;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaHD;
         private System.Windows.Forms.DataGridViewComboBoxColumn colMaKH;
         private System.Windows.Forms.DataGridViewComboBoxColumn colMaNV;
         private System.Windows.Forms.DataGridViewComboBoxColumn colMaThue;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTyLeThue;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayLapHoaDon;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTongHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTienNhan;
@@ -762,8 +754,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCCCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenDN;
-        private System.Windows.Forms.TableLayoutPanel tlpCTHDController;
-        private Syncfusion.WinForms.Controls.SfButton btnRecoverBill;
-        private Syncfusion.WinForms.Controls.SfButton btnDeleteBill;
     }
 }

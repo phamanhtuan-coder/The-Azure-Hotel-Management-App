@@ -32,8 +32,19 @@ namespace GUI.UserControls
             dgvDevice.AutoGenerateColumns = false;
             Loadcombo();
             Loadds();
+            LoadTinhTrangThietBi();
             KiemTraPQ();
         }
+
+        private void LoadTinhTrangThietBi()
+        {
+            List<TTThietBiDTO> dsTinhTrang = new List<TTThietBiDTO>();
+            dsTinhTrang = TTThietBiBLL.LayDSTinhTrangThietBi();
+            MaTinhTrangThietBi.DataSource = dsTinhTrang;
+            MaTinhTrangThietBi.ValueMember = "MaTinhTrangThietBi";
+            MaTinhTrangThietBi.DisplayMember = "TenTinhTrang";
+        }
+
         private void KiemTraPQ()
         {
             if (MaPHQ.Contains("01"))
