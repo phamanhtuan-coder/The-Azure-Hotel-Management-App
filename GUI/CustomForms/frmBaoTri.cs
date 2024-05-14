@@ -81,12 +81,12 @@ namespace GUI.customForm
 
             if (cboThietBi.SelectedIndex >= 0)
             {
-                p.MaThietBi = cboThietBi.SelectedIndex + 1;
+                p.MaThietBi = (int)cboThietBi.SelectedValue;
             }
 
             if (cboNVBaoTri.SelectedIndex >= 0)
             {
-                p.MaNV = cboNVBaoTri.SelectedIndex + 1;
+                p.MaNV = (int) cboNVBaoTri.SelectedValue;
             }
 
             p.NgayHuHong = dtpNgayHuHong.Value;
@@ -105,6 +105,9 @@ namespace GUI.customForm
                 check = BaoTriBLL.them(BaoTriDTO);
                 if (check)
                 {
+                    ThietBiBLL thietBiBLL = new ThietBiBLL();
+                    
+                    thietBiBLL.ThayDoiTrangThaiThietBiBaoTri(BaoTriDTO.MaThietBi,2);
                     thongBao = new customMessageBox("Đã thêm thành công dữ liệu bảo trì");
                 }
                 else
@@ -120,6 +123,8 @@ namespace GUI.customForm
                 check = BaoTriBLL.sua(BaoTriDTO);
                 if (check)
                 {
+                    ThietBiBLL thietBiBLL = new ThietBiBLL();
+                    thietBiBLL.ThayDoiTrangThaiThietBiBaoTri(BaoTriDTO.MaThietBi, 1);
                     thongBao = new customMessageBox("Sửa thành công thông tin bảo trì!");
                 }
                 else

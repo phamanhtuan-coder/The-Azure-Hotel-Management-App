@@ -100,8 +100,9 @@ namespace GUI.UserControls
         {
             frm.isAdd = true;
             frm.ShowDialog();
-            dgvMaintenance.ClearSelection();
+           
             Loadds();
+           
         }
         private void LayDuLieuTuForm(frmBaoTri frm)
         {

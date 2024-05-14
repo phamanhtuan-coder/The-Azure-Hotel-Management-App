@@ -89,6 +89,27 @@ namespace DAL
             return kq > 0;
         }
 
+        public bool ThayDoiTrangThaiThietBiBaoTri(int maThietBi, int maTinhTrangThietBi)
+        {
+            try
+            {
+                string strUpdate= " Update ThietBi set MaTinhTrangThietBi = @MaTinhTrangThietBi where MaThietBi = @MaThietBi";
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+                SqlCommand comm = new SqlCommand(strUpdate, conn);
+                comm.Parameters.AddWithValue("@MaTinhTrangThietBi", maTinhTrangThietBi);
+                comm.Parameters.AddWithValue("@MaThietBi", maThietBi);
+                int kq = comm.ExecuteNonQuery();
+                conn.Close();
+                return kq > 0;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
+
         public bool themtbi(ThietBiDTO thietbi)
         {
             string lenhThemtbi=

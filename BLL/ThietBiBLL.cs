@@ -44,6 +44,11 @@ namespace BLL
             return thietBi.suatbi(thietbi);
         }
 
+        public bool ThayDoiTrangThaiThietBiBaoTri(int maThietBi, int maTrangThaiTB)
+        {
+            return thietBi.ThayDoiTrangThaiThietBiBaoTri(maThietBi, maTrangThaiTB);
+        }
+
         public bool themtbi(ThietBiDTO thietbi)
         {
             return thietBi.themtbi(thietbi);
