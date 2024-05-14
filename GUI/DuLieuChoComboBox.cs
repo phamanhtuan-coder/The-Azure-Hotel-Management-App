@@ -24,10 +24,10 @@ namespace GUI
         public static void duLieuFilter(SfComboBox comboBox)
         {
             List<string> filterOptions = new List<string>
-        {
-            "Tất cả",
+        {          
             "Đang hoạt động",
-            "Đã xóa"     
+            "Đã xóa",
+            "Tất cả"
         };
             comboBox.DataSource = filterOptions;
             comboBox.SelectedIndex = 0;

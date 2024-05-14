@@ -707,6 +707,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucService.resx">
       <DependentUpon>ucService.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucServiceType.resx">
       <DependentUpon>ucServiceType.cs</DependentUpon>
