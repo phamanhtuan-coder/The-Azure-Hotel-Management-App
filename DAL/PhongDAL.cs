@@ -300,7 +300,7 @@ namespace DAL
             {
                 List<PhongDTO> dsp = new List<PhongDTO>();
                 SqlConnection conn = DataProvider.KetNoiDuLieu();
-                string strlaydanhsach = "select * from Phong where MaTinhTrangPhong = 4";
+                string strlaydanhsach = "select * from Phong where MaTinhTrangPhong = 4 and TrangThai = 1";
                 conn.Open();
                 SqlDataReader reader = DataProvider.ThucHienTruyVan(strlaydanhsach, conn);
                 while (reader.Read())

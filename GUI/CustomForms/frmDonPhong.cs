@@ -2,6 +2,7 @@
 using DTO;
 using Syncfusion.Windows.Forms.Maps;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -91,10 +92,11 @@ namespace GUI.customForm
                 PhongDTO TatCa = new PhongDTO();
                 TatCa.MaPHG = -1;
                 list.Add (TatCa);
+                cboThietBi.DataSource = null;
                 cboThietBi.DataSource = list;
                 cboThietBi.DisplayMember = "MaPHG";
                 cboThietBi.ValueMember = "MaPHG";
-                cboThietBi.SelectedIndex = 1;
+                cboThietBi.SelectedIndex = 0;
             }
             else
             {
@@ -105,6 +107,7 @@ namespace GUI.customForm
                 {
                     list.Add(item);
                 }
+                cboThietBi.DataSource = null;
                 cboThietBi.DataSource = list;
                 cboThietBi.DisplayMember = "MaPHG";
                 cboThietBi.ValueMember = "MaPHG";
