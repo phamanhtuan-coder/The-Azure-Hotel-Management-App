@@ -955,6 +955,18 @@ namespace GUI
                     break;
                 default:
                     {
+                        flpAccount.Visible = false;
+                        flpBookingManagement.Visible = false;
+                        panDashBoard.Visible = false;
+                        flpBookingManagement.Visible = false;
+                        flpCustomerManagement.Visible = false;
+                        flpDeviceMangement.Visible = false;
+                        flpStaffManagement.Visible = false;
+                        flpFinanceManagement.Visible = false;
+                        flpMaintanceManagement.Visible = false;
+                        flpRoomManagement.Visible = false;
+                        flpHousekeepingManagement.Visible = false;
+                        panRoomBooking.Visible = false;
                         uc404 error = new uc404();
                         openForm(error);
                     }
