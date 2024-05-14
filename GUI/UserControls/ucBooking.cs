@@ -16,6 +16,7 @@ namespace GUI.UserControls
 {
     public partial class ucBooking : UserControl
     {
+        string tt;
         public string MaPHQ { get; set; }
         public customMessageBox thongBao;
         public frmDatPhong frm = new frmDatPhong();
@@ -102,7 +103,7 @@ namespace GUI.UserControls
             frm.isAdd = true;
             frm.ShowDialog();
             dgvBooking.ClearSelection();
-            layds();
+            Filter();
         }
         private void LayDuLieuTuForm(frmDatPhong frm)
         {
@@ -123,7 +124,7 @@ namespace GUI.UserControls
                 LayDuLieuTuForm(frm);
                 frm.ShowDialog();
                 dgvBooking.ClearSelection();
-                layds();
+                Filter();
             }
             else
             {
@@ -136,33 +137,41 @@ namespace GUI.UserControls
         {
             if (dgvBooking.SelectedRows.Count > 0)
             {
-                thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr == DialogResult.OK)
+                customMessageBox thongBao;
+                int TrangThai = dgvBooking.Columns["colTrangThai"].Index;
+                if ((bool)dgvBooking.SelectedRows[0].Cells[TrangThai].Value)
                 {
-                    int madatphong = (int)dgvBooking.SelectedRows[0].Cells["colMaDatPhong"].Value;
-                    bool check = DatPhongBLL.Xoad(madatphong);
-                    if (check)
+                    thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
+                    DialogResult dr = thongBao.ShowDialog();
+                    if (dr != DialogResult.Cancel)
                     {
+                        int madatphong = (int)dgvBooking.SelectedRows[0].Cells["colMaDatPhong"].Value;
+                        bool check = DatPhongBLL.Xoad(madatphong);
+                        if (check)
+                        {
 
-                        dgvBooking.ClearSelection();
-                        layds();
-                        thongBao = new customMessageBox(
-                            "Xóa thành công dữ liệu có mã là: " + madatphong + "!"
-                        );
-                        thongBao.ShowDialog();
+                            dgvBooking.ClearSelection();
+                            Filter();
+                            thongBao = new customMessageBox(
+                                "Xóa thành công dữ liệu có mã là: " + madatphong + "!"
+                            );
+                            thongBao.ShowDialog();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox(
+                                "Xóa thất bại dữ liệu có mã là: " + madatphong + "!"
+                            );
+                            thongBao.ShowDialog();
+                        }
                     }
-                    else
-                    {
-                        thongBao = new customMessageBox(
-                            "Xóa thất bại dữ liệu có mã là: " + madatphong + "!"
-                        );
-                        thongBao.ShowDialog();
-                    }
-
                 }
-               
-            }
+                else
+                {
+                    thongBao = new customMessageBox("Bạn không thể xóa dữ liệu đã xóa!");
+                    thongBao.ShowDialog();
+                }
+            }       
             else
             {
                 thongBao = new customMessageBox("Hãy chọn một dòng dữ liệu bạn muốn xóa!");
@@ -175,29 +184,39 @@ namespace GUI.UserControls
         {
             if (dgvBooking.SelectedRows.Count > 0)
             {
-                thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
+                customMessageBox thongBao;
+                int TrangThai = dgvBooking.Columns["colTrangThai"].Index;
+                if (!(bool)dgvBooking.SelectedRows[0].Cells[TrangThai].Value)
                 {
-                    int madatphong = (int)dgvBooking.SelectedRows[0].Cells["colMaDatPhong"].Value;
-                    bool check = DatPhongBLL.khoiphucd(madatphong);
-                    if (check)
+                    thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
+                    DialogResult dr = thongBao.ShowDialog();
+                    if (dr != DialogResult.Cancel)
                     {
+                        int madatphong = (int)dgvBooking.SelectedRows[0].Cells["colMaDatPhong"].Value;
+                        bool check = DatPhongBLL.khoiphucd(madatphong);
+                        if (check)
+                        {
 
-                        dgvBooking.ClearSelection();
-                        layds();
-                        thongBao = new customMessageBox(
-                            "Khôi phục thành công dữ liệu có mã là: " + madatphong + "!"
-                        );
-                        thongBao.ShowDialog();
+                            dgvBooking.ClearSelection();
+                            Filter();
+                            thongBao = new customMessageBox(
+                                "Khôi phục thành công dữ liệu có mã là: " + madatphong + "!"
+                            );
+                            thongBao.ShowDialog();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox(
+                                "Khôi phục thất bại dữ liệu có mã là: " + madatphong + "!"
+                            );
+                            thongBao.ShowDialog();
+                        }
                     }
-                    else
-                    {
-                        thongBao = new customMessageBox(
-                            "Khôi phục thất bại dữ liệu có mã là: " + madatphong + "!"
-                        );
-                        thongBao.ShowDialog();
-                    }
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Bạn không thể Khôi phục dữ liệu chưa xóa!");
+                    thongBao.ShowDialog();
                 }
             }
             else
@@ -242,9 +261,18 @@ namespace GUI.UserControls
 
         private void cboStateBooking_SelectedIndexChanged(object sender, EventArgs e)
         {
-            datPhongDTOs = DatPhongBLL.FilterTrangThai(cboStateBooking.Text);
-            dgvBooking.ClearSelection();
-            dgvBooking.DataSource = datPhongDTOs;
+            tt = cboStateBooking.Text;
+            Filter();
+        }
+
+        private void Filter()
+        {
+            if (tt.Length > 0)
+            {
+                datPhongDTOs = DatPhongBLL.FilterTrangThai(tt);
+                dgvBooking.ClearSelection();
+                dgvBooking.DataSource = datPhongDTOs;
+            }    
         }
 
         private void btnTraCuuBooking_Click(object sender, EventArgs e)
