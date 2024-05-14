@@ -39,7 +39,7 @@ namespace GUI.UserControls
             colHangTV.DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopCenter;
             LoadDuLieuHNV();
             LoadDuLieuCombobox();
-            LoadDSKhuyenMai();
+            Filter();
             KiemTraPQ();
         }
         private void KiemTraPQ()
@@ -310,6 +310,10 @@ namespace GUI.UserControls
         private void Filter()
         {
             dsSearch = khuyenMaiBLL.Filter(trangthai, hangthanhvien, khuyenmai);
+            foreach(KhuyenMaiDTO item in dsSearch)
+            {
+                item.KhuyenMai = item.KhuyenMai / 100;
+            }
             dgvDiscount.DataSource = dsSearch;
         }
     }
