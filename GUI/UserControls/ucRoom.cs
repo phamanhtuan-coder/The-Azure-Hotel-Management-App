@@ -189,33 +189,44 @@ namespace GUI.UserControls
         {
             if (dgvRoom.SelectedRows.Count > 0)
             {
-                thongBao = new customMessageBox(
+                customMessageBox thongBao;
+                int TrangThai = dgvRoom.Columns["colTrangThai"].Index;
+                if ((bool)dgvRoom.SelectedRows[0].Cells[TrangThai].Value)
+                {
+                    thongBao = new customMessageBox(
                     "Bạn có chắc chắn muốn xóa dòng dữ liệu này không?"
                 );
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr == DialogResult.OK)
-                {
-                    int maphong = (int)dgvRoom.SelectedRows[0].Cells["colMaPHG"].Value;
-                    bool check = PhongBLL.Xoap(maphong);
-                    if (check)
+                    DialogResult dr = thongBao.ShowDialog();
+                    if (dr == DialogResult.OK)
                     {
+                        int maphong = (int)dgvRoom.SelectedRows[0].Cells["colMaPHG"].Value;
+                        bool check = PhongBLL.Xoap(maphong);
+                        if (check)
+                        {
 
-                        dgvRoom.ClearSelection();
-                        Filter();
-                        thongBao = new customMessageBox(
-                            "Xóa thành công dữ liệu có mã là: " + maphong + "!"
-                        );
-                        thongBao.ShowDialog();
-                    }
-                    else
-                    {
-                        thongBao = new customMessageBox(
-                            "Xóa thất bại dữ liệu có mã là: " + maphong + "!"
-                        );
-                        thongBao.ShowDialog();
+                            dgvRoom.ClearSelection();
+                            Filter();
+                            thongBao = new customMessageBox(
+                                "Xóa thành công dữ liệu có mã là: " + maphong + "!"
+                            );
+                            thongBao.ShowDialog();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox(
+                                "Xóa thất bại dữ liệu có mã là: " + maphong + "!"
+                            );
+                            thongBao.ShowDialog();
+                        }
                     }
                 }
-              
+                else
+                {
+                    thongBao = new customMessageBox("Bạn không thể xóa dữ liệu đã xóa!");
+                    thongBao.ShowDialog();
+                }
+
+
             }
             else
             {
@@ -229,33 +240,42 @@ namespace GUI.UserControls
         {
             if (dgvRoom.SelectedRows.Count > 0)
             {
-                thongBao = new customMessageBox(
+                customMessageBox thongBao;
+                int TrangThai = dgvRoom.Columns["colTrangThai"].Index;
+                if (!(bool)dgvRoom.SelectedRows[0].Cells[TrangThai].Value)
+                {
+                    thongBao = new customMessageBox(
                     "Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?"
                 );
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr == DialogResult.OK)
-                {
-                    int maphong = (int)dgvRoom.SelectedRows[0].Cells["colMaPHG"].Value;
-                    bool check = PhongBLL.kpp(maphong);
-                    if (check)
+                    DialogResult dr = thongBao.ShowDialog();
+                    if (dr == DialogResult.OK)
                     {
+                        int maphong = (int)dgvRoom.SelectedRows[0].Cells["colMaPHG"].Value;
+                        bool check = PhongBLL.kpp(maphong);
+                        if (check)
+                        {
 
-                        dgvRoom.ClearSelection();
-                        Filter();
-                        thongBao = new customMessageBox(
-                            "Khôi phục thành công dữ liệu có mã là: " + maphong + "!"
-                        );
-                        thongBao.ShowDialog();
-                    }
-                    else
-                    {
-                        thongBao = new customMessageBox(
-                            "Khôi phục thất bại dữ liệu có mã là: " + maphong + "!"
-                        );
-                        thongBao.ShowDialog();
+                            dgvRoom.ClearSelection();
+                            Filter();
+                            thongBao = new customMessageBox(
+                                "Khôi phục thành công dữ liệu có mã là: " + maphong + "!"
+                            );
+                            thongBao.ShowDialog();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox(
+                                "Khôi phục thất bại dữ liệu có mã là: " + maphong + "!"
+                            );
+                            thongBao.ShowDialog();
+                        }
                     }
                 }
-               
+                else
+                {
+                    thongBao = new customMessageBox("Bạn không thể Khôi phục dữ liệu chưa xóa!");
+                    thongBao.ShowDialog();
+                }
             }        
             else
             {
