@@ -52,7 +52,7 @@ namespace GUI.UserControls
             LoadDuLieuNV();
             LoadDuLieuThue();
             LoadDuLieuCombobox();
-            TruyVanDanhSachHoaDon();
+            Filter();
             KiemTraPQ();
         }
         private void KiemTraPQ()
