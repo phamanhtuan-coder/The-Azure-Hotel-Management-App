@@ -15,6 +15,7 @@ namespace GUI.UserControls
 {
     public partial class ucService : UserControl
     {
+        string tt;
         customMessageBox thongBao;
         frmDatDichVu frm = new frmDatDichVu();
         DatDichVuBLL datDichVuBLL = new DatDichVuBLL();
@@ -35,8 +36,6 @@ namespace GUI.UserControls
             LoadDULieuDV();
             dgvServices.AutoGenerateColumns = false;
             colNgayDat.DefaultCellStyle.Format= "dd/MM/yyyy";
-
-            Loadds();
             Loadcombo();
             KiemTraPQ();
         }
@@ -101,7 +100,7 @@ namespace GUI.UserControls
             frm.isAdd = true;
             frm.ShowDialog();
             dgvServices.ClearSelection();
-            Loadds();
+            Filter();
         }
         private void LayDuLieuTuForm(frmDatDichVu frm)
         {
@@ -122,7 +121,7 @@ namespace GUI.UserControls
                 LayDuLieuTuForm(frm);
                 frm.ShowDialog();
                 dgvServices.ClearSelection();
-                Loadds();
+                Filter();
             }
             else
             {
@@ -135,29 +134,39 @@ namespace GUI.UserControls
         {
             if (dgvServices.SelectedRows.Count > 0)
             {
-                thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
+                customMessageBox thongBao;
+                int TrangThai = dgvServices.Columns["colTrangThai"].Index;
+                if ((bool)dgvServices.SelectedRows[0].Cells[TrangThai].Value)
                 {
-                    int MaDatDichVu = (int)dgvServices.SelectedRows[0].Cells["colMaDatDichVu"].Value;
-                    bool check = datDichVuBLL.Xoaddv(MaDatDichVu);
-                    if (check)
+                    thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
+                    DialogResult dr = thongBao.ShowDialog();
+                    if (dr != DialogResult.Cancel)
                     {
+                        int MaDatDichVu = (int)dgvServices.SelectedRows[0].Cells["colMaDatDichVu"].Value;
+                        bool check = datDichVuBLL.Xoaddv(MaDatDichVu);
+                        if (check)
+                        {
 
-                        dgvServices.ClearSelection();
-                        Loadds();
-                        thongBao = new customMessageBox(
-                            "Xóa thành công dữ liệu có mã là: " + MaDatDichVu + "!"
-                        );
-                        thongBao.ShowDialog();
+                            dgvServices.ClearSelection();
+                            Filter();
+                            thongBao = new customMessageBox(
+                                "Xóa thành công dữ liệu có mã là: " + MaDatDichVu + "!"
+                            );
+                            thongBao.ShowDialog();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox(
+                                "Xóa thất bại dữ liệu có mã là: " + MaDatDichVu + "!"
+                            );
+                            thongBao.ShowDialog();
+                        }
                     }
-                    else
-                    {
-                        thongBao = new customMessageBox(
-                            "Xóa thất bại dữ liệu có mã là: " + MaDatDichVu + "!"
-                        );
-                        thongBao.ShowDialog();
-                    }
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Bạn không thể xóa dữ liệu đã xóa!");
+                    thongBao.ShowDialog();
                 }
             }
             else
@@ -171,29 +180,39 @@ namespace GUI.UserControls
         {
             if (dgvServices.SelectedRows.Count > 0)
             {
-                thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
+                customMessageBox thongBao;
+                int TrangThai = dgvServices.Columns["colTrangThai"].Index;
+                if (!(bool)dgvServices.SelectedRows[0].Cells[TrangThai].Value)
                 {
-                    int MaDatDichVu = (int)dgvServices.SelectedRows[0].Cells["colMaDatDichVu"].Value;
-                    bool check = datDichVuBLL.khoiphucddv(MaDatDichVu);
-                    if (check)
+                    thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
+                    DialogResult dr = thongBao.ShowDialog();
+                    if (dr != DialogResult.Cancel)
                     {
+                        int MaDatDichVu = (int)dgvServices.SelectedRows[0].Cells["colMaDatDichVu"].Value;
+                        bool check = datDichVuBLL.khoiphucddv(MaDatDichVu);
+                        if (check)
+                        {
 
-                        dgvServices.ClearSelection();
-                        Loadds();
-                        thongBao = new customMessageBox(
-                            "Khôi phục thành công dữ liệu có mã là: " + MaDatDichVu + "!"
-                        );
-                        thongBao.ShowDialog();
+                            dgvServices.ClearSelection();
+                            Filter();
+                            thongBao = new customMessageBox(
+                                "Khôi phục thành công dữ liệu có mã là: " + MaDatDichVu + "!"
+                            );
+                            thongBao.ShowDialog();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox(
+                                "Khôi phục thất bại dữ liệu có mã là: " + MaDatDichVu + "!"
+                            );
+                            thongBao.ShowDialog();
+                        }
                     }
-                    else
-                    {
-                        thongBao = new customMessageBox(
-                            "Khôi phục thất bại dữ liệu có mã là: " + MaDatDichVu + "!"
-                        );
-                        thongBao.ShowDialog();
-                    }
+                }
+                else
+                {
+                    thongBao = new customMessageBox("Bạn không thể Khôi phục dữ liệu chưa xóa!");
+                    thongBao.ShowDialog();
                 }
             }
             else
@@ -253,9 +272,18 @@ namespace GUI.UserControls
 
         private void cboStateService_SelectedIndexChanged(object sender, EventArgs e)
         {
-            datDichVuDTOs = datDichVuBLL.FilterTrangThai(cboStateService.Text);
-            dgvServices.ClearSelection();
-            dgvServices.DataSource = datDichVuDTOs;
+            tt = cboStateService.Text;
+            Filter();
+        }
+
+        private void Filter()
+        {
+            if (tt.Length > 0)
+            {
+                datDichVuDTOs = datDichVuBLL.FilterTrangThai(tt);
+                dgvServices.ClearSelection();
+                dgvServices.DataSource = datDichVuDTOs;
+            }        
         }
 
         private void btnTraCuulService_Click(object sender, EventArgs e)
