@@ -28,7 +28,7 @@ namespace GUI.UserControls
         HoaDonBLL hoaDonBLL= new HoaDonBLL();
         List<HoaDonDTO> hoaDonDTOs = new List<HoaDonDTO>();
         List<HoaDonDTO> dsSearch = new List<HoaDonDTO>();
-
+        List<ThueDTO> list = new List<ThueDTO>();
         frmHoaDon frm = new frmHoaDon();
         customMessageBox thongBao;
 
@@ -83,7 +83,8 @@ namespace GUI.UserControls
         private void LoadDuLieuThue()
         {
             ThueBLL thueBLL = new ThueBLL();
-            List<ThueDTO> list = thueBLL.TruyVanTenVaMaThue();
+            
+            list = thueBLL.TruyVanTenVaTyLeThue();
             colMaThue.DataSource = list;
             colMaThue.ValueMember = "MaThue";
             colMaThue.DisplayMember = "TyLeThue";
@@ -376,13 +377,13 @@ namespace GUI.UserControls
                 }
                 else
                 {
-                    thongBao = new customMessageBox("Hóa đơn đã thanh toán!");
+                    thongBao = new customMessageBox("Hóa đơn đã được thanh toán! Không thể thanh toán lại!");
                     thongBao.ShowDialog();
                 }
             }
             else
             {
-                thongBao = new customMessageBox("Vui lòng chọn hóa đơn!");
+                thongBao = new customMessageBox("Vui lòng chọn hóa đơn bạn muốn thanh toán!");
                 thongBao.ShowDialog();
             }
         }

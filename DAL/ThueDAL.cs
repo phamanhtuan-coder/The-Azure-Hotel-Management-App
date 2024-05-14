@@ -222,5 +222,36 @@ namespace DAL
                 return new List<ThueDTO>();
             }
         }
+
+        public List<ThueDTO> TruyVanTenVaTyLeThue()
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand("spTruyVanTenVaMaThue", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                SqlDataReader reader = com.ExecuteReader();
+                list = new List<ThueDTO>();
+                while (reader.Read())
+                {
+                    ThueDTO thueDTO = new ThueDTO();
+
+                    thueDTO.MaThue = (int)reader["MaThue"];
+                    thueDTO.TenThue = reader["TenThue"].ToString();
+                    thueDTO.TyLeThue = (double)reader["TyLeThue"]/100;
+                    thueDTO.MoTa= reader["MoTa"].ToString();
+                    list.Add(thueDTO);
+                }
+
+                conn.Close();
+                return list;
+            }
+            catch (Exception)
+            {
+                return new List<ThueDTO>();
+            }
+        }
     }
 }

@@ -43,6 +43,8 @@ namespace GUI.UserControls
             LoadTenTT();
             layds();
             dgvRoom.AutoGenerateColumns = false;
+            colGiaPhong.DefaultCellStyle.Format = "#,##0";
+            colGiaPhong.DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopRight;
             laycombo();
             KiemTraPQ();
         }

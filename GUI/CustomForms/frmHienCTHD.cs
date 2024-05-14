@@ -24,7 +24,15 @@ namespace GUI.customForm
         private void frmHienCTHD_Load(object sender, EventArgs e)
         {
             dgvBillDetails.AutoGenerateColumns = false;
+            colThanhTien.DefaultCellStyle.Format = "#,##0";
+            colThanhTien.DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopRight;
+            foreach (var item in hs)
+            {
+                item.KhuyenMai = item.KhuyenMai / 100;
+            }
             dgvBillDetails.DataSource = hs;
+            colKM.DefaultCellStyle.Format = "#.##%";
+            colKM.DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopCenter;
             dgvBillDetails.DefaultCellStyle.ForeColor = Color.Black;
             dgvBillDetails.DefaultCellStyle.SelectionBackColor = Color.Blue;
             dgvBillDetails.DefaultCellStyle.SelectionForeColor = Color.White;

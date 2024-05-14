@@ -35,6 +35,8 @@ namespace GUI.UserControls
         private void ucHousekeeping_Load(object sender, EventArgs e)
         {
             dgvHousekeeping.AutoGenerateColumns = false;
+            colNgayHoanThanh.DefaultCellStyle.Format = "dd/MM/yyyy";
+            colNgayNhan.DefaultCellStyle.Format = "dd/MM/yyyy";
             LoadDuLieuNhanVien();
             LoadDuLieuCombobox();
             LoadDuLieuDonPhong();

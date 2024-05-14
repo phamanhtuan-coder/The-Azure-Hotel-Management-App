@@ -31,6 +31,7 @@ namespace GUI.UserControls
         {
             
             dgvRating.AutoGenerateColumns = false;
+            colNgayDG.DefaultCellStyle.Format = "dd/MM/yyyy";
             LayDanhSachDanhGia();
             CapDuLieuChoController();
             KiemTraPQ();

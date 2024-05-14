@@ -187,5 +187,35 @@ namespace DAL
                 return new List<KhuyenMaiDTO>();
             }
         }
+
+        public List<KhuyenMaiDTO> LoadDSKhuyenMaiTheoPhanTram()
+        {
+            try
+            {
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                conn.Open();
+                SqlCommand com = new SqlCommand("spTruyVanDSKhuyenMai", conn);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
+                SqlDataReader reader = com.ExecuteReader();
+                list = new List<KhuyenMaiDTO>();
+                while (reader.Read())
+                {
+                    KhuyenMaiDTO khuyenMaiDTO = new KhuyenMaiDTO();
+                    khuyenMaiDTO.MaKM = (int)reader["MaKM"];
+                    khuyenMaiDTO.TenKM = reader["TenKM"].ToString();
+                    khuyenMaiDTO.KhuyenMai = (decimal)reader["KhuyenMai"]/100;
+                    khuyenMaiDTO.MaLoaiHangThanhVien = (int)reader["MaLoaiHangThanhVien"];
+                    byte[] trangThaiBytes = (byte[])reader["TrangThai"];
+                    khuyenMaiDTO.TrangThai = BitConverter.ToBoolean(trangThaiBytes, 0);
+                    list.Add(khuyenMaiDTO);
+                }
+                conn.Close();
+                return list;
+            }
+            catch (Exception)
+            {
+                return new List<KhuyenMaiDTO>();
+            }
+        }
     }
 }

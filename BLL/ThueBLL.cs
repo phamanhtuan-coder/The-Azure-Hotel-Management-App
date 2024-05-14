@@ -109,5 +109,10 @@ namespace BLL
         {
             return thueDAL.TruyVanDSThueTT1();
         }
+
+        public List<ThueDTO> TruyVanTenVaTyLeThue()
+        {
+            return thueDAL.TruyVanTenVaTyLeThue();
+        }
     }
 }

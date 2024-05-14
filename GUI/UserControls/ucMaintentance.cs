@@ -34,6 +34,8 @@ namespace GUI.UserControls
             LoadDSTB();
             Loadds();
             dgvMaintenance.AutoGenerateColumns = false;
+            colNgayBaoTri.DefaultCellStyle.Format = "dd/MM/yyyy";
+            colNgayHuHong.DefaultCellStyle.Format= "dd/MM/yyyy";
             Loadcombo();
             KiemTraPQ();
         }

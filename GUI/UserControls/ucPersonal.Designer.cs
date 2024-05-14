@@ -58,6 +58,8 @@
             this.txtHoTen = new System.Windows.Forms.TextBox();
             this.lblHoTen = new System.Windows.Forms.Label();
             this.grpThayDoiMatKhau = new System.Windows.Forms.GroupBox();
+            this.lblLoiRePassword = new System.Windows.Forms.Label();
+            this.lblLoiPassword = new System.Windows.Forms.Label();
             this.txtPW = new System.Windows.Forms.TextBox();
             this.lblPWcu = new System.Windows.Forms.Label();
             this.btnResetPW = new Syncfusion.WinForms.Controls.SfButton();
@@ -67,8 +69,6 @@
             this.lblPWMoi = new System.Windows.Forms.Label();
             this.lblRePW = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.lblLoiPassword = new System.Windows.Forms.Label();
-            this.lblLoiRePassword = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.spcPersonal)).BeginInit();
             this.spcPersonal.Panel1.SuspendLayout();
             this.spcPersonal.Panel2.SuspendLayout();
@@ -118,12 +118,12 @@
             // 
             this.cboHangTV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboHangTV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cboHangTV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboHangTV.Enabled = false;
             this.cboHangTV.FormattingEnabled = true;
             this.cboHangTV.Location = new System.Drawing.Point(65, 67);
             this.cboHangTV.Name = "cboHangTV";
-            this.cboHangTV.Size = new System.Drawing.Size(225, 50);
+            this.cboHangTV.Size = new System.Drawing.Size(225, 30);
             this.cboHangTV.TabIndex = 2;
             // 
             // btnTraCuuHD
@@ -448,6 +448,26 @@
             this.grpThayDoiMatKhau.TabStop = false;
             this.grpThayDoiMatKhau.Text = "Thay đổi mật khẩu";
             // 
+            // lblLoiRePassword
+            // 
+            this.lblLoiRePassword.AutoSize = true;
+            this.lblLoiRePassword.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold);
+            this.lblLoiRePassword.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiRePassword.Location = new System.Drawing.Point(325, 182);
+            this.lblLoiRePassword.Name = "lblLoiRePassword";
+            this.lblLoiRePassword.Size = new System.Drawing.Size(0, 16);
+            this.lblLoiRePassword.TabIndex = 26;
+            // 
+            // lblLoiPassword
+            // 
+            this.lblLoiPassword.AutoSize = true;
+            this.lblLoiPassword.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold);
+            this.lblLoiPassword.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLoiPassword.Location = new System.Drawing.Point(325, 123);
+            this.lblLoiPassword.Name = "lblLoiPassword";
+            this.lblLoiPassword.Size = new System.Drawing.Size(0, 16);
+            this.lblLoiPassword.TabIndex = 25;
+            // 
             // txtPW
             // 
             this.txtPW.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -548,26 +568,6 @@
             this.lblRePW.Size = new System.Drawing.Size(165, 22);
             this.lblRePW.TabIndex = 16;
             this.lblRePW.Text = "Nhập lại password";
-            // 
-            // lblLoiPassword
-            // 
-            this.lblLoiPassword.AutoSize = true;
-            this.lblLoiPassword.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold);
-            this.lblLoiPassword.ForeColor = System.Drawing.Color.IndianRed;
-            this.lblLoiPassword.Location = new System.Drawing.Point(325, 123);
-            this.lblLoiPassword.Name = "lblLoiPassword";
-            this.lblLoiPassword.Size = new System.Drawing.Size(0, 16);
-            this.lblLoiPassword.TabIndex = 25;
-            // 
-            // lblLoiRePassword
-            // 
-            this.lblLoiRePassword.AutoSize = true;
-            this.lblLoiRePassword.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold);
-            this.lblLoiRePassword.ForeColor = System.Drawing.Color.IndianRed;
-            this.lblLoiRePassword.Location = new System.Drawing.Point(325, 182);
-            this.lblLoiRePassword.Name = "lblLoiRePassword";
-            this.lblLoiRePassword.Size = new System.Drawing.Size(0, 16);
-            this.lblLoiRePassword.TabIndex = 26;
             // 
             // ucPersonal
             // 

@@ -440,12 +440,12 @@
             // 
             this.colMaDV.DataPropertyName = "MaDV";
             this.colMaDV.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.colMaDV.HeaderText = "Tên Dịch Vụ";
+            this.colMaDV.HeaderText = "Tên dịch vụ";
             this.colMaDV.MinimumWidth = 6;
             this.colMaDV.Name = "colMaDV";
             this.colMaDV.ReadOnly = true;
             this.colMaDV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMaDV.Width = 112;
+            this.colMaDV.Width = 108;
             // 
             // colSoLuong
             // 

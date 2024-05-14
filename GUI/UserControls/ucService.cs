@@ -34,6 +34,8 @@ namespace GUI.UserControls
         {
             LoadDULieuDV();
             dgvServices.AutoGenerateColumns = false;
+            colNgayDat.DefaultCellStyle.Format= "dd/MM/yyyy";
+
             Loadds();
             Loadcombo();
             KiemTraPQ();

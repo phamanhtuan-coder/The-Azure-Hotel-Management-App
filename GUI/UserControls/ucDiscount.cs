@@ -34,6 +34,9 @@ namespace GUI.UserControls
         private void ucDiscount_Load(object sender, EventArgs e)
         {
             dgvDiscount.AutoGenerateColumns = false;
+            colMucKhuyenMai.DefaultCellStyle.Format = "#.##%";
+            colMucKhuyenMai.DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopCenter;
+            colHangTV.DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopCenter;
             LoadDuLieuHNV();
             LoadDuLieuCombobox();
             LoadDSKhuyenMai();
@@ -80,6 +83,10 @@ namespace GUI.UserControls
         private void LoadDSKhuyenMai()
         {
             khuyenMaiDTOs = khuyenMaiBLL.LoadDSKhuyenMai();
+            foreach (var item in khuyenMaiDTOs)
+            {
+                item.KhuyenMai = item.KhuyenMai /100;
+            }
             dgvDiscount.DataSource = khuyenMaiDTOs;
         }
 

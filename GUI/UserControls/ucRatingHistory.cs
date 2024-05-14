@@ -38,6 +38,7 @@ namespace GUI.UserControls
         private void ucRating_Load(object sender, EventArgs e)
         {
             dgvRating.AutoGenerateColumns = false;
+            colNgayDG.DefaultCellStyle.Format = "dd/MM/yyyy";
             LayDanhSachDanhGia();
             CapDuLieuChoController();
             dtpNgayDanhGia.MaxDate = DateTime.Now;

@@ -32,6 +32,9 @@ namespace GUI.UserControls
 
         private void ucTax_Load(object sender, EventArgs e)
         {
+            dgvTax.AutoGenerateColumns = false;
+            colTiLeThue.DefaultCellStyle.Format = "#.##%";
+            colTiLeThue.DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopCenter;
             LoadDuLieuCombobox();
             LoadDSThue();
             KiemTraPQ();
@@ -73,7 +76,7 @@ namespace GUI.UserControls
 
         private void LoadDSThue()
         {
-            thueDTOs = thueBLL.TruyVanDSThue();
+            thueDTOs = thueBLL.TruyVanTenVaTyLeThue();
             dgvTax.DataSource =thueDTOs;           
         }
 

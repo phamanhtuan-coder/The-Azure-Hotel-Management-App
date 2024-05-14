@@ -33,6 +33,8 @@ namespace GUI.UserControls
         {
             LoadDuLieuccoTenDichVu();
             dgvServiceType.AutoGenerateColumns = false;
+            colGiaDV.DefaultCellStyle.Format = "#,##0";
+            colGiaDV.DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopRight;
             loadds();
             loadcombo();
             KiemTraPQ();

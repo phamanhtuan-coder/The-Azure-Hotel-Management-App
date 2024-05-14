@@ -38,6 +38,10 @@ namespace GUI.UserControls
 
         private void ucStaff_Load(object sender, EventArgs e)
         {
+            dgvStaff.AutoGenerateColumns = false;   
+            NgaySinh.DefaultCellStyle.Format = "dd/MM/yyyy";
+            Luong.DefaultCellStyle.Format = "#,##0";
+            Luong.DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopRight;
             CapNhatCBBNhanVien();
             KiemTraPQ();
         }
