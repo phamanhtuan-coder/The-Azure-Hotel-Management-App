@@ -34,10 +34,7 @@ namespace BLL
             {
                 return phongBanDaL.FilterTrangThai(false);
             }
-            else
-            {
-                return phongBanDaL.LayDanhSachPhongBan();
-            }
+            return phongBanDaL.LayDanhSachPhongBan();
         }
 
         public List<PhongBanDTO> LayDanhSachPhongBan()

@@ -19,8 +19,9 @@ namespace GUI.UserControls
     public partial class ucDepartment : UserControl
     {
         //Khai báo biến
+        string tt;
         public string MaPHQ { get; set; }
-        PhongBanBLL phongBanBLL;
+        PhongBanBLL phongBanBLL = new PhongBanBLL();
         PhongBanDTO phongBanDTO = new PhongBanDTO();
         List<PhongBanDTO> dsPhongBan = new List<PhongBanDTO>();
         List<PhongBanDTO> dsTimKiem = new List<PhongBanDTO>();
@@ -35,7 +36,6 @@ namespace GUI.UserControls
         //Khi load Uc lên thì hiển thị gì
         private void ucDepartment_Load(object sender, EventArgs e)
         {
-            LayDanhSachPhongBan();
             dgvDepartment.AutoGenerateColumns = false;
             colNgayNhanChuc.DefaultCellStyle.Format = "dd/MM/yyyy";
             CapDuLieuChoController();
@@ -96,7 +96,7 @@ namespace GUI.UserControls
             frm.ShowDialog();
             //Sau khi xử lý xong thì load lại danh sách, hiện tại danh sách load lại sẽ là toàn bộ dữ liệu (sẽ sửa lại sau)
             dgvDepartment.ClearSelection();
-            LayDanhSachPhongBan();
+            Filter();
         }
 
         private void btnEditDepartment_Click(object sender, EventArgs e)
@@ -114,7 +114,7 @@ namespace GUI.UserControls
                 frm.ShowDialog();
                 //Sau khi xử lý xong thì load lại danh sách, hiện tại danh sách load lại sẽ là toàn bộ dữ liệu (sẽ sửa lại sau)
                 dgvDepartment.ClearSelection();
-                LayDanhSachPhongBan();
+                Filter();
             }
             else
             {
@@ -149,38 +149,48 @@ namespace GUI.UserControls
         {
             if (dgvDepartment.SelectedRows.Count > 0)
             {
-                thongBao = new customMessageBox(
+                customMessageBox thongBao;
+                int TrangThai = dgvDepartment.Columns["colTrangThai"].Index;
+                if ((bool)dgvDepartment.SelectedRows[0].Cells[TrangThai].Value)
+                {
+                    thongBao = new customMessageBox(
                     "Bạn có chắc chắn muốn xóa dòng dữ liệu này không?"
                 );
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr == DialogResult.OK)
-                {
-                    String maPhongBan = dgvDepartment
-                        .SelectedRows[0]
-                        .Cells["colMaPhongBan"]
-                        .Value.ToString();
-                    phongBanBLL = new PhongBanBLL();
-                    bool check = phongBanBLL.XoaPhongBan(maPhongBan);
-                    if (check)
+                    DialogResult dr = thongBao.ShowDialog();
+                    if (dr == DialogResult.OK)
                     {
-                        
-                        dgvDepartment.ClearSelection();
-                        LayDanhSachPhongBan();
-                        thongBao = new customMessageBox(
-                            "Xóa thành công dữ liệu có mã là: " + maPhongBan + "!"
-                        );
-                        thongBao.ShowDialog();
-                    }
-                    else
-                    {
-                        thongBao = new customMessageBox(
-                            "Xóa thất bại dữ liệu có mã là: " + maPhongBan + "!"
-                        );
-                        thongBao.ShowDialog();
-                    }
+                        String maPhongBan = dgvDepartment
+                            .SelectedRows[0]
+                            .Cells["colMaPhongBan"]
+                            .Value.ToString();
+                        phongBanBLL = new PhongBanBLL();
+                        bool check = phongBanBLL.XoaPhongBan(maPhongBan);
+                        if (check)
+                        {
 
+                            dgvDepartment.ClearSelection();
+                            Filter();
+                            thongBao = new customMessageBox(
+                                "Xóa thành công dữ liệu có mã là: " + maPhongBan + "!"
+                            );
+                            thongBao.ShowDialog();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox(
+                                "Xóa thất bại dữ liệu có mã là: " + maPhongBan + "!"
+                            );
+                            thongBao.ShowDialog();
+                        }
+
+                    }
                 }
-                
+                else
+                {
+                    thongBao = new customMessageBox("Bạn không thể xóa dữ liệu đã xóa!");
+                    thongBao.ShowDialog();
+                }
+
             }
             else
             {
@@ -194,35 +204,45 @@ namespace GUI.UserControls
         {
             if (dgvDepartment.SelectedRows.Count > 0)
             {
-                thongBao = new customMessageBox(
+                customMessageBox thongBao;
+                int TrangThai = dgvDepartment.Columns["colTrangThai"].Index;
+                if (!(bool)dgvDepartment.SelectedRows[0].Cells[TrangThai].Value)
+                {
+                    thongBao = new customMessageBox(
                     "Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?"
                 );
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr == DialogResult.OK)
+                    DialogResult dr = thongBao.ShowDialog();
+                    if (dr == DialogResult.OK)
+                    {
+                        String maPhongBan = dgvDepartment
+                            .SelectedRows[0]
+                            .Cells["colMaPhongBan"]
+                            .Value.ToString();
+                        phongBanBLL = new PhongBanBLL();
+                        bool check = phongBanBLL.KhoiPhucPhongBan(maPhongBan);
+                        if (check)
+                        {
+
+                            dgvDepartment.ClearSelection();
+                            Filter();
+                            thongBao = new customMessageBox(
+                                "Khôi phục thành công dữ liệu có mã là: " + maPhongBan + "!"
+                            );
+                            thongBao.ShowDialog();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox(
+                                "Khôi phục thất bại dữ liệu có mã là: " + maPhongBan + "!"
+                            );
+                            thongBao.ShowDialog();
+                        }
+                    }
+                }
+                else
                 {
-                    String maPhongBan = dgvDepartment
-                        .SelectedRows[0]
-                        .Cells["colMaPhongBan"]
-                        .Value.ToString();
-                    phongBanBLL = new PhongBanBLL();
-                    bool check = phongBanBLL.KhoiPhucPhongBan(maPhongBan);
-                    if (check)
-                    {
-                        
-                        dgvDepartment.ClearSelection();
-                        LayDanhSachPhongBan();
-                        thongBao = new customMessageBox(
-                            "Khôi phục thành công dữ liệu có mã là: " + maPhongBan + "!"
-                        );
-                        thongBao.ShowDialog();
-                    }
-                    else
-                    {
-                        thongBao = new customMessageBox(
-                            "Khôi phục thất bại dữ liệu có mã là: " + maPhongBan + "!"
-                        );
-                        thongBao.ShowDialog();
-                    }
+                    thongBao = new customMessageBox("Bạn không thể Khôi phục dữ liệu chưa xóa!");
+                    thongBao.ShowDialog();
                 }
             }
             else
@@ -235,9 +255,18 @@ namespace GUI.UserControls
 
         private void cboStateDepartment_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dsPhongBan = phongBanBLL.FilterTrangThai(cboStateDepartment.Text);
-            dgvDepartment.ClearSelection();
-            dgvDepartment.DataSource = dsPhongBan;
+            tt = cboStateDepartment.Text;
+            Filter();
+        }
+
+        private void Filter()
+        {
+            if (tt.Length > 0)
+            {
+                dsPhongBan = phongBanBLL.FilterTrangThai(tt);
+                dgvDepartment.ClearSelection();
+                dgvDepartment.DataSource = dsPhongBan;
+            }           
         }
 
         private void cboSortDepartment_SelectedIndexChanged(object sender, EventArgs e)
