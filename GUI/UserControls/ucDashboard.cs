@@ -66,7 +66,7 @@ namespace GUI.UserControls
             {
                 lblCountTotal.Text = kq3.ToString();
             }
-            else lblCountCheckOut.Text = "0";
+            else lblCountTotal.Text = "0";
         }
 
 
