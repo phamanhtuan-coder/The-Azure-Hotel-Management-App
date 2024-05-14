@@ -33,6 +33,7 @@ namespace GUI.UserControls
         private void ucCustomer_Load(object sender, EventArgs e)
         {
             dgvCustomer.AutoGenerateColumns = false;
+            dtpNgaySinh.Value = DateTime.Now.AddYears(-18);
             NgaySinh.DefaultCellStyle.Format= "dd/MM/yyyy";
             CapNhatCBBNhanVien();
             KiemTraPQ();
@@ -352,6 +353,14 @@ namespace GUI.UserControls
             {
                 return Image.FromStream(m);
             }
+        }
+
+        private void dtpNgaySinh_ValueChanged(object sender, EventArgs e)
+        {
+            List<KhachHangDTO> searchResults = khachHangDTOs.Where(item =>
+             item.NgaySinh.Date == dtpNgaySinh.Value.Date
+         ).ToList();
+            dgvCustomer.DataSource = searchResults;
         }
     }
 }
