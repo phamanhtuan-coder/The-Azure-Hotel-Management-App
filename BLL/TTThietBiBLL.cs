@@ -16,6 +16,11 @@ namespace BLL
             return TTThietBiDAL.LayDSTinhTrangThietBi();
         }
 
+        public List<TTThietBiDTO> temp()
+        {
+            return TTThietBiDAL.temp();
+        }
+
         public List<TTThietBiDTO> FilterTrangThai(string trangthai)
         {
             if (trangthai == "Đang hoạt động")

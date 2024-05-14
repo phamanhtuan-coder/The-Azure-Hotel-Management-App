@@ -30,7 +30,36 @@ namespace DAL
             }
             
         }
+        public static List<TTThietBiDTO> temp()
+        {
+            try
+            {
+                List<TTThietBiDTO> dslp = new List<TTThietBiDTO>();
+                SqlConnection conn = DataProvider.KetNoiDuLieu();
+                string strlaydanhsach = "select * from TinhTrangThietBi";
+                conn.Open();
+                SqlDataReader reader = DataProvider.ThucHienTruyVan(strlaydanhsach, conn);
+                while (reader.Read())
+                {
+                    TTThietBiDTO tTThietBi = new TTThietBiDTO();
+                    tTThietBi.MaTinhTrangThietBi = (int)reader[0];
+                    tTThietBi.TenTinhTrang = reader[1].ToString();
+                    tTThietBi.MoTa = reader[2].ToString();
+                    byte[] trangThaiBytes = (byte[])reader[3];
+                    bool trangThai = trangThaiBytes[0] == 1;
+                    tTThietBi.TrangThai = trangThai;
+                    dslp.Add(tTThietBi);
+                }
+                reader.Close();
+                conn.Close();
+                return dslp;
+            }
+            catch (Exception)
+            {
 
+                return new List<TTThietBiDTO>();
+            }
+        }
         public static List<TTThietBiDTO> LayDSTinhTrangThietBi()
         {
             try

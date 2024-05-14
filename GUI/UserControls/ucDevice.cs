@@ -30,16 +30,17 @@ namespace GUI.UserControls
         private void ucDevice_Load(object sender, EventArgs e)
         {
             dgvDevice.AutoGenerateColumns = false;
-            Loadcombo();
-            Loadds();
+            Loadcombo();     
             LoadTinhTrangThietBi();
+            Loadds();
             KiemTraPQ();
         }
 
         private void LoadTinhTrangThietBi()
         {
+            TTThietBiBLL tTThietBiBLL = new TTThietBiBLL();
             List<TTThietBiDTO> dsTinhTrang = new List<TTThietBiDTO>();
-            dsTinhTrang = TTThietBiBLL.LayDSTinhTrangThietBi();
+            dsTinhTrang = tTThietBiBLL.temp();
             MaTinhTrangThietBi.DataSource = dsTinhTrang;
             MaTinhTrangThietBi.ValueMember = "MaTinhTrangThietBi";
             MaTinhTrangThietBi.DisplayMember = "TenTinhTrang";
