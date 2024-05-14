@@ -632,6 +632,7 @@
             this.colCCCD.HeaderText = "CCCD";
             this.colCCCD.Name = "colCCCD";
             this.colCCCD.ReadOnly = true;
+            this.colCCCD.Visible = false;
             this.colCCCD.Width = 84;
             // 
             // colTenTaiKhoan
@@ -640,6 +641,7 @@
             this.colTenTaiKhoan.HeaderText = "Tên Tài Khoản";
             this.colTenTaiKhoan.Name = "colTenTaiKhoan";
             this.colTenTaiKhoan.ReadOnly = true;
+            this.colTenTaiKhoan.Visible = false;
             this.colTenTaiKhoan.Width = 133;
             // 
             // colSoLuongKH
