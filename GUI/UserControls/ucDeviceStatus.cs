@@ -16,6 +16,7 @@ namespace GUI.UserControls
 {
     public partial class ucDeviceStatus : UserControl
     {
+        string tt;
         public customMessageBox thongBao;
         List<TTThietBiDTO> thietBiDTOs=new List<TTThietBiDTO>();
         List<TTThietBiDTO> thietBiDTOstk = new List<TTThietBiDTO>();
@@ -29,10 +30,10 @@ namespace GUI.UserControls
 
         private void ucDeviceStatus_Load(object sender, EventArgs e)
         {
-            laydstb();
             dgvDeviceStatus.AutoGenerateColumns = false;
             lad_combo();
             KiemTraPQ();
+            Filter();
         }
         private void KiemTraPQ()
         {
@@ -82,7 +83,7 @@ namespace GUI.UserControls
             frm.isAdd = true;
             frm.ShowDialog();
             dgvDeviceStatus.ClearSelection();
-            laydstb();
+            Filter();
         }
 
         private void btnEditDeviceStatus_Click(object sender, EventArgs e)
@@ -95,7 +96,7 @@ namespace GUI.UserControls
                 LayDuLieuTuForm(frm);
                 frm.ShowDialog();
                 dgvDeviceStatus.ClearSelection();
-                laydstb();
+                Filter();
             }
             else
             {
@@ -119,31 +120,42 @@ namespace GUI.UserControls
         {
             if (dgvDeviceStatus.SelectedRows.Count > 0)
             {
-                customMessageBox thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr != DialogResult.Cancel)
+                customMessageBox thongBao;
+                int TrangThai = dgvDeviceStatus.Columns["colTrangThai"].Index;
+                if ((bool)dgvDeviceStatus.SelectedRows[0].Cells[TrangThai].Value)
                 {
-                    int maTTTBi = (int)dgvDeviceStatus.SelectedRows[0].Cells["colMaTinhTrangThietBi"].Value;
-                    bool check = TTThietBiBLL.XoaTTTBi(maTTTBi);
-                    if (check)
+                    thongBao = new customMessageBox("Bạn có chắc chắn muốn xóa dòng dữ liệu này không?");
+                    DialogResult dr = thongBao.ShowDialog();
+                    if (dr != DialogResult.Cancel)
                     {
+                        int maTTTBi = (int)dgvDeviceStatus.SelectedRows[0].Cells["colMaTinhTrangThietBi"].Value;
+                        bool check = TTThietBiBLL.XoaTTTBi(maTTTBi);
+                        if (check)
+                        {
 
-                        dgvDeviceStatus.ClearSelection();
-                        laydstb();
-                        thongBao = new customMessageBox(
-                            "Xóa thành công dữ liệu có mã là: " + maTTTBi + "!"
-                        );
-                        thongBao.ShowDialog();
+                            dgvDeviceStatus.ClearSelection();
+                            Filter();
+                            thongBao = new customMessageBox(
+                                "Xóa thành công dữ liệu có mã là: " + maTTTBi + "!"
+                            );
+                            thongBao.ShowDialog();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox(
+                                "Xóa thất bại dữ liệu có mã là: " + maTTTBi + "!"
+                            );
+                            thongBao.ShowDialog();
+                        }
                     }
-                    else
-                    {
-                        thongBao = new customMessageBox(
-                            "Xóa thất bại dữ liệu có mã là: " + maTTTBi + "!"
-                        );
-                        thongBao.ShowDialog();
-                    }
+
                 }
-                
+                else
+                {
+                    thongBao = new customMessageBox("Bạn không thể xóa dữ liệu đã xóa!");
+                    thongBao.ShowDialog();
+                }
+
             }
             else
             {
@@ -157,31 +169,41 @@ namespace GUI.UserControls
         {
             if (dgvDeviceStatus.SelectedRows.Count > 0)
             {
-                customMessageBox thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
-                DialogResult dr = thongBao.ShowDialog();
-                if (dr == DialogResult.OK)
+                customMessageBox thongBao;
+                int TrangThai = dgvDeviceStatus.Columns["colTrangThai"].Index;
+                if (!(bool)dgvDeviceStatus.SelectedRows[0].Cells[TrangThai].Value)
                 {
-                    int maTTTBi = (int)dgvDeviceStatus.SelectedRows[0].Cells["colMaTinhTrangThietBi"].Value;
-                    bool check = TTThietBiBLL.KhoiPhucTTTBi(maTTTBi);
-                    if (check)
+                    thongBao = new customMessageBox("Bạn có chắc chắn muốn khôi phục dòng dữ liệu này không?");
+                    DialogResult dr = thongBao.ShowDialog();
+                    if (dr == DialogResult.OK)
                     {
+                        int maTTTBi = (int)dgvDeviceStatus.SelectedRows[0].Cells["colMaTinhTrangThietBi"].Value;
+                        bool check = TTThietBiBLL.KhoiPhucTTTBi(maTTTBi);
+                        if (check)
+                        {
 
-                        dgvDeviceStatus.ClearSelection();
-                        laydstb();
-                        thongBao = new customMessageBox(
-                            "Khôi phục thành công dữ liệu có mã là: " + maTTTBi + "!"
-                        );
-                        thongBao.ShowDialog();
-                    }
-                    else
-                    {
-                        thongBao = new customMessageBox(
-                            "Khôi phục thất bại dữ liệu có mã là: " + maTTTBi + "!"
-                        );
-                        thongBao.ShowDialog();
+                            dgvDeviceStatus.ClearSelection();
+                            Filter();
+                            thongBao = new customMessageBox(
+                                "Khôi phục thành công dữ liệu có mã là: " + maTTTBi + "!"
+                            );
+                            thongBao.ShowDialog();
+                        }
+                        else
+                        {
+                            thongBao = new customMessageBox(
+                                "Khôi phục thất bại dữ liệu có mã là: " + maTTTBi + "!"
+                            );
+                            thongBao.ShowDialog();
+                        }
                     }
                 }
-                
+                else
+                {
+                    thongBao = new customMessageBox("Bạn không thể Khôi phục dữ liệu chưa xóa!");
+                    thongBao.ShowDialog();
+                }
+
             }
             else
             {
@@ -212,9 +234,18 @@ namespace GUI.UserControls
 
         private void cboStateDeviceStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
-            thietBiDTOs = TTThietBiBLL.FilterTrangThai(cboStateDeviceStatus.Text);
-            dgvDeviceStatus.ClearSelection();
-            dgvDeviceStatus.DataSource = thietBiDTOs;
+            tt = cboStateDeviceStatus.Text;
+            Filter();
+        }
+
+        private void Filter()
+        {
+            if (tt.Length > 0)
+            {
+                thietBiDTOs = TTThietBiBLL.FilterTrangThai(tt);
+                dgvDeviceStatus.ClearSelection();
+                dgvDeviceStatus.DataSource = thietBiDTOs;
+            }
         }
 
         private void cboSortDeviceStatusID_SelectedIndexChanged(object sender, EventArgs e)
