@@ -37,7 +37,7 @@ namespace GUI.CustomForms
             rpvCTHD.LocalReport.SetParameters(new ReportParameter("paMaNV", maNV));
             rpvCTHD.LocalReport.SetParameters(new ReportParameter("paMaKH", maKH));
             rpvCTHD.LocalReport.SetParameters(new ReportParameter("paNgayLapHD", ngayLap));
-
+            rpvCTHD.ZoomMode = ZoomMode.PageWidth;
             this.rpvCTHD.RefreshReport();
         }
 
@@ -46,7 +46,16 @@ namespace GUI.CustomForms
             this.Close();
         }
 
-
-
+        private void frmHoaDonReview_SizeChanged(object sender, EventArgs e)
+        {
+            if (this.WindowState==FormWindowState.Normal)
+            {
+                rpvCTHD.ZoomMode = ZoomMode.PageWidth;
+            }
+            else
+            {
+                rpvCTHD.ZoomMode = ZoomMode.FullPage;
+            }
+        }
     }
 }

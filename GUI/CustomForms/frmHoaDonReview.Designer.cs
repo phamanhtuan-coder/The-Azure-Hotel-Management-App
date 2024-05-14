@@ -34,22 +34,24 @@
             // 
             // rpvCTHD
             // 
+            this.rpvCTHD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rpvCTHD.AutoScroll = true;
-            this.rpvCTHD.Dock = System.Windows.Forms.DockStyle.Top;
             this.rpvCTHD.Location = new System.Drawing.Point(0, 0);
             this.rpvCTHD.Name = "rpvCTHD";
             this.rpvCTHD.ServerReport.BearerToken = null;
-            this.rpvCTHD.Size = new System.Drawing.Size(950, 613);
+            this.rpvCTHD.Size = new System.Drawing.Size(950, 632);
             this.rpvCTHD.TabIndex = 0;
             // 
             // btnCancel
             // 
-            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnCancel.BackColor = System.Drawing.Color.Orange;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(371, 638);
+            this.btnCancel.Location = new System.Drawing.Point(394, 638);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
             this.btnCancel.Style.BackColor = System.Drawing.Color.Orange;
@@ -73,6 +75,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "In Hóa Đơn";
             this.Load += new System.EventHandler(this.frmHoaDonReview_Load);
+            this.SizeChanged += new System.EventHandler(this.frmHoaDonReview_SizeChanged);
             this.ResumeLayout(false);
 
         }
