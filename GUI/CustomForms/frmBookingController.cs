@@ -64,13 +64,15 @@ namespace GUI.customForm
             if (check)
             {
                 thongBao = new customMessageBox("Đã thêm thành công dữ liệu đặt phòng mới!");
+                thongBao.ShowDialog();
             }
             else
             {
                 thongBao = new customMessageBox("Đã thêm thất bại dữ liệu đặt phòng mới!");
+                thongBao.ShowDialog();
             }
-
-            thongBao.ShowDialog();
+            this.Close();
+           
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
