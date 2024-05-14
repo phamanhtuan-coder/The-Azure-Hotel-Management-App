@@ -78,29 +78,51 @@ namespace GUI.customForm
 
         private void LoadDuLieuMaPhong()
         {
-            PhongDTO TatCa = new PhongDTO();
-            TatCa.MaPHG = -1;
-            List<PhongDTO> list = new List<PhongDTO> { TatCa };
-            foreach (var item in phongBLL.laydspTT())
+            List<PhongDTO> list = new List<PhongDTO> ();
+            if (isAdd)
             {
-                list.Add(item);
+                cboThietBi.Enabled = true;
+                cboNVBaoTri.Enabled = true;
+                dtpNgayHuHong.Enabled = true;
+                foreach (var item in phongBLL.laydspTT())
+                {
+                    list.Add(item);
+                }
+                PhongDTO TatCa = new PhongDTO();
+                TatCa.MaPHG = -1;
+                list.Add (TatCa);
+                cboThietBi.DataSource = list;
+                cboThietBi.DisplayMember = "MaPHG";
+                cboThietBi.ValueMember = "MaPHG";
+                cboThietBi.SelectedIndex = 1;
             }
-            cboThietBi.DataSource = list;
-            cboThietBi.DisplayMember = "MaPHG";
-            cboThietBi.ValueMember = "MaPHG";
-            cboThietBi.SelectedIndex = 0;
+            else
+            {
+                cboThietBi.Enabled = false;
+                cboNVBaoTri.Enabled = false;
+                dtpNgayHuHong.Enabled = false;
+                foreach (var item in phongBLL.laydsp())
+                {
+                    list.Add(item);
+                }
+                cboThietBi.DataSource = list;
+                cboThietBi.DisplayMember = "MaPHG";
+                cboThietBi.ValueMember = "MaPHG";
+                cboThietBi.SelectedIndex = 0;
+            }
         }
 
         private void LoadDuLieuNhanVienDonPhong()
-        {
-            NhanVienDTO TatCa = new NhanVienDTO();
-            TatCa.MaNV = -1;
-            TatCa.HoTenNV = "None";
-            List<NhanVienDTO> list = new List<NhanVienDTO> { TatCa };
+        {            
+            List<NhanVienDTO> list = new List<NhanVienDTO> ();
             foreach (var item in nhanVienBLL.LoadIDAndNameBLLDonPhong())
             {
                 list.Add(item);
             }
+            NhanVienDTO TatCa = new NhanVienDTO();
+            TatCa.MaNV = -1;
+            TatCa.HoTenNV = "None";
+            list.Add(TatCa);
             cboNVBaoTri.DataSource = list;
             cboNVBaoTri.DisplayMember = "HoTenNV";
             cboNVBaoTri.ValueMember = "MaNV";
@@ -117,9 +139,13 @@ namespace GUI.customForm
                 // Nếu đúng là form Thêm thì chạy lệnh insert
                 if (AddDonPhong())
                 {
-
+                    DatPhongDTO dphongDTO = new DatPhongDTO();
+                    dphongDTO.MaPHG = donPhongDTO.MaPhong;
+                    List<DatPhongDTO> ct = new List<DatPhongDTO> { dphongDTO };
+                    phongBLL.CapNhatTT(ct, 6);
                     thongBao = new customMessageBox("Đã thêm thành công dữ liệu dọn phòng!");
                     thongBao.ShowDialog();
+                    this.Close();
                 }
                 else
                 {
@@ -139,15 +165,14 @@ namespace GUI.customForm
                     phongBLL.CapNhatTT(ct, 1);
                     thongBao = new customMessageBox("Sửa thành công thông tin dọn phòng!");
                     thongBao.ShowDialog();
+                    this.Close();
                 }
                 else
                 {
                     thongBao = new customMessageBox("Sửa thất bại thông tin dọn phòng!");
                     thongBao.ShowDialog();
                 }             
-            }
-            this.Close();
-            
+            }       
         }
 
         private bool EditDonPhong()
