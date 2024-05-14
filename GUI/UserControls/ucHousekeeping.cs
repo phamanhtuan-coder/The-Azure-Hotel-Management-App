@@ -39,7 +39,7 @@ namespace GUI.UserControls
             colNgayNhan.DefaultCellStyle.Format = "dd/MM/yyyy";
             LoadDuLieuNhanVien();
             LoadDuLieuCombobox();
-            LoadDuLieuDonPhong();
+            Filter();
             KiemTraPQ();
         }
         private void KiemTraPQ()
